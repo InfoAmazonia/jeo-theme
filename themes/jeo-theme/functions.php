@@ -105,7 +105,7 @@ function newspack_scott_scripts() {
 	wp_enqueue_style( 'jeo-theme-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", array(), '4.5', 'all'  );
 	wp_enqueue_style('app', get_stylesheet_directory_uri() . '/dist/app.css', []);
     wp_enqueue_script('main-app', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery']);
-	wp_enqueue_script( 'jeo-theme-scripts', get_stylesheet_directory_uri()."/js/main.js", array(), "0.1.0");
+	//wp_enqueue_script( 'jeo-theme-scripts', get_stylesheet_directory_uri()."/js/main.js", array(), "0.1.0");
 }
 add_action( 'wp_enqueue_scripts', 'newspack_scott_scripts' );
 
