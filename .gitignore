@@ -1,5 +1,4 @@
-themes/inventores/dist/app.js
-themes/inventores/dist/app.css
+node_modules/
 
 wp-content/*
 wp-content/themes/*
