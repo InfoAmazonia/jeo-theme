@@ -1,0 +1,9 @@
+.archive{
+    .title-button h3{
+        font-size: 32px;
+
+        @include mobile{
+            font-size: 22px;
+        }
+    }
+}
