@@ -1,0 +1,13 @@
+themes/inventores/dist/app.js
+themes/inventores/dist/app.css
+
+wp-content/*
+wp-content/themes/*
+wp-content/plugins/*
+wp-content/upgrade/*
+wp-content/uploads/*
+wp-content/mu-plugins/*
+wp-content/languages/*
+
+mariadb_data/
+
