@@ -29,6 +29,10 @@ function newspack_scott_custom_colors_css() {
 	$secondary_color_contrast = newspack_get_color_contrast( $secondary_color );
 
 	$theme_css = '
+		:root {
+			--primary: '. esc_html( $primary_color ) . ';
+			--secondary: '. esc_html( $secondary_color ) . ';
+		}
 		.accent-header:not(.widget-title):before,
 		.article-section-title:before,
 		.cat-links:before,
@@ -39,6 +43,11 @@ function newspack_scott_custom_colors_css() {
 
 		.wp-block-pullquote blockquote p:first-of-type:before {
 			color: ' . esc_html( $primary_color ) . ';
+		}
+
+		.middle-header-contain {
+			background-color:' . get_theme_mod('header_background_color_hex', '#fff	'). ';
+			background-image: url(' . wp_get_attachment_url( get_theme_mod('header_background_image') ). ');
 		}
 
 		@media only screen and (min-width: 782px) {
