@@ -4,4 +4,12 @@ header.site-header{
         background-repeat: no-repeat;
         background-position: center;
     }
+
+    .bottom-header-contain {
+        background-color: var(--secondary);
+    }
+
+    .top-header-contain  {
+        background-color: var(--primary);
+    }
 }

@@ -56,5 +56,47 @@ function newspack_scott_customizer( $wp_customize ) {
 			)
 		)
 	);
+	
+	// Typography
+	$wp_customize->add_section(
+		'typo_heading_sizes',
+		array(
+			'title' => esc_html__( 'Heading sizes', 'newspack' ),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_h1_size',
+		array(
+			'default'  => 'initial',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	// change this strategy to range and unit select  https://developer.wordpress.org/themes/customize-api/customizer-objects/
+	$wp_customize->add_control(
+		'typo_h1_size',
+		array(
+			'type'        => 'text',
+			'description' => __('Don\'t forget about the unit. Ex.: 18px'),
+			'label'       => esc_html__('H1', 'newspack'),
+			'section'     => 'typo_heading_sizes',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_h2_size',
+		array(
+			'default'  => 'initial',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'typo_h2_size',
+		array(
+			'type'        => 'text',
+			'label'       => esc_html__('H2', 'newspack'),
+			'section'     => 'typo_heading_sizes',
+		)
+	);
 }
-add_action( 'customize_register', 'newspack_scott_customizer', 99 );
+add_action( 'customize_register', 'newspack_scott_customizer' );
