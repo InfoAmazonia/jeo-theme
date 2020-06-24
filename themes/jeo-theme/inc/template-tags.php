@@ -1,7 +1,51 @@
 <?php
 
 
+/**
+ * Prints HTML with meta information for the current post-date/time.
+ */
+function newspack_posted_on() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
 
+	$time_string = sprintf(
+		$time_string,
+		esc_attr( get_the_date( DATE_W3C ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( DATE_W3C ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	if ( is_single() ) { ?>
+		<div class="post-date">
+				<?php the_date('F j, Y') ?>
+				<?php if(get_the_date() != get_the_modified_date() || get_the_time() != get_the_modified_time()): ?>
+				-  (Updated <?= the_modified_date("F j, Y \a\\t G:i") ?>) 
+				<?php endif ?>
+
+
+		</div>
+
+		
+	<?php
+	} else {
+		printf(
+		'<span class="posted-on"><a href="%1$s" rel="bookmark">%2$s</a></span>',
+			esc_url( get_permalink() ),
+			wp_kses(
+				$time_string,
+				array(
+					'time' => array(
+						'class'    => array(),
+						'datetime' => array(),
+					),
+				)
+			)
+		);
+	}
+}
 /**
  * Prints HTML with meta information about theme author.
  */
