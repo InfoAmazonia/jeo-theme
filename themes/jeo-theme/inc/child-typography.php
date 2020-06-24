@@ -14,6 +14,8 @@ function newspack_scott_custom_typography_css() {
 	$css_blocks        = '';
 	$editor_css_blocks = '';
 
+
+
 	if ( get_theme_mod( 'font_header', '' ) ) {
 		$css_blocks .= '
 			.has-drop-cap:not(:focus)::first-letter,
@@ -67,6 +69,40 @@ function newspack_scott_custom_typography_css() {
 	if ( function_exists( 'register_block_type' ) && is_admin() ) {
 		$theme_css = $editor_css;
 	}
+
+
+	$font_unit = get_theme_mod('typo_unit', 'em');
+	$forced_size = get_theme_mod('typo_important')? '!important' : '';
+
+	$theme_css .= '
+		h1 {
+			font-size: ' . get_theme_mod('typo_h1_size', '2') . $font_unit . $forced_size . ';
+		}
+
+		h2 {
+			font-size: ' . get_theme_mod('typo_h2_size', '1.5') . $font_unit . $forced_size . ';
+		}
+
+		h3 {
+			font-size: ' . get_theme_mod('typo_h3_size', '1.17') . $font_unit . $forced_size . ';
+		}
+
+		h4 {
+			font-size: ' . get_theme_mod('typo_h4_size', '1') . $font_unit . $forced_size . ';
+		}
+
+		h5 {
+			font-size: ' . get_theme_mod('typo_h5_size', '0.83') . $font_unit . $forced_size . ';
+		}
+
+		h6 {
+			font-size: ' . get_theme_mod('typo_h6_size', '0.67') . $font_unit . $forced_size . ';
+		}
+
+		p {
+			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . $forced_size . ';
+		}
+	';
 
 	return $theme_css;
 }
