@@ -59,6 +59,30 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Decoration style
+	$wp_customize->add_setting(
+		'decoration_style',
+		array(
+			'default'  => 'square',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'decoration_style',
+		array(
+			'type' => 'select',
+			'section' => 'title_tagline',
+			'label' => __('Decoration marker style'),
+			'choices' => array(
+				'square' => 'Square',
+				'top' => 'Top rectangle',
+				'left' => 'Left bar',
+				'eye' => 'Mekong eye',
+			)
+		)
+	);
+
 	// Typography
 	$wp_customize->add_section(
 		'typo_heading_sizes',
@@ -68,7 +92,6 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
-	// change this strategy to range and unit select  https://developer.wordpress.org/themes/customize-api/customizer-objects/
 	$wp_customize->add_setting(
 		'typo_unit',
 		array(
@@ -237,4 +260,4 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 }
-add_action('customize_register', 'newspack_scott_customizer');
+add_action('customize_register', 'newspack_scott_customizer', 99);

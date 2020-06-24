@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/inc/generic-css-injection.php';
+
 /**
  * Newspack Scott functions and definitions
  *
@@ -8,10 +10,8 @@
  */
 
 function childtheme_add_post_formats(){
-
-	add_theme_support( 'post-formats', array('gallery', 'video','image', 'link', 'audio') );
-	
-	}
+	add_theme_support( 'post-formats', array('gallery', 'video','image', 'link', 'audio') );	
+}
 	
 add_action( 'after_setup_theme', 'childtheme_add_post_formats', 11 );
 
