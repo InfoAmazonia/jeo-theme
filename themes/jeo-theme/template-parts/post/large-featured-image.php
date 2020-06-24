@@ -37,7 +37,7 @@ if ('behind' === newspack_featured_image_position()) :
 	</div>
 
 	<?php if ($caption_exists) : ?>
-		<figcaption><?php echo wp_kses_post($caption); ?></figcaption>
+		<figcaption><?php //echo wp_kses_post($caption); ?></figcaption>
 	<?php endif; ?>
 
 <?php elseif ('beside' === newspack_featured_image_position()) : ?>

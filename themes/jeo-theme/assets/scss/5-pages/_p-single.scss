@@ -2,4 +2,28 @@
     .main-content {
         width: 100%;
     }
+
+    section {
+        main {
+            .entry-meta {
+                max-width: 90%;
+                color: rgba(85, 93, 102, 0.699);
+                font-size: 14px;
+                letter-spacing: 0;
+                line-height: 17px;
+                display: flex;
+                justify-content: space-between;
+                margin: 13px auto;
+
+                .byline {
+                    margin-right: 15px;
+                }
+            }
+
+            .main-content {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
 }
