@@ -33,7 +33,7 @@ $discussion = ! is_page() && newspack_can_show_post_thumbnail() ? newspack_get_d
 	</h2>
 <?php endif; ?>
 
-<?php if ( ! is_page() ) : ?>
+<?php if ( ! is_page() && 'behind' !== newspack_featured_image_position()) : ?>
 	<div class="entry-subhead">
 		<div class="entry-meta">
 			<?php newspack_posted_by(); ?>

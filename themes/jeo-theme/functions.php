@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/inc/generic-css-injection.php';
+require __DIR__ . '/inc/template-tags.php';
 
 /**
  * Newspack Scott functions and definitions
