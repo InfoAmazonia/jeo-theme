@@ -259,5 +259,41 @@ function newspack_scott_customizer($wp_customize)
 			'input_attrs' => $range_atttrs,
 		)
 	);
+
+	// Single font
+	$wp_customize->add_setting(
+		'single_featured_font',
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'single_featured_font',
+		array(
+			'label'       => __( 'Featured Font', 'newspack' ),
+			'description' => __( 'Example: Libre Basquesville' ),
+			'section'     => 'newspack_typography',
+			'type'        => 'text',
+		)
+	);
+
+	// Accent text font 
+	$wp_customize->add_setting(
+		'accent_font',
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'accent_font',
+		array(
+			'label'       => __( 'Accent font', 'newspack' ),
+			'description' => __( 'Example: Dosis' ),
+			'section'     => 'newspack_typography',
+			'type'        => 'text',
+		)
+	);
 }
 add_action('customize_register', 'newspack_scott_customizer', 99);
