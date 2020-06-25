@@ -231,3 +231,60 @@ function add_custom_taxonomies()
 	));
 }
 add_action('init', 'add_custom_taxonomies', 0);
+
+function register_metaboxes()
+{
+	add_meta_box(
+		'display-autor-info',
+		__('Show author bio', 'jeo'),
+		'display_autor_bio_callback',
+		'post'
+	);
+}
+
+function display_autor_bio_callback()
+{
+	wp_nonce_field(basename(__FILE__), 'prfx_nonce');
+	$prfx_stored_meta = get_post_meta(get_the_ID());
+?>
+
+	<p>
+		<span class="prfx-row-title"><?php _e('Check to enable the author info: ', 'jeo') ?></span>
+		<div class="prfx-row-content">
+			<label for="author-bio-display">
+				<input type="checkbox" name="author-bio-display" id="author-bio-display" value="false" <?php if (isset($prfx_stored_meta['author-bio-display'])) checked($prfx_stored_meta['author-bio-display'][0], true); ?> />
+				<?php _e('Author bio', 'prfx-textdomain') ?>
+			</label>
+
+		</div>
+	</p>
+
+<?php
+}
+
+/**
+ * Saves the custom meta input
+ */
+function author_bio_display_meta_save($post_id)
+{
+
+	// Checks save status - overcome autosave, etc.
+	$is_autosave = wp_is_post_autosave($post_id);
+	$is_revision = wp_is_post_revision($post_id);
+	$is_valid_nonce = (isset($_POST['prfx_nonce']) && wp_verify_nonce($_POST['prfx_nonce'], basename(__FILE__))) ? 'true' : 'false';
+
+	// Exits script depending on save status
+	if ($is_autosave || $is_revision || !$is_valid_nonce) {
+		return;
+	}
+
+	// Checks for input and saves - save checked as yes and unchecked at no
+	if (isset($_POST['author-bio-display'])) {
+		update_post_meta($post_id, 'author-bio-display', true);
+	} else {
+		update_post_meta($post_id, 'author-bio-display', false);
+	}
+}
+
+add_action('save_post', 'author_bio_display_meta_save');
+add_action('add_meta_boxes', 'register_metaboxes');
