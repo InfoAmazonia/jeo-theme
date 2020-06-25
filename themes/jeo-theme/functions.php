@@ -173,7 +173,7 @@ add_action('enqueue_block_editor_assets', 'newspack_scott_editor_customizer_styl
  */
 function add_custom_taxonomies()
 {
-	// Add new "Locations" taxonomy to Posts
+	// Add new "region" taxonomy to Posts
 	register_taxonomy('region', 'post', array(
 		'hierarchical' => false,
 		'public' => true,
@@ -203,7 +203,7 @@ function add_custom_taxonomies()
 
 
 	// Add new "Locations" taxonomy to Posts
-	register_taxonomy('region', 'post', array(
+	register_taxonomy('topic', 'post', array(
 		'hierarchical' => false,
 		'public' => true,
 		'show_ui' => true,
@@ -211,20 +211,20 @@ function add_custom_taxonomies()
 		'show_in_rest' => true,
 		'show_tagcloud' => false,
 		'labels' => array(
-			'name' => __('Regions', 'jeo'),
-			'singular_name' => __('Region', 'jeon'),
-			'search_items' =>  __('Search Regions'),
-			'all_items' => __('All Regions'),
+			'name' => __('Topics', 'jeo'),
+			'singular_name' => __('Topic', 'jeon'),
+			'search_items' =>  __('Search topics'),
+			'all_items' => __('All topics'),
 			//'parent_item' => __('Parent Location'),
 			//'parent_item_colon' => __('Parent Location:'),
-			'edit_item' => __('Edit Region'),
-			'update_item' => __('Update Region'),
-			'add_new_item' => __('Add New Region'),
-			'new_item_name' => __('New Region Name'),
-			'menu_name' => __('Regions'),
+			'edit_item' => __('Edit topic'),
+			'update_item' => __('Update topic'),
+			'add_new_item' => __('Add New Topics'),
+			'new_item_name' => __('New Topic Name'),
+			'menu_name' => __('Topics'),
 		),
 		'rewrite' => array(
-			'slug' => 'region',
+			'slug' => 'topic',
 			'with_front' => false,
 			'hierarchical' => true
 		),

@@ -1,4 +1,5 @@
 node_modules/
+themes/newspack-theme/
 
 wp-content/*
 wp-content/themes/*
