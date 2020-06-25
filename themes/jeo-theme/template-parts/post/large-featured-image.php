@@ -13,15 +13,45 @@ $caption_exists = get_post(get_post_thumbnail_id())->post_excerpt;
 
 if ('behind' === newspack_featured_image_position()) :
 ?>
-
 	<div class="featured-image-behind">
 		<?php newspack_post_thumbnail(); ?>
 		<div class="wrapper">
 			<header class="entry-header">
 				<?php get_template_part('template-parts/header/entry', 'header'); ?>
 			</header>
+
+			<div class="image-info">
+				<i class="fas fa-info-circle"></i>
+			</div>
 			
 		</div><!-- .wrapper -->
+
+		<div class="image-info-container">
+			<div class="wrapper">
+				<div class="image-meta">
+				<?php
+					if (class_exists('Newspack_Image_Credits')) {
+						$image_meta = Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id()); ?>
+						<span class="description"> 
+							<?= get_post(get_post_thumbnail_id())->post_excerpt ?>
+						</span>
+
+						<i class="fas fa-camera"></i>
+						<?= (isset($image_meta['credit_url']) && !empty($image_meta['credit_url']))? '<a href="' . $image_meta['credit_url'] . '">' : null ?>
+							<span class="credit">
+								<?= $image_meta['credit'] ?>
+
+								<?= isset($image_meta['organization']) && !empty($image_meta['organization'])? ' / ' . $image_meta['organization'] : null ?>
+							</span>
+						<?= (isset($image_meta['credit_url']) && !empty($image_meta['credit_url']))? '</a>' : null ?>
+
+						<?php
+					}
+				?>
+				</div>
+					
+			</div>
+		</div>
 	</div><!-- .featured-image-behind -->
 	<div class="entry-subhead">
 		<div class="entry-meta">
