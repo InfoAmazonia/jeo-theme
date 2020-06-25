@@ -23,7 +23,7 @@ function newspack_posted_on()
 		<div class="post-date">
 			<?php the_date('F j, Y') ?>
 			<?php if (get_the_date() != get_the_modified_date() || get_the_time() != get_the_modified_time()) : ?>
-				- (Updated <?= the_modified_date("F j, Y \a\\t G:i") ?>)
+				<span class="hide-tablet-down">- (Updated <?= the_modified_date("F j, Y \a\\t G:i") ?>)</span>
 			<?php endif ?>
 
 
@@ -75,7 +75,7 @@ function newspack_posted_by()
 	?>
 
 		<span class="byline">
-			<span><?php echo esc_html__('by', 'newspack'); ?></span>
+			<span><?php echo esc_html__('By', 'newspack'); ?></span>
 			<?php
 			foreach ($authors as $author) {
 

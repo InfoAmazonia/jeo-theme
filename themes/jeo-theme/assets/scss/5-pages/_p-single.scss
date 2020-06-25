@@ -23,12 +23,21 @@
             .main-content {
                 max-width: 90%;
                 margin: 0 auto;
+
+                @include large {
+                    max-width: 58.334%;
+                }
             }
 
             .featured-image-behind {
+                .entry-header {
+                    @include large {
+                        max-width: 58.334%;
+                    }
+                }
+
                 .wrapper {
                     position: relative;
-
                     .image-info {
                         position: absolute;
                         right: 0;
@@ -82,6 +91,17 @@
 
 
                 }
+            }
+        }
+    }
+
+    section.small {
+        .entry-header {
+            border-bottom-width: 0;
+
+            .entry-meta {
+                display: flex;
+                justify-content: space-between;
             }
         }
     }

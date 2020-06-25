@@ -1,0 +1,5 @@
+.hide-tablet-down {
+    @include tablet {
+        display: none;
+    }
+}
