@@ -44,7 +44,7 @@
 		<?php newspack_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php if ( ! is_singular( 'attachment' ) ) : ?>
+	<?php if ( ! is_singular( 'attachment' )  && get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
 		<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
 	<?php endif; ?>
 
