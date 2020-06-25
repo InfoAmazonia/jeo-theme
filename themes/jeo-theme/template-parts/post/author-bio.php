@@ -37,6 +37,10 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 ?>
 
 			<div class="author-bio">
+				<div class="author-introduce-title">
+					<?= __('About the author', 'jeo') ?>
+				</div>
+
 				<?php
 				if (!newspack_is_active_style_pack('style-4') && $author_avatar) {
 					echo wp_kses($author_avatar, newspack_sanitize_avatars());
@@ -44,6 +48,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 				?>
 
 				<div class="author-bio-text">
+
 					<div class="author-bio-header">
 						<?php
 						if (newspack_is_active_style_pack('style-4') && $author_avatar) {
@@ -84,6 +89,8 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 						</div>
 					</div><!-- .author-bio-header -->
 
+				</div><!-- .author-bio-text -->
+				<div class="author-description">
 					<?php if (get_theme_mod('author_bio_truncate', true)) : ?>
 						<p>
 							<?php echo esc_html(wp_strip_all_tags(newspack_truncate_text($author->description, $author_bio_length))); ?>
@@ -104,8 +111,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 							?>
 						</a>
 					<?php endif; ?>
-
-				</div><!-- .author-bio-text -->
+				</div>
 
 			</div><!-- .author-bio -->
 	<?php
