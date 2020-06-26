@@ -1,6 +1,3 @@
-
-
-
 (function ($) {
     $(document).ready(function () {
         if($('.single .featured-image-behind').length) {
