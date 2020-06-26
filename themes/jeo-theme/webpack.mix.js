@@ -1,6 +1,6 @@
 const path = require( 'path' );
 let mix = require('laravel-mix');
-
+const defaultConfig = require( './node_modules/@wordpress/scripts/config/webpack.config' );
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -18,9 +18,13 @@ const dist_dir = root_dir + '/dist';
 
 mix.js(assets_dir + '/javascript/app.js', '');
 mix.sass(assets_dir + '/scss/app.scss', '').sourceMaps();
+
+mix.react('./assets/javascript/blocks/imageBlock/index.js', 'imageBlock.js');
+
 mix.webpackConfig({
+	//...defaultConfig,
 	entry: {
-		imageBlock: './assets/javascript/blocks/imageBlock/index.js',
+		//imageBlock: './assets/javascript/blocks/imageBlock/index.js',
 	},
         output: {
             chunkFilename: dist_dir + '/[name].js',
@@ -28,6 +32,7 @@ mix.webpackConfig({
             publicPath: dist_dir,
             filename: '[name].js',
         },
+        
 	devtool: "inline-source-map" 
 });
 
