@@ -11,7 +11,7 @@ $discussion = ! is_page() && newspack_can_show_post_thumbnail() ? newspack_get_d
 <?php if ( is_singular() ) : ?>
 	<?php
 	if ( ! is_page() ) :
-		newspack_categories();
+		newspack_categories();		
 	endif;
 	?>
 	<?php

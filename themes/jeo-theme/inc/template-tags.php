@@ -128,7 +128,7 @@ function newspack_post_thumbnail()
 
 	if (is_singular()) : ?>
 
-		<figure class="post-thumbnail" >
+		<figure class="post-thumbnail">
 
 			<?php
 
@@ -157,8 +157,6 @@ function newspack_post_thumbnail()
 					);
 				}
 
-				
-				
 			else :
 				the_post_thumbnail('newspack-featured-image');
 
@@ -186,4 +184,50 @@ function newspack_post_thumbnail()
 
 <?php
 	endif; // End is_singular().
+}
+
+
+/**
+ * Prints HTML with the current post's categories.
+ */
+function newspack_categories()
+{
+	$categories_list = '';
+
+	// Only display Yoast primary category if set.
+	if (class_exists('WPSEO_Primary_Term')) {
+		$primary_term = new WPSEO_Primary_Term('category', get_the_ID());
+		$category_id = $primary_term->get_primary_term();
+		if ($category_id) {
+			$category = get_term($category_id);
+			if ($category) {
+				$categories_list = '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . $category->name . '</a>';
+			}
+		}
+	}
+
+	if (!$categories_list) {
+		/* translators: used between list items; followed by a space. */
+		$categories_list = get_the_category_list('<span class="sep">' . esc_html__(',', 'newspack') . '&nbsp;</span>');
+	}
+
+	$topic_terms_str = "";
+	$topic_terms = get_the_terms(get_the_ID(), 'topic');
+	if ($topic_terms) {
+		$topic_terms_str = "&nbsp/&nbsp";
+		foreach ($topic_terms as $term) { 
+			$topic_terms_str .= '<a href="'. get_term_link($term) .'">' . $term->name  . '</a>';
+		}
+	}
+
+	if ($categories_list) {
+		printf(
+			/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
+			'<span class="cat-links"><span class="screen-reader-text">%1$s</span>%2$s%3$s</span>',
+			esc_html__('Posted in', 'newspack'),
+			$categories_list,
+			$topic_terms_str
+
+		); // WPCS: XSS OK.
+	}
 }
