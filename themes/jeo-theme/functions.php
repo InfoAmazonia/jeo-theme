@@ -295,13 +295,15 @@ add_action('add_meta_boxes', 'register_metaboxes');
  */
 function custom_image_block() {
 
-    // automatically load dependencies and version
+	// automatically load dependencies and version
+	$asset_file = include( get_stylesheet_directory() . '/dist/imageBlock.asset.php');
 
     wp_register_script(
         'custom-image-block-editor',
         get_stylesheet_directory_uri() . '/dist/imageBlock.js',
-        [],
-        filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+		$asset_file['dependencies'],
+        $asset_file['version']
+        //filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
     );
 
     wp_register_style(

@@ -3147,27 +3147,27 @@ body.page .entry-title {
   background-color: #111;
   display: flex;
   margin: 0 calc( 50% - 50vw);
-  min-height: calc( 90vh - 60px);
+  /* min-height: calc( 90vh - 60px); */
   position: relative;
   width: 100vw;
 }
 
 .admin-bar .featured-image-behind {
-  min-height: calc( 100vh - 106px);
+  /* min-height: calc( 100vh - 106px); */
 }
 
 @media only screen and (min-width: 782px) {
   .featured-image-behind {
-    min-height: calc( 100vh - 220px);
+    /* min-height: calc( 100vh - 220px); */
   }
   .admin-bar .featured-image-behind {
-    min-height: calc( 100vh - 250px);
+    /* min-height: calc( 100vh - 250px); */
   }
   .h-sh .featured-image-behind {
-    min-height: calc( 100vh - 110px);
+    /* min-height: calc( 100vh - 110px); */
   }
   .h-sh.admin-toolbar .featured-image-behind {
-    min-height: calc( 100vh - 142px);
+    /* min-height: calc( 100vh - 142px); */
   }
 }
 

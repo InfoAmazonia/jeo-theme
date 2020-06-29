@@ -22,17 +22,22 @@ mix.sass(assets_dir + '/scss/app.scss', '').sourceMaps();
 mix.react('./assets/javascript/blocks/imageBlock/index.js', 'imageBlock.js');
 
 mix.webpackConfig({
-	//...defaultConfig,
+	...defaultConfig,
 	entry: {
 		//imageBlock: './assets/javascript/blocks/imageBlock/index.js',
-	},
-        output: {
-            chunkFilename: dist_dir + '/[name].js',
-            path: path.resolve( __dirname, './dist/' ),
-            publicPath: dist_dir,
-            filename: '[name].js',
-        },
-        
+    },
+    
+    output: {
+        chunkFilename: dist_dir + '/[name].js',
+        path: path.resolve( __dirname, './dist/' ),
+        publicPath: dist_dir,
+        filename: '[name].js',
+    },
+
+    module: {
+		
+    },
+  
 	devtool: "inline-source-map" 
 });
 
