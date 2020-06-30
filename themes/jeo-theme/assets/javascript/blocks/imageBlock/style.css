@@ -38,6 +38,7 @@
     font-size: 14px;
     margin-top: 15px;
     transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
 .image-info-wrapper {
@@ -70,6 +71,7 @@
 }
 .fa-times {
     margin-left: 15px;
+    cursor: pointer;
 }
 
 
