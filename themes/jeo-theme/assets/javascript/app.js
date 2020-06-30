@@ -1,8 +1,16 @@
+import Vue from 'vue';
+import ImageBlock from './components/imageBlock/ImageBlock';
+
+Vue.component('image-block', ImageBlock);
 
 
 
 (function ($) {
     $(document).ready(function () {
+        const app = new Vue({
+            el: '#content',
+        })
+
         if($('.single .featured-image-behind').length) {
             $('.featured-image-behind .image-info i').click(function() {
                 $('.featured-image-behind .image-info-container').toggleClass('active');

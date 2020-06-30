@@ -1,0 +1,97 @@
+.image-block-container {
+    position: relative;
+}
+
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.image-wrapper img {
+    width: 100%;
+}
+
+.image-button {
+    margin-bottom: 30px;
+}
+
+.image-description {
+    opacity: 0.5;
+    color: #0A0A0A;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 18px;
+    text-align: center;
+    font-family: var(--primary-font);
+    margin-top: 11px;
+}
+
+.image-icon, .fa-camera  {
+    color: rgba(25, 30, 35, 0.70);
+    background: rgba(255, 255, 255, 0.705);
+    padding: 6px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 15px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.image-info-wrapper {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.image-meta {
+    color: rgba(25, 30, 35, 0.70);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 17px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 3.5px 7px 3.5px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--primary-font);
+    animation: scaleItUp 0.2s ease-in-out 1 alternate;
+}
+.fa-times {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+.fa-time:hover {
+    color: rgba(25, 30, 35, 1);
+}
+
+@keyframes scaleItUp {
+    0% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+span.fas.fa-camera:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    color: rgba(25, 30, 35, 1)
+}
