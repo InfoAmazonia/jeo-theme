@@ -5,6 +5,35 @@ header.site-header{
         background-position: center;
     }
 
+    .featured-button  {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 31px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        height: 32px;
+        margin: auto;
+
+        i {
+            margin-right: 10px;
+        }
+
+        &.solid {
+            background-color: var(--primary);
+            color: white;        
+        }
+
+        &.outline {
+            border: 2px solid white;
+            color: white;
+        }
+    }
+
     .bottom-header-contain {
         background-color: var(--secondary);
     }

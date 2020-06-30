@@ -59,6 +59,48 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Discovery button style
+	$wp_customize->add_setting(
+		'discovery_button_style',
+		array(
+			'default'  => 'solid',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'discovery_button_style',
+		array(
+			'type' => 'select',
+			'section' => 'header_section_appearance',
+			'label' => __('Discovery button style'),
+			'default'  => 'solid',
+			'choices' => array(
+				'solid' => 'Solid',
+				'outline' => 'Outline',
+			)
+		)
+	);
+
+
+	$wp_customize->add_setting(
+		'discovery_button_link',
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'discovery_button_link',
+		array(
+			'label'       => __( 'Discovery button link', 'newspack' ),
+			'description' => __( 'Leave it empty to hide.' ),
+			'section'     => 'header_section_appearance',
+			'default'     => '',
+			'type'        => 'text',
+		)
+	);
+
 	// Decoration style
 	$wp_customize->add_setting(
 		'decoration_style',
