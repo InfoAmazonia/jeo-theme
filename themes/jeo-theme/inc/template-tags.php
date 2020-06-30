@@ -135,17 +135,27 @@ function newspack_post_thumbnail()
 			// If using the behind or beside image styles, add the object-fit argument for AMP.
 			if (in_array(newspack_featured_image_position(), array('behind', 'beside'))) :
 
-				$image_meta = Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id());
+				if (class_exists('Newspack_Image_Credits')) {
+					$image_meta = Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id());
 
-				the_post_thumbnail(
-					'newspack-featured-image',
-					array(
-						'object-fit' => 'cover',
-						'data-description' => get_post(get_post_thumbnail_id())->post_excerpt,
-						'data-credit' => $image_meta['credit'],
-						'data-credit-url' => $image_meta['credit_url'],
-					)
-				);
+					the_post_thumbnail(
+						'newspack-featured-image',
+						array(
+							'object-fit' => 'cover',
+							'data-description' => get_post(get_post_thumbnail_id())->post_excerpt,
+							'data-credit' => $image_meta['credit'],
+							'data-credit-url' => $image_meta['credit_url'],
+						)
+					);
+				} else {
+					the_post_thumbnail(
+						'newspack-featured-image',
+						array(
+							'object-fit' => 'cover',
+							'data-description' => get_post(get_post_thumbnail_id())->post_excerpt,
+						)
+					);
+				}
 
 			else :
 				the_post_thumbnail('newspack-featured-image');
