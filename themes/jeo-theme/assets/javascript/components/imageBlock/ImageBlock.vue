@@ -1,26 +1,38 @@
 <template>
-    <div class="medalBoard">
-        <H1>asdasdsasadasds</H1>
+  <div class="credited-image-block">
+    <div class="image-wrapper">
+      <img :src="mediaurl" />
+      <div class="image-info-wrapper">
+        <span class="image-meta" v-if="displayDescription">
+            {{ mediadescription }}
+            <span class="fas fa-times" @click="toggleDescription()"></span>
+        </span>
+        
+        <span class="fas fa-camera" @click="toggleDescription()"></span>
+      </div>
     </div>
-
+    <div class="image-description">
+        {{title}}
+    </div>
+  </div>
 </template>
 
 <script>
-
-
 export default {
-    components: {
-
+  components: {},
+  name: "ImageBlock",
+  data() {
+        return {
+            displayDescription: false,
+        };
     },
-    name: "ImageBlock",
-    props: ["users"],
-    methods: {
-        searchUpdate() {
-            alert("search update");
-        }
-    },
-    created() {
 
-    }
+  props: ["title", "mediaurl", "mediadescription"],
+  methods: {
+      toggleDescription() {
+          this.displayDescription = !this.displayDescription;
+      }
+  },
+  created() {},
 };
 </script>

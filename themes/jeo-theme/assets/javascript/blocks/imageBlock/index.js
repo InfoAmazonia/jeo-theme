@@ -21,29 +21,16 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
     },
     attributes: {
         title: {
-            type: "array",
-            source: "children",
-            selector: ".callout-title",
+            type: "string",
         },
         mediaID: {
             type: "number",
         },
         mediaURL: {
             type: "string",
-            source: "attribute",
-            selector: "img",
-            attribute: "src",
         },
 
         mediaDescription: {
-            type: "string",
-        },
-        body: {
-            type: "array",
-            source: "children",
-            selector: ".callout-body",
-        },
-        alignment: {
             type: "string",
         },
     },
@@ -55,8 +42,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
             attributes: {
                 mediaID,
                 mediaURL,
-                body,
-                alignment,
                 title,
                 mediaDescription,
             },
@@ -82,14 +67,8 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
             });
         };
 
-        const onChangeBody = (value) => {
-            setAttributes({ body: value });
-        };
-
-        const onIconClick = () => { };
-
         const [imageClasses, textClasses, wrapClass] = [
-            alignment || "left",
+            "left",
             className,
             "image-block-container",
         ];
@@ -122,7 +101,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
                                                 <div class="image-info-wrapper">
                                                     <span
                                                         class="dashicons image-icon dashicons-camera-alt"
-                                                        onclick={onIconClick}
                                                     ></span>
                                                     <RichText
                                                         tagName="span"
@@ -158,32 +136,23 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
     save: (props) => {
         const {
             className,
-            attributes: { title, mediaURL, mediaDescription },
+            isSelected,
+            attributes: {
+                mediaID,
+                mediaURL,
+                title,
+                mediaDescription,
+            },
+            setAttributes,
         } = props;
 
         return (
             <>
                 <div className="image-block-container" key="container">
-                    <div>
-                        <div className="callout-image">
-                            {mediaURL ? (
-                                <div className="image-wrapper">
-                                    <img src={mediaURL} />
-                                    <div class="image-info-wrapper">
-                                        <span
-                                            class="dashicons image-icon dashicons-camera-alt"
-                                        ></span>
-                                        <span class="image-meta">{mediaDescription}</span>
-                                    </div>
-                                </div>
-                            ) : (
-                                    ""
-                                )}
-                        </div>
-                    </div>
-                    <div>{title}</div>
+                    <image-block title={title} mediaurl={mediaURL} mediadescription={mediaDescription}></image-block>    
                 </div>
             </>
+            
         );
     },
 });
