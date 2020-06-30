@@ -1,6 +1,110 @@
 .single {
     .main-content {
         width: 100%;
+
+        .tags-links {
+            border-top: 1px solid #979797;
+            width: 100%;
+            border-bottom: 1px solid #979797;
+            padding: 34px 0;
+            margin-top: 76px;
+
+            span:first-child {
+                display: block;
+                color: #555D66;
+                font-family: var(--primary-font);
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 0;
+                line-height: 21px;
+                margin-bottom: 30px;
+            }
+
+            a[rel=tag] {
+                border-radius: 5px;
+                color: var(--primary);
+                padding: 7px 20px;
+                background-color: #cccccc20;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+            span.sep {
+                display: none 
+            }
+            
+        }
+
+        .author-bio {
+            flex-wrap: wrap;
+
+            .author-introduce-title {
+                width: 100%;
+                color: #555D66;
+                font-family: var(--primary-font);
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 0;
+                line-height: 21px;
+                text-transform: uppercase;
+                margin-bottom: 37px;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                
+            }
+
+            &-text {
+                .author-bio-header {
+                    letter-spacing: 0;
+                    line-height: 22px;
+                    
+                    .accent-header {
+                        font-family: var(--primary-font);
+                        text-transform: unset;
+                        color: #0A0A0A;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+
+                    .author-meta {
+                        color: #555D66;
+                        font-size: 14px;    
+                    }
+                }
+                
+            }
+
+            .author-description {
+                font-family: var(--primary-font);
+                color: #0A0A0A;
+                letter-spacing: 0;
+                line-height: 22px;
+                margin-top: 13px;
+            }
+        }
+
+        .comments-area {
+            .comments-title {
+                color: #555D66;
+                font-family: var(--primary-font);
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 0;
+                line-height: 21px;
+                text-transform: uppercase;
+            }
+            
+            .form-submit {
+                input[name=submit] {
+                    background: var(--primary);
+                }
+            }
+        }
     }
 
     section.behind {
