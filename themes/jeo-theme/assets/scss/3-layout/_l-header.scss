@@ -1,11 +1,11 @@
-header.site-header{
+header.site-header {
     .middle-header-contain {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
 
-    .featured-button  {
+    .featured-button {
         font-size: 16px;
         font-weight: bold;
         letter-spacing: 0;
@@ -25,7 +25,7 @@ header.site-header{
 
         &.solid {
             background-color: var(--primary);
-            color: white;        
+            color: white;
         }
 
         &.outline {
@@ -36,9 +36,12 @@ header.site-header{
 
     .bottom-header-contain {
         background-color: var(--secondary);
+        height: 50px;
+        display: flex;
+        align-items: center;
     }
 
-    .top-header-contain  {
+    .top-header-contain {
         background-color: var(--primary);
     }
 }
