@@ -15,7 +15,7 @@ import { Button } from "@wordpress/components";
 wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
     title: "Credited Image",
     icon: "format-image",
-    category: "media",
+    category: "common",
     supports: {
         align: true,
     },
