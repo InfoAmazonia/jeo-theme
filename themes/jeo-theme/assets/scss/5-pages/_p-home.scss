@@ -10,6 +10,10 @@
         .wp-block-columns{
             margin-bottom: 0px;
         }
+
+        &.wp-block-cover.has-background-dim:not(.has-background-gradient):before {
+            border-radius: 40px;
+        }
     }
 
     &__newsletter-text{
@@ -23,6 +27,33 @@
         font-size: 70px;
         margin-bottom: 0px !important;
       }
+    
+    &__newsletter-btn{
+        background-color: var(--primary); 
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        color: #fff;
+        border-color: var(--primary);
+    }
+
+
+    &__block-sidebar {
+
+        &.has-background {
+            border-radius: 10px;
+            padding: 0px;
+        }
+
+        .wp-block-group {
+            padding: 30px 30px 30px 30px;
+            margin-top: 0px !important;
+        }
+        
+        p {
+            margin-bottom: 0px !important;
+            border-radius: 15px 15px 0 0;
+        }
+    }
 }
 
 .wp-block-columns{
