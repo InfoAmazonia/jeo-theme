@@ -220,6 +220,14 @@ endif;
 							get_template_part( 'template-parts/header/header', 'search' );
 						}
 						?>
+						<?php $button_url = get_theme_mod('discovery_button_link'); 
+						if (!empty($button_url)): ?>
+							<a href="<?= $button_url ?>" class="featured-button <?= get_theme_mod('discovery_button_style', 'solid')?>">
+								<i class="far fa-map"></i>
+								Discovery
+							</a>
+						<?php endif; ?>
+
 					</div><!-- .wrapper -->
 				</div><!-- .bottom-header-contain -->
 			<?php

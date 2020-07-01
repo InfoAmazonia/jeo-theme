@@ -1,0 +1,30 @@
+.home {
+    &__newsletter-link{
+       color: var(--primary) !important; 
+    }
+
+    &__newsletter-bkg{
+        border-radius: 40px;
+        padding: 1rem 3rem;
+
+        .wp-block-columns{
+            margin-bottom: 0px;
+        }
+    }
+
+    &__newsletter-text{
+        font-size: 13px;
+        text-align: right;
+        color: #333333 !important; /* it should be a tertiary color*/
+    }
+
+    &__newsletter-icon {
+        color: var(--primary); 
+        font-size: 70px;
+        margin-bottom: 0px !important;
+      }
+}
+
+.wp-block-columns{
+    margin-bottom: 0px;
+}
