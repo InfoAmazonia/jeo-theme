@@ -54,9 +54,4 @@ docker-compose down -v # o parametro -v apaga os dados do mariadb
 docker-compose up 
 ```
 
-# Instalando plugins e temas
-
-## Copiando arquivos para dentro do repositório
-O conteúdo de `wp-content` está excluído do versionamento por padrão. Para adicionar seu plugin ou tema como parte do repositório, você deve colocá-los nas pastas `plugins` ou `themes` que estão na raiz do repositório.
-
 <br>
