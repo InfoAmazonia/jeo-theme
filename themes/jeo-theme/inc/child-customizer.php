@@ -114,7 +114,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'site_description_color',
 			array(
-				'label' => __('Site description font color', 'newspack'),
+				'label' => __('Site description color', 'newspack'),
 				'section'     => 'header_section_appearance',
 			)
 		)

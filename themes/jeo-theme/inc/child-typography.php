@@ -135,5 +135,17 @@ function newspack_scott_custom_typography_css() {
 		';
 	}
 
+
+	if (!empty(get_theme_mod( 'site_description_color', ''))) {
+		$color = get_theme_mod( 'site_description_color');
+
+		$theme_css .= '
+		:root {
+			--description-color: '. $color . ';
+		}
+
+		';
+	}
+
 	return $theme_css;
 }

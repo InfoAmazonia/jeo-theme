@@ -43,5 +43,9 @@ header.site-header {
 
     .top-header-contain {
         background-color: var(--primary);
+        
+        .site-description {
+            color: var(--description-color)
+        }
     }
 }
