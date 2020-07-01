@@ -3,6 +3,16 @@ header.site-header {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+
+        .site-description {
+            color: var(--description-color)
+        }
+
+        .site-branding {
+            @include desktop {
+                flex-basis: 65%;
+            }
+        }
     }
 
     .featured-button {
@@ -17,7 +27,7 @@ header.site-header {
         border-radius: 30px;
         text-transform: uppercase;
         height: 32px;
-        margin: auto;
+        /*margin: auto;*/
 
         i {
             margin-right: 10px;
