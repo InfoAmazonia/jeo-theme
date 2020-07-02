@@ -27,5 +27,9 @@ Vue.component('image-block', ImageBlock);
                 $('.bottom-header-contain').removeClass("fixed-header");
             }
         });
+
+        jQuery('.filters select').change(function() {
+            jQuery(this).closest('form').submit();
+        });
     });
 })(jQuery);

@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<section id="primary" class="content-area row">
-		<div class="col-md-10">
+		<div class="col-md-10 margin-auto">
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php esc_html_e( 'Search results', 'newspack' ); ?>
@@ -48,7 +48,6 @@ get_header();
 			endif;
 			?>
 			</main><!-- #main -->
-			<?php get_sidebar(); ?>
 		</div>
 	</section><!-- #primary -->
 

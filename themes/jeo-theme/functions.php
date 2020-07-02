@@ -330,3 +330,26 @@ function custom_image_block() {
 
 add_action( 'init', 'custom_image_block' );
 
+add_filter('pre_get_posts', '_search_pre_get_posts',100);
+
+function _search_pre_get_posts($query){
+    global $wp_query;
+    //var_dump();
+
+    if(is_admin()){
+        return $query;
+    }
+    if(isset($query->query['p']) && strpos($query->query['p'], ':redirect') > 0){
+        $query->query['p'] = intval($query->query['p']);
+        $query->is_404 = false;
+        $query->is_page = true;
+        $query->is_home = false;
+    }
+
+
+    if( $query->is_main_query() && $query->is_search() && $query->is_archive() ){
+        //$query->set('post_type', [$query->query['post_type']]);
+    }
+    return $query;
+}
+
