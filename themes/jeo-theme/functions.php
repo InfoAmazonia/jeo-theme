@@ -240,21 +240,53 @@ function register_metaboxes()
 		'display_autor_bio_callback',
 		'post'
 	);
+
+	add_meta_box(
+		'erratum-block',
+		__('Sorry, we said wrong', 'jeo'),
+		'display_erratum_block',
+		'post'
+	);
 }
 
 function display_autor_bio_callback()
 {
-	wp_nonce_field(basename(__FILE__), 'prfx_nonce');
-	$prfx_stored_meta = get_post_meta(get_the_ID());
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());
 ?>
 
 	<p>
-		<span class="prfx-row-title"><?php _e('Check to enable the author info: ', 'jeo') ?></span>
-		<div class="prfx-row-content">
+		<span class="jeo-row-title"><?php _e('Check to enable the author info: ', 'jeo') ?></span>
+		<div class="jeo-row-content">
 			<label for="author-bio-display">
-				<input type="checkbox" name="author-bio-display" id="author-bio-display" value="false" <?php if (isset($prfx_stored_meta['author-bio-display'])) checked($prfx_stored_meta['author-bio-display'][0], true); ?> />
-				<?php _e('Author bio', 'prfx-textdomain') ?>
+				<input type="checkbox" name="author-bio-display" id="author-bio-display" value="false" <?php if (isset($jeo_stored_meta['author-bio-display'])) checked($jeo_stored_meta['author-bio-display'][0], true); ?> />
+				<?php _e('Author bio', 'jeo') ?>
 			</label>
+
+		</div>
+	</p>
+
+<?php
+}
+
+function display_erratum_block()
+{
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());
+?>
+
+	<p>
+		<span class="jeo-row-title"><?php _e('Check to enable the "sorry we said wrong: ', 'jeo') ?></span>
+		<div class="jeo-row-content">
+			<label for="enable-post-erratum">
+				<input type="checkbox" name="enable-post-erratum" id="enable-post-erratum" value="false" <?php if (isset($jeo_stored_meta['enable-post-erratum'])) checked($jeo_stored_meta['enable-post-erratum'][0], true); ?> />
+				<?php _e('Sorry we said wrong', 'jeo-textdomain') ?>
+			</label>
+			<p>
+				<label for="post-erratum">
+					<textarea style="width: 100%" name="post-erratum" id="post-erratum"><?php if (isset($jeo_stored_meta['post-erratum'])) echo $jeo_stored_meta['post-erratum'][0]; ?></textarea>
+				</label>
+			</p>
 
 		</div>
 	</p>
@@ -265,13 +297,13 @@ function display_autor_bio_callback()
 /**
  * Saves the custom meta input
  */
-function author_bio_display_meta_save($post_id)
+function meta_save($post_id)
 {
 
 	// Checks save status - overcome autosave, etc.
 	$is_autosave = wp_is_post_autosave($post_id);
 	$is_revision = wp_is_post_revision($post_id);
-	$is_valid_nonce = (isset($_POST['prfx_nonce']) && wp_verify_nonce($_POST['prfx_nonce'], basename(__FILE__))) ? 'true' : 'false';
+	$is_valid_nonce = (isset($_POST['jeo_nonce']) && wp_verify_nonce($_POST['jeo_nonce'], basename(__FILE__))) ? 'true' : 'false';
 
 	// Exits script depending on save status
 	if ($is_autosave || $is_revision || !$is_valid_nonce) {
@@ -284,49 +316,59 @@ function author_bio_display_meta_save($post_id)
 	} else {
 		update_post_meta($post_id, 'author-bio-display', false);
 	}
+
+	if(isset($_POST['enable-post-erratum'])) {
+		update_post_meta($post_id, 'enable-post-erratum', true);
+	} else {
+		update_post_meta($post_id, 'enable-post-erratum', false);
+	}
+
+	if(isset($_POST['post-erratum'])) {
+		update_post_meta($post_id, 'post-erratum', $_POST['post-erratum']);
+	}
 }
 
-add_action('save_post', 'author_bio_display_meta_save');
+add_action('save_post', 'meta_save');
 add_action('add_meta_boxes', 'register_metaboxes');
 
 
 /**
  * Image box gutenberg block
  */
-function custom_image_block() {
+function custom_image_block()
+{
 
 	// automatically load dependencies and version
-	$asset_file = include( get_stylesheet_directory() . '/dist/imageBlock.asset.php');
+	$asset_file = include(get_stylesheet_directory() . '/dist/imageBlock.asset.php');
 
-    wp_register_script(
-        'custom-image-block-editor',
-        get_stylesheet_directory_uri() . '/dist/imageBlock.js',
+	wp_register_script(
+		'custom-image-block-editor',
+		get_stylesheet_directory_uri() . '/dist/imageBlock.js',
 		$asset_file['dependencies'],
-        $asset_file['version']
-        //filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
-    );
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
 
-    wp_register_style(
-        'custom-image-block-editor',
-        get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageBlock/imageBlock.css',
-        [],
-		filemtime( get_stylesheet_directory() . '/assets/javascript/blocks/imageBlock/imageBlock.css' ),
-    );
+	wp_register_style(
+		'custom-image-block-editor',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageBlock/imageBlock.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageBlock/imageBlock.css'),
+	);
 
-    wp_register_style(
-        'custom-image-block-block',
-        get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageBlock/style.css',
-        array( ),
-		filemtime( get_stylesheet_directory() . '/assets/javascript/blocks/imageBlock/style.css'),
+	wp_register_style(
+		'custom-image-block-block',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageBlock/style.css',
+		array(),
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageBlock/style.css'),
 		'all',
-    );
+	);
 
-    register_block_type( 'jeo-theme/custom-image-block-editor', array(
-        'editor_script' => 'custom-image-block-editor',
-        'editor_style'  => 'custom-image-block-editor',
-        'style'         => 'custom-image-block-block',
-    ) );
+	register_block_type('jeo-theme/custom-image-block-editor', array(
+		'editor_script' => 'custom-image-block-editor',
+		'editor_style'  => 'custom-image-block-editor',
+		'style'         => 'custom-image-block-block',
+	));
 }
 
-add_action( 'init', 'custom_image_block' );
-
+add_action('init', 'custom_image_block');
