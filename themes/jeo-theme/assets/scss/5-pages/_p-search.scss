@@ -3,6 +3,73 @@
         margin-bottom: 60px;
     }
 
+    .pre-itens-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #DDDDDD;
+        padding-bottom: 34px;
+        margin-bottom: 30px;
+
+        .found-itens-quantity {
+            color: #0A0A0A;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 20px;
+        }
+
+        .sorting-method {
+            color: rgba(10, 10, 10, 0.5);
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: 20px;
+            text-align: right;
+            display: flex;
+            position: relative;
+
+            button.current {
+                padding: 0;
+                color: var(--primary);
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 0;
+                line-height: 20px;
+                margin-left: 5px;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    top: 7px;
+                    right: -20px;
+                    @include triangle(bottom,6px,6px, var(--primary));
+                }
+            }
+
+            .options {
+                display: none;
+                
+                &.active {
+                    display: block;
+                    position: absolute;
+                    top: 30px;
+                    right: 0;
+                }
+
+                button.option {
+                    padding: 0;
+                    color: var(--primary);
+                    font-size: 16px;
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    line-height: 20px;
+                    margin-left: 5px;
+                    position: relative;
+                }
+            }
+            
+        }
+    }
+
     form.search-form {
         margin-bottom: 29px;
 
@@ -42,6 +109,8 @@
         }
 
         .filters {
+            margin-bottom: 34px; 
+
             &--title {
                 color: #555D66;
                 font-size: 18px;

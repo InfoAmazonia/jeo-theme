@@ -177,7 +177,7 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-  font-size: .8em !important;
+  font-size: .8em;
   /* 1 */
   line-height: 1.15;
   /* 1 */
@@ -759,7 +759,7 @@ input[type='submit'] {
   display: inline-block;
   color: #fff;
   font-family: "Fira Sans Condensed", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.8em !important;
+  font-size: 0.8em;
   font-weight: 700;
   line-height: 1.2;
   outline: none;

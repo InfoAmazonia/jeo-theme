@@ -40,5 +40,11 @@ Vue.component('image-block', ImageBlock);
         if(jQuery('input[name="daterange"]').attr('replace-empty') === "true") {
             jQuery('input[name="daterange"]').val('')
         }
+
+        if(jQuery('.sorting-method').length) {
+            jQuery('.sorting-method .current').click(function() {
+                jQuery('.sorting-method .options').toggleClass('active');
+            });
+        }
     });
 })(jQuery);
