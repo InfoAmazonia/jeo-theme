@@ -20,7 +20,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 	$author_count = count($authors);
 	$i            = 1;
 
-	foreach ($authors as $author) {
+	foreach ($authors as $index=>$author) {
 
 		if ('' !== $author->description) {
 
@@ -37,9 +37,11 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 ?>
 
 			<div class="author-bio">
+				<?php if($index == 0): ?>
 				<div class="author-introduce-title">
 					<?= __('About the author', 'jeo') ?>
 				</div>
+				<?php endif; ?>
 
 				<?php
 				if (!newspack_is_active_style_pack('style-4') && $author_avatar) {

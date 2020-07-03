@@ -236,9 +236,11 @@ function register_metaboxes()
 {
 	add_meta_box(
 		'display-autor-info',
-		__('Show author bio', 'jeo'),
+		'Show author bio',
 		'display_autor_bio_callback',
-		'post'
+		'post',
+		'side',
+		'default',
 	);
 }
 
