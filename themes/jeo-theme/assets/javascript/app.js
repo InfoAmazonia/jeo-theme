@@ -23,8 +23,10 @@ Vue.component('image-block', ImageBlock);
             // console.log(headerHeight);
             if ($(this).scrollTop() > headerHeight) {
                 $('.bottom-header-contain').addClass("fixed-header");
+                $('.bottom-header-contain.post-header').addClass('active');
             } else {
                 $('.bottom-header-contain').removeClass("fixed-header");
+                $('.bottom-header-contain.post-header').removeClass('active');
             }
         });
     });

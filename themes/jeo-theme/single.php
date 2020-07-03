@@ -7,7 +7,7 @@
  * @package Newspack
  */
 
-get_header();
+get_header('single');
 ?>
 
 	<section id="primary" class="content-area <?php echo esc_attr( newspack_get_category_tag_classes( get_the_ID() ) ) . ' ' . newspack_featured_image_position(); ?>">
