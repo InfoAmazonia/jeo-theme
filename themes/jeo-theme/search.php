@@ -16,7 +16,9 @@ get_header();
 				<h1 class="page-title">
 					<?php esc_html_e( 'Search results', 'newspack' ); ?>
 				</h1>
-				<?php get_search_form(); ?>
+				<?php get_search_form(array(
+					'aria_label' => 'search-page-form'
+				)); ?>
 			</header><!-- .page-header -->
 
 			<main id="main" class="site-main">

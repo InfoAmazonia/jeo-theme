@@ -23,39 +23,43 @@ $unique_id = wp_unique_id('search-form-');
 		</button>
 	</div>
 
+	<?php if ($args['aria_label'] == 'search-page-form') : ?>
+		<div class="filters">
+			<h5 class="filters--title"> Filters </h5>
+			<div class="filters--itens">
 
-	<div class="filters">
-		<h5 class="filters--title"> Filters </h5>
-		<div class="filters--itens">
-			<div class="filters--item">
-			<input type="text" value="<?= isset($_GET['daterange']) || !empty($_GET['daterange'])? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange'])? 'true' : 'false' ?>" placeholder="Date range" name="daterange">
-			</div>
+				<div class="filters--item">
+					<input type="text" value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" placeholder="Date range" name="daterange">
+				</div>
 
-			<div class="filters--item">
-				<select name="topic" id="topic">
-					<option value=""> Topics </option>
-					<?php
-					$terms = get_terms("topic");
+				<div class="filters--item">
+					<select name="topic" id="topic">
+						<option value=""> Topics </option>
+						<?php
+						$terms = get_terms("topic");
 
-					foreach ($terms as $term) : ?>
-						<option value="<?= $term->slug ?>" <?= isset($_GET['topic']) && $_GET['topic'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
+						foreach ($terms as $term) : ?>
+							<option value="<?= $term->slug ?>" <?= isset($_GET['topic']) && $_GET['topic'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
-					<?php endforeach; ?>
-				</select>
-			</div>
+						<?php endforeach; ?>
+					</select>
+				</div>
 
-			<div class="filters--item">
-				<select name="region" id="region">
-					<option value=""> Regions </option>
-					<?php
-					$terms = get_terms("region");
+				<div class="filters--item">
+					<select name="region" id="region">
+						<option value=""> Regions </option>
+						<?php
+						$terms = get_terms("region");
 
-					foreach ($terms as $term) : ?>
-						<option value="<?= $term->slug ?>" <?= isset($_GET['region']) && $_GET['region'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
+						foreach ($terms as $term) : ?>
+							<option value="<?= $term->slug ?>" <?= isset($_GET['region']) && $_GET['region'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
-					<?php endforeach; ?>
-				</select>
+						<?php endforeach; ?>
+					</select>
+				</div>
+
+
 			</div>
 		</div>
-	</div>
+	<?php endif; ?>
 </form>
