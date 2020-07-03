@@ -28,9 +28,7 @@ $unique_id = wp_unique_id('search-form-');
 		<h5 class="filters--title"> Filters </h5>
 		<div class="filters--itens">
 			<div class="filters--item">
-				<select name="date-range" id="date-range">
-					<option value=""> Date range </option>
-				</select>
+			<input type="text" value="<?= isset($_GET['daterange']) || !empty($_GET['daterange'])? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange'])? 'true' : 'false' ?>" placeholder="Date range" name="daterange">
 			</div>
 
 			<div class="filters--item">

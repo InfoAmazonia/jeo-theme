@@ -18,18 +18,27 @@ Vue.component('image-block', ImageBlock);
             });
         }
 
-        $(window).scroll(function () {
-            var headerHeight = $('.middle-header-contain').height();
-            // console.log(headerHeight);
-            if ($(this).scrollTop() > headerHeight) {
-                $('.bottom-header-contain').addClass("fixed-header");
-            } else {
-                $('.bottom-header-contain').removeClass("fixed-header");
-            }
-        });
+        // $(window).scroll(function () {
+        //     var headerHeight = $('.middle-header-contain').height();
+        //     // console.log(headerHeight);
+        //     if ($(this).scrollTop() > headerHeight) {
+        //         $('.bottom-header-contain').addClass("fixed-header");
+        //     } else {
+        //         $('.bottom-header-contain').removeClass("fixed-header");
+        //     }
+        // });
 
         jQuery('.filters select').change(function() {
             jQuery(this).closest('form').submit();
         });
+
+        jQuery('input[name="daterange"]').daterangepicker({
+            'minDate': '01/01/2010',
+            'maxDate': new Date(),
+        });
+
+        if(jQuery('input[name="daterange"]').attr('replace-empty') === "true") {
+            jQuery('input[name="daterange"]').val('')
+        }
     });
 })(jQuery);

@@ -59,7 +59,7 @@
 
             &--item {
                 position: relative;
-                select {
+                select, input {
                     height: 36px;
                     width: 100%;
                     border: 2px solid #DDDDDD;
@@ -72,6 +72,7 @@
                     letter-spacing: 0;
                     appearance: none;
                     line-height: 19px;  
+                    outline: none;
 
                     
                 }
@@ -81,9 +82,7 @@
                     bottom: 15px;
                     position: absolute;
                     right: 10px;
-                }
-
-                
+                }                
             }
         }
 
@@ -95,5 +94,30 @@
 .search-form {
     label[for=search-form-3], label[for=search-form-2], label[for=search-form-1]{
         display: initial;
+    }
+}
+
+.daterangepicker {
+    button.applyBtn.btn.btn-sm.btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+    .calendar-table {
+        td {
+            &.active {
+                background-color: var(--primary);
+
+                &.in-range {
+                    background-color: var(--primary);
+                }
+            }
+            &.in-range {
+                background-color: #f7f7f7;
+            }
+        }
+    }
+
+    .daterangepicker_input i {
+        top: 5px;
     }
 }
