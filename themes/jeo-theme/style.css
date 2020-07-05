@@ -2842,7 +2842,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  
  .entry-content a {
    color: #555;
-   text-decoration: underline;
+   /* text-decoration: underline; */
  }
  
  .entry-content a:visited {
@@ -4065,7 +4065,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  }
  
  .site-footer .footer-widgets {
-   padding: 1rem 0 2rem;
+   padding: 1rem 0 1rem;
  }
  
  .site-footer .footer-widgets .wrapper {
@@ -6139,27 +6139,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
    color: #767676;
  }
  
- /* Footer */
- #colophon,
- #colophon .social-navigation a {
-   color: #111;
- }
- 
- #colophon .footer-branding .wrapper,
- #colophon .footer-widgets:first-child {
-   border-top: 3px solid currentColor;
- }
- 
- #colophon .widget-title {
-   color: #111;
-   font-size: 20px;
- }
- 
- #colophon .widget,
- .site-info {
-   font-family: "Fira Sans Condensed", -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
- }
- 
+
  /* Yoast Breadcrumbs */
  .site-breadcrumb .wrapper > span::before {
    background-color: #36f;
