@@ -233,7 +233,7 @@ endif;
 					<div class="wrapper">
                         <div class="left">
                             <div class="subpage-toggle-contain">
-                                <button class="subpage-toggle" on="tap:subpage-sidebar.toggle">
+								<button class="mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
                                     <?php echo wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
                                     <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'newspack' ); ?></span>
 								</button>

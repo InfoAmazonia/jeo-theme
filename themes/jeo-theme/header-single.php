@@ -245,13 +245,20 @@ endif;
 							get_template_part( 'template-parts/header/header', 'search' );
 						}
 						?>
+						<?php $button_url = get_theme_mod('discovery_button_link'); 
+						if (!empty($button_url)): ?>
+							<a href="<?= $button_url ?>" class="featured-button <?= get_theme_mod('discovery_button_style', 'solid')?>">
+								<i class="far fa-map"></i>
+								Discovery
+							</a>
+						<?php endif; ?>
 					</div><!-- .wrapper -->
 				</div><!-- .bottom-header-contain -->
 				<div class="bottom-header-contain post-header">
 					<div class="wrapper">
                         <div class="left">
                             <div class="subpage-toggle-contain">
-                                <button class="subpage-toggle" on="tap:subpage-sidebar.toggle">
+								<button class="mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
                                     <?php echo wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
                                     <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'newspack' ); ?></span>
 								</button>
