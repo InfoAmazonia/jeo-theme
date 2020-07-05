@@ -71,7 +71,8 @@ header.site-header {
         display: none;
         margin: 0px auto 0;
         background-color: white;
-        border: 1px solid rgb(175, 175, 175);
+        border: 0px !important;
+        box-shadow: 0 3px 6px 0 rgba(166, 163, 163, 0.3);
 
         @include mobile {
             width: 100vw;
