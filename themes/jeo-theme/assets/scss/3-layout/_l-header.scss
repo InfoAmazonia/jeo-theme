@@ -207,6 +207,37 @@ header.site-header {
         color: #191E23 !important;
     }
 
+    nav.main-navigation {
+        margin-bottom: 0px !important;
+    }
+    
+    .main-menu{
+
+        a {
+            width: 100%;
+
+            &:hover {
+                background: #F5F5F5;
+                color: #555D66 !important;
+                text-decoration: none;
+             }
+        }
+    }
+
+    a.discovery-link{
+        width: 100%;   
+        color: var(--primary) !important;
+        font-weight: 700;
+        padding: 0.25rem 0rem;
+
+
+        &:hover {
+            background: #F5F5F5;
+            color: #555D66 !important;
+            text-decoration: none;
+         }
+    }
+
     
 }
 
@@ -232,7 +263,8 @@ header.site-header {
 	overflow: auto;
 	position: fixed;
 	top: 0;
-	z-index: 999999;
+    z-index: 999999;
+    box-shadow: 2px 0 6px 0 rgba(0,0,0,0.3);
 
 	> * {
 		display: none;
@@ -276,7 +308,7 @@ header.site-header {
 }
 
 .overlay-mask {
-	background-color: rgba( 0, 0, 0, 0.5 );
+	/* background-color: rgba( 0, 0, 0, 0.5 ); */
 	bottom: 0;
 	content: '';
 	left: 0;
