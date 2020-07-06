@@ -183,7 +183,7 @@ endif;
 
 						<?php
 							// Header is simplified OR logo is centered:
-							if ( true === $header_simplified || true === $header_center_logo ) :
+							if ( true === $header_simplified || true === $header_center_logo || false === $header_center_logo ) :
 								get_template_part( 'template-parts/header/header', 'search' );
 							endif;
 						?>
@@ -213,13 +213,6 @@ endif;
 							}
 							?>
 						</div>
-
-						<?php
-						// If logo is not centered.
-						if ( false === $header_center_logo && has_nav_menu( 'primary-menu' ) ) {
-							get_template_part( 'template-parts/header/header', 'search' );
-						}
-						?>
 						<?php $button_url = get_theme_mod('discovery_button_link'); 
 						if (!empty($button_url)): ?>
 							<a href="<?= $button_url ?>" class="featured-button <?= get_theme_mod('discovery_button_style', 'solid')?>">
