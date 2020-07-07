@@ -5,7 +5,8 @@
 
     &__newsletter-bkg{
         border-radius: 40px;
-        padding: 1rem 3rem;
+        padding: 2rem 3rem 1.5rem;
+        min-height: auto;
 
         .wp-block-columns{
             margin-bottom: 0px;
@@ -13,6 +14,10 @@
 
         &.wp-block-cover.has-background-dim:not(.has-background-gradient):before {
             border-radius: 40px;
+        }
+
+        h3 {
+            margin-bottom: 0px !important;
         }
     }
 
@@ -34,6 +39,10 @@
         border-bottom-left-radius: 0;
         color: #fff;
         border-color: var(--primary);
+    }
+
+    &__align-items{
+        align-items: flex-end;
     }
 
     &__see-more-posts {

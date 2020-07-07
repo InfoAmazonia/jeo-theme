@@ -234,3 +234,9 @@
         }
     }
 }
+
+.single:not(.has-large-featured-image) .entry-header {
+    border-bottom: 0px;
+    max-width: 780px;
+    margin: auto;
+}
