@@ -258,6 +258,10 @@ header.site-header {
     p.title {
         font-family: var(--featured-font);
     }
+
+    p.site-description {
+        display: none;
+    }
   }
 
 
