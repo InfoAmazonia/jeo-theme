@@ -62,15 +62,50 @@
     .has-more-button button {
         background: transparent;
         color: #555D66;
-        font-size: 14px;
+        font-size: 14px !important;
+        width: 100%;
+        border-top: 2px solid #DDDDDD;
     }
 }
 
 .wp-block-columns{
     margin-bottom: 0px;
+
+    .wp-block-column .wp-block-button {
+        margin-top: 15px !important;
+    }
+
+    .button__fullwidth-link a {
+        width: 100%;
+    }
 }
 
 hr {
     margin: 0px !important;
 }
 
+.entry .entry-content .wp-block-group .wp-block-group__inner-container > * {
+    margin-top: 0px;
+  }
+
+.wp-block-newspack-blocks-carousel .amp-carousel-button, .wp-block-newspack-blocks-carousel .swiper-button {
+    background-color: rgba(25,30,35,0.3) !important;
+    border-radius: 50px !important;
+}
+
+.wp-block-newspack-blocks-carousel article .entry-wrapper {
+    background-color: rgba(25,30,35,0.8) !important;
+    padding: 1em !important;
+}
+
+.wp-block-newspack-blocks-carousel .swiper-pagination-bullet {
+    background: var(--primary) !important;
+}
+
+.wp-block-newspack-blocks-carousel .swiper-pagination-bullet.swiper-pagination-bullet-active, .wp-block-newspack-blocks-carousel .swiper-pagination-bullet[selected] {
+    width: 12px !important;
+}
+
+.wp-block-newspack-blocks-carousel .swiper-pagination-bullets {
+    height: calc(18px + 12px) !important;
+}
