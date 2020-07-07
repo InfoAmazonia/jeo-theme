@@ -58,6 +58,12 @@
             border-radius: 15px 15px 0 0;
         }
     }
+
+    .has-more-button button {
+        background: transparent;
+        color: #555D66;
+        font-size: 14px;
+    }
 }
 
 .wp-block-columns{
