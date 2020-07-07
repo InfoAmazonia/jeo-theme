@@ -125,6 +125,10 @@
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 column-gap: 14px;
+
+                @include tablet {
+                    grid-template-columns: auto;
+                }
             }
 
             &--item {
@@ -152,7 +156,11 @@
                     bottom: 15px;
                     position: absolute;
                     right: 10px;
-                }                
+                }   
+                
+                @include tablet {
+                    margin-bottom: 15px;
+                }
             }
         }
 
