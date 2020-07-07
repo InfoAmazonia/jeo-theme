@@ -23,8 +23,9 @@ function newspack_posted_on()
 		<div class="post-date">
 			<?php the_date('F j, Y') ?>
 			<?php if (get_the_date() != get_the_modified_date() || get_the_time() != get_the_modified_time()) : ?>
-				<?php if(get_post_meta(get_the_ID(), 'enable-post-erratum', true)) echo '<a href="#erratum">' ?>
 				<span class="hide-tablet-down">- (Updated <?= the_modified_date("F j, Y \a\\t G:i") ?>)</span>
+				<?php if(get_post_meta(get_the_ID(), 'enable-post-erratum', true)) echo '<a href="#erratum">' ?>
+				<i class="fas fa-exclamation-triangle"></i>
 				<?php if(get_post_meta(get_the_ID(), 'enable-post-erratum', true)) echo '</a>' ?>
 			<?php endif ?>
 

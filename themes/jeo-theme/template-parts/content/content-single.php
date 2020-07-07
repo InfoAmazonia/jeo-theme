@@ -32,9 +32,9 @@
 				<div class="wrong-title">
 					<?= __('Sorry, We said wrong', 'jeo') ?>
 				</div>
-				<div class="wrong-content">
+				<p class="wrong-content">
 					<?= get_post_meta(get_the_ID(), 'post-erratum', true) ?>
-				</div>
+				</p>
 			</div>
 		<?php }
 
