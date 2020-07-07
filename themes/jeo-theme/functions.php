@@ -350,8 +350,6 @@ function _search_pre_get_posts($query)
 		return $query;
 	}
 
-	$query->set( 'category_name', 'dadocracia' );
-
 	if (isset($query->query['p']) && strpos($query->query['p'], ':redirect') > 0) {
 		$query->query['p'] = intval($query->query['p']);
 		$query->is_404 = false;

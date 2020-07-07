@@ -66,5 +66,8 @@ Vue.component('image-block', ImageBlock);
 
 
         }
+        
+        jQuery('header #header-search').css('top', (jQuery('.bottom-header-contain').offset().top + 50) + 'px')
+        jQuery('header #header-search').css('height', (jQuery(window).height() - jQuery('.site-header').height()) + 'px')
     });
 })(jQuery);
