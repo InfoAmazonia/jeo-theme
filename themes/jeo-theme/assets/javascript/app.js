@@ -35,6 +35,18 @@ Vue.component('image-block', ImageBlock);
         jQuery('input[name="daterange"]').daterangepicker({
             'minDate': '01/01/2010',
             'maxDate': new Date(),
+            'autoUpdateInput': false,
+            'locale': {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        jQuery('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        jQuery('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
         });
 
         if(jQuery('input[name="daterange"]').attr('replace-empty') === "true") {
@@ -44,7 +56,15 @@ Vue.component('image-block', ImageBlock);
         if(jQuery('.sorting-method').length) {
             jQuery('.sorting-method .current').click(function() {
                 jQuery('.sorting-method .options').toggleClass('active');
+                jQuery('#sorting').attr('value', jQuery('.sorting-method .options button').attr('value'));
             });
+
+            jQuery('.sorting-option').click(function() {
+                jQuery('#sorting').attr('value', jQuery(this).attr('value'));
+                jQuery(this).closest('form').submit();
+            });
+
+
         }
     });
 })(jQuery);

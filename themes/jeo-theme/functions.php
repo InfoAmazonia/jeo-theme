@@ -362,6 +362,7 @@ function _search_pre_get_posts($query)
 
 	if ($query->is_search() && $query->is_main_query()) {
 		//$query->set('post_type', [$query->query['post_type']]);
+		// Date filter
 		if (isset($_GET['daterange'])) {
 			$date_range = explode(' - ', $_GET['daterange'], 2);
 			if (sizeof($date_range) == 2) {
@@ -400,9 +401,18 @@ function _search_pre_get_posts($query)
 
 				if (!empty($date_query)) {
 					$query->set('date_query', $date_query);
-					return $query;
 				}
 			}
+		}
+
+		if (isset($_GET['order'])) {
+			$order_option = $_GET['order'];
+			$query->set('orderby', 'date');
+
+			if ($order_option == 'ASC' || $order_option == 'DESC') {
+				$query->set('order', $_GET['order']);
+			}
+			//var_dump($query);
 		}
 	}
 	return $query;

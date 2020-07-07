@@ -29,7 +29,7 @@ $unique_id = wp_unique_id('search-form-');
 			<div class="filters--itens">
 
 				<div class="filters--item">
-					<input type="text" value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" placeholder="Date range" name="daterange">
+					<input type="text" value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" autocomplete="off" placeholder="Date range" name="daterange">
 				</div>
 
 				<div class="filters--item">
@@ -70,15 +70,32 @@ $unique_id = wp_unique_id('search-form-');
 
 			<div class="sorting-method">
 				Sort by:
-				<button type="button" class="current">
-					Latest 
+				<?php 
+					$button_text = 'Latest';
+					$filtered_value = 'DESC';
+
+					if (isset($_GET['order'])) {
+						$order_option = $_GET['order'];
+						if ($order_option == 'ASC') {
+							$button_text = 'Oldest';
+							$filtered_value = 'ASC';
+						} else if ($order_option == 'DESC') {
+							$button_text = 'Latest';
+						}
+					}
+				
+				?>
+				<button type="button" class="current" value="<?= $filtered_value ?>">
+					<?= $button_text ?>
 				</button>
 
 				<div class="options">
-					<button type="button" class="option">
-						Oldest
+					<button type="button" class="option sorting-option" value="<?= $filtered_value == 'ASC'? 'DESC' : 'ASC' ?>">
+						<?= $filtered_value == 'ASC'? 'Latest' : 'Oldest' ?>
 					</button>
 				</div>
+
+				<input type="hidden" id="sorting" name="order" value="DESC">
 			</div>
 		</div>
 	<?php endif; ?>
