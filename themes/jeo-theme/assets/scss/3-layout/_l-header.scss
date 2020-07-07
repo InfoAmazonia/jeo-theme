@@ -326,6 +326,7 @@ header.site-header {
 .mobile-menu-opened #mobile-sidebar-fallback {
     left: 0;
 }
+
 #mobile-sidebar-fallback {
     left: -100%;
     transition: left 0.2s;
@@ -333,4 +334,10 @@ header.site-header {
 
 .left-menu-toggle {
     display: block !important;
+}
+
+body.menu-opened {
+    #mobile-sidebar-fallback {
+        left: 0;
+    }
 }
