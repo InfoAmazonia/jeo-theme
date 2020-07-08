@@ -79,6 +79,10 @@ function newspack_scott_custom_typography_css() {
 			font-size: ' . get_theme_mod('typo_h1_size', '2') . $font_unit . $forced_size . ';
 		}
 
+		.single-post h1.entry-title{
+			font-size: ' . get_theme_mod('typo_h1_size', '2') . $font_unit . $forced_size . ';
+		}
+
 		h2 {
 			font-size: ' . get_theme_mod('typo_h2_size', '1.5') . $font_unit . $forced_size . ';
 		}
@@ -123,7 +127,8 @@ function newspack_scott_custom_typography_css() {
 		$default_font = get_theme_mod('font_body');
 
 		$theme_css .= '
-		.single .entry-title, .page .entry-header .entry-title, .single .main-content, .page .main-content{
+		.single .entry-title, .page .entry-header .entry-title, .single .main-content, 
+		.page .main-content{
 			font-family: "' . $featured_font . '", "sans-serif";
 		}
 
