@@ -1,6 +1,30 @@
 .single {
+    .entry-header {
+        width: 100%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include desktop {
+            max-width: 58.334%;
+        }
+
+        .entry-meta {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
     .main-content {
         width: 100%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include desktop {
+            max-width: 58.334%;
+        }
 
         .tags-links {
             border-top: 1px solid #979797;
@@ -105,6 +129,7 @@
                 }
             }
         }
+
     }
 
     section.behind {
@@ -128,14 +153,14 @@
                 max-width: 90%;
                 margin: 0 auto;
 
-                @include large {
+                @include desktop {
                     max-width: 58.334%;
                 }
             }
 
             .featured-image-behind {
                 .entry-header {
-                    @include large {
+                    @include desktop {
                         max-width: 58.334%;
                     }
                 }
