@@ -1,24 +1,31 @@
-.post-template-single-feature .entry-meta ,
-.post-template-single-wide .entry-meta {
-        color: rgba(85, 93, 102, 0.699);
-        font-size: 14px;
-        letter-spacing: 0;
-        line-height: 17px;
-        display: flex;
-        justify-content: space-between;
-        margin: 13px auto;
 
-        .byline {
-            margin-right: 15px;
-        }
+
+.post-template .site-content {
+    margin-top: 1.875em;
 }
 
-
-
+ 
 .single, .post-template-single-feature , .post-template-single-wide   {
 
     h1, h2, h3, h4, h5 {
         font-family: var(--featured-font);
+    }
+
+    h1.entry-title {
+        @include mobile{
+            font-size: 1.8em !important;
+            text-align: center;
+        }
+    }
+
+    .entry-title{
+        margin-bottom: 15px;
+    }
+
+    span.cat-links {
+        @include mobile{
+            text-align: center;
+        }
     }
 
     .entry-header {
@@ -31,11 +38,19 @@
             max-width: 58.334%;
         }
 
+        @include mobile{
+            max-width: 100% !important;
+        }
+
         .entry-meta {
             align-items: center;
             display: flex;
             justify-content: space-between;
             width: 100%;
+
+            @include mobile{
+                display: inherit;
+            }
         }
     }
     .main-content {
@@ -43,6 +58,10 @@
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
+
+        @include mobile{
+            max-width: 100% !important;
+        }
 
         @include desktop {
             max-width: 58.334%;
@@ -167,12 +186,25 @@
                 font-size: 14px;
                 letter-spacing: 0;
                 line-height: 17px;
-                display: flex;
                 justify-content: space-between;
                 margin: 13px auto;
 
+
+
                 .byline {
                     margin-right: 15px;
+                }
+
+                .hide-tablet-down{
+                    display: initial !important;
+                }
+
+                @include desktop{
+                    display: flex;
+                }
+
+                @include mobile{
+                    margin: 27px auto 5px;
                 }
             }
 
@@ -212,6 +244,10 @@
 
                 .wrapper-entry-title{
                     margin: 120px auto;
+
+                    @include mobile{
+                        margin: 60px auto;
+                    }
                 }
 
                 .image-meta {
@@ -297,4 +333,12 @@
     border-bottom: 0px;
     max-width: 780px;
     margin: auto;
+    padding:0px;
+}
+
+.entry .entry-content > *{
+
+    @include mobile{
+        margin: 25px 0;
+    }
 }
