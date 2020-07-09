@@ -15,7 +15,7 @@
 
 
 
-.single {
+.single, .post-template-single-feature , .post-template-single-wide   {
 
     h1, h2, h3, h4, h5 {
         font-family: var(--featured-font);
@@ -159,8 +159,8 @@
 
     }
 
-    section.behind {
-        main {
+    /*section.behind {
+        main {*/
             .entry-meta {
                 /* max-width: 90%; */
                 color: rgba(85, 93, 102, 0.699);
@@ -259,8 +259,8 @@
 
                 }
             }
-        }
-    }
+      /*  }
+    }*/
 
     section.small {
         .entry-header {

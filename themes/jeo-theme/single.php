@@ -18,11 +18,14 @@ get_header('single');
 			while ( have_posts() ) :
 				the_post();
 
-				$isLargeFeatured = false;
+				$isImageBehind = false;
 
+				if ( in_array( newspack_featured_image_position(), array( 'behind') )) {
+					$isImageBehind = true;
+				}
+			
 				// Template part for large featured images.
 				if ( in_array( newspack_featured_image_position(), array( 'large', 'behind', 'beside' ) )) :
-					$isLargeFeatured = true;
 					get_template_part( 'template-parts/post/large-featured-image' );
 				else :
 				?>
@@ -33,7 +36,7 @@ get_header('single');
 				<?php endif; ?>
 
 				<div class="main-content">
-					<?php if($isLargeFeatured) : ?>
+					<?php if($isImageBehind) : ?>
 						<div class="entry-subhead">
 							<div class="entry-meta"> 
 								<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
