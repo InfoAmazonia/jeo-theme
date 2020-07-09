@@ -58,6 +58,11 @@
             border-radius: 15px 15px 0 0;
         }
     }
+
+    a.external-link {
+        color: var(--primary);
+        padding-right: 15px;
+    }
 }
 
 .wp-block-columns{

@@ -3,7 +3,6 @@ import ImageBlock from './components/imageBlock/ImageBlock';
 
 Vue.component('image-block', ImageBlock);
 
-
 window.addEventListener('DOMContentLoaded',function () {
     const siteLinks = document.querySelectorAll('article > .entry-wrapper > h2 > a').forEach( element => {
         const targetLink = element.getAttribute('href');
@@ -17,9 +16,19 @@ window.addEventListener('DOMContentLoaded',function () {
                 externalSourceLink.classList.add('external-link');
                 externalSourceLink.setAttribute('href', targetLink);
                 externalSourceLink.setAttribute('target', '_blank');
-                
-                externalSourceLink.innerHTML = `<i class="fas fa-external-link-alt"></i> <span class="target-title">${targetLink}</span>`;
                 externalSourceLink.setAttribute('href', targetLink);
+
+                const external_link_api = document.location.origin + '/wp-json/api/external-link/?target_link=' + targetLink;
+                console.log(external_link_api);
+
+                jQuery.ajax({
+                    type: 'GET',
+                    url: external_link_api,
+                    success: function(data) {
+                        console.log(data);
+                        externalSourceLink.innerHTML = `<i class="fas fa-external-link-alt"></i> <span class="target-title">${data}</span>`;
+                    },
+                });
                 
                 const metaarea = element.parentElement.parentElement.querySelector('.entry-meta');
                 metaarea.insertBefore(externalSourceLink, metaarea.firstChild);

@@ -16,7 +16,7 @@ class API {
     static function get_external_title($params) {
         $external_link = $params['target_link'];
 
-        $cached_result = get_transient($external_link);
+        $cached_result = get_transient(md5($external_link));
         //var_dump($cached_result);
 
         if($cached_result) {
@@ -42,9 +42,11 @@ class API {
         if(sizeof($found_posts)) {
             $found_post = $found_posts[0];
             $title_meta = get_post_meta( $found_post->ID, 'external-title', true);
-            set_transient($external_link, $title_meta, 15 * MINUTE_IN_SECONDS);
+            set_transient(md5($external_link), $title_meta, 15 * MINUTE_IN_SECONDS);
 
             return $title_meta;
+        } else {
+            return 'External source';
         }
         
         
