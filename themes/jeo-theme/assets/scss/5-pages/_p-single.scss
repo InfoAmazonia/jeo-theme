@@ -1,4 +1,9 @@
 .single {
+
+    h1, h2, h3, h4, h5 {
+        font-family: var(--featured-font);
+    }
+
     .entry-header {
         width: 100%;
         max-width: 90%;
@@ -63,6 +68,10 @@
         .author-bio {
             flex-wrap: wrap;
 
+            p {
+                margin: 0;
+            }
+
             .author-introduce-title {
                 width: 100%;
                 color: #555D66;
@@ -86,6 +95,7 @@
                 .author-bio-header {
                     letter-spacing: 0;
                     line-height: 22px;
+                    display: flex;
                     
                     .accent-header {
                         font-family: var(--primary-font);
@@ -163,6 +173,8 @@
                     @include desktop {
                         max-width: 58.334%;
                     }
+
+                    margin: 1.25em auto 1.5rem;
                 }
 
                 .wrapper {
@@ -179,6 +191,10 @@
                             cursor:  pointer;
                         }
                     }
+                }
+
+                .wrapper-entry-title{
+                    margin: 120px auto;
                 }
 
                 .image-meta {
