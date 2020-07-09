@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/inc/generic-css-injection.php';
 require __DIR__ . '/inc/template-tags.php';
+require __DIR__ . '/inc/api.php';
 
 /**
  * Custom typography styles for child theme.
@@ -416,3 +417,15 @@ function custom_image_block()
 }
 
 add_action('init', 'custom_image_block');
+
+
+add_filter('post_link', 'my_get_permalink', 10, 3);
+
+function my_get_permalink($url, $post, $leavename=false) {
+	$external_source_link = get_post_meta($post->ID, 'external-source-link', true);
+	if($external_source_link) {
+		return $external_source_link;
+	}
+
+	return $url;
+}

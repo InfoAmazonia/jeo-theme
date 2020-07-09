@@ -4,6 +4,33 @@ import ImageBlock from './components/imageBlock/ImageBlock';
 Vue.component('image-block', ImageBlock);
 
 
+window.addEventListener('DOMContentLoaded',function () {
+    const siteLinks = document.querySelectorAll('article > .entry-wrapper > h2 > a').forEach( element => {
+        const targetLink = element.getAttribute('href');
+
+        try {
+            const targetLinkSource = new URL(targetLink).origin;
+            if(document.location.origin !== targetLinkSource) {
+                element.setAttribute('target', '_blank');
+
+                const externalSourceLink = document.createElement("a");
+                externalSourceLink.classList.add('external-link');
+                externalSourceLink.setAttribute('href', targetLink);
+                externalSourceLink.setAttribute('target', '_blank');
+                
+                externalSourceLink.innerHTML = `<i class="fas fa-external-link-alt"></i> <span class="target-title">${targetLink}</span>`;
+                externalSourceLink.setAttribute('href', targetLink);
+                
+                const metaarea = element.parentElement.parentElement.querySelector('.entry-meta');
+                metaarea.insertBefore(externalSourceLink, metaarea.firstChild);
+            }
+        }
+        catch(err) {
+            //console.log("Invalid link: ", targetLink);
+        }
+        
+    });
+});
 
 (function ($) {
     $(document).ready(function () {
