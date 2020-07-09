@@ -243,7 +243,11 @@
                 }
 
                 .wrapper-entry-title{
-                    margin: 120px auto;
+                    margin: 45px auto;
+
+                    @include large {
+                        margin: 120px auto;
+                    }
 
                     @include mobile{
                         margin: 60px auto;
@@ -251,8 +255,8 @@
                 }
 
                 .image-meta {
-                    background: rgba(25, 30, 35, 0.9);
-                    color: #F9F9F9;
+                    // background: rgba(25, 30, 35, 0.9);
+                    // color: #F9F9F9;
                 }
             }
 
