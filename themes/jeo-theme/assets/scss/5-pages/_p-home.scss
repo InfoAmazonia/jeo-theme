@@ -75,6 +75,11 @@
         width: 100%;
         border-top: 2px solid #DDDDDD;
     }
+    
+    a.external-link {
+        color: var(--primary);
+        padding-right: 15px;
+    }
 }
 
 .wp-block-columns{

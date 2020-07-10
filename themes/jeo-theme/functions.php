@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/inc/generic-css-injection.php';
 require __DIR__ . '/inc/template-tags.php';
+require __DIR__ . '/inc/api.php';
 
 /**
  * Custom typography styles for child theme.
@@ -249,6 +250,15 @@ function register_metaboxes()
 		'display_erratum_block',
 		'post'
 	);
+
+	add_meta_box(
+		'external-post',
+		'External post',
+		'display_external_post_callback',
+		'post',
+		'side',
+		'default',
+	);
 }
 
 function display_autor_bio_callback()
@@ -296,6 +306,31 @@ function display_erratum_block()
 <?php
 }
 
+function display_external_post_callback() {
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());
+?>
+
+	<p>
+		<div class="jeo-row-content">
+			<label for="external-title">
+				<?php _e('Original Publisher name', 'jeo-textdomain') ?>
+				<input type="text" style="width: 100%" name="external-title" id="external-title" value="<?php if (isset($jeo_stored_meta['external-title'])) echo $jeo_stored_meta['external-title'][0]; ?>" />
+			</label>
+			
+			<br><br>
+			
+			<label for="external-source-link">
+				<?php _e('Original Publisher link', 'jeo-textdomain') ?>
+				<input type="text" style="width: 100%" name="external-source-link" id="external-source-link" value="<?php if (isset($jeo_stored_meta['external-source-link'])) echo $jeo_stored_meta['external-source-link'][0]; ?>" />
+			</label>
+			
+		</div>
+	</p>
+
+<?php
+}
+
 /**
  * Saves the custom meta input
  */
@@ -327,6 +362,14 @@ function meta_save($post_id)
 
 	if(isset($_POST['post-erratum'])) {
 		update_post_meta($post_id, 'post-erratum', $_POST['post-erratum']);
+	}
+
+	if(isset($_POST['external-source-link'])) {
+		update_post_meta($post_id, 'external-source-link', $_POST['external-source-link']);
+	}
+
+	if(isset($_POST['external-title'])) {
+		update_post_meta($post_id, 'external-title', $_POST['external-title']);
 	}
 }
 
@@ -374,3 +417,15 @@ function custom_image_block()
 }
 
 add_action('init', 'custom_image_block');
+
+
+add_filter('post_link', 'my_get_permalink', 10, 3);
+
+function my_get_permalink($url, $post, $leavename=false) {
+	$external_source_link = get_post_meta($post->ID, 'external-source-link', true);
+	if($external_source_link) {
+		return $external_source_link;
+	}
+
+	return $url;
+}
