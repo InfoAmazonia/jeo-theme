@@ -314,14 +314,14 @@ function display_external_post_callback() {
 	<p>
 		<div class="jeo-row-content">
 			<label for="external-title">
-				<?php _e('Target title', 'jeo-textdomain') ?>
+				<?php _e('Original Publisher name', 'jeo-textdomain') ?>
 				<input type="text" style="width: 100%" name="external-title" id="external-title" value="<?php if (isset($jeo_stored_meta['external-title'])) echo $jeo_stored_meta['external-title'][0]; ?>" />
 			</label>
 			
 			<br><br>
 			
 			<label for="external-source-link">
-				<?php _e('External URL', 'jeo-textdomain') ?>
+				<?php _e('Original Publisher link', 'jeo-textdomain') ?>
 				<input type="text" style="width: 100%" name="external-source-link" id="external-source-link" value="<?php if (isset($jeo_stored_meta['external-source-link'])) echo $jeo_stored_meta['external-source-link'][0]; ?>" />
 			</label>
 			
