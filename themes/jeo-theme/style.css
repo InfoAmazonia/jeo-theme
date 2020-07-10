@@ -4545,7 +4545,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  
  .wp-block-columns .wp-block-column > * {
    margin-bottom: 32px;
-   margin-top: 32px;
+   /* margin-top: 32px;*/
+   margin-top: 10px;
  }
  
  .wp-block-columns .wp-block-column > *:first-child,
@@ -5207,11 +5208,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
    font-size: 1.2em;
    white-space: pre-wrap;
    word-break: break-word;
- }
- 
- .entry .entry-content .wp-block-group .wp-block-group__inner-container > * {
-   margin-bottom: 32px;
-   margin-top: 32px;
  }
  
  .entry .entry-content .wp-block-group .wp-block-group__inner-container > *:first-child {

@@ -15,7 +15,10 @@ if ('behind' === newspack_featured_image_position()) :
 ?>
 	<div class="featured-image-behind">
 		<?php newspack_post_thumbnail(); ?>
+		
 		<div class="wrapper">
+			
+
 			<header class="entry-header">
 				<?php get_template_part('template-parts/header/entry', 'header'); ?>
 			</header>
@@ -56,21 +59,7 @@ if ('behind' === newspack_featured_image_position()) :
 			</div>
 		</div>
 	</div><!-- .featured-image-behind -->
-	<div class="entry-subhead">
-		<div class="entry-meta">
-			<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
-				<?php newspack_posted_by(); ?>
-			<?php endif; ?>
-			<div></div>
-			<?php newspack_posted_on(); ?>
-		</div><!-- .meta-info -->
-		<?php
-		// Display Jetpack Share icons, if enabled
-		if (function_exists('sharing_display')) {
-			sharing_display('', true);
-		}
-		?>
-	</div>
+
 
 	<?php if ($caption_exists) : ?>
 		<figcaption><?php //echo wp_kses_post($caption); 

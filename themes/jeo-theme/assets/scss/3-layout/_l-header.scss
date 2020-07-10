@@ -61,6 +61,10 @@ header.site-header {
         @include mobile {
             display: none;
         }
+
+        .site-header .nav1{
+            font-size: 14px;
+        }
     }
 
     .bottom-header-contain.post-header.active {
@@ -199,8 +203,14 @@ header.site-header {
             margin-right: auto;
             margin-left: 0px;
         }
-        .site-description {
-            color: var(--description-color)
+
+        p.site-description {
+            font-size: 14px;
+            padding: 9px !important;
+            font-style: normal;
+            color: var(--description-color);
+            font-weight: bold;
+            font-family: var(--primary-font);
         }
     }
 }
@@ -257,6 +267,10 @@ header.site-header {
 
     p.title {
         font-family: var(--featured-font);
+    }
+
+    p.site-description {
+        display: none;
     }
   }
 
@@ -326,6 +340,7 @@ header.site-header {
 .mobile-menu-opened #mobile-sidebar-fallback {
     left: 0;
 }
+
 #mobile-sidebar-fallback {
     left: -100%;
     transition: left 0.2s;
