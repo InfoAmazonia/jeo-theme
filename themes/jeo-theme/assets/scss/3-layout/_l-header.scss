@@ -61,9 +61,15 @@ header.site-header {
         @include mobile {
             display: none;
         }
-
-        .site-header .nav1{
+        
+        .nav1 .main-menu > li {
             font-size: 14px;
+            color: white;
+        }
+        
+        .wrapper {
+            border-bottom: 0px;
+            border-top: 0px;
         }
     }
 

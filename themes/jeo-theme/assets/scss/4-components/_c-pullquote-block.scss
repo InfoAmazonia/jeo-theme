@@ -1,0 +1,85 @@
+.single{
+    .wp-block-pullquote, .wp-block-pullquote cite {
+        font-family: var(--featured_font);
+    }
+}
+.post-template-single-feature {
+
+    .wp-block-pullquote.alignleft.is-style-jeo {
+        margin-left: 0px;
+    }
+}
+    .wp-block-pullquote.is-style-jeo {
+
+        font-family: var(--featured_font);
+        padding: 1rem calc( 2 * 1rem);
+
+        blockquote {
+            margin: 0px;
+            p {
+                font-style: normal;
+                padding: 90px 0px 30px;
+                font-weight: normal;
+
+                &:first-of-type::before{
+                    content: '\f10d';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 600;
+                    font-size: 60px;
+                    left: 2rem !important;
+                }
+            }
+
+            cite {
+                font-family: var(--featured_font);
+                text-transform: none;
+                font-size: inherit;
+
+                &::before {
+                    margin-right: 1.875rem;
+                }
+            }
+
+            &::before, &::after{
+                content: none;
+            }
+        }
+    }
+
+/*.single-post{
+    .wp-block-pullquote{
+
+        font-family: var(--featured_font);
+
+        blockquote {
+            margin: 0px;
+            p {
+                font-style: normal;
+                padding: 60px 0px 30px;
+                font-weight: normal;
+
+                &:first-of-type::before{
+                    content: '\f10d';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 600;
+                    font-size: 60px;
+                    left: 2rem !important;
+                }
+            }
+
+            cite {
+                font-family: var(--featured_font);
+                text-transform: none;
+                font-size: inherit;
+
+                &::before {
+                    margin-right: 1.875rem;
+                }
+            }
+
+            &::before, &::after{
+                content: none;
+            }
+        }
+    }
+}*/
