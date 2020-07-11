@@ -164,3 +164,7 @@
   .wp-block-pullquote.is-style-jeo blockquote::after {
     content: none !important;
   }
+
+  .wp-block-pullquote.is-style-jeo .wp-block-pullquote__citation {
+    text-transform: none !important;
+  }
