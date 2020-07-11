@@ -142,8 +142,7 @@ function newspack_scott_custom_typography_css() {
 		$default_font = get_theme_mod('font_body');
 
 		$theme_css .= '
-		.single .entry-title, .page .entry-header .entry-title, .single .main-content, 
-		.page .main-content{
+		.single .entry-title, .single .main-content{
 			font-family: "' . $featured_font . '", "sans-serif";
 		}
 
