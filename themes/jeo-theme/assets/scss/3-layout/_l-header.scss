@@ -3,6 +3,11 @@ header.site-header {
     #site-navigation {
         text-align: left !important;
     }
+
+    #search-toggle{
+        color: var(--search-icon-color);
+
+    }
     .middle-header-contain {
         background-size: cover;
         background-repeat: no-repeat;
@@ -65,6 +70,10 @@ header.site-header {
         height: 50px;
         display: flex;
         align-items: center;
+
+        #search-toggle {
+            color: #191E23 !important;
+        }
 
         @include mobile {
             display: none;
@@ -341,7 +350,7 @@ header.site-header {
 }
 
 .overlay-mask {
-	/* background-color: rgba( 0, 0, 0, 0.5 ); */
+	background-color: transparent;
 	bottom: 0;
 	content: '';
 	left: 0;
