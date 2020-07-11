@@ -233,7 +233,9 @@ endif;
                             </div>
 						</div>
 						<div class="logo page-header-logo">
-							<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+							<div class="site-branding">
+								<?php newspack_the_sticky_logo(); ?>
+							</div><!-- .site-branding -->
 						</div>
 						<div class="nav-wrapper desktop-only page-header">
 							<div id="tertiary-nav-contain">

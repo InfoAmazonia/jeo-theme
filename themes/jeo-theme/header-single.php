@@ -264,15 +264,19 @@ endif;
                                     <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'newspack' ); ?></span>
 								</button>
 								<div class="logo">
-									<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+									<div class="site-branding">
+										<?php newspack_the_sticky_logo(); ?>
+									</div><!-- .site-branding -->
 								</div>
                             </div>
 						</div>
 						<div class="logo-mobile">
-							<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+									<div class="site-branding">
+										<?php newspack_the_sticky_logo(); ?>
+									</div>
 						</div>
 
-                        <p class="title">	<?php echo wp_kses_post( get_the_title() ); ?></p>
+                        <p class="title"><?php echo wp_kses_post( get_the_title() ); ?></p>
 
                         <div class="page--share">
 							<div class="twitter">

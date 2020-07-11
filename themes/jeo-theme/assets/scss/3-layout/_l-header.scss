@@ -9,7 +9,11 @@ header.site-header {
         background-position: center;
 
         .site-description {
-            color: var(--description-color)
+            color: var(--description-color);
+            font-style: normal;
+            font-family: var(--primary-font);
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .site-branding {

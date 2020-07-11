@@ -59,6 +59,32 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Add sticky logo control and ooption to header
+	$wp_customize->add_setting(
+		'logo_sticky_image',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'logo_sticky_image',
+			array(
+				'label'       => esc_html__('Logo sticky image', 'newspack'),
+				'description' => esc_html__('Upload an image to be used as sticky logo. If there are no sticky logo, the main logo will be used instead', 'newspack'),
+				'section'     => 'title_tagline',
+				'settings'    => 'logo_sticky_image',
+				'flex_width'  => false,
+				'flex_height' => true,
+				'width'       => 400,
+				'height'      => 300,
+			)
+		)
+	);
+
 	// Discovery button style
 	$wp_customize->add_setting(
 		'discovery_button_style',
@@ -340,6 +366,22 @@ function newspack_scott_customizer($wp_customize)
 	);
 
 	// Accent text font 
+	$wp_customize->add_setting(
+		'accent_font_import_code_alternate',
+		array(
+			'sanitize_callback' => 'newspack_sanitize_font_provider_url',
+		)
+	);
+
+	$wp_customize->add_control(
+		'accent_font_import_code_alternate',
+		array(
+			'label'   => __( 'Accent Font Provider Import Code or URL', 'newspack' ),
+			'section' => 'newspack_typography',
+			'type'    => 'text',
+		)
+	);
+
 	$wp_customize->add_setting(
 		'accent_font',
 		array(
