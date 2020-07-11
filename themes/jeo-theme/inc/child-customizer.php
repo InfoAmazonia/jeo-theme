@@ -146,6 +146,25 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Search color options
+	$wp_customize->add_setting(
+		'search_icon_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'search_icon_color',
+			array(
+				'label' => __('Search icon color', 'newspack'),
+				'section'     => 'header_section_appearance',
+			)
+		)
+	);
+
 	// Decoration style
 	$wp_customize->add_setting(
 		'decoration_style',

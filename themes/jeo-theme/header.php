@@ -182,7 +182,7 @@ endif;
 						</div><!-- #tertiary-nav-contain -->
 
 						<?php
-							// Header is simplified OR logo is centered:
+							// Header is simplified and middle menu has search icon always
 							if ( true === $header_simplified || true === $header_center_logo || false === $header_center_logo ) :
 								get_template_part( 'template-parts/header/header', 'search' );
 							endif;

@@ -167,5 +167,17 @@ function newspack_scott_custom_typography_css() {
 		';
 	}
 
+
+	if (!empty(get_theme_mod( 'search_icon_color', ''))) {
+		$color = get_theme_mod( 'search_icon_color');
+
+		$theme_css .= '
+		:root {
+			--search-icon-color: '. $color . ';
+		}
+
+		';
+	}
+
 	return $theme_css;
 }
