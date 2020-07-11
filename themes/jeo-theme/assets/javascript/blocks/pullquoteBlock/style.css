@@ -1,5 +1,8 @@
 /** === Pullquote === */
-
+.wp-block-cover .wp-block-pullquote p {
+  font-size: 22px;
+  line-height: inherit;
+}
 
 .wp-block-pullquote.is-style-solid-color {
   font-family: var(--featured_font);

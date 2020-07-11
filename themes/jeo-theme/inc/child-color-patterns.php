@@ -41,7 +41,8 @@ function newspack_scott_custom_colors_css() {
 			background-color: ' . esc_html( $primary_color ) . ';
 		}
 
-		.wp-block-pullquote blockquote p:first-of-type:before {
+		.wp-block-pullquote blockquote p:first-of-type:before,
+		.wp-block-cover .wp-block-pullquote cite::before {
 			color: ' . esc_html( $primary_color ) . ';
 		}
 

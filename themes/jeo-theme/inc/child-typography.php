@@ -91,6 +91,12 @@ function newspack_scott_custom_typography_css() {
 			font-size: ' . get_theme_mod('typo_h3_size', '1.17') . $font_unit . $forced_size . ';
 		}
 
+		.wp-block-cover .wp-block-pullquote p {
+			font-size: ' . get_theme_mod('typo_h3_size', '1.17') . $font_unit . '!important' . ';
+			line-height: inherit;
+		}
+		
+
 		h4 {
 			font-size: ' . get_theme_mod('typo_h4_size', '1') . $font_unit . $forced_size . ';
 		}
@@ -106,6 +112,15 @@ function newspack_scott_custom_typography_css() {
 		p {
 			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . $forced_size . ';
 		}
+
+		.wp-block-pullquote p{
+			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
+        }
+
+		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p,
+.		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
+			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
+        }
 	';
 
 	if (!empty(get_theme_mod( 'accent_font', ''))) {

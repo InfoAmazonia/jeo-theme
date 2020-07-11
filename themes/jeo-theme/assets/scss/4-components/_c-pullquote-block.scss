@@ -1,16 +1,20 @@
 .single{
+    .wp-block-pullquote { 
+        blockquote{
+            text-align: left;
+        }
+    }
     .wp-block-pullquote, .wp-block-pullquote cite {
         font-family: var(--featured_font);
+        color: inherit;
     }
 }
-
-
 
 .wp-block-pullquote.alignleft.is-style-jeo ,
 .wp-block-pullquote.alignleft.is-style-solid-color{
         margin-left: 0px !important;
         p{
-            font-size: 18px;
+            /*font-size: 18px;*/
             line-height: inherit;
         }
     }
@@ -19,7 +23,7 @@
 .wp-block-pullquote.alignright.is-style-solid-color{
         margin-right: 0px !important;
         p{
-            font-size: 18px;
+            /*font-size: 18px;*/
             line-height: inherit;
         }
  }
