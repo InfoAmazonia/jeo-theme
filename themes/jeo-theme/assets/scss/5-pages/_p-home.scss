@@ -1,3 +1,22 @@
+/* Gray column with green heading */
+.is-style-home__block-sidebar {
+    margin-bottom: 50px !important;
+    background: rgb(245, 245, 245);
+    border-radius: 10px;
+    padding: 0px !important;
+
+      p {
+        margin-bottom: 0px !important;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .wp-block-group__inner-container {
+        .wp-block-group {
+            padding: 30px 30px 15px 30px !important;
+        }
+    }
+}
+
 .home {
     &__newsletter-link{
        color: var(--primary) !important; 
@@ -52,6 +71,7 @@
 
     &__block-sidebar {
 
+        margin-bottom: 50px !important;
         &.has-background {
             border-radius: 10px;
             padding: 0px;

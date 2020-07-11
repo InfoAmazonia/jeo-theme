@@ -449,6 +449,25 @@ function custom_pullquote_scripts() {
 }
 add_action( 'enqueue_block_editor_assets', 'custom_pullquote_scripts' );
 
+function custom_group_block_scripts() {
+	wp_enqueue_script(
+		'be-editor-group', 
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/groupBlock/index.js', 
+		array( 'wp-blocks', 'wp-dom' ), 
+		filemtime( get_stylesheet_directory() . '/assets/javascript/blocks/groupBlock/index.js'),
+		true
+	);
+
+	wp_enqueue_style(
+		'custom-group-block',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/groupBlock/style.css',
+		array(),
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/groupBlock/style.css'),
+		'all',
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'custom_group_block_scripts' );
+
 function fontawesome_back_editor()
 {
 	wp_enqueue_style('jeo-theme-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all');
