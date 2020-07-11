@@ -294,7 +294,7 @@ endif;
 
 							<?php
 								// Header is simplified OR logo is centered:
-								if ( true === $header_simplified || true === $header_center_logo ) :
+								if ( true === $header_simplified || true === $header_center_logo || false === $header_center_logo ) :
 									get_template_part( 'template-parts/header/header', 'search' );
 								endif;
 							?>
