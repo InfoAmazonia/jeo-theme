@@ -129,7 +129,8 @@ header.site-header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 100%
+        width: 100%;
+        height: 50px;
     }
 
     .bottom-header-contain.post-header .left {

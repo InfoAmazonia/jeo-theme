@@ -9,8 +9,16 @@
     }
 }
 
-.author {
+.archive.author {
     .site-content {
         margin-top: 0px;
+    }
+
+    .author-social-links li {
+        margin-right: 40px;
+    }
+
+    .page-header .avatar {
+        margin-right: 2.1875rem !important;
     }
 }

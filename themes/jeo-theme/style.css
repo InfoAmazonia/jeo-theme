@@ -3881,11 +3881,11 @@ body.page .entry-title {
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
-.archive .page-header,
+/*.archive .page-header,
 .blog .page-header,
 .search .page-header {
   margin: 0 0 3rem;
-}
+}*/
 
 .archive .page-header h1,
 .blog .page-header h1,

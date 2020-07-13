@@ -42,9 +42,9 @@ get_header();
 				}
 			?>
 			<div class="author-content">
-				<h1 class="page-title">Author</h1>
-				<h2><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h2>
-				<?php newspack_author_social_links( get_the_author_meta( 'ID' ), 20 ); ?>
+				<h1 class="page-title article-section-title">Author</h1>
+				<h1><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h1>
+				<?php newspack_author_social_links( get_the_author_meta( 'ID' ), 28 ); ?>
 				<p><?php  $author_avatar ?></p>
 			</div>
 		</div>
