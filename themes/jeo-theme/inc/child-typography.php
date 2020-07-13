@@ -142,8 +142,7 @@ function newspack_scott_custom_typography_css() {
 		$default_font = get_theme_mod('font_body');
 
 		$theme_css .= '
-		.single .entry-title, .page .entry-header .entry-title, .single .main-content, 
-		.page .main-content{
+		.single .entry-title, .single .main-content{
 			font-family: "' . $featured_font . '", "sans-serif";
 		}
 
@@ -162,6 +161,18 @@ function newspack_scott_custom_typography_css() {
 		$theme_css .= '
 		:root {
 			--description-color: '. $color . ';
+		}
+
+		';
+	}
+
+
+	if (!empty(get_theme_mod( 'search_icon_color', ''))) {
+		$color = get_theme_mod( 'search_icon_color');
+
+		$theme_css .= '
+		:root {
+			--search-icon-color: '. $color . ';
 		}
 
 		';

@@ -182,7 +182,7 @@ endif;
 						</div><!-- #tertiary-nav-contain -->
 
 						<?php
-							// Header is simplified OR logo is centered:
+							// Header is simplified and middle menu has search icon always
 							if ( true === $header_simplified || true === $header_center_logo || false === $header_center_logo ) :
 								get_template_part( 'template-parts/header/header', 'search' );
 							endif;
@@ -233,7 +233,9 @@ endif;
                             </div>
 						</div>
 						<div class="logo page-header-logo">
-							<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+							<div class="site-branding">
+								<?php newspack_the_sticky_logo(); ?>
+							</div><!-- .site-branding -->
 						</div>
 						<div class="nav-wrapper desktop-only page-header">
 							<div id="tertiary-nav-contain">
@@ -245,8 +247,8 @@ endif;
 							</div><!-- #tertiary-nav-contain -->
 
 							<?php
-								// Header is simplified OR logo is centered:
-								if ( true === $header_simplified || true === $header_center_logo ) :
+								// Header is simplified. In mobile has search icon always
+								if ( true === $header_simplified || true === $header_center_logo  || false === $header_center_logo ) :
 									get_template_part( 'template-parts/header/header', 'search' );
 								endif;
 							?>

@@ -1,0 +1,16 @@
+.page-template {
+    header.entry-header {
+        display: none;
+    }
+
+    .site-content {
+        @include desktop{
+            margin-top: 0px;
+        }
+    }
+
+    .entry .entry-content .wp-block-cover:first-child {
+        margin-top: 0px;
+    }
+}
+
