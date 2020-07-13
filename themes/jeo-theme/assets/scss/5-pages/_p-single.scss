@@ -103,6 +103,7 @@
 
         .author-bio {
             flex-wrap: wrap;
+            width: auto;
 
             p {
                 margin: 0;
@@ -159,6 +160,7 @@
         }
 
         .comments-area {
+            width: auto;
             .comments-title {
                 color: #555D66;
                 font-family: var(--primary-font);

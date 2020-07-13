@@ -4369,8 +4369,9 @@ body.page .entry-title {
 /* Blocks */
 /* !Block styles */
 .entry .entry-content > * {
-  margin: 32px 0;
-  max-width: 100%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  /* max-width: 100%; */
 }
 
 .entry .entry-content > *:last-child {

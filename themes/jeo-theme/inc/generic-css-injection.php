@@ -53,3 +53,9 @@ function generic_css_injection($starter = "")
 }
 
 add_action('wp_head', 'generic_css_injection');
+
+
+function fontawesome_back_editor() {
+	wp_enqueue_style('jeo-theme-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all');
+}
+add_action('enqueue_block_editor_assets', 'fontawesome_back_editor');

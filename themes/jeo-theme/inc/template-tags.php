@@ -23,8 +23,19 @@ function newspack_posted_on()
 		<div class="post-date">
 			<?php the_date('F j, Y') ?>
 			<?php if (get_the_date() != get_the_modified_date() || get_the_time() != get_the_modified_time()) : ?>
-				<span class="hide-tablet-down">- (Updated <?= the_modified_date("F j, Y \a\\t G:i") ?>)</span>
-				<?php if(get_post_meta(get_the_ID(), 'enable-post-erratum', true)): ?>
+				<?php 
+				$posted = new DateTime(get_the_date('c'));
+				$then = new DateTime(get_the_modified_date('c')); 
+				$diff = $posted->diff($then);
+				$minutes = ($diff->format('%a') * 1440) + 
+						($diff->format('%h') * 60) +   
+							$diff->format('%i');       
+				if ($minutes >= 30) { ?>
+					<span class="hide-tablet-down">- (Updated <?= the_modified_date("F j, Y \a\\t G:i") ?>)</span>
+				<?php 
+				}
+
+				if(get_post_meta(get_the_ID(), 'enable-post-erratum', true)): ?>
 					<a href="#erratum">
 						<i class="fas fa-exclamation-triangle"></i>
 					</a>
@@ -216,68 +227,14 @@ function newspack_categories()
 		$categories_list = get_the_category_list('<span class="sep">' . esc_html__(',', 'newspack') . '&nbsp;</span>');
 	}
 
-	$topic_terms_str = "";
-	$topic_terms = get_the_terms(get_the_ID(), 'topic');
-	if ($topic_terms) {
-		$topic_terms_str = "&nbsp/&nbsp";
-		foreach ($topic_terms as $term) { 
-			$topic_terms_str .= '<a href="'. get_term_link($term) .'">' . $term->name  . '</a>';
-		}
-	}
 
 	if ($categories_list) {
 		printf(
 			/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
-			'<span class="cat-links"><span class="screen-reader-text">%1$s</span>%2$s%3$s</span>',
+			'<span class="cat-links"><span class="screen-reader-text">%1$s</span>%2$s</span>',
 			esc_html__('Posted in', 'newspack'),
 			$categories_list,
-			$topic_terms_str
 
 		); // WPCS: XSS OK.
-	}
-}
-
-function newspack_author_social_links( $author_id, $size = 24 ) {
-
-	// Get list of available social profiles.
-	$social_profiles = array(
-		'facebook',
-		'twitter',
-		'instagram',
-		'linkedin',
-		'myspace',
-		'pinterest',
-		'soundcloud',
-		'tumblr',
-		'youtube',
-		'wikipedia',
-	);
-
-	// Create empty string for links.
-	$links = '';
-
-	// Create array of allowed HTML, including SVG markup.
-	$allowed_html = array(
-		'a'  => array(
-			'href'   => array(),
-			'title'  => array(),
-			'target' => array(),
-		),
-		'li' => array(),
-	);
-	$allowed_html = array_merge( $allowed_html, newspack_sanitize_svgs() );
-
-	foreach ( $social_profiles as $profile ) {
-		if ( '' !== get_the_author_meta( $profile, $author_id ) ) {
-			if ( 'twitter' === $profile ) {
-				$links .= '<li><a href="https://twitter.com/' . esc_attr( get_the_author_meta( $profile, $author_id ) ) . '" target="_blank">' . newspack_get_social_icon_svg( $profile, $size, $profile ) . '</a></li>';
-			} else {
-				$links .= '<li><a href="' . esc_url( get_the_author_meta( $profile, $author_id ) ) . '" target="_blank">' . newspack_get_social_icon_svg( $profile, $size, $profile ) . '</a></li>';
-			}
-		}
-	}
-
-	if ( '' !== $links && true === get_theme_mod( 'show_author_social', false ) ) {
-		echo '<ul class="author-social-links">' . wp_kses( $links, $allowed_html ) . '</ul>';
 	}
 }
