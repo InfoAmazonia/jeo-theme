@@ -22,9 +22,10 @@ if ( $has_responses ) {
 }
 ?>
 
-<div class="discussion-meta">
+<!-- <div class="discussion-meta">
 	<p class="discussion-meta-info">
 		<?php echo newspack_get_icon_svg( 'comment', 24 ); ?>
 		<span><?php echo esc_html( $meta_label ); ?></span>
 	</p>
-</div><!-- .discussion-meta -->
+</div> -->
+<!-- .discussion-meta -->
