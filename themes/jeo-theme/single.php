@@ -73,6 +73,10 @@ get_header('single');
 					}
 
 					?>
+
+					<div class="after-post-content-widget-area">
+						<?php dynamic_sidebar( 'after_post_widget_area' ); ?>
+					</div>
 				</div><!-- .main-content -->
 
 			<?php
@@ -81,6 +85,8 @@ get_header('single');
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
+
+	
 
 <?php
 get_footer();
