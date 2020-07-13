@@ -65,5 +65,11 @@ window.addEventListener('DOMContentLoaded',function () {
                 $('.bottom-header-contain.post-header').removeClass('active');
             }
         });
+        
+        if($('.no-comments-area').length) {
+            $('.no-comments-area').click(function() {
+                $('.no-comments-form').toggle('fast');
+            })
+        }
     });
 })(jQuery);

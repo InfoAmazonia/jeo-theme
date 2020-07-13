@@ -52,7 +52,9 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 			<span><?= __('There are no comments yet. Leave a comment!') ?></span>
 			
 		</div>
-		<?php newspack_comment_form(true);?>
+		<div class="no-comments-form">
+			<?php newspack_comment_form(true);?>
+		</div>
 
 	<?php else : ?>
 
