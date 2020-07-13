@@ -30,13 +30,13 @@
 
 figure.wp-block-pullquote.alignright.has-background.is-style-solid-color {
     margin-right: 0px;
+    p {
+        padding: 60px 0px 30px !important;
+    }
 }
 
 figure.wp-block-pullquote.alignleft.has-background.is-style-solid-color {
     margin-left: 0px;
-}
-
-.wp-block-pullquote.is-style-solid-color{
     p {
         padding: 60px 0px 30px !important;
     }
