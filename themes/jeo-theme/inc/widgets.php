@@ -6,7 +6,7 @@
 function widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'After post area',
+		'name'          => 'Article below author info',
 		'id'            => 'after_post_widget_area',
 		'before_widget' => '<div class="widget-area-after-post">',
 		'after_widget'  => '</div>',

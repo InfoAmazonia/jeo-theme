@@ -238,3 +238,12 @@ function newspack_categories()
 		); // WPCS: XSS OK.
 	}
 }
+
+function newspack_comments_template() {
+	// Add Coral AMP compatibility because they integrated with AMP for WP plugin instead of the official AMP plugin.
+	if ( newspack_is_amp() && function_exists( 'coral_talk_comments_amp_template' ) ) {
+		coral_talk_comments_amp_template();
+	} else {
+		comments_template();
+	}
+}
