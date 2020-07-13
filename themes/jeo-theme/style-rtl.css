@@ -3964,12 +3964,6 @@ body.page .entry-title {
 }
 
 @media only screen and (min-width: 782px) {
-  .archive:not(.paged) article.has-post-thumbnail:first-of-type {
-    display: block;
-  }
-  .archive:not(.paged) article.has-post-thumbnail:first-of-type .post-thumbnail {
-    max-width: 100%;
-  }
   .archive:not(.paged) article.has-post-thumbnail:first-of-type .entry-header {
     margin: 1rem 0 0;
   }

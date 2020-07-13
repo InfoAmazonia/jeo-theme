@@ -1,0 +1,61 @@
+.page-header.author {
+    background-color: #F5F5F5;
+    padding: 60px 0px;
+}
+
+.page-header.author img {
+    border-radius: 50%;
+    height: 100% !important;
+    width: auto !important; 
+}
+
+.page-header.author .author-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header.author .author-content .author-social-links a {
+    color: var(--primary);
+    margin: 0 20% 0 0;
+}
+
+.page-header.author .author-content .author-social-links a:hover {
+    color: var(--secondary);
+}
+
+.post-container-author-page {
+    display: flex;
+    flex-direction: row;
+    max-width: -webkit-fill-available;
+}
+
+.author-page-sidebar {
+    width: 35%;
+}
+
+.author-page-sidebar h4 {
+    color: grey;
+}
+
+.author-most-read {
+    margin-top: 20%;
+}
+
+.author-most-read .header {
+    background-color: var(--primary);
+    border-radius: 10px 10px 0 0;
+}
+
+.author-most-read .header p {
+    padding: 4%;
+    color: white;
+    text-align: center;
+}
+
+.author-most-read {
+    background-color: #F5F5F5;
+}
+
+.author-most-read .posts p {
+    padding: 5%;
+}

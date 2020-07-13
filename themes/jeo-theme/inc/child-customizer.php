@@ -33,6 +33,16 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_control(
+		'show_author_social',
+		array(
+		'type' => 'checkbox',
+		'label' => esc_html__( 'Display Author Social Media links', 'newspack' ),
+		'description' => esc_html__( 'Display social media links with the author bio on individual posts and author archives (this option requires the Yoast plugin).', 'newspack' ),
+		'section' => 'author_bio_options',
+		)
+	);
+
 	// Add background image control and ooption to header
 	$wp_customize->add_setting(
 		'header_background_image',
