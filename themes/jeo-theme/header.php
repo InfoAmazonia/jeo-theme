@@ -43,6 +43,38 @@ endif;
 	<header id="masthead" class="site-header hide-header-search" [class]="searchVisible ? 'show-header-search site-header ' : 'hide-header-search site-header'">
 
 		<?php if ( true === $header_sub_simplified && ! is_front_page() ) : ?>
+			<div class="top-header-contain desktop-only">
+				<div class="wrapper">
+					<?php if ( true === $show_slideout_sidebar && is_active_sidebar( 'header-1' ) ) : ?>
+						<button class="desktop-menu-toggle" on="tap:desktop-sidebar.toggle">
+							<?php echo wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
+							<?php echo esc_html( get_theme_mod( 'slideout_label', esc_html__( 'Menu', 'newspack' ) ) ); ?>
+						</button>
+					<?php endif; ?>
+
+					<?php
+					// Logo is NOT centered:
+					if ( false === $header_center_logo ) :
+					?>
+						<div id="social-nav-contain">
+							<?php
+							if ( ! newspack_is_amp() ) {
+								newspack_social_menu_header();
+							}
+							?>
+						</div>
+						<?php
+							else: 
+								$description = get_bloginfo( 'description', 'display' );
+								if ( $description || is_customize_preview() ) :
+								?>
+								<p class="site-description">
+									<?php echo $description; /* WPCS: xss ok. */ ?>
+								</p>
+					<?php endif; ?>
+					<?php endif; ?>
+				</div><!-- .wrapper -->
+			</div><!-- .top-header-contain -->
 			<div class="middle-header-contain">
 				<div class="wrapper">
 					<?php if ( newspack_has_menus() || ( true === $show_slideout_sidebar && is_active_sidebar( 'header-1' ) ) ) : ?>
@@ -64,8 +96,26 @@ endif;
 					<?php endif; ?>
 
 					<?php get_template_part( 'template-parts/header/header', 'search' ); ?>
-				</div>
-			</div><!-- .wrapper -->
+				</div><!-- .wrapper -->
+			</div><!-- .middle-header-contain -->
+			<div class="bottom-header-contain desktop-only">
+				<div class="wrapper">
+					<div id="site-navigation">
+						<?php
+						if ( ! newspack_is_amp() ) {
+							newspack_primary_menu();
+						}
+						?>
+					</div>
+					<?php $button_url = get_theme_mod('discovery_button_link'); 
+					if (!empty($button_url)): ?>
+						<a href="<?= $button_url ?>" class="featured-button <?= get_theme_mod('discovery_button_style', 'solid')?>">
+							<i class="far fa-map"></i>
+							Discovery
+						</a>
+					<?php endif; ?>
+				</div><!-- .wrapper -->
+			</div><!-- .bottom-header-contain -->
 		<?php else : ?>
 
 			<?php
