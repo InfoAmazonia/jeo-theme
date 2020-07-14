@@ -7,6 +7,10 @@
 .post-template-single-feature,
 .post-template-single-wide {
 
+    ul.author-social-links {
+        display: none;
+    }
+
     h1,
     h2,
     h3,
@@ -116,6 +120,7 @@
 
             p {
                 margin: 0;
+                font-size: 16px;
             }
 
             .author-introduce-title {
