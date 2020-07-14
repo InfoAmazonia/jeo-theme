@@ -17,9 +17,11 @@ $discussion = ! is_page() && newspack_can_show_post_thumbnail() ? newspack_get_d
 	<?php
 		$subtitle = get_post_meta( $post->ID, 'newspack_post_subtitle', true );
 	?>
-	<h1 class="entry-title <?php echo $subtitle ? 'entry-title--with-subtitle' : ''; ?>">
-		<?php echo wp_kses_post( get_the_title() ); ?>
-	</h1>
+	<div class="wrapper-entry-title">
+		<h1 class="entry-title <?php echo $subtitle ? 'entry-title--with-subtitle' : ''; ?>">
+			<?php echo wp_kses_post( get_the_title() ); ?>
+		</h1>
+	</div>
 	<?php if ( $subtitle ) : ?>
 		<div class="newspack-post-subtitle">
 			<?php echo esc_html( $subtitle ); ?>
@@ -36,7 +38,9 @@ $discussion = ! is_page() && newspack_can_show_post_thumbnail() ? newspack_get_d
 <?php if ( ! is_page() && 'behind' !== newspack_featured_image_position()) : ?>
 	<div class="entry-subhead">
 		<div class="entry-meta">
-			<?php newspack_posted_by(); ?>
+			<?php if(get_post_meta(get_the_ID(), 'author-bio-display', true)): ?>
+				<?php newspack_posted_by(); ?>
+			<?php endif; ?>
 			<?php newspack_posted_on(); ?>
 		</div><!-- .meta-info -->
 		<?php

@@ -1,3 +1,29 @@
-footer.main-footer {
+footer {
 
+     /* Footer */
+    #colophon,
+    #colophon .social-navigation a {
+    color: #555D66;
+    }
+    
+    .footer-branding .wrapper,
+    .footer-widgets:first-child {
+        border-top: 1px solid #979797 !important;
+    }
+
+    #colophon .widget-title {
+    color: #555D66;
+    font-size: 18px;
+    }
+
+    .site-info{
+        display: none;
+    }
+
+    @include desktop{
+        .widget {
+            margin: 0 0 1rem;
+          }
+    }
+ 
 }

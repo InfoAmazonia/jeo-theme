@@ -15,24 +15,30 @@ if ( newspack_is_amp() ) : ?>
 	<aside id="mobile-sidebar-fallback" class="mobile-sidebar">
 		<button class="mobile-menu-toggle">
 			<?php echo wp_kses( newspack_get_icon_svg( 'close', 20 ), newspack_sanitize_svgs() ); ?>
-			<?php esc_html_e( 'Close', 'newspack' ); ?>
 		</button>
 <?php endif; ?>
 
 		<?php
-		newspack_tertiary_menu();
-
-		get_search_form();
 
 		newspack_primary_menu();
+		
+		$button_url = get_theme_mod('discovery_button_link'); 
 
-		newspack_secondary_menu();
+		
+		if (!empty($button_url)): ?>
+			<ul class="main-menu">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page">
+					<a href="<?= $button_url ?>" class="discovery-link">
+						DISCOVERY
+					</a>
+				</li>
+			</ul>
+		<?php endif;
+
+		newspack_tertiary_menu();
+
 
 		newspack_social_menu_header();
-
-		if ( true === get_theme_mod( 'slideout_widget_mobile', false ) && is_active_sidebar( 'header-1' ) ) {
-			dynamic_sidebar( 'header-1' );
-		}
 		?>
 
 <?php if ( newspack_is_amp() ) : ?>

@@ -3,3 +3,37 @@
         display: none;
     }
 }
+
+.entry-content a{
+   text-decoration: none !important;
+
+   &:hover{
+       font-weight: bold;
+   }
+}
+
+a {
+    text-decoration: none !important;
+
+    &:hover{
+        font-weight: bold;
+    }
+
+    &:focus {
+    outline: 0px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.wp-block-newspack-blocks-homepage-articles h2.article-section-title {
+    font-size: 18px !important;
+}
+
+.alignwide {
+    margin: 32px calc((100% - 60vw)/2);
+    max-width: 60vw;
+    width: 60vw;
+}

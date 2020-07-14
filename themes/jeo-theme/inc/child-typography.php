@@ -79,6 +79,10 @@ function newspack_scott_custom_typography_css() {
 			font-size: ' . get_theme_mod('typo_h1_size', '2') . $font_unit . $forced_size . ';
 		}
 
+		.single-post h1.entry-title{
+			font-size: ' . get_theme_mod('typo_h1_size', '2') . $font_unit . $forced_size . ';
+		}
+
 		h2 {
 			font-size: ' . get_theme_mod('typo_h2_size', '1.5') . $font_unit . $forced_size . ';
 		}
@@ -86,6 +90,12 @@ function newspack_scott_custom_typography_css() {
 		h3 {
 			font-size: ' . get_theme_mod('typo_h3_size', '1.17') . $font_unit . $forced_size . ';
 		}
+
+		.wp-block-cover .wp-block-pullquote p {
+			font-size: ' . get_theme_mod('typo_h3_size', '1.17') . $font_unit . '!important' . ';
+			line-height: inherit;
+		}
+		
 
 		h4 {
 			font-size: ' . get_theme_mod('typo_h4_size', '1') . $font_unit . $forced_size . ';
@@ -102,6 +112,15 @@ function newspack_scott_custom_typography_css() {
 		p {
 			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . $forced_size . ';
 		}
+
+		.wp-block-pullquote p{
+			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
+        }
+
+		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p,
+.		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
+			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
+        }
 	';
 
 	if (!empty(get_theme_mod( 'accent_font', ''))) {
@@ -123,7 +142,7 @@ function newspack_scott_custom_typography_css() {
 		$default_font = get_theme_mod('font_body');
 
 		$theme_css .= '
-		.single .entry-title, .page .entry-header .entry-title, .single .main-content, .page .main-content{
+		.single .entry-title, .single .main-content{
 			font-family: "' . $featured_font . '", "sans-serif";
 		}
 
@@ -142,6 +161,18 @@ function newspack_scott_custom_typography_css() {
 		$theme_css .= '
 		:root {
 			--description-color: '. $color . ';
+		}
+
+		';
+	}
+
+
+	if (!empty(get_theme_mod( 'search_icon_color', ''))) {
+		$color = get_theme_mod( 'search_icon_color');
+
+		$theme_css .= '
+		:root {
+			--search-icon-color: '. $color . ';
 		}
 
 		';

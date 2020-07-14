@@ -20,7 +20,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 	$author_count = count($authors);
 	$i            = 1;
 
-	foreach ($authors as $author) {
+	foreach ($authors as $index=>$author) {
 
 		if ('' !== $author->description) {
 
@@ -37,21 +37,16 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 ?>
 
 			<div class="author-bio">
+				<?php if($index == 0): ?>
 				<div class="author-introduce-title">
 					<?= __('About the author', 'jeo') ?>
 				</div>
-
-				<?php
-				if (!newspack_is_active_style_pack('style-4') && $author_avatar) {
-					echo wp_kses($author_avatar, newspack_sanitize_avatars());
-				}
-				?>
-
+				<?php endif; ?>
 				<div class="author-bio-text">
 
 					<div class="author-bio-header">
 						<?php
-						if (newspack_is_active_style_pack('style-4') && $author_avatar) {
+						if ($author_avatar) {
 							echo wp_kses($author_avatar, newspack_sanitize_avatars());
 						}
 						?>
@@ -122,27 +117,15 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 	<div class="author-bio">
 
 		<?php
-		if (!newspack_is_active_style_pack('style-4')) {
 			$author_avatar = get_avatar(get_the_author_meta('ID'), 80);
 			if ($author_avatar) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $author_avatar;
 			}
-		}
 		?>
 
 		<div class="author-bio-text">
 			<div class="author-bio-header">
-				<?php
-				if (newspack_is_active_style_pack('style-4')) {
-					$author_avatar = get_avatar(get_the_author_meta('ID'), 80);
-					if ($author_avatar) {
-						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						echo $author_avatar;
-					}
-				}
-				?>
-
 				<div>
 					<h2 class="accent-header">
 						<?php echo esc_html(get_the_author()); ?>
