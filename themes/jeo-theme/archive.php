@@ -12,6 +12,8 @@ get_header();
 
 	<header class="page-header author">
 		<div class="author-main-content">
+		<h1 class="page-title article-section-title mobile-author-label">Author</h1>
+
 			<?php
 				if ( is_author() ) {
 

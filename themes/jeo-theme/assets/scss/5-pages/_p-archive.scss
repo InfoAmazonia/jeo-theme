@@ -4,6 +4,9 @@
 
 .archive { 
     article {
+        &.entry{
+            margin-top: 30px;
+        }
         .entry-meta {
             font-size: 14px;
         }
@@ -19,6 +22,10 @@
                 font-size: 16px;
                 letter-spacing: 0;
                 line-height: 22px;
+
+                @include mobile{
+                    display: none;
+                }
             }
         }
     }
@@ -28,14 +35,21 @@
         }
     }
 
+    .post-thumbnail{
+        @include mobile{
+            margin-right: 10px;
+            width: 40%;
+        }
+    }
+
 }
 
 .archive:not(.paged){
 
     .entry-title {
-
-        @include desktop {
-            font-size: 1.2em !important;
+        font-size: 1.2em !important;
+        @include mobile {
+            font-size: 16px !important;
         }
     
     }
