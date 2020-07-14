@@ -1,5 +1,5 @@
 <template>
-  <div class="credited-image-block">
+  <div :class="'align' + alignment">
     <div class="image-wrapper">
       <img :src="mediaurl" />
       <div class="image-info-wrapper">
@@ -27,7 +27,7 @@ export default {
         };
     },
 
-  props: ["title", "mediaurl", "mediadescription"],
+  props: ["title", "mediaurl", "mediadescription", "alignment"],
   methods: {
       toggleDescription() {
           this.displayDescription = !this.displayDescription;
