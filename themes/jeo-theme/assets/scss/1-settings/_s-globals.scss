@@ -37,3 +37,21 @@ html {
     max-width: 60vw;
     width: 60vw;
 }
+
+/* PAGINATION STYLES*/
+.pagination {
+    border-top: 4px solid #DDDDDD;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.pagination .nav-links > *.current {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.pagination .nav-links > * {
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+}

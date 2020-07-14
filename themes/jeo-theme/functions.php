@@ -99,6 +99,6 @@ function newspack_author_social_links( $author_id, $size = 24 ) {
 	}
 
 	if ( '' !== $links && true === get_theme_mod( 'show_author_social', false ) ) {
-		echo '<ul class="author-social-links">' . wp_kses( $links, $allowed_html ) . '</ul>';
+		echo '<div><ul class="author-social-links">' . wp_kses( $links, $allowed_html ) . '</ul></div>';
 	}
 }

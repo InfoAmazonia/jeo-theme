@@ -2,59 +2,49 @@
   margin: 0;
 }
 
-.page-header.author {
-    background-color: #F5F5F5;
-    padding: 60px 0px;
+.archive { 
+    article {
+        .entry-meta {
+            font-size: 14px;
+        }
+        .cat-links{
+            color: #555D66;
+            &::before {
+                display: none;
+            }
+        }
 
-    .author-content {
-        display: flex;
-        flex-direction: column;
-
-        .author-social-links a {
-            color: var(--primary);
-            margin: 0 20% 0 0;
-
-            &:hover {
-                color: var(--secondary);
+        .entry-content {
+            p {
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: 22px;
             }
         }
     }
-
-    img {
-        border-radius: 50%;
-        height: 100% !important;
-        width: auto !important; 
-    }
-}
-
-
-.post-container-author-page {
-    display: flex;
-    flex-direction: row;
-    max-width: -webkit-fill-available;
-}
-
-.author-page-sidebar {
-    width: 35%;
-    h4 {
-        color: grey;
-    }
-}
-
-.author-most-read {
-    margin-top: 20%;
-    background-color: #F5F5F5;
-    .header {
-        background-color: var(--primary);
-        border-radius: 10px 10px 0 0;
-        p {
-            padding: 20px 30px;
-            color: white;
-            text-align: center;
-            font-weight: bold;
+    #main {
+        @include desktop{
+            width: 60%;
         }
     }
-    .posts p {
-        padding: 5%;
-    }
+
 }
+
+.archive:not(.paged){
+
+    .entry-title {
+
+        @include desktop {
+            font-size: 1.2em !important;
+        }
+    
+    }
+
+    article.has-post-thumbnail:first-of-type .entry-header{
+
+        @include desktop{
+            margin: 0;
+        }
+    }
+
+} 

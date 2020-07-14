@@ -1,24 +1,124 @@
 .archive{ 
     .author {
+        background-color: #F5F5F5;
+        padding: 60px 0px 50px 0px;
+        margin-bottom: 60px;
+
+        .author-content {
+            display: flex;
+            flex-direction: column;
+    
+            .author-social-links a {
+                color: var(--primary);
+                margin: 0 20% 0 0;
+    
+                &:hover {
+                    color: var(--secondary);
+                }
+            }
+        }
+    
+        img {
+            border-radius: 50%;
+            height: 100% !important;
+            width: auto !important; 
+        }
         .author-main-content {
             margin: auto;
             max-width: 90%;
             width: 1200px;
             display: flex;
+
+            @include tablet{
+                display: block;
+                text-align: center;
+            }
         }
     }
 }
 
 .archive.author {
+
+    .archive.author .page-header {
+        margin: 0;
+        background-color: #F5F5F5;
+        padding: 60px 0px 50px 0px;
+    }
     .site-content {
         margin-top: 0px;
     }
+    
+    .author-social-links {
+    
+        @include tablet{
+            text-align: center;
+            display: inline-flex;
+        }
 
-    .author-social-links li {
-        margin-right: 40px;
+        li {
+            margin-right: 40px;
+            
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
     }
 
     .page-header .avatar {
         margin-right: 2.1875rem !important;
+
+        @include tablet{
+            margin-right: 0px !important;
+            text-align: center;
+            display: inline-flex;
+        }
     }
+
+    header.page-header.author {
+        margin-bottom: 50px;
+    }
+}
+
+
+
+.author-page-sidebar {
+    width: 35%;
+    h4 {
+        color: #555D66;
+        margin-top: 0px;
+    }
+}
+
+.author-most-read {
+    margin-top: 20%;
+    background-color: #F5F5F5;
+    .header {
+        background-color: var(--primary);
+        border-radius: 10px 10px 0 0;
+        p {
+            padding: 20px 30px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 0px;
+            letter-spacing: 0;
+            line-height: 19px;
+        }
+    }
+
+    .posts {
+        padding: 30px;
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+
+
+.post-container-author-page {
+    display: flex;
+    flex-direction: row;
+    max-width: -webkit-fill-available;
 }
