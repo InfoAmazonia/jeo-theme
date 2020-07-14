@@ -1,0 +1,64 @@
+.archive .page-header{
+  margin: 0;
+}
+
+.archive { 
+    article {
+        &.entry{
+            margin-top: 30px;
+        }
+        .entry-meta {
+            font-size: 14px;
+        }
+        .cat-links{
+            color: #555D66;
+            &::before {
+                display: none;
+            }
+        }
+
+        .entry-content {
+            p {
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: 22px;
+
+                @include mobile{
+                    display: none;
+                }
+            }
+        }
+    }
+    #main {
+        @include desktop{
+            width: 60%;
+        }
+    }
+
+    .post-thumbnail{
+        @include mobile{
+            margin-right: 10px;
+            width: 40%;
+        }
+    }
+
+}
+
+.archive:not(.paged){
+
+    .entry-title {
+        font-size: 1.2em !important;
+        @include mobile {
+            font-size: 16px !important;
+        }
+    
+    }
+
+    article.has-post-thumbnail:first-of-type .entry-header{
+
+        @include desktop{
+            margin: 0;
+        }
+    }
+
+} 
