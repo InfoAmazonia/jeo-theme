@@ -1,6 +1,15 @@
 #comments.comments-area {
     border-top: 1px solid #979797;
 
+    .comment-content {
+        margin: 0.6rem 0;
+        p {
+            font-family: var(--primary-font);
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
     .no-comments {
         &-form {
             display: none;
@@ -60,10 +69,12 @@
 
             &-metadata {
                 opacity: 0.5;
-                color: #0A0A0A;
                 font-size: 14px;
                 letter-spacing: 0;
                 line-height: 22px;
+                > a {
+                    color: #0A0A0A;
+                }
             }
 
         }
