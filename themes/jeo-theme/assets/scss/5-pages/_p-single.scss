@@ -256,9 +256,16 @@
                 }
 
                 .image-meta {
+                    display: flex;
                     // background: rgba(25, 30, 35, 0.9);
                     // color: #F9F9F9;
                 }
+
+                .fas.fa-camera {
+                    height: fit-content;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                } 
             }
 
             .image-info-container {
