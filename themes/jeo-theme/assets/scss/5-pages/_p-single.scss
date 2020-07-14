@@ -229,6 +229,7 @@
     }
 
     .featured-image-behind {
+        min-height: auto !important;
         .entry-header {
             @include desktop {
                 max-width: 58.334%;
