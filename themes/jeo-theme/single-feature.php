@@ -73,7 +73,13 @@ get_header();
 					} else {
 						get_template_part( 'template-parts/content/content', 'single' );
 					}
+					?>
+					
+					<div class="after-post-content-widget-area">
+						<?php dynamic_sidebar('after_post_widget_area'); ?>
+					</div>
 
+					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) {
 						newspack_comments_template();
