@@ -102,3 +102,4 @@ function newspack_author_social_links( $author_id, $size = 24 ) {
 		echo '<div><ul class="author-social-links">' . wp_kses( $links, $allowed_html ) . '</ul></div>';
 	}
 }
+

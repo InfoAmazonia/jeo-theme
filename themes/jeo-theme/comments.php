@@ -59,6 +59,25 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 	<?php else : ?>
 
 		<div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
+			<span class="comment-leave-title"><?= __('Leave a comment') ?></span>
+			<?php
+			// Only show discussion meta information when comments are open and available.
+			if (have_comments() && comments_open()) {
+				get_template_part('template-parts/post/discussion', 'meta');
+			}
+			?>
+		</div><!-- .comments-title-flex -->
+		<?php do_action('newspack_comments_above_comments'); ?>
+		
+		<?php
+		if (have_comments()) :
+
+			// Show comment form at top if showing newest comments at the top.
+			if (comments_open()) {
+				newspack_comment_form('asc');
+			}
+		?>
+
 			<h2 class="comments-title">
 				<?php
 				if (comments_open()) {
@@ -88,22 +107,6 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 				}
 				?>
 			</h2><!-- .comments-title -->
-			<?php
-			// Only show discussion meta information when comments are open and available.
-			if (have_comments() && comments_open()) {
-				get_template_part('template-parts/post/discussion', 'meta');
-			}
-			?>
-		</div><!-- .comments-title-flex -->
-		<?php do_action('newspack_comments_above_comments'); ?>
-		<?php
-		if (have_comments()) :
-
-			// Show comment form at top if showing newest comments at the top.
-			if (comments_open()) {
-				newspack_comment_form('asc');
-			}
-		?>
 
 			<?php if ($comments_collapsed) : ?>
 				<div id="comments-wrapper" class="comments-wrapper comments-hide" [class]="showComments ? 'comments-wrapper' : 'comments-wrapper comments-hide'">

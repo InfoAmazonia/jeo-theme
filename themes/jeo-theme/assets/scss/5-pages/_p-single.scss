@@ -183,6 +183,7 @@
             .form-submit {
                 input[name=submit] {
                     background: var(--primary);
+                    border-radius: 10px;
                 }
             }
         }
