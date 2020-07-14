@@ -1,5 +1,5 @@
 <template>
-  <div :class="'align' + alignment">
+  <div :class="'credited-image-block align' + alignment">
     <div class="image-wrapper">
       <img :src="mediaurl" />
       <div class="image-info-wrapper">
