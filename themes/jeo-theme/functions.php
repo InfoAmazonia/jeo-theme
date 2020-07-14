@@ -19,7 +19,7 @@ function custom_get_permalink($url, $post, $leavename = false) {
 	return $url;
 }
 
-//add_filter('pre_get_posts', '_search_pre_get_posts', 1);
+add_filter('pre_get_posts', '_search_pre_get_posts', 1);
 
 function _search_pre_get_posts($query) {
 	global $wp_query;
@@ -91,6 +91,22 @@ function _search_pre_get_posts($query) {
 			}
 			//var_dump($query);
 		}
+
+		if(isset($_GET['topic'])) {
+			$query->set('category_name', $_GET['topic']);
+		}
+
+		if(isset($_GET['region']) && !empty($_GET['region'])) {
+			if(!empty($query->get('category_name'))) {
+				$query->set('category_name', $query->get('category_name') . '+'. $_GET['region']);
+			} else {
+				$query->set('category_name', $_GET['region']);
+			}
+			
+		}
+
+		//var_dump($query);
+
 	}
 	return $query;
 }

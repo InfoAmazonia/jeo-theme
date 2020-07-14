@@ -32,31 +32,51 @@ $unique_id = wp_unique_id('search-form-');
 					<input type="text" value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" autocomplete="off" placeholder="Date range" name="daterange">
 				</div>
 
+				<?php 
+				$topics_category = get_category_by_slug('topics');
+				$categories = get_categories(
+					array( 'parent' =>  $topics_category->cat_ID)
+				);
+
+				//var_dump($categories);
+				?>
+
 				<div class="filters--item">
-					<select name="topic" id="topic">
+					<select name="topic" id="topics">
 						<option value=""> Topics </option>
 						<?php
-						$terms = get_terms("topic");
+						
 
-						foreach ($terms as $term) : ?>
+						foreach ($categories as $term) : ?>
 							<option value="<?= $term->slug ?>" <?= isset($_GET['topic']) && $_GET['topic'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
 						<?php endforeach; ?>
 					</select>
 				</div>
 
+				<?php 
+				$regions_category = get_category_by_slug('regions');
+				$categories = get_categories(
+					array( 'parent' =>  $regions_category->cat_ID)
+				);
+
+				//var_dump($categories);
+				?>
+
 				<div class="filters--item">
 					<select name="region" id="region">
 						<option value=""> Regions </option>
 						<?php
-						$terms = get_terms("region");
+						
 
-						foreach ($terms as $term) : ?>
+						foreach ($categories as $term) : ?>
 							<option value="<?= $term->slug ?>" <?= isset($_GET['region']) && $_GET['region'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
 						<?php endforeach; ?>
 					</select>
 				</div>
+
+				
 
 
 			</div>
