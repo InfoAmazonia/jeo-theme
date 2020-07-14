@@ -142,14 +142,15 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
                 mediaURL,
                 title,
                 mediaDescription,
+                align,
             },
             setAttributes,
         } = props;
-
+        
         return (
             <>
                 <div className="image-block-container" key="container">
-                    <image-block title={title} mediaurl={mediaURL} mediadescription={mediaDescription}></image-block>    
+                    <image-block alignment={align} title={title} mediaurl={mediaURL} mediadescription={mediaDescription}></image-block>    
                 </div>
             </>
             
