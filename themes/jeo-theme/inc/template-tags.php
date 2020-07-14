@@ -214,10 +214,28 @@ function newspack_categories()
 	if (class_exists('WPSEO_Primary_Term')) {
 		$primary_term = new WPSEO_Primary_Term('category', get_the_ID());
 		$category_id = $primary_term->get_primary_term();
+
+		$parent_type_category = get_category_by_slug('type')->cat_ID;
+
+		$post_categories = get_the_category();
+		$post_child_category = null;
+		foreach ( $post_categories as $post_cat ) {
+			if ( $parent_type_category == $post_cat->parent ) {
+				$post_child_category = $post_cat;
+			}
+		}
+
+		$post_child_category;
+
+		if($post_child_category) {
+			$categories_list .= '<a href="' . esc_url(get_category_link($post_child_category->term_id)) . '" rel="category tag">' . $post_child_category->name . '</a> <span class="custom-separator"> / </span>';
+		}
+
+				
 		if ($category_id) {
 			$category = get_term($category_id);
 			if ($category) {
-				$categories_list = '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . $category->name . '</a>';
+				$categories_list .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . $category->name . '</a>';
 			}
 		}
 	}
@@ -226,7 +244,6 @@ function newspack_categories()
 		/* translators: used between list items; followed by a space. */
 		$categories_list = get_the_category_list('<span class="sep">' . esc_html__(',', 'newspack') . '&nbsp;</span>');
 	}
-
 
 	if ($categories_list) {
 		printf(
