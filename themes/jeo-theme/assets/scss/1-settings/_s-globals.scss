@@ -28,8 +28,14 @@ html {
     scroll-behavior: smooth;
 }
 
-.wp-block-newspack-blocks-homepage-articles h2.article-section-title {
-    font-size: 18px !important;
+.wp-block-newspack-blocks-homepage-articles {
+    h2.article-section-title {
+        font-size: 18px !important;
+    }
+
+    p {
+        line-height: 20px;
+    }
 }
 
 .alignwide {
