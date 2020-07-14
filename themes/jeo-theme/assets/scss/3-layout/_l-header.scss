@@ -46,6 +46,7 @@ header.site-header {
         text-transform: uppercase;
         height: 32px;
         margin: auto 0;
+        transition: all .2s ease-in-out;
 
         i {
             margin-right: 10px;
@@ -59,6 +60,12 @@ header.site-header {
         &.outline {
             border: 2px solid white;
             color: white;
+
+            &:hover {
+                border: 2px solid var(--primary);
+                background-color: var(--primary);
+                color: white; 
+            }
         }
     }
 
@@ -191,7 +198,8 @@ header.site-header {
         height: 30px;
         background-color: var(--primary);
         border-radius: 50%;
-        display: flex
+        display: flex;
+        transition: all .2s ease;
     }
 
     .bottom-header-contain.post-header .page--share div:nth-child(-n + 2) {
@@ -203,12 +211,14 @@ header.site-header {
     }
     .bottom-header-contain.post-header .page--share div:hover a i{
         color: var(--primary);
+        transition: all .2s ease;
     }
 
     .bottom-header-contain.post-header .page--share div:hover {
         border: 1px solid var(--primary);
         background-color: white;
         cursor: pointer;
+        transition: all .2s ease;
     }
 
     .bottom-header-contain.post-header .page--share div a {
