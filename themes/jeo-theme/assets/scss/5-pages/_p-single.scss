@@ -397,6 +397,63 @@
     }
 }
 
+
+// Video single style
+#primary.video {
+    max-width: 100%;
+    width: 100%;
+    margin-top: -4rem; // neutralize father inner padding
+
+    header {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        background-color: #555D66;
+        margin-bottom: 70px;
+
+        .entry-header {
+            margin: auto;
+            max-width: 90%;
+            width: 1200px;
+        }
+
+        .cat-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+
+            .custom-separator, a:last-child {
+                color: #FFFFFF;
+                opacity: 1;
+            }
+
+            a {
+                color: #FFFFFF;
+                opacity: 0.5;
+            }
+
+            &:before {
+                display: none;
+            }
+        }
+
+        .wrapper-entry-title {
+            h1 {
+                text-align: center;
+                margin-bottom: 0;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .content {
+        margin: auto;
+        max-width: 90%;
+        width: 1200px;
+    }
+}
+
+
 .single:not(.has-large-featured-image) .entry-header {
     border-bottom: 0px;
     max-width: 58.334%;

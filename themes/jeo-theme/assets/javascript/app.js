@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import ImageBlock from './components/imageBlock/ImageBlock';
-import './audio-player'
+import './audio-player';
+import './video-repositioning';
 
 Vue.component('image-block', ImageBlock);
 

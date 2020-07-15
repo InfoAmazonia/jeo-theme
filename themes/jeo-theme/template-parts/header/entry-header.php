@@ -7,9 +7,9 @@
  */
 
 $discussion = !is_page() && newspack_can_show_post_thumbnail() ? newspack_get_discussion_data() : null;
-
-if (is_singular()) : ?>
-	<?php
+if (!get_query_var('model') || get_query_var('model') !== 'video') :
+	if (is_singular()) : ?>
+		<?php
 		if (!is_page()) :
 			newspack_categories();
 		endif;
@@ -28,27 +28,31 @@ if (is_singular()) : ?>
 			</div>
 		<?php endif; ?>
 
-<?php else : ?>
-	<h2 class="entry-title">
-		<a href="<?php the_permalink(); ?>" rel="bookmark">
-			<?php echo wp_kses_post(get_the_title()); ?>
-		</a>
-	</h2>
-<?php endif; ?>
+	<?php else : ?>
+		<h2 class="entry-title">
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
+				<?php echo wp_kses_post(get_the_title()); ?>
+			</a>
+		</h2>
+	<?php endif; ?>
 
-<?php if (!is_page() && 'behind' !== newspack_featured_image_position() && !get_query_var('hide_post_meta')) : ?>
-	<div class="entry-subhead">
-		<div class="entry-meta">
-			<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
-				<?php newspack_posted_by(); ?>
-			<?php endif; ?>
-			<?php newspack_posted_on(); ?>
-		</div><!-- .meta-info -->
-		<?php
-		// Display Jetpack Share icons, if enabled
-		if (function_exists('sharing_display')) {
-			sharing_display('', true);
-		}
-		?>
-	</div>
+	<?php if (!is_page() && 'behind' !== newspack_featured_image_position() && !get_query_var('hide_post_meta')) : ?>
+		<div class="entry-subhead">
+			<div class="entry-meta">
+				<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
+					<?php newspack_posted_by(); ?>
+				<?php endif; ?>
+				<?php newspack_posted_on(); ?>
+			</div><!-- .meta-info -->
+			<?php
+			// Display Jetpack Share icons, if enabled
+			if (function_exists('sharing_display')) {
+				sharing_display('', true);
+			}
+			?>
+		</div>
+	<?php endif; ?>
+<?php else:
+	newspack_categories();
+	?>
 <?php endif; ?>
