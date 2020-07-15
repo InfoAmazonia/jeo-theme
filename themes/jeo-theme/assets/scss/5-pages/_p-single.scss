@@ -2,7 +2,7 @@
     margin-top: 1.875em;
 }
 
-
+// Generic singles
 .single,
 .post-template-single-feature,
 .post-template-single-wide {
@@ -98,7 +98,9 @@
                 line-height: 21px;
                 margin-bottom: 30px;
             }
+
             $bgcolour:#C31924;
+
             a[rel=tag] {
                 border-radius: 5px;
                 color: var(--primary);
@@ -176,6 +178,7 @@
 
         .comments-area {
             width: auto;
+
             .comments-title {
                 color: #555D66;
                 font-family: var(--primary-font);
@@ -226,6 +229,7 @@
 
     .featured-image-behind {
         min-height: auto !important;
+
         .entry-header {
             @include desktop {
                 max-width: 58.334%;
@@ -285,30 +289,32 @@
         }
 
 
-        .image-meta{
+        .image-meta {
             margin: 0 auto;
         }
-       
-            i {
-                margin: 0 21px;
-                opacity: 0.7;
-                .image-meta {
-                    display: flex;
-                }
-                .fas.fa-camera {
-                    height: fit-content;
-                    margin-top: auto;
-                    margin-bottom: auto;
-                } 
+
+        i {
+            margin: 0 21px;
+            opacity: 0.7;
+
+            .image-meta {
+                display: flex;
             }
 
-            .credit {
-                opacity: 0.7;
-                color: #F9F9F9;
-                font-size: 14px;
-                letter-spacing: 0;
-                line-height: 17px;
+            .fas.fa-camera {
+                height: fit-content;
+                margin-top: auto;
+                margin-bottom: auto;
             }
+        }
+
+        .credit {
+            opacity: 0.7;
+            color: #F9F9F9;
+            font-size: 14px;
+            letter-spacing: 0;
+            line-height: 17px;
+        }
     }
 
     section.small {
@@ -337,6 +343,54 @@
 
             @include large {
                 max-width: 58.334%;
+            }
+        }
+    }
+}
+
+
+// Opinion single style
+#primary.opinion {
+    max-width: 100%;
+    width: 100%;
+    margin-top: -4rem; // neutralize father inner padding
+
+    header {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        background-color: #F5F5F5;
+
+        .cat-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+
+            .custom-separator {
+                color: #555D66;
+            }
+
+            a:last-child {
+                color: #555D66;
+            }
+
+            &:before {
+                display: none;
+            }
+        }
+
+        .wrapper-entry-title {
+            h1 {
+                text-align: center;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .main-content {
+        .entry-subhead {
+            .entry-meta {
+                justify-content: flex-start;
             }
         }
     }
