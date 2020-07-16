@@ -39,6 +39,29 @@
 
 .archive.author {
 
+    &:not(.paged) article.has-post-thumbnail:first-of-type .post-thumbnail{
+        @include desktop{
+            flex-basis: 26%;
+        }
+
+    }
+
+    article.has-post-thumbnail{
+        @include mobile{
+            display: flex;
+        }
+
+        .post-thumbnail{
+            flex-basis: 35%;
+        }
+
+        .entry-container{
+            @include mobile{
+                flex-basis: 65%;
+            }
+        }
+    }
+
     .archive.author .page-header {
         margin: 0;
         background-color: #F5F5F5;
@@ -77,12 +100,16 @@
     header.page-header.author {
         margin-bottom: 50px;
     }
+
 }
 
 
 
 .author-page-sidebar {
-    width: 35%;
+
+    @include desktop{
+        width: 25%;
+    }
     h4 {
         color: #555D66;
         margin-top: 0px;
