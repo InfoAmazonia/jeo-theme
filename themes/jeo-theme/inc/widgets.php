@@ -44,7 +44,7 @@ class newsletter_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'newsletter_widget', 
-			__('Newsletter Widget', 'newsletter_widget_domain'), 
+			__('Newsletter', 'newsletter_widget_domain'), 
 			array( 'description' => __( 'Newsletter widget', 'newsletter_widget_domain' ), ) );
 	}
 	  
@@ -77,7 +77,7 @@ class most_read_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'most_read_widget', 
-			__('Most Read Widget', 'most_read_widget_domain'), 
+			__('Most Read', 'most_read_widget_domain'), 
 			array( 'description' => __( 'Most Read Widget', 'most_read_widget_domain' ), ) );
 	}
 	  
@@ -103,8 +103,8 @@ class story_maps_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'story_maps_widget', 
-			__('Story Maps Widget', 'story_maps_widget_domain'), 
-			array( 'description' => __( 'Story Maps Widget', 'story_maps_widget_domain' ), ) );
+			__('Story Maps', 'story_maps_widget_domain'), 
+			array( 'description' => __( 'Story Maps', 'story_maps_widget_domain' ), ) );
 	}
 	  
 	public function widget( $args, $instance ) {
