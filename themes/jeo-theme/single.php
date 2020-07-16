@@ -23,8 +23,10 @@ foreach ($post_categories as $post_cat) {
 
 if ($post_child_category !== null && $post_child_category->slug === 'opinion') : ?>
 	<?php get_template_part('template-parts/singles/single', 'opinion');
-elseif ($post_child_category !== null && $post_child_category->slug === 'audio') : ?>
-	<?php get_template_part('template-parts/singles/single', 'audio'); ?>
+elseif ($post_child_category->slug === 'audio') : ?>
+	<?php get_template_part('template-parts/singles/single', 'audio'); 
+elseif ($post_child_category->slug === 'video') : ?>
+	<?php get_template_part('template-parts/singles/single', 'video'); ?>
 <?php else : ?>
 	<section id="primary" class="content-area <?php echo esc_attr(newspack_get_category_tag_classes(get_the_ID())) . ' ' . newspack_featured_image_position(); ?>">
 
