@@ -49,3 +49,35 @@ html {
         width: 100%;
     }
 }
+
+.wpnbha, .content-area {
+    article figure.post-thumbnail a {
+        padding-top: 56.25%;
+        overflow: hidden;
+        position: relative;
+        display: block;
+        height: 0;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+    &.image-aligntop {
+        .post-has-image {
+            .post-thumbnail {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
