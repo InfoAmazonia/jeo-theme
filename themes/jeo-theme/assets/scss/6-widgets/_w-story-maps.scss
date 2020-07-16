@@ -1,5 +1,5 @@
 .category-story-maps {
-    margin-top: 20%;
+    margin-bottom: 3rem;
     background-color: #F5F5F5;
     .header {
         background-color: var(--primary);
@@ -28,7 +28,4 @@
         }
     }
 
-    @include desktop {
-        width: 125%;
-    }
 }

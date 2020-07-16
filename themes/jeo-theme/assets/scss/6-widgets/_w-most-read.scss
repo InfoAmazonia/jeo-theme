@@ -1,5 +1,6 @@
 .category-most-read {
-    margin-top: 20%;
+    margin-bottom: 3rem;
+    
     background-color: #F5F5F5;
     .header {
         background-color: var(--primary);
@@ -26,9 +27,5 @@
             padding-bottom: 20px;
             border-bottom: 1px solid rgb(230, 230, 230);
         }
-    }
-
-    @include desktop {
-        width: 125%;
     }
 }

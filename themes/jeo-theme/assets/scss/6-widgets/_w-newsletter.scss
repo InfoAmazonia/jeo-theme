@@ -1,11 +1,12 @@
 .newsletter {
-    padding: 10%;
+    padding: 29px;
     color: var(--primary);
     background-color: var(--primary-lighter-75);
     border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3rem;
 
     .fa-envelope {
         margin: 20px;
@@ -27,13 +28,14 @@
         border:2px solid var(--primary);
         border-radius: 10px;
         margin-bottom: 5px;
+        max-width: 100%;
     
         div {
             display: flex;
-            flex-direction: row;
         }
     
         input {
+            width: calc(100% - 77px);
             background-color: unset;
             border: none;
     
@@ -43,7 +45,7 @@
         }
     
         button {
-            
+            width: 77px;
             background-color: var(--primary);
             border-top-left-radius: initial;
             border-bottom-left-radius: initial;
@@ -51,9 +53,10 @@
     }
 
     p {
-        .link {
+        &.link {
             font-size: 14px;
             color: #555D66;
+            text-align: center;
     
             a {
                 color: var(--primary)
@@ -63,14 +66,10 @@
             }
         } 
 
-        .last-edition a {
+        &.last-edition a {
             color: var(--primary);
             font-size: 14px;
             font-weight: bold;
         }
-    }
-
-    @include desktop {
-        width: 500%;
     }
 }
