@@ -165,3 +165,9 @@
         display: none !important;
     }
 }
+
+.about-the-author {
+    @include desktop {
+        width: 125%;
+    }
+}
