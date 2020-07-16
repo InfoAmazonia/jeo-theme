@@ -13,7 +13,7 @@ get_header();
 	<section id="primary" class="content-area row">
 		<div class="col-md-10 margin-auto">
 			<header class="page-header">
-				<h1 class="page-title">
+				<h1 class="page-title article-section-title">
 					<?php esc_html_e( 'Search results', 'newspack' ); ?>
 				</h1>
 				<?php get_search_form(array(

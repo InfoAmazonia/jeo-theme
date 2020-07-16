@@ -3,8 +3,17 @@
         margin-bottom: 60px;
     }
 
-    .page-header  {
+    .page-header {
         width: auto;
+    }
+
+    main#main {
+        width: 100%;
+
+        span.custom-separator {
+            margin: 0 5px;
+        }
+
     }
 
     .pre-itens-header {
@@ -45,13 +54,13 @@
                     position: absolute;
                     top: 7px;
                     right: -20px;
-                    @include triangle(bottom,6px,6px, var(--primary));
+                    @include triangle(bottom, 6px, 6px, var(--primary));
                 }
             }
 
             .options {
                 display: none;
-                
+
                 &.active {
                     display: block;
                     position: absolute;
@@ -70,7 +79,7 @@
                     position: relative;
                 }
             }
-            
+
         }
     }
 
@@ -89,7 +98,7 @@
                 overflow: hidden;
                 background-color: transparent;
             }
-    
+
             .search-submit {
                 background-color: var(--primary);
                 border-radius: 0 10px 10px 0;
@@ -98,14 +107,14 @@
                 right: 0;
                 top: 0;
                 bottom: 0;
-    
+
                 &:hover {
                     svg {
                         transition: all .2s ease-in-out;
                         transform: scale(1.1);
                     }
                 }
-    
+
                 svg {
                     transition: all .2s ease-in-out;
                 }
@@ -114,7 +123,7 @@
         }
 
         .filters {
-            margin-bottom: 34px; 
+            margin-bottom: 34px;
 
             &--title {
                 color: #555D66;
@@ -123,7 +132,7 @@
                 letter-spacing: 0;
                 text-transform: uppercase;
                 line-height: 21px;
-            }   
+            }
 
             &--itens {
                 display: grid;
@@ -137,7 +146,9 @@
 
             &--item {
                 position: relative;
-                select, input {
+
+                select,
+                input {
                     height: 36px;
                     width: 100%;
                     border: 2px solid #DDDDDD;
@@ -149,32 +160,34 @@
                     font-weight: bold;
                     letter-spacing: 0;
                     appearance: none;
-                    line-height: 19px;  
+                    line-height: 19px;
                     outline: none;
 
-                    
+
                 }
 
                 &:after {
-                    @include triangle(bottom,6px,6px, var(--primary));
+                    @include triangle(bottom, 6px, 6px, var(--primary));
                     bottom: 15px;
                     position: absolute;
                     right: 10px;
-                }   
-                
+                }
+
                 @include tablet {
                     margin-bottom: 15px;
                 }
             }
         }
 
-        
     }
 
 }
 
 .search-form {
-    label[for=search-form-3], label[for=search-form-2], label[for=search-form-1]{
+
+    label[for=search-form-3],
+    label[for=search-form-2],
+    label[for=search-form-1] {
         display: initial;
     }
 }
@@ -184,6 +197,7 @@
         background-color: var(--primary);
         border-color: var(--primary);
     }
+
     .calendar-table {
         td {
             &.active {
@@ -193,6 +207,7 @@
                     background-color: var(--primary);
                 }
             }
+
             &.in-range {
                 background-color: #f7f7f7;
             }

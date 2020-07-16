@@ -33,7 +33,7 @@ $unique_id = wp_unique_id('search-form-');
 				</div>
 
 				<?php 
-				$topics_category = get_category_by_slug('topics');
+				$topics_category = get_category_by_slug('topic');
 				$categories = get_categories(
 					array( 'parent' =>  $topics_category->cat_ID)
 				);
