@@ -43,26 +43,26 @@ window.addEventListener('DOMContentLoaded',function () {
 });
 
 (function ($) {
-    $(document).ready(function () {
+    jQuery(document).ready(function () {
         const app = new Vue({
             el: '#content',
         })
 
-        if($('.single .featured-image-behind').length) {
-            $('.featured-image-behind .image-info i').click(function() {
-                $('.featured-image-behind .image-info-container').toggleClass('active');
-                $('.featured-image-behind .image-info i').toggleClass('fa-info-circle fa-times-circle ');
+        if(jQuery('.single .featured-image-behind').length) {
+            jQuery('.featured-image-behind .image-info i').click(function() {
+                jQuery('.featured-image-behind .image-info-container').toggleClass('active');
+                jQuery('.featured-image-behind .image-info i').toggleClass('fa-info-circle fa-times-circle ');
             });
         }
 
 
-        // $(window).scroll(function () {
-        //     var headerHeight = $('.middle-header-contain').height();
+        // jQuery(window).scroll(function () {
+        //     var headerHeight = jQuery('.middle-header-contain').height();
         //     // console.log(headerHeight);
-        //     if ($(this).scrollTop() > headerHeight) {
-        //         $('.bottom-header-contain').addClass("fixed-header");
+        //     if (jQuery(this).scrollTop() > headerHeight) {
+        //         jQuery('.bottom-header-contain').addClass("fixed-header");
         //     } else {
-        //         $('.bottom-header-contain').removeClass("fixed-header");
+        //         jQuery('.bottom-header-contain').removeClass("fixed-header");
         //     }
         // });
 
@@ -79,24 +79,43 @@ window.addEventListener('DOMContentLoaded',function () {
             }
         });
 
-        $(window).scroll(function () {
-            var headerHeight = $('.middle-header-contain').height();
+        jQuery(window).scroll(function () {
+            var headerHeight = document.querySelector('.bottom-header-contain.desktop-only').offsetTop;
             // console.log(headerHeight);
-            if ($(this).scrollTop() > headerHeight) {
-                $('.bottom-header-contain').addClass("fixed-header");
-                $('.bottom-header-contain.post-header').addClass('active');
+            if (jQuery(this).scrollTop() > headerHeight) {
+                jQuery('.bottom-header-contain.post-header').addClass('active');
+
+                if(!jQuery('header #header-search').hasClass('fixed')) {
+                    jQuery('header #header-search').addClass('fixed');
+                    jQuery('header #header-search').css('top', (50) + 'px');
+                    jQuery('header #header-search').css('height', (jQuery(window).height() - 50) + 'px')
+                }
+
             } else {
-                $('.bottom-header-contain').removeClass("fixed-header");
-                $('.bottom-header-contain.post-header').removeClass('active');
+                jQuery('.bottom-header-contain.post-header').removeClass('active');
+
+                if(jQuery('header #header-search').hasClass('fixed')) {
+                    jQuery('header #header-search').removeClass('fixed');
+                    jQuery('header #header-search').css('top', (document.querySelector('.bottom-header-contain.desktop-only').offsetTop + 50) + 'px');
+                    jQuery('header #header-search').css('height', (jQuery(window).height() - document.querySelector('.bottom-header-contain.desktop-only').offsetTop) + 'px');
+                }
+                
             }
         });
 
+        jQuery('button.search-toggle').click(function(e) {
+            jQuery('header#masthead').toggleClass('hide-header-search');
+        })
+
+        jQuery('header #header-search').css('top', (document.querySelector('.bottom-header-contain.desktop-only').offsetTop + 50) + 'px')
+        jQuery('header #header-search').css('height', (jQuery(window).height() - document.querySelector('.bottom-header-contain.desktop-only').offsetTop) + 'px')
+
         jQuery('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
-            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            jQuery(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
         });
 
         jQuery('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
-            $(this).val('');
+            jQuery(this).val('');
         });
 
         if(jQuery('input[name="daterange"]').attr('replace-empty') === "true") {
@@ -113,16 +132,11 @@ window.addEventListener('DOMContentLoaded',function () {
                 jQuery('#sorting').attr('value', jQuery(this).attr('value'));
                 jQuery(this).closest('form').submit();
             });
-
-
         }
         
-        jQuery('header #header-search').css('top', (jQuery('.bottom-header-contain').offset().top + 50) + 'px')
-        jQuery('header #header-search').css('height', (jQuery(window).height() - jQuery('.site-header').height()) + 'px')
-        
-        if($('.no-comments-area').length) {
-            $('.no-comments-area').click(function() {
-                $('.no-comments-form').toggle('fast');
+        if(jQuery('.no-comments-area').length) {
+            jQuery('.no-comments-area').click(function() {
+                jQuery('.no-comments-form').toggle('fast');
             })
         }
     });
