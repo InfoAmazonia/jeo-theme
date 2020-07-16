@@ -22,9 +22,6 @@ header.site-header {
         .search-icon {
             display: none;
         }
-
-
-
     }
 
     &.hide-header-search {
@@ -39,17 +36,16 @@ header.site-header {
         .close-icon {
             display: none;
         }
-
     }
 
     #header-search {
-        transition: all .3s ease-in;
+        transition: all 0.3s ease-in;
+
         &.fixed {
             position: fixed;
             left: 0;
         }
     }
-
 
     .middle-header-contain {
         background-size: cover;
@@ -204,7 +200,7 @@ header.site-header {
     }
 
     .bottom-header-contain.post-header.active {
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
         top: 0;
     }
 
@@ -221,7 +217,7 @@ header.site-header {
         z-index: 999 !important;
         border: 0px !important;
         box-shadow: 0 3px 6px 0 rgba(166, 163, 163, 0.3);
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         .page-header {
             margin: 0;
@@ -232,8 +228,6 @@ header.site-header {
             display: flex;
         }
     }
-
-    
 
     .bottom-header-contain.post-header .logo-mobile {
         display: none;
