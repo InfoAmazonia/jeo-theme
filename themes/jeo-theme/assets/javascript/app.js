@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import ImageBlock from './components/imageBlock/ImageBlock';
+import './audio-player'
 
 Vue.component('image-block', ImageBlock);
 
@@ -118,6 +119,12 @@ window.addEventListener('DOMContentLoaded',function () {
         
         jQuery('header #header-search').css('top', (jQuery('.bottom-header-contain').offset().top + 50) + 'px')
         jQuery('header #header-search').css('height', (jQuery(window).height() - jQuery('.site-header').height()) + 'px')
+        
+        if($('.no-comments-area').length) {
+            $('.no-comments-area').click(function() {
+                $('.no-comments-form').toggle('fast');
+            })
+        }
     });
 })(jQuery);
     

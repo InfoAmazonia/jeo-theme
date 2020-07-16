@@ -1,0 +1,106 @@
+#comments.comments-area {
+    
+    .comments-title-wrap {
+        margin: 30px 0px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: var(--primary-font);
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 21px;
+        color: #555D66;
+    }
+
+    h2.comments-title {
+        margin-top: 1.8rem;
+        margin-bottom: 1.8rem;
+        border-top: 1px solid #979797;
+        padding-top: 1.8rem;
+    }
+
+    .comment-content {
+        margin: 0.6rem 0;
+        p {
+            font-family: var(--primary-font);
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .no-comments {
+        &-form {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        &-area {
+            background-color: var(--primary);
+            color: white;
+            height: 80px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 18px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+            font-family: var(--primary-font);
+
+
+            @include tablet {
+                text-align: left;
+                height: auto;
+            }
+
+            i {
+                font-size: 60px;
+                padding-right: 60px;
+
+                @include tablet {
+                    padding: 0 20px;
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+    footer {
+        .comment {
+            &-author {
+                padding-right: 15px;
+                color: #0A0A0A;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 0;
+                line-height: 22px;
+            }
+
+            &-metadata {
+                opacity: 0.5;
+                font-size: 14px;
+                letter-spacing: 0;
+                line-height: 22px;
+                > a {
+                    color: #0A0A0A;
+                }
+            }
+
+        }
+
+        &.comment {
+            &-meta {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

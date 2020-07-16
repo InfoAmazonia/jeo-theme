@@ -1,3 +1,4 @@
+
 nav[role=navigation].navigation.pagination {
     .nav-links > *.current {
         background-color: var(--primary);
@@ -7,4 +8,23 @@ nav[role=navigation].navigation.pagination {
     .nav-links > *  {
         background-color: unset;
     }
+}
+
+/* PAGINATION STYLES*/
+.pagination {
+    border-top: 4px solid #DDDDDD;
+    padding-top: 60px;
+    text-align: center;
+    display: inherit;
+}
+
+.pagination .nav-links > *.current {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.pagination .nav-links > * {
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
 }
