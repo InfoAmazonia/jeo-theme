@@ -4,7 +4,6 @@ header.site-header {
     }
 
     .search-toggle {
-        color: var(--search-icon-color);
         padding: 15px;
         border-radius: 50px;
         background-color: transparent;
@@ -21,6 +20,10 @@ header.site-header {
 
         .search-icon {
             display: none;
+        }
+
+        span {
+            color: var(--search-icon-color);
         }
     }
 
@@ -127,6 +130,7 @@ header.site-header {
         .content-limiter {
             max-width: 58.334%;
             margin: 0 auto;
+            width: 100%;
         }
 
         form.search-form {
