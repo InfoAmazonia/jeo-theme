@@ -39,9 +39,12 @@ endif;
 ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'newspack' ); ?></a>
-
+	<button id="search-toggle" style="display:none">
+		<span></span>
+	</button>
+	
 	<header id="masthead" class="site-header hide-header-search" [class]="searchVisible ? 'show-header-search site-header ' : 'hide-header-search site-header'">
-
+		
 		<?php if ( true === $header_sub_simplified && ! is_front_page() ) : ?>
 			<div class="middle-header-contain">
 				<div class="wrapper">
