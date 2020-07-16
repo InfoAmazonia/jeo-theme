@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import ImageBlock from './components/imageBlock/ImageBlock';
+import './audio-player'
 
 Vue.component('image-block', ImageBlock);
 
