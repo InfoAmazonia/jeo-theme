@@ -25,23 +25,23 @@
                 }
             }
 
-            &.has-post-thumbnail{
-                @include mobile{
+            &.has-post-thumbnail {
+                @include mobile {
                     display: flex;
                 }
 
-                .post-thumbnail{
+                .post-thumbnail {
                     flex-basis: 35%;
                     margin-right: 10px;
                 }
-        
-                .entry-container{
-                    @include mobile{
+
+                .entry-container {
+                    @include mobile {
                         flex-basis: 65%;
                     }
 
                     .entry-title {
-                        @include mobile{
+                        @include mobile {
                             font-size: 16px !important;
                         }
                     }
