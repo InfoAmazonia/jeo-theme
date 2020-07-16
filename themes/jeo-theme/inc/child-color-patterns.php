@@ -32,7 +32,7 @@ function newspack_scott_custom_colors_css() {
 	$theme_css = '
 		:root {
 			--primary: ' . esc_html($primary_color) . ';
-			--primary-lighter-15: ' . color_luminance($primary_color, 0.15) . ';
+			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
 			--secondary: ' . esc_html($secondary_color) . ';
 
 			

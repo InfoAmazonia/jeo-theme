@@ -9,14 +9,12 @@
 
 get_header();
 ?>
+	<?php if ( is_author() ): ?>
+		<header class="page-header author"> 
+			<div class="author-main-content">
+			<h1 class="page-title article-section-title mobile-author-label">Author</h1>
 
-	<header class="page-header author">
-		<div class="author-main-content">
-		<h1 class="page-title article-section-title mobile-author-label">Author</h1>
-
-			<?php
-				if ( is_author() ) {
-
+				<?php
 					$queried       = get_queried_object();
 					$author_avatar = '';
 
@@ -41,50 +39,100 @@ get_header();
 					if ( $author_avatar ) {
 						echo wp_kses( $author_avatar, newspack_sanitize_avatars() );
 					}
-				}
-			?>
-			<div class="author-content">
-				<h1 class="page-title article-section-title desktop-author-label">Author</h1>
-				<h1><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h1>
-				<?php newspack_author_social_links( get_the_author_meta( 'ID' ), 28 ); ?>
-				<p><?php  $author_avatar ?></p>
+				?>
+				<div class="author-content">
+					<h1 class="page-title article-section-title desktop-author-label">Author</h1>
+					<h1><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h1>
+					<?php newspack_author_social_links( get_the_author_meta( 'ID' ), 28 ); ?>
+					<p><?php  $author_avatar ?></p>
+				</div>
 			</div>
-		</div>
 
-	</header><!-- .page-header -->
-	<section id="primary" class="content-area">
+		</header><!-- .page-header -->
+		<section id="primary" class="content-area">
 
 
-		<?php do_action( 'before_archive_posts' ); ?>
+			<?php do_action( 'before_archive_posts' ); ?>
 
-		<main id="main" class="site-main">
+			<main id="main" class="site-main">
+				<?php
+					if ( have_posts() ) :
+						// Start the Loop.
+						while ( have_posts() ) :
+							the_post();
 
-		<?php
-		if ( have_posts() ) :
-			?>
+							get_template_part( 'template-parts/content/content', 'author-post' );
+
+							// End the loop.
+						endwhile;
+
+						// Previous/next page navigation.
+						newspack_the_posts_navigation();
+
+						// If no content, include the "No posts found" template.
+					else :
+						get_template_part( 'template-parts/content/content', 'none' );
+
+					endif;
+				?>
+			</main><!-- #main -->
+			<aside class="author-page-sidebar">
+    			<div>
+					<h4>ABOUT THE AUTHOR</h4>
+					<p class="about-the-author"><?php echo get_the_author_meta('description'); ?></p>
+					<?php dynamic_sidebar('author_page_sidebar') ?>
+				</div>
+			</aside>		</section><!-- #primary -->
+	<?php else: ?> <!-- Category / taxonomies page -->
+		<section id="primary" class="content-area custom-archive">
+			<header class="page-header">
+				<span>
+					<?php the_archive_title( '<h1 class="page-title article-section-title ">', '</h1>' ); ?>
+
+					<?php if ( '' !== get_the_archive_description() ) : ?>
+						<div class="taxonomy-description">
+							<?php echo wp_kses_post( wpautop( get_the_archive_description() ) ); ?>
+						</div>
+					<?php endif; ?>
+				</span>
+
+			</header><!-- .page-header -->
+
+
+			<?php do_action( 'before_archive_posts' ); ?>
+
+			<main id="main" class="site-main">
 
 			<?php
-			// Start the Loop.
-			while ( have_posts() ) :
-				the_post();
+			if ( have_posts() ) :
+				$post_count = 0;
+				?>
 
-				get_template_part( 'template-parts/content/content', 'author-post' );
+				<?php
+				// Start the Loop.
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'template-parts/content/content', 'excerpt' );
 
-				// End the loop.
-			endwhile;
+					// End the loop.
+				endwhile;
 
-			// Previous/next page navigation.
-			newspack_the_posts_navigation();
+				// Previous/next page navigation.
+				newspack_the_posts_navigation();
 
-			// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content/content', 'none' );
+				// If no content, include the "No posts found" template.
+			else :
+				get_template_part( 'template-parts/content/content', 'none' );
 
-		endif;
-		?>
-		</main><!-- #main -->
-		<?php get_sidebar('author-page'); ?>
-	</section><!-- #primary -->
-
+			endif;
+			?>
+			</main><!-- #main -->
+			<aside class="category-page-sidebar">
+    			<div class="content">
+					<?php dynamic_sidebar('category_page_sidebar') ?>
+				</div>
+			</aside>
+		</section><!-- #primary -->
+	<?php endif ?>
 <?php
 get_footer();
