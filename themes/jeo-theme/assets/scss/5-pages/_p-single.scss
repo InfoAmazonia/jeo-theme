@@ -355,6 +355,10 @@
     width: 100%;
     margin-top: -4rem; // neutralize father inner padding
 
+    @include mobile {
+        margin-top: 0px;
+    }
+
     header {
         padding-top: 30px;
         padding-bottom: 60px;
@@ -377,6 +381,13 @@
             &:before {
                 display: none;
             }
+
+
+            a:first-of-type {
+                opacity: 0.5;
+                color: #555D66;
+            }
+
         }
 
         .wrapper-entry-title {
@@ -388,11 +399,29 @@
         }
     }
 
+
+    .entry-header {
+        @include desktop {
+            max-width: 38%;
+        }
+    }
+
+
     .main-content {
         .entry-subhead {
             .entry-meta {
                 justify-content: flex-start;
             }
+        }
+
+        @include desktop {
+            max-width: 38%;
+        }
+
+        @include mobile {
+            margin: auto;
+            max-width: 90% !important;
+            width: 1200px;
         }
     }
 }
