@@ -153,6 +153,8 @@ window.addEventListener("DOMContentLoaded", function () {
                 " - " +
                 picker.endDate.format("MM/DD/YYYY")
             );
+
+            jQuery(this).closest('form').submit();
         });
 
         jQuery('input[name="daterange"]').on("cancel.daterangepicker", function (
