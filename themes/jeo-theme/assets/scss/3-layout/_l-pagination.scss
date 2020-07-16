@@ -1,4 +1,14 @@
 
+nav[role=navigation].navigation.pagination {
+    .nav-links > *.current {
+        background-color: var(--primary);
+        border-radius: 50%;
+    }
+
+    .nav-links > *  {
+        background-color: unset;
+    }
+}
 
 /* PAGINATION STYLES*/
 .pagination {

@@ -2308,7 +2308,7 @@ body.h-db.h-dh .site-header .nav3 .menu-highlight a:hover {
 .header-search-contain {
   display: none;
   margin-left: 0.75rem;
-  position: relative;
+  /* position: relative; */
 }
 
 @media only screen and (min-width: 782px) {
@@ -4989,7 +4989,7 @@ body.page .entry-title {
 .entry .entry-content .wp-block-categories ul > li > a::before {
   font-family: georgia, garamond, "Times New Roman", serif;
   font-weight: normal;
-  content: "– " counters(submenu, "– ", none);
+  content: "– " counters(submenu, "– ", none);
   counter-increment: submenu;
 }
 

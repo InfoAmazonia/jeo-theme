@@ -39,6 +39,9 @@ endif;
 ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'newspack' ); ?></a>
+	<button id="search-toggle" style="display:none">
+		<span></span>
+	</button>
 
 	<header id="masthead" class="site-header hide-header-search" [class]="searchVisible ? 'show-header-search site-header ' : 'hide-header-search site-header'">
 
@@ -298,9 +301,15 @@ endif;
 
 							<?php
 								// Header is simplified. In mobile has search icon always
-								if ( true === $header_simplified || true === $header_center_logo  || false === $header_center_logo ) :
-									get_template_part( 'template-parts/header/header', 'search' );
-								endif;
+								if ( true === $header_simplified || true === $header_center_logo  || false === $header_center_logo ) : ?>
+									<button class="search-toggle" on="tap:AMP.setState( { searchVisible: !searchVisible } ), search-form-1.focus" aria-controls="search-menu" [aria-expanded]="searchVisible ? 'true' : 'false'" aria-expanded="false">
+										<span class="screen-reader-text" [text]="searchVisible ? '<?php esc_html_e( 'Close Search', 'newspack' ); ?>' : '<?php esc_html_e( 'Open Search', 'newspack' ); ?>'">
+											<?php esc_html_e( 'Open Search', 'newspack' ); ?>
+										</span>
+										<span class="search-icon"><?php echo wp_kses( newspack_get_icon_svg( 'search', 28 ), newspack_sanitize_svgs() ); ?></span>
+										<span class="close-icon"><?php echo wp_kses( newspack_get_icon_svg( 'close', 28 ), newspack_sanitize_svgs() ); ?></span>
+									</button>
+								<?php endif;
 							?>
 						</div><!-- .nav-wrapper -->
 					</div><!-- .wrapper -->

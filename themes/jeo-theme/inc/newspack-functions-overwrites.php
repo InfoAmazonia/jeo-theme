@@ -107,11 +107,20 @@ function newspack_scott_scripts() {
 	// Enqueue Google fonts.
 	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), array('jeo-theme-bootstrap'), null);
 	wp_enqueue_style('jeo-theme-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all');
-	wp_enqueue_style('jeo-theme-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", array(), '4.5', 'all');
+	wp_enqueue_style('jeo-theme-bootstrap', "https://cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css", array(), '4.5', 'all');
+	wp_enqueue_style('daterangepicker-css', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', [], '0.1.0', 'all');
 	wp_enqueue_style('app', get_stylesheet_directory_uri() . '/dist/app.css', ['newspack-style'], filemtime(get_stylesheet_directory() . '/dist/app.css'), 'all');
-	wp_enqueue_script('main-app', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery'], '1.0', true);
+
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', [], '2.1.4');
+	wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', ['jquery'], '0.0.0');
+	wp_enqueue_script('momenta', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', ['jquery']);
+	wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['jquery', 'momenta'], '0.1.0');
+	wp_enqueue_script('main-app', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery'], true);
+
 	//wp_enqueue_script( 'jeo-theme-scripts', get_stylesheet_directory_uri()."/js/main.js", array(), "0.1.0");
 }
+
 add_action('wp_enqueue_scripts', 'newspack_scott_scripts');
 
 
@@ -229,3 +238,4 @@ function newspack_author_social_links( $author_id, $size = 24 ) {
 		echo '<div><ul class="author-social-links">' . wp_kses( $links, $allowed_html ) . '</ul></div>';
 	}
 }
+
