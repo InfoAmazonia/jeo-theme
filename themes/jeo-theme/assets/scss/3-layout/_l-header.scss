@@ -27,6 +27,14 @@ header.site-header {
         }
     }
 
+    .bottom-header-contain.post-header.active {
+        .search-toggle {
+            span {
+                color: #111;
+            }
+        }
+    }
+
     &.hide-header-search {
         #header-search {
             display: none;
