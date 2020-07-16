@@ -76,8 +76,13 @@ get_header();
 					endif;
 				?>
 			</main><!-- #main -->
-			<?php get_sidebar('author-page'); ?>
-		</section><!-- #primary -->
+			<aside class="author-page-sidebar">
+    			<div>
+					<h4>ABOUT THE AUTHOR</h4>
+					<p><?php echo get_the_author_meta('description'); ?></p>
+					<?php dynamic_sidebar('author_page_sidebar') ?>
+				</div>
+			</aside>		</section><!-- #primary -->
 	<?php else: ?> <!-- Category / taxonomies page -->
 		<section id="primary" class="content-area custom-archive">
 			<header class="page-header">
@@ -122,7 +127,11 @@ get_header();
 			endif;
 			?>
 			</main><!-- #main -->
-			<?php get_sidebar('category-page'); ?>
+			<aside class="category-page-sidebar">
+    			<div class="content">
+					<?php dynamic_sidebar('category_page_sidebar') ?>
+				</div>
+			</aside>
 		</section><!-- #primary -->
 	<?php endif ?>
 <?php

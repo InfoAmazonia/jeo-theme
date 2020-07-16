@@ -14,6 +14,25 @@ function widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
+	register_sidebar( array(
+		'name'          => 'Category page sidebar',
+		'id'            => 'category_page_sidebar',
+		'before_widget' => '<div class="widget-category_page_sidebar">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="category_page_sidebar">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Author page sidebar',
+		'id'            => 'author_page_sidebar',
+		'before_widget' => '<div class="widget-author_page_sidebar">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="author_page_sidebar">',
+		'after_title'   => '</h2>',
+	) );
+
+
 }
 add_action( 'widgets_init', 'widgets_init' );
 
