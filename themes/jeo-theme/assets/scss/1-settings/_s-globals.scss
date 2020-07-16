@@ -43,3 +43,9 @@ html {
     max-width: 60vw;
     width: 60vw;
 }
+
+.wp-block-video {
+    video {
+        width: 100%;
+    }
+}
