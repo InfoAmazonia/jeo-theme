@@ -355,7 +355,7 @@
     width: 100%;
     margin-top: -4rem; // neutralize father inner padding
 
-    @include mobile{
+    @include mobile {
         margin-top: 0px;
     }
 
@@ -383,7 +383,7 @@
             }
 
 
-            a:first-of-type{
+            a:first-of-type {
                 opacity: 0.5;
                 color: #555D66;
             }
@@ -400,7 +400,7 @@
     }
 
 
-    .entry-header{
+    .entry-header {
         @include desktop {
             max-width: 38%;
         }
@@ -413,11 +413,12 @@
                 justify-content: flex-start;
             }
         }
+
         @include desktop {
             max-width: 38%;
         }
 
-        @include mobile{
+        @include mobile {
             margin: auto;
             max-width: 90% !important;
             width: 1200px;
