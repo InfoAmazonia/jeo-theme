@@ -1,0 +1,13 @@
+header.page-header.category {
+    background-color: unset;
+
+    .mobile-author-label, .desktop-author-label {
+        font-size: 18px;
+    }
+}
+
+aside.category-page-sidebar {
+    @include desktop{
+        width: 26%;
+    }
+}

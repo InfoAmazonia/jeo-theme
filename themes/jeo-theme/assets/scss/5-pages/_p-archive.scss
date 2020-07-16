@@ -31,7 +31,7 @@
     }
     #main {
         @include desktop{
-            width: 60%;
+            width: 65%;
         }
     }
 
@@ -44,8 +44,17 @@
 
 }
 
-.archive:not(.paged){
 
+.archive:not(.paged) {
+    .custom-archive {
+        article.has-post-thumbnail:first-of-type .post-thumbnail {
+            @include desktop{
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
     .entry-title {
         font-size: 1.2em !important;
         @include mobile {
@@ -55,10 +64,45 @@
     }
 
     article.has-post-thumbnail:first-of-type .entry-header{
-
         @include desktop{
             margin: 0;
         }
     }
+}
 
-} 
+/* ARCHIVE EXCEPT AUTHOR */
+.custom-archive {
+    .page-header{
+        margin-bottom: 2rem;
+        .page-subtitle, .page-description {
+           font-size: 18px;
+        }
+        .page-description{
+            margin-left:10px;
+            text-transform: uppercase;
+        }
+    }
+
+    span.author.vcard {
+        background: transparent;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+
+    article.has-post-thumbnail{
+        @include mobile{
+            display: flex;
+        }
+
+        .post-thumbnail{
+            flex-basis: 35%;
+        }
+
+        .entry-container{
+            @include mobile{
+                flex-basis: 65%;
+            }
+        }
+    }
+    
+}
