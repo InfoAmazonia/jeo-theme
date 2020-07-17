@@ -41,6 +41,10 @@ header.site-header {
                 color: #191e23;
             }
         }
+
+        p.title {
+            font-family: var (--featured font)
+        }
     }
 
     .search-icon,
