@@ -3,6 +3,10 @@
 }
 
 .archive { 
+    h1.page-title.article-section-title {
+        display: flex;
+    }
+    
     article {
         &.entry{
             margin-top: 30px;
