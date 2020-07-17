@@ -118,13 +118,9 @@ get_header();
 				endwhile;
 
 				// Previous/next page navigation.
-				// if(get_theme_mod('pagination_style', 'rectangle') == 'circle') {
-				// 	echo '<div class="circle">';
-				// } else {
-				// 	echo '<div class="rectangle">';
-				// }
+				echo (get_theme_mod('pagination_style', 'rectangle') == 'circle'? '<div class="circle">' : '<div class="rectangle">');
 				newspack_the_posts_navigation();
-				//echo '</div>';
+				echo '</div>';
 
 				// If no content, include the "No posts found" template.
 			else :
