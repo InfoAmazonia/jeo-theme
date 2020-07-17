@@ -167,6 +167,8 @@
 }
 
 .about-the-author {
+    margin-bottom: 60px;
+    
     @include desktop {
         width: 125%;
     }
