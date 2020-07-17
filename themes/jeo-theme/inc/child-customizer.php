@@ -175,6 +175,47 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_setting(
+		'search_background_option',
+		array(
+			'default'           => 'default',
+			'sanitize_callback' => 'newspack_sanitize_color_option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'search_background_option',
+		array(
+			'type'    => 'radio',
+			'label'   => __( 'Search icon background', 'newspack' ),
+			'choices'  => array(
+				'default' => 'Default',
+				'custom'  => 'Custom',
+			),
+			'section' => 'header_section_appearance',
+		)
+	);
+
+
+	$wp_customize->add_setting(
+		'search_icon_bg_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'search_icon_bg_color',
+			array(
+				'label' => __('Search icon background color', 'newspack'),
+				'section'     => 'header_section_appearance',
+			)
+		)
+	);
+
 	// Decoration style
 	$wp_customize->add_setting(
 		'decoration_style',
@@ -429,3 +470,10 @@ function newspack_scott_customizer($wp_customize)
 	);
 }
 add_action('customize_register', 'newspack_scott_customizer', 99);
+
+//add_action( 'customize_preview_init', 'customize_preview' );
+
+function child_newspack_panels_js() {
+	wp_enqueue_script( 'js-customizer-ux', get_stylesheet_directory_uri() . '/assets/javascript/customizer-child.js', array(), filemtime(get_stylesheet_directory() . '/assets/javascript/customizer-child.js'), true   );
+}
+add_action( 'customize_controls_enqueue_scripts', 'child_newspack_panels_js' );

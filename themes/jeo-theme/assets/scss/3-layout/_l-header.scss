@@ -15,7 +15,7 @@ header.site-header {
         }
 
         .close-icon {
-            display: block;
+            display: flex;
         }
 
         .search-icon {
@@ -35,13 +35,23 @@ header.site-header {
         }
     }
 
+    .search-icon, .close-icon {
+        background-color: var(--search-icon-bg-color);
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
     &.hide-header-search {
         #header-search {
             display: none;
         }
 
         .search-icon {
-            display: block;
+            display: flex;
+            
         }
 
         .close-icon {

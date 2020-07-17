@@ -25,11 +25,21 @@ function newspack_scott_custom_colors_css() {
 		}
 	}
 
+	$theme_css = "";
+
 	// Set colour contrasts.
 	$primary_color_contrast   = newspack_get_color_contrast($primary_color);
 	$secondary_color_contrast = newspack_get_color_contrast($secondary_color);
+	$search_icon_bg_option = get_theme_mod('search_background_option', 'default');
+	if($search_icon_bg_option !== 'default') {
+		$theme_css .= '
+			:root {
+				--search-icon-bg-color:' . get_theme_mod('search_icon_bg_color', '#fff'). ';
+			}
+		';
+	}
 
-	$theme_css = '
+	$theme_css .= '
 		:root {
 			--primary: ' . esc_html($primary_color) . ';
 			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
