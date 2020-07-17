@@ -16,10 +16,18 @@ header.site-header {
 
         .close-icon {
             display: flex;
+
+            @include tablet {
+                color: #191e23;
+            }
         }
 
         .search-icon {
             display: none;
+
+            @include tablet {
+                color: #191e23;
+            }
         }
 
         span {
@@ -36,12 +44,14 @@ header.site-header {
     }
 
     .search-icon, .close-icon {
-        background-color: var(--search-icon-bg-color);
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        justify-content: center;
-        align-items: center;
+        @include desktop {
+            background-color: var(--search-icon-bg-color);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &.hide-header-search {
@@ -248,6 +258,7 @@ header.site-header {
         @include mobile {
             width: 100vw;
             display: flex;
+            top: 0;
         }
     }
 
