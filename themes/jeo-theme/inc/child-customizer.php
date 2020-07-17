@@ -240,6 +240,27 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_setting(
+		'pagination_style',
+		array(
+			'default'  => 'rectangle',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'pagination_style',
+		array(
+			'type' => 'select',
+			'section' => 'title_tagline',
+			'label' => __('Pagination style'),
+			'choices' => array(
+				'rectangle' => 'Square',
+				'circle' => 'Circle',
+			)
+		)
+	);
+
 	// Typography
 	$wp_customize->add_section(
 		'typo_heading_sizes',
