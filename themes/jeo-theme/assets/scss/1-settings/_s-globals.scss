@@ -86,3 +86,9 @@ html {
         }
     }
 }
+
+@include tablet {
+    body {
+        padding-top: 50px;
+    }
+}

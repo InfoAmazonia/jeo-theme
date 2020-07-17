@@ -309,6 +309,7 @@ endif;
 										<span class="search-icon"><?php echo wp_kses( newspack_get_icon_svg( 'search', 28 ), newspack_sanitize_svgs() ); ?></span>
 										<span class="close-icon"><?php echo wp_kses( newspack_get_icon_svg( 'close', 28 ), newspack_sanitize_svgs() ); ?></span>
 									</button>
+									<?php //get_template_part( 'template-parts/header/header', 'search' ); ?>
 								<?php endif;
 							?>
 						</div><!-- .nav-wrapper -->

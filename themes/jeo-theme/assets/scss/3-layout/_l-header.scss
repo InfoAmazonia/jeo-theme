@@ -16,18 +16,10 @@ header.site-header {
 
         .close-icon {
             display: flex;
-
-            @include tablet {
-                color: #191e23;
-            }
         }
 
         .search-icon {
             display: none;
-
-            @include tablet {
-                color: #191e23;
-            }
         }
 
         span {
@@ -35,15 +27,24 @@ header.site-header {
         }
     }
 
-    .bottom-header-contain.post-header.active {
-        .search-toggle {
-            span {
-                color: rgb(25, 30, 35);
+    .bottom-header-contain.post-header {
+        &.active {
+            .search-toggle {
+                span {
+                    color: rgb(25, 30, 35);
+                }
+            }
+        }
+
+        .search-icon, .close-icon {
+            @include tablet {
+                color: #191e23;
             }
         }
     }
 
-    .search-icon, .close-icon {
+    .search-icon,
+    .close-icon {
         @include desktop {
             background-color: var(--search-icon-bg-color);
             width: 55px;
@@ -61,7 +62,6 @@ header.site-header {
 
         .search-icon {
             display: flex;
-            
         }
 
         .close-icon {
