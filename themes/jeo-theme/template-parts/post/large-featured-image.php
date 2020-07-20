@@ -22,7 +22,8 @@ if ('behind' === newspack_featured_image_position()) :
 			<header class="entry-header">
 				<?php get_template_part('template-parts/header/entry', 'header'); ?>
 			</header>
-			<?php if(class_exists('Newspack_Image_Credits') && !empty(Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id())['credit'])): ?>
+			
+			<?php if(class_exists('Newspack_Image_Credits') && (!empty(Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id())['credit']) || !empty(get_post(get_post_thumbnail_id())->post_content))): ?>
 			<div class="image-info">
 				<i class="fas fa-info-circle"></i>
 			</div>
