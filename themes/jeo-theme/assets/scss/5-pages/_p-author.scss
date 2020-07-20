@@ -38,8 +38,14 @@
 }
 
 .archive.author {
+
+    #page{
+        @include mobile{
+            margin-top: -50px;
+        }
+    }
     img.avatar-default {
-        display: none;
+        display: none !important;
     }
 
     &:not(.paged) article.has-post-thumbnail:first-of-type .post-thumbnail{
