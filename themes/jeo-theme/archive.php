@@ -67,6 +67,7 @@ get_header();
 						// Previous/next page navigation.
 						echo (get_theme_mod('pagination_style', 'rectangle') == 'circle'? '<div class="circle">' : '<div class="rectangle">');
 						newspack_the_posts_navigation();
+						echo '</div>';
 						// If no content, include the "No posts found" template.
 					else :
 						get_template_part( 'template-parts/content/content', 'none' );
