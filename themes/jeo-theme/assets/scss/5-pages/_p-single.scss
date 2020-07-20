@@ -538,10 +538,14 @@
 }
 
 .has-featured-image.single-featured-image-behind {
-    #primary.video {
-        margin-top: 0;
+    section#primary {
+        &.category-opinion, &.video {
+            margin-top: 0;
+        }
     }
+    
 }
+
 
 .single:not(.has-large-featured-image) .entry-header {
     border-bottom: 0px;
