@@ -3,8 +3,18 @@
 }
 
 .archive { 
-    h1.page-title.article-section-title {
-        display: flex;
+    .decoration-square,
+    .decoration-left,
+    .decoration-eye {
+        h1.page-title.article-section-title {
+            display: flex;
+        }
+    }
+
+    .decoration-top {
+        .page-description {
+            display: inline;
+        }
     }
     
     article {
