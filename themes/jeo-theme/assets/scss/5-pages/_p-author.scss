@@ -38,6 +38,9 @@
 }
 
 .archive.author {
+    img.avatar-default {
+        display: none;
+    }
 
     &:not(.paged) article.has-post-thumbnail:first-of-type .post-thumbnail{
         @include desktop{
@@ -169,8 +172,4 @@
 
 .about-the-author {
     margin-bottom: 60px;
-    
-    @include desktop {
-        width: 125%;
-    }
 }

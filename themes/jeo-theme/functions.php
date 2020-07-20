@@ -92,17 +92,16 @@ function _search_pre_get_posts($query) {
 			//var_dump($query);
 		}
 
-		if(isset($_GET['topic'])) {
+		if (isset($_GET['topic'])) {
 			$query->set('category_name', $_GET['topic']);
 		}
 
-		if(isset($_GET['region']) && !empty($_GET['region'])) {
-			if(!empty($query->get('category_name'))) {
-				$query->set('category_name', $query->get('category_name') . '+'. $_GET['region']);
+		if (isset($_GET['region']) && !empty($_GET['region'])) {
+			if (!empty($query->get('category_name'))) {
+				$query->set('category_name', $query->get('category_name') . '+' . $_GET['region']);
 			} else {
 				$query->set('category_name', $_GET['region']);
 			}
-			
 		}
 
 		//var_dump($query);
@@ -110,3 +109,13 @@ function _search_pre_get_posts($query) {
 	}
 	return $query;
 }
+
+
+function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args) {
+	$headers = @get_headers($args['url']);
+	if (!preg_match("|200|", $headers[0])) {
+		return;
+	}
+	return $avatar;
+}
+add_filter('get_avatar', 'ns_filter_avatar', 10, 6);

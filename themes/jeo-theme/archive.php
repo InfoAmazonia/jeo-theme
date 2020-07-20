@@ -33,7 +33,7 @@ get_header();
 						}
 					} else {
 						$author_id     = get_query_var( 'author' );
-						$author_avatar = get_avatar( $author_id, 194 );
+						$author_avatar = get_avatar( $author_id, 194);
 					}
 
 					if ( $author_avatar ) {
@@ -44,7 +44,6 @@ get_header();
 					<h1 class="page-title article-section-title desktop-author-label">Author</h1>
 					<h1><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h1>
 					<?php newspack_author_social_links( get_the_author_meta( 'ID' ), 28 ); ?>
-					<p><?php  $author_avatar ?></p>
 				</div>
 			</div>
 
