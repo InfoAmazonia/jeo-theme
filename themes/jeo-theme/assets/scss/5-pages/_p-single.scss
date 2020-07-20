@@ -268,7 +268,7 @@
                 position: absolute;
                 right: 0;
                 bottom: 0;
-                z-index: 2;
+                z-index: 3;
 
                 i {
                     color: white;
@@ -302,7 +302,7 @@
         font-weight: bold;
         letter-spacing: 0;
         line-height: 17px;
-        z-index: 1;
+        z-index: 2;
         opacity: 0;
         transition: all .2s ease-in-out;
 
@@ -311,9 +311,37 @@
             transition: all .2s ease-in-out;
         }
 
+        @include tablet {
+            background: rgba(25, 30, 35, 1);
+        }
+
 
         .image-meta {
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+
+            @include tablet {
+                flex-direction: column;
+                align-items: flex-start;
+
+                i {
+                    display: none;
+                }
+
+                .credit {
+                    display: inline-block;
+                    margin-top: 8px;
+                }
+            }
+
+            span.description {
+                width: 70%;
+
+                @include tablet {
+                    width: auto;
+                }
+            }
         }
 
         i {
