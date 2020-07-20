@@ -17,8 +17,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     document
-        .querySelectorAll(".wp-block-audio")
-        .forEach(function (audio_wrapper) {
+        .querySelectorAll(".category-audio .wp-block-audio")
+        .forEach(function (audio_wrapper, index) {
+            if(index >= 1){
+                return
+            }
+            
             // Build fake player structure
             audio_wrapper.insertAdjacentHTML(
                 "afterbegin",
