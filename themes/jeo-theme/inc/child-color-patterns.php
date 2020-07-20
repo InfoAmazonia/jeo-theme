@@ -43,6 +43,7 @@ function newspack_scott_custom_colors_css() {
 		:root {
 			--primary: ' . esc_html($primary_color) . ';
 			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
+			--primary-darker-15: ' . color_luminance($primary_color, -0.15) . ';
 			--secondary: ' . esc_html($secondary_color) . ';
 
 			

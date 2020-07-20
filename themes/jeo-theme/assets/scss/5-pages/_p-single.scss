@@ -6,17 +6,26 @@
 .single,
 .post-template-single-feature,
 .post-template-single-wide {
-
-    ul.author-social-links {
-        display: none;
-    }
-
     h1,
     h2,
     h3,
     h4,
-    h5 {
+    h5,
+    h6 {
         font-family: var(--featured-font);
+    }
+
+    .entry-content a {
+        color: var(--primary);
+        font-weight: bold;
+
+        &:visited {
+            color: var(--primary);
+        }
+        
+        &:hover {
+            color: var(--primary-darker-15);
+        }
     }
 
     h1.entry-title {
@@ -24,6 +33,10 @@
             font-size: 1.8em !important;
             text-align: center;
         }
+    }
+
+    ul.author-social-links {
+        display: none;
     }
 
     .entry-title {
@@ -436,7 +449,7 @@
     header {
         padding-top: 30px;
         padding-bottom: 60px;
-        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 100%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
         background-color: #555D66;
         margin-bottom: 70px;
 
@@ -452,7 +465,8 @@
             align-items: center;
             margin-bottom: 40px;
 
-            .custom-separator, a:last-child {
+            .custom-separator,
+            a:last-child {
                 color: #FFFFFF;
                 opacity: 1;
             }
