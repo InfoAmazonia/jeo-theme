@@ -8,6 +8,10 @@
     .decoration-eye {
         h1.page-title.article-section-title {
             display: flex;
+
+            @include tablet {
+                justify-content: center;
+            }
         }
     }
 
