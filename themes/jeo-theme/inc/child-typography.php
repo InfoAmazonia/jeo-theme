@@ -109,10 +109,10 @@ function newspack_scott_custom_typography_css() {
 			font-size: ' . get_theme_mod('typo_h6_size', '0.67') . $font_unit . $forced_size . ';
 		}
 
-		p {
+		p, ul, li {
 			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . $forced_size . ';
 		}
-
+		
 		.wp-block-pullquote p{
 			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
         }

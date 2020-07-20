@@ -86,7 +86,7 @@ get_header();
 		<section id="primary" class="content-area custom-archive">
 			<header class="page-header">
 				<span>
-					<?php the_archive_title( '<h1 class="page-title article-section-title ">', '</h1>' ); ?>
+					<?php the_archive_title( '<h1 class="page-title article-section-title category-header">', '</h1>' ); ?>
 
 					<?php if ( '' !== get_the_archive_description() ) : ?>
 						<div class="taxonomy-description">
