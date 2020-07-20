@@ -21,7 +21,7 @@ function newspack_posted_on()
 
 	if (is_single()) { ?>
 		<div class="post-date">
-			<?php the_date('F j, Y') ?>
+			<?php the_date('F j, Y \a\\t G:i') ?>
 			<?php if (get_the_date() != get_the_modified_date() || get_the_time() != get_the_modified_time()) : ?>
 				<?php 
 				$posted = new DateTime(get_the_date('c'));
