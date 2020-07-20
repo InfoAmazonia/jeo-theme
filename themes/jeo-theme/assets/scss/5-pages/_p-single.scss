@@ -248,11 +248,17 @@
         min-height: auto !important;
 
         .entry-header {
+            margin: 1.25em auto 1.5rem;
+
             @include desktop {
                 max-width: 58.334%;
             }
 
-            margin: 1.25em auto 1.5rem;
+            .cat-links {
+                a:first-of-type {
+                    color: #555D66;
+                }
+            }
         }
 
         .wrapper {
