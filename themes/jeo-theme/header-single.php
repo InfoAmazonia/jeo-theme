@@ -341,4 +341,4 @@ endif;
 
 	<?php do_action( 'after_header' ); ?>
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content decoration-<?= get_theme_mod('decoration_style', 'square') ?>">
