@@ -170,6 +170,10 @@
                         color: #0A0A0A;
                         font-size: 16px;
                         font-weight: bold;
+
+                        &:before {
+                            display: none;
+                        }
                     }
 
                     .author-meta {
