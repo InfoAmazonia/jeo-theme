@@ -10,7 +10,7 @@
  * @package Newspack
  */
 
-get_header();
+get_header('single');
 
 $parent_type_category = get_category_by_slug('type')->cat_ID;
 $post_categories = get_the_category();
@@ -21,7 +21,7 @@ foreach ($post_categories as $post_cat) {
 		break;
 	}
 }
-if(isset($post_child_category->slug)):
+if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['opinion', 'audio', 'video'])):
 	if ($post_child_category->slug === 'opinion') : ?>
 		<?php get_template_part('template-parts/singles/single', 'opinion');
 	elseif ($post_child_category->slug === 'audio') : ?>
