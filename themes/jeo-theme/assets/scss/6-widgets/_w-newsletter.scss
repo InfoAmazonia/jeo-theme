@@ -3,20 +3,36 @@
     color: var(--primary);
     background-color: var(--primary-lighter-75);
     border-radius: 40px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
+    
+    &.horizontal {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
 
-    .fa-envelope {
-        margin: 20px;
+        form div {
+            width: 100%;
+        }
+    }
+    
+    &.vertical {
+        display: flex;
+        flex-direction: column;
+
+        .fa-envelope {
+            margin: 20px;
+        }
+
+        .newsletter-header p {
+            text-align: center;
+        }
     }
 
     .newsletter-header p {
-        text-align: center;
         font-size: 32px;
         font-weight: bold;
     }
+
 
     .anchor-text {
         font-weight: bold;

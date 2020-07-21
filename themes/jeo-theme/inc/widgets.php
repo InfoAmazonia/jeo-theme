@@ -51,7 +51,8 @@ class newsletter_widget extends WP_Widget {
 	public function widget($args, $instance) {
 ?>
 		<div class="category-page-sidebar">
-			<div class="newsletter">
+			<div class="newsletter <?= $instance['model_type'] ?>">
+				<?= ($instance['model_type'] == 'horizontal')? '<div>' : ''?>
 				<i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
 				<div class="newsletter-header">
 					<p><?= $instance['title'] ?> </p>
@@ -59,6 +60,8 @@ class newsletter_widget extends WP_Widget {
 				<p class="anchor-text">
 					<?= $instance['subtitle'] ?> 
 				</p>
+				<?= ($instance['model_type'] == 'horizontal')? '</div>' : ''?>
+				<?= ($instance['model_type'] == 'horizontal')? '<div>' : ''?>
 				<?php if(!empty( $instance['newsletter_shortcode'] )): ?>
 				<?= do_shortcode( $instance['newsletter_shortcode']) ?>
 				<?php endif; ?>
@@ -68,6 +71,7 @@ class newsletter_widget extends WP_Widget {
 				<?php if(!empty( $instance['last_edition_link'] )): ?>
 				<p class="last-edition"><?= empty($instance['last_edition_link'])? '' :  '<a href="'. $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
 				<?php endif; ?>
+				<?= ($instance['model_type'] == 'horizontal')? '</div>' : ''?>
 			</div>
 		</div>
 	<?php
@@ -88,8 +92,8 @@ class newsletter_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('model_type')); ?>"><?php esc_attr_e('Model type:', 'jeo'); ?></label>
 			<select class="widefat" id="<?php echo esc_attr($this->get_field_id('model_type')); ?>" name="<?php echo esc_attr($this->get_field_name('model_type')); ?>">
-				<option value="horizontal">Horizontal</option>
-				<option value="vertical">Vertical</option>
+				<option value="horizontal" <?= $model_type == 'horizontal'? 'selected' : '' ?>>Horizontal</option>
+				<option value="vertical" <?= $model_type == 'vertical'? 'selected' : '' ?>>Vertical</option>
 			</select>
 		</p>
 
@@ -111,11 +115,6 @@ class newsletter_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('last_edition_link')); ?>"><?php esc_attr_e('Last edition link:', 'jeo'); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('last_edition_link')); ?>" name="<?php echo esc_attr($this->get_field_name('last_edition_link')); ?>" type="text" value="<?php echo esc_attr($last_edition_link); ?>">
-		</p>
-
-		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('adicional_content')); ?>"><?php esc_attr_e('Adicional Content:', 'jeo'); ?></label>
-			<textarea class="widefat" id="<?php echo esc_attr($this->get_field_id('adicional_content')); ?>" name="<?php echo esc_attr($this->get_field_name('adicional_content')); ?>"><?php echo $adicional_content; ?></textarea>
 		</p>
 
 		<p>
