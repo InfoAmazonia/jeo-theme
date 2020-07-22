@@ -50,7 +50,7 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 			<span class="screen-reader-text"><?php echo 'No comments, leave a comment'; ?></span>
 			<i class="fas fa-comments"></i>
 			<span><?= __('There are no comments yet. Leave a comment!') ?></span>
-			
+
 		</div>
 		<div class="no-comments-form">
 			<?php newspack_comment_form(true);?>
@@ -68,7 +68,7 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 			?>
 		</div><!-- .comments-title-flex -->
 		<?php do_action('newspack_comments_above_comments'); ?>
-		
+
 		<?php
 		if (have_comments()) :
 
@@ -82,7 +82,7 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 				<?php
 				if (comments_open()) {
 					if (have_comments()) {
-						echo esc_html(apply_filters('newspack_comment_section_title_nocomments', $discussion->responses . ' comments'));
+						echo esc_html(apply_filters('newspack_comment_section_title_nocomments', $discussion->responses == 1 ? '1 comment' : $discussion->responses . ' comments'));
 					} else {
 						echo esc_html(apply_filters('newspack_comment_section_title', __('Leave a comment', 'newspack')));
 					}
@@ -154,7 +154,7 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 			?>
 				<div class="comment-form-flex">
 					<span class="screen-reader-text"><?php echo esc_html($leave_comment_text); ?></span>
-					<?php //newspack_comment_form( 'asc' ); 
+					<?php //newspack_comment_form( 'asc' );
 					?>
 					<h2 class="comments-title" aria-hidden="true"><?php echo esc_html($leave_comment_text); ?></h2>
 				</div>
