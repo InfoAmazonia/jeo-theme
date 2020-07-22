@@ -52,8 +52,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
 (function ($) {
     jQuery(document).ready(function () {
-        const app = new Vue({
-            el: "#content",
+        document.querySelectorAll('.vue-component').forEach(function(element) {
+            new Vue({
+                el: element,
+            });
         });
 
         if (jQuery(".single .featured-image-behind").length) {

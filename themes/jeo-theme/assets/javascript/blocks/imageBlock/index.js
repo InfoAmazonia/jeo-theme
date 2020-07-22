@@ -149,7 +149,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
         
         return (
             <>
-                <div className="image-block-container" key="container">
+                <div className="vue-component image-block-container" key="container">
                     <image-block alignment={align} title={title} mediaurl={mediaURL} mediadescription={mediaDescription}></image-block>    
                 </div>
             </>
