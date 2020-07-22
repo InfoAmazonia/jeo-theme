@@ -10,8 +10,7 @@ window.addEventListener("DOMContentLoaded", function () {
         .querySelectorAll("article > .entry-wrapper > h2 > a")
         .forEach((element) => {
             const targetLink = element.getAttribute("href");
-            const imageLink = element.closest('figure');
-
+            
             try {
                 element.parentElement.parentElement.parentElement.querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
 
