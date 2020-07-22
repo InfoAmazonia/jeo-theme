@@ -114,7 +114,7 @@ function custom_newsletter_block() {
 	register_block_type('jeo-theme/custom-newsletter-block', array(
 		'editor_script' => 'custom-newsletter-block',
 		'editor_style'  => 'custom-newsletter-block',
-		'style'         => 'custom-newsletter-block',
+		//'style'         => 'custom-newsletter-block',
 	));
 }
 
