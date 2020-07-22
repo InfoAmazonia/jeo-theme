@@ -50,7 +50,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         title,
         subtitle,
         newsletterShortcode,
-        lastEditionLink,
         adicionalContent,
         customStyle,
       },
@@ -99,7 +98,13 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
                     allowedBlocks={['core/shortcode']}
                     template={[['core/shortcode', {placeholder: 'Newsletter shortcode'}]]}
 			    />
-                <p class="link">adicionalContent</p>
+                <RichText
+                        tagName="p"
+                        className="link"
+                        placeholder={__("Adicional Information")}
+                        value={adicionalContent}
+                        onChange={(value) => setAttributes({ adicionalContent: value })}
+                />
               </div>
             </div>
           </div>
@@ -116,9 +121,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         title,
         subtitle,
         newsletterShortcode,
-        lastEditionLink,
         adicionalContent,
-        customStyle,
         align,
       },
       setAttributes,
@@ -132,15 +135,19 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
                     <div>
                         <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
                         <div class="newsletter-header">
-                            <p>{title}</p> 
+                            <p><RichText.Content value={title}/></p> 
                         </div>
 
-                        <p class="anchor-text">{subtitle}</p>
+                        <p class="anchor-text"><RichText.Content value={subtitle}/></p>
                     </div>
 
                     <div>
                         <InnerBlocks.Content />
-                        <p class="link">adicionalContent</p>
+                        <RichText.Content
+                                tagName="p"
+                                className="link"
+                                value={adicionalContent}
+                        />
                     </div>
                     </div>
                 </div>
