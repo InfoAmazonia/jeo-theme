@@ -5,16 +5,71 @@
     border-radius: 40px;
     align-items: center;
     margin-bottom: 3rem;
-    
+
     &.horizontal {
         display: grid;
         grid-template-columns: repeat(2, 50%);
+        padding: 35px 113px;
+        margin-top: 120px;
 
-        form div {
-            width: 100%;
+        @include tablet {
+            padding: 15px 40px;
+            grid-template-columns: auto;
+        }
+
+        > div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            i.fa-envelope {
+                margin-bottom: 20px;
+            }
+
+            form div {
+                width: 100%;
+
+                button {
+                    color: #FFFFFF;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    line-height: 24px;
+
+                    @include tablet {
+                        width: 77px;
+
+                        span:first-child {
+                            display: none;
+                        }
+                    }
+
+                    i {
+                        display: none;
+                        
+                        @include tablet {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            p {
+                &.link {
+                    margin-bottom: 0;
+                    text-align: right;
+                }
+
+                &.anchor-text {
+                    a {
+                        color: var(--primary);
+                    }
+                }
+            }
         }
     }
-    
+
     &.vertical {
         display: flex;
         flex-direction: column;
@@ -26,6 +81,24 @@
         .newsletter-header p {
             text-align: center;
         }
+
+        .anchor-text {
+            margin-bottom: 15%;
+        }
+
+        form {
+            button {
+                width: 77px;
+
+                span:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .mc4wp-response {
+        padding: 0 15px;
     }
 
     .newsletter-header p {
@@ -37,7 +110,6 @@
     .anchor-text {
         font-weight: bold;
         color: var(--secondary);
-        margin-bottom: 15%;
     }
 
     form {
@@ -62,7 +134,6 @@
         }
 
         button {
-            width: 77px;
             background-color: var(--primary);
             border-top-left-radius: initial;
             border-bottom-left-radius: initial;

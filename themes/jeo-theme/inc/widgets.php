@@ -52,26 +52,29 @@ class newsletter_widget extends WP_Widget {
 ?>
 		<div class="category-page-sidebar">
 			<div class="newsletter <?= $instance['model_type'] ?>">
-				<?= ($instance['model_type'] == 'horizontal')? '<div>' : ''?>
+				<?= ($instance['model_type'] == 'horizontal') ? '<div>' : '' ?>
 				<i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
 				<div class="newsletter-header">
 					<p><?= $instance['title'] ?> </p>
 				</div>
 				<p class="anchor-text">
-					<?= $instance['subtitle'] ?> 
+					<?= $instance['subtitle'] ?>
+					<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'horizontal') : ?>
+						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?>
+					<?php endif; ?>
 				</p>
-				<?= ($instance['model_type'] == 'horizontal')? '</div>' : ''?>
-				<?= ($instance['model_type'] == 'horizontal')? '<div>' : ''?>
-				<?php if(!empty( $instance['newsletter_shortcode'] )): ?>
-				<?= do_shortcode( $instance['newsletter_shortcode']) ?>
+				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
+				<?= ($instance['model_type'] == 'horizontal') ? '<div>' : '' ?>
+				<?php if (!empty($instance['newsletter_shortcode'])) : ?>
+					<?= do_shortcode($instance['newsletter_shortcode']) ?>
 				<?php endif; ?>
-				<?php if(!empty( $instance['adicional_content'] )): ?>
-				<p class="link"><?= $instance['adicional_content'] ?></p>
+				<?php if (!empty($instance['adicional_content'])) : ?>
+					<p class="link"><?= $instance['adicional_content'] ?></p>
 				<?php endif; ?>
-				<?php if(!empty( $instance['last_edition_link'] )): ?>
-				<p class="last-edition"><?= empty($instance['last_edition_link'])? '' :  '<a href="'. $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
+				<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'vertical') : ?>
+					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
 				<?php endif; ?>
-				<?= ($instance['model_type'] == 'horizontal')? '</div>' : ''?>
+				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
 			</div>
 		</div>
 	<?php
@@ -92,8 +95,8 @@ class newsletter_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('model_type')); ?>"><?php esc_attr_e('Model type:', 'jeo'); ?></label>
 			<select class="widefat" id="<?php echo esc_attr($this->get_field_id('model_type')); ?>" name="<?php echo esc_attr($this->get_field_name('model_type')); ?>">
-				<option value="horizontal" <?= $model_type == 'horizontal'? 'selected' : '' ?>>Horizontal</option>
-				<option value="vertical" <?= $model_type == 'vertical'? 'selected' : '' ?>>Vertical</option>
+				<option value="horizontal" <?= $model_type == 'horizontal' ? 'selected' : '' ?>>Horizontal</option>
+				<option value="vertical" <?= $model_type == 'vertical' ? 'selected' : '' ?>>Vertical</option>
 			</select>
 		</p>
 
@@ -127,7 +130,7 @@ class newsletter_widget extends WP_Widget {
 			<textarea class="widefat" id="<?php echo esc_attr($this->get_field_id('custom_style')); ?>" name="<?php echo esc_attr($this->get_field_name('custom_style')); ?>"><?php echo $custom_style; ?></textarea>
 		</p>
 
-		
+
 	<?php
 	}
 }
