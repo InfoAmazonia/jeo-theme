@@ -20,6 +20,7 @@ mix.js(assets_dir + '/javascript/app.js', '');
 mix.sass(assets_dir + '/scss/app.scss', '').sourceMaps();
 
 mix.react('./assets/javascript/blocks/imageBlock/index.js', 'imageBlock.js');
+mix.react('./assets/javascript/blocks/newsletter/index.js', 'newsletter.js');
 
 mix.webpackConfig({
 	...defaultConfig,

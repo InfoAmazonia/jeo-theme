@@ -1,6 +1,6 @@
 <?php
 /**
- * Image box gutenberg block
+ * Image box
  */
 function custom_image_block() {
 
@@ -78,3 +78,44 @@ function custom_group_block_scripts() {
 	);
 }
 add_action('enqueue_block_editor_assets', 'custom_group_block_scripts');
+
+/**
+ * Newsletter
+ */
+function custom_newsletter_block() {
+
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/newsletter.asset.php');
+
+	wp_register_script(
+		'custom-newsletter-block',
+		get_stylesheet_directory_uri() . '/dist/newsletter.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'custom-newsletter-block',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/newsletter/newsletter.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/newsletter/newsletter.css'),
+		'all'
+	);
+
+	// wp_register_style(
+	// 	'custom-newsletter-block-style',
+	// 	get_stylesheet_directory_uri() . '/assets/javascript/blocks/newsletter/style.css',
+	// 	array(),
+	// 	filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/newsletter/style.css'),
+	// 	'all',
+	// );
+
+	register_block_type('jeo-theme/custom-newsletter-block', array(
+		'editor_script' => 'custom-newsletter-block',
+		'editor_style'  => 'custom-newsletter-block',
+		'style'         => 'custom-newsletter-block',
+	));
+}
+
+add_action('init', 'custom_newsletter_block');
