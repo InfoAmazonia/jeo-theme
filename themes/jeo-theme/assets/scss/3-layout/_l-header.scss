@@ -4,11 +4,10 @@ header.site-header {
     }
 
     .search-toggle {
-        padding: 15px;
+        padding: 0px;
         border-radius: 50px;
         background-color: transparent;
         color: inherit;
-        padding: 0.25rem 0 0;
 
         &:hover {
             opacity: 0.7;
@@ -32,13 +31,15 @@ header.site-header {
             .search-toggle {
                 span {
                     color: rgb(25, 30, 35);
+                    padding: 0px;
                 }
             }
         }
 
         .search-icon, .close-icon {
             @include tablet {
-                color: #191e23;
+                color: #555D66;
+                padding: 0px;
             }
         }
 
@@ -52,8 +53,7 @@ header.site-header {
     .close-icon {
         @include desktop {
             background-color: var(--search-icon-bg-color);
-            width: 55px;
-            height: 55px;
+            padding: 12px;
             border-radius: 50%;
             justify-content: center;
             align-items: center;
