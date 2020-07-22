@@ -10,8 +10,11 @@ window.addEventListener("DOMContentLoaded", function () {
         .querySelectorAll("article > .entry-wrapper > h2 > a")
         .forEach((element) => {
             const targetLink = element.getAttribute("href");
+            const imageLink = element.closest('figure');
 
             try {
+                element.parentElement.parentElement.parentElement.querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
+
                 const targetLinkSource = new URL(targetLink).origin;
                 if (document.location.origin !== targetLinkSource) {
                     element.setAttribute("target", "_blank");
@@ -26,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function () {
                         document.location.origin +
                         "/wp-json/api/external-link/?target_link=" +
                         targetLink;
-                    console.log(external_link_api);
+                    //console.log(external_link_api);
 
                     jQuery.ajax({
                         type: "GET",
