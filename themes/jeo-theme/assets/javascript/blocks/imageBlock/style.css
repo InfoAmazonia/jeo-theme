@@ -28,8 +28,7 @@
 }
 
 .credited-image-block .image-icon, .fa-camera  {
-    color: rgba(25, 30, 35, 0.70);
-    background: rgba(255, 255, 255, 0.705);
+    color: #fff;
     padding: 6px;
     display: flex;
     border-radius: 50%;
