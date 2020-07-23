@@ -110,6 +110,13 @@ function newspack_scott_custom_colors_css() {
 		.editor-styles-wrapper .wp-block[data-type="core/pullquote"] .wp-block-pullquote:not(.is-style-solid-color) blockquote > .editor-rich-text__editable:first-child:before {
 			color: ' . esc_html($primary_color) . ';
 		}
+
+		:root {
+			--primary: ' . esc_html($primary_color) . ';
+			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
+			--primary-darker-15: ' . color_luminance($primary_color, -0.15) . ';
+			--secondary: ' . esc_html($secondary_color) . ';			
+		}
 	';
 
 	if (function_exists('register_block_type') && is_admin()) {

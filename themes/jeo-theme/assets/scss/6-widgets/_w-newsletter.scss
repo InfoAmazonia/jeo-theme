@@ -1,41 +1,175 @@
+// AQUI COMEÇA A NEWSLETTER
+
+.page {
+    .newsletter.horizontal {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
 .newsletter {
     padding: 29px;
     color: var(--primary);
     background-color: var(--primary-lighter-75);
     border-radius: 40px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
+    font-family: var(--primary-font);
 
-    .fa-envelope {
-        margin: 20px;
+    input[type='email'] {
+        background: transparent;
     }
 
-    .newsletter-header p {
-        text-align: center;
-        font-size: 32px;
-        font-weight: bold;
-    }
 
-    .anchor-text {
-        font-weight: bold;
-        color: var(--secondary);
-        margin-bottom: 15%;
-    }
-
-    form {
+    .mc4wp-form-fields {
         border: 2px solid var(--primary);
         border-radius: 10px;
         margin-bottom: 5px;
         max-width: 100%;
+    }
+
+    &.horizontal {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        padding: 35px 113px;
+        margin-top: 90px;
+
+        @include desktop{
+            margin-left: calc( 50% - 35vw);
+            margin-right: calc( 50% - 35vw);
+        }
+
+        @include tablet {
+            padding: 30px;
+            grid-template-columns: auto;
+            line-height: normal;
+            text-align: center;
+        }
+
+        > div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            i.fa-envelope {
+                margin-bottom: 20px;
+            }
+
+            form  {
+                @include mobile{
+                    margin-top: 30px;
+                }
+
+                button {
+                    color: #FFFFFF;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    line-height: 24px;
+
+                    @include tablet {
+                        width: 77px;
+
+                        span:first-child {
+                            display: none;
+                        }
+                    }
+
+                    i {
+                        display: none;
+                        
+                        @include tablet {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            p {
+                &.link {
+                    margin-bottom: 0;
+                    text-align: right;
+                }
+
+                &.anchor-text {
+                    a {
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+
+    &.vertical {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .fa-envelope {
+            margin: 20px;
+        }
+
+        .newsletter-header p {
+            text-align: center;
+        }
+
+        .anchor-text {
+            margin-bottom: 15%;
+        }
+
+        form {
+            button {
+                padding: 20px;
+
+                span:first-child {
+                    display: none;
+                }
+
+                .mc4wp__btn-label {
+                    display: none !important;
+                }
+                
+                .mc4wp__btn-icon {
+                    display: block !important;
+                    color: #fff;
+                    font-size: 14px;
+                }
+            }
+
+            
+        }
+    }
+
+    .mc4wp-response {
+        padding: 0x;
+        p {
+            font-size: 14px;
+            line-height: normal;
+            margin: 0px;
+        }
+    }
+
+    .newsletter-header p {
+        font-size: 32px;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+
+    .anchor-text {
+        font-weight: bold;
+        color: var(--secondary);
+    }
+
+    form {
 
         div {
             display: flex;
         }
 
         input {
-            width: calc(100% - 77px);
+            width: calc(100% - 77px) !important;
             background-color: unset;
             border: none;
 
@@ -46,10 +180,17 @@
         }
 
         button {
-            width: 77px;
             background-color: var(--primary);
             border-top-left-radius: initial;
             border-bottom-left-radius: initial;
+            border-color: var(--primary);
+
+            &:hover{
+                background-color: var(--primary-darker-15);
+                border-top-left-radius: initial;
+                border-bottom-left-radius: initial;
+                border-color: var(--primary);
+            }
         }
     }
 
@@ -75,3 +216,5 @@
         }
     }
 }
+
+// AQUI TERMINA A NEWSLETTER
