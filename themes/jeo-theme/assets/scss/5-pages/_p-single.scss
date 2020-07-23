@@ -6,6 +6,7 @@
 .single,
 .post-template-single-feature,
 .post-template-single-wide {
+
     h1,
     h2,
     h3,
@@ -22,7 +23,7 @@
         &:visited {
             color: var(--primary);
         }
-        
+
         &:hover {
             color: var(--primary-darker-15);
         }
@@ -48,7 +49,7 @@
         a:first-of-type {
             opacity: 0.5;
         }
-        
+
         @include mobile {
             text-align: center;
         }
@@ -278,7 +279,7 @@
 
                 i {
                     color: white;
-                    padding: 25px 0;
+                    padding: 28px 0;
                     cursor: pointer;
                     opacity: 0.7;
                 }
@@ -296,6 +297,13 @@
                 margin: 60px auto;
             }
         }
+
+        /* novo */
+        i.fas.fa-camera {
+            color: #fff;
+            background: transparent;
+            opacity: 0.7;
+        }
     }
 
     .image-info-container {
@@ -303,7 +311,7 @@
         position: absolute;
         bottom: 0;
         background: rgba(25, 30, 35, 0.9);
-        padding: 22px 0;
+        padding: 18px 0;
         color: #F9F9F9;
         font-size: 14px;
         font-weight: bold;
@@ -548,11 +556,13 @@
 
 .has-featured-image.single-featured-image-behind {
     section#primary {
-        &.category-opinion, &.video {
+
+        &.category-opinion,
+        &.video {
             margin-top: 0;
         }
     }
-    
+
 }
 
 

@@ -12,31 +12,29 @@
 
 .wp-block-pullquote.alignleft.is-style-jeo ,
 .wp-block-pullquote.alignleft.is-style-solid-color{
-        margin-left: 0px !important;
-        p{
-            /*font-size: 18px;*/
+        /* margin-left: 0px !important; */
+        p {
             line-height: inherit;
         }
     }
 
 .wp-block-pullquote.alignright.is-style-jeo,
 .wp-block-pullquote.alignright.is-style-solid-color{
-        margin-right: 0px !important;
-        p{
-            /*font-size: 18px;*/
+        /* margin-right: 0px !important; */
+        p {
             line-height: inherit;
         }
  }
 
 figure.wp-block-pullquote.alignright.has-background.is-style-solid-color {
-    margin-right: 0px;
+    /* margin-right: 0px; */
     p {
         padding: 60px 0px 30px !important;
     }
 }
 
 figure.wp-block-pullquote.alignleft.has-background.is-style-solid-color {
-    margin-left: 0px;
+    /* margin-left: 0px; */
     p {
         padding: 60px 0px 30px !important;
     }
