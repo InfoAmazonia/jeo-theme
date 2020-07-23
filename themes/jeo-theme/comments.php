@@ -53,7 +53,7 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 
 		</div>
 		<div class="no-comments-form">
-			<?php newspack_comment_form(true);?>
+			<?php jeo_comment_form();?>
 		</div>
 
 	<?php else : ?>
@@ -74,7 +74,7 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 
 			// Show comment form at top if showing newest comments at the top.
 			if (comments_open()) {
-				newspack_comment_form('asc');
+				jeo_comment_form();
 			}
 		?>
 
@@ -175,7 +175,7 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 		else :
 
 			// Show comment form.
-			newspack_comment_form(true);
+			jeo_comment_form();
 
 		endif; // if have_comments();
 	endif;
