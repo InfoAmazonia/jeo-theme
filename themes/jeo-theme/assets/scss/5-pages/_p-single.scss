@@ -15,18 +15,25 @@
         font-family: var(--featured-font);
     }
 
-    .entry-content a {
-        color: var(--primary);
-        font-weight: bold;
+    .entry-content {
+        .post-excerpt p {
+            font-size: 22px;
+            margin-bottom: 60px;
+        }
 
-        &:visited {
+        a {
             color: var(--primary);
+            font-weight: bold;
+    
+            &:visited {
+                color: var(--primary);
+            }
+            
+            &:hover {
+                color: var(--primary-darker-15);
+            }
         }
-        
-        &:hover {
-            color: var(--primary-darker-15);
-        }
-    }
+    } 
 
     h1.entry-title {
         @include mobile {
