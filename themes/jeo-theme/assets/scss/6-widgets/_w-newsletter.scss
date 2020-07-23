@@ -8,11 +8,22 @@
     margin-bottom: 3rem;
     font-family: var(--primary-font);
 
+    input[type='email'] {
+        background: transparent;
+    }
+
     &.horizontal {
         display: grid;
         grid-template-columns: repeat(2, 50%);
         padding: 35px 113px;
         margin-top: 90px;
+
+        .mc4wp-form-fields {
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            margin-bottom: 5px;
+            max-width: 100%;
+        }
 
         @include desktop{
             margin-left: calc( 50% - 35vw);
@@ -20,8 +31,10 @@
         }
 
         @include tablet {
-            padding: 15px 40px;
+            padding: 30px;
             grid-template-columns: auto;
+            line-height: normal;
+            text-align: center;
         }
 
         > div {
@@ -33,8 +46,10 @@
                 margin-bottom: 20px;
             }
 
-            form div {
-                width: 100%;
+            form  {
+                @include mobile{
+                    margin-top: 30px;
+                }
 
                 button {
                     color: #FFFFFF;
@@ -105,10 +120,11 @@
     }
 
     .mc4wp-response {
-        padding: 0 15px;
+        padding: 0x;
         p {
             font-size: 14px;
             line-height: normal;
+            margin: 0px;
         }
     }
 
@@ -124,10 +140,6 @@
     }
 
     form {
-        border: 2px solid var(--primary);
-        border-radius: 10px;
-        margin-bottom: 5px;
-        max-width: 100%;
 
         div {
             display: flex;
@@ -148,6 +160,14 @@
             background-color: var(--primary);
             border-top-left-radius: initial;
             border-bottom-left-radius: initial;
+            border-color: var(--primary);
+
+            &:hover{
+                background-color: var(--primary-darker-15);
+                border-top-left-radius: initial;
+                border-bottom-left-radius: initial;
+                border-color: var(--primary);
+            }
         }
     }
 
