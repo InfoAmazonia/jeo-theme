@@ -6,6 +6,7 @@
 .single,
 .post-template-single-feature,
 .post-template-single-wide {
+
     h1,
     h2,
     h3,
@@ -22,7 +23,7 @@
         &:visited {
             color: var(--primary);
         }
-        
+
         &:hover {
             color: var(--primary-darker-15);
         }
@@ -48,7 +49,7 @@
         a:first-of-type {
             opacity: 0.5;
         }
-        
+
         @include mobile {
             text-align: center;
         }
@@ -297,7 +298,7 @@
             }
         }
 
-        i.fas.fa-camera{
+        i.fas.fa-camera {
             color: #fff;
             background: transparent;
             opacity: 0.7;
@@ -554,11 +555,13 @@
 
 .has-featured-image.single-featured-image-behind {
     section#primary {
-        &.category-opinion, &.video {
+
+        &.category-opinion,
+        &.video {
             margin-top: 0;
         }
     }
-    
+
 }
 
 
