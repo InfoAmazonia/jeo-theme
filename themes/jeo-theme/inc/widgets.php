@@ -50,6 +50,7 @@ class newsletter_widget extends WP_Widget {
 
 	public function widget($args, $instance) {
 ?>
+	<? if ($instance) : ?>
 		<div class="category-page-sidebar">
 			<div class="newsletter <?= $instance['model_type'] ?>">
 				<?= ($instance['model_type'] == 'horizontal') ? '<div>' : '' ?>
@@ -77,6 +78,7 @@ class newsletter_widget extends WP_Widget {
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
 			</div>
 		</div>
+	<?php endif; ?>
 	<?php
 	}
 

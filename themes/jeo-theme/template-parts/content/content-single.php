@@ -44,6 +44,10 @@
 				'after'  => '</div>',
 			)
 		);
+		
+		if ( is_active_sidebar( 'article-2' ) && is_single() ) {
+			dynamic_sidebar( 'article-2' );
+		}
 		?>
 	</div><!-- .entry-content -->
 
@@ -53,10 +57,6 @@
 
 	<?php if ( ! is_singular( 'attachment' )  && get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
 		<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
-	<?php endif; ?>
-
-	<?php if (  is_active_sidebar( 'article-2' ) && is_single() ) : ?>
-		<?php dynamic_sidebar( 'article-2' );?>
 	<?php endif; ?>
 
 </article><!-- #post-${ID} -->

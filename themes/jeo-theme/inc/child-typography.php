@@ -114,12 +114,12 @@ function newspack_scott_custom_typography_css() {
 		}
 		
 		.wp-block-pullquote p{
-			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
         }
 
 		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p,
 .		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
-			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
         }
 	';
 
