@@ -6,12 +6,15 @@
     border-radius: 40px;
     align-items: center;
     margin-bottom: 3rem;
+    font-family: var(--primary-font);
 
     &.horizontal {
         display: grid;
         grid-template-columns: repeat(2, 50%);
         padding: 35px 113px;
-        margin-top: 120px;
+        margin-top: 90px;
+        margin-left: calc( 50% - 35vw);
+        margin-right: calc( 50% - 35vw);
 
         @include tablet {
             padding: 15px 40px;
@@ -100,6 +103,10 @@
 
     .mc4wp-response {
         padding: 0 15px;
+        p {
+            font-size: 14px;
+            line-height: normal;
+        }
     }
 
     .newsletter-header p {
@@ -124,7 +131,7 @@
         }
 
         input {
-            width: calc(100% - 77px);
+            width: calc(100% - 77px) !important;
             background-color: unset;
             border: none;
 

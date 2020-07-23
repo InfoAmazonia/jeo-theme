@@ -5,6 +5,7 @@
     border-radius: 40px;
     align-items: center;
     margin-bottom: 3rem;
+    font-family: var(--primary-font);
 }
 
 .newsletter.horizontal {
@@ -124,9 +125,11 @@
 }
 
 .newsletter form input {
-    width: calc(100% - 77px);
+    /* width: calc(100% - 77px); */
+    width: auto !important;
     background-color: unset;
     border: none;
+    border-radius: 10px 10px 10px;
 }
 
 .newsletter form input:focus {
