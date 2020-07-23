@@ -36,15 +36,7 @@
                 color: var(--primary-darker-15);
             }
         }
-<<<<<<< HEAD
-
-        &:hover {
-            color: var(--primary-darker-15);
-        }
-    }
-=======
     } 
->>>>>>> 6f549be7ed8713a08fef08459926160d1779610d
 
     h1.entry-title {
         @include mobile {
@@ -581,7 +573,6 @@
     }
 
 }
-
 
 .single:not(.has-large-featured-image) .entry-header {
     border-bottom: 0px;
