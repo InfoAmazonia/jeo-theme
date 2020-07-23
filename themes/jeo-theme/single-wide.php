@@ -10,7 +10,11 @@
  * @package Newspack
  */
 
-get_header('single');
+if(is_single()) {
+	get_header('single');
+} else {
+	get_header();
+}
 
 $parent_type_category = get_category_by_slug('type')->cat_ID;
 $post_categories = get_the_category();
