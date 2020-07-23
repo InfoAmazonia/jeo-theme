@@ -1,4 +1,12 @@
 // AQUI COMEÇA A NEWSLETTER
+
+.page {
+    .newsletter.horizontal {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
 .newsletter {
     padding: 29px;
     color: var(--primary);
