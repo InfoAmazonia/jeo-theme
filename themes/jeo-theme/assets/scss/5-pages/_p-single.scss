@@ -18,18 +18,33 @@
         font-family: var(--featured-font);
     }
 
-    .entry-content a {
-        color: var(--primary);
-        font-weight: bold;
-
-        &:visited {
-            color: var(--primary);
+    .entry-content {
+        .post-excerpt p {
+            font-size: 22px;
+            margin-bottom: 60px;
         }
+
+        a {
+            color: var(--primary);
+            font-weight: bold;
+    
+            &:visited {
+                color: var(--primary);
+            }
+            
+            &:hover {
+                color: var(--primary-darker-15);
+            }
+        }
+<<<<<<< HEAD
 
         &:hover {
             color: var(--primary-darker-15);
         }
     }
+=======
+    } 
+>>>>>>> 6f549be7ed8713a08fef08459926160d1779610d
 
     h1.entry-title {
         @include mobile {
