@@ -84,21 +84,17 @@
         p {
             margin-top: 0;
 
-            &.comment-notes {
-                order: 1;
-            }
-
             &.comment-form-author {
-                order: 2;
+                order: 1;
                 width: 100%;
             }
 
             &.comment-form-comment {
-                order: 3;
+                order: 2;
             }
 
             &.form-submit {
-                order: 4;
+                order: 3;
             }
         }
     }

@@ -96,9 +96,11 @@ else: ?>
 					}
 					?>
 
-					<div class="after-post-content-widget-area">
-						<?php dynamic_sidebar('after_post_widget_area'); ?>
-					</div>
+					<?php if(is_single()) : ?>
+						<div class="after-post-content-widget-area">
+							<?php dynamic_sidebar('after_post_widget_area'); ?>
+						</div>
+					<?php endif; ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
