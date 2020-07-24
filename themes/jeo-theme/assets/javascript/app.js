@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", function () {
         .querySelectorAll("article > .entry-wrapper > h2 > a")
         .forEach((element) => {
             const targetLink = element.getAttribute("href");
-            
+
             try {
                 element.parentElement.parentElement.parentElement.querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
 
@@ -188,9 +188,9 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        if (jQuery(".no-comments-area").length) {
-            jQuery(".no-comments-area").click(function () {
-                jQuery(".no-comments-form").toggle("fast");
+        if (jQuery(".toggable-comments-area").length) {
+            jQuery(".toggable-comments-area").click(function () {
+                jQuery(".toggable-comments-form").toggle("fast");
             });
         }
     });
