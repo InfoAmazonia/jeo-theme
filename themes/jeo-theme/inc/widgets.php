@@ -20,8 +20,8 @@ function widgets_areas() {
 		'id'            => 'category_page_sidebar',
 		'before_widget' => '<div class="widget-category_page_sidebar">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="category_page_sidebar">',
-		'after_title'   => '</h2>',
+		'before_title' => '<!--',
+		'after_title' => '-->',
 	));
 
 	register_sidebar(array(
