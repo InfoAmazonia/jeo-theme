@@ -1,5 +1,5 @@
 #comments.comments-area {
-    
+
     .comments-title-wrap {
         margin: 30px 0px;
         text-transform: uppercase;
@@ -27,7 +27,7 @@
         }
     }
 
-    .no-comments {
+    .toggable-comments {
         &-form {
             display: none;
 
@@ -73,6 +73,36 @@
         }
     }
 
+    .comment-form-cookies-consent {
+        display: none;
+    }
+
+    #commentform.comment-form {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin-top: 0;
+
+            &.comment-notes {
+                order: 1;
+            }
+
+            &.comment-form-author {
+                order: 2;
+                width: 100%;
+            }
+
+            &.comment-form-comment {
+                order: 3;
+            }
+
+            &.form-submit {
+                order: 4;
+            }
+        }
+    }
+
     footer {
         .comment {
             &-author {
@@ -89,9 +119,20 @@
                 font-size: 14px;
                 letter-spacing: 0;
                 line-height: 22px;
-                > a {
+                margin-right: 10px;
+
+                & > a {
                     color: #0A0A0A;
                 }
+            }
+
+            &-awaiting-moderation {
+                color: #dc3545;
+                font-family: var(--primary-font);
+                font-size: 14px;
+                line-height: 22px;
+                margin: 0;
+                width: 100%;
             }
 
         }
@@ -100,6 +141,7 @@
             &-meta {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
             }
         }
     }

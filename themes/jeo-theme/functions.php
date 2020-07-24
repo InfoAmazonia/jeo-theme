@@ -119,3 +119,16 @@ function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args) {
 	return $avatar;
 }
 add_filter('get_avatar', 'ns_filter_avatar', 10, 6);
+
+if (!function_exists('jeo_comment_form')) {
+	function jeo_comment_form() {
+		comment_form([
+			'comment_notes_before' => '<p class="comment-notes">Your email address will not be published.</p>',
+			'fields' => [
+				'author' => '<p class="comment-form-author"><label for="author">Name</label><input id="author" name="author" type="text" value="" size="30" maxlength="245" required></p>',
+			],
+			'loggend_in_as' => null,
+			'title_reply' => null,
+		]);
+	}
+}
