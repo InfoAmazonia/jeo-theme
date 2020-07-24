@@ -1,11 +1,14 @@
 .post-template .site-content {
-    // margin-top: 1.875em;
+    .entry-footer {
+        margin: 0px;
+    }
 }
 
 // Generic singles
 .single,
 .post-template-single-feature,
 .post-template-single-wide {
+
     h1,
     h2,
     h3,
@@ -15,18 +18,25 @@
         font-family: var(--featured-font);
     }
 
-    .entry-content a {
-        color: var(--primary);
-        font-weight: bold;
+    .entry-content {
+        .post-excerpt p {
+            line-height: normal;
+            margin-bottom: 60px;
+        }
 
-        &:visited {
+        a {
             color: var(--primary);
+            font-weight: bold;
+    
+            &:visited {
+                color: var(--primary);
+            }
+            
+            &:hover {
+                color: var(--primary-darker-15);
+            }
         }
-        
-        &:hover {
-            color: var(--primary-darker-15);
-        }
-    }
+    } 
 
     h1.entry-title {
         @include mobile {
@@ -44,6 +54,11 @@
     }
 
     span.cat-links {
+
+        a:first-of-type {
+            opacity: 0.5;
+        }
+
         @include mobile {
             text-align: center;
         }
@@ -273,8 +288,9 @@
 
                 i {
                     color: white;
-                    padding: 25px 0;
+                    padding: 28px 0;
                     cursor: pointer;
+                    opacity: 0.7;
                 }
             }
         }
@@ -290,6 +306,13 @@
                 margin: 60px auto;
             }
         }
+
+        /* novo */
+        i.fas.fa-camera {
+            color: #fff;
+            background: transparent;
+            opacity: 0.7;
+        }
     }
 
     .image-info-container {
@@ -297,7 +320,7 @@
         position: absolute;
         bottom: 0;
         background: rgba(25, 30, 35, 0.9);
-        padding: 22px 0;
+        padding: 18px 0;
         color: #F9F9F9;
         font-size: 14px;
         font-weight: bold;
@@ -358,6 +381,8 @@
                 height: fit-content;
                 margin-top: auto;
                 margin-bottom: auto;
+                color: #fff;
+                padding: 6px;
             }
         }
 
@@ -540,13 +565,14 @@
 
 .has-featured-image.single-featured-image-behind {
     section#primary {
-        &.category-opinion, &.video {
+
+        &.category-opinion,
+        &.video {
             margin-top: 0;
         }
     }
-    
-}
 
+}
 
 .single:not(.has-large-featured-image) .entry-header {
     border-bottom: 0px;

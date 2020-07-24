@@ -77,8 +77,10 @@ get_header();
 			</main><!-- #main -->
 			<aside class="author-page-sidebar">
     			<div>
-					<h4>ABOUT THE AUTHOR</h4>
-					<p class="about-the-author"><?php echo get_the_author_meta('description'); ?></p>
+					<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
+						<h4>ABOUT THE AUTHOR</h4>
+						<p class="about-the-author"><?php echo get_the_author_meta('description'); ?></p>
+					<?php endif; ?>
 					<?php dynamic_sidebar('author_page_sidebar') ?>
 				</div>
 			</aside>		</section><!-- #primary -->

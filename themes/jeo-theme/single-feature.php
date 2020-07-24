@@ -10,7 +10,11 @@
  * @package Newspack
  */
 
-get_header('single');
+if(is_single()) {
+	get_header('single');
+} else {
+	get_header();
+}
 
 $parent_type_category = get_category_by_slug('type')->cat_ID;
 $post_categories = get_the_category();
@@ -91,10 +95,12 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 						get_template_part( 'template-parts/content/content', 'single' );
 					}
 					?>
-					
-					<div class="after-post-content-widget-area">
-						<?php dynamic_sidebar('after_post_widget_area'); ?>
-					</div>
+
+					<?php if(is_single()) : ?>
+						<div class="after-post-content-widget-area">
+							<?php dynamic_sidebar('after_post_widget_area'); ?>
+						</div>
+					<?php endif; ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
