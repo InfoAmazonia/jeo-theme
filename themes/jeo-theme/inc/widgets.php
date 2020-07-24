@@ -229,7 +229,9 @@ function my_post_gallery_widget($output, $attr) {
     if (empty($attachments)) return '';
 
 	$output .= "<div class=\"image-gallery\">";
-	$output .= "<div class=\"image-gallery-header\"><p>IMAGE GALLERY</p></div>";
+	$output .= "<div class=\"image-gallery-header\"><p>";
+	$output .= $attr['title'];
+	$output .= "</p></div>";
     $output .= "<div class=\"image-gallery-content-block wp-block-gallery columns-3 is-cropped\"><div class=\"blocks-gallery-grid\">";
 
     foreach ($attachments as $id => $attachment) {
