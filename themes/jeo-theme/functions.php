@@ -127,7 +127,7 @@ if (!function_exists('jeo_comment_form')) {
 			'fields' => [
 				'author' => '<p class="comment-form-author"><label for="author">Name</label><input id="author" name="author" type="text" value="" size="30" maxlength="245" required></p>',
 			],
-			'loggend_in_as' => null,
+			'logged_in_as' => null,
 			'title_reply' => null,
 		]);
 	}
