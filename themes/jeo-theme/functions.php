@@ -123,12 +123,15 @@ add_filter('get_avatar', 'ns_filter_avatar', 10, 6);
 if (!function_exists('jeo_comment_form')) {
 	function jeo_comment_form() {
 		comment_form([
-			'comment_notes_before' => null,
-			'fields' => [
-				'author' => '<p class="comment-form-author"><label for="author">Name</label><input id="author" name="author" type="text" value="" size="30" maxlength="245" required></p>',
-			],
 			'logged_in_as' => null,
 			'title_reply' => null,
 		]);
 	}
 }
+
+function remove_website_field($fields) {
+    unset($fields['url']);
+    return $fields;
+}
+add_filter('comment_form_default_fields', 'remove_website_field');
+
