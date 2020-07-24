@@ -20,8 +20,8 @@ function widgets_areas() {
 		'id'            => 'category_page_sidebar',
 		'before_widget' => '<div class="widget-category_page_sidebar">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="category_page_sidebar">',
-		'after_title'   => '</h2>',
+		'before_title' => '<!--',
+		'after_title' => '-->',
 	));
 
 	register_sidebar(array(
@@ -191,6 +191,68 @@ class story_maps_widget extends WP_Widget {
 	}
 }
 
+function my_post_gallery_widget($output, $attr) {
+    global $post;
+
+    if (isset($attr['orderby'])) {
+        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+        if (!$attr['orderby'])
+            unset($attr['orderby']);
+    }
+
+    extract(shortcode_atts(array(
+        'order' => 'ASC',
+        'orderby' => 'menu_order ID',
+        'id' => $post->ID,
+        'itemtag' => 'dl',
+        'icontag' => 'dt',
+        'captiontag' => 'dd',
+        'columns' => 3,
+        'size' => 'thumbnail',
+        'include' => '',
+        'exclude' => ''
+    ), $attr));
+
+    $id = intval($id);
+    if ('RAND' == $order) $orderby = 'none';
+
+    if (!empty($include)) {
+        $include = preg_replace('/[^0-9,]+/', '', $include);
+        $_attachments = get_posts(array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
+
+        $attachments = array();
+        foreach ($_attachments as $key => $val) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    }
+
+    if (empty($attachments)) return '';
+
+	$output .= "<div class=\"image-gallery\">";
+	$output .= "<div class=\"image-gallery-header\"><p>";
+	$output .= $attr['title'];
+	$output .= "</p></div>";
+    $output .= "<div class=\"image-gallery-content-block wp-block-gallery columns-3 is-cropped\"><div class=\"blocks-gallery-grid\">";
+
+    foreach ($attachments as $id => $attachment) {
+        $img = wp_get_attachment_image_src($id, 'full');
+
+        $output .= "<div class=\"blocks-gallery-item\">\n";
+        $output .= "<img src=\"{$img[0]}\"/>\n";
+        $output .= "</div>\n";
+    }
+
+	$output .= "</div></div>\n";
+	$output .= "<button><a target=\"blank\" href=\"";
+	$output .= $attr['see_more_url'];
+	$output .= "\">SEE MORE</a></button>\n";
+
+	$output .= "</div>\n";
+
+
+    return $output;
+}
+
 function newsletter_load_widget() {
 	register_widget('newsletter_widget');
 }
@@ -203,6 +265,37 @@ function story_maps_load_widget() {
 	register_widget('story_maps_widget');
 }
 
+add_action( 'widgets_init', 'newsletter_load_widget' );
+add_action( 'widgets_init', 'most_read_load_widget' );
+add_action( 'widgets_init', 'story_maps_load_widget' );
+add_filter('post_gallery', 'my_post_gallery_widget', 10, 2);
+
+
+// IMAGE GALLERY FORM
+function image_gallery_form( $widget, $return, $instance ) {
+ 
+    if ( 'media_gallery' == $widget->id_base ) {
+ 
+        $see_more_url = isset( $instance['see_more_url'] ) ? $instance['see_more_url'] : '';
+        ?>
+            <p>
+                <label for="<?php echo $widget->get_field_id('see_more_url'); ?>">
+                    <?php _e( 'See more URL (requires https://)', 'image_gallery' ); ?>
+                </label>
+                <input class="text" value="<?php echo $see_more_url ?>" type="text" id="<?php echo $widget->get_field_id('see_more_url'); ?>" name="<?php echo $widget->get_field_name('see_more_url'); ?>" />
+            </p>
+        <?php
+    }
+}
+
+function image_gallery_save_form( $instance, $new_instance ) {
+	
+	$instance['see_more_url'] = $new_instance['see_more_url'];
+	return $instance;
+}
+
+add_filter('in_widget_form', 'image_gallery_form', 10, 3 );
+add_filter( 'widget_update_callback', 'image_gallery_save_form', 10, 2 );
 add_action('widgets_init', 'newsletter_load_widget');
 add_action('widgets_init', 'most_read_load_widget');
 add_action('widgets_init', 'story_maps_load_widget');
