@@ -14,7 +14,7 @@
             padding: 5%;
         }
         width: 90%;
-        margin: 5%;
+        margin: 15px 20px 30px;;
     }
 
     .image-gallery-content {
@@ -38,6 +38,10 @@
                 transform: translateY(-50%);
             }
         }
+    }
+
+    .image-gallery-content-block{
+        padding: 20px 20px 0px;
     }
 
     .image-gallery-header {

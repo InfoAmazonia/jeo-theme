@@ -230,17 +230,17 @@ function my_post_gallery_widget($output, $attr) {
 
 	$output .= "<div class=\"image-gallery\">";
 	$output .= "<div class=\"image-gallery-header\"><p>IMAGE GALLERY</p></div>";
-    $output .= "<div class=\"image-gallery-content\">";
+    $output .= "<div class=\"image-gallery-content-block wp-block-gallery columns-3 is-cropped\"><div class=\"blocks-gallery-grid\">";
 
     foreach ($attachments as $id => $attachment) {
         $img = wp_get_attachment_image_src($id, 'full');
 
-        $output .= "<div class=\"image\">\n";
+        $output .= "<div class=\"blocks-gallery-item\">\n";
         $output .= "<img src=\"{$img[0]}\"/>\n";
         $output .= "</div>\n";
     }
 
-	$output .= "</div>\n";
+	$output .= "</div></div>\n";
 	$output .= "<button><a target=\"blank\" href=\"";
 	$output .= $attr['see_more_url'];
 	$output .= "\">SEE MORE</a></button>\n";
@@ -294,5 +294,8 @@ function image_gallery_save_form( $instance, $new_instance ) {
 
 add_filter('in_widget_form', 'image_gallery_form', 10, 3 );
 add_filter( 'widget_update_callback', 'image_gallery_save_form', 10, 2 );
+add_action('widgets_init', 'newsletter_load_widget');
+add_action('widgets_init', 'most_read_load_widget');
+add_action('widgets_init', 'story_maps_load_widget');
 
 ?>
