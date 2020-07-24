@@ -23,25 +23,7 @@ if (post_password_required()) {
 	return;
 }
 
-$discussion         = newspack_get_discussion_data();
-$collapse_comments  = get_theme_mod('collapse_comments', false);
-$on_first_page      = true;
-$comments_collapsed = false;
-$url_end            = '';
-
-if (isset($_SERVER['REQUEST_URI'])) {
-	$url_end = basename(sanitize_text_field($_SERVER['REQUEST_URI']));
-}
-
-// Figure out if we're into comment pagination, to check if there's a new comment, or we're in subpages:
-if (false !== strpos($url_end, 'cpage=') || false !== strpos($url_end, 'comment-page-') || false !== strpos($url_end, 'moderation-hash=')) {
-	$on_first_page = false;
-}
-
-// Collapse comments if that's set, if there's more than one, and if we're on the first page:
-if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
-	$comments_collapsed = true;
-}
+$discussion = newspack_get_discussion_data();
 ?>
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
@@ -108,44 +90,33 @@ if ($collapse_comments && 1 < (int) $discussion->responses && $on_first_page) {
 					?>
 				</h2><!-- .comments-title -->
 
-				<?php if ($comments_collapsed) : ?>
-					<div id="comments-wrapper" class="comments-wrapper comments-hide" [class]="showComments ? 'comments-wrapper' : 'comments-wrapper comments-hide'">
-					<?php endif; ?>
-
-					<ol class="comment-list">
-						<?php
-						wp_list_comments(
-							array(
-								'walker'      => new jeo\Newspack_Walker_Comment(),
-								'avatar_size' => 0,
-								'short_ping'  => true,
-								'style'       => 'ol',
-							)
-						);
-						?>
-					</ol><!-- .comment-list -->
+				<ol class="comment-list">
 					<?php
-
-					// Show comment navigation
-					if (have_comments()) :
-						$prev_icon     = newspack_get_icon_svg('chevron_left', 22);
-						$next_icon     = newspack_get_icon_svg('chevron_right', 22);
-						$comments_text = apply_filters('newspack_comments_name_plural', __('Comments', 'newspack'));
-						the_comments_navigation(
-							array(
-								'prev_text' => sprintf('%s <span class="nav-prev-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span>', $prev_icon, __('Previous', 'newspack'), $comments_text),
-								'next_text' => sprintf('<span class="nav-next-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span> %s', __('Next', 'newspack'), $comments_text, $next_icon),
-							)
-						);
-					endif;
+					wp_list_comments(
+						array(
+							'walker'      => new jeo\Newspack_Walker_Comment(),
+							'avatar_size' => 0,
+							'short_ping'  => true,
+							'style'       => 'ol',
+						)
+					);
 					?>
+				</ol><!-- .comment-list -->
+				<?php
 
-					<?php if ($comments_collapsed) : ?>
-					</div><!-- .comments-wrapper -->
-					<button class="comments-toggle" id="comments-toggle" on="tap:AMP.setState({showComments: !showComments})">
-						<?php echo wp_kses(newspack_get_icon_svg('chevron_left', 24), newspack_sanitize_svgs()); ?><span [text]="showComments ? '<?php esc_html_e('Collapse comments', 'newspack'); ?>' : '<?php esc_html_e('Expand comments', 'newspack'); ?>'"><?php esc_html_e('Expand comments', 'newspack'); ?></span>
-					</button>
-				<?php endif; ?>
+				// Show comment navigation
+				if (have_comments()) :
+					$prev_icon     = newspack_get_icon_svg('chevron_left', 22);
+					$next_icon     = newspack_get_icon_svg('chevron_right', 22);
+					$comments_text = apply_filters('newspack_comments_name_plural', __('Comments', 'newspack'));
+					the_comments_navigation(
+						array(
+							'prev_text' => sprintf('%s <span class="nav-prev-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span>', $prev_icon, __('Previous', 'newspack'), $comments_text),
+							'next_text' => sprintf('<span class="nav-next-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span> %s', __('Next', 'newspack'), $comments_text, $next_icon),
+						)
+					);
+				endif;
+				?>
 
 				<?php
 				// Show comment form at bottom if showing newest comments at the bottom.
