@@ -593,3 +593,14 @@
         padding-top: 4rem;
     }
 }
+
+#primary.category-long-form {
+    .entry {
+        .entry-content {
+            .wp-block-cover.alignfull {
+                margin-bottom: 0px !important;
+                margin-top: 0px !important;
+            }
+        }
+    }
+}
