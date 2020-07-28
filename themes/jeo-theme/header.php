@@ -285,10 +285,15 @@ endif;
 								</button>
                             </div>
 						</div>
-						<div class="logo page-header-logo">
+						<div class="logo">
 							<div class="site-branding">
 								<?php newspack_the_sticky_logo(); ?>
 							</div><!-- .site-branding -->
+						</div>
+						<div class="logo-mobile">
+							<div class="site-branding">
+								<?php newspack_the_mobile_logo(); ?>
+							</div>
 						</div>
 						<div class="nav-wrapper desktop-only page-header">
 							<div id="tertiary-nav-contain">

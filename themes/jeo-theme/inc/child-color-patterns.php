@@ -66,6 +66,15 @@ function newspack_scott_custom_colors_css() {
 			background-image: url(' . wp_get_attachment_url(get_theme_mod('header_background_image')) . ');
 		}
 
+
+
+		@media only screen and (max-width: 782px) {
+			.bottom-header-contain.post-header {
+				background-color:' . get_theme_mod('header_background_color_hex', '#fff	') . ';
+				background-image: url(' . wp_get_attachment_url(get_theme_mod('header_background_image')) . ');
+			}
+		}
+
 		@media only screen and (min-width: 782px) {
 			/* Header default background */
 			.h-db .featured-image-beside .cat-links:before {

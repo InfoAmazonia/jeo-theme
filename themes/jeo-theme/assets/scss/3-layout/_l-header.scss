@@ -32,13 +32,17 @@ header.site-header {
                 span {
                     color: rgb(25, 30, 35);
                     padding: 0px;
+
+                    @include mobile{
+                        color: var(--search-icon-color);
+                    }
                 }
             }
         }
 
         .search-icon, .close-icon {
             @include tablet {
-                color: #555D66;
+                color: var(--search-icon-color);
                 padding: 0px;
             }
         }
@@ -164,6 +168,10 @@ header.site-header {
             max-width: 58.334%;
             margin: 0 auto;
             width: 100%;
+
+            @include mobile{
+                max-width: 100%;
+            }
         }
 
         form.search-form {
@@ -264,6 +272,7 @@ header.site-header {
             width: 100vw;
             display: flex;
             top: 0;
+            /* header in mobile */
         }
     }
 
@@ -536,4 +545,10 @@ header.site-header {
 
 .left-menu-toggle {
     display: block !important;
+}
+
+.mobile-menu-toggle{
+    @include mobile{
+        color: var(--search-icon-color);
+    }
 }

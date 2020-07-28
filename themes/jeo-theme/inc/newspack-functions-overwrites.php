@@ -195,6 +195,16 @@ function newspack_the_sticky_logo() {
 	}
 }
 
+
+/**
+ * Decides which logo to use, based on Customizer settings and current post.
+ */
+function newspack_the_mobile_logo() {
+	if ( has_custom_logo() ) {
+		the_custom_logo();
+	}
+}
+
 function newspack_author_social_links( $author_id, $size = 24 ) {
 	// Get list of available social profiles.
 	$social_profiles = array(

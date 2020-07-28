@@ -111,3 +111,8 @@ input[type='color']:focus,
 textarea:focus {
   outline: none;
 }
+
+
+.button:focus, button:focus, input[type='button']:focus, input[type='reset']:focus, input[type='submit']:focus{
+    outline: none;
+}

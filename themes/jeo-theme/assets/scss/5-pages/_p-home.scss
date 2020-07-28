@@ -29,8 +29,12 @@
 
     &__newsletter-bkg {
         border-radius: 40px;
-        padding: 2rem 3rem 1.5rem;
+        padding: 2rem 3rem 2rem;
         min-height: auto;
+
+        @include mobile{
+            padding: 60px 20px;
+        }
 
         .wp-block-columns {
             margin-bottom: 0px;
@@ -42,6 +46,10 @@
 
         h3 {
             margin-bottom: 0px !important;
+        }
+
+        a {
+            color: var(--primary) !important;
         }
     }
 
