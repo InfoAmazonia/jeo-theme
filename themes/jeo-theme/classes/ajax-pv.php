@@ -1,11 +1,4 @@
 <?php
-
-/*
- * Plugin Name: Ajax Pageview
- * Plugin Description: Contabiliza os pageviews por ajax
- * Author: hacklab/
- */
-
 class AjaxPageviews {
     /**
      *
@@ -16,6 +9,7 @@ class AjaxPageviews {
     static $post_types = [];
 
     static function init() {
+        self::activation();
         global $wpdb;
 
         self::$wpdb = $wpdb;
@@ -186,5 +180,3 @@ class AjaxPageviews {
 add_action('init', function(){
     AjaxPageviews::init();
 });
-
-register_activation_hook(__FILE__, ['AjaxPageviews', 'activation']);

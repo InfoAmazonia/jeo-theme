@@ -39,20 +39,10 @@ endif;
 
 $most_read = \AjaxPageviews::get_top_viewed(1000, ['post_type' => 'post', 'from' => '01-01-2001']);
 
-$ids = array();
-foreach ($most_read as $post => $value) {
-	array_push($ids, $value->post_id);
-}
-
-$html = '';
-
-foreach($ids as $key => $value) {
-	$html .= $key . ': ' . $valuem. '. ';
-   }
+var_dump($most_read);
 ?>
 
 <div id="page" class="site">
-	<h1><?php echo $html; ?></h1>
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'newspack' ); ?></a>
 	<button id="search-toggle" style="display:none">
 		<span></span>

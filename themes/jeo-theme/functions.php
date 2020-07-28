@@ -6,6 +6,7 @@ require __DIR__ . '/inc/newspack-functions-overwrites.php';
 require __DIR__ . '/inc/widgets.php';
 require __DIR__ . '/inc/metaboxes.php';
 require __DIR__ . '/inc/gutenberg-blocks.php';
+require __DIR__ . '/classes/ajax-pv.php';
 
 
 add_filter('post_link', 'custom_get_permalink', 10, 3);
