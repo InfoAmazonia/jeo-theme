@@ -32,6 +32,19 @@
         color: var(--primary) !important;
     }
 
+    /* Follow on */
+    &__twitter-section {
+        &-title {
+            strong::after{
+                content: '\f099';
+                font-family: 'Font Awesome 5 Brands';
+                font-weight: 600;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    /* Newsletter in Mekong Eye*/
     &__newsletter-bkg {
         border-radius: 40px;
         padding: 35px 113px;
@@ -47,6 +60,11 @@
 
         &.wp-block-cover.has-background-dim:not(.has-background-gradient):before {
             border-radius: 40px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin: 20px 0px;
         }
 
         h3 {
@@ -162,6 +180,28 @@
 
     .article-section-title{
         font-size:18px;
+    }
+
+    /*Ekuatorial
+    desktop: 1 column with two posts
+    mobile: 2 column 50% 50%
+    */
+    .newspack-mobile-two-columns{    
+        @include tablet{
+            margin-bottom: 15px;
+            > div {
+                display: flex;
+            }
+
+            article{
+                width: 50%;
+
+                &:first-of-type{
+                    margin-right: 15px;
+                }
+            }
+        }
+
     }
 }
 

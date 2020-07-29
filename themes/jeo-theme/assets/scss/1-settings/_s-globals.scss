@@ -116,3 +116,21 @@ textarea:focus {
 .button:focus, button:focus, input[type='button']:focus, input[type='reset']:focus, input[type='submit']:focus{
     outline: none;
 }
+
+.sm-order-0{
+    @include tablet{
+        order: 1 !important;
+    }
+}
+
+.sm-order-1{
+    @include tablet{
+        order: 0 !important;
+    }
+}
+
+.sm-order-2{
+    @include tablet{
+        order: 2 !important;
+    }
+}
