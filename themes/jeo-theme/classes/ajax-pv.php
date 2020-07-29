@@ -1,5 +1,5 @@
 <?php
-class AjaxPageviews {
+class PageViews {
     /**
      *
      * @var wpdb
@@ -178,5 +178,5 @@ class AjaxPageviews {
 }
 
 add_action('init', function(){
-    AjaxPageviews::init();
+    PageViews::init();
 });

@@ -36,10 +36,6 @@ get_template_part( 'template-parts/header/desktop', 'sidebar' );
 if ( true === $header_sub_simplified && ! is_front_page() ) :
 	get_template_part( 'template-parts/header/subpage', 'sidebar' );
 endif;
-
-$most_read = \AjaxPageviews::get_top_viewed(1000, ['post_type' => 'post', 'from' => '01-01-2001']);
-
-var_dump($most_read);
 ?>
 
 <div id="page" class="site">

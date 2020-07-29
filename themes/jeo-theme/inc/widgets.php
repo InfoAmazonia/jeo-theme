@@ -149,17 +149,64 @@ class most_read_widget extends WP_Widget {
 	}
 
 	public function widget($args, $instance) {
-	?>
-		<div class="category-most-read">
-			<div class="header">
-				<p>MOST READ</p>
+		$category = '';
+		$author = '';
+		$most_read = [];
+		$ids = [];
+		$posts_ids = [];
+		$posts_query_args = [];
+
+		if(is_category()) {
+			$category = get_the_category()[0];
+			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
+			$posts_query_args['category__in'] = [$category->cat_ID];
+		} else if(is_author()) {
+			$author = get_the_author_meta('ID');
+			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
+			$posts_query_args['author__in'] = [$author];
+
+		}
+
+		$ids = array();
+		foreach ($most_read as $post => $value) {
+			array_push($ids, $value->post_id);
+		}
+
+		$posts_query_args['post__in'] = $ids;
+		$posts_query_args['orderby'] = 'post__in';
+		$most_read_query = new \WP_Query($posts_query_args); 
+
+		foreach ($most_read_query->posts as $post => $value) {
+			array_push($posts_ids, $value->ID);
+		}
+
+		?>
+			<div class="category-most-read">
+				<div class="header">
+					<p>MOST READ</p>
+				</div>
+				<?php if(sizeof($posts_ids) >= 1): ?>
+					<div class="posts">
+						<?php foreach(array_slice($posts_ids, 0, 3) as $key=>$value){ 
+							$title = get_the_title($value);
+							$author_id = get_post_field( 'post_author', $value );
+							$author = get_the_author_meta('display_name', $author_id);
+							$url = get_permalink($value);
+						?>
+							<div class="post">
+								<a class="post-link" href="<?php echo $url; ?>">
+									<div class="post-thumbnail"><?php echo get_the_post_thumbnail($value); ?></div>
+									<p class="post-title"><?php echo $title; ?></p>
+									<p class="post-author">by <strong><?php echo $author; ?></strong></p>
+								</a>
+							</div>
+						<?php } ?>
+					</div>
+				<?php else: ?>
+					<p class="no-views-warming">The posts have no views yet.</p>
+				<?php endif ?>
+
 			</div>
-			<div class="posts">
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-			</div>
-		</div>
 	<?php
 	}
 }
