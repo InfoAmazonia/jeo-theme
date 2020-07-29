@@ -30,6 +30,11 @@
         }
         .entry-meta {
             font-size: 14px;
+            
+            @include tablet{
+                margin-bottom: 0px;
+            }
+
         }
         .cat-links{
             color: #555D66;
@@ -119,6 +124,11 @@
             width: 100%;
             margin-bottom: 40px;
 
+            .entry-meta  {
+                @include tablet{
+                        margin-bottom: 0.5rem;
+                }
+            }
             .entry-content {
                 p {
                     @include mobile{

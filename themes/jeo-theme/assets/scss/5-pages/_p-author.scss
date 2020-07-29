@@ -39,6 +39,15 @@
 
 .archive.author {
 
+    article { 
+        .cat-links {
+
+            span.custom-separator {
+                padding: 0px 5px;
+            }
+        }
+    }
+
     .about-the-author-section{
         margin-bottom: 60px;
 
