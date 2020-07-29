@@ -25,7 +25,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
         },
     },
 
-    edit: () => {
+    edit: (props) => {
         const {
             className,
             isSelected,
