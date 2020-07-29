@@ -112,6 +112,9 @@ textarea:focus {
   outline: none;
 }
 
+.entry .entry-content .wp-block-button .wp-block-button__link:hover {
+    background: var(--primary-darker-15);
+}
 
 .button:focus, button:focus, input[type='button']:focus, input[type='reset']:focus, input[type='submit']:focus{
     outline: none;
