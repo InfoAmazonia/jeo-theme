@@ -54,7 +54,6 @@ get_header();
 			<?php do_action( 'before_archive_posts' ); ?>
 			<div class="about-the-author-section d-block d-sm-none">
 				<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
-					<h4>ABOUT THE AUTHOR</h4>
 					<p><?php echo get_the_author_meta('description'); ?></p>
 				<?php endif; ?>
 			</div>
