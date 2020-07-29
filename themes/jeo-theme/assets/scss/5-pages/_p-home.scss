@@ -8,7 +8,12 @@
     p {
         margin-bottom: 0px !important;
         border-radius: 15px 15px 0 0;
+
+        &.has-text-color.has-background {
+            padding: 10px;
+        }
     }
+
 
     .wp-block-group__inner-container {
         .wp-block-group {
@@ -29,11 +34,11 @@
 
     &__newsletter-bkg {
         border-radius: 40px;
-        padding: 2rem 3rem 2rem;
+        padding: 35px 113px;
         min-height: auto;
 
         @include mobile{
-            padding: 60px 20px;
+            padding: 30px 20px 10px;
         }
 
         .wp-block-columns {
@@ -51,27 +56,66 @@
         a {
             color: var(--primary) !important;
         }
-    }
 
-    &__newsletter-text {
-        font-size: 13px;
-        text-align: right;
-        color: #333333 !important;
-        /* it should be a tertiary color*/
+        input[type='email'] {
+            background: transparent;
+        }
+
+        form input {
+            width: calc(100% - 77px) !important;
+            border: none;
+        }
+
+        form button {
+            background-color: var(--primary);
+            border-top-left-radius: initial;
+            border-bottom-left-radius: initial;
+            border-color: var(--primary);
+            color: #FFFFFF;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 24px;
+            padding: 20px;
+
+            span {
+                &::before {
+                    @include desktop{
+                        content: '\f0e0';
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 600;
+                        padding-right: 5px;
+                    }
+                }
+            }
+
+            &:hover{
+                background-color: var(--primary-darker-15);
+                border-top-left-radius: initial;
+                border-bottom-left-radius: initial;
+                border-color: var(--primary);
+            }
+        }
+
+        form.mc4wp-form {
+            margin-bottom: 5px !important;
+        
+            .mc4wp-form-fields {
+                border: 2px solid var(--primary);
+                border-radius: 10px;
+                margin-bottom: 5px;
+                max-width: 100%;
+            }
+        }
+
+
     }
 
     &__newsletter-icon {
         color: var(--primary);
         font-size: 70px;
         margin-bottom: 0px !important;
-    }
-
-    &__newsletter-btn {
-        background-color: var(--primary);
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        color: #fff;
-        border-color: var(--primary);
     }
 
     &__align-items {

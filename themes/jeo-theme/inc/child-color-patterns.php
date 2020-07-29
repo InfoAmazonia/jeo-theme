@@ -42,7 +42,9 @@ function newspack_scott_custom_colors_css() {
 	$theme_css .= '
 		:root {
 			--primary: ' . esc_html($primary_color) . ';
+			--primary-lighter-65: ' . color_luminance($primary_color, 0.65) . ';
 			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
+			--primary-lighter-85: ' . color_luminance($primary_color, 0.85) . ';
 			--primary-darker-15: ' . color_luminance($primary_color, -0.15) . ';
 			--secondary: ' . esc_html($secondary_color) . ';
 
