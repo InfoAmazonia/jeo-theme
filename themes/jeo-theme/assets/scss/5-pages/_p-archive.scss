@@ -15,10 +15,6 @@
     .decoration-eye {
         h1.page-title.article-section-title {
             display: flex;
-
-            @include tablet {
-                justify-content: center;
-            }
         }
     }
 
@@ -102,7 +98,7 @@
 /* ARCHIVE EXCEPT AUTHOR */
 .custom-archive {
     .page-header{
-        margin-bottom: 2rem;
+        margin-bottom: 40px;
         .page-subtitle, .page-description {
            font-size: 18px;
         }
@@ -118,13 +114,50 @@
         margin-bottom: 0px;
     }
 
+    article {
+        &:first-of-type{
+            width: 100%;
+            margin-bottom: 40px;
+
+            .entry-content {
+                p {
+                    @include mobile{
+                        display: block;
+                    }
+                }
+            }
+            
+        }
+
+        .entry-container{
+            h2.entry-title {
+                margin-bottom: 10px;
+                @include mobile{
+                    margin-bottom: 5px;
+                }
+            }
+
+            .entry-meta .byline{
+                @include mobile{
+                    display: none;
+                }
+            }
+        }
+    }
+
     article.has-post-thumbnail{
         @include mobile{
             display: flex;
         }
-
         .post-thumbnail{
             flex-basis: 35%;
+            @include desktop{
+                max-width: 35%;
+            }
+
+            &:first-of-type{
+                width: 100%;
+            }
         }
 
         .entry-container{
@@ -132,6 +165,9 @@
                 flex-basis: 65%;
             }
         }
-    }
-    
+        
+        &:first-of-type {
+            display: block;
+        }
+    }   
 }
