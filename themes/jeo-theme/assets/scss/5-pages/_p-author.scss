@@ -39,6 +39,15 @@
 
 .archive.author {
 
+    .about-the-author-section{
+        margin-bottom: 60px;
+
+        h4 {
+            color: #555D66;
+            margin-top: 0px;
+        }
+    }
+
     #page{
         @include mobile{
             margin-top: -50px;
@@ -115,13 +124,8 @@
 
 
 .author-page-sidebar {
-
     @include desktop{
         width: 25%;
-    }
-    h4 {
-        color: #555D66;
-        margin-top: 0px;
     }
 }
 
@@ -174,8 +178,4 @@
     @include tablet{
         display: none !important;
     }
-}
-
-.about-the-author {
-    margin-bottom: 60px;
 }

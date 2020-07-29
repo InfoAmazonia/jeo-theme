@@ -52,7 +52,12 @@ get_header();
 
 
 			<?php do_action( 'before_archive_posts' ); ?>
-
+			<div class="about-the-author-section d-block d-sm-none">
+				<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
+					<h4>ABOUT THE AUTHOR</h4>
+					<p><?php echo get_the_author_meta('description'); ?></p>
+				<?php endif; ?>
+			</div>
 			<main id="main" class="site-main">
 				<?php
 					if ( have_posts() ) :
@@ -77,10 +82,12 @@ get_header();
 			</main><!-- #main -->
 			<aside class="author-page-sidebar">
     			<div>
-					<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
-						<h4>ABOUT THE AUTHOR</h4>
-						<p class="about-the-author"><?php echo get_the_author_meta('description'); ?></p>
-					<?php endif; ?>
+					<div class="about-the-author-section d-none d-sm-block">
+						<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
+							<h4>ABOUT THE AUTHOR</h4>
+							<p><?php echo get_the_author_meta('description'); ?></p>
+						<?php endif; ?>
+					</div>
 					<?php dynamic_sidebar('author_page_sidebar') ?>
 				</div>
 			</aside>		</section><!-- #primary -->
