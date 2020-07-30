@@ -136,6 +136,9 @@ function newspack_scott_custom_typography_css() {
 			font-family: "' . $accent_font . '", "sans-serif";
 		}
 
+		.category-most-read .header, .image-gallery .image-gallery-header {
+			font-family: "' . $accent_font . '", "sans-serif";
+		}
 		:root {
 			--accent-font: "' . $accent_font . '", "sans-serif";
 		}

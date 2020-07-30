@@ -149,17 +149,97 @@ class most_read_widget extends WP_Widget {
 	}
 
 	public function widget($args, $instance) {
+		$category = '';
+		$author = '';
+		$most_read = [];
+		$ids = [];
+		$posts_ids = [];
+		$posts_query_args = [];
+
+		if(is_category()) {
+			$category = get_the_category()[0];
+			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
+			$posts_query_args['category__in'] = [$category->cat_ID];
+		} else if(is_author()) {
+			$author = get_the_author_meta('ID');
+			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
+			$posts_query_args['author__in'] = [$author];
+
+		}
+
+		$ids = array();
+		foreach ($most_read as $post => $value) {
+			array_push($ids, $value->post_id);
+		}
+
+		$posts_query_args['post__in'] = $ids;
+		$posts_query_args['orderby'] = 'post__in';
+		$most_read_query = new \WP_Query($posts_query_args); 
+
+		foreach ($most_read_query->posts as $post => $value) {
+			array_push($posts_ids, $value->ID);
+		}
+
+		?>
+			<?php if($instance): ?>
+				<div class="category-most-read">
+					<div class="header">
+						<p><?= $instance['title'] ?> </p>
+					</div>
+					<?php if(sizeof($posts_ids) >= $instance['min_posts']): ?>
+						<div class="posts">
+							<?php foreach(array_slice($posts_ids, 0, $instance['max_posts']) as $key=>$value){ 
+								$title = get_the_title($value);
+								$author_id = get_post_field( 'post_author', $value );
+								$author = get_the_author_meta('display_name', $author_id);
+								$url = get_permalink($value);
+							?>
+								<div class="post">
+									<a class="post-link" href="<?php echo $url; ?>">
+										<?php if($instance['featured_image'] == 'show'): ?>
+											<div class="post-thumbnail"><?php echo get_the_post_thumbnail($value); ?></div>
+										<?php endif ?>
+										<p class="post-title"><?php echo $title; ?></p>
+										<p class="post-author">by <strong><?php echo $author; ?></strong></p>
+									</a>
+								</div>
+							<?php } ?>
+						</div>
+					<?php else: ?>
+						<p class="no-views-warming">Not enough posts have been viewed.</p>
+					<?php endif ?>
+
+				</div>
+			<?php endif ?>
+		<?php
+	}
+
+	public function form($instance) {
+		$title = !empty($instance['title']) ? $instance['title'] : esc_html__('', 'jeo');
+		$min_posts = !empty($instance['min_posts']) ? $instance['min_posts'] : 1;
+		$max_posts = !empty($instance['max_posts']) ? $instance['max_posts'] : 3;
+		$featured_image = !empty($instance['featured_image']) ? $instance['featured_image'] : esc_html__('show', 'jeo');
+
 	?>
-		<div class="category-most-read">
-			<div class="header">
-				<p>MOST READ</p>
-			</div>
-			<div class="posts">
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-			</div>
-		</div>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_attr_e('Title:', 'jeo'); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('min_posts')); ?>"><?php esc_attr_e('Mininum posts:', 'jeo'); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('min_posts')); ?>" name="<?php echo esc_attr($this->get_field_name('min_posts')); ?>" type="number" value="<?php echo esc_attr($min_posts); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('max_posts')); ?>"><?php esc_attr_e('Maximum posts:', 'jeo'); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('max_posts')); ?>" name="<?php echo esc_attr($this->get_field_name('max_posts')); ?>" type="number" value="<?php echo esc_attr($max_posts); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('featured_image')); ?>"><?php esc_attr_e('Featured image setting:', 'jeo'); ?></label>
+			<select class="widefat" id="<?php echo esc_attr($this->get_field_id('featured_image')); ?>" name="<?php echo esc_attr($this->get_field_name('featured_image')); ?>">
+				<option value="show" <?= $featured_image == 'show' ? 'selected' : '' ?>>Show featured image</option>
+				<option value="hide" <?= $featured_image == 'hide' ? 'selected' : '' ?>>Hide featured image</option>
+			</select>
+		</p>
 	<?php
 	}
 }
@@ -288,14 +368,14 @@ function image_gallery_form( $widget, $return, $instance ) {
     }
 }
 
-function image_gallery_save_form( $instance, $new_instance ) {
+function widget_save_form( $instance, $new_instance ) {
 	
 	$instance['see_more_url'] = $new_instance['see_more_url'];
 	return $instance;
 }
 
 add_filter('in_widget_form', 'image_gallery_form', 10, 3 );
-add_filter( 'widget_update_callback', 'image_gallery_save_form', 10, 2 );
+add_filter( 'widget_update_callback', 'widget_save_form', 10, 2 );
 add_action('widgets_init', 'newsletter_load_widget');
 add_action('widgets_init', 'most_read_load_widget');
 add_action('widgets_init', 'story_maps_load_widget');

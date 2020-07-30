@@ -496,5 +496,7 @@ add_action('customize_register', 'newspack_scott_customizer', 99);
 
 function child_newspack_panels_js() {
 	wp_enqueue_script( 'js-customizer-ux', get_stylesheet_directory_uri() . '/assets/javascript/customizer-child.js', array(), filemtime(get_stylesheet_directory() . '/assets/javascript/customizer-child.js'), true   );
+	wp_enqueue_script('ajax-pageview', plugin_dir_url(__FILE__) . '/../ajax-pv.js', 'jquery', false, true);
+
 }
 add_action( 'customize_controls_enqueue_scripts', 'child_newspack_panels_js' );

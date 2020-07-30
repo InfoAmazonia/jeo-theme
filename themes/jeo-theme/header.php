@@ -37,6 +37,7 @@ if ( true === $header_sub_simplified && ! is_front_page() ) :
 	get_template_part( 'template-parts/header/subpage', 'sidebar' );
 endif;
 ?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'newspack' ); ?></a>
 	<button id="search-toggle" style="display:none">
