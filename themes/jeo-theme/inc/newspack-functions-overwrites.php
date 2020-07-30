@@ -107,7 +107,7 @@ function newspack_scott_scripts() {
 	// Enqueue Google fonts.
 	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), array('jeo-theme-bootstrap'), null);
 	wp_enqueue_style('jeo-theme-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all');
-	wp_enqueue_style('jeo-theme-bootstrap', "https://cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css", array(), '4.5', 'all');
+	wp_enqueue_style('jeo-theme-bootstrap', "https://cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.min.css", array(), '4.5', 'all');
 	wp_enqueue_style('daterangepicker-css', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', [], '0.1.0', 'all');
 	wp_enqueue_style('app', get_stylesheet_directory_uri() . '/dist/app.css', ['newspack-style'], filemtime(get_stylesheet_directory() . '/dist/app.css'), 'all');
 

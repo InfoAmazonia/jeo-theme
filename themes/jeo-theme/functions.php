@@ -120,3 +120,19 @@ function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args) {
 	return $avatar;
 }
 add_filter('get_avatar', 'ns_filter_avatar', 10, 6);
+
+if (!function_exists('jeo_comment_form')) {
+	function jeo_comment_form() {
+		comment_form([
+			'logged_in_as' => null,
+			'title_reply' => null,
+		]);
+	}
+}
+
+function remove_website_field($fields) {
+    unset($fields['url']);
+    return $fields;
+}
+add_filter('comment_form_default_fields', 'remove_website_field');
+
