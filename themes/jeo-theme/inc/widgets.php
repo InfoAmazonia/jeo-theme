@@ -226,11 +226,11 @@ class most_read_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('min_posts')); ?>"><?php esc_attr_e('Mininum posts:', 'jeo'); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('min_posts')); ?>"><?php esc_attr_e('Mininum quantity of posts needed to show the widget:', 'jeo'); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('min_posts')); ?>" name="<?php echo esc_attr($this->get_field_name('min_posts')); ?>" type="number" value="<?php echo esc_attr($min_posts); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('max_posts')); ?>"><?php esc_attr_e('Maximum posts:', 'jeo'); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('max_posts')); ?>"><?php esc_attr_e('Maximum quantity of posts shown in the widget:', 'jeo'); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('max_posts')); ?>" name="<?php echo esc_attr($this->get_field_name('max_posts')); ?>" type="number" value="<?php echo esc_attr($max_posts); ?>">
 		</p>
 		<p>
