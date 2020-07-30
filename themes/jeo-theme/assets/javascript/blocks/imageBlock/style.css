@@ -71,6 +71,7 @@
     border-radius: 20px;
     padding: 3.5px 7px 3.5px 20px;
     margin-bottom: 8px;
+    margin-right: 5px;
 }
 
 .credited-image-block.active .image-icon, .credited-image-block.active .image-description-toggle {

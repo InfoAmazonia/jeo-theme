@@ -42,7 +42,9 @@ function newspack_scott_custom_colors_css() {
 	$theme_css .= '
 		:root {
 			--primary: ' . esc_html($primary_color) . ';
+			--primary-lighter-65: ' . color_luminance($primary_color, 0.65) . ';
 			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
+			--primary-lighter-85: ' . color_luminance($primary_color, 0.85) . ';
 			--primary-darker-15: ' . color_luminance($primary_color, -0.15) . ';
 			--secondary: ' . esc_html($secondary_color) . ';
 
@@ -64,6 +66,15 @@ function newspack_scott_custom_colors_css() {
 		.middle-header-contain {
 			background-color:' . get_theme_mod('header_background_color_hex', '#fff	') . ';
 			background-image: url(' . wp_get_attachment_url(get_theme_mod('header_background_image')) . ');
+		}
+
+
+
+		@media only screen and (max-width: 782px) {
+			.bottom-header-contain.post-header {
+				background-color:' . get_theme_mod('header_background_color_hex', '#fff	') . ';
+				background-image: url(' . wp_get_attachment_url(get_theme_mod('header_background_image')) . ');
+			}
 		}
 
 		@media only screen and (min-width: 782px) {

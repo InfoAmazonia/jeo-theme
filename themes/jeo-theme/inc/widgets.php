@@ -52,7 +52,7 @@ class newsletter_widget extends WP_Widget {
 ?>
 	<? if ($instance) : ?>
 		<div class="category-page-sidebar">
-			<div class="newsletter <?= $instance['model_type'] ?>">
+			<div class="newsletter <?= $instance['model_type'] ?> <?= $instance['custom_style'] ?>">
 				<?= ($instance['model_type'] == 'horizontal') ? '<div>' : '' ?>
 				<i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
 				<div class="newsletter-header">

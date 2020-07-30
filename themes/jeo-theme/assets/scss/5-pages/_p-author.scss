@@ -39,21 +39,53 @@
 
 .archive.author {
 
+    article { 
+        .cat-links {
+
+            span.custom-separator {
+                padding: 0px 5px;
+            }
+        }
+    }
+
+    .about-the-author-section{
+        margin-bottom: 60px;
+
+        h4 {
+            color: #555D66;
+            margin-top: 0px;
+        }
+    }
+
     #page{
         @include mobile{
             margin-top: -50px;
         }
     }
+
+    .decoration-square,
+    .decoration-left,
+    .decoration-eye {
+        h1.page-title.article-section-title {
+            display: flex;
+
+            @include tablet {
+                justify-content: center;
+            }
+        }
+    }
+
     img.avatar-default {
         display: none !important;
     }
 
+    /*
     &:not(.paged) article.has-post-thumbnail:first-of-type .post-thumbnail{
         @include desktop{
             flex-basis: 26%;
         }
 
-    }
+    } */
 
     article.has-post-thumbnail{
         @include mobile{
@@ -62,6 +94,7 @@
 
         .post-thumbnail{
             flex-basis: 35%;
+            max-width: 35%;
         }
 
         .entry-container{
@@ -115,13 +148,8 @@
 
 
 .author-page-sidebar {
-
     @include desktop{
         width: 25%;
-    }
-    h4 {
-        color: #555D66;
-        margin-top: 0px;
     }
 }
 
@@ -174,8 +202,4 @@
     @include tablet{
         display: none !important;
     }
-}
-
-.about-the-author {
-    margin-bottom: 60px;
 }
