@@ -18,6 +18,10 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
     title: {
       type: "string",
     },
+
+    typeNews: {
+      type: "string",
+    },
     subtitle: {
       type: "string",
     },
@@ -49,7 +53,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         newsletterShortcode,
         adicionalContent,
         customStyle,
-        type,
+        typeNews,
       },
       setAttributes,
     } = props;
@@ -60,8 +64,8 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
           <div class="category-page-sidebar">
           <SelectControl
               label={ __( 'Select newsletter type:' ) }
-              value={ type }
-              onChange={ (value) => {setAttributes( { type: value } ) } }
+              value={ typeNews }
+              onChange={ (value) => {setAttributes( { typeNews: value } ) } }
               options={ [
                   { value: null, label: 'Select a type', disabled: true },
                   { value: 'horizontal', label: 'Horizontal' },
@@ -124,7 +128,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         newsletterShortcode,
         adicionalContent,
         align,
-        type,
+        typeNews,
       },
       setAttributes,
     } = props;
@@ -133,7 +137,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         <>
             <div className="newsletter-wrapper" key="container">
                 <div class="category-page-sidebar">
-                    <div class={`newsletter ${type}`} >
+                    <div class={`newsletter ${typeNews}`} >
                     <div>
                         <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
                         <div class="newsletter-header">

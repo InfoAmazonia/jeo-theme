@@ -175,6 +175,11 @@
 
     &__see-more-posts {
         margin-top: 15px !important;
+
+        a {
+            color: #555D66 !important;
+            font-weight: bold;
+        }
     }
 
 
@@ -215,7 +220,7 @@
         font-size:18px;
     }
 
-    /*Ekuatorial
+    /*Ekuatorial and Pasifika
     desktop: 1 column with two posts
     mobile: 2 column 50% 50%
     */
@@ -254,6 +259,49 @@
                 .entry-wrapper p {
                     display: none;
                 }
+            }
+        }
+    }
+
+    .newspack-mobile-no-excerpt {
+        @include tablet{
+            article{
+                .entry-wrapper p {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .wp-block-newspack-blocks-carousel {
+        @include tablet{
+            article {
+                figure.post-thumbnail{
+                    height: auto;
+                }
+
+                .entry-wrapper{
+                    position: relative;
+                }
+                .entry-title {
+                    font-size: 18px;
+                }
+
+                
+            }
+
+            .swiper-button-prev {
+                left: 10px;
+            }
+
+
+            .swiper-button-next {
+                right:5px;
+            }
+
+            .swiper-button-next, .swiper-button-prev {
+                display: block;
+                top: 30%;
             }
         }
     }

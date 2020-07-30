@@ -10,6 +10,10 @@
 /*newsletter in block*/
 .newsletter-wrapper .newsletter {
     margin-bottom: 0px;
+
+    &.horizontal{
+        margin-top: 0px;
+    }
 }
 
 .newsletter {
