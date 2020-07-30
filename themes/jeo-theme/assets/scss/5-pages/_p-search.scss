@@ -7,6 +7,7 @@
         width: auto;
     }
 
+    
     main#main {
         width: 100%;
 
@@ -15,6 +16,11 @@
         }
 
         article {
+
+            &.entry {
+                margin-top: 30px;
+            }
+        
             .entry-content p {
                 font-size: 16px;
                 letter-spacing: 0;
