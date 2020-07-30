@@ -9,4 +9,9 @@
     @include desktop{
         width: 50%;
     }
+
+    @include mobile{
+        float: none;
+        margin: 0px;
+    }
 }
