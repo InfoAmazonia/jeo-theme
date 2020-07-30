@@ -79,12 +79,13 @@
         display: none !important;
     }
 
+    /*
     &:not(.paged) article.has-post-thumbnail:first-of-type .post-thumbnail{
         @include desktop{
             flex-basis: 26%;
         }
 
-    }
+    } */
 
     article.has-post-thumbnail{
         @include mobile{
