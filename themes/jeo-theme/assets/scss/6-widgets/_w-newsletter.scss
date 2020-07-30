@@ -7,6 +7,11 @@
     }
 }
 
+/*newsletter in block*/
+.newsletter-wrapper .newsletter {
+    margin-bottom: 0px;
+}
+
 .newsletter {
     padding: 29px;
     color: var(--primary);
@@ -113,6 +118,7 @@
 
         .newsletter-header p {
             text-align: center;
+            line-height: 40px;
         }
 
         .anchor-text {

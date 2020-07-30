@@ -1,13 +1,10 @@
 import {
   RichText,
-  MediaUpload,
-  BlockControls,
-  AlignmentToolbar,
   InnerBlocks,
 } from "@wordpress/block-editor";
 
 import { __ } from "@wordpress/i18n";
-import { Button } from "@wordpress/components";
+import { Button, SelectControl } from "@wordpress/components";
 //const {  } = wp.editor;
 
 wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
@@ -52,21 +49,25 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         newsletterShortcode,
         adicionalContent,
         customStyle,
+        type,
       },
       setAttributes,
     } = props;
-
-    const onSelectImage = (media) => {
-      setAttributes({
-        mediaURL: media.url,
-        mediaID: media.id,
-      });
-    };
 
     return (
       <>
         <div className="newsletter-wrapper" key="container">
           <div class="category-page-sidebar">
+          <SelectControl
+              label={ __( 'Select newsletter type:' ) }
+              value={ type }
+              onChange={ (value) => {setAttributes( { type: value } ) } }
+              options={ [
+                  { value: null, label: 'Select a type', disabled: true },
+                  { value: 'horizontal', label: 'Horizontal' },
+                  { value: 'vertical', label: 'Vertical' },
+              ] }
+          />
             <div class="newsletter">
               <div>
                 <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
@@ -123,6 +124,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         newsletterShortcode,
         adicionalContent,
         align,
+        type,
       },
       setAttributes,
     } = props;
@@ -131,7 +133,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         <>
             <div className="newsletter-wrapper" key="container">
                 <div class="category-page-sidebar">
-                    <div class="newsletter horizontal">
+                    <div class={`newsletter ${type}`} >
                     <div>
                         <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
                         <div class="newsletter-header">

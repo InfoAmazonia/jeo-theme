@@ -55,14 +55,25 @@
 
 
 
-    /* Newsletter in Mekong Eye*/
+    /* Read more in Ekuatorial*/
     &__readmore-bkg {
         border-radius: 40px;
         padding: 35px 113px;
         min-height: auto;
 
         @include mobile{
-            padding: 30px 20px 10px;
+            padding: 50px 20px;
+        }
+
+
+        h2 {
+            font-size: 30px;
+            margin: 20px 0px;
+        }
+
+        a {
+            color: var(--primary) !important;
+            text-decoration: underline !important;
         }
     }
 
@@ -223,7 +234,28 @@
                 }
             }
         }
+    }
 
+
+
+    /*Ekuatorial
+    desktop: 1 column: photo + text inline
+    mobile: 1 column: photo / text above
+    */
+    .newspack-mobile-one-column{    
+        .wpnbha.image-alignleft .post-has-image .post-thumbnail{
+            flex-basis: 45%;
+        }
+
+        @include tablet{
+            article{
+                display: block !important;
+
+                .entry-wrapper p {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
