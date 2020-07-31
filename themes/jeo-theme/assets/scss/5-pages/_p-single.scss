@@ -19,6 +19,17 @@
     }
 
     .entry-content {
+
+        .wp-block-newspack-blocks-homepage-articles {
+            .entry-wrapper{
+                .entry-title {
+                    a {
+                        color: #111;
+                    }
+                }
+            }
+        }
+        
         .post-excerpt p {
             line-height: normal;
             margin-bottom: 60px;
