@@ -3,6 +3,14 @@ header.site-header {
         text-align: left !important;
     }
 
+    .tablet-down-search {
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
     .search-toggle {
         padding: 0px;
         border-radius: 50px;
