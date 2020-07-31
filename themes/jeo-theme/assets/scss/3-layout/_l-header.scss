@@ -3,6 +3,14 @@ header.site-header {
         text-align: left !important;
     }
 
+    .tablet-down-search {
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
     .search-toggle {
         padding: 0px;
         border-radius: 50px;
@@ -50,6 +58,9 @@ header.site-header {
         p.title {
             font-family: var(--featured-font);
             color: #191E23;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
         }
     }
 
