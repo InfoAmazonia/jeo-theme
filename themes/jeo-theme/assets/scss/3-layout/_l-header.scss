@@ -96,6 +96,14 @@ header.site-header {
             position: fixed;
             left: 0;
         }
+
+        @include tablet {
+            z-index: 99;
+            .wrapper{
+                width: 100%;
+            }
+        }
+        
     }
 
     .middle-header-contain {
