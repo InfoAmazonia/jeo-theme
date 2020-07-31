@@ -1,13 +1,10 @@
 import {
   RichText,
-  MediaUpload,
-  BlockControls,
-  AlignmentToolbar,
   InnerBlocks,
 } from "@wordpress/block-editor";
 
 import { __ } from "@wordpress/i18n";
-import { Button } from "@wordpress/components";
+import { Button, SelectControl, TextControl } from "@wordpress/components";
 //const {  } = wp.editor;
 
 wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
@@ -19,6 +16,10 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
   },
   attributes: {
     title: {
+      type: "string",
+    },
+
+    typeNews: {
       type: "string",
     },
     subtitle: {
@@ -52,21 +53,30 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         newsletterShortcode,
         adicionalContent,
         customStyle,
+        typeNews,
       },
       setAttributes,
     } = props;
-
-    const onSelectImage = (media) => {
-      setAttributes({
-        mediaURL: media.url,
-        mediaID: media.id,
-      });
-    };
 
     return (
       <>
         <div className="newsletter-wrapper" key="container">
           <div class="category-page-sidebar">
+          <SelectControl
+              label={ __( 'Select newsletter type:' ) }
+              value={ typeNews }
+              onChange={ (value) => {setAttributes( { typeNews: value } ) } }
+              options={ [
+                  { value: null, label: 'Select a type', disabled: true },
+                  { value: 'horizontal', label: 'Horizontal' },
+                  { value: 'vertical', label: 'Vertical' },
+              ] }
+          />
+          <TextControl
+            label={ __( 'Add custom css:' ) }
+            value={ customStyle }
+            onChange={ ( value ) => {setAttributes( { customStyle: value } ) } }
+          />
             <div class="newsletter">
               <div>
                 <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
@@ -123,6 +133,8 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         newsletterShortcode,
         adicionalContent,
         align,
+        typeNews,
+        customStyle,
       },
       setAttributes,
     } = props;
@@ -131,7 +143,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         <>
             <div className="newsletter-wrapper" key="container">
                 <div class="category-page-sidebar">
-                    <div class="newsletter horizontal">
+                    <div class={`newsletter ${typeNews} ${customStyle}`} >
                     <div>
                         <i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
                         <div class="newsletter-header">

@@ -37,6 +37,7 @@ if ( true === $header_sub_simplified && ! is_front_page() ) :
 	get_template_part( 'template-parts/header/subpage', 'sidebar' );
 endif;
 ?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'newspack' ); ?></a>
 	<button id="search-toggle" style="display:none">
@@ -285,10 +286,15 @@ endif;
 								</button>
                             </div>
 						</div>
-						<div class="logo page-header-logo">
+						<div class="logo">
 							<div class="site-branding">
 								<?php newspack_the_sticky_logo(); ?>
 							</div><!-- .site-branding -->
+						</div>
+						<div class="logo-mobile">
+							<div class="site-branding">
+								<?php newspack_the_mobile_logo(); ?>
+							</div>
 						</div>
 						<div class="nav-wrapper desktop-only page-header">
 							<div id="tertiary-nav-contain">

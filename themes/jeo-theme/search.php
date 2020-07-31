@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area row">
+	<section id="primary" class="content-area row no-gutters">
 		<div class="col-md-10 margin-auto">
 			<header class="page-header">
 				<h1 class="page-title article-section-title">

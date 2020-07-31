@@ -267,9 +267,9 @@ endif;
                             </div>
 						</div>
 						<div class="logo-mobile">
-									<div class="site-branding">
-										<?php newspack_the_sticky_logo(); ?>
-									</div>
+							<div class="site-branding">
+								<?php newspack_the_mobile_logo(); ?>
+							</div>
 						</div>
 
                         <p class="title"><?php echo wp_kses_post( get_the_title() ); ?></p>
