@@ -3,6 +3,7 @@ import ImageBlock from "./components/imageBlock/ImageBlock";
 import "./audio-player";
 import "./video-repositioning";
 import "./image-gallery";
+import "./../vendor/sss/sss.min";
 
 Vue.component("image-block", ImageBlock);
 

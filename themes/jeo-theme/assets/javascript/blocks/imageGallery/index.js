@@ -17,6 +17,10 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
         __('images')
     ],
     attributes: {
+        galleryTitle: {
+            type: 'string',
+        },
+
         images: {
             type: 'array',
         },   
@@ -31,7 +35,7 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
     },
 
     edit({ attributes, className, setAttributes}) {
-        const { images = [], imagesDescriptions = [], imagesCredits = [] } = attributes;
+        const { galleryTitle = "", images = [], imagesDescriptions = [], imagesCredits = [] } = attributes;
         console.log(attributes);
 
         images.forEach( (element, index) => {
@@ -113,6 +117,16 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
 
         return (
             <div className="image-gallery">
+                <RichText
+                    tagName="h2"
+                    className="gallery-title"
+                    value={ galleryTitle }
+                    formattingControls={ [ 'bold', 'italic' ] } 
+                    onChange={ ( galleryTitle ) => {
+                        setAttributes( { galleryTitle } )
+                    } }
+                    placeholder={ __( 'Type a title' ) } 
+                />
                 <div className="gallery-grid">
                     {displayImages(images)}
                     <MediaUpload
@@ -134,9 +148,8 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
     },
 
     save: ({ attributes }) => {
-        const { images = [], imagesDescriptions = [] } = attributes;
+        const { galleryTitle = "", images = [], imagesDescriptions = [], imagesCredits = [] } = attributes;
         //console.log(imagesDescriptions);
-
 
         const displayImages = (images) => {
             return (
@@ -151,7 +164,11 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
                                 alt={image.alt}
                             />
 
-                            <span> <RichText.Content tagName="span" value={ imagesDescriptions[index] } /></span>
+                            <div class="image-meta">
+                                <div class="image-description"> <RichText.Content tagName="span" value={ imagesDescriptions[index] } /></div>
+                                <i class="fas fa-camera"></i>
+                                <div class="image-credit"> <RichText.Content tagName="span" value={ imagesCredits[index] } /></div>
+                            </div>
 
                         </div>
                     )
@@ -161,7 +178,22 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
 
         return (
             <div className="image-gallery">
-                <div className="gallery-grid" data-total-slides={images.length}>{displayImages(images)}</div>
+                <div className="gallery-title">
+                    <RichText.Content tagName="h2" value={ galleryTitle } />
+                </div>
+                <div className="actions">
+                    <button action="display-grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+
+                    <button action="fullsreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div className="gallery-grid" data-total-slides={images.length}>
+                    {displayImages(images)}
+                </div>
             </div>
         );
 
