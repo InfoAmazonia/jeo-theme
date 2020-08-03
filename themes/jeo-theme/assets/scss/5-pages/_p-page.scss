@@ -7,6 +7,11 @@
         @include desktop{
             margin-top: 0px;
         }
+
+
+        @include tablet{
+            margin-top: 0px;
+        }
     }
 
     .entry .entry-content .wp-block-cover:first-child {
