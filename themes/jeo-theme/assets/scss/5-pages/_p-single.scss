@@ -132,7 +132,7 @@
                 display: block;
                 color: #555D66;
                 font-family: var(--primary-font);
-                font-size: 18px;
+                font-size: size(18);
                 font-weight: bold;
                 letter-spacing: 0;
                 line-height: 21px;
@@ -163,14 +163,14 @@
 
             p {
                 margin: 0;
-                font-size: 16px;
+                font-size: size(16);
             }
 
             .author-introduce-title {
                 width: 100%;
                 color: #555D66;
                 font-family: var(--primary-font);
-                font-size: 18px;
+                font-size: size(18);
                 font-weight: bold;
                 letter-spacing: 0;
                 line-height: 21px;
@@ -195,7 +195,7 @@
                         font-family: var(--primary-font);
                         text-transform: unset;
                         color: #0A0A0A;
-                        font-size: 16px;
+                        font-size: size(16);
                         font-weight: bold;
 
                         &:before {
@@ -205,7 +205,7 @@
 
                     .author-meta {
                         color: #555D66;
-                        font-size: 14px;
+                        font-size: size(14);
                     }
                 }
 
@@ -226,7 +226,7 @@
             .comments-title {
                 color: #555D66;
                 font-family: var(--primary-font);
-                font-size: 18px;
+                font-size: size(18);
                 font-weight: bold;
                 letter-spacing: 0;
                 line-height: 21px;
@@ -246,7 +246,7 @@
     .entry-meta {
         /* max-width: 90%; */
         color: rgba(85, 93, 102, 0.699);
-        font-size: 14px;
+        font-size: size(14);
         letter-spacing: 0;
         line-height: 17px;
         justify-content: space-between;
@@ -334,7 +334,7 @@
         background: rgba(25, 30, 35, 0.9);
         padding: 18px 0;
         color: #F9F9F9;
-        font-size: 14px;
+        font-size: size(14);
         font-weight: bold;
         letter-spacing: 0;
         line-height: 17px;
@@ -401,7 +401,7 @@
         .credit {
             opacity: 0.7;
             color: #F9F9F9;
-            font-size: 14px;
+            font-size: size(14);
             letter-spacing: 0;
             line-height: 17px;
             font-weight: normal;

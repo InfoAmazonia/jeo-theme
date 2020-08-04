@@ -58,7 +58,7 @@ header.site-header {
         p.title {
             font-family: var(--featured-font);
             color: #191E23;
-            font-size: 14px;
+            font-size: size(14);
             line-height: 20px;
             text-align: center;
         }
@@ -115,7 +115,7 @@ header.site-header {
             color: var(--description-color);
             font-style: normal;
             font-family: var(--primary-font);
-            font-size: 14px;
+            font-size: size(14);
             font-weight: bold;
         }
 
@@ -131,7 +131,7 @@ header.site-header {
     }
 
     .featured-button {
-        font-size: 14px;
+        font-size: size(14);
         font-weight: bold;
         letter-spacing: 0;
         line-height: 20px;
@@ -173,7 +173,7 @@ header.site-header {
 
         .search-text {
             color: #555d66;
-            font-size: 18px;
+            font-size: size(18);
             font-weight: bold;
             letter-spacing: 0;
             line-height: 22px;
@@ -253,7 +253,7 @@ header.site-header {
         }
 
         .nav1 .main-menu>li {
-            font-size: 14px;
+            font-size: size(14);
             color: white;
         }
 
@@ -408,7 +408,7 @@ header.site-header {
 
     .bottom-header-contain.post-header .page--share div a {
         margin: auto;
-        font-size: 15px;
+        font-size: size(15);
     }
 
     .bottom-header-contain .search-area .nav-wrapper,
@@ -425,7 +425,7 @@ header.site-header {
         }
 
         p.site-description {
-            font-size: 14px;
+            font-size: size(14);
             padding: 9px !important;
             font-style: normal;
             color: var(--description-color);
