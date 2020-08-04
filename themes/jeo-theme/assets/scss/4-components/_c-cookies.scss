@@ -3,6 +3,16 @@ For plugin Complianz | GDPR/CCPA Cookie Consent
 wordpress.org/plugins/complianz-gdpr/
 */
 
+.cc-revoke {
+    color: #fff !important;
+    font-family: var(--primary) !important;
+    text-decoration: none !important;
+
+    &:hover {
+        font-weight: bold;
+    }
+}
+
 #cc-window {
     position: inherit;
     font-family: var(--primary);
@@ -25,7 +35,6 @@ wordpress.org/plugins/complianz-gdpr/
             display: block;
         }
     }
-
 
 
     .cc-message {
