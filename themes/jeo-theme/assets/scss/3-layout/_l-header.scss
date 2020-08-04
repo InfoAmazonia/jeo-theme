@@ -58,6 +58,9 @@ header.site-header {
         p.title {
             font-family: var(--featured-font);
             color: #191E23;
+            font-size: size(14);
+            line-height: 20px;
+            text-align: center;
         }
     }
 
@@ -93,6 +96,14 @@ header.site-header {
             position: fixed;
             left: 0;
         }
+
+        @include tablet {
+            z-index: 99;
+            .wrapper{
+                width: 100%;
+            }
+        }
+        
     }
 
     .middle-header-contain {

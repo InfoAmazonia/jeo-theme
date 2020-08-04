@@ -23,7 +23,6 @@ class PageViews {
 
     static function scripts() {
         if(!is_user_logged_in() && (is_single() || is_home() || is_front_page())){  
-            echo "adasdasd";
             wp_localize_script('ajax-pageview', 'ajaxurl', admin_url('admin-ajax.php'));
 
             wp_localize_script('ajax-pageview', 'ajaxpv', base_convert(get_the_ID(), 10, 36));
