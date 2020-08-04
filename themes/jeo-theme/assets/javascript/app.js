@@ -1,11 +1,13 @@
 import Vue from "vue";
 import ImageBlock from "./components/imageBlock/ImageBlock";
-import "./audio-player";
-import "./video-repositioning";
+import "./functionalities/audio-player";
+import "./functionalities/video-repositioning";
+import "./functionalities/header";
 
 Vue.component("image-block", ImageBlock);
 
 window.addEventListener("DOMContentLoaded", function () {
+    // External source post API magic <3
     const siteLinks = document
         .querySelectorAll("article > .entry-wrapper > h2 > a")
         .forEach((element) => {
@@ -52,6 +54,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 (function ($) {
     jQuery(document).ready(function () {
+        // Fix JEO-plugin and Vue conflit.
         document.querySelectorAll('.vue-component').forEach(function(element) {
             new Vue({
                 el: element,
@@ -69,15 +72,6 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // jQuery(window).scroll(function () {
-        //     var headerHeight = jQuery('.middle-header-contain').height();
-        //     // console.log(headerHeight);
-        //     if (jQuery(this).scrollTop() > headerHeight) {
-        //         jQuery('.bottom-header-contain').addClass("fixed-header");
-        //     } else {
-        //         jQuery('.bottom-header-contain').removeClass("fixed-header");
-        //     }
-        // });
 
         jQuery(".filters select").change(function () {
             jQuery(this).closest("form").submit();
@@ -149,6 +143,8 @@ window.addEventListener("DOMContentLoaded", function () {
             "px"
         );
 
+
+        // Search fields
         jQuery('input[name="daterange"]').on("apply.daterangepicker", function (
             ev,
             picker

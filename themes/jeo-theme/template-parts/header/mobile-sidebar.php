@@ -40,6 +40,72 @@ if ( newspack_is_amp() ) : ?>
 
 		newspack_social_menu_header();
 		?>
+		<div class="more-menu">
+			<div class="more-title"> 
+				<?= esc_html( wp_get_nav_menu_name( 'main-menu' ) ) ?>
+			</div>
+			
+			<div class="more-menu--content">
+				<div class="item">
+					<div class="item--title">
+						<?= __("Language", "jeo") ?>
+					</div>
+					<div class="item--content">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'main-menu',
+									'container'      => false,
+									'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+									'depth'          => 1,
+								)
+							);
+						?>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="item--title">
+						<?= __("Dark mode", "jeo") ?>
+					</div>
+
+					<div class="item--content">
+
+					</div>
+
+
+				</div>
+
+
+				<div class="item">
+					<div class="item--title">
+						<?= __("Type size", "jeo") ?>
+					</div>
+
+					<div class="item--content">
+						<button action="increase-size">A+</button>
+						<button action="decrease-size">A-</button>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="item--title">
+						<?= __("Constrast", "jeo") ?>
+					</div>
+
+					<div class="item--content">
+						<button action="increase-contrast">
+							<i class="fas fa-adjust"></i>+
+						</button>
+						<button action="decrease-contrast">
+							<i class="fas fa-adjust"></i>-
+						</button>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
 
 <?php if ( newspack_is_amp() ) : ?>
 	</amp-sidebar>
