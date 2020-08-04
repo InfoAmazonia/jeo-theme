@@ -73,7 +73,7 @@
                 button {
                     color: #FFFFFF;
                     text-transform: uppercase;
-                    font-size: 18px;
+                    font-size: size(18);
                     font-weight: bold;
                     letter-spacing: 0;
                     line-height: 24px;
@@ -144,7 +144,7 @@
                 .mc4wp__btn-icon {
                     display: block !important;
                     color: #fff;
-                    font-size: 14px;
+                    font-size: size(14);
                 }
             }
 
@@ -156,14 +156,14 @@
         padding: 0x;
 
         p {
-            font-size: 14px;
+            font-size: size(14);
             line-height: normal;
             margin: 0px;
         }
     }
 
     .newsletter-header p {
-        font-size: 32px;
+        font-size: size(32);
         font-weight: bold;
         text-transform: capitalize;
     }
@@ -208,7 +208,7 @@
 
     p {
         &.link {
-            font-size: 14px;
+            font-size: size(14);
             color: #555D66;
             text-align: center;
 
@@ -223,7 +223,7 @@
 
         &.last-edition a {
             color: var(--primary);
-            font-size: 14px;
+            font-size: size(14);
             font-weight: bold;
         }
     }
@@ -244,7 +244,7 @@
     .newsletter-header {
         color: #FFFFFF;
         font-family: Dosis;
-        font-size: 32px;
+        font-size: size(32);
         font-weight: bold;
     }
 
@@ -265,7 +265,7 @@
         input {
             color: #fff !important;
             opacity: 0.8;
-            font-size: 16px;
+            font-size: size(16);
         }
 
         button {
