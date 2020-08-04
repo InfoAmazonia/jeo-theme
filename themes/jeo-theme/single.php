@@ -104,6 +104,22 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 
 			?>
 		</div>
+		<?php
+			$posts = guaraci\related_posts::get_posts(get_the_id())->posts;
+		?>
+		<div class="related-posts">
+			<p class="title">RELATED POSTS</p>
+			<div class="posts">
+				<?php foreach($posts as $key=>$value): ?>
+					<div class="post">
+							<div class="thumbnail"><?php echo get_the_post_thumbnail($value->ID) ?></div>
+							<p class="title"><?php echo $value->post_title ?></p>
+							<p class="date"><?php  echo get_the_time('F j, Y', $value->ID); ?></p>
+							<p class="excerpt"><?php echo get_the_excerpt($value->ID) ?></p>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
 	</section><!-- #primary -->
 <?php endif; ?>
 
