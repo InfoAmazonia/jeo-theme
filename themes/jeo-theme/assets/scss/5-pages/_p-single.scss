@@ -19,6 +19,17 @@
     }
 
     .entry-content {
+
+        .wp-block-newspack-blocks-homepage-articles {
+            .entry-wrapper{
+                .entry-title {
+                    a {
+                        color: #111;
+                    }
+                }
+            }
+        }
+        
         .post-excerpt p {
             line-height: normal;
             margin-bottom: 60px;
@@ -61,6 +72,7 @@
 
         @include mobile {
             text-align: center;
+            justify-content: center;
         }
     }
 
@@ -591,5 +603,26 @@
 .single-featured-image-behind {
     section.category-audio {
         padding-top: 4rem;
+    }
+}
+/*Create a category with stlug 'long-form' */
+#primary.category-long-form {
+    .entry {
+        .entry-content {
+            .wp-block-cover.alignfull {
+                margin-bottom: 0px !important;
+                margin-top: 0px !important;
+            }
+        }
+    }
+}
+
+.full-height {
+    @include desktop {
+        height: 100vh;
+    }
+
+    @include mobile{
+        min-height: 430px !important;
     }
 }
