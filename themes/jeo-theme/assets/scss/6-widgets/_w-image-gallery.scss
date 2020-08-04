@@ -233,10 +233,6 @@
         }
     }
 
-    .sssprev {
-
-    }
-
     .gallery-item-container {
         position: relative;
         padding-top: 56.25%;
@@ -272,6 +268,11 @@
                 opacity: 0.7;
                 margin: 0 20px;
             }
+            
+            .image-credit {
+                opacity: 0.5;
+            }
+
         }
     }
 }
