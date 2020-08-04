@@ -1,7 +1,12 @@
+/*
+For plugin Complianz | GDPR/CCPA Cookie Consent
+wordpress.org/plugins/complianz-gdpr/
+*/
+
 #cc-window {
     position: inherit;
     font-family: var(--primary);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
     background-color: #555D66;
     color: #fff;
     padding: 20px 20px 25px;
@@ -13,52 +18,54 @@
         width: 1200px;
         display: flex;
 
-        @include mobile{
+        @include mobile {
             margin: auto;
             max-width: 100%;
             width: 100%;
             display: block;
         }
+    }
 
-        .cc-message {
-            a {
-                color: #fff;
-                text-decoration: underline !important;
 
-                &:hover{
-                    font-weight: bold;
-                    color: #fff;
-                }
-            }
 
-            .cookie-title {
-                font-size: 18px;
+    .cc-message {
+        a {
+            color: #fff;
+            text-decoration: underline !important;
+
+            &:hover {
                 font-weight: bold;
-                display: flex;
-                align-items: center;
+                color: #fff;
+            }
+        }
 
-                @include mobile {
-                    margin-bottom: 15px;
-                }
-            
-                &::before{
-                    content: '\f564';
-                    font-family: 'Font Awesome 5 Free';
-                    font-weight: 600;
-                    font-size: 35px;
-                    margin-right: 30px;
-                }
+        .cookie-title {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                margin-bottom: 15px;
             }
 
-            p.cookie-custom-msg{
-                margin-bottom: 0px;
-                font-size: 16px;
-                line-height: 19px;
+            &::before {
+                content: '\f564';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 600;
+                font-size: 35px;
+                margin-right: 30px;
             }
+        }
 
-            .cc-link {
-                display: none;
-            }
+        p.cookie-custom-msg {
+            margin-bottom: 0px;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        .cc-link {
+            display: none;
         }
     }
 
@@ -75,5 +82,5 @@
         background-color: transparent;
     }
 
-    
+
 }
