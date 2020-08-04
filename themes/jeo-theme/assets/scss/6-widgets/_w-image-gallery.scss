@@ -187,7 +187,7 @@
         justify-content: center;
         z-index: 2;
         position: absolute;
-        bottom: 60px;
+        bottom: 68px;
         left: 45%;
         margin: auto;
 
@@ -256,7 +256,7 @@
             bottom: 0;
             background-color: rgba(25,30,35,0.8);
             color: white;
-            padding: 20px;
+            padding: 17px 20px;
             width: 100%;
             font-size: 14px;
             font-weight: 600;
@@ -267,6 +267,10 @@
             z-index: 99;
             font-family: var(--primary-font);
 
+            .image-description{
+                line-height: 15px;
+            }
+
             i {
                 color: white;
                 opacity: 0.7;
@@ -275,6 +279,7 @@
             
             .image-credit {
                 opacity: 0.5;
+                line-height: 15px;
             }
 
         }
