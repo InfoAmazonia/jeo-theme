@@ -178,21 +178,23 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
 
         return (
             <div className="image-gallery">
-                <div className="gallery-title">
-                    <RichText.Content tagName="h2" value={ galleryTitle } />
-                </div>
-                <div className="actions">
-                    <button action="display-grid">
-                        <i class="fas fa-th"></i>
-                    </button>
+                <div className="image-gallery-wrapper">
+                    <div className="gallery-title">
+                        <RichText.Content tagName="h2" value={ galleryTitle } />
+                    </div>
+                    <div className="actions">
+                        <button action="display-grid">
+                            <i class="fas fa-th"></i>
+                        </button>
 
-                    <button action="fullsreen">
-                        <i class="fas fa-expand"></i>
-                    </button>
-                </div>
+                        <button action="fullsreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
 
-                <div className="gallery-grid" data-total-slides={images.length}>
-                    {displayImages(images)}
+                    <div className="gallery-grid" data-total-slides={images.length}>
+                        {displayImages(images)}
+                    </div>
                 </div>
             </div>
         );
