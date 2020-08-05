@@ -26,11 +26,12 @@ a {
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 .wp-block-newspack-blocks-homepage-articles {
     h2.article-section-title {
-        font-size: 18px !important;
+        font-size: size(18) !important;
     }
 
     p {

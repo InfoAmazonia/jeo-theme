@@ -2,6 +2,7 @@ import Vue from "vue";
 import ImageBlock from "./components/imageBlock/ImageBlock";
 import "./audio-player";
 import "./video-repositioning";
+import "./cookies";
 import "./image-gallery";
 import "./../vendor/sss/sss.min";
 

@@ -1,0 +1,41 @@
+.jeomap {
+    .legend-container {
+        a.more-info-button {
+            background: var(--primary) !important;
+            color: #fff !important;
+            border-radius: 5px;
+            border: 0px !important;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #fff;
+                background: var(--primary-darker-15) !important;
+            }
+        }
+    }
+
+    .mapboxgl-popup-close-button {
+        background: var(--primary) !important;
+        color: #fff !important;
+
+        span {
+            font-size: 35px !important;
+            line-height: 25px;
+        }
+    }
+
+    .mapboxgl-ctrl-attrib-inner a {
+        color: #191E23 !important;
+
+        &:hover {
+            color: #555 !important;
+        }
+    }
+
+    .map-content-layers-list {
+        h3 {
+            font-size: 16px !important;
+            font-weight: normal !important;
+        }
+    }
+}

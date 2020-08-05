@@ -22,7 +22,7 @@
             }
         
             .entry-content p {
-                font-size: 16px;
+                font-size: size(16);
                 letter-spacing: 0;
                 line-height: 22px;
 
@@ -48,7 +48,7 @@
 
                     .entry-title {
                         @include mobile {
-                            font-size: 16px !important;
+                            font-size: size(16) !important;
                         }
                     }
                 }
@@ -66,7 +66,7 @@
 
         .found-itens-quantity {
             color: #0A0A0A;
-            font-size: 16px;
+            font-size: size(16);
             font-weight: bold;
             letter-spacing: 0;
             line-height: 20px;
@@ -74,7 +74,7 @@
 
         .sorting-method {
             color: rgba(10, 10, 10, 0.5);
-            font-size: 16px;
+            font-size: size(16);
             letter-spacing: 0;
             line-height: 20px;
             text-align: right;
@@ -84,7 +84,7 @@
             button.current {
                 padding: 0;
                 color: var(--primary);
-                font-size: 16px;
+                font-size: size(16);
                 font-weight: bold;
                 letter-spacing: 0;
                 line-height: 20px;
@@ -112,7 +112,7 @@
                 button.option {
                     padding: 0;
                     color: var(--primary);
-                    font-size: 16px;
+                    font-size: size(16);
                     font-weight: bold;
                     letter-spacing: 0;
                     line-height: 20px;
@@ -168,7 +168,7 @@
 
             &--title {
                 color: #555D66;
-                font-size: 18px;
+                font-size: size(18);
                 font-weight: bold;
                 letter-spacing: 0;
                 text-transform: uppercase;
@@ -197,7 +197,7 @@
                     background-color: transparent;
                     padding: 0 12px;
                     color: #555D66;
-                    font-size: 16px;
+                    font-size: size(16);
                     font-weight: bold;
                     letter-spacing: 0;
                     appearance: none;

@@ -44,7 +44,7 @@
         }
 
         &-btn{
-            font-size: 21px;
+            font-size: size(21);
             a {
                 width: 100%;
                 text-align: center;
@@ -67,7 +67,7 @@
 
 
         h2 {
-            font-size: 30px;
+            font-size: size(30);
             margin: 20px 0px;
         }
 
@@ -96,7 +96,7 @@
         }
 
         h2 {
-            font-size: 32px;
+            font-size: size(32);
             margin: 20px 0px;
         }
 
@@ -124,7 +124,7 @@
             border-color: var(--primary);
             color: #FFFFFF;
             text-transform: uppercase;
-            font-size: 18px;
+            font-size: size(18);
             font-weight: bold;
             letter-spacing: 0;
             line-height: 24px;
@@ -165,7 +165,7 @@
 
     &__newsletter-icon {
         color: var(--primary);
-        font-size: 70px;
+        font-size: size(70);
         margin-bottom: 0px !important;
     }
 
@@ -206,7 +206,7 @@
     .has-more-button button {
         background: transparent;
         color: #555D66;
-        font-size: 14px !important;
+        font-size: size(14) !important;
         width: 100%;
         border-top: 2px solid #DDDDDD;
     }
@@ -284,7 +284,7 @@
                     position: relative;
                 }
                 .entry-title {
-                    font-size: 18px;
+                    font-size: size(18);
                 }
 
                 

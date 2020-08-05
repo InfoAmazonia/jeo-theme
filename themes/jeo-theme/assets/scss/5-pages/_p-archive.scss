@@ -29,7 +29,7 @@
             margin-top: 30px;
         }
         .entry-meta {
-            font-size: 14px;
+            font-size: size(14);
             
             @include tablet{
                 margin-bottom: 0px;
@@ -45,7 +45,7 @@
 
         .entry-content {
             p {
-                font-size: 16px;
+                font-size: size(16);
                 letter-spacing: 0;
                 line-height: 22px;
 
@@ -88,7 +88,7 @@
     .entry-title {
         font-size: 1.2em !important;
         @include mobile {
-            font-size: 16px !important;
+            font-size: size(16) !important;
         }
     
     }
@@ -105,7 +105,7 @@
     .page-header{
         margin-bottom: 40px;
         .page-subtitle, .page-description {
-           font-size: 18px;
+           font-size: size(18);
         }
         .page-description{
             margin-left:10px;
