@@ -572,6 +572,7 @@ header.site-header {
             font-weight: bold;
             padding: 5px 0;
             padding-left: var(--padding-left);
+            cursor: pointer;
 
             &:hover {
                 color: #555D66;
