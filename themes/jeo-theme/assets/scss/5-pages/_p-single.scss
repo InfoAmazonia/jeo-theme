@@ -453,11 +453,23 @@
 
             @include mobile {
                 flex-direction: column;
+
+                .post {
+                    margin-top: size(90) !important;
+                }
             }
 
             .post {
                 flex-direction: column;
                 margin: 0 size(26);
+
+                @include desktop {
+                    .thumbnail {
+                        width: size(423);
+                        height: size(238);
+                        overflow: hidden;
+                    }
+                }
 
                 .title {
                     font-family: var(--primary-font);
