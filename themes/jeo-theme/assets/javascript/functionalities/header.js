@@ -98,25 +98,23 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     const shareData = {
-        title: "MDN",
-        text: "Learn web development on MDN!",
-        url: "https://developer.mozilla.org",
+        title: document.title,
+        text: "",
+        url: document.location.href,
     };
 
     const btn = document.querySelector('button[action="share-navigator"]');
     const resultPara = document.querySelector("body");
 
     if(document.location.protocol != 'http:') {
-        // Must be triggered some kind of "user activation"
         btn.addEventListener("click", () => {
             try {
                 navigator.share(shareData);
-                resultPara.textContent = "MDN shared successfully";
             } catch (err) {
                 resultPara.textContent = "Error: " + err;
             }
         });
     } else {
-        alert("Share is not allowed over HTTP protocol.")
+        alert("Native share is not allowed over HTTP protocol.")
     }
 });

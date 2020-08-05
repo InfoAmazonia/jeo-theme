@@ -85,8 +85,8 @@ if (newspack_is_amp()) : ?>
 					</div>
 
 					<div class="item--content padded">
-						<button action="increase-size">A+</button>
-						<button action="decrease-size">A-</button>
+						<button action="increase-size"><i class="fas fa-font"></i>+</button>
+						<button action="decrease-size"><i class="fas fa-font"></i>-</button>
 					</div>
 				</div>
 
