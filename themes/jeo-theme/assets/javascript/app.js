@@ -1,13 +1,15 @@
 import "./functionalities/ajax-pv";
 import Vue from "vue";
 import ImageBlock from "./components/imageBlock/ImageBlock";
-import "./audio-player";
-import "./video-repositioning";
+import "./functionalities/audio-player";
+import "./functionalities/video-repositioning";
+import "./functionalities/header";
 import "./cookies";
 
 Vue.component("image-block", ImageBlock);
 
 window.addEventListener("DOMContentLoaded", function () {
+    // External source post API magic <3
     const siteLinks = document
         .querySelectorAll("article > .entry-wrapper > h2 > a")
         .forEach((element) => {
@@ -54,6 +56,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 (function ($) {
     jQuery(document).ready(function () {
+        // Fix JEO-plugin and Vue conflit.
         document.querySelectorAll('.vue-component').forEach(function(element) {
             new Vue({
                 el: element,
@@ -71,15 +74,6 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // jQuery(window).scroll(function () {
-        //     var headerHeight = jQuery('.middle-header-contain').height();
-        //     // console.log(headerHeight);
-        //     if (jQuery(this).scrollTop() > headerHeight) {
-        //         jQuery('.bottom-header-contain').addClass("fixed-header");
-        //     } else {
-        //         jQuery('.bottom-header-contain').removeClass("fixed-header");
-        //     }
-        // });
 
         jQuery(".filters select").change(function () {
             jQuery(this).closest("form").submit();
@@ -94,63 +88,7 @@ window.addEventListener("DOMContentLoaded", function () {
             },
         });
 
-        jQuery(window).scroll(function () {
-            var headerHeight = document.querySelector(
-                ".bottom-header-contain.desktop-only"
-            ).offsetTop;
-            // console.log(headerHeight);
-            if (jQuery(this).scrollTop() > headerHeight) {
-                jQuery(".bottom-header-contain.post-header").addClass("active");
-
-                if (!jQuery("header #header-search").hasClass("fixed")) {
-                    jQuery("header #header-search").addClass("fixed");
-                    jQuery("header #header-search").css("top", 50 + "px");
-                    jQuery("header #header-search").css(
-                        "height",
-                        jQuery(window).height() - 50 + "px"
-                    );
-                }
-            } else {
-                jQuery(".bottom-header-contain.post-header").removeClass("active");
-
-                if (jQuery("header #header-search").hasClass("fixed")) {
-                    jQuery("header #header-search").removeClass("fixed");
-                    jQuery("header #header-search").css(
-                        "top",
-                        document.querySelector(".bottom-header-contain.desktop-only")
-                            .offsetTop +
-                        50 +
-                        "px"
-                    );
-                    jQuery("header #header-search").css(
-                        "height",
-                        jQuery(window).height() -
-                        document.querySelector(".bottom-header-contain.desktop-only")
-                            .offsetTop +
-                        "px"
-                    );
-                }
-            }
-        });
-
-        jQuery("button.search-toggle").click(function (e) {
-            jQuery("header#masthead").toggleClass("hide-header-search");
-        });
-
-        jQuery("header #header-search").css(
-            "top",
-            document.querySelector(".bottom-header-contain.desktop-only").offsetTop +
-            50 +
-            "px"
-        );
-        jQuery("header #header-search").css(
-            "height",
-            jQuery(window).height() -
-            document.querySelector(".bottom-header-contain.desktop-only")
-                .offsetTop +
-            "px"
-        );
-
+        // Search fields
         jQuery('input[name="daterange"]').on("apply.daterangepicker", function (
             ev,
             picker
