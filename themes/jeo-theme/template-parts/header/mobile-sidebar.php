@@ -37,8 +37,6 @@ if ( newspack_is_amp() ) : ?>
 
 		newspack_tertiary_menu();
 
-
-		newspack_social_menu_header();
 		?>
 		<div class="more-menu">
 			<div class="more-title"> 
@@ -54,7 +52,7 @@ if ( newspack_is_amp() ) : ?>
 						<?php
 							wp_nav_menu(
 								array(
-									'theme_location' => 'main-menu',
+									'theme_location' => 'more-menu',
 									'container'      => false,
 									'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 									'depth'          => 1,
@@ -69,7 +67,7 @@ if ( newspack_is_amp() ) : ?>
 						<?= __("Dark mode", "jeo") ?>
 					</div>
 
-					<div class="item--content">
+					<div class="item--content padded">
 
 					</div>
 
@@ -82,7 +80,7 @@ if ( newspack_is_amp() ) : ?>
 						<?= __("Type size", "jeo") ?>
 					</div>
 
-					<div class="item--content">
+					<div class="item--content padded">
 						<button action="increase-size">A+</button>
 						<button action="decrease-size">A-</button>
 					</div>
@@ -93,7 +91,7 @@ if ( newspack_is_amp() ) : ?>
 						<?= __("Constrast", "jeo") ?>
 					</div>
 
-					<div class="item--content">
+					<div class="item--content padded">
 						<button action="increase-contrast">
 							<i class="fas fa-adjust"></i>+
 						</button>
@@ -106,6 +104,10 @@ if ( newspack_is_amp() ) : ?>
 
 			</div>
 		</div>
+
+		<?php 
+			newspack_social_menu_header();
+		?>
 
 <?php if ( newspack_is_amp() ) : ?>
 	</amp-sidebar>
