@@ -288,8 +288,8 @@ endif;
 					<div class="wrapper">
                         <div class="left">
                             <div class="subpage-toggle-contain">
-								<button class="mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
-                                    <?php echo wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
+								<button class="menu-btn mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
+                                    <?php wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
                                     <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'newspack' ); ?></span>
 								</button>
                             </div>
