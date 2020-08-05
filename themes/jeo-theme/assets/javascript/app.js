@@ -1,3 +1,4 @@
+import "./functionalities/ajax-pv";
 import Vue from "vue";
 import ImageBlock from "./components/imageBlock/ImageBlock";
 import "./audio-player";
