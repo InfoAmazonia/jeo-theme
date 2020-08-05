@@ -41,7 +41,7 @@ if (newspack_is_amp()) : ?>
 		?>
 		<div class="more-menu">
 			<div class="more-title">
-				<?= esc_html(wp_get_nav_menu_name('main-menu')) ?>
+				<?= esc_html(wp_get_nav_menu_name('more-menu')) ?>
 			</div>
 
 			<div class="more-menu--content">
