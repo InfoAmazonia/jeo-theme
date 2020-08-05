@@ -198,7 +198,7 @@
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 0;
-            font-family: var(--primary-font) !important;
+            font-family: var(--primary-font);
 
             a {
                 color: white;
@@ -212,8 +212,8 @@
         z-index: 2;
         position: absolute;
         bottom: 68px;
-        left: 45%;
         margin: auto;
+        width: 100%;
 
         .dot {
             width: 11px;
