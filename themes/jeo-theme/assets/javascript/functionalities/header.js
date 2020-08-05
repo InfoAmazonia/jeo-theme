@@ -1,4 +1,4 @@
-import './font-size';
+import "./font-size";
 
 window.addEventListener("DOMContentLoaded", function () {
     jQuery(window).scroll(function () {
@@ -18,7 +18,9 @@ window.addEventListener("DOMContentLoaded", function () {
                 );
             }
         } else {
-            jQuery(".bottom-header-contain.post-header").removeClass("active");
+            if (!jQuery("body").hasClass("mobile-menu-opened")) {
+                jQuery(".bottom-header-contain.post-header").removeClass("active");
+            }
 
             if (jQuery("header #header-search").hasClass("fixed")) {
                 jQuery("header #header-search").removeClass("fixed");
@@ -53,31 +55,68 @@ window.addEventListener("DOMContentLoaded", function () {
     jQuery("header #header-search").css(
         "height",
         jQuery(window).height() -
-        document.querySelector(".bottom-header-contain.desktop-only")
-            .offsetTop +
+        document.querySelector(".bottom-header-contain.desktop-only").offsetTop +
         "px"
     );
 
-    document.getElementById('mobile-sidebar-fallback').style.setProperty('--padding-left', jQuery('.bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle').offset().left + 'px');
+    document
+        .getElementById("mobile-sidebar-fallback")
+        .style.setProperty(
+            "--padding-left",
+            jQuery(
+                ".bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle"
+            ).offset().left + "px"
+        );
 
-    jQuery('.more-menu--content').css('left', jQuery('aside#mobile-sidebar-fallback').offset().left + jQuery('aside#mobile-sidebar-fallback').width() + jQuery('.bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle').offset().left);
-    const inicialPos = jQuery('.more-menu--content').css('left');
+    jQuery(".more-menu--content").css(
+        "left",
+        jQuery("aside#mobile-sidebar-fallback").offset().left +
+        jQuery("aside#mobile-sidebar-fallback").width() +
+        jQuery(
+            ".bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle"
+        ).offset().left
+    );
 
-    jQuery('button.mobile-menu-toggle').click(function() {
-        if(parseInt(jQuery('.more-menu--content').css('left'), 10) > 0) {
-            jQuery('.more-menu--content').css('left', inicialPos);
-        } else {
-            jQuery('.more-menu--content').css('left', jQuery('aside#mobile-sidebar-fallback').width());
-        }
-    })
-
-    jQuery('button[action="dark-mode"]').click(function() {
-        jQuery('body').toggleClass('dark-mode');
-        jQuery(this.querySelector('i:last-child')).toggleClass('fa-toggle-off fa-toggle-on');
+    jQuery("button.mobile-menu-toggle").click(function () {
+        jQuery(".more-menu--content").css(
+            "left",
+            jQuery("aside#mobile-sidebar-fallback").width()
+        );
     });
 
-    // jQuery('button.menu-btn.mobile-menu-toggle.left-menu-toggle').click(function() {
-    //     jQuery(this).toggleClass('active');
-    // })
+    jQuery('button[action="dark-mode"]').click(function () {
+        jQuery("body").toggleClass("dark-theme");
+        jQuery(this.querySelector("i:last-child")).toggleClass(
+            "fa-toggle-off fa-toggle-on"
+        );
+    });
 
+    jQuery('button[action="toggle-options"]').click(function () {
+        jQuery(this.parentNode.querySelector(".toggle-options")).toggleClass(
+            "active"
+        );
+    });
+
+    const shareData = {
+        title: "MDN",
+        text: "Learn web development on MDN!",
+        url: "https://developer.mozilla.org",
+    };
+
+    const btn = document.querySelector('button[action="share-navigator"]');
+    const resultPara = document.querySelector("body");
+
+    if(document.location.protocol != 'http:') {
+        // Must be triggered some kind of "user activation"
+        btn.addEventListener("click", () => {
+            try {
+                navigator.share(shareData);
+                resultPara.textContent = "MDN shared successfully";
+            } catch (err) {
+                resultPara.textContent = "Error: " + err;
+            }
+        });
+    } else {
+        alert("Share is not allowed over HTTP protocol.")
+    }
 });
