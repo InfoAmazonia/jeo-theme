@@ -1,20 +1,22 @@
 .image-gallery:not(.wp-block-jeo-theme-custom-image-gallery-block) {
     margin-bottom: 3em;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
 
     button {
         padding: 0;
         border-radius: 10px;
         background-color: var(--primary);
+
         a {
             color: white;
-            display:inline-block;
-            width:90%;
-            height:100%;
+            display: inline-block;
+            width: 90%;
+            height: 100%;
             padding: 5%;
         }
+
         width: 90%;
-        margin: 15px 20px 30px;;
+        margin: 15px 20px 30px;
     }
 
     .image-gallery-content {
@@ -40,7 +42,7 @@
         }
     }
 
-    .image-gallery-content-block{
+    .image-gallery-content-block {
         padding: 20px 20px 0px;
     }
 
@@ -48,6 +50,7 @@
         background-color: var(--primary);
         border-radius: 10px 10px 0 0;
         margin-bottom: 5px;
+
         p {
             padding: 20px 30px;
             color: white;
@@ -59,7 +62,7 @@
         }
     }
 }
-  
+
 .image-gallery.wp-block-jeo-theme-custom-image-gallery-block {
     position: relative;
 
@@ -71,7 +74,9 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(255, 255, 255, 0) 100%);
         z-index: 1;
     }
 
@@ -83,14 +88,33 @@
         height: 100%;
         z-index: 999999;
         margin-top: 0;
+
+        &:not(.grid-display) {
+            .image-gallery-wrapper {
+                background: black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                @include tablet {
+                    height: 100%;
+                    
+                    .dots-wrapper {
+                        display: none;
+                    }
+                }
+                
+            }
+        }
     }
 
-
     &.grid-display {
-        background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 100%);
-        background-color: #191E23;
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(255, 255, 255, 0) 100%);
+        background-color: #191e23;
         padding: 5px 21px 21px 21px;
-    
+
         &:not(.fullscreen) {
             position: relative;
             height: 0;
@@ -99,7 +123,7 @@
         }
 
         &.fullscreen {
-            position: fixed
+            position: fixed;
         }
 
         .dots-wrapper {
@@ -139,27 +163,29 @@
 
         .gallery-item-container {
             padding-top: 100%;
-            display: block!important;
+            display: block !important;
             cursor: pointer;
             z-index: 2;
-            
+
             .image-meta {
                 display: none;
             }
         }
 
-        .sssprev, .sssnext {
+        .sssprev,
+        .sssnext {
             display: none;
         }
     }
 
-    .sssprev, .sssnext {
+    .sssprev,
+    .sssnext {
         z-index: 2;
         width: 50px;
     }
 
     .sssnext {
-        background-position: -50px 50%
+        background-position: -50px 50%;
     }
 
     .gallery-title {
@@ -170,7 +196,7 @@
         width: calc(100% - 100px);
 
         h2 {
-            color: #FFFFFF;
+            color: #ffffff;
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 0;
@@ -196,10 +222,10 @@
             border-radius: 50%;
             margin-right: 10px;
             cursor: pointer;
-            transition: all .2s ease-in;
+            transition: all 0.2s ease-in;
 
             &:hover {
-                transition: all .2s ease-in;
+                transition: all 0.2s ease-in;
                 opacity: 1;
             }
 
@@ -223,12 +249,13 @@
             cursor: pointer;
             padding: 0;
             margin-left: 15px;
-            color: #FFFFFF;
+            color: #ffffff;
             opacity: 0.7;
-            transition: all .2s ease-in-out;
+            transition: all 0.2s ease-in-out;
 
             &:hover {
-                opacity: 1;transition: all .2s ease-out;
+                opacity: 1;
+                transition: all 0.2s ease-out;
             }
         }
     }
@@ -251,7 +278,7 @@
         .image-meta {
             position: absolute;
             bottom: 0;
-            background-color: rgba(25,30,35,0.8);
+            background-color: rgba(25, 30, 35, 0.8);
             color: white;
             padding: 20px;
             width: 100%;
@@ -268,11 +295,10 @@
                 opacity: 0.7;
                 margin: 0 20px;
             }
-            
+
             .image-credit {
                 opacity: 0.5;
             }
-
         }
     }
 }
