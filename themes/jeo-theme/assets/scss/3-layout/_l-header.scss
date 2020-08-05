@@ -432,8 +432,10 @@ header.site-header {
 
 #mobile-sidebar-fallback.mobile-sidebar {
     background-color: white !important;
+    padding-left: 0;
     padding-right: 0;
     padding-top: 70px;
+    font-size: initial;
 
     .mobile-menu-toggle {
         display: none;
@@ -447,14 +449,23 @@ header.site-header {
     ul li a,
     ul li a * {
         color: #191e23;
-        font-size: size(14);
+    }
+
+    .nav1, .discovery-menu {
+        padding-left: var(--padding-left);
     }
 
     nav.main-navigation {
         margin-bottom: 0px !important;
         ul li {
-            padding: 14px 0;
+            padding: 11px 0;
+            font-size: size(14);
         }
+    }
+    
+    .social-navigation {
+        padding-left: var(--padding-left);
+        margin-top: 20px;
     }
 
     .main-menu {
@@ -463,12 +474,26 @@ header.site-header {
             color: var(--primary);
             font-weight: 700;
             padding: 0.25rem 0rem;
-            margin-bottom: 33px;
+            margin-bottom: 22px;
+            font-size: size(14);
     
             &:hover {
                 color: var(--primary-darker-15);
                 text-decoration: none;
             }
+        }
+    }
+
+    .social-menus {
+        &--title {
+            background: #555D66;
+            padding: 5px 0;
+            padding-left: var(--padding-left);
+            font-size: size(14);
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: size(16);
+            text-transform: uppercase;
         }
     }
 
@@ -478,14 +503,18 @@ header.site-header {
         &:hover {
             .more-menu--content {
                 opacity: 1;
+                transform: translateY(0);
                 transition: all 0.2s ease-in-out;
             }
         }
 
         .more-title {
+            font-size: size(14);
             color: #191E23;
             text-transform: uppercase;
             font-weight: bold;
+            padding: 5px 0;
+            padding-left: var(--padding-left);
 
             &:hover {
                 color: #555D66;
@@ -495,6 +524,7 @@ header.site-header {
 
         &--content {
             opacity: 0;
+            transform: translateY(-1000px);
             transition: all 0.2s ease-in-out;
             position: fixed;
             top: 50px;
@@ -528,13 +558,21 @@ header.site-header {
                         font-size: size(20);
                         padding: 0;
                         margin-right: 15px;
+
+                        &[action="dark-mode"] {
+                            i {
+                                margin-right: 15px;
+                            }
+                        }
                     }
+
+                    
 
                     ul li a {
                         color: #191E23;
                         font-size: size(14);
                         display: block;
-                        padding: 0 30px;
+                        padding: 3px 30px;
                         transition: all .2s ease-in-out;
 
                         &:hover {

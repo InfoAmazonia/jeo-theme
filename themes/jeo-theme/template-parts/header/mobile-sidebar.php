@@ -26,7 +26,7 @@ if ( newspack_is_amp() ) : ?>
 
 		
 		if (!empty($button_url)): ?>
-			<ul class="main-menu">
+			<ul class="main-menu discovery-menu">
 				<li class="menu-item menu-item-type-post_type menu-item-object-page">
 					<a href="<?= $button_url ?>" class="discovery-link">
 						DISCOVERY
@@ -68,7 +68,10 @@ if ( newspack_is_amp() ) : ?>
 					</div>
 
 					<div class="item--content padded">
-
+						<button action="dark-mode">
+							<i class="far fa-lightbulb"></i>
+							<i class="fas fa-toggle-off"></i>
+						</button>
 					</div>
 
 
@@ -104,10 +107,14 @@ if ( newspack_is_amp() ) : ?>
 
 			</div>
 		</div>
-
+		<div class="social-menus">
+			<div class="social-menus--title">
+				<?= __("Follow us", "jeo") ?>
+			</div>
 		<?php 
 			newspack_social_menu_header();
 		?>
+		</div>
 
 <?php if ( newspack_is_amp() ) : ?>
 	</amp-sidebar>
