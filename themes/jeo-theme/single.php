@@ -105,17 +105,82 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 			?>
 		</div>
 		<?php
-			$posts = guaraci\related_posts::get_posts(get_the_id())->posts;
+		function add_months($months, DateTime $dateObject) {
+			$next = new DateTime($dateObject->format('Y-m-d'));
+			$next->modify('last day of +'.$months.' month');
+	
+			if($dateObject->format('d') > $next->format('d')) {
+				return $dateObject->diff($next);
+			} else {
+				return new DateInterval('P'.$months.'M');
+			}
+		}
+		function remove_months($months, DateTime $dateObject) {
+			$next = new DateTime($dateObject->format('Y-m-d'));
+			$next->modify('last day of -'.$months.' month');
+	
+			if($dateObject->format('d') > $next->format('d')) {
+				return $dateObject->diff($next);
+			} else {
+				return new DateInterval('P'.$months.'M');
+			}
+		}
+	
+		function addEndCycle($d1, $months){
+			$date = new DateTime($d1);
+	
+			$newDate = $date->add(add_months($months, $date));
+	
+			$newDate->sub(new DateInterval('P1D')); 
+	
+			$dateReturned = $newDate->format('Y-m-d'); 
+	
+			return $dateReturned;
+		}
+		function removeEndCycle($d1, $months){
+			$date = new DateTime($d1);
+	
+			$newDate = $date->sub(remove_months($months, $date));
+	
+			$newDate->sub(new DateInterval('P1D')); 
+	
+			$dateReturned = $newDate->format('Y-m-d'); 
+	
+			return $dateReturned;
+		}
+			$current_date =get_the_time('Y-m-d', get_the_id());
+
+			$months_before = guaraci\related_posts::get_months_before();
+			$months_after = guaraci\related_posts::get_months_after();
+
+
+			$date_after = removeEndCycle($current_date, $months_before);
+			$date_before = addEndCycle($current_date, $months_after);
+
+			$posts = guaraci\related_posts::get_posts(get_the_id(), 3, $date_after, $date_before)->posts;
+			$posts_ids = [];
+			foreach($posts as $key=>$value) {
+				array_push($posts_ids, $value->ID);
+			}
+
+			
+			$posts_query_args['post__in'] = $posts_ids;
+
+			
+
+			$related_posts = new \WP_Query($posts_query_args); 
 		?>
 		<div class="related-posts">
 			<p class="title">RELATED POSTS</p>
 			<div class="posts">
-				<?php foreach($posts as $key=>$value): ?>
+				<?php foreach($related_posts->posts as $key=>$value): ?>
 					<div class="post">
+						<a href="<?php echo get_permalink($value->ID) ?>" target="blank">
 							<div class="thumbnail"><?php echo get_the_post_thumbnail($value->ID) ?></div>
 							<p class="title"><?php echo $value->post_title ?></p>
 							<p class="date"><?php  echo get_the_time('F j, Y', $value->ID); ?></p>
 							<p class="excerpt"><?php echo get_the_excerpt($value->ID) ?></p>
+						</a>	
 					</div>
 				<?php endforeach; ?>
 			</div>

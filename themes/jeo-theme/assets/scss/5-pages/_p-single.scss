@@ -461,11 +461,11 @@
 
             .post {
                 flex-direction: column;
-                margin: 0 size(26);
+                margin: 0 1%;
 
                 @include desktop {
                     .thumbnail {
-                        width: size(423);
+                        width: 90%;
                         height: size(238);
                         overflow: hidden;
                     }
