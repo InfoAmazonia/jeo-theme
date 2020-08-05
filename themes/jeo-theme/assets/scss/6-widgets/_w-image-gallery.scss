@@ -65,6 +65,7 @@
 
 .image-gallery.wp-block-jeo-theme-custom-image-gallery-block {
     position: relative;
+    min-width: 100%;
 
     &:before {
         content: "";
