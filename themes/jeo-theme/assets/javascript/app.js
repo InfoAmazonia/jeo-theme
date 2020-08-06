@@ -4,7 +4,10 @@ import ImageBlock from "./components/imageBlock/ImageBlock";
 import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
+import "./functionalities/cover-block";
 import "./cookies";
+import "./image-gallery";
+import "./../vendor/sss/sss.min";
 
 Vue.component("image-block", ImageBlock);
 
@@ -38,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function () {
                         type: "GET",
                         url: external_link_api,
                         success: function (data) {
-                            console.log(data);
+                            // console.log(data);
                             externalSourceLink.innerHTML = `<i class="fas fa-external-link-alt"></i> <span class="target-title">${data}</span>`;
                         },
                     });
