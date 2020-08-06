@@ -41,7 +41,13 @@ if (newspack_is_amp()) : ?>
 		?>
 		<div class="more-menu">
 			<div class="more-title">
-				<span class="more-name"><?= esc_html(wp_get_nav_menu_name('more-menu')) ?></span>
+				<?php 
+					$more_name = esc_html(wp_get_nav_menu_name('more-menu'));
+					if(strlen($more_name) <= 0) {
+						$more_name = 'MORE';
+					}
+				?>
+				<span class="more-name"><?= $more_name ?></span>
 			</div>
 
 			<div class="more-menu--content">
