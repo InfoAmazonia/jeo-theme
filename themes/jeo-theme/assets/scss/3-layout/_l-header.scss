@@ -501,17 +501,22 @@ header.site-header {
     ul li a * {
         color: #191e23;
     }
-
-    .nav1 {
-        padding-left: var(--padding-left);
+    .nav1 ul li a{
+        width: 100%;
     }
 
     nav.main-navigation {
         margin-bottom: 0px !important;
 
         ul li {
-            padding: 11px 0;
+            padding-left: var(--padding-left);
             font-size: size(14);
+            margin-bottom: 10px;
+
+            &:hover{
+                color: #555D66;
+                background-color: #F5F5F5;
+            }
         }
     }
 
@@ -521,7 +526,8 @@ header.site-header {
     }
 
     .discovery-menu {
-        .discovery-title{
+        margin-bottom: 10px;
+        .discovery-title {
             font-size: size(14);
             text-transform: uppercase;
             font-weight: bold;
@@ -529,17 +535,18 @@ header.site-header {
             padding-left: var(--padding-left);
             cursor: pointer;
 
-    
+
             &:hover {
                 color: var(--primary-darker-15);
                 text-decoration: none;
                 background-color: #F5F5F5;
             }
-        
+
             a.discovery-link {
                 color: var(--primary);
                 font-weight: 700;
                 padding: 0rem;
+                width: 100%;
             }
         }
     }
@@ -547,7 +554,7 @@ header.site-header {
     .social-menus {
         &--title {
             background: #555D66;
-            padding: 5px 0;
+            padding: 7px 0;
             padding-left: var(--padding-left);
             font-size: size(14);
             font-weight: bold;
@@ -560,10 +567,11 @@ header.site-header {
 
 
     .more-menu {
+        margin-bottom: 10px;
         @include tablet {
             display: none;
         }
-        
+
         &:hover {
             .more-menu--content {
                 opacity: 1;
@@ -580,6 +588,23 @@ header.site-header {
             padding: 5px 0;
             padding-left: var(--padding-left);
             cursor: pointer;
+            position: relative;
+
+            .more-name{
+                &::after {
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    content: "";
+                    border-top: .3em solid transparent;
+                    border-bottom: .3em solid transparent;
+                    border-left: .3em solid;
+                    text-align: right;
+                    position: absolute;
+                    right: 10px;
+                    margin-top: 5px;
+                }
+            }
 
             &:hover {
                 color: #555D66;
@@ -805,7 +830,7 @@ header.site-header {
             position: relative;
             display: flex;
             justify-content: center;
-   
+
             .toggle-options {
                 display: none;
 
@@ -822,7 +847,7 @@ header.site-header {
                     border-radius: 50px;
                 }
             }
-            
+
             button {
                 padding: 15px;
                 font-size: 14px;
@@ -834,18 +859,18 @@ header.site-header {
                     margin-bottom: 6px;
                 }
             }
-            
+
             &--title {
                 font-size: 12px;
                 font-weight: bold;
                 letter-spacing: 0;
-                line-height: 15px; 
-                text-transform: uppercase;   
+                line-height: 15px;
+                text-transform: uppercase;
                 color: #555D66;
             }
         }
 
-        
+
     }
 
 }
