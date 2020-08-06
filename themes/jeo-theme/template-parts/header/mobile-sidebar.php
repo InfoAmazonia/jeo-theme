@@ -52,10 +52,10 @@ if (newspack_is_amp()) : ?>
 
 			<div class="more-menu--content">
 				<div class="item">
-					<div class="item--title">
+					<div class="item--title language-title">
 						<?= __("Language", "jeo") ?>
 					</div>
-					<div class="item--content">
+					<div class="item--content language-item-content">
 						<?php
 						wp_nav_menu(
 							array(
@@ -67,6 +67,11 @@ if (newspack_is_amp()) : ?>
 						);
 						?>
 					</div>
+					<script>
+						if(!document.querySelector('.language-item-content').firstElementChild) {
+							document.querySelector('.language-title').remove();
+						}
+					</script>
 				</div>
 
 				<div class="item">
