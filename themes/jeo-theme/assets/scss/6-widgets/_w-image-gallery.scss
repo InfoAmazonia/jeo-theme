@@ -312,12 +312,8 @@
 }
 
 
-.wp-block-cover .wp-block-cover__inner-container{
+.wp-block-cover.has-image-gallery .wp-block-cover__inner-container{
     z-index: auto;
-}
-
-.wp-block-cover-image.has-background-dim:not(.has-background-gradient):before, .wp-block-cover-image .wp-block-cover__gradient-background, .wp-block-cover.has-background-dim:not(.has-background-gradient):before, .wp-block-cover .wp-block-cover__gradient-background {
-    z-index: -1;
 }
 
 .wp-block-cover .wp-block-jeo-theme-custom-image-gallery-block {

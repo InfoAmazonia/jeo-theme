@@ -4,6 +4,7 @@ import ImageBlock from "./components/imageBlock/ImageBlock";
 import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
+import "./functionalities/cover-block";
 import "./cookies";
 import "./image-gallery";
 import "./../vendor/sss/sss.min";
