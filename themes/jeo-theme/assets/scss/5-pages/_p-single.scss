@@ -21,7 +21,7 @@
     .entry-content {
 
         .wp-block-newspack-blocks-homepage-articles {
-            .entry-wrapper{
+            .entry-wrapper {
                 .entry-title {
                     a {
                         color: #111;
@@ -29,7 +29,7 @@
                 }
             }
         }
-        
+
         .post-excerpt p {
             line-height: normal;
             margin-bottom: 60px;
@@ -38,16 +38,16 @@
         a {
             color: var(--primary);
             font-weight: bold;
-    
+
             &:visited {
                 color: var(--primary);
             }
-            
+
             &:hover {
                 color: var(--primary-darker-15);
             }
         }
-    } 
+    }
 
     h1.entry-title {
         @include mobile {
@@ -605,6 +605,7 @@
         padding-top: 4rem;
     }
 }
+
 /*Create a category with stlug 'long-form' */
 #primary.category-long-form {
     .entry {
@@ -622,7 +623,94 @@
         height: 100vh;
     }
 
-    @include mobile{
+    @include mobile {
         min-height: 430px !important;
+    }
+}
+
+
+.dark-theme {
+    &.single {
+        .entry-meta {
+            color: #fff;
+            opacity: 0.7;
+
+            .byline a {
+                color: #fff;
+            }
+        }
+
+        article {
+            color: white;
+
+            footer.entry-footer {
+                .tags-links {
+                    span:first-child {
+                        color: white;
+                        opacity: 0.6;
+                    }
+
+                    a[rel=tag] {
+                        background-color: var(--primary-opacity-1);
+                    }
+                }
+            }
+
+            .author-bio {
+                .author-introduce-title {
+                    opacity: 0.6;
+                }
+
+                .author-bio-text {
+
+                    .accent-header,
+                    .author-meta {
+                        color: white;
+                    }
+                }
+
+                .author-description,
+                .author-link,
+                .author-introduce-title {
+                    color: white;
+                }
+            }
+        }
+
+
+        #comments.comments-area {
+            #commentform.comment-form {
+                p.comment-notes {
+                    color: white;
+                    opacity: 0.6;
+                }
+
+                label {
+                    color: white;
+                }
+
+                input[type='text'], input[type='email'], input[type='url'], input[type='password'], input[type='search'], input[type='number'], input[type='tel'], input[type='range'], input[type='date'], input[type='month'], input[type='week'], input[type='time'], input[type='datetime'], input[type='datetime-local'], input[type='color'], textarea {
+                    background: none;
+                    border: solid 1px #979797;
+                    color: white;
+                }
+            }
+
+            .comments-title, .comment-leave-title, footer .comment-metadata > a, .comment-reply {
+                color: white;
+                opacity: 0.6;
+            }
+
+            .comment-list {
+                .comment-body {
+                    .comment-author {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+
+
     }
 }
