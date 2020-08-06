@@ -449,7 +449,11 @@
 
         .posts {
             display: flex;
-            flex-direction: row;
+            list-style: none;
+            justify-content: space-between;
+            padding: 0;
+            flex-wrap: wrap;
+            -webkit-box-pack: justify;
 
             @include mobile {
                 flex-direction: column;
@@ -460,14 +464,17 @@
             }
 
             .post {
-                flex-direction: column;
-                margin: 0 1%;
+                flex-basis: calc(33.33333% - 16px);
 
-                @include desktop {
-                    .thumbnail {
-                        width: 90%;
-                        height: size(238);
-                        overflow: hidden;
+                .thumbnail {
+                    width: 100%;
+                    height: size(238);
+                    overflow: hidden;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
                     }
                 }
 

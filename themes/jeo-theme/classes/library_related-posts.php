@@ -57,7 +57,16 @@ class related_posts {
             return $el->term_taxonomy_id;
         }, $_terms);
 
+        //Remove audio, video, long-form, news, image-gallery, opinion from filters
+        $post_types_categories = [33, 80, 65, 34, 64, 32];
+        foreach($post_types_categories as $key => $value) {  
+            if (($k = array_search($value, $_terms)) !== false) {
+                unset($_terms[$k]);
+            }
+        }
+
         $result = implode(',', $_terms);
+
         return $result ?: -1;
     }
 
@@ -72,6 +81,7 @@ class related_posts {
 
         $tags_multiplier = get_option('related_posts__tags_weight', 2);
         $categories_multiplier = get_option('related_posts__categories_weight', 1.5);
+        $date_multiplier = get_option('related_posts__date_weight', 10);
 
 
         $categories = self::get_post_taxonomy_terms($post_id, 'category');
@@ -80,10 +90,10 @@ class related_posts {
         $tags_sql = "((SELECT COUNT(t1.term_taxonomy_id) * $tags_multiplier FROM $wpdb->term_relationships t1 WHERE t1.object_id = p.ID AND t1.term_taxonomy_id IN ($tags)))";
         $cats_sql = "((SELECT COUNT(t2.term_taxonomy_id) * $categories_multiplier FROM $wpdb->term_relationships t2 WHERE t2.object_id = p.ID AND t2.term_taxonomy_id IN ($categories)))";
         $date_sql = "
-        (3/ABS(datediff(
+        (3/(ABS(datediff(
             (SELECT post_date FROM $wpdb->posts WHERE ID = $post_id),
             p.post_date
-        )))";
+        )) + 1))";
 
         $sql = "
         SELECT
@@ -91,7 +101,7 @@ class related_posts {
             (
                 $tags_sql + 
                 $cats_sql + 
-                $date_sql
+                $date_sql * $date_multiplier
             ) AS num
 
         FROM $wpdb->posts p
