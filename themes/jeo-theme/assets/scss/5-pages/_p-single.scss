@@ -445,12 +445,21 @@
             margin-right: calc(50% - 35vw)
         }
 
-
-        .title {
+        .title-section {
+            text-transform: uppercase;
+        }
+        
+        .title, .title-section {
             font-size: size(18);
             color: #555D66;
             font-family: var(--primary-font);
             font-weight: bold;
+
+        }
+        a.title {
+            &:hover {
+                font-weight: bold;
+            }
         }
 
         .posts {
@@ -467,49 +476,86 @@
 
             .post {
                 flex-basis: calc(33.33333% - 16px);
+                    @include mobile{
+                        display: flex;
+                        margin-bottom: 20px;
+                    }
 
-
-                a {
+                    a {
                     &:hover{
                         font-weight: normal;
                     }
                 }
 
                 .thumbnail {
-                    width: 100%;
-                    height: size(238);
-                    overflow: hidden;
+                    .thumbnail-inner{
+                        padding-top: 56.25%;
+                        overflow: hidden;
+                        position: relative;
+                        display: block;
+                        height: 0;
 
-                    img {
-                        height: 100%;
-                        width: 100%;
-                        object-fit: cover;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            -o-object-fit: cover;
+                            object-fit: cover;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                        }
+                    }
+
+                    @include mobile{
+                        flex-basis: 35%;
+                        margin-right: 10px;
                     }
                 }
 
-                .title {
-                    font-family: var(--primary-font);
-                    font-size: size(18);
-                    font-weight: bold;
-                    color: #0A0A0A;
-                    margin: size(12) 0 0;
-                    line-height: 20px;
-                }
+                .entry-container{
+                    @include mobile{
+                        flex-basis: 65%;
+                    }
 
-                .date {
-                    font-family: var(--primary-font);
-                    font-size: size(14);
-                    color: #0A0A0A;
-                    opacity: 50%;
-                    margin-top: size(10);
-                }
+                    .title {
+                        font-family: var(--primary-font);
+                        font-size: size(18);
+                        font-weight: bold;
+                        color: #0A0A0A;
+                        margin: size(12) 0 0;
+                        line-height: 20px;
 
-                .excerpt {
-                    font-family: var(--primary-font);
-                    font-size: size(16);
-                    color: #0A0A0A;
-                    margin-top: size(7);
-                    line-height: 20px;
+                        @include mobile{
+                           margin: 0px;
+                        }
+
+                    }
+    
+                    .date {
+                        font-family: var(--primary-font);
+                        font-size: size(14);
+                        color: #0A0A0A;
+                        opacity: 50%;
+                        margin-top: size(10);
+
+                        @include mobile{
+                            margin-bottom: 0px;
+                        }
+                    }
+    
+                    .excerpt {
+                        font-family: var(--primary-font);
+                        font-size: size(16);
+                        color: #0A0A0A;
+                        margin-top: size(7);
+                        line-height: 20px;
+    
+                        @include mobile{
+                            display: none;
+                        }
+                    }
                 }
             }
         }

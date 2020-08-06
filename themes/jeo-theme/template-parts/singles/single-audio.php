@@ -60,21 +60,29 @@
 		$related_posts = new \WP_Query($posts_query_args); 
     ?>
     <?php if(sizeof($related_posts->posts) >= 3): ?>
-        <div class="related-posts">
-            <p class="title">RELATED POSTS</p>
+					<div class="related-posts">
+						<p class="title-section"><?= __('Related Posts') ?></p>
 
-            <div class="posts">
-                <?php foreach($related_posts->posts as $key=>$value): ?>
-                    <div class="post">
-                        <a href="<?php echo get_permalink($value->ID) ?>" target="blank">
-                            <div class="thumbnail"><?php echo get_the_post_thumbnail($value->ID) ?></div>
-                            <p class="title"><?php echo $value->post_title ?></p>
-                            <p class="date"><?php  echo get_the_time('F j, Y', $value->ID); ?></p>
-                            <p class="excerpt"><?php echo get_the_excerpt($value->ID) ?></p>
-                        </a>	
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
+						<div class="posts">
+							<?php foreach($related_posts->posts as $key=>$value): ?>
+								<div class="post">
+										<div class="thumbnail">
+											<a class="thumbnail-inner" href="<?php echo get_permalink($value->ID) ?>" target="blank">
+												<?php echo get_the_post_thumbnail($value->ID) ?>
+											</a>
+										</div>
+										<div class="entry-container"> 
+											<p class="title">
+												<a href="<?php echo get_permalink($value->ID) ?>" target="blank">
+													<?php echo $value->post_title ?>
+												</a>
+											</p>
+											<p class="date"><?php  echo get_the_time('F j, Y', $value->ID); ?></p>
+											<p class="excerpt"><?php echo get_the_excerpt($value->ID) ?></p>
+										</div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
     <?php endif ?>
 </section><!-- #primary -->
