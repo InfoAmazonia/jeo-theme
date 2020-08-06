@@ -2,6 +2,9 @@ window.addEventListener("DOMContentLoaded", function () {
     if(localStorage.getItem('theme')) {
         if(localStorage.getItem('theme') == "dark") {
             jQuery('body').addClass('dark-theme');
+            jQuery('button[action="dark-mode"] i:last-child').toggleClass(
+                "fa-toggle-off fa-toggle-on"
+            );
         }
 
     } else {

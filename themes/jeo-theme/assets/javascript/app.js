@@ -1,14 +1,14 @@
-import "./functionalities/ajax-pv";
 import Vue from "vue";
-import ImageBlock from "./components/imageBlock/ImageBlock";
+import "./functionalities/ajax-pv";
+import "./functionalities/dark-mode";
 import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
-import "./functionalities/dark-mode";
 import "./functionalities/cover-block";
 import "./cookies";
 import "./image-gallery";
 import "./../vendor/sss/sss.min";
+import ImageBlock from "./components/imageBlock/ImageBlock";
 
 Vue.component("image-block", ImageBlock);
 
