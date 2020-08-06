@@ -439,24 +439,18 @@
     }
 
     .related-posts {
+
         @include desktop {
-            padding: size(50) size(100);
+            margin-left: calc(50% - 35vw);
+            margin-right: calc(50% - 35vw)
         }
 
-        @include tablet {
-            padding: size(50) size(75);
-        }
-
-        @include mobile {
-            padding: size(50) size(50);
-        }
 
         .title {
             font-size: size(18);
             color: #555D66;
             font-family: var(--primary-font);
             font-weight: bold;
-            margin-left: size(22)
         }
 
         .posts {
@@ -469,14 +463,17 @@
 
             @include mobile {
                 flex-direction: column;
-
-                .post {
-                    margin-top: size(90) !important;
-                }
             }
 
             .post {
                 flex-basis: calc(33.33333% - 16px);
+
+
+                a {
+                    &:hover{
+                        font-weight: normal;
+                    }
+                }
 
                 .thumbnail {
                     width: 100%;
@@ -496,6 +493,7 @@
                     font-weight: bold;
                     color: #0A0A0A;
                     margin: size(12) 0 0;
+                    line-height: 20px;
                 }
 
                 .date {
@@ -511,6 +509,7 @@
                     font-size: size(16);
                     color: #0A0A0A;
                     margin-top: size(7);
+                    line-height: 20px;
                 }
             }
         }
