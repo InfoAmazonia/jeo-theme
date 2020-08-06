@@ -192,7 +192,7 @@
 
         p {
             margin-bottom: 0px !important;
-            border-radius: 15px 15px 0 0;
+            border-radius: 9px 9px 0 0;
         }
     }
 
@@ -344,8 +344,12 @@ hr {
 
 .dark-theme {
     transition: all .2s ease-in-out;
+    background-color: #191E23;
 
-    &.home {
-        background-color: #191E23;       
+    .home__block-sidebar.has-background {
+        .wp-block-group {
+            background-color: #23282D;
+        }
     }
+
 }

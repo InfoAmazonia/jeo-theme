@@ -4,6 +4,7 @@ import ImageBlock from "./components/imageBlock/ImageBlock";
 import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
+import "./functionalities/dark-mode";
 import "./cookies";
 
 Vue.component("image-block", ImageBlock);

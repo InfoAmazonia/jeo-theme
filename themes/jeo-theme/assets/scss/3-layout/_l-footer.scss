@@ -48,3 +48,22 @@ footer {
     }
 
 }
+
+
+.dark-theme {
+    footer#colophon {
+        .footer-logo-link {
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
