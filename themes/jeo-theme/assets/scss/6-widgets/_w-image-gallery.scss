@@ -310,3 +310,8 @@
         }
     }
 }
+
+
+.wp-block-cover-image .wp-block-cover__inner-container, .wp-block-cover .wp-block-cover__inner-container{
+    z-index: auto;
+}
