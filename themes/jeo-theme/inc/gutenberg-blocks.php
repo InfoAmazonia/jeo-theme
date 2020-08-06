@@ -119,3 +119,45 @@ function custom_newsletter_block() {
 }
 
 add_action('init', 'custom_newsletter_block');
+
+
+/**
+ * Image Gallery
+ */
+function custom_image_gallery_block() {
+
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/imageGallery.asset.php');
+
+	wp_register_script(
+		'custom-image-gallery-block',
+		get_stylesheet_directory_uri() . '/dist/imageGallery.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'custom-image-gallery-block',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageGallery/dashboard.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageGallery/dashboard.css'),
+		'all'
+	);
+
+	wp_register_style(
+		'custom-image-gallery-block-style',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageGallery/style.css',
+		array(),
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageGallery/style.css'),
+		'all',
+	);
+
+	register_block_type('jeo-theme/custom-image-gallery-block', array(
+		'editor_script' => 'custom-image-gallery-block',
+		'editor_style'  => 'custom-image-gallery-block',
+		'style'         => 'custom-image-gallery-block-style',
+	));
+}
+
+add_action('init', 'custom_image_gallery_block');
