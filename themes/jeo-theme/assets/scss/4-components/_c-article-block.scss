@@ -1,0 +1,58 @@
+.dark-theme {
+    .wp-block-newspack-blocks-homepage-articles {
+        .article-section-title {
+            span {
+                color: #f5f5f5;
+                opacity: 0.6;
+            }
+        }
+
+        article {
+            .entry-content {
+                .home__see-more-posts {
+                    a {
+                        color: #F5F5F5;
+                        opacity: 0.6;
+                    }
+                }
+            }
+            
+            .entry-wrapper {
+                .entry-title {
+                    a {
+                        color: #f5f5f5;
+                    }
+                }
+
+                p {
+                    color: #F5F5F5;
+                }
+
+                .entry-meta {
+                    .entry-date {
+                        color: #f5f5f5;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+
+
+    article {
+        .entry-content {
+            hr.wp-block-separator {
+                color: #DDDDDD;
+                height: 3px;
+                border: 0;
+            }
+
+            .home__see-more-posts {
+                a {
+                    color: #F5F5F5;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}
