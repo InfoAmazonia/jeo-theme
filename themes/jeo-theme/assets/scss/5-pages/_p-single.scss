@@ -439,6 +439,18 @@
     }
 
     .related-posts {
+        @include desktop {
+            padding: size(50) size(100);
+        }
+
+        @include tablet {
+            padding: size(50) size(75);
+        }
+
+        @include mobile {
+            padding: size(50) size(50);
+        }
+
         .title {
             font-size: size(18);
             color: #555D66;
