@@ -27,13 +27,13 @@ if (newspack_is_amp()) : ?>
 
 
 		if (!empty($button_url)) : ?>
-			<ul class="main-menu discovery-menu">
-				<li class="menu-item menu-item-type-post_type menu-item-object-page">
+			<div class="discovery-menu">
+				<div class="discovery-title">
 					<a href="<?= $button_url ?>" class="discovery-link">
-						DISCOVERY
+						<?= __('Discovery') ?>
 					</a>
-				</li>
-			</ul>
+				</div>
+			</div>
 		<?php endif;
 
 		newspack_tertiary_menu();

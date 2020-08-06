@@ -502,8 +502,7 @@ header.site-header {
         color: #191e23;
     }
 
-    .nav1,
-    .discovery-menu {
+    .nav1 {
         padding-left: var(--padding-left);
     }
 
@@ -521,18 +520,26 @@ header.site-header {
         margin-top: 20px;
     }
 
-    .main-menu {
-        a.discovery-link {
-            width: 100%;
-            color: var(--primary);
-            font-weight: 700;
-            padding: 0.25rem 0rem;
-            margin-bottom: 22px;
+    .discovery-menu {
+        .discovery-title{
             font-size: size(14);
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 5px 0;
+            padding-left: var(--padding-left);
+            cursor: pointer;
 
+    
             &:hover {
                 color: var(--primary-darker-15);
                 text-decoration: none;
+                background-color: #F5F5F5;
+            }
+        
+            a.discovery-link {
+                color: var(--primary);
+                font-weight: 700;
+                padding: 0rem;
             }
         }
     }
