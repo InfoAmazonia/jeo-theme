@@ -35,3 +35,13 @@ nav[role=navigation].navigation.pagination {
     font-weight: bold;
     padding: 0.3rem 0.75rem 0.4rem 0.75rem;
 }
+
+.dark-theme {
+    nav.navigation.pagination {
+        .nav-links {
+            .page-numbers.dots {
+                color: white;
+            }
+        }
+    }
+}
