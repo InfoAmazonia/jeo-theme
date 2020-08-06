@@ -437,6 +437,84 @@
             }
         }
     }
+
+    .related-posts {
+        @include desktop {
+            padding: size(50) size(100);
+        }
+
+        @include tablet {
+            padding: size(50) size(75);
+        }
+
+        @include mobile {
+            padding: size(50) size(50);
+        }
+
+        .title {
+            font-size: size(18);
+            color: #555D66;
+            font-family: var(--primary-font);
+            font-weight: bold;
+            margin-left: size(22)
+        }
+
+        .posts {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            padding: 0;
+            flex-wrap: wrap;
+            -webkit-box-pack: justify;
+
+            @include mobile {
+                flex-direction: column;
+
+                .post {
+                    margin-top: size(90) !important;
+                }
+            }
+
+            .post {
+                flex-basis: calc(33.33333% - 16px);
+
+                .thumbnail {
+                    width: 100%;
+                    height: size(238);
+                    overflow: hidden;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .title {
+                    font-family: var(--primary-font);
+                    font-size: size(18);
+                    font-weight: bold;
+                    color: #0A0A0A;
+                    margin: size(12) 0 0;
+                }
+
+                .date {
+                    font-family: var(--primary-font);
+                    font-size: size(14);
+                    color: #0A0A0A;
+                    opacity: 50%;
+                    margin-top: size(10);
+                }
+
+                .excerpt {
+                    font-family: var(--primary-font);
+                    font-size: size(16);
+                    color: #0A0A0A;
+                    margin-top: size(7);
+                }
+            }
+        }
+    }
 }
 
 

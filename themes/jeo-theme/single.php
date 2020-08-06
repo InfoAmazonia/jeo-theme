@@ -104,6 +104,38 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 
 			?>
 		</div>
+		<?php
+			$posts = guaraci\related_posts::get_posts(get_the_id(), 3)->posts;
+			$posts_ids = [];
+			foreach($posts as $key=>$value) {
+				array_push($posts_ids, $value->ID);
+			}
+
+			
+			$posts_query_args['post__in'] = $posts_ids;
+
+			
+
+			$related_posts = new \WP_Query($posts_query_args); 
+		?>
+		<?php if(sizeof($related_posts->posts) >= 3): ?>
+			<div class="related-posts">
+				<p class="title">RELATED POSTS</p>
+
+				<div class="posts">
+					<?php foreach($related_posts->posts as $key=>$value): ?>
+						<div class="post">
+							<a href="<?php echo get_permalink($value->ID) ?>" target="blank">
+								<div class="thumbnail"><?php echo get_the_post_thumbnail($value->ID) ?></div>
+								<p class="title"><?php echo $value->post_title ?></p>
+								<p class="date"><?php  echo get_the_time('F j, Y', $value->ID); ?></p>
+								<p class="excerpt"><?php echo get_the_excerpt($value->ID) ?></p>
+							</a>	
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		<?php endif ?>
 	</section><!-- #primary -->
 <?php endif; ?>
 
