@@ -41,29 +41,29 @@ if (newspack_is_amp()) : ?>
 		?>
 		<div class="more-menu">
 			<div class="more-title">
-				<?php 
-					$more_name = esc_html(wp_get_nav_menu_name('more-menu'));
-					if(strlen($more_name) <= 0) {
-						$more_name = 'MORE';
-					}
+				<?php
+				$more_name = esc_html(wp_get_nav_menu_name('more-menu'));
+				if (strlen($more_name) <= 0) {
+					$more_name = 'MORE';
+				}
 				?>
 				<span class="more-name"><?= $more_name ?></span>
 			</div>
 
 			<div class="more-menu--content">
-				<?php 
-					$nav = wp_nav_menu(
-						array(
-							'theme_location' => 'more-menu',
-							'container'      => false,
-							'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-							'depth'          => 1,
-							'fallback_cb'    => false,
-							'echo' 			 => false,
-						)
-					);
+				<?php
+				$nav = wp_nav_menu(
+					array(
+						'theme_location' => 'more-menu',
+						'container'      => false,
+						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'depth'          => 1,
+						'fallback_cb'    => false,
+						'echo' 			 => false,
+					)
+				);
 				?>
-				<?php if($nav): ?>
+				<?php if ($nav) : ?>
 					<div class="item">
 						<div class="item--title language-title">
 							<?= __("Language", "jeo") ?>
