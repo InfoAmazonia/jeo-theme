@@ -203,3 +203,27 @@
         display: none !important;
     }
 }
+
+.dark-theme {
+    .page-header.author {
+        background-color: rgba(255,255,255,0.05);
+        
+        .author-content {
+            h1 {
+                color: white;
+            }
+
+            .author-social-links {
+                li {
+                    a {
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
