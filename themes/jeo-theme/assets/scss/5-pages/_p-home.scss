@@ -274,6 +274,33 @@
     }
 
     .wp-block-newspack-blocks-carousel {
+        .entry .entry-content .wp-block-group .wp-block-group__inner-container>* {
+            margin-top: 0px;
+        }
+
+        .amp-carousel-button,
+        .swiper-button {
+            background-color: rgba(25, 30, 35, 0.3);
+            border-radius: 50px;
+        }
+
+        article .entry-wrapper {
+            background-color: rgba(25, 30, 35, 0.8);
+            padding: 1em;
+        }
+
+        .swiper-pagination-bullet {
+            background: var(--primary);
+        }
+
+        .swiper-pagination-bullet.swiper-pagination-bullet-active,
+        .swiper-pagination-bullet[selected] {
+            width: 12px;
+        }
+
+        .swiper-pagination-bullets {
+            height: calc(18px + 12px);
+        }
         @include tablet{
             article {
                 figure.post-thumbnail{
@@ -305,6 +332,59 @@
             }
         }
     }
+
+
+
+    /* HOMEPAGE Post block */
+    .wp-block-newspack-blocks-homepage-articles{
+
+        &.ts-3, &.ts-4, &.ts-5 {
+            .entry-meta {
+                font-size: size(14);
+            }
+
+
+
+            .entry-wrapper{
+                p{
+                   font-size: size(16);
+                   line-height: 22px;
+                }
+            }
+
+        }
+
+        /*block font-size: 3*/
+        &.ts-3 article {
+            @include desktop{
+                .entry-title {
+                     font-size: size(18);
+                 }
+            }
+
+        }
+
+        /*block font-size: 4*/
+        &.ts-4 article {
+            @include desktop{
+                .entry-title {
+                     font-size: size(24);
+                 }
+            }
+        }
+
+        /*block font-size: 5*/
+        &.ts-5 article {
+            @include desktop{
+                .entry-title {
+                     font-size: size(28);
+                 }
+            }
+        }
+
+    }
+
+    
 }
 
 .wp-block-columns {
@@ -321,32 +401,4 @@
 
 hr {
     margin: 0px !important;
-}
-
-.entry .entry-content .wp-block-group .wp-block-group__inner-container>* {
-    margin-top: 0px;
-}
-
-.wp-block-newspack-blocks-carousel .amp-carousel-button,
-.wp-block-newspack-blocks-carousel .swiper-button {
-    background-color: rgba(25, 30, 35, 0.3) !important;
-    border-radius: 50px !important;
-}
-
-.wp-block-newspack-blocks-carousel article .entry-wrapper {
-    background-color: rgba(25, 30, 35, 0.8) !important;
-    padding: 1em !important;
-}
-
-.wp-block-newspack-blocks-carousel .swiper-pagination-bullet {
-    background: var(--primary) !important;
-}
-
-.wp-block-newspack-blocks-carousel .swiper-pagination-bullet.swiper-pagination-bullet-active,
-.wp-block-newspack-blocks-carousel .swiper-pagination-bullet[selected] {
-    width: 12px !important;
-}
-
-.wp-block-newspack-blocks-carousel .swiper-pagination-bullets {
-    height: calc(18px + 12px) !important;
 }
