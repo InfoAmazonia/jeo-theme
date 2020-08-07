@@ -6,7 +6,7 @@
  */
 function newspack_posted_on()
 {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published abc updated" datetime="%1$s">%2$s</time>';
 	if (get_the_time('U') !== get_the_modified_time('U')) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
@@ -21,7 +21,7 @@ function newspack_posted_on()
 
 	if (is_single()) { ?>
 		<div class="post-date">
-			<?php the_date('F j, Y') ?>
+			<?php the_date('j F Y \a\\t G:i') ?>
 			<?php if (get_the_date() != get_the_modified_date() || get_the_time() != get_the_modified_time()) : ?>
 				<?php 
 				$posted = new DateTime(get_the_date('c'));
@@ -31,7 +31,7 @@ function newspack_posted_on()
 						($diff->format('%h') * 60) +   
 							$diff->format('%i');       
 				if ($minutes >= 30) { ?>
-					<span class="hide-tablet-down">- (Updated <?= the_modified_date("F j, Y \a\\t G:i") ?>)</span>
+					<span class="hide-tablet-down"> (Updated on <?= the_modified_date("j F Y \a\\t G:i") ?>)</span>
 				<?php 
 				}
 

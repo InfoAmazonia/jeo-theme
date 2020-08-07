@@ -14,5 +14,10 @@
 }
 
 .is-style-home__block-sidebar .wp-block-group__inner-container .wp-block-group {
-  padding: 30px 30px 15px 30px !important;
+  padding: 30px !important;
+}
+
+.is-style-home__block-sidebar .wpnbha.is-style-borders article:last-of-type:not(:first-of-type) {
+  border-bottom: 0;
+  padding-bottom: 0px;
 }

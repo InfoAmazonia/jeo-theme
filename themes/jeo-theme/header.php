@@ -37,10 +37,22 @@ if ( true === $header_sub_simplified && ! is_front_page() ) :
 	get_template_part( 'template-parts/header/subpage', 'sidebar' );
 endif;
 ?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'newspack' ); ?></a>
+	<button id="search-toggle" style="display:none">
+		<span></span>
+	</button>
 
 	<header id="masthead" class="site-header hide-header-search" [class]="searchVisible ? 'show-header-search site-header ' : 'hide-header-search site-header'">
+		<div id="header-search" class="tablet-down-search" [aria-expanded]="searchVisible ? 'true' : 'false'" aria-expanded="false">
+			<div class="wrapper">
+				<div class="content-limiter">
+					<span class="search-text"><?= __('What are you looking for?', 'jeo'); ?></span>
+					<?php get_search_form(); ?>
+				</div>
+			</div>
+		</div><!-- #header-search -->
 
 		<?php if ( true === $header_sub_simplified && ! is_front_page() ) : ?>
 			<div class="top-header-contain desktop-only">
@@ -276,16 +288,21 @@ endif;
 					<div class="wrapper">
                         <div class="left">
                             <div class="subpage-toggle-contain">
-								<button class="mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
-                                    <?php echo wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
+								<button class="menu-btn mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
+                                    <?php wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
                                     <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'newspack' ); ?></span>
 								</button>
                             </div>
 						</div>
-						<div class="logo page-header-logo">
+						<div class="logo">
 							<div class="site-branding">
 								<?php newspack_the_sticky_logo(); ?>
 							</div><!-- .site-branding -->
+						</div>
+						<div class="logo-mobile">
+							<div class="site-branding">
+								<?php newspack_the_mobile_logo(); ?>
+							</div>
 						</div>
 						<div class="nav-wrapper desktop-only page-header">
 							<div id="tertiary-nav-contain">
@@ -298,9 +315,16 @@ endif;
 
 							<?php
 								// Header is simplified. In mobile has search icon always
-								if ( true === $header_simplified || true === $header_center_logo  || false === $header_center_logo ) :
-									get_template_part( 'template-parts/header/header', 'search' );
-								endif;
+								if ( true === $header_simplified || true === $header_center_logo  || false === $header_center_logo ) : ?>
+									<button class="search-toggle" on="tap:AMP.setState( { searchVisible: !searchVisible } ), search-form-1.focus" aria-controls="search-menu" [aria-expanded]="searchVisible ? 'true' : 'false'" aria-expanded="false">
+										<span class="screen-reader-text" [text]="searchVisible ? '<?php esc_html_e( 'Close Search', 'newspack' ); ?>' : '<?php esc_html_e( 'Open Search', 'newspack' ); ?>'">
+											<?php esc_html_e( 'Open Search', 'newspack' ); ?>
+										</span>
+										<span class="search-icon"><?php echo wp_kses( newspack_get_icon_svg( 'search', 28 ), newspack_sanitize_svgs() ); ?></span>
+										<span class="close-icon"><?php echo wp_kses( newspack_get_icon_svg( 'close', 28 ), newspack_sanitize_svgs() ); ?></span>
+									</button>
+									<?php //get_template_part( 'template-parts/header/header', 'search' ); ?>
+								<?php endif;
 							?>
 						</div><!-- .nav-wrapper -->
 					</div><!-- .wrapper -->
@@ -342,4 +366,4 @@ endif;
 
 	<?php do_action( 'after_header' ); ?>
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content decoration-<?= get_theme_mod('decoration_style', 'square') ?>">

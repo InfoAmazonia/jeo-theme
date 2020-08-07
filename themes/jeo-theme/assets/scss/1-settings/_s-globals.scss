@@ -26,11 +26,12 @@ a {
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 .wp-block-newspack-blocks-homepage-articles {
     h2.article-section-title {
-        font-size: 18px !important;
+        font-size: size(18) !important;
     }
 
     p {
@@ -39,15 +40,20 @@ html {
 }
 
 .alignwide {
-    margin: 32px calc((100% - 60vw)/2);
-    max-width: 60vw;
-    width: 60vw;
+    // margin: 32px calc((100% - 60vw)/2);
+    // max-width: 60vw;
+    // width: 60vw;
 }
 
 .wp-block-video {
     video {
         width: 100%;
     }
+}
+
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wpnbha, .content-area {
@@ -80,4 +86,63 @@ html {
             }
         }
     }
+}
+
+@include tablet {
+    body {
+        padding-top: 50px;
+    }
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='number']:focus,
+input[type='tel']:focus,
+input[type='range']:focus,
+input[type='date']:focus,
+input[type='month']:focus,
+input[type='week']:focus,
+input[type='time']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input[type='color']:focus,
+textarea:focus {
+  outline: none;
+}
+
+.entry .entry-content .wp-block-button .wp-block-button__link:hover {
+    background: var(--primary-darker-15);
+}
+
+.button:focus, button:focus, input[type='button']:focus, input[type='reset']:focus, input[type='submit']:focus{
+    outline: none;
+}
+
+.sm-order-0{
+    @include tablet{
+        order: 1 !important;
+    }
+}
+
+.sm-order-1{
+    @include tablet{
+        order: 0 !important;
+    }
+}
+
+.sm-order-2{
+    @include tablet{
+        order: 2 !important;
+    }
+}
+
+.opacity-0-5{
+    opacity: 0.5;
+}
+
+.dark-theme {
+    
 }

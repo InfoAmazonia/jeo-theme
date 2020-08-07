@@ -25,14 +25,29 @@ function newspack_scott_custom_colors_css() {
 		}
 	}
 
+	$theme_css = "";
+
 	// Set colour contrasts.
 	$primary_color_contrast   = newspack_get_color_contrast($primary_color);
 	$secondary_color_contrast = newspack_get_color_contrast($secondary_color);
+	$search_icon_bg_option = get_theme_mod('search_background_option', 'default');
+	if($search_icon_bg_option !== 'default') {
+		$theme_css .= '
+			:root {
+				--search-icon-bg-color:' . get_theme_mod('search_icon_bg_color', '#fff'). ';
+			}
+		';
+	}
 
-	$theme_css = '
+	$theme_css .= '
 		:root {
 			--primary: ' . esc_html($primary_color) . ';
+			--primary-lighter-65: ' . color_luminance($primary_color, 0.65) . ';
 			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
+			--primary-lighter-85: ' . color_luminance($primary_color, 0.85) . ';
+			--primary-darker-15: ' . color_luminance($primary_color, -0.15) . ';
+			--primary-opacity-1: ' . $primary_color . '1a;
+			--primary-opacity-15: ' . $primary_color . '26;
 			--secondary: ' . esc_html($secondary_color) . ';
 
 			
@@ -53,6 +68,15 @@ function newspack_scott_custom_colors_css() {
 		.middle-header-contain {
 			background-color:' . get_theme_mod('header_background_color_hex', '#fff	') . ';
 			background-image: url(' . wp_get_attachment_url(get_theme_mod('header_background_image')) . ');
+		}
+
+
+
+		@media only screen and (max-width: 782px) {
+			.bottom-header-contain.post-header {
+				background-color:' . get_theme_mod('header_background_color_hex', '#fff	') . ';
+				background-image: url(' . wp_get_attachment_url(get_theme_mod('header_background_image')) . ');
+			}
 		}
 
 		@media only screen and (min-width: 782px) {
@@ -98,6 +122,13 @@ function newspack_scott_custom_colors_css() {
 		}
 		.editor-styles-wrapper .wp-block[data-type="core/pullquote"] .wp-block-pullquote:not(.is-style-solid-color) blockquote > .editor-rich-text__editable:first-child:before {
 			color: ' . esc_html($primary_color) . ';
+		}
+
+		:root {
+			--primary: ' . esc_html($primary_color) . ';
+			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
+			--primary-darker-15: ' . color_luminance($primary_color, -0.15) . ';
+			--secondary: ' . esc_html($secondary_color) . ';			
 		}
 	';
 

@@ -33,7 +33,7 @@ get_header();
 						}
 					} else {
 						$author_id     = get_query_var( 'author' );
-						$author_avatar = get_avatar( $author_id, 194 );
+						$author_avatar = get_avatar( $author_id, 194);
 					}
 
 					if ( $author_avatar ) {
@@ -44,7 +44,6 @@ get_header();
 					<h1 class="page-title article-section-title desktop-author-label">Author</h1>
 					<h1><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h1>
 					<?php newspack_author_social_links( get_the_author_meta( 'ID' ), 28 ); ?>
-					<p><?php  $author_avatar ?></p>
 				</div>
 			</div>
 
@@ -53,7 +52,11 @@ get_header();
 
 
 			<?php do_action( 'before_archive_posts' ); ?>
-
+			<div class="about-the-author-section d-block d-sm-none">
+				<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
+					<p><?php echo get_the_author_meta('description'); ?></p>
+				<?php endif; ?>
+			</div>
 			<main id="main" class="site-main">
 				<?php
 					if ( have_posts() ) :
@@ -65,10 +68,10 @@ get_header();
 
 							// End the loop.
 						endwhile;
-
 						// Previous/next page navigation.
+						echo (get_theme_mod('pagination_style', 'rectangle') == 'circle'? '<div class="circle">' : '<div class="rectangle">');
 						newspack_the_posts_navigation();
-
+						echo '</div>';
 						// If no content, include the "No posts found" template.
 					else :
 						get_template_part( 'template-parts/content/content', 'none' );
@@ -78,8 +81,12 @@ get_header();
 			</main><!-- #main -->
 			<aside class="author-page-sidebar">
     			<div>
-					<h4>ABOUT THE AUTHOR</h4>
-					<p class="about-the-author"><?php echo get_the_author_meta('description'); ?></p>
+					<div class="about-the-author-section d-none d-sm-block">
+						<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
+							<h4>ABOUT THE AUTHOR</h4>
+							<p><?php echo get_the_author_meta('description'); ?></p>
+						<?php endif; ?>
+					</div>
 					<?php dynamic_sidebar('author_page_sidebar') ?>
 				</div>
 			</aside>		</section><!-- #primary -->
@@ -87,7 +94,7 @@ get_header();
 		<section id="primary" class="content-area custom-archive">
 			<header class="page-header">
 				<span>
-					<?php the_archive_title( '<h1 class="page-title article-section-title ">', '</h1>' ); ?>
+					<?php the_archive_title( '<h1 class="page-title article-section-title category-header">', '</h1>' ); ?>
 
 					<?php if ( '' !== get_the_archive_description() ) : ?>
 						<div class="taxonomy-description">
@@ -118,7 +125,9 @@ get_header();
 				endwhile;
 
 				// Previous/next page navigation.
+				echo (get_theme_mod('pagination_style', 'rectangle') == 'circle'? '<div class="circle">' : '<div class="rectangle">');
 				newspack_the_posts_navigation();
+				echo '</div>';
 
 				// If no content, include the "No posts found" template.
 			else :

@@ -39,9 +39,12 @@ endif;
 ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'newspack' ); ?></a>
-
+	<button id="search-toggle" style="display:none">
+		<span></span>
+	</button>
+	
 	<header id="masthead" class="site-header hide-header-search" [class]="searchVisible ? 'show-header-search site-header ' : 'hide-header-search site-header'">
-
+		
 		<?php if ( true === $header_sub_simplified && ! is_front_page() ) : ?>
 			<div class="middle-header-contain">
 				<div class="wrapper">
@@ -64,7 +67,7 @@ endif;
 					<?php get_template_part( 'template-parts/header/header', 'search' ); ?>
 				</div>
             </div><!-- .wrapper -->
-            '<div class="bottom-header-contain post-header">
+            <div class="bottom-header-contain post-header">
 					<div class="wrapper">
                         <div class="left">
                             <div class="subpage-toggle-contain">
@@ -252,8 +255,8 @@ endif;
 					<div class="wrapper">
                         <div class="left">
                             <div class="subpage-toggle-contain">
-								<button class="mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
-                                    <?php echo wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
+								<button class="menu-btn mobile-menu-toggle left-menu-toggle" on="tap:mobile-sidebar.toggle">
+                                    <?php wp_kses( newspack_get_icon_svg( 'menu', 20 ), newspack_sanitize_svgs() ); ?>
                                     <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'newspack' ); ?></span>
 								</button>
 								<div class="logo">
@@ -264,9 +267,9 @@ endif;
                             </div>
 						</div>
 						<div class="logo-mobile">
-									<div class="site-branding">
-										<?php newspack_the_sticky_logo(); ?>
-									</div>
+							<div class="site-branding">
+								<?php newspack_the_mobile_logo(); ?>
+							</div>
 						</div>
 
                         <p class="title"><?php echo wp_kses_post( get_the_title() ); ?></p>
@@ -338,4 +341,4 @@ endif;
 
 	<?php do_action( 'after_header' ); ?>
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content decoration-<?= get_theme_mod('decoration_style', 'square') ?>">

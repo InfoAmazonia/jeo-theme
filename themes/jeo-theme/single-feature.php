@@ -10,9 +10,30 @@
  * @package Newspack
  */
 
-get_header();
-?>
+if(is_single()) {
+	get_header('single');
+} else {
+	get_header();
+}
 
+$parent_type_category = get_category_by_slug('type')->cat_ID;
+$post_categories = get_the_category();
+$post_child_category = null;
+foreach ($post_categories as $post_cat) {
+	if ($parent_type_category == $post_cat->parent) {
+		$post_child_category = $post_cat;
+		break;
+	}
+}
+if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['opinion', 'audio', 'video'])):
+	if ($post_child_category->slug === 'opinion') : ?>
+		<?php get_template_part('template-parts/singles/single', 'opinion');
+	elseif ($post_child_category->slug === 'audio') : ?>
+		<?php get_template_part('template-parts/singles/single', 'audio'); 
+	elseif ($post_child_category->slug === 'video') : ?>
+		<?php get_template_part('template-parts/singles/single', 'video'); ?>
+	<?php endif; ?>
+<?php else : ?>
 	<section id="primary" class="content-area <?php echo esc_attr( newspack_get_category_tag_classes( get_the_ID() ) ); ?>">
 		<main id="main" class="site-main">
 
@@ -74,10 +95,12 @@ get_header();
 						get_template_part( 'template-parts/content/content', 'single' );
 					}
 					?>
-					
-					<div class="after-post-content-widget-area">
-						<?php dynamic_sidebar('after_post_widget_area'); ?>
-					</div>
+
+					<?php if(is_single()) : ?>
+						<div class="after-post-content-widget-area">
+							<?php dynamic_sidebar('after_post_widget_area'); ?>
+						</div>
+					<?php endif; ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
@@ -86,11 +109,18 @@ get_header();
 					}
 					?>
 				</div>
-
+				
+				<?php 
+					if(!is_page()) {
+						get_template_part('template-parts/content/content', 'related-posts'); 
+					}
+				?>
+				
 			<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
+<?php endif; ?>
 
 <?php
 get_footer();

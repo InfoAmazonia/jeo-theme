@@ -1,7 +1,6 @@
 node_modules/
-themes/jeo-theme/dist/
 themes/newspack-theme/
-
+themes/jeo-theme/dist/*
 
 wp-content/*
 wp-content/themes/*

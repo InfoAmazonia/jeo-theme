@@ -1,9 +1,9 @@
 #comments.comments-area {
-    
+
     .comments-title-wrap {
         margin: 30px 0px;
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: size(18);
         font-family: var(--primary-font);
         font-weight: bold;
         letter-spacing: 0;
@@ -22,12 +22,12 @@
         margin: 0.6rem 0;
         p {
             font-family: var(--primary-font);
-            font-size: 14px;
+            font-size: size(14);
             line-height: 20px;
         }
     }
 
-    .no-comments {
+    .toggable-comments {
         &-form {
             display: none;
 
@@ -46,7 +46,7 @@
             padding: 10px 0;
             text-transform: uppercase;
             color: #FFFFFF;
-            font-size: 14px;
+            font-size: size(14);
             font-weight: bold;
             letter-spacing: 0;
             line-height: 18px;
@@ -59,16 +59,60 @@
             @include tablet {
                 text-align: left;
                 height: auto;
+                padding: 20px 30px;
             }
 
             i {
-                font-size: 60px;
+                font-size: size(60);
                 padding-right: 60px;
 
                 @include tablet {
-                    padding: 0 20px;
-                    font-size: 40px;
+                    padding:0px 20px 0px 0px;
+                    font-size: size(40);
                 }
+            }
+        }
+    }
+
+    .comment-form-cookies-consent {
+        display: none;
+    }
+
+    #commentform.comment-form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            color: #0A0A0A;
+            font-size: size(16);
+        }
+
+        p {
+            margin-top: 0;
+
+            &.comment-notes {
+                margin-bottom: 30px;
+                opacity: 0.5;
+                color: #0A0A0A;
+            }
+
+            &.comment-form-email {
+                order: 1;
+                width: 100%;
+                margin-left: 0px;
+            }
+
+            &.comment-form-author {
+                order: 2;
+                width: 100%;
+            }
+
+            &.comment-form-comment {
+                order: 3;
+            }
+
+            &.form-submit {
+                order: 4;
             }
         }
     }
@@ -78,7 +122,7 @@
             &-author {
                 padding-right: 15px;
                 color: #0A0A0A;
-                font-size: 16px;
+                font-size: size(16);
                 font-weight: bold;
                 letter-spacing: 0;
                 line-height: 22px;
@@ -86,12 +130,23 @@
 
             &-metadata {
                 opacity: 0.5;
-                font-size: 14px;
+                font-size: size(14);
                 letter-spacing: 0;
                 line-height: 22px;
-                > a {
+                margin-right: 10px;
+
+                & > a {
                     color: #0A0A0A;
                 }
+            }
+
+            &-awaiting-moderation {
+                color: #dc3545;
+                font-family: var(--primary-font);
+                font-size: size(14);
+                line-height: 22px;
+                margin: 0;
+                width: 100%;
             }
 
         }
@@ -100,6 +155,7 @@
             &-meta {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
             }
         }
     }

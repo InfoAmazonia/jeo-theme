@@ -32,9 +32,9 @@ function generic_css_injection($starter = "")
 					width: 16px;    
 					height: 16px;
 					margin-right: 20px;
-					background-image: url('. get_stylesheet_directory_uri() . "/assets/images/icons/eye.png" . ');
-					background-size: 19px;
-    				background-position: center;
+					background-image: url('. get_stylesheet_directory_uri() . "/assets/images/icons/eye.svg" . ');
+					background-size: 16px;
+    				background-repeat: no-repeat;
     				background-color: transparent!important;
 				}
 

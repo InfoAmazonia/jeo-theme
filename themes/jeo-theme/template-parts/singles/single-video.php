@@ -86,5 +86,10 @@
 
             ?>
         </div>
+        <?php 
+			if(!is_page()) {
+				get_template_part('template-parts/content/content', 'related-posts'); 
+			}
+		?>
     </div>
 </section><!-- #primary -->

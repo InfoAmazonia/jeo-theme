@@ -24,6 +24,9 @@
 @import '4-components/c-pullquote-block';
 @import '4-components/c-credited-image-block';
 @import '4-components/c-audio-player';
+@import '4-components/c-jeomap';
+@import '4-components/c-cookies';
+@import '4-components/c-article-block';
 
 
 /* ----- 5: PAGES ------- */
@@ -35,9 +38,16 @@
 @import '5-pages/p-home';
 @import '5-pages/p-page';
 @import '5-pages/p-category';
+@import '5-pages/p-contact';
 
 
 /* ----- 6: WIDGETS ------- */
 @import '6-widgets/w-most-read';
 @import '6-widgets/w-story-maps';
+/* ----- COMEÇA AQUI ------- */
 @import '6-widgets/w-newsletter';
+@import '6-widgets/w-image-gallery';
+
+
+/* ----- VENDOR ------- */
+@import './../vendor/sss/sss.css'

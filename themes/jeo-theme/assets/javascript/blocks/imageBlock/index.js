@@ -1,16 +1,6 @@
-import {
-    RichText,
-    MediaUpload,
-    BlockControls,
-    AlignmentToolbar,
-} from "@wordpress/block-editor";
-import Vue from "vue";
-
-import ImageBlock from "../../components/imageBlock/ImageBlock";
-
-import { __ } from "@wordpress/i18n";
-import { registerBlockType } from "@wordpress/blocks";
+import { MediaUpload, RichText } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
 
 wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
     title: "Credited Image",
@@ -47,10 +37,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
             },
             setAttributes,
         } = props;
-
-        // useEffect(() => {
-        //   // console.log(props);
-        // });
 
         const onChangeTitle = (value) => {
             setAttributes({ title: value });
@@ -136,7 +122,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
     save: (props) => {
         const {
             className,
-            isSelected,
             attributes: {
                 mediaID,
                 mediaURL,
@@ -144,16 +129,15 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
                 mediaDescription,
                 align,
             },
-            setAttributes,
         } = props;
-        
+
         return (
             <>
-                <div className="image-block-container" key="container">
-                    <image-block alignment={align} title={title} mediaurl={mediaURL} mediadescription={mediaDescription}></image-block>    
+                <div className="vue-component image-block-container" key="container">
+                    <image-block alignment={align} title={title} mediaurl={mediaURL} mediadescription={mediaDescription}></image-block>
                 </div>
             </>
-            
+
         );
     },
 });

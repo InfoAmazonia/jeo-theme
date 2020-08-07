@@ -109,18 +109,23 @@ function newspack_scott_custom_typography_css() {
 			font-size: ' . get_theme_mod('typo_h6_size', '0.67') . $font_unit . $forced_size . ';
 		}
 
-		p {
+		p, ul, li {
 			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . $forced_size . ';
 		}
-
+		
 		.wp-block-pullquote p{
-			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
         }
 
 		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p,
 .		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
-			font-size: ' . get_theme_mod('typo_p_size', '1') . $font_unit . '!important'. ';
-        }
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
+		}
+		.single .entry-content .post-excerpt p,
+		.post-template-single-feature .entry-content .post-excerpt p,
+		.post-template-single-wide .entry-content .post-excerpt p{
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
+		}
 	';
 
 	if (!empty(get_theme_mod( 'accent_font', ''))) {
@@ -131,6 +136,9 @@ function newspack_scott_custom_typography_css() {
 			font-family: "' . $accent_font . '", "sans-serif";
 		}
 
+		.category-most-read .header, .image-gallery .image-gallery-header {
+			font-family: "' . $accent_font . '", "sans-serif";
+		}
 		:root {
 			--accent-font: "' . $accent_font . '", "sans-serif";
 		}

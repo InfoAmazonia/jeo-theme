@@ -1,0 +1,272 @@
+.search {
+    .page-title {
+        margin-bottom: 60px;
+    }
+
+    .page-header {
+        width: auto;
+    }
+
+    
+    main#main {
+        width: 100%;
+
+        span.custom-separator {
+            margin: 0 5px;
+        }
+
+        article {
+
+            &.entry {
+                margin-top: 30px;
+            }
+        
+            .entry-content p {
+                font-size: size(16);
+                letter-spacing: 0;
+                line-height: 22px;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            &.has-post-thumbnail {
+                @include mobile {
+                    display: flex;
+                }
+
+                .post-thumbnail {
+                    flex-basis: 35%;
+                    margin-right: 10px;
+                }
+
+                .entry-container {
+                    @include mobile {
+                        flex-basis: 65%;
+                    }
+
+                    .entry-title {
+                        @include mobile {
+                            font-size: size(16) !important;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .pre-itens-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #DDDDDD;
+        padding-bottom: 34px;
+        margin-bottom: 30px;
+
+        .found-itens-quantity {
+            color: #0A0A0A;
+            font-size: size(16);
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 20px;
+        }
+
+        .sorting-method {
+            color: rgba(10, 10, 10, 0.5);
+            font-size: size(16);
+            letter-spacing: 0;
+            line-height: 20px;
+            text-align: right;
+            display: flex;
+            position: relative;
+
+            button.current {
+                padding: 0;
+                color: var(--primary);
+                font-size: size(16);
+                font-weight: bold;
+                letter-spacing: 0;
+                line-height: 20px;
+                margin-left: 5px;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    top: 7px;
+                    right: -20px;
+                    @include triangle(bottom, 6px, 6px, var(--primary));
+                }
+            }
+
+            .options {
+                display: none;
+
+                &.active {
+                    display: block;
+                    position: absolute;
+                    top: 30px;
+                    right: 0;
+                }
+
+                button.option {
+                    padding: 0;
+                    color: var(--primary);
+                    font-size: size(16);
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    line-height: 20px;
+                    margin-left: 5px;
+                    position: relative;
+                }
+            }
+
+        }
+    }
+
+    form.search-form {
+        margin-bottom: 29px;
+
+        .search-input-wrapper {
+            position: relative;
+            margin-bottom: 32px;
+
+            input[type="search"] {
+                height: 66px;
+                border: 2px solid #DDDDDD;
+                border-radius: 10px;
+                outline: none;
+                overflow: hidden;
+                background-color: transparent;
+            }
+
+            .search-submit {
+                background-color: var(--primary);
+                border-radius: 0 10px 10px 0;
+                color: white;
+                padding: 0 29px;
+                right: 0;
+                top: 0;
+                bottom: 0;
+
+                &:hover {
+                    svg {
+                        transition: all .2s ease-in-out;
+                        transform: scale(1.1);
+                    }
+                }
+
+                svg {
+                    transition: all .2s ease-in-out;
+                }
+            }
+
+        }
+
+        .filters {
+            margin-bottom: 34px;
+
+            &--title {
+                color: #555D66;
+                font-size: size(18);
+                font-weight: bold;
+                letter-spacing: 0;
+                text-transform: uppercase;
+                line-height: 21px;
+            }
+
+            &--itens {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: 14px;
+
+                @include tablet {
+                    grid-template-columns: auto;
+                }
+            }
+
+            &--item {
+                position: relative;
+
+                select,
+                input {
+                    height: 36px;
+                    width: 100%;
+                    border: 2px solid #DDDDDD;
+                    border-radius: 10px;
+                    background-color: transparent;
+                    padding: 0 12px;
+                    color: #555D66;
+                    font-size: size(16);
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    appearance: none;
+                    line-height: 19px;
+                    outline: none;
+
+
+                }
+
+                &:after {
+                    @include triangle(bottom, 6px, 6px, var(--primary));
+                    bottom: 15px;
+                    position: absolute;
+                    right: 10px;
+                }
+
+                @include tablet {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+    }
+
+}
+
+.search-form {
+
+    label[for=search-form-3],
+    label[for=search-form-2],
+    label[for=search-form-1] {
+        display: initial;
+    }
+}
+
+.daterangepicker {
+    button.applyBtn.btn.btn-sm.btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .calendar-table {
+        td {
+            &.active {
+                background-color: var(--primary);
+
+                &.in-range {
+                    background-color: var(--primary);
+                }
+            }
+
+            &.in-range {
+                background-color: #f7f7f7;
+            }
+        }
+    }
+
+    .daterangepicker_input i {
+        top: 5px;
+    }
+}
+
+
+
+.dark-theme {
+    &.search {
+        form.search-form .search-input-wrapper input[type="search"], .found-itens-quantity, .sorting-method {
+            color: white;
+        }
+
+    }
+}
