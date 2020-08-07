@@ -51,28 +51,28 @@ if (newspack_is_amp()) : ?>
 			</div>
 
 			<div class="more-menu--content">
-				<div class="item">
-					<div class="item--title language-title">
-						<?= __("Language", "jeo") ?>
+				<?php 
+					$nav = wp_nav_menu(
+						array(
+							'theme_location' => 'more-menu',
+							'container'      => false,
+							'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'depth'          => 1,
+							'fallback_cb'    => false,
+							'echo' 			 => false,
+						)
+					);
+				?>
+				<?php if($nav): ?>
+					<div class="item">
+						<div class="item--title language-title">
+							<?= __("Language", "jeo") ?>
+						</div>
+						<div class="item--content language-item-content">
+							<?php echo $nav; ?>
+						</div>
 					</div>
-					<div class="item--content language-item-content">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'more-menu',
-								'container'      => false,
-								'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-								'depth'          => 1,
-							)
-						);
-						?>
-					</div>
-					<script>
-						if(!document.querySelector('.language-item-content').firstElementChild) {
-							document.querySelector('.language-title').remove();
-						}
-					</script>
-				</div>
+				<?php endif; ?>
 
 				<div class="item">
 					<div class="item--title">
