@@ -104,6 +104,8 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 
 			?>
 		</div>
+		
+		<?php get_template_part('template-parts/content/content', 'related-posts'); ?>
 	</section><!-- #primary -->
 <?php endif; ?>
 
