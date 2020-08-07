@@ -751,7 +751,7 @@
 
 .dark-theme {
     &.single {
-        &:not(.has-featured-image) {
+        &:not(.has-featured-image), &:not(.single-featured-image-behind) {
             .entry-title  {
                 color: white;
             }
