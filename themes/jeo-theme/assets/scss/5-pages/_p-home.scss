@@ -1,33 +1,35 @@
-/* Gray column with green heading */
-.is-style-home__block-sidebar {
-    margin-bottom: 50px !important;
-    background: rgb(245, 245, 245);
-    border-radius: 10px;
-    padding: 0px !important;
-
-    p {
-        margin-bottom: 0px !important;
-        border-radius: 15px 15px 0 0;
-
-        &.has-text-color.has-background {
-            padding: 10px;
-        }
-    }
-
-
-    .wp-block-group__inner-container {
-        .wp-block-group {
-            padding: 30px !important;
-        }
-    }
-
-    .wpnbha.is-style-borders article:last-of-type:not(:first-of-type) {
-        border-bottom: 0;
-        padding-bottom: 0px;
-    }
-}
-
 .home {
+
+    /* Gray column with primary heading */
+    .is-style-home__block-sidebar {
+        margin-bottom: 50px !important;
+        background: rgb(245, 245, 245);
+        border-radius: 10px;
+        padding: 0px !important;
+
+        p {
+            margin-bottom: 0px !important;
+            border-radius: 15px 15px 0 0;
+
+            &.has-text-color.has-background {
+                padding: 10px;
+            }
+        }
+
+
+        .wp-block-group__inner-container {
+            .wp-block-group {
+                padding: 30px !important;
+                margin-top: 0px;
+            }
+        }
+
+        .wpnbha.is-style-borders article:last-of-type:not(:first-of-type) {
+            border-bottom: 0;
+            padding-bottom: 0px;
+        }
+    }
+
     &__newsletter-link {
         color: var(--primary) !important;
     }
@@ -338,13 +340,10 @@
     /* HOMEPAGE Post block */
     .wp-block-newspack-blocks-homepage-articles{
 
-        &.ts-3, &.ts-4, &.ts-5 {
+        &.ts-2, &.ts-3, &.ts-4, &.ts-5 {
             .entry-meta {
                 font-size: size(14);
             }
-
-
-
             .entry-wrapper{
                 p{
                    font-size: size(16);
@@ -353,6 +352,17 @@
             }
 
         }
+
+        /*block font-size: 2*/
+        &.ts-2 article {
+            @include desktop{
+                .entry-title {
+                     font-size: size(16);
+                 }
+            }
+
+        }
+
 
         /*block font-size: 3*/
         &.ts-3 article {
