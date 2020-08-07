@@ -130,11 +130,13 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 						<div class="posts">
 							<?php foreach($related_posts->posts as $key=>$value): ?>
 								<div class="post">
-										<div class="thumbnail">
-											<a class="thumbnail-inner" href="<?php echo get_permalink($value->ID) ?>" target="blank">
-												<?php echo get_the_post_thumbnail($value->ID) ?>
-											</a>
-										</div>
+										<?php if(get_the_post_thumbnail($value->ID)) : ?>
+											<div class="thumbnail">
+												<a class="thumbnail-inner" href="<?php echo get_permalink($value->ID) ?>" target="blank">
+													<?php echo get_the_post_thumbnail($value->ID) ?>
+												</a>
+											</div>
+										<?php endif ?>
 										<div class="entry-container"> 
 											<p class="title">
 												<a href="<?php echo get_permalink($value->ID) ?>" target="blank">

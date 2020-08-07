@@ -21,7 +21,7 @@
     .entry-content {
 
         .wp-block-newspack-blocks-homepage-articles {
-            .entry-wrapper{
+            .entry-wrapper {
                 .entry-title {
                     a {
                         color: #111;
@@ -29,7 +29,7 @@
                 }
             }
         }
-        
+
         .post-excerpt p {
             line-height: normal;
             margin-bottom: 60px;
@@ -38,16 +38,16 @@
         a {
             color: var(--primary);
             font-weight: bold;
-    
+
             &:visited {
                 color: var(--primary);
             }
-            
+
             &:hover {
                 color: var(--primary-darker-15);
             }
         }
-    } 
+    }
 
     h1.entry-title {
         @include mobile {
@@ -448,14 +448,16 @@
         .title-section {
             text-transform: uppercase;
         }
-        
-        .title, .title-section {
+
+        .title,
+        .title-section {
             font-size: size(18);
             color: #555D66;
             font-family: var(--primary-font);
             font-weight: bold;
 
         }
+
         a.title {
             &:hover {
                 font-weight: bold;
@@ -476,85 +478,80 @@
 
             .post {
                 flex-basis: calc(33.33333% - 16px);
-                    @include mobile{
-                        display: flex;
-                        margin-bottom: 20px;
-                    }
 
-                    a {
-                    &:hover{
-                        font-weight: normal;
+                @include mobile {
+                    display: flex;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .thumbnail {
+                .thumbnail-inner {
+                    padding-top: 56.25%;
+                    overflow: hidden;
+                    position: relative;
+                    display: block;
+                    height: 0;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        -o-object-fit: cover;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
                     }
                 }
 
-                .thumbnail {
-                    .thumbnail-inner{
-                        padding-top: 56.25%;
-                        overflow: hidden;
-                        position: relative;
-                        display: block;
-                        height: 0;
+                @include mobile {
+                    flex-basis: 35%;
+                    margin-right: 10px;
+                }
+            }
 
-                        img{
-                            height: 100%;
-                            width: 100%;
-                            -o-object-fit: cover;
-                            object-fit: cover;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                        }
+            .entry-container {
+                @include mobile {
+                    flex-basis: 65%;
+                }
+
+                .title {
+                    font-family: var(--primary-font);
+                    font-size: size(18);
+                    font-weight: bold;
+                    color: #0A0A0A;
+                    margin: size(12) 0 0;
+                    line-height: 20px;
+
+                    @include mobile {
+                        margin: 0px;
                     }
 
-                    @include mobile{
-                        flex-basis: 35%;
-                        margin-right: 10px;
+                }
+
+                .date {
+                    font-family: var(--primary-font);
+                    font-size: size(14);
+                    color: #0A0A0A;
+                    opacity: 50%;
+                    margin-top: size(10);
+
+                    @include mobile {
+                        margin-bottom: 0px;
                     }
                 }
 
-                .entry-container{
-                    @include mobile{
-                        flex-basis: 65%;
-                    }
+                .excerpt {
+                    font-family: var(--primary-font);
+                    font-size: size(16);
+                    color: #0A0A0A;
+                    margin-top: size(7);
+                    line-height: 20px;
 
-                    .title {
-                        font-family: var(--primary-font);
-                        font-size: size(18);
-                        font-weight: bold;
-                        color: #0A0A0A;
-                        margin: size(12) 0 0;
-                        line-height: 20px;
-
-                        @include mobile{
-                           margin: 0px;
-                        }
-
-                    }
-    
-                    .date {
-                        font-family: var(--primary-font);
-                        font-size: size(14);
-                        color: #0A0A0A;
-                        opacity: 50%;
-                        margin-top: size(10);
-
-                        @include mobile{
-                            margin-bottom: 0px;
-                        }
-                    }
-    
-                    .excerpt {
-                        font-family: var(--primary-font);
-                        font-size: size(16);
-                        color: #0A0A0A;
-                        margin-top: size(7);
-                        line-height: 20px;
-    
-                        @include mobile{
-                            display: none;
-                        }
+                    @include mobile {
+                        display: none;
                     }
                 }
             }
@@ -728,6 +725,7 @@
         padding-top: 4rem;
     }
 }
+
 /*Create a category with stlug 'long-form' */
 #primary.category-long-form {
     .entry {
@@ -745,7 +743,7 @@
         height: 100vh;
     }
 
-    @include mobile{
+    @include mobile {
         min-height: 430px !important;
     }
 }
