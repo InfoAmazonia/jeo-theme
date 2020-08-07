@@ -84,13 +84,6 @@ window.addEventListener("DOMContentLoaded", function () {
         );
     });
 
-    jQuery('button[action="dark-mode"]').click(function () {
-        jQuery("body").toggleClass("dark-theme");
-        jQuery(this.querySelector("i:last-child")).toggleClass(
-            "fa-toggle-off fa-toggle-on"
-        );
-    });
-
     jQuery('button[action="toggle-options"]').click(function () {
         jQuery(this.parentNode.querySelector(".toggle-options")).toggleClass(
             "active"
