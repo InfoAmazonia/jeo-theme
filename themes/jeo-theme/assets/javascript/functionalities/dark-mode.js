@@ -35,9 +35,17 @@ window.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('theme', localStorage.getItem('theme') == "dark"? "light" : "dark");
 
         if(localStorage.getItem('theme') == "dark") {
-            this.querySelector('.item--title').innerHTML = "Light mode";
+            if(this.querySelector('.item--title').innerHTML) {
+                try {
+                this.querySelector('.item--title').innerHTML = "Light mode";
+                } catch {};
+            }
         } else {
-            this.querySelector('.item--title').innerHTML = "Dark mode";
+            if(this.querySelector('.item--title').innerHTML) {
+                try{
+                    this.querySelector('.item--title').innerHTML = "Dark mode";
+                } catch {};
+            }
         }
     });
 });
