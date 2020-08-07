@@ -156,6 +156,11 @@
 
                 @include tablet {
                     grid-template-columns: repeat(3, 1fr);
+                    /*
+                    writing-mode: vertical-lr;
+                    grid-auto-rows: size(100);
+                    grid-template-columns: repeat(1, 17.6vh);
+                    */
                 }
             }
         }
