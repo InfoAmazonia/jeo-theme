@@ -1,7 +1,5 @@
 {
     "/app.js": "/app.js",
     "/app.css": "/app.css",
-    "/imageBlock.js": "/imageBlock.js",
-    "/imageGallery.js": "/imageGallery.js",
-    "/newsletter.js": "/newsletter.js"
+    "/imageBlock.js": "/imageBlock.js"
 }
