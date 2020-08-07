@@ -115,6 +115,6 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         });
     } else {
-        alert("Native share is not allowed over HTTP protocol.")
+        console.log("Native share is not allowed over HTTP protocol.")
     }
 });
