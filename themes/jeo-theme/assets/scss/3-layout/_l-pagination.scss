@@ -39,6 +39,11 @@ nav[role=navigation].navigation.pagination {
 .dark-theme {
     nav.navigation.pagination {
         .nav-links {
+            a {
+                &:hover {
+                    color: white;
+                }
+            }
             .page-numbers.dots {
                 color: white;
             }
