@@ -41,9 +41,11 @@ class related_posts {
                 <?php _e('Peso das categorias') ?><br> 
                 <input name="related_posts__categories_weight" id="related_posts__categories_weight" type="number" step="0.1" value="<?= get_option('related_posts__categories_weight', 1.5) ?>" class="code" />
             </label>
+        </p>
+        <p>
             <label>
-                <p>Mostrar posts <input name="related_posts__months_before" id="related_posts__months_before" type="number" step="1" value="<?= get_option('related_posts__months_before', 6) ?>" class="code" /> meses antes da data atual</p>
-                <p>Mostrar posts <input name="related_posts__months_after" id="related_posts__months_after" type="number" step="1" value="<?= get_option('related_posts__months_after', 6) ?>" class="code" /> meses depois da data atual</p>
+                <?php _e('Peso das datas') ?><br> 
+                <input name="related_posts__date_weight" id="related_posts__date_weight" type="number" step="0.1" value="<?= get_option('related_posts__date_weight', 1.5) ?>" class="code" />
             </label>
         </p>
         <?php
