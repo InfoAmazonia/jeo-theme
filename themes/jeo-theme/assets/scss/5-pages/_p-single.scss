@@ -751,6 +751,13 @@
 
 .dark-theme {
     &.single {
+        &:not(.has-featured-image) {
+            .entry-title  {
+                color: white;
+            }
+        }
+
+
         .entry-meta {
             color: #fff;
             opacity: 0.7;
@@ -824,6 +831,23 @@
             .comment-list {
                 .comment-body {
                     .comment-author {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+
+        .related-posts {
+            .title-section {
+                color: #f5f5f5;
+                opacity: .6;
+            }
+
+    
+            .posts {
+                .entry-container {
+                    .title, .title a, .date, .excerpt{
                         color: white;
                     }
                 }
