@@ -45,7 +45,7 @@ class related_posts {
         <p>
             <label>
                 <?php _e('Peso das datas') ?><br> 
-                <input name="related_posts__date_weight" id="related_posts__date_weight" type="number" step="0.1" value="<?= get_option('related_posts__date_weight', 1.5) ?>" class="code" />
+                <input name="related_posts__date_weight" id="related_posts__date_weight" type="number" step="0.1" value="<?= get_option('related_posts__date_weight', 10) ?>" class="code" />
             </label>
         </p>
         <?php
