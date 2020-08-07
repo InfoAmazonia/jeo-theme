@@ -922,6 +922,45 @@ header.site-header {
         .more-menu .more-title  {
             color: #f5f5f5;
         }
+
+        &.mobile-sidebar {
+            nav.main-navigation ul > li > a{
+                &:hover {
+                        color: #23282D;
+                }
+            }
+        }
+
+        .more-menu {
+            &--content  {
+                background-color: #23282D;
+
+                .item {
+                    &--title {
+                        color: #F5F5F5;
+                        opacity: 0.6;
+                    }
+
+                    &--content {
+                        ul > li {
+                            a {
+                                color: white;
+
+                                &:hover {
+                                    color: #333;
+                                }
+                            }
+                        }
+
+                        button {
+                            color: white;
+                        }
+                    }
+
+                }
+            }
+
+        }
     }
 
     header.site-header .bottom-header-contain.post-header.active {
