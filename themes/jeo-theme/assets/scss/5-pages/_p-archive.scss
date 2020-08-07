@@ -181,3 +181,12 @@
         }
     }   
 }
+
+
+.dark-theme {
+    &.archive {
+        .page-title .page-description  {
+            color: white;
+        }
+    }
+}

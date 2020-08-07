@@ -259,3 +259,14 @@
         top: 5px;
     }
 }
+
+
+
+.dark-theme {
+    &.search {
+        form.search-form .search-input-wrapper input[type="search"], .found-itens-quantity, .sorting-method {
+            color: white;
+        }
+
+    }
+}
