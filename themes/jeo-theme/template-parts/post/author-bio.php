@@ -37,9 +37,9 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 ?>
 
 			<div class="author-bio">
-				<?php if($index !== 0): ?>
+				<?php if($index === 0): ?>
 				<div class="author-introduce-title">
-					<?= __('About the author', 'jeo') ?>
+					<?= __('About the writer', 'jeo') ?>
 				</div>
 				<?php endif; ?>
 				<div class="author-bio-text">
