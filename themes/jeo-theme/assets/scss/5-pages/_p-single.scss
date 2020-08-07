@@ -765,6 +765,14 @@
             }
         }
 
+        .post-date {
+            a {
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
 
         .entry-meta {
             color: #fff;
