@@ -59,7 +59,7 @@ if (newspack_is_amp()) : ?>
 						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 						'depth'          => 1,
 						'fallback_cb'    => false,
-						'echo' 			 => false,
+						'echo'           => false,
 					)
 				);
 				?>
