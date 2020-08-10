@@ -68,8 +68,18 @@
     .decoration-eye {
         h1.page-title.article-section-title {
             display: flex;
+            font-size: size(18);
 
             @include tablet {
+                justify-content: center;
+            }
+        }
+    }
+    .decoration-top{
+        h1.page-title.article-section-title {
+            font-size: size(18);
+
+            @include mobile {
                 justify-content: center;
             }
         }
