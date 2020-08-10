@@ -8,6 +8,10 @@
         @include mobile{
             margin-top: -50px;
         }
+
+        @include tablet {
+            margin-top: 0px;
+        }
     }
     
     .decoration-square,
@@ -72,6 +76,13 @@
         display: none;
     }
 
+    @include tablet {
+        .author .author-main-content {
+            display: block;
+            text-align: center;
+            padding-top: 30px;
+        }
+    }
 }
 
 
