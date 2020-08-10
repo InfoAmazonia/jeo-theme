@@ -747,3 +747,130 @@
         min-height: 430px !important;
     }
 }
+
+
+.dark-theme {
+    &.single {
+        &:not(.has-featured-image), &:not(.single-featured-image-behind) {
+            .entry-title  {
+                color: white;
+            }
+        }
+
+        .cat-links {
+            a {
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
+        .post-date {
+            a {
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
+
+        .entry-meta {
+            color: #fff;
+            opacity: 0.7;
+
+            .byline a {
+                color: #fff;
+            }
+        }
+
+        article {
+            color: white;
+
+            footer.entry-footer {
+                .tags-links {
+                    span:first-child {
+                        color: white;
+                        opacity: 0.6;
+                    }
+
+                    a[rel=tag] {
+                        background-color: var(--primary-opacity-1);
+                    }
+                }
+            }
+
+            .author-bio {
+                .author-introduce-title {
+                    opacity: 0.6;
+                }
+
+                .author-bio-text {
+
+                    .accent-header,
+                    .author-meta {
+                        color: white;
+                    }
+                }
+
+                .author-description,
+                .author-link,
+                .author-introduce-title {
+                    color: white;
+                }
+            }
+        }
+
+
+        #comments.comments-area {
+            #commentform.comment-form {
+                p.comment-notes {
+                    color: white;
+                    opacity: 0.6;
+                }
+
+                label {
+                    color: white;
+                }
+
+                input[type='text'], input[type='email'], input[type='url'], input[type='password'], input[type='search'], input[type='number'], input[type='tel'], input[type='range'], input[type='date'], input[type='month'], input[type='week'], input[type='time'], input[type='datetime'], input[type='datetime-local'], input[type='color'], textarea {
+                    background: none;
+                    border: solid 1px #979797;
+                    color: white;
+                }
+            }
+
+            .comments-title, .comment-leave-title, footer .comment-metadata > a, .comment-reply {
+                color: white;
+                opacity: 0.6;
+            }
+
+            .comment-list {
+                .comment-body {
+                    .comment-author {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+
+        .related-posts {
+            .title-section {
+                color: #f5f5f5;
+                opacity: .6;
+            }
+
+    
+            .posts {
+                .entry-container {
+                    .title, .title a, .date, .excerpt{
+                        color: white;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+}

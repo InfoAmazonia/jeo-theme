@@ -279,3 +279,18 @@
     }
 
 }
+
+.dark-theme  {
+    .newsletter {
+        background-color: var(--primary-opacity-15);
+
+        .anchor-text {
+            color: white;
+        }
+
+        p.link {
+            color: white;
+        }
+    }
+
+}

@@ -46,6 +46,8 @@ function newspack_scott_custom_colors_css() {
 			--primary-lighter-75: ' . color_luminance($primary_color, 0.75) . ';
 			--primary-lighter-85: ' . color_luminance($primary_color, 0.85) . ';
 			--primary-darker-15: ' . color_luminance($primary_color, -0.15) . ';
+			--primary-opacity-1: ' . $primary_color . '1a;
+			--primary-opacity-15: ' . $primary_color . '26;
 			--secondary: ' . esc_html($secondary_color) . ';
 
 			
