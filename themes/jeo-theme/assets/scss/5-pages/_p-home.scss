@@ -412,8 +412,18 @@ hr {
     background-color: #191E23;
 
     .home__block-sidebar.has-background {
+        border-radius: 20px;
+
         .wp-block-group {
             background-color: #23282D;
         }
+    }
+
+    .is-style-home__block-sidebar {
+        border-radius: 20px;
+    }
+
+    .is-style-home__block-sidebar {
+        background-color: rgba(245, 245, 245, 0.05);
     }
 }

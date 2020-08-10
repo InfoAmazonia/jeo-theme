@@ -561,6 +561,7 @@ header.site-header {
             letter-spacing: 0;
             line-height: size(16);
             text-transform: uppercase;
+            color: white;
         }
     }
 
@@ -941,6 +942,7 @@ header#masthead {
 
     #mobile-sidebar-fallback {
         background-color: #23282D;
+
         .nav1 ul.main-menu > li.menu-item > a, ul li a, .social-menus ul li a * {
             color: white;
         }
