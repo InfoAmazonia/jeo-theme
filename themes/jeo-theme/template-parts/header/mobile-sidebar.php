@@ -136,27 +136,29 @@ if (newspack_is_amp()) : ?>
 
 <div class="mobile-toolbar">
 	<div class="wrapper">
-		<div class="item">
-			<button action="language-options">
-				<span> <?= constant('ICL_LANGUAGE_CODE') ?> </span>
+		<?php if (function_exists('icl_get_languages')): ?>
+			<div class="item">
+				<button action="language-options">
+					<span> <?= constant('ICL_LANGUAGE_CODE') ?> </span>
 
-				<div class="item--title">
-					<?= __("Language", "jeo") ?>
+					<div class="item--title">
+						<?= __("Language", "jeo") ?>
+					</div>
+				</button>
+
+				<div class="toggle-language-options">
+					<ul>
+						<?php foreach (icl_get_languages() as $language) : ?>
+							<li>
+								<a href="<?= $language['url'] ?>">
+									<?= $language['code'] ?>
+								</a>
+							</li>
+						<?php endforeach ?>
+					</ul>
 				</div>
-			</button>
-
-			<div class="toggle-language-options">
-				<ul>
-					<?php foreach (icl_get_languages() as $language) : ?>
-						<li>
-							<a href="<?= $language['url'] ?>">
-								<?= $language['code'] ?>
-							</a>
-						</li>
-					<?php endforeach ?>
-				</ul>
 			</div>
-		</div>
+		<?php endif; ?>
 
 		<div class="item">
 			<button action="toggle-options">
