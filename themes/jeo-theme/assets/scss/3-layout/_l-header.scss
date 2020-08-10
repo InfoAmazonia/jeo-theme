@@ -574,8 +574,6 @@ header.site-header {
 
         &:hover {
             .more-menu--content {
-                opacity: 1;
-                transform: translateY(0);
                 transition: all 0.2s ease-in-out;
             }
         }
@@ -613,8 +611,7 @@ header.site-header {
         }
 
         &--content {
-            opacity: 0;
-            transform: translateY(-1000px);
+            opacity: 1;
             transition: all 0.2s ease-in-out;
             position: fixed;
             top: 50px;
