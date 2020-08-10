@@ -879,8 +879,23 @@ header.site-header {
 
 }
 
+header#masthead {
+    .dark-logo {
+        display: none;
+    }
+}
 
 .dark-theme {
+    header#masthead {
+        .defined-dark {
+            display: none;
+        }
+
+        .dark-logo {
+            display: block;
+        }
+    }
+
     .mobile-toolbar {
         background: #23282D;
         color: #f5f5f5;

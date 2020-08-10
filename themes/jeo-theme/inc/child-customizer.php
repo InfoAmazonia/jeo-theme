@@ -95,6 +95,32 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Add darkmode logo control
+	$wp_customize->add_setting(
+		'logo_dark_image',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'logo_dark_image',
+			array(
+				'label'       => esc_html__('Logo dark image', 'newspack'),
+				'description' => esc_html__('Dark logo to be displayed. The default dark mode logo is your logo masked with white.', 'newspack'),
+				'section'     => 'title_tagline',
+				'settings'    => 'logo_dark_image',
+				'flex_width'  => false,
+				'flex_height' => true,
+				'width'       => 400,
+				'height'      => 300,
+			)
+		)
+	);
+
 	// Discovery button style
 	$wp_customize->add_setting(
 		'discovery_button_style',
