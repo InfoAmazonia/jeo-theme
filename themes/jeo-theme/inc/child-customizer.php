@@ -202,6 +202,43 @@ function newspack_scott_customizer($wp_customize)
 	);
 
 	$wp_customize->add_setting(
+		'search_dark_icon_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'search_dark_icon_color',
+			array(
+				'label' => __('Search dark icon color', 'newspack'),
+				'section'     => 'header_section_appearance',
+			)
+		)
+	);
+
+
+	$wp_customize->add_setting(
+		'social_dark_icon_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'social_dark_icon_color',
+			array(
+				'label' => __('Social dark icon color ', 'newspack'),
+				'section'     => 'header_section_appearance',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
 		'search_background_option',
 		array(
 			'default'           => 'default',

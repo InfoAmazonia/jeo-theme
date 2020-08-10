@@ -894,6 +894,17 @@ header#masthead {
         .dark-logo {
             display: block;
         }
+
+        .search-toggle span {
+            color: var(--search-dark-icon-color);
+        }
+        
+        .social-navigation {
+            ul li a{
+                color: var(--social-dark-icon-color);
+            }
+        }
+
     }
 
     .mobile-toolbar {
