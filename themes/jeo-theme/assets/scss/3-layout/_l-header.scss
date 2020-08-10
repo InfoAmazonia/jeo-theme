@@ -110,6 +110,10 @@ header.site-header {
             line-height: 20px;
             text-align: center;
         }
+
+        @include mobile {
+            background-size: cover;
+        }
     }
 
     .search-icon,
