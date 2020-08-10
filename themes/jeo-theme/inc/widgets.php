@@ -182,11 +182,11 @@ class most_read_widget extends WP_Widget {
 
 		?>
 			<?php if($instance): ?>
-				<div class="category-most-read">
-					<div class="header">
-						<p><?= $instance['title'] ?> </p>
-					</div>
-					<?php if(sizeof($posts_ids) >= $instance['min_posts']): ?>
+				<?php if(sizeof($posts_ids) >= $instance['min_posts']): ?>
+					<div class="category-most-read">
+						<div class="header">
+							<p><?= $instance['title'] ?> </p>
+						</div>
 						<div class="posts">
 							<?php foreach(array_slice($posts_ids, 0, $instance['max_posts']) as $key=>$value){ 
 								$title = get_the_title($value);
@@ -205,8 +205,6 @@ class most_read_widget extends WP_Widget {
 								</div>
 							<?php } ?>
 						</div>
-					<?php else: ?>
-						<p class="no-views-warming">Not enough posts have been viewed.</p>
 					<?php endif ?>
 
 				</div>
