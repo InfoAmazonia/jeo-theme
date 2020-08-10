@@ -22,9 +22,33 @@
         }
     }
 
+    .decoration-square {
+        h1.page-title.article-section-title::before {
+            margin-top: size(2);
+        } 
+    }
+
+    .decoration-eye {
+        h1.page-title.article-section-title::before {
+            margin-top: size(1);
+        } 
+    }
+
     .decoration-top {
         .page-description {
             display: inline;
+        }
+
+        @include mobile {
+            h1.page-title.article-section-title {
+                position: relative;
+                justify-content: center;
+                display: flex;
+            }
+            h1.page-title.article-section-title::before {
+                position: absolute;
+                top: size(-10);
+            }
         }
     }
     
