@@ -757,6 +757,18 @@
             }
         }
 
+        #primary.opinion header {
+            background-color: rgba(255, 255, 255, 0.05);
+            
+            .entry-header {
+                .wrapper-entry-title {
+                    h1.entry-title {
+                        color: white;
+                    }
+                }
+            }
+        }
+
         .cat-links {
             a {
                 &:hover {
