@@ -35,6 +35,14 @@
         font-family: var(--featured-font);
     }
 
+
+
+    .post-excerpt p {
+        line-height: 33px;
+        margin-bottom: 60px;
+    }
+
+
     .entry-content {
 
         .wp-block-newspack-blocks-homepage-articles {
@@ -46,12 +54,6 @@
                 }
             }
         }
-
-        .post-excerpt p {
-            line-height: normal;
-            margin-bottom: 60px;
-        }
-
         a {
             color: var(--primary);
             font-weight: bold;
