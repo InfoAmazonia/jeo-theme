@@ -73,7 +73,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_setting(
 		'header_image_bg_dark_mode',
 		array(
-			'default'           => true,
+			'default' => true,
 		)
 	);
 
