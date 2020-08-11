@@ -4,13 +4,12 @@
 .is-style-home__block-sidebar {
   margin-bottom: 50px !important;
   background: whitesmoke;
-  border-radius: 10px;
   padding: 0px !important;
 }
 
 .is-style-home__block-sidebar p {
   margin-bottom: 0px !important;
-  border-radius: 15px 15px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .is-style-home__block-sidebar .wp-block-group__inner-container .wp-block-group {
