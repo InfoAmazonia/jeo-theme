@@ -69,6 +69,24 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// use image bg for dark-mode?
+	$wp_customize->add_setting(
+		'header_image_bg_dark_mode',
+		array(
+			'default'           => true,
+		)
+	);
+
+	$wp_customize->add_control(
+		'header_image_bg_dark_mode',
+		array(
+		'type' => 'checkbox',
+		'label' => esc_html__( 'Use backgroud image in dark mode?', 'jeo' ),
+		'description' => esc_html__( 'By disabling this, the header will use the default background with some opacity applied.', 'newspack' ),
+		'section' => 'header_section_appearance',
+		)
+	);
+
 	// Add sticky logo control and ooption to header
 	$wp_customize->add_setting(
 		'logo_sticky_image',
