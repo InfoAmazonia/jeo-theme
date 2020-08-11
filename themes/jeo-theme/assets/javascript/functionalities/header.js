@@ -101,7 +101,11 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    
+    jQuery('button[action="language-options"]').click(function () {
+        jQuery(this.parentNode.querySelector(".toggle-language-options")).toggleClass(
+            "active"
+        );
+    });
 
     const shareData = {
         title: document.title,

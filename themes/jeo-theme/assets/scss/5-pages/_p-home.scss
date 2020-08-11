@@ -421,4 +421,13 @@ hr {
             background-color: #23282D;
         }
     }
+
+    .wp-block-cover.has-background-dim.home__newsletter-bkg {
+        // overwrite inline style css
+        background-color: var(--primary-opacity-1)!important;
+
+        p.has-text-color.has-secondary-color {
+            color: white;
+        }
+    }
 }
