@@ -90,6 +90,23 @@ window.addEventListener("DOMContentLoaded", function () {
         );
     });
 
+    jQuery('button.menu-btn').click(function () {
+        var headerHeight = document.querySelector(
+            ".bottom-header-contain.desktop-only"
+        ).offsetTop;
+
+        if(jQuery(window).scrollTop() <= headerHeight && jQuery(window).width() > 829) {
+            jQuery(".bottom-header-contain.post-header").removeClass("active");
+            jQuery("body").removeClass("mobile-menu-opened");
+        }
+    });
+
+    jQuery('button[action="language-options"]').click(function () {
+        jQuery(this.parentNode.querySelector(".toggle-language-options")).toggleClass(
+            "active"
+        );
+    });
+
     const shareData = {
         title: document.title,
         text: "",

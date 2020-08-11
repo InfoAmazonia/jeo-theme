@@ -69,6 +69,24 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// use image bg for dark-mode?
+	$wp_customize->add_setting(
+		'header_image_bg_dark_mode',
+		array(
+			'default' => true,
+		)
+	);
+
+	$wp_customize->add_control(
+		'header_image_bg_dark_mode',
+		array(
+		'type' => 'checkbox',
+		'label' => esc_html__( 'Use backgroud image in dark mode?', 'jeo' ),
+		'description' => esc_html__( 'By disabling this, the header will use the default background with some opacity applied.', 'newspack' ),
+		'section' => 'header_section_appearance',
+		)
+	);
+
 	// Add sticky logo control and ooption to header
 	$wp_customize->add_setting(
 		'logo_sticky_image',
@@ -87,6 +105,32 @@ function newspack_scott_customizer($wp_customize)
 				'description' => esc_html__('Upload an image to be used as sticky logo. If there are no sticky logo, the main logo will be used instead', 'newspack'),
 				'section'     => 'title_tagline',
 				'settings'    => 'logo_sticky_image',
+				'flex_width'  => false,
+				'flex_height' => true,
+				'width'       => 400,
+				'height'      => 300,
+			)
+		)
+	);
+
+	// Add darkmode logo control
+	$wp_customize->add_setting(
+		'logo_dark_image',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'logo_dark_image',
+			array(
+				'label'       => esc_html__('Logo dark image', 'newspack'),
+				'description' => esc_html__('Dark logo to be displayed. The default dark mode logo is your logo masked with white.', 'newspack'),
+				'section'     => 'title_tagline',
+				'settings'    => 'logo_dark_image',
 				'flex_width'  => false,
 				'flex_height' => true,
 				'width'       => 400,
@@ -170,6 +214,43 @@ function newspack_scott_customizer($wp_customize)
 			'search_icon_color',
 			array(
 				'label' => __('Search icon color', 'newspack'),
+				'section'     => 'header_section_appearance',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'search_dark_icon_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'search_dark_icon_color',
+			array(
+				'label' => __('Search dark icon color', 'newspack'),
+				'section'     => 'header_section_appearance',
+			)
+		)
+	);
+
+
+	$wp_customize->add_setting(
+		'social_dark_icon_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'social_dark_icon_color',
+			array(
+				'label' => __('Social dark icon color ', 'newspack'),
 				'section'     => 'header_section_appearance',
 			)
 		)

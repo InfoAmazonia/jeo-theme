@@ -47,6 +47,9 @@ footer {
         }
     }
 
+    .dark-logo {
+        display: none;
+    }
 }
 
 
@@ -56,8 +59,16 @@ footer {
             color: white;
         }
 
+        .light-logo.defined-dark {
+            display: none;
+        }
+
+        .dark-logo {
+            display: block;
+        }
+
         .footer-logo-link {
-            img {
+            img.light-logo {
                 filter: brightness(0) invert(1);
             }
         }

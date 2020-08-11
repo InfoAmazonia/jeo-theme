@@ -89,6 +89,15 @@
         margin-top: 0;
 
         &:not(.grid-display) {
+            .sss {
+                max-height: 100vh;
+            }
+    
+            .gallery-item-container {
+                position: initial;
+    
+            }
+
             .image-gallery-wrapper {
                 background: black;
                 display: flex;
@@ -105,6 +114,8 @@
                 
             }
         }
+
+        
     }
 
     &.grid-display {
@@ -259,6 +270,7 @@
             color: #ffffff;
             opacity: 0.7;
             transition: all 0.2s ease-in-out;
+            font-size: size(16);
 
             &:hover {
                 opacity: 1;

@@ -229,12 +229,14 @@
     }
 }
 
-// AQUI TERMINA A NEWSLETTER
-
 
 /* Newsletter for Pasifika */
 .newsletter-pasifika {
     background: linear-gradient(135deg, #1779B5 0%, #2EC1DA 100%);
+
+    .dark-theme & {
+        background: linear-gradient(135deg,rgba(23, 121, 181, 0.25),rgba(46, 193, 218, 0.25));
+    }
 
     .fa-envelope {
         color: #fff;

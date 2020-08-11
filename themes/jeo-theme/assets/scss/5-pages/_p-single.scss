@@ -9,6 +9,23 @@
 .post-template-single-feature,
 .post-template-single-wide {
 
+
+
+    .decoration-top {
+        @include mobile {
+            .cat-links {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                margin: 15px 0 30px;
+            }
+            .cat-links::before {
+                position: absolute;
+                top: size(-10);
+            }
+        }
+    }
+
     h1,
     h2,
     h3,
@@ -535,7 +552,7 @@
                     font-family: var(--primary-font);
                     font-size: size(14);
                     color: #0A0A0A;
-                    opacity: 50%;
+                    opacity: 0.5;
                     margin-top: size(10);
 
                     @include mobile {
@@ -754,6 +771,22 @@
         &:not(.has-featured-image), &:not(.single-featured-image-behind) {
             .entry-title  {
                 color: white;
+            }
+        }
+
+        h1.post-excerpt {
+            color: white;
+        }
+
+        #primary.opinion header {
+            background-color: rgba(255, 255, 255, 0.05);
+            
+            .entry-header {
+                .wrapper-entry-title {
+                    h1.entry-title {
+                        color: white;
+                    }
+                }
             }
         }
 
