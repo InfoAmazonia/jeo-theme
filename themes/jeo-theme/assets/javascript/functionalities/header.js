@@ -110,4 +110,16 @@ window.addEventListener("DOMContentLoaded", function () {
     } else {
         console.log("Native share is not allowed over HTTP protocol.")
     }
+
+    document.querySelector('.more-menu').addEventListener("mouseover", () => {
+        jQuery(".more-menu--content").addClass('permahover');
+    });
+
+    window.addEventListener('click', function(e){   
+        if (!document.querySelector('.more-menu--content').contains(e.target) &&
+        !document.querySelector('.more-menu').contains(e.target)
+        ){
+            jQuery(".more-menu--content").removeClass('permahover');
+        }
+      });
 });

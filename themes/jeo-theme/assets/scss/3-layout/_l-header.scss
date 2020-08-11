@@ -571,11 +571,12 @@ header.site-header {
         @include tablet {
             display: none;
         }
-
-        &:hover {
-            .more-menu--content {
-                transition: all 0.2s ease-in-out;
-            }
+        
+        .more-menu--content.permahover {
+            transition-delay: 90s;
+            opacity: 1;	
+            transform: translateY(0);
+            transition: all 0.2s ease-in;
         }
 
         .more-title {
@@ -611,7 +612,8 @@ header.site-header {
         }
 
         &--content {
-            opacity: 1;
+            opacity: 0;
+            transform: translateY(-1000px);
             transition: all 0.2s ease-in-out;
             position: fixed;
             top: 50px;
