@@ -386,25 +386,30 @@
 
     }
 
+
+    .wp-block-columns {
+        margin-bottom: 0px;
     
-}
-
-.wp-block-columns {
-    margin-bottom: 0px;
-
-    .wp-block-column .wp-block-button {
-        margin-top: 15px !important;
+        .button__fullwidth-link a {
+            width: 100%;
+        }
     }
+    
+    
+    /* margin for image gallery in EKuatorial's home */
+    .wp-block-group.home__block-sidebar {
+        .wp-block-gallery {
+            margin-bottom: 0px;
+        }
 
-    .button__fullwidth-link a {
-        width: 100%;
+        .wp-block-button.button__fullwidth-link {
+            margin-top: 5px;
+        }
     }
 }
-
 hr {
     margin: 0px !important;
 }
-
 
 
 .dark-theme {

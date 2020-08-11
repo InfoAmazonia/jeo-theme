@@ -18,9 +18,7 @@ class related_posts {
         register_setting( 'reading', 'related_posts__use' );
         register_setting( 'reading', 'related_posts__tags_weight' );
         register_setting( 'reading', 'related_posts__categories_weight' );
-        register_setting( 'reading', 'related_posts__months_before' );
-        register_setting( 'reading', 'related_posts__months_after' );
-
+        register_setting( 'reading', 'related_posts__date_weight' );
     }
 
     static function settings() {

@@ -9,6 +9,23 @@
 .post-template-single-feature,
 .post-template-single-wide {
 
+
+
+    .decoration-top {
+        @include mobile {
+            .cat-links {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                margin: 15px 0 30px;
+            }
+            .cat-links::before {
+                position: absolute;
+                top: size(-10);
+            }
+        }
+    }
+
     h1,
     h2,
     h3,
