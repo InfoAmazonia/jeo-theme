@@ -85,7 +85,7 @@
 
     span.cat-links {
         margin-bottom: 30px;
-        
+
         a:first-of-type {
             opacity: 0.5;
         }
@@ -776,6 +776,12 @@
 .dark-theme {
     &.single {
         &:not(.has-featured-image), &:not(.single-featured-image-behind) {
+            .entry-title  {
+                color: white;
+            }
+        }
+
+        .video, .category-audio {
             .entry-title  {
                 color: white;
             }
