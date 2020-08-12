@@ -11,10 +11,10 @@
             <div class="entry-subhead">
                 <div class="entry-meta">
                     <?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
-                        <div class="author-image"><?php echo get_avatar(get_the_author_meta('ID')); ?></div>
-                        <p class="posted-by">by <strong><?php echo get_the_author_meta('display_name'); ?></strong></p>
+                        <?php newspack_posted_by(); ?>
                     <?php endif; ?>
                     <div></div>
+                    <?php newspack_posted_on(); ?>
                 </div><!-- .meta-info -->
                 <?php
                 // Display Jetpack Share icons, if enabled
