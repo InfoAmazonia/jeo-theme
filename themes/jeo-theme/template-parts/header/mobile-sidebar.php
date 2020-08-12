@@ -101,9 +101,8 @@ if (newspack_is_amp()) : ?>
 					</div>
 				</div>
 
-				<div class="item">
+				<!-- <div class="item">
 					<div class="item--title">
-						<?= __("Constrast", "jeo") ?>
 					</div>
 
 					<div class="item--content padded">
@@ -114,7 +113,7 @@ if (newspack_is_amp()) : ?>
 							<i class="fas fa-adjust"></i>-
 						</button>
 					</div>
-				</div>
+				</div>-->
 
 
 			</div>

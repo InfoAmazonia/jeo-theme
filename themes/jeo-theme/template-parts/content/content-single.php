@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
-		<?php if(has_excerpt()): ?>
+		<?php if(has_excerpt() && !('large' == newspack_featured_image_position() || 'small' == newspack_featured_image_position())): ?>
 			<h1 class="post-excerpt">
 				<?php the_excerpt(); ?>
 			</h1>

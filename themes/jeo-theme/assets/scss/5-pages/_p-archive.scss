@@ -142,7 +142,10 @@
 .custom-archive {
     .page-header{
 
-        margin-top: 30px;
+        @include mobile{
+            margin-top: 30px;
+        }
+        
         margin-bottom: 40px;
         .page-subtitle, .page-description {
            font-size: size(18);

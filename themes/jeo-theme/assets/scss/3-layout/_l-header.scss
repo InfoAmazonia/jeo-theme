@@ -23,7 +23,8 @@ header.site-header {
             transition: transform .35s ease, border .25s ease, -webkit-transform .35s ease;
 
             @include tablet {
-                background: var(--search-icon-color);
+                /* background: var(--search-icon-color);*/
+                border-bottom: 2px solid var(--search-icon-color);
             }
         }
 

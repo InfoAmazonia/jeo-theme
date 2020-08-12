@@ -93,3 +93,17 @@ wordpress.org/plugins/complianz-gdpr/
 
 
 }
+
+/* warning: blocked iframe */
+#page{ 
+    .cmplz-blocked-content-container .cmplz-blocked-content-notice {
+        line-height: normal;
+        font-family: var(--primary-font);
+        z-index: 1;
+        position: relative;
+        width: auto;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+}
