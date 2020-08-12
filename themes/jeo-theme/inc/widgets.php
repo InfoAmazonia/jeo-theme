@@ -150,6 +150,7 @@ class most_read_widget extends WP_Widget {
 
 	public function widget($args, $instance) {
 		$category = '';
+		$tag = '';
 		$author = '';
 		$most_read = [];
 		$ids = [];
@@ -160,6 +161,10 @@ class most_read_widget extends WP_Widget {
 			$category = get_the_category()[0];
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 			$posts_query_args['category__in'] = [$category->cat_ID];
+		} else if(is_tag()) {
+			$tag = get_queried_object();
+			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
+			$posts_query_args['tag__in'] = [$tag->term_id];
 		} else if(is_author()) {
 			$author = get_the_author_meta('ID');
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
@@ -182,11 +187,11 @@ class most_read_widget extends WP_Widget {
 
 		?>
 			<?php if($instance): ?>
-				<div class="category-most-read">
-					<div class="header">
-						<p><?= $instance['title'] ?> </p>
-					</div>
-					<?php if(sizeof($posts_ids) >= $instance['min_posts']): ?>
+				<?php if(sizeof($posts_ids) >= $instance['min_posts']): ?>
+					<div class="category-most-read">
+						<div class="header">
+							<p><?= $instance['title'] ?> </p>
+						</div>
 						<div class="posts">
 							<?php foreach(array_slice($posts_ids, 0, $instance['max_posts']) as $key=>$value){ 
 								$title = get_the_title($value);
@@ -205,8 +210,6 @@ class most_read_widget extends WP_Widget {
 								</div>
 							<?php } ?>
 						</div>
-					<?php else: ?>
-						<p class="no-views-warming">Not enough posts have been viewed.</p>
 					<?php endif ?>
 
 				</div>

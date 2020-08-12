@@ -121,7 +121,7 @@ function newspack_scott_custom_typography_css() {
 .		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
 			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
 		}
-		.single .entry-content .post-excerpt p,
+		.single .post-excerpt p,
 		.post-template-single-feature .entry-content .post-excerpt p,
 		.post-template-single-wide .entry-content .post-excerpt p{
 			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
@@ -132,7 +132,7 @@ function newspack_scott_custom_typography_css() {
 		$accent_font = wp_kses( get_theme_mod( 'accent_font'), null );
 
 		$theme_css .= '
-		.accent-header:not(.widget-title), .article-section-title, .page-title, #secondary .widget-title, .author-bio .accent-header span, #colophon .widget-title, .tags-links span:first-child, .single .cat-links {
+		.accent-header:not(.widget-title), .article-section-title, .archive .article-section-title, .archive .article-section-title .page-description, .page-title, #secondary .widget-title, .author-bio .accent-header span, #colophon .widget-title, .tags-links span:first-child, .single .cat-links {
 			font-family: "' . $accent_font . '", "sans-serif";
 		}
 
@@ -162,29 +162,39 @@ function newspack_scott_custom_typography_css() {
 		';
 	}
 
-
+	$css_variables = "";
 	if (!empty(get_theme_mod( 'site_description_color', ''))) {
 		$color = get_theme_mod( 'site_description_color');
-
-		$theme_css .= '
-		:root {
-			--description-color: '. $color . ';
-		}
-
-		';
+		$color_css = '--description-color: '. $color . ';';
+		$css_variables .= $color_css;
 	}
-
 
 	if (!empty(get_theme_mod( 'search_icon_color', ''))) {
 		$color = get_theme_mod( 'search_icon_color');
-
-		$theme_css .= '
-		:root {
-			--search-icon-color: '. $color . ';
-		}
-
-		';
+		$color_css = '--search-icon-color: '. $color . ';';
+		$css_variables .= $color_css;
 	}
+
+
+	if (!empty(get_theme_mod( 'search_dark_icon_color', '#fff'))) {
+		$color = get_theme_mod( 'search_dark_icon_color', '#fff');
+		$color_css = '--search-dark-icon-color: '. $color . ';';
+		$css_variables .= $color_css;
+	}
+
+	if (!empty(get_theme_mod( 'social_dark_icon_color', '#fff'))) {
+		$color = get_theme_mod( 'social_dark_icon_color', '#fff');
+		$color_css = '--social-dark-icon-color: '. $color . ';';
+		$css_variables .= $color_css;
+	}
+	
+
+	$theme_css .= '
+		:root {'.
+			$css_variables; '
+		}
+	';
+
 
 	return $theme_css;
 }

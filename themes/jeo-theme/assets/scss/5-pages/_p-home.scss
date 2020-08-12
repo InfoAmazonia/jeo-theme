@@ -4,12 +4,11 @@
     .is-style-home__block-sidebar {
         margin-bottom: 50px !important;
         background: rgb(245, 245, 245);
-        border-radius: 10px;
         padding: 0px !important;
 
         p {
             margin-bottom: 0px !important;
-            border-radius: 15px 15px 0 0;
+            border-radius: 10px 10px 0 0;
 
             &.has-text-color.has-background {
                 padding: 10px;
@@ -386,25 +385,30 @@
 
     }
 
+
+    .wp-block-columns {
+        margin-bottom: 0px;
     
-}
-
-.wp-block-columns {
-    margin-bottom: 0px;
-
-    .wp-block-column .wp-block-button {
-        margin-top: 15px !important;
+        .button__fullwidth-link a {
+            width: 100%;
+        }
     }
+    
+    
+    /* margin for image gallery in EKuatorial's home */
+    .wp-block-group.home__block-sidebar {
+        .wp-block-gallery {
+            margin-bottom: 0px;
+        }
 
-    .button__fullwidth-link a {
-        width: 100%;
+        .wp-block-button.button__fullwidth-link {
+            margin-top: 5px;
+        }
     }
 }
-
 hr {
     margin: 0px !important;
 }
-
 
 
 .dark-theme {
@@ -414,6 +418,15 @@ hr {
     .home__block-sidebar.has-background {
         .wp-block-group {
             background-color: #23282D;
+        }
+    }
+
+    .wp-block-cover.has-background-dim.home__newsletter-bkg {
+        // overwrite inline style css
+        background-color: var(--primary-opacity-1)!important;
+
+        p.has-text-color.has-secondary-color {
+            color: white;
         }
     }
 }

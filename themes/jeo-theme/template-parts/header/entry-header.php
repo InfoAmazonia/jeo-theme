@@ -51,6 +51,15 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 			}
 			?>
 		</div>
+		
+		<?php if('large' == newspack_featured_image_position() || 'small' == newspack_featured_image_position()): ?>
+			<?php if(has_excerpt()): ?>
+				<h1 class="post-excerpt">
+					<?php the_excerpt(); ?>
+				</h1>
+			<?php endif ?>
+		<?php endif; ?>
+
 	<?php endif; ?>
 <?php else:
 	newspack_categories();
