@@ -642,6 +642,10 @@
         .entry-subhead {
             .entry-meta {
                 justify-content: flex-start;
+
+                .posted-by {
+                    margin: auto 0 auto size(5);
+                }
             }
         }
 
