@@ -642,6 +642,7 @@
         .entry-subhead {
             .entry-meta {
                 justify-content: flex-start;
+                display: -webkit-box;
 
                 .posted-by {
                     margin: auto size(5) auto size(5);
