@@ -630,7 +630,6 @@
         }
     }
 
-
     .entry-header {
         @include desktop {
             max-width: 38%;
@@ -646,6 +645,14 @@
 
                 .posted-by {
                     margin: auto size(5) auto size(5);
+                }
+
+                .author-avatar img {
+                    border-radius: 50%;
+                }
+
+                .avatar-default {
+                    display: none;
                 }
             }
         }
