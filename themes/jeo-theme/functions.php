@@ -139,3 +139,12 @@ function remove_website_field($fields) {
 }
 add_filter('comment_form_default_fields', 'remove_website_field');
 
+
+add_filter( 'comment_form_fields', 'move_comment_field' );
+function move_comment_field( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+    return $fields;
+}
+
