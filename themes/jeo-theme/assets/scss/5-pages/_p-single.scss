@@ -630,7 +630,6 @@
         }
     }
 
-
     .entry-header {
         @include desktop {
             max-width: 38%;
@@ -642,6 +641,19 @@
         .entry-subhead {
             .entry-meta {
                 justify-content: flex-start;
+                display: -webkit-box;
+
+                .posted-by {
+                    margin: auto size(5) auto size(5);
+                }
+
+                .author-avatar img {
+                    border-radius: 50%;
+                }
+
+                .avatar-default {
+                    display: none;
+                }
             }
         }
 
