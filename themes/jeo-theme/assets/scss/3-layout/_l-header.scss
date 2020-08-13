@@ -576,13 +576,12 @@ header.site-header {
         @include tablet {
             display: none;
         }
-
-        &:hover {
-            .more-menu--content {
-                opacity: 1;
-                transform: translateY(0);
-                transition: all 0.2s ease-in-out;
-            }
+        
+        .more-menu--content.permahover {
+            transition-delay: 90s;
+            opacity: 1;	
+            transform: translateY(0);
+            transition: all 0.2s ease-in;
         }
 
         .more-title {

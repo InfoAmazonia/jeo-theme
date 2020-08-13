@@ -166,12 +166,9 @@
                 grid-gap: 23px;
 
                 @include tablet {
-                    grid-template-columns: repeat(3, 1fr);
-                    /*
                     writing-mode: vertical-lr;
                     grid-auto-rows: size(100);
                     grid-template-columns: repeat(1, 17.6vh);
-                    */
                 }
             }
         }
@@ -190,6 +187,22 @@
         .sssprev,
         .sssnext {
             display: none;
+        }
+    }
+
+    &.grid-display.fullscreen {
+        .gallery-grid {
+            @include tablet {
+                margin-left: calc(50% - 35vw);
+                margin-right: calc(50% - 35vw);
+                
+                .sss {
+                        display: grid;
+                        grid-gap: 23px;
+                        writing-mode: unset;
+                        grid-template-columns: repeat(2, 17.6vh);
+                }
+            }
         }
     }
 

@@ -25,7 +25,7 @@ wp.blocks.registerBlockType("jeo-theme/embed-template", {
 		} = props;
 		
 		const TEMPLATE =  [ 
-				[ 'core/heading', { placeholder: 'Embed title' }],
+				[ 'core/paragraph', { placeholder: 'Embed title' }],
 				[ 'core/paragraph', { placeholder: 'Author' } ],
 				[ 'core/embed' ],
 		];
@@ -35,7 +35,7 @@ wp.blocks.registerBlockType("jeo-theme/embed-template", {
 				<div className="embed-item-template" key="container">
 					<div>
 						<InnerBlocks
-							allowedBlocks={[ 'core/embed', 'core/heading', 'core/paragraph' ]}
+							allowedBlocks={[ 'core/embed', 'core/paragraph' ]}
 							template={TEMPLATE}
 							templateLock="all"
 						/>
