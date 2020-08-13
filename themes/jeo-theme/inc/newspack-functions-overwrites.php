@@ -122,10 +122,18 @@ function newspack_scott_scripts() {
 	wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['jquery', 'momenta'], '0.1.0');
 	wp_enqueue_script('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1');
 	wp_enqueue_script('main-app', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery'], true);
+	wp_enqueue_script('category-deletion-warning', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery'], true);
 	//wp_enqueue_script( 'jeo-theme-scripts', get_stylesheet_directory_uri()."/js/main.js", array(), "0.1.0");
 }
 
+function category_deletion_script() {
+	wp_enqueue_script('category-deletion-warning', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/category-deletion-warning.js', ['jquery'], true);
+}
+
 add_action('wp_enqueue_scripts', 'newspack_scott_scripts');
+add_action('admin_enqueue_scripts', 'category_deletion_script');
+
+
 
 
 /**
