@@ -32,6 +32,16 @@ wp.blocks.registerBlockType("jeo-theme/custom-video-gallery", {
 			<>
 				<div className="video-gallery-wrapper" key="container">
 					<div>
+						<RichText
+							tagName="h2"
+							className="gallery-title"
+							value={ title }
+							formattingControls={ [ 'bold', 'italic' ] } 
+							onChange={ ( title ) => {
+								setAttributes( { title } )
+							} }
+							placeholder={ __( 'Type a title' ) } 
+						/>
 						<InnerBlocks
 							allowedBlocks={[ 'jeo-theme/embed-template' ]}
 							template={TEMPLATE}
