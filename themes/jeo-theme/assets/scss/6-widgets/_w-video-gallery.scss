@@ -48,12 +48,41 @@
             max-height: 100%;
             overflow-y: auto;
 
+            &::-webkit-scrollbar {
+                width: 10px;
+                /* height: 6px; */
+
+                @include tablet {
+                    height: 6px; 
+                }
+            }
+            &::-webkit-scrollbar-button {
+                width: 0px;
+                height: 0px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #C1C1C1;
+                border: 0px none white;
+                border-radius: 10px;
+            }
+            
+            &::-webkit-scrollbar-track {
+                background: rgba(250, 250, 250, 0.2);
+                border: 0px none #ffffff;
+                border-radius: 0px;
+            }
+
+            &::-webkit-scrollbar-corner {
+                background: transparent;
+            }
+
             @include tablet {
                 position: initial;
-                width: 120%;
+                width: calc(100% + 25px);
                 display: flex;
                 overflow-x: auto;
                 margin-top: 20px;
+                align-items: flex-start;
             }
             
             button {
@@ -105,7 +134,8 @@
                 }
 
                 p:first-child {
-                    padding-top: 8px;
+                    margin-top: 0;
+                    padding: 8px;
                 }
             }
         }
