@@ -3,7 +3,15 @@ window.addEventListener("DOMContentLoaded", function () {
         let videoItens = videoGallery.querySelectorAll('.embed-template-block');
         
         if(videoItens.length > 0) {
-            videoGallery.insertBefore(videoItens[0].cloneNode(true), videoItens[0]);
+            videoCopyPolicyFix = videoItens[0].cloneNode(true);
+
+            if(document.querySelector('body').classList.contains('cmplz-status-allow')){
+                // plugin cmplz postprocessing fix.
+                videoCopyPolicyFix.querySelector('figure .wp-block-embed__wrapper.cmplz-placeholder-1.cmplz-blocked-content-container').classList.remove('cmplz-blocked-content-container', 'cmplz-placeholder-1');
+                videoCopyPolicyFix.querySelector('figure .wp-block-embed__wrapper iframe').classList.remove('cmplz-video', 'cmplz-hidden');
+            }
+
+            videoGallery.insertBefore(videoCopyPolicyFix, videoItens[1]);
         }
 
         videoItens = videoGallery.querySelectorAll('.embed-template-block');

@@ -1,10 +1,24 @@
-.video-gallery-wrapper {
+
+.video-gallery-wrapper, #page .video-gallery-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 30px;
+
+    .cmplz-blocked-content-notice.cmplz-accept-cookies {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
     
     > .embed-template-block {
         display: block;
+        margin-bottom: 0;
+        
+        figure {
+            margin-bottom: 0;
+        }
 
         p {
             display: none;
@@ -27,6 +41,17 @@
             button {
                 width: 100%;
                 text-align: initial;
+                padding: 0;
+                margin-bottom: 15px;
+
+                &:hover, &:focus {
+                    background: #ffffff1a;
+                }
+
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
 
             .embed-template-block {
@@ -49,6 +74,10 @@
                     p, figure {
                         margin-bottom:  0;
                     }
+                }
+
+                p:first-child {
+                    padding-top: 8px;
                 }
             }
         }
