@@ -36,7 +36,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-video-gallery", {
 							tagName="h2"
 							className="gallery-title"
 							value={ title }
-							formattingControls={ [ 'bold', 'italic' ] } 
 							onChange={ ( title ) => {
 								setAttributes( { title } )
 							} }
@@ -65,9 +64,11 @@ wp.blocks.registerBlockType("jeo-theme/custom-video-gallery", {
 	  
 
 		return (
-			<>
-				<div className="video-gallery-wrapper" key="container">
-					<InnerBlocks.Content/>
+			<>	<div className="video-gallery-block">
+					<RichText.Content tagName="h2" value={ title } />
+					<div className="video-gallery-wrapper" key="container">
+						<InnerBlocks.Content/>
+					</div>
 				</div>
 			</>
 		);
