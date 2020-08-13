@@ -29,7 +29,7 @@
 
     .toggable-comments {
         &-form {
-            display: none;
+            // display: none;
 
             &.active {
                 display: block;
@@ -153,4 +153,11 @@
             }
         }
     }
+}
+
+
+.comment {
+    // css workarround for fixed header and archor problem
+    padding-top: 80px; 
+    margin-top: -80px;
 }

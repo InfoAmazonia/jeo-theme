@@ -133,6 +133,11 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         }
 
+        // prevents comments from hiding when a direct comment hash is set
+        if(!(document.location.hash.length && document.location.hash.slice(1,8) == 'comment')) {
+            jQuery(".toggable-comments-form").hide();   
+        }
+
         if (jQuery(".toggable-comments-area").length) {
             jQuery(".toggable-comments-area").click(function () {
                 jQuery(".toggable-comments-form").toggle("fast");
