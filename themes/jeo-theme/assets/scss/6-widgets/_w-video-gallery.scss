@@ -18,6 +18,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 30px;
+        box-shadow: inset 0px -14px 18px -3px rgba(0, 0, 0, 0.3);
 
         @include tablet {
             display: block;
@@ -104,7 +105,7 @@
                     width: 100%;
                     text-align: initial;
                     padding: 0;
-                    margin-bottom: 15px;
+                    margin-bottom: 30px;
                     background: none;
 
                     &:hover, &:focus {
