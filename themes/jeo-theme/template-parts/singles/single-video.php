@@ -1,10 +1,14 @@
+<?php 
+    $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+    $post_title = wp_kses_post(get_the_title());
+?>
+
 <meta name="twitter:card" content="player" />
-<meta name="twitter:title" content="<?php echo wp_kses_post(get_the_title()); ?>" />
-<meta name="twitter:site" content="@Pop_lola66" />
-<meta name="twitter:player" content="https://ekuatorial-jeo.hacklab.com.br/wp-content/uploads/sites/4/2020/07/file_example_MP4_480_1_5MG.mp4" />
+<meta name="twitter:title" content="<?php echo $post_title; ?>" />
+<meta name="twitter:site" content="" />
 <meta name="twitter:player:width" content="720" />
 <meta name="twitter:player:height" content="720" />
-<meta name="twitter:image" content="https://quatrorodas.abril.com.br/wp-content/uploads/2017/01/14816227b444752f17fb78efa9c6b02b.jpg?quality=70&strip=all" />
+<meta name="twitter:image" content="<?php echo esc_url($featured_img_url); ?>" />
 
 <section id="primary" class="content-area video <?php echo esc_attr(newspack_get_category_tag_classes(get_the_ID())) . ' ' . newspack_featured_image_position(); ?>">
     <main id=" main" class="site-main">
