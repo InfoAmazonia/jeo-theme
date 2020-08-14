@@ -125,7 +125,14 @@ function newspack_scott_scripts() {
 	//wp_enqueue_script( 'jeo-theme-scripts', get_stylesheet_directory_uri()."/js/main.js", array(), "0.1.0");
 }
 
+function category_deletion_script() {
+	wp_enqueue_script('category-deletion-warning', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/category-deletion-warning.js', ['jquery'], true);
+}
+
 add_action('wp_enqueue_scripts', 'newspack_scott_scripts');
+add_action('admin_enqueue_scripts', 'category_deletion_script');
+
+
 
 
 /**
