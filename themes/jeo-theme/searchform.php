@@ -25,7 +25,7 @@ $unique_id = wp_unique_id('search-form-');
 
 	<?php if ($args['aria_label'] == 'search-page-form') : ?>
 		<div class="filters">
-			<h5 class="filters--title"> Filters </h5>
+			<h5 class="filters--title"> <?php _e('Filters', 'jeo') ?> </h5>
 			<div class="filters--itens">
 
 				<div class="filters--item">
@@ -43,7 +43,7 @@ $unique_id = wp_unique_id('search-form-');
 
 				<div class="filters--item">
 					<select name="topic" id="topics">
-						<option value=""> Topics </option>
+						<option value=""> <?php _e('Topics', 'jeo') ?> </option>
 						<?php
 						
 
@@ -65,7 +65,7 @@ $unique_id = wp_unique_id('search-form-');
 
 				<div class="filters--item">
 					<select name="region" id="region">
-						<option value=""> Regions </option>
+						<option value=""> <?php _e('Regions', 'jeo') ?> </option>
 						<?php
 						
 
@@ -91,16 +91,16 @@ $unique_id = wp_unique_id('search-form-');
 			<div class="sorting-method">
 				Sort by:
 				<?php 
-					$button_text = 'Latest';
+					$button_text = __('Latest', 'jeo');
 					$filtered_value = 'DESC';
 
 					if (isset($_GET['order'])) {
 						$order_option = $_GET['order'];
 						if ($order_option == 'ASC') {
-							$button_text = 'Oldest';
+							$button_text = __('Oldest', 'jeo');
 							$filtered_value = 'ASC';
 						} else if ($order_option == 'DESC') {
-							$button_text = 'Latest';
+							$button_text = __('Latest', 'jeo');
 						}
 					}
 				
