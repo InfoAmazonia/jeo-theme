@@ -139,3 +139,8 @@ function remove_website_field($fields) {
 }
 add_filter('comment_form_default_fields', 'remove_website_field');
 
+
+
+// its suppose to fix (https://github.com/WordPress/gutenberg/issues/18098)
+global $wp_embed;
+add_filter( 'the_content', array( $wp_embed, 'autoembed' ), 9 );

@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
             if(document.querySelector('body').classList.contains('cmplz-status-allow')){
                 // plugin cmplz postprocessing fix.
-                videoCopyPolicyFix.querySelector('figure .wp-block-embed__wrapper.cmplz-placeholder-1.cmplz-blocked-content-container').classList.remove('cmplz-blocked-content-container', 'cmplz-placeholder-1');
+                videoCopyPolicyFix.querySelector('figure > div').classList.remove('cmplz-blocked-content-container', 'cmplz-placeholder-1');
                 videoCopyPolicyFix.querySelector('figure .wp-block-embed__wrapper iframe').classList.remove('cmplz-video', 'cmplz-hidden');
             }
 
@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         videoItens = videoGallery.querySelectorAll('.embed-template-block');
-        console.log(videoItens);
+        //console.log(videoItens);
 
         if(videoItens.length > 1) {
             const groupedItens = [...videoItens];
