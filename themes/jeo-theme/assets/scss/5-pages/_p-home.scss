@@ -1,5 +1,13 @@
 .home {
+    .wp-block-newspack-blocks-carousel .swiper-slide {
+        @include tablet {
+            max-height: none;
 
+            .entry-wrapper {
+                position: unset;
+            }
+        }
+    }
     /* Gray column with primary heading */
     .is-style-home__block-sidebar {
         margin-bottom: 50px !important;
