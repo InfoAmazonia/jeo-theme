@@ -87,7 +87,7 @@
 									<?php echo $description; /* WPCS: xss ok. */ ?>
 								</p>
 							<?php endif; ?>
-						<?php endif; ?>
+						<?php endif; ?>	
 					</div><!-- .wrapper -->
 				</div><!-- .top-header-contain -->
 				<div class="middle-header-contain">
@@ -157,6 +157,13 @@
 									}
 									?>
 								</div>
+								<?php if(has_action('wpml_language_switcher')):?>
+									<div class="language-switter">
+										<?= do_action( 'wpml_language_switcher', [
+											'native' => 0
+										] ); ?>
+									</div>
+								<?php endif; ?>
 								<?php
 							else :
 								$description = get_bloginfo('description', 'display');
@@ -167,6 +174,9 @@
 									</p>
 								<?php endif; ?>
 							<?php endif; ?>
+
+							
+
 						</div><!-- .wrapper -->
 					</div><!-- .top-header-contain -->
 				<?php endif; ?>
