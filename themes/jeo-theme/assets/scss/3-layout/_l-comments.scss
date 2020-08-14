@@ -167,11 +167,14 @@
             }
         }
     }
-}
 
+    .cld-like-dislike-wrap.cld-template-1 {
+        span.cld-like-count-wrap.cld-count-wrap, .cld-dislike-count-wrap.cld-count-wrap {
+            font-family: var(--primary-font);
+        }
 
-.comment-list > .comment, .comment-list > .comment:first-child {
-    // css workarround for fixed header and archor problem
-    padding-top: 80px; 
-    margin-top: -80px;
+        .cld-common-wrap {
+            min-width: 16px;
+        }
+    }
 }

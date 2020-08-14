@@ -1,6 +1,7 @@
 import Vue from "vue";
 import "./functionalities/ajax-pv";
 import "./functionalities/dark-mode";
+import "./functionalities/hash-ajust";
 import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
