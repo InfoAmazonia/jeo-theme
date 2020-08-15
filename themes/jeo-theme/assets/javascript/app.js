@@ -1,6 +1,7 @@
 import Vue from "vue";
 import "./functionalities/ajax-pv";
 import "./functionalities/dark-mode";
+import "./functionalities/hash-ajust";
 import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
@@ -131,6 +132,11 @@ window.addEventListener("DOMContentLoaded", function () {
                 jQuery("#sorting").attr("value", jQuery(this).attr("value"));
                 jQuery(this).closest("form").submit();
             });
+        }
+
+        // prevents comments from hiding when a direct comment hash is set
+        if(!(document.location.hash.length && document.location.hash.slice(1,8) == 'comment')) {
+            jQuery(".toggable-comments-form").hide();   
         }
 
         if (jQuery(".toggable-comments-area").length) {
