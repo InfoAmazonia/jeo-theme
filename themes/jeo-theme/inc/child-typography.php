@@ -128,6 +128,62 @@ function newspack_scott_custom_typography_css() {
 		}
 	';
 
+	/* Font size for mobile */
+	$theme_css .= '
+	@media screen and (max-width: 829px) {
+		h1 {
+			font-size: ' . get_theme_mod('typo_h1_size_mobile', '2') . $font_unit . $forced_size . ';
+		}
+
+		.single-post h1.entry-title{
+			font-size: ' . get_theme_mod('typo_h1_size_mobile', '2') . $font_unit . $forced_size . ';
+		}
+
+		h2 {
+			font-size: ' . get_theme_mod('typo_h2_size_mobile', '1.5') . $font_unit . $forced_size . ';
+		}
+
+		h3 {
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1.17') . $font_unit . $forced_size . ';
+		}
+
+		.wp-block-cover .wp-block-pullquote p {
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1.17') . $font_unit . '!important' . ';
+			line-height: inherit;
+		}
+		
+
+		h4 {
+			font-size: ' . get_theme_mod('typo_h4_size_mobile', '1') . $font_unit . $forced_size . ';
+		}
+
+		h5 {
+			font-size: ' . get_theme_mod('typo_h5_size_mobile', '0.83') . $font_unit . $forced_size . ';
+		}
+
+		h6 {
+			font-size: ' . get_theme_mod('typo_h6_size_mobile', '0.67') . $font_unit . $forced_size . ';
+		}
+
+		p, ul, li {
+			font-size: ' . get_theme_mod('typo_p_size_mobile', '1') . $font_unit . $forced_size . ';
+		}
+		
+		.wp-block-pullquote p{
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit . '!important'. ';
+        }
+
+		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p,
+.		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit . '!important'. ';
+		}
+		.single .post-excerpt p,
+		.post-template-single-feature .entry-content .post-excerpt p,
+		.post-template-single-wide .entry-content .post-excerpt p{
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit . '!important'. ';
+		}
+	}';
+
 	if (!empty(get_theme_mod( 'accent_font', ''))) {
 		$accent_font = wp_kses( get_theme_mod( 'accent_font'), null );
 

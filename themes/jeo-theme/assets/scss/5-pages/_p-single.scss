@@ -44,9 +44,6 @@
 
 
     .entry-content {
-        h1 {
-            font-size: 1.8em;
-        }
 
         .wp-block-newspack-blocks-homepage-articles {
             .entry-wrapper {
@@ -73,7 +70,7 @@
 
     h1.entry-title {
         @include mobile {
-            font-size: 1.8em !important;
+            /* font-size: 1.8em !important; */
             text-align: center;
         }
     }
