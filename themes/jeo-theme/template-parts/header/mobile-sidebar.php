@@ -39,6 +39,16 @@ if (newspack_is_amp()) : ?>
 		newspack_tertiary_menu();
 
 		?>
+		
+		<div class="social-menus">
+			<div class="social-menus--title">
+				<?= __("Follow us", "jeo") ?>
+			</div>
+			<?php
+			newspack_social_menu_header();
+			?>
+		</div>
+
 		<div class="more-menu">
 			<div class="more-title">
 				<?php
@@ -117,14 +127,6 @@ if (newspack_is_amp()) : ?>
 
 
 			</div>
-		</div>
-		<div class="social-menus">
-			<div class="social-menus--title">
-				<?= __("Follow us", "jeo") ?>
-			</div>
-			<?php
-			newspack_social_menu_header();
-			?>
 		</div>
 
 		<?php if (newspack_is_amp()) : ?>

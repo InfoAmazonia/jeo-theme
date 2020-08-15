@@ -103,14 +103,6 @@ function custom_newsletter_block() {
 		'all'
 	);
 
-	// wp_register_style(
-	// 	'custom-newsletter-block-style',
-	// 	get_stylesheet_directory_uri() . '/assets/javascript/blocks/newsletter/style.css',
-	// 	array(),
-	// 	filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/newsletter/style.css'),
-	// 	'all',
-	// );
-
 	register_block_type('jeo-theme/custom-newsletter-block', array(
 		'editor_script' => 'custom-newsletter-block',
 		'editor_style'  => 'custom-newsletter-block',
@@ -119,6 +111,73 @@ function custom_newsletter_block() {
 }
 
 add_action('init', 'custom_newsletter_block');
+
+
+/**
+ * Video gallery
+ */
+function custom_video_gallery() {
+
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/videoGallery.asset.php');
+
+	wp_register_script(
+		'custom-video-gallery',
+		get_stylesheet_directory_uri() . '/dist/videoGallery.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'custom-video-gallery',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/videoGallery/style.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/videoGallery/style.css'),
+		'all'
+	);
+
+	register_block_type('jeo-theme/custom-video-gallery', array(
+		'editor_script' => 'custom-video-gallery',
+		'editor_style'  => 'custom-video-gallery',
+		//'style'         => 'custom-newsletter-block',
+	));
+}
+
+add_action('init', 'custom_video_gallery');
+
+
+/**
+ * Embed template
+ */
+function custom_embed_template() {
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/embedTemplate.asset.php');
+
+	wp_register_script(
+		'custom-embed-template',
+		get_stylesheet_directory_uri() . '/dist/embedTemplate.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'custom-embed-template',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/embedTemplate/style.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/embedTemplate/style.css'),
+		'all'
+	);
+
+	register_block_type('jeo-theme/embed-template', array(
+		'editor_script' => 'custom-embed-template',
+		'editor_style'  => 'custom-embed-template',
+		//'style'         => 'custom-newsletter-block',
+	));
+}
+
+add_action('init', 'custom_embed_template');
 
 
 /**

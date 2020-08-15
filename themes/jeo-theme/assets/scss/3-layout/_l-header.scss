@@ -464,6 +464,37 @@ header.site-header {
 
     .top-header-contain {
         background-color: var(--primary);
+        height: 40px;
+        display: flex;
+        align-items: center;
+
+        div#social-nav-contain {
+            display: flex;
+        }
+
+        .language-switter {
+            div {
+                padding: 0;
+
+                ul li {
+                    margin-left: 25px;
+
+                    &.wpml-ls-current-language {
+                        border-bottom: 2px solid white;
+                        padding-bottom: 6px;
+                    }
+                    a {
+                        padding: 0;
+                        font-size: size(14);
+
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            
+        }
 
         #social-nav-contain {
             margin-right: auto;
