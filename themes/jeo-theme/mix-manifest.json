@@ -1,9 +1,7 @@
 {
     "/app.js": "/app.js",
     "/app.css": "/app.css",
-    "/embedTemplate.js": "/embedTemplate.js",
     "/imageBlock.js": "/imageBlock.js",
     "/imageGallery.js": "/imageGallery.js",
-    "/newsletter.js": "/newsletter.js",
-    "/videoGallery.js": "/videoGallery.js"
+    "/newsletter.js": "/newsletter.js"
 }
