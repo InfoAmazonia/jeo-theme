@@ -796,6 +796,21 @@
             }
         }
 
+
+        #content {
+            #primary {
+                article {
+                    .wp-block-newspack-blocks-homepage-articles {
+                        h2.entry-title {
+                            a {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         .video, .category-audio {
             .entry-title  {
                 color: white;

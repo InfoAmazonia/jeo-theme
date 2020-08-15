@@ -85,9 +85,17 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     jQuery('button[action="toggle-options"]').click(function () {
-        jQuery(this.parentNode.querySelector(".toggle-options")).toggleClass(
-            "active"
-        );
+        jQuery(this.parentNode.querySelector(".toggle-options")).toggleClass('active');
+    });
+
+    document.addEventListener('click', function(event) {
+        var isClickInsideElement = document.querySelector('button[action="toggle-options"]').contains(event.target);
+
+        if (!isClickInsideElement) {
+            if(document.querySelector(".toggle-options").classList.contains('active')) {
+                document.querySelector(".toggle-options").classList.remove('active')
+            }
+        }
     });
 
     jQuery('button.menu-btn').click(function () {
