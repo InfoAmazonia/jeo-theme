@@ -638,14 +638,22 @@
             max-width: 38%;
         }
     }
-
-
+    
     .main-content {
         .entry-subhead {
             .entry-meta {
-                justify-content: flex-start;
-                display: -webkit-box;
+                /* justify-content: flex-start;*/
+                @include desktop{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                }
 
+                .byline.single-author-opinion {
+                    @include desktop{
+                        line-height: 36px;
+                    }
+                }
                 .posted-by {
                     margin: auto size(5) auto size(5);
                 }
