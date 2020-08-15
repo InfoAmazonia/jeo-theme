@@ -151,7 +151,6 @@ function newspack_scott_custom_typography_css() {
 			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1.17') . $font_unit . '!important' . ';
 			line-height: inherit;
 		}
-		
 
 		h4 {
 			font-size: ' . get_theme_mod('typo_h4_size_mobile', '1') . $font_unit . $forced_size . ';
