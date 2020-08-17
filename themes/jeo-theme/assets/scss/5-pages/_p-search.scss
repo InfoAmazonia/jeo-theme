@@ -178,7 +178,7 @@
 
             &--itens {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(4, 25%);
                 column-gap: 14px;
 
                 @include tablet {
@@ -189,8 +189,19 @@
             &--item {
                 position: relative;
 
+                .option-filter {
+                    color: white;
+                    position: absolute;
+                    z-index: 99999;
+                    top: 36px;
+                    height: 41px;
+                    background: white;
+                    border: 0px;
+                    border-radius: 10px 10px 0 0;
+                }
+
                 select,
-                input {
+                input, .selectric {
                     height: 36px;
                     width: 100%;
                     border: 2px solid #DDDDDD;
@@ -205,10 +216,35 @@
                     line-height: 19px;
                     outline: none;
 
+                    
+
+                    b.button {
+                        display: none;
+                    }
+
+                    span {
+                        font-size: size(16);
+                        line-height: 32px;
+                    }
 
                 }
 
-                &:after {
+                .selectric-open .selectric-items {
+                    display: block;
+                    border-radius: 10px;
+                    background: white;
+                    overflow: hidden;
+                    min-width: 100%;
+                }
+
+                .selectric:after {
+                    @include triangle(bottom, 6px, 6px, var(--primary));
+                    bottom: 13px;
+                    position: absolute;
+                    right: 10px;
+                }
+
+                &:first-child:after {
                     @include triangle(bottom, 6px, 6px, var(--primary));
                     bottom: 15px;
                     position: absolute;
@@ -269,5 +305,14 @@
             color: white;
         }
 
+        form.search-form .filters--item  input {
+            color: white
+        }
+        
+        .selectric {
+            span {
+                color: white;
+            }
+        }
     }
 }

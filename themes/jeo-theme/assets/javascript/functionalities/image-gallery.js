@@ -1,4 +1,4 @@
-import SSS from './../vendor/sss/sss.min';
+import SSS from './../../vendor/sss/sss.min';
 
 window.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.image-gallery .gallery-grid').forEach(function(slider, index) {

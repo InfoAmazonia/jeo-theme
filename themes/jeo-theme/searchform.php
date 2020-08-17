@@ -42,13 +42,12 @@ $unique_id = wp_unique_id('search-form-');
 				?>
 
 				<div class="filters--item">
-					<select name="topic" id="topics">
+					<!-- <input type="text" placeholder="Testing" class="option-filter"> -->
+					<select multiple name="topic[]" id="topics">
 						<option value=""> Topics </option>
 						<?php
-						
-
 						foreach ($categories as $term) : ?>
-							<option value="<?= $term->slug ?>" <?= isset($_GET['topic']) && $_GET['topic'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
+							<option <?= (!empty($_GET['topic']) && in_array($term->slug, $_GET['topic']))? 'selected ' : ''  ?>value="<?= $term->slug ?>" <?= isset($_GET['topic']) && $_GET['topic'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
 						<?php endforeach; ?>
 					</select>
@@ -64,13 +63,13 @@ $unique_id = wp_unique_id('search-form-');
 				?>
 
 				<div class="filters--item">
-					<select name="region" id="region">
+					<select multiple name="region[]" id="region">
 						<option value=""> Regions </option>
 						<?php
 						
 
 						foreach ($categories as $term) : ?>
-							<option value="<?= $term->slug ?>" <?= isset($_GET['region']) && $_GET['region'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
+							<option <?= (!empty($_GET['region']) && in_array($term->slug, $_GET['region']))? 'selected ' : ''  ?> value="<?= $term->slug ?>" <?= isset($_GET['region']) && $_GET['region'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
 						<?php endforeach; ?>
 					</select>

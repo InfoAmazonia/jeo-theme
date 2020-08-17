@@ -1,4 +1,6 @@
 import Vue from "vue";
+
+// Functionalities
 import "./functionalities/ajax-pv";
 import "./functionalities/dark-mode";
 import "./functionalities/hash-ajust";
@@ -7,10 +9,18 @@ import "./functionalities/video-repositioning";
 import "./functionalities/header";
 import "./functionalities/cover-block";
 import "./functionalities/video-gallery";
+import "./functionalities/image-gallery";
+import "./functionalities/search-filters";
+
+// Other options
 import "./cookies";
-import "./image-gallery";
-import "./../vendor/sss/sss.min";
+
+// Vendors
+import './../vendor/selectric/selectric.min';
+
+// Components
 import ImageBlock from "./components/imageBlock/ImageBlock";
+
 
 Vue.component("image-block", ImageBlock);
 
@@ -81,9 +91,9 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        jQuery(".filters select").change(function () {
-            jQuery(this).closest("form").submit();
-        });
+        // jQuery(".filters select").change(function () {
+        //     jQuery(this).closest("form").submit();
+        // });
 
         jQuery('input[name="daterange"]').daterangepicker({
             minDate: "01/01/2010",
