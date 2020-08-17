@@ -1,9 +1,11 @@
 <section id="primary" class="content-area opinion <?php echo esc_attr(newspack_get_category_tag_classes(get_the_ID())) . ' ' . newspack_featured_image_position(); ?>">
     <main id=" main" class="site-main">
         <header>
-            <div class="entry-header">
-                <?php set_query_var('hide_post_meta', true); ?>
-                <?php get_template_part('template-parts/header/entry', 'header'); ?>
+            <div class="wrapper">
+                <div class="entry-header">
+                    <?php set_query_var('hide_post_meta', true); ?>
+                    <?php get_template_part('template-parts/header/entry', 'header'); ?>
+                </div>
             </div>
         </header>
 
