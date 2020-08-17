@@ -585,8 +585,6 @@
 
 // Opinion single style
 #primary.opinion {
-    max-width: 100%;
-    width: 100%;
     margin-top: -4rem; // neutralize father inner padding
 
     @include mobile {
@@ -597,6 +595,9 @@
         padding-top: 30px;
         padding-bottom: 60px;
         background-color: #F5F5F5;
+
+        margin: 0 calc( 50% - 50vw);
+        width: 100vw;
 
         .cat-links {
             display: flex;
@@ -633,23 +634,11 @@
         }
     }
 
-
-    .entry-header {
-        @include desktop {
-            max-width: 38%;
-        }
-    }
-
-
     .main-content {
         .entry-subhead {
             .entry-meta {
                 justify-content: flex-start;
             }
-        }
-
-        @include desktop {
-            max-width: 38%;
         }
 
         @include mobile {
