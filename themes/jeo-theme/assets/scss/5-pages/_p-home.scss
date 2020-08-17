@@ -90,6 +90,16 @@
         border-radius: 40px;
         padding: 35px 113px;
         min-height: auto;
+        .mc4wp-response {
+            p {
+                font-family: var(--primary-font);
+                color: var(--primary);
+                font-size: 0.875rem;
+                line-height: normal;
+                margin: 0px;
+                text-align:center;
+            }
+        }
 
         @include mobile {
             padding: 30px 20px 10px;
