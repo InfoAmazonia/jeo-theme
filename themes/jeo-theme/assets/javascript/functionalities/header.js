@@ -90,8 +90,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener('click', function(event) {
         var isClickInsideElement = document.querySelector('button[action="toggle-options"]').contains(event.target);
-
-        if (!isClickInsideElement) {
+        if (!isClickInsideElement && !['increase-size', 'decrease-size'].includes(event.target.getAttribute('action'))) {
             if(document.querySelector(".toggle-options").classList.contains('active')) {
                 document.querySelector(".toggle-options").classList.remove('active')
             }
