@@ -5,7 +5,6 @@ import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
 import "./functionalities/cover-block";
-import "./functionalities/twitter-social-media-preview";
 import "./cookies";
 import "./image-gallery";
 import "./../vendor/sss/sss.min";

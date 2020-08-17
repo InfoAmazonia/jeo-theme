@@ -8,12 +8,65 @@
  *
  * @package Newspack
  */
+
+global $post;
+$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+$post_title = wp_kses_post(get_the_title());
+
+$parent_type_category = get_category_by_slug('type')->cat_ID;
+$post_categories = get_the_category();
+$post_child_category = null;
+
+foreach($post_categories as $post_cat) {
+	if ($parent_type_category == $post_cat->parent) {
+		$post_child_category = $post_cat;
+		break;
+	}
+}
+
+$authors = get_coauthors();
+$author_count = count($authors);
+$twitter_nicknames_text = ', by ';
+
+$i = 1;
+foreach ($authors as $author) {
+	
+	$i++;
+	if ($author_count === $i) :
+		/* translators: separates last two author names; needs a space on either side. */
+		$sep = esc_html__(' and ', 'newspack');
+	elseif ($author_count > $i) :
+		/* translators: separates all but the last two author names; needs a space at the end. */
+		$sep = esc_html__(', ', 'newspack');
+	else :
+		$sep = '';
+	endif;
+
+	if(esc_attr( get_the_author_meta( 'twitter', $author->ID ) )) {
+		$twitter_nicknames_text .= '@' . esc_attr( get_the_author_meta( 'twitter', $author->ID ) ) . $sep;
+	} else {
+		$twitter_nicknames_text .=  get_the_author_meta( 'display_name', $author->ID ) . $sep;
+	}
+}
+
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
+
+	<?php if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['video'])): ?>
+		<?php if ($post_child_category->slug === 'video') : ?>
+			<meta name="twitter:card" content="player" />
+			<meta name="twitter:title" content="<?php echo $post_title, $twitter_nicknames_text; ?>" />
+			<meta name="twitter:site" content="" />
+			<meta name="twitter:player" content="<?php echo get_post_meta($post->ID, 'twitter-opinion-video', true); ?>" />
+			<meta name="twitter:player:width" content="720" />
+			<meta name="twitter:player:height" content="720" />
+			<meta name="twitter:image" content="<?php echo esc_url($featured_img_url); ?>" />
+		<?php endif; ?>
+	<?php endif; ?>
 
 	<?php wp_head(); ?>
 </head>

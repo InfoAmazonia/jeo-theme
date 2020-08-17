@@ -1,15 +1,3 @@
-<?php 
-    $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
-    $post_title = wp_kses_post(get_the_title());
-?>
-
-<meta name="twitter:card" content="player" />
-<meta name="twitter:title" content="<?php echo $post_title; ?>" />
-<meta name="twitter:site" content="" />
-<meta name="twitter:player:width" content="720" />
-<meta name="twitter:player:height" content="720" />
-<meta name="twitter:image" content="<?php echo esc_url($featured_img_url); ?>" />
-
 <section id="primary" class="content-area video <?php echo esc_attr(newspack_get_category_tag_classes(get_the_ID())) . ' ' . newspack_featured_image_position(); ?>">
     <main id=" main" class="site-main">
         <header>
