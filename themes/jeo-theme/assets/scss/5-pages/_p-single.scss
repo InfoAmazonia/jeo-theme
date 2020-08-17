@@ -463,10 +463,10 @@
 
     .related-posts {
 
-        @include desktop {
+        /*@include desktop {
             margin-left: calc(50% - 35vw);
             margin-right: calc(50% - 35vw)
-        }
+        }*/
 
         .title-section {
             text-transform: uppercase;
