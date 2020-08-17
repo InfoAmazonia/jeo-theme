@@ -85,16 +85,40 @@ function newspack_posted_by()
 			} else {
 				$author_avatar = coauthors_get_avatar($author, 80);
 			}
-
-			//echo '<span class="author-avatar">' . wp_kses( $author_avatar, newspack_sanitize_avatars() ) . '</span>';
 		}
 	?>
+	<?php
+		$parent_type_category = get_category_by_slug('type')->cat_ID;
+		$post_categories = get_the_category();
+		$post_child_category = null;
+		foreach ($post_categories as $post_cat) {
+			if ($parent_type_category == $post_cat->parent) {
+				$post_child_category = $post_cat;
+				break;
+			}
+		}
+		$isOpinionPost = isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['opinion']);
+		$showAuthorAvatar = $author_count === 1 && $isOpinionPost;
 
-		<span class="byline">
+	?>
+		<span class="<?php echo !$showAuthorAvatar ? 'byline' : 'byline single-author-opinion'; ?>">
 			<span><?php echo esc_html__('By', 'newspack'); ?></span>
 			<?php
 			foreach ($authors as $author) {
+				if ('guest-author' === get_post_type($author->ID)) {
+					if (get_post_thumbnail_id($author->ID)) {
+						$author_avatar = coauthors_get_avatar($author, 80);
+					} else {
+						// If there is no avatar, force it to return the current fallback image.
+						$author_avatar = get_avatar(' ');
+					}
+				} else {
+					$author_avatar = coauthors_get_avatar($author, 80);
+				}
 
+				if ($showAuthorAvatar):
+					echo '<span class="author-avatar">' . wp_kses( $author_avatar, newspack_sanitize_avatars() ) . '</span>';
+				endif;
 				$i++;
 				if ($author_count === $i) :
 					/* translators: separates last two author names; needs a space on either side. */

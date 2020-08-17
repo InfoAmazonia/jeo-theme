@@ -44,11 +44,12 @@
     }
 }
 
-figure.wp-block-pullquote.alignright.has-background.is-style-solid-color {
+figure.wp-block-pullquote.alignright.has-background.is-style-solid-color,
+figure.wp-block-pullquote.alignright.is-style-solid-color {
 
     /* margin-right: 0px; */
     p {
-        padding: 60px 0px 30px !important;
+        padding: 90px 0px 30px !important;
     }
 
     @include mobile {
@@ -58,11 +59,12 @@ figure.wp-block-pullquote.alignright.has-background.is-style-solid-color {
     }
 }
 
-figure.wp-block-pullquote.alignleft.has-background.is-style-solid-color {
+figure.wp-block-pullquote.alignleft.has-background.is-style-solid-color,
+figure.wp-block-pullquote.alignleft.is-style-solid-color {
 
     /* margin-left: 0px; */
     p {
-        padding: 60px 0px 30px !important;
+        padding: 90px 0px 30px !important;
     }
 
     @include mobile {
@@ -78,7 +80,8 @@ figure.wp-block-pullquote.alignleft.has-background.is-style-solid-color {
 .wp-block-pullquote.is-style-jeo,
 .wp-block-pullquote.is-style-solid-color {
     font-family: var(--featured_font);
-    padding: 1rem calc(2 * 1rem);
+    /* padding: 1rem calc(2 * 1rem); */
+    padding: 30px !important;
 
     blockquote {
         margin: 0px;
@@ -94,6 +97,7 @@ figure.wp-block-pullquote.alignleft.has-background.is-style-solid-color {
                 font-weight: 600;
                 font-size: size(60);
                 left: 2rem !important;
+                top: 40px;
             }
         }
 
