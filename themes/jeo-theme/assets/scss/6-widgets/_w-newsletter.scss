@@ -192,11 +192,6 @@
     }
 
     form {
-
-        div {
-            // display: flex;
-        }
-
         input {
             width: calc(100% - 77px) !important;
             background-color: unset;
@@ -294,7 +289,14 @@
     }
 
     .mc4wp-form-fields {
-        border: 2px solid #1779B5;
+
+        & > div {
+            border: 2px solid #1779B5;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            max-width: 100%;
+
+        }
     }
 
 }
