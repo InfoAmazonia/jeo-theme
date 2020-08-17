@@ -11,10 +11,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
             if (!jQuery("header #header-search").hasClass("fixed")) {
                 jQuery("header #header-search").addClass("fixed");
-                jQuery("header #header-search").css("top", 50 + "px");
+                jQuery("header #header-search").css("top", 0 + "px");
+                jQuery("header #header-search").css("padding-top", 50 + "px");
                 jQuery("header #header-search").css(
                     "height",
-                    jQuery(window).height() - 50 + "px"
+                    jQuery(window).height()
                 );
             }
         } else {
@@ -29,13 +30,6 @@ window.addEventListener("DOMContentLoaded", function () {
                     document.querySelector(".bottom-header-contain.desktop-only")
                         .offsetTop +
                     50 +
-                    "px"
-                );
-                jQuery("header #header-search").css(
-                    "height",
-                    jQuery(window).height() -
-                    document.querySelector(".bottom-header-contain.desktop-only")
-                        .offsetTop +
                     "px"
                 );
             }
