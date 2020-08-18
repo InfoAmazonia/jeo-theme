@@ -53,7 +53,7 @@ else:
 	$twitter_nicknames_text = '';
 endif;
 
-$urlTweetShare = urlencode(esc_html(get_the_title()) . ' ' . get_the_permalink() . $twitter_nicknames_text);
+$urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitter_nicknames_text);
 
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
