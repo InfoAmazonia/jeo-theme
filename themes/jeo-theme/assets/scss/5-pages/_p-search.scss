@@ -200,14 +200,17 @@
                     border-radius: 10px 10px 0 0;
                 }
 
-                select,
-                input, .selectric {
+                select, & > input {
                     height: 36px;
+                    padding: 0 12px;
+                }
+
+                select,
+                & > input, .select2-container--default .select2-selection--multiple {
                     width: 100%;
                     border: 2px solid #DDDDDD;
                     border-radius: 10px;
                     background-color: transparent;
-                    padding: 0 12px;
                     color: #555D66;
                     font-size: size(16);
                     font-weight: bold;
@@ -216,40 +219,31 @@
                     line-height: 19px;
                     outline: none;
 
-                    
+                }
 
-                    b.button {
-                        display: none;
+                .select2-selection__choice {
+                    background-color: var(--primary-lighter-75);
+                    color: var(--primary);
+                    border: 0;
+                    font-size: size(16);
+                    font-weight: normal;
+                    padding: 2px 4px 2px 0;
+
+                    button.select2-selection__choice__remove {
+                        position: initial;
+                        line-height: unset;
+                        border: 0;
+                        color: var(--primary);
+                        padding-left: 7px;
+
+                        &:hover {
+                            background: none;
+                        }
                     }
-
-                    span {
-                        font-size: size(16);
-                        line-height: 32px;
-                    }
-
                 }
 
-                .selectric-open .selectric-items {
-                    display: block;
-                    border-radius: 10px;
-                    background: white;
-                    overflow: hidden;
-                    min-width: 100%;
-                }
 
-                .selectric:after {
-                    @include triangle(bottom, 6px, 6px, var(--primary));
-                    bottom: 13px;
-                    position: absolute;
-                    right: 10px;
-                }
-
-                &:first-child:after {
-                    @include triangle(bottom, 6px, 6px, var(--primary));
-                    bottom: 15px;
-                    position: absolute;
-                    right: 10px;
-                }
+                
 
                 @include tablet {
                     margin-bottom: 15px;
@@ -262,7 +256,6 @@
 }
 
 .search-form {
-
     label[for=search-form-3],
     label[for=search-form-2],
     label[for=search-form-1] {
@@ -294,6 +287,21 @@
 
     .daterangepicker_input i {
         top: 5px;
+    }
+}
+
+
+.select2-dropdown {
+    li.select2-results__option.select2-results__option--selectable.select2-results__option--highlighted {
+        background-color: var(--primary);
+    }
+
+    .select2-results__option--selected {
+        background-color: rgba(94, 94, 94, 0.07);
+    }
+
+    .select2-results__option--selectable {
+        font-size: size(16);
     }
 }
 

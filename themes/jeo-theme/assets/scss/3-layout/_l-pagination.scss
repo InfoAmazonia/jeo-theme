@@ -36,6 +36,12 @@ nav[role=navigation].navigation.pagination {
     padding: 0.3rem 0.75rem 0.4rem 0.75rem;
 }
 
+.circle span.page-numbers.current {
+    width: 38px;
+    height: 38px;
+}
+
+
 .dark-theme {
         .nav-links {
             a {

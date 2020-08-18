@@ -16,7 +16,8 @@ import "./functionalities/search-filters";
 import "./cookies";
 
 // Vendors
-import './../vendor/selectric/selectric.min';
+// import './../vendor/selectric/selectric.min';
+import './../vendor/select2/select2.min';
 
 // Components
 import ImageBlock from "./components/imageBlock/ImageBlock";

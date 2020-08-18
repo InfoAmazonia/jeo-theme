@@ -63,7 +63,7 @@ $unique_id = wp_unique_id('search-form-');
 				?>
 
 				<div class="filters--item">
-					<select multiple name="region[]" id="region">
+					<select multiple name="region[]" id="regions">
 						<option value=""> Regions </option>
 						<?php
 						
