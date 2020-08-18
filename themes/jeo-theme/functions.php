@@ -111,8 +111,31 @@ function _search_pre_get_posts($query) {
 		//var_dump($query);
 
 	}
+
 	return $query;
 }
+
+add_filter('pre_get_posts', 'feed_rss_filter', 2);
+function feed_rss_filter($query) {
+	if($query->is_feed) {
+		$query->set('meta_query', array(
+				'relation' => 'OR',
+				array(
+					'key'     => 'external-source-link',
+					'compare' => 'NOT EXISTS',
+				),
+
+				array(
+					'key'     => 'external-source-link',
+					'value'   => '',
+					'compare' => '=',
+				),
+			)
+		);
+	}
+	return $query;
+}
+
 
 
 function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args) {

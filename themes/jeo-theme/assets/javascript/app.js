@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
         .querySelectorAll("article > .entry-wrapper > h2 > a")
         .forEach((element) => {
             const targetLink = element.getAttribute("href");
-
+            
             try {
                 element.parentElement.parentElement.parentElement.querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
 
@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     metaarea.insertBefore(externalSourceLink, metaarea.firstChild);
                 }
             } catch (err) {
-                //console.log("Invalid link: ", targetLink);
+                // console.log("Invalid link: ", targetLink);
             }
         });
 });
