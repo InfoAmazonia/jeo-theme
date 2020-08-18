@@ -10,6 +10,15 @@ function register_metaboxes() {
 	);
 
 	add_meta_box(
+		'twitter-opinion-video',
+		'Twitter video preview',
+		'twitter_opinion_video_callback',
+		'post',
+		'side',
+		'default',
+	);
+
+	add_meta_box(
 		'erratum-block',
 		__('Sorry, we said wrong', 'jeo'),
 		'display_erratum_block',
@@ -41,6 +50,42 @@ function display_autor_bio_callback() {
 
 		</div>
 	</p>
+
+<?php
+}
+
+function twitter_opinion_video_callback() {
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());
+
+	$parent_type_category = get_category_by_slug('type')->cat_ID;
+	$post_categories = get_the_category();
+	$post_child_category = null;
+
+	foreach ($post_categories as $post_cat) {
+		if ($parent_type_category == $post_cat->parent) {
+			$post_child_category = $post_cat;
+			break;
+		}
+	}
+?>
+<?//php if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['video'])): 
+	if(true):
+?>
+	<?//php if ($post_child_category->slug === 'video') : 
+		if (true):
+	?>
+		<p>
+			<span class="jeo-row-title"><?php _e('Video URL to be shown on twitter sharing preview: ', 'jeo') ?></span>
+			<div class="jeo-row-content">
+				<label for="twitter-opinion-video">
+					<input placeholder="Requires https://" type="text" name="twitter-opinion-video" id="twitter-opinion-video" value="<?php if (isset($jeo_stored_meta['twitter-opinion-video'])) echo $jeo_stored_meta['twitter-opinion-video'][0]; ?>"  />
+				</label>
+			</div>
+		</p>
+	<?php endif; ?>
+<?php endif; ?>
+	
 
 <?php
 }
@@ -128,6 +173,10 @@ function meta_save($post_id) {
 
 	if (isset($_POST['external-source-link'])) {
 		update_post_meta($post_id, 'external-source-link', $_POST['external-source-link']);
+	}
+
+	if (isset($_POST['twitter-opinion-video'])) {
+		update_post_meta($post_id, 'twitter-opinion-video', $_POST['twitter-opinion-video']);
 	}
 
 	if (isset($_POST['external-title'])) {
