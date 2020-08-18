@@ -114,19 +114,22 @@ function newspack_scott_custom_typography_css() {
 		}
 		
 		.wp-block-pullquote p{
-			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit .  $forced_size . ';
         }
 
 		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p,
 .		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
-			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit .  $forced_size . ';
 		}
 		.single .post-excerpt p,
 		.post-template-single-feature .entry-content .post-excerpt p,
 		.post-template-single-wide .entry-content .post-excerpt p{
-			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size', '1') . $font_unit .  $forced_size . ';
 		}
 	';
+
+	$font_unit = get_theme_mod('typo_unit_mobile', 'em');
+	$forced_size = get_theme_mod('typo_important_mobile')? '!important' : '';
 
 	/* Font size for mobile */
 	$theme_css .= '
@@ -148,7 +151,7 @@ function newspack_scott_custom_typography_css() {
 		}
 
 		.wp-block-cover .wp-block-pullquote p {
-			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1.17') . $font_unit . '!important' . ';
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1.17') . $font_unit . $forced_size . ';
 			line-height: inherit;
 		}
 
@@ -169,17 +172,17 @@ function newspack_scott_custom_typography_css() {
 		}
 		
 		.wp-block-pullquote p{
-			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit .  $forced_size . ';
         }
 
 		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p,
 .		figure.wp-block-pullquote.alignright.has-background.is-style-solid-color p{
-			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit .  $forced_size . ';
 		}
 		.single .post-excerpt p,
 		.post-template-single-feature .entry-content .post-excerpt p,
 		.post-template-single-wide .entry-content .post-excerpt p{
-			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit . '!important'. ';
+			font-size: ' . get_theme_mod('typo_h3_size_mobile', '1') . $font_unit .  $forced_size . ';
 		}
 	}';
 

@@ -353,7 +353,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_setting(
 		'typo_unit',
 		array(
-			'default'  => 'em',
+			'default'  => 'rem',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -531,7 +531,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_setting(
 		'typo_unit_mobile',
 		array(
-			'default'  => 'em',
+			'default'  => 'rem',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
