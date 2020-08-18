@@ -1,50 +1,9 @@
 header.site-header {
     .menu-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        position: relative;
-        z-index: 10;
-        transition: background-color .35s ease;
-        outline: none;
-        width: 30px;
-        height: 10px;
-        margin: auto;
-
-
-        &:before {
-            content: "";
-            display: block;
-            width: 16px;
-            position: relative;
-            border-bottom: 0.2em solid #333;
-            margin-bottom: 0.2em;
-            transition: transform .35s ease, border .25s ease, -webkit-transform .35s ease;
-
-            @include tablet {
-                /* background: var(--search-icon-color);*/
-                border-bottom: 2px solid var(--search-icon-color);
-            }
-        }
-
-        &:after {
-            content: "";
-            display: block;
-            width: 16px;
-            position: relative;
-            height: 0.6em;
-            border-top: 0.2em solid #333;
-            border-bottom: 0.2em solid #333;
-            transition: transform .35s ease, border .25s ease, -webkit-transform .35s ease;
-
-            @include tablet {
-                border-top: 2px solid var(--search-icon-color);
-                border-bottom: 2px solid var(--search-icon-color);
-            }
+        span.close {
+            display: none;
         }
     }
-
 
     #site-navigation {
         text-align: left !important;
@@ -818,29 +777,12 @@ header.site-header {
 
 .mobile-menu-opened header.site-header {
     .menu-btn {
-        height: 0px;
-
-        &:before {
-            transform: rotate(-45deg);
-            top: 1px;
-            background: #3d3d3d;
-            margin-bottom: 0px;
-
-            @include tablet {
-                background: var(--search-icon-color);
-            }
+        span.close {
+            display: block;
         }
 
-        &:after {
-            border-top: 2px solid #3d3d3d;
-            border-bottom: 0px;
-            height: 2px;
-            top: -1px;
-            transform: rotate(45deg);
-
-            @include tablet {
-                border-top: 2px solid var(--search-icon-color);
-            }
+        span.menu-open {
+            display: none;
         }
     }
 
