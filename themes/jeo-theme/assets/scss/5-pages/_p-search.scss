@@ -334,6 +334,12 @@
             }
         }
 
+        .no-results.not-found {
+            p {
+                color: white
+            }
+        }
+
         form.search-form .filters--item .select2-selection__choice {
             background-color: var(--primary-opacity-1);
         }
