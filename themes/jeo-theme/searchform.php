@@ -29,7 +29,7 @@ $unique_id = wp_unique_id('search-form-');
 			<div class="filters--itens">
 
 				<div class="filters--item">
-					<input type="text" value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" autocomplete="off" placeholder="Date range" name="daterange">
+					<input type="text" readonly value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" autocomplete="off" placeholder="Date range" name="daterange">
 				</div>
 
 				<?php 
