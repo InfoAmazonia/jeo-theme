@@ -29,6 +29,13 @@ html {
     font-size: 16px;
 }
 
+body {
+    article a.external-link {
+        color: var(--primary);
+        padding-right: 15px;
+    }
+}
+
 .wp-block-newspack-blocks-homepage-articles {
     h2.article-section-title {
         font-size: size(18) !important;
