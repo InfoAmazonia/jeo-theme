@@ -51,7 +51,6 @@ foreach ($authors as $author) {
 
 $urlTweetShare = get_the_title() . ' ' . get_the_permalink() . $twitter_nicknames_text;
 
-
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
