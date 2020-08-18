@@ -208,6 +208,7 @@
                 select,
                 & > input, .select2-container--default .select2-selection--multiple {
                     width: 100%;
+                    min-height: 36px;
                     border: 2px solid #DDDDDD;
                     border-radius: 10px;
                     background-color: transparent;
@@ -219,6 +220,16 @@
                     line-height: 19px;
                     outline: none;
 
+                }
+
+                .select2-search__field {
+                    color: #555D66;
+                    font-size: size(16);
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    line-height: 22px;
+                    outline: none;
+                    padding-left: 6px;
                 }
 
                 .select2-selection__choice {
