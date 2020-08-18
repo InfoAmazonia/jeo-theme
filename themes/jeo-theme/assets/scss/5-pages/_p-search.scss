@@ -178,7 +178,7 @@
 
             &--itens {
                 display: grid;
-                grid-template-columns: repeat(4, 25%);
+                grid-template-columns: repeat(3, 33.33%);
                 column-gap: 14px;
 
                 @include tablet {
