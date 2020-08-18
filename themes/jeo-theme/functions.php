@@ -117,22 +117,22 @@ function _search_pre_get_posts($query) {
 
 add_filter('pre_get_posts', 'feed_rss_filter', 2);
 function feed_rss_filter($query) {
-	if($query->is_feed) {
+	if ($query->is_feed) {
 		$query->set('meta_query', array(
-				'relation' => 'OR',
-				array(
-					'key'     => 'external-source-link',
-					'compare' => 'NOT EXISTS',
-				),
+			'relation' => 'OR',
+			array(
+				'key'     => 'external-source-link',
+				'compare' => 'NOT EXISTS',
+			),
 
-				array(
-					'key'     => 'external-source-link',
-					'value'   => '',
-					'compare' => '=',
-				),
-			)
-		);
+			array(
+				'key'     => 'external-source-link',
+				'value'   => '',
+				'compare' => '=',
+			),
+		));
 	}
+
 	return $query;
 }
 
@@ -157,21 +157,20 @@ if (!function_exists('jeo_comment_form')) {
 }
 
 function remove_website_field($fields) {
-    unset($fields['url']);
-    return $fields;
+	unset($fields['url']);
+	return $fields;
 }
 add_filter('comment_form_default_fields', 'remove_website_field');
 
 
 // its suppose to fix (https://github.com/WordPress/gutenberg/issues/18098)
 global $wp_embed;
-add_filter( 'the_content', array( $wp_embed, 'autoembed' ), 9 );
+add_filter('the_content', array($wp_embed, 'autoembed'), 9);
 
-add_filter( 'comment_form_fields', 'move_comment_field' );
-function move_comment_field( $fields ) {
-    $comment_field = $fields['comment'];
-    unset( $fields['comment'] );
-    $fields['comment'] = $comment_field;
-    return $fields;
+add_filter('comment_form_fields', 'move_comment_field');
+function move_comment_field($fields) {
+	$comment_field = $fields['comment'];
+	unset($fields['comment']);
+	$fields['comment'] = $comment_field;
+	return $fields;
 }
-
