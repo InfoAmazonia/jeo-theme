@@ -29,27 +29,31 @@ $author_count = count($authors);
 $twitter_nicknames_text = ', by ';
 
 $i = 1;
-foreach ($authors as $author) {
-	
-	$i++;
-	if ($author_count === $i) :
-		/* translators: separates last two author names; needs a space on either side. */
-		$sep = esc_html__(' and ', 'newspack');
-	elseif ($author_count > $i) :
-		/* translators: separates all but the last two author names; needs a space at the end. */
-		$sep = esc_html__(', ', 'newspack');
-	else :
-		$sep = '';
-	endif;
+if (get_post_meta(get_the_ID(), 'author-bio-display', true)) :
+	foreach ($authors as $author) {
+		
+		$i++;
+		if ($author_count === $i) :
+			/* translators: separates last two author names; needs a space on either side. */
+			$sep = esc_html__(' and ', 'newspack');
+		elseif ($author_count > $i) :
+			/* translators: separates all but the last two author names; needs a space at the end. */
+			$sep = esc_html__(', ', 'newspack');
+		else :
+			$sep = '';
+		endif;
 
-	if(esc_attr( get_the_author_meta( 'twitter', $author->ID ) )) {
-		$twitter_nicknames_text .= '@' . esc_attr( get_the_author_meta( 'twitter', $author->ID ) ) . $sep;
-	} else {
-		$twitter_nicknames_text .=  get_the_author_meta( 'display_name', $author->ID ) . $sep;
+		if(esc_attr( get_the_author_meta( 'twitter', $author->ID ) )) {
+			$twitter_nicknames_text .= '@' . esc_attr( get_the_author_meta( 'twitter', $author->ID ) ) . $sep;
+		} else {
+			$twitter_nicknames_text .=  get_the_author_meta( 'display_name', $author->ID ) . $sep;
+		}
 	}
-}
+else:
+	$twitter_nicknames_text = '';
+endif;
 
-$urlTweetShare = get_the_title() . ' ' . get_the_permalink() . $twitter_nicknames_text;
+$urlTweetShare = urlencode(esc_html(get_the_title()) . ' ' . get_the_permalink() . $twitter_nicknames_text);
 
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
@@ -139,7 +143,7 @@ endif;
                         <p class="title">	<?php echo wp_kses_post( get_the_title() ); ?></p>
                         <div class="page--share">
 							<div class="twitter">
-								<a href="https://twitter.com/intent/tweet?text=<?=urlencode($urlTweetShare)?>" target="_blank"><i class="fab fa-twitter"></i></a>
+								<a href="https://twitter.com/intent/tweet?text=<?=$urlTweetShare?>" target="_blank"><i class="fab fa-twitter"></i></a>
 							</div>
 							<div class="facebook">
 								<a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_the_permalink() ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -339,7 +343,7 @@ endif;
                         <div class="page--share">
 							
 							<div class="twitter">
-								<a href="https://twitter.com/intent/tweet?text=<?=urlencode($urlTweetShare)?>" target="_blank"><i class="fab fa-twitter"></i></a>
+								<a href="https://twitter.com/intent/tweet?text=<?=$urlTweetShare?>" target="_blank"><i class="fab fa-twitter"></i></a>
 							</div>
 							<div class="facebook">
 								<a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_the_permalink() ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
