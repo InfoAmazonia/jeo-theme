@@ -16,5 +16,21 @@
 			} );			
 		} );
 
+		// Only show image selector when the custom option is selected
+		wp.customize( 'decoration_style', function( setting ) {
+			wp.customize.control( 'decoration_style_background_image', function( control ) {
+				const visibility = function() {
+					if ( 'custom' === setting.get() ) {
+						control.container.slideDown( 180 );
+					} else {
+						control.container.slideUp( 180 );
+					}
+				};
+
+				visibility();
+				setting.bind( visibility );
+			} );			
+		} );
+
 	} );
 } )( jQuery );

@@ -70,7 +70,7 @@
 
     h1.entry-title {
         @include mobile {
-            font-size: 1.8em !important;
+            /* font-size: 1.8em !important; */
             text-align: center;
         }
     }
@@ -460,10 +460,10 @@
 
     .related-posts {
 
-        @include desktop {
+        /*@include desktop {
             margin-left: calc(50% - 35vw);
             margin-right: calc(50% - 35vw)
-        }
+        }*/
 
         .title-section {
             text-transform: uppercase;
@@ -582,8 +582,6 @@
 
 // Opinion single style
 #primary.opinion {
-    max-width: 100%;
-    width: 100%;
     margin-top: -4rem; // neutralize father inner padding
 
     @include mobile {
@@ -594,6 +592,9 @@
         padding-top: 30px;
         padding-bottom: 60px;
         background-color: #F5F5F5;
+
+        margin: 0 calc( 50% - 50vw);
+        width: 100vw;
 
         .cat-links {
             display: flex;
@@ -629,24 +630,40 @@
             }
         }
     }
-
-
+  
     .entry-header {
         @include desktop {
             max-width: 38%;
         }
     }
 
-
     .main-content {
         .entry-subhead {
             .entry-meta {
-                justify-content: flex-start;
-            }
-        }
+                /* justify-content: flex-start;*/
+                @include desktop{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                }
 
-        @include desktop {
-            max-width: 38%;
+                .byline.single-author-opinion {
+                    @include desktop{
+                        line-height: 36px;
+                    }
+                }
+                .posted-by {
+                    margin: auto size(5) auto size(5);
+                }
+
+                .author-avatar img {
+                    border-radius: 50%;
+                }
+
+                .avatar-default {
+                    display: none;
+                }
+            }
         }
 
         @include mobile {
@@ -778,6 +795,21 @@
         &:not(.has-featured-image), &:not(.single-featured-image-behind) {
             .entry-title  {
                 color: white;
+            }
+        }
+
+
+        #content {
+            #primary {
+                article {
+                    .wp-block-newspack-blocks-homepage-articles {
+                        h2.entry-title {
+                            a {
+                                color: white;
+                            }
+                        }
+                    }
+                }
             }
         }
 

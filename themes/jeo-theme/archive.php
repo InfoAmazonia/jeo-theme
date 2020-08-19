@@ -12,7 +12,7 @@ get_header();
 	<?php if ( is_author() ): ?>
 		<header class="page-header author"> 
 			<div class="author-main-content">
-			<h1 class="page-title article-section-title mobile-author-label">Author</h1>
+			<h1 class="page-title article-section-title mobile-author-label"><?php _e('Author', 'jeo') ?></h1>
 
 				<?php
 					$queried       = get_queried_object();
@@ -41,7 +41,7 @@ get_header();
 					}
 				?>
 				<div class="author-content">
-					<h1 class="page-title article-section-title desktop-author-label">Author</h1>
+					<h1 class="page-title article-section-title desktop-author-label"><?php _e('Author', 'jeo') ?></h1>
 					<h1><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h1>
 					<?php newspack_author_social_links( get_the_author_meta( 'ID' ), 28 ); ?>
 				</div>
@@ -83,7 +83,7 @@ get_header();
     			<div>
 					<div class="about-the-author-section d-none d-sm-block">
 						<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
-							<h4>ABOUT THE AUTHOR</h4>
+							<h4><?php _e('ABOUT THE AUTHOR', 'jeo') ?></h4>
 							<p><?php echo get_the_author_meta('description'); ?></p>
 						<?php endif; ?>
 					</div>

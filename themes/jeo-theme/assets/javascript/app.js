@@ -1,26 +1,44 @@
 import Vue from "vue";
+
+// Functionalities
 import "./functionalities/ajax-pv";
 import "./functionalities/dark-mode";
+import "./functionalities/hash-ajust";
 import "./functionalities/audio-player";
 import "./functionalities/video-repositioning";
 import "./functionalities/header";
 import "./functionalities/cover-block";
+import "./functionalities/video-gallery";
+import "./functionalities/image-gallery";
+import "./functionalities/search-filters";
+
+// Other options
 import "./cookies";
-import "./image-gallery";
-import "./../vendor/sss/sss.min";
+
+// Vendors
+// import './../vendor/selectric/selectric.min';
+import './../vendor/select2/select2.min';
+
+// Components
 import ImageBlock from "./components/imageBlock/ImageBlock";
+
 
 Vue.component("image-block", ImageBlock);
 
 window.addEventListener("DOMContentLoaded", function () {
     // External source post API magic <3
     const siteLinks = document
-        .querySelectorAll("article > .entry-wrapper > h2 > a")
+        .querySelectorAll("article .entry-title > a")
         .forEach((element) => {
             const targetLink = element.getAttribute("href");
+            // console.log(element);
 
             try {
-                element.parentElement.parentElement.parentElement.querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
+                try {
+                    element.closest('article').querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
+                } catch {
+                    // console.log('post has no image')
+                }
 
                 const targetLinkSource = new URL(targetLink).origin;
                 if (document.location.origin !== targetLinkSource) {
@@ -47,13 +65,12 @@ window.addEventListener("DOMContentLoaded", function () {
                         },
                     });
 
-                    const metaarea = element.parentElement.parentElement.querySelector(
-                        ".entry-meta"
-                    );
+                    const metaarea = element.closest("article").querySelector('.entry-meta');
                     metaarea.insertBefore(externalSourceLink, metaarea.firstChild);
                 }
             } catch (err) {
-                //console.log("Invalid link: ", targetLink);
+                console.log(err);
+                // console.log("Invalid link: ", targetLink);
             }
         });
 });
@@ -78,58 +95,9 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-
-        jQuery(".filters select").change(function () {
-            jQuery(this).closest("form").submit();
-        });
-
-        jQuery('input[name="daterange"]').daterangepicker({
-            minDate: "01/01/2010",
-            maxDate: new Date(),
-            autoUpdateInput: false,
-            locale: {
-                cancelLabel: "Clear",
-            },
-        });
-
-        // Search fields
-        jQuery('input[name="daterange"]').on("apply.daterangepicker", function (
-            ev,
-            picker
-        ) {
-            jQuery(this).val(
-                picker.startDate.format("MM/DD/YYYY") +
-                " - " +
-                picker.endDate.format("MM/DD/YYYY")
-            );
-
-            jQuery(this).closest('form').submit();
-        });
-
-        jQuery('input[name="daterange"]').on("cancel.daterangepicker", function (
-            ev,
-            picker
-        ) {
-            jQuery(this).val("");
-        });
-
-        if (jQuery('input[name="daterange"]').attr("replace-empty") === "true") {
-            jQuery('input[name="daterange"]').val("");
-        }
-
-        if (jQuery(".sorting-method").length) {
-            jQuery(".sorting-method .current").click(function () {
-                jQuery(".sorting-method .options").toggleClass("active");
-                jQuery("#sorting").attr(
-                    "value",
-                    jQuery(".sorting-method .options button").attr("value")
-                );
-            });
-
-            jQuery(".sorting-option").click(function () {
-                jQuery("#sorting").attr("value", jQuery(this).attr("value"));
-                jQuery(this).closest("form").submit();
-            });
+        // prevents comments from hiding when a direct comment hash is set
+        if(!(document.location.hash.length && document.location.hash.slice(1,8) == 'comment')) {
+            jQuery(".toggable-comments-form").hide();   
         }
 
         if (jQuery(".toggable-comments-area").length) {

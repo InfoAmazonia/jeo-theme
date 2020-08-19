@@ -52,14 +52,14 @@ class newsletter_widget extends WP_Widget {
 ?>
 	<? if ($instance) : ?>
 		<div class="category-page-sidebar">
-			<div class="newsletter <?= $instance['model_type'] ?> <?= $instance['custom_style'] ?>">
+			<div class="newsletter <?= _e($instance['model_type'], 'jeo') ?> <?= $instance['custom_style'] ?>">
 				<?= ($instance['model_type'] == 'horizontal') ? '<div>' : '' ?>
 				<i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
 				<div class="newsletter-header">
-					<p><?= $instance['title'] ?> </p>
+					<p><?= _e($instance['title'], 'jeo') ?></p>
 				</div>
 				<p class="anchor-text">
-					<?= $instance['subtitle'] ?>
+				<?= _e($instance['subtitle'], 'jeo') ?>
 					<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'horizontal') : ?>
 						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?>
 					<?php endif; ?>
@@ -70,10 +70,10 @@ class newsletter_widget extends WP_Widget {
 					<?= do_shortcode($instance['newsletter_shortcode']) ?>
 				<?php endif; ?>
 				<?php if (!empty($instance['adicional_content'])) : ?>
-					<p class="link"><?= $instance['adicional_content'] ?></p>
+					<p class="link"><?= _e($instance['adicional_content'], 'jeo') ?></p>
 				<?php endif; ?>
 				<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'vertical') : ?>
-					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
+					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . _e($instance['last_edition_link'], 'jeo') . '">SEE LAST EDITION</a>' ?></p>
 				<?php endif; ?>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
 			</div>
@@ -92,13 +92,13 @@ class newsletter_widget extends WP_Widget {
 		$custom_style = !empty($instance['custom_style']) ? $instance['custom_style'] : esc_html__('', 'jeo');
 	?>
 		<p>
-			You are allowed to add <strong>HTML</strong> in any of those fields
+			<?= _e('You are not allowed to add HTML in any of those fields', 'jeo') ?>
 		</p>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('model_type')); ?>"><?php esc_attr_e('Model type:', 'jeo'); ?></label>
 			<select class="widefat" id="<?php echo esc_attr($this->get_field_id('model_type')); ?>" name="<?php echo esc_attr($this->get_field_name('model_type')); ?>">
-				<option value="horizontal" <?= $model_type == 'horizontal' ? 'selected' : '' ?>>Horizontal</option>
-				<option value="vertical" <?= $model_type == 'vertical' ? 'selected' : '' ?>>Vertical</option>
+				<option value="horizontal" <?= $model_type == 'horizontal' ? 'selected' : '' ?>><?php _e('Horizontal', 'jeo') ?></option>
+				<option value="vertical" <?= $model_type == 'vertical' ? 'selected' : '' ?>><?php _e('Vertical', 'jeo') ?></option>
 			</select>
 		</p>
 

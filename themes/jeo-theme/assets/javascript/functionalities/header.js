@@ -11,10 +11,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
             if (!jQuery("header #header-search").hasClass("fixed")) {
                 jQuery("header #header-search").addClass("fixed");
-                jQuery("header #header-search").css("top", 50 + "px");
+                jQuery("header #header-search").css("top", 0 + "px");
+                jQuery("header #header-search").css("padding-top", 50 + "px");
                 jQuery("header #header-search").css(
                     "height",
-                    jQuery(window).height() - 50 + "px"
+                    jQuery(window).height()
                 );
             }
         } else {
@@ -29,13 +30,6 @@ window.addEventListener("DOMContentLoaded", function () {
                     document.querySelector(".bottom-header-contain.desktop-only")
                         .offsetTop +
                     50 +
-                    "px"
-                );
-                jQuery("header #header-search").css(
-                    "height",
-                    jQuery(window).height() -
-                    document.querySelector(".bottom-header-contain.desktop-only")
-                        .offsetTop +
                     "px"
                 );
             }
@@ -85,9 +79,16 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     jQuery('button[action="toggle-options"]').click(function () {
-        jQuery(this.parentNode.querySelector(".toggle-options")).toggleClass(
-            "active"
-        );
+        jQuery(this.parentNode.querySelector(".toggle-options")).toggleClass('active');
+    });
+
+    document.addEventListener('click', function(event) {
+        var isClickInsideElement = document.querySelector('button[action="toggle-options"]').contains(event.target);
+        if (!isClickInsideElement && !['increase-size', 'decrease-size'].includes(event.target.getAttribute('action'))) {
+            if(document.querySelector(".toggle-options").classList.contains('active')) {
+                document.querySelector(".toggle-options").classList.remove('active')
+            }
+        }
     });
 
     jQuery('button.menu-btn').click(function () {

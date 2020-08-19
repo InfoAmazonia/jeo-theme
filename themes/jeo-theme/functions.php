@@ -96,23 +96,55 @@ function _search_pre_get_posts($query) {
 			//var_dump($query);
 		}
 
-		if (isset($_GET['topic'])) {
-			$query->set('category_name', $_GET['topic']);
+		$categories = "";
+
+
+		if (isset($_GET['topic']) && !empty($_GET['topic'])) {
+			$categories .= implode(",", $_GET['topic']);
 		}
 
-		if (isset($_GET['region']) && !empty($_GET['region'])) {
-			if (!empty($query->get('category_name'))) {
-				$query->set('category_name', $query->get('category_name') . '+' . $_GET['region']);
-			} else {
-				$query->set('category_name', $_GET['region']);
-			}
+		if(!empty($categories)) {
+			$categories .= ",";
+		}
+
+		if(isset($_GET['region']) && !empty($_GET['region'])) {
+			$categories .= implode(",", $_GET['region']);
+		}
+
+		// echo $categories;
+
+		if(!empty($categories)) {
+			$query->set('category_name', $categories);
 		}
 
 		//var_dump($query);
 
 	}
+
 	return $query;
 }
+
+add_filter('pre_get_posts', 'feed_rss_filter', 2);
+function feed_rss_filter($query) {
+	if ($query->is_feed) {
+		$query->set('meta_query', array(
+			'relation' => 'OR',
+			array(
+				'key'     => 'external-source-link',
+				'compare' => 'NOT EXISTS',
+			),
+
+			array(
+				'key'     => 'external-source-link',
+				'value'   => '',
+				'compare' => '=',
+			),
+		));
+	}
+
+	return $query;
+}
+
 
 
 function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args) {
@@ -134,8 +166,29 @@ if (!function_exists('jeo_comment_form')) {
 }
 
 function remove_website_field($fields) {
-    unset($fields['url']);
-    return $fields;
+	unset($fields['url']);
+	return $fields;
 }
 add_filter('comment_form_default_fields', 'remove_website_field');
 
+
+// its suppose to fix (https://github.com/WordPress/gutenberg/issues/18098)
+global $wp_embed;
+add_filter('the_content', array($wp_embed, 'autoembed'), 9);
+
+add_filter('comment_form_fields', 'move_comment_field');
+function move_comment_field($fields) {
+	$comment_field = $fields['comment'];
+	unset($fields['comment']);
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+
+
+function wpseo_no_show_article_author_facebook( $facebook ) {
+    if ( is_single() ) {
+        return false;
+    }
+    return $facebook;
+}
+add_filter( 'wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1 );

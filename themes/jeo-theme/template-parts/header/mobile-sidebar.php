@@ -39,12 +39,13 @@ if (newspack_is_amp()) : ?>
 		newspack_tertiary_menu();
 
 		?>
+
 		<div class="more-menu">
 			<div class="more-title">
 				<?php
 				$more_name = esc_html(wp_get_nav_menu_name('more-menu'));
 				if (strlen($more_name) <= 0) {
-					$more_name = 'MORE';
+					$more_name = __('MORE', 'jeo');
 				}
 				?>
 				<span class="more-name"><?= $more_name ?></span>
@@ -118,6 +119,7 @@ if (newspack_is_amp()) : ?>
 
 			</div>
 		</div>
+		
 		<div class="social-menus">
 			<div class="social-menus--title">
 				<?= __("Follow us", "jeo") ?>
@@ -126,6 +128,8 @@ if (newspack_is_amp()) : ?>
 			newspack_social_menu_header();
 			?>
 		</div>
+
+		
 
 		<?php if (newspack_is_amp()) : ?>
 	</amp-sidebar>

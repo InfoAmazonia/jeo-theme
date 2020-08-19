@@ -46,7 +46,10 @@
 @import '6-widgets/w-story-maps';
 @import '6-widgets/w-newsletter';
 @import '6-widgets/w-image-gallery';
+@import '6-widgets/w-video-gallery';
+@import '6-widgets/w-embed-template';
 
 
-/* ----- VENDOR ------- */
-@import './../vendor/sss/sss.css'
+/* ----- 7: VENDORS ------- */
+@import './../vendor/sss/sss.css';
+@import './../vendor/select2/select2.min.css'

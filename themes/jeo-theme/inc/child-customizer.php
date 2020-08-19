@@ -316,10 +316,36 @@ function newspack_scott_customizer($wp_customize)
 				'square' => 'Square',
 				'top' => 'Top rectangle',
 				'left' => 'Left bar',
-				'eye' => 'Mekong eye',
+				'custom' => 'Custom',
 			)
 		)
 	);
+
+	$wp_customize->add_setting(
+		'decoration_style_background_image',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'decoration_style_background_image',
+			array(
+				'label'       => esc_html__('Marker background image', 'newspack'),
+				'description' => esc_html__('', 'newspack'),
+				'section'     => 'title_tagline',
+				'settings'    => 'decoration_style_background_image',
+				'flex_width'  => true,
+				'flex_height' => true,
+				'width'       => 50,
+				'height'      => 50,
+			)
+		)
+	);
+	
 
 	$wp_customize->add_setting(
 		'pagination_style',
@@ -341,8 +367,7 @@ function newspack_scott_customizer($wp_customize)
 			)
 		)
 	);
-
-	// Typography
+	// Typography Heading Desktop
 	$wp_customize->add_section(
 		'typo_heading_sizes',
 		array(
@@ -354,7 +379,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_setting(
 		'typo_unit',
 		array(
-			'default'  => 'em',
+			'default'  => 'rem',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -514,6 +539,177 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
+			'label' => __('H6'),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
+	// Typography Mobile
+	$wp_customize->add_section(
+		'typo_heading_sizes_mobile',
+		array(
+			'title' => esc_html__('Font sizes mobile', 'newspack'),
+			'section' => 'newspack_typography',
+		)
+	);
+
+
+	$wp_customize->add_setting(
+		'typo_unit_mobile',
+		array(
+			'default'  => 'rem',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'typo_unit_mobile',
+		array(
+			'type' => 'select',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('Unit'),
+			'choices' => array(
+				'px' => 'px',
+				'rem' => 'rem',
+				'em' => 'em',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_important_mobile',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'newspack_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'typo_important_mobile',
+		array(
+			'type' => 'checkbox',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('Force font-size by using !important'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_p_size_mobile',
+		array(
+			'default'  => '1',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'typo_p_size_mobile',
+		array(
+			'type' => 'number',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('p'),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_h1_size_mobile',
+		array(
+			'default'  => '2',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'typo_h1_size_mobile',
+		array(
+			'type' => 'number',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('H1'),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_h2_size_mobile',
+		array(
+			'default'  => '1.5',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'typo_h2_size_mobile',
+		array(
+			'type' => 'number',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('H2'),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_h3_size_mobile',
+		array(
+			'default'  => '1.17',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'typo_h3_size_mobile',
+		array(
+			'type' => 'number',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('H3'),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_h4_size_mobile',
+		array(
+			'default'  => '1',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'typo_h4_size_mobile',
+		array(
+			'type' => 'number',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('H4'),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_h5_size_mobile',
+		array(
+			'default'  => '0.83',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'typo_h5_size_mobile',
+		array(
+			'type' => 'number',
+			'section' => 'typo_heading_sizes_mobile',
+			'label' => __('H5'),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
+
+	$wp_customize->add_setting(
+		'typo_h6_size_mobile',
+		array(
+			'default'  => '0.67',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'typo_h6_size_mobile',
+		array(
+			'type' => 'number',
+			'section' => 'typo_heading_sizes_mobile',
 			'label' => __('H6'),
 			'input_attrs' => $range_atttrs,
 		)
