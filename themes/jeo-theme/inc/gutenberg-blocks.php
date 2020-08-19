@@ -22,18 +22,18 @@ function custom_image_block() {
 		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageBlock/imageBlock.css'),
 	);
 
-	wp_register_style(
-		'custom-image-block-block',
-		get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageBlock/style.css',
-		array(),
-		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageBlock/style.css'),
-		'all',
-	);
+	// wp_register_style(
+	// 	'custom-image-block-block',
+	// 	get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageBlock/style.css',
+	// 	array(),
+	// 	filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageBlock/style.css'),
+	// 	'all',
+	// );
 
 	register_block_type('jeo-theme/custom-image-block-editor', array(
 		'editor_script' => 'custom-image-block-editor',
 		'editor_style'  => 'custom-image-block-editor',
-		'style'         => 'custom-image-block-block',
+		// 'style'         => 'custom-image-block-block',
 	));
 }
 
