@@ -74,6 +74,12 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 		<?php endif; ?>
 	<?php endif; ?>
 
+	<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) :
+		foreach ($authors as $author) {
+			$authorDisplayName =  get_the_author_meta( 'display_name', $author->ID ) . $sep;?>
+			<meta property="article:author" content="<?php echo $authorDisplayName; ?>" />
+		<?php } endif;?>
+
 	<?php wp_head(); ?>
 </head>
 

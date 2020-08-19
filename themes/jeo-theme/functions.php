@@ -183,3 +183,12 @@ function move_comment_field($fields) {
 	$fields['comment'] = $comment_field;
 	return $fields;
 }
+
+
+function wpseo_no_show_article_author_facebook( $facebook ) {
+    if ( is_single() ) {
+        return false;
+    }
+    return $facebook;
+}
+add_filter( 'wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1 );
