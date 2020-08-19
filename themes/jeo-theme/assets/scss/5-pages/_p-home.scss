@@ -170,12 +170,17 @@
         form.mc4wp-form {
             margin-bottom: 5px !important;
 
-            .mc4wp-form-fields {
+            .mc4wp-form-fields .input-group {
                 border: 2px solid var(--primary);
                 border-radius: 10px;
                 margin-bottom: 5px;
                 max-width: 100%;
             }
+        }
+        p.link {
+            font-size: 0.875rem;
+            color: #555D66;
+            text-align: right;
         }
     }
 
@@ -365,12 +370,11 @@
 
         /*block font-size: 2*/
         &.ts-2 article {
-            @include desktop{
+            /*@include desktop{*/
                 .entry-title {
                      font-size: size(16);
                  }
-            }
-
+            /*}*/
         }
 
 
