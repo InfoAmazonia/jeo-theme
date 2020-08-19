@@ -101,6 +101,75 @@ body {
     }
 }
 
+.input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.btn {
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-6 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.col-md-12 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+@include desktop {
+    .offset-md-6 {
+        margin-left: 50%;
+    }
+}
+@include mobile {
+    .d-sm-none {
+        display: none;
+    }
+
+    .d-sm-block {
+        display: block!important;
+    }
+}
+
 input[type='text']:focus,
 input[type='email']:focus,
 input[type='url']:focus,
