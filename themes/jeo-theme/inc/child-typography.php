@@ -190,7 +190,7 @@ function newspack_scott_custom_typography_css() {
 		$accent_font = wp_kses( get_theme_mod( 'accent_font'), null );
 
 		$theme_css .= '
-		.accent-header:not(.widget-title), .article-section-title, .archive .article-section-title, .archive .article-section-title .page-description, .page-title, #secondary .widget-title, .author-bio .accent-header span, #colophon .widget-title, .tags-links span:first-child, .single .cat-links {
+		.accent-header:not(.widget-title), .article-section-title, .archive .article-section-title, .archive .article-section-title .page-description, .page-title, #secondary .widget-title, .author-bio .accent-header span,.tags-links span:first-child, .single .cat-links {
 			font-family: "' . $accent_font . '", "sans-serif";
 		}
 
