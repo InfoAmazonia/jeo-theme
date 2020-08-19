@@ -96,7 +96,7 @@ function display_erratum_block() {
 ?>
 
 	<p>
-		<span class="jeo-row-title"><?php _e('Check to enable the "sorry we said wrong: ', 'jeo') ?></span>
+		<span class="jeo-row-title"><?php _e('Check to enable the "sorry we said wrong": ', 'jeo') ?></span>
 		<div class="jeo-row-content">
 			<label for="enable-post-erratum">
 				<input type="checkbox" name="enable-post-erratum" id="enable-post-erratum" value="false" <?php if (isset($jeo_stored_meta['enable-post-erratum'])) checked($jeo_stored_meta['enable-post-erratum'][0], true); ?> />
