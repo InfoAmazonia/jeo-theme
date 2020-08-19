@@ -7,8 +7,27 @@ footer {
     }
 
     &#colophon {
+        .widget-title {
+            color: #555D66;
+            font-size: size(18);
+            font-weight: bold;
+            font-family: var(--primary-font);
+        }
         @include tablet {
             margin-bottom: 60px;
+        }
+
+        .widget_nav_menu {
+            ul {
+                li {
+                    a {
+                        color: #0A0A0A;
+                        font-size: size(16);
+                        letter-spacing: 0;
+                        line-height: 23px;
+                      }
+                }
+            }
         }
     }
 
@@ -36,11 +55,6 @@ footer {
     .footer-branding .wrapper,
     .footer-widgets:first-child {
         border-top: 1px solid #979797 !important;
-    }
-
-    #colophon .widget-title {
-        color: #555D66;
-        font-size: size(18);
     }
 
     .site-info {
