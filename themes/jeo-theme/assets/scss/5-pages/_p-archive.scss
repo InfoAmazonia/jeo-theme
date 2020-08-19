@@ -151,8 +151,12 @@
            font-size: size(18);
             color: #555D66;
         }
-        .page-description{
-            text-transform: uppercase;
+
+        .category-header{
+            .page-description {
+                display: inline;
+                text-transform: uppercase;
+            }
         }
     }
 
