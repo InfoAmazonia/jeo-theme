@@ -631,12 +631,6 @@
         }
     }
   
-    .entry-header {
-        @include desktop {
-            max-width: 38%;
-        }
-    }
-
     .main-content {
         .entry-subhead {
             .entry-meta {
