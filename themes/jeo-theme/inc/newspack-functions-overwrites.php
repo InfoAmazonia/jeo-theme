@@ -108,9 +108,7 @@ function newspack_scott_scripts() {
 	wp_deregister_script('jquery');
 	wp_enqueue_script('njquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', [], '2.1.4', true);
 
-	wp_enqueue_style('bootstrap', "https://cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.min.css", [], '4.5', 'all');
-	wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', ['njquery'], '0.0.0');
-	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), ['bootstrap'], null);
+	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), [], null);
 	wp_enqueue_style('fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all');
 	
 	if(is_search()) {
