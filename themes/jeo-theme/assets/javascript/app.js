@@ -28,12 +28,17 @@ Vue.component("image-block", ImageBlock);
 window.addEventListener("DOMContentLoaded", function () {
     // External source post API magic <3
     const siteLinks = document
-        .querySelectorAll("article > .entry-wrapper > h2 > a")
+        .querySelectorAll("article .entry-title > a")
         .forEach((element) => {
             const targetLink = element.getAttribute("href");
-            
+            // console.log(element);
+
             try {
-                element.parentElement.parentElement.parentElement.querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
+                try {
+                    element.closest('article').querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
+                } catch {
+                    // console.log('post has no image')
+                }
 
                 const targetLinkSource = new URL(targetLink).origin;
                 if (document.location.origin !== targetLinkSource) {
@@ -60,12 +65,11 @@ window.addEventListener("DOMContentLoaded", function () {
                         },
                     });
 
-                    const metaarea = element.parentElement.parentElement.querySelector(
-                        ".entry-meta"
-                    );
+                    const metaarea = element.closest("article").querySelector('.entry-meta');
                     metaarea.insertBefore(externalSourceLink, metaarea.firstChild);
                 }
             } catch (err) {
+                console.log(err);
                 // console.log("Invalid link: ", targetLink);
             }
         });

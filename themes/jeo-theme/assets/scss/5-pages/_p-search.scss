@@ -264,6 +264,11 @@
 
     }
 
+    a.external-link {
+        color: var(--primary);
+        padding-right: 15px;
+    }
+
 }
 
 .search-form {
@@ -331,6 +336,12 @@
         .selectric {
             span {
                 color: white;
+            }
+        }
+
+        .no-results.not-found {
+            p {
+                color: white
             }
         }
 
