@@ -73,7 +73,7 @@ class newsletter_widget extends WP_Widget {
 					<p class="link"><?= _e($instance['adicional_content'], 'jeo') ?></p>
 				<?php endif; ?>
 				<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'vertical') : ?>
-					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . _e($instance['last_edition_link'], 'jeo') . '">SEE LAST EDITION</a>' ?></p>
+					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
 				<?php endif; ?>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
 			</div>
