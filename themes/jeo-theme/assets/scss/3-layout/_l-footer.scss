@@ -11,6 +11,7 @@ footer {
             color: #555D66;
             font-size: size(18);
             font-weight: bold;
+            font-family: var(--primary-font);
         }
         @include tablet {
             margin-bottom: 60px;
