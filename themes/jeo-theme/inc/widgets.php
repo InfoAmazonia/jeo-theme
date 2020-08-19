@@ -190,7 +190,7 @@ class most_read_widget extends WP_Widget {
 				<?php if(sizeof($posts_ids) >= $instance['min_posts']): ?>
 					<div class="category-most-read">
 						<div class="header">
-							<p><?= e_($instance['title'], 'jeo') ?> </p>
+							<p><?= $instance['title'] ?> </p>
 						</div>
 						<div class="posts">
 							<?php foreach(array_slice($posts_ids, 0, $instance['max_posts']) as $key=>$value){ 
