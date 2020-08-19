@@ -81,6 +81,7 @@
             text-align: right;
             display: flex;
             position: relative;
+            margin-right: 15px;
 
             button.current {
                 padding: 0;
@@ -178,7 +179,7 @@
 
             &--itens {
                 display: grid;
-                grid-template-columns: repeat(3, 33.33%);
+                grid-template-columns: repeat(3, 1fr);
                 column-gap: 14px;
 
                 @include tablet {
@@ -188,6 +189,12 @@
 
             &--item {
                 position: relative;
+
+                & > * {
+                    @include tablet {
+                        min-width: 100%;
+                    }
+                }
 
                 .option-filter {
                     color: white;
