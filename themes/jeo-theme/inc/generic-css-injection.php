@@ -26,13 +26,13 @@ function generic_css_injection($starter = "")
 					display: flex;
 				}
 			';
-		} else if ($decoration_style == 'eye') {
+		} else if ($decoration_style == 'custom') {
 			$starter .= '
 				.accent-header:not(.widget-title)::before, .article-section-title::before, .cat-links::before, .page-title::before {
 					width: 16px;    
 					height: 16px;
 					margin-right: 20px;
-					background-image: url('. get_stylesheet_directory_uri() . "/assets/images/icons/eye.svg" . ');
+					background-image: url('. wp_get_attachment_url(get_theme_mod('decoration_style_background_image')) . ');
 					background-size: 16px;
     				background-repeat: no-repeat;
     				background-color: transparent!important;

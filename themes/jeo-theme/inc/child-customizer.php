@@ -316,10 +316,36 @@ function newspack_scott_customizer($wp_customize)
 				'square' => 'Square',
 				'top' => 'Top rectangle',
 				'left' => 'Left bar',
-				'eye' => 'Mekong eye',
+				'custom' => 'Custom',
 			)
 		)
 	);
+
+	$wp_customize->add_setting(
+		'decoration_style_background_image',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'decoration_style_background_image',
+			array(
+				'label'       => esc_html__('Marker background image', 'newspack'),
+				'description' => esc_html__('', 'newspack'),
+				'section'     => 'title_tagline',
+				'settings'    => 'decoration_style_background_image',
+				'flex_width'  => true,
+				'flex_height' => true,
+				'width'       => 50,
+				'height'      => 50,
+			)
+		)
+	);
+	
 
 	$wp_customize->add_setting(
 		'pagination_style',
