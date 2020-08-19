@@ -204,18 +204,10 @@ function custom_image_gallery_block() {
 		'all'
 	);
 
-	wp_register_style(
-		'custom-image-gallery-block-style',
-		get_stylesheet_directory_uri() . '/assets/javascript/blocks/imageGallery/style.css',
-		array(),
-		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/imageGallery/style.css'),
-		'all',
-	);
 
 	register_block_type('jeo-theme/custom-image-gallery-block', array(
 		'editor_script' => 'custom-image-gallery-block',
 		'editor_style'  => 'custom-image-gallery-block',
-		'style'         => 'custom-image-gallery-block-style',
 	));
 }
 
