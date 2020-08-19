@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-18 13:02-0300\n"
-"PO-Revision-Date: 2020-08-18 13:03-0300\n"
+"POT-Creation-Date: 2020-08-19 12:53-0300\n"
+"PO-Revision-Date: 2020-08-19 12:53-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -144,15 +144,15 @@ msgid "Usar posts relacionados"
 msgstr ""
 
 #: classes/library_related-posts.php:33
-msgid "Peso das tags"
+msgid "Tag weight"
 msgstr ""
 
 #: classes/library_related-posts.php:39
-msgid "Peso das categorias"
+msgid "Category weight"
 msgstr ""
 
 #: classes/library_related-posts.php:45
-msgid "Peso das datas"
+msgid "Date weight"
 msgstr ""
 
 #: comments.php:33
@@ -197,26 +197,34 @@ msgstr ""
 msgid "Proudly powered by %s."
 msgstr ""
 
-#: header-single.php:41 header.php:42
+#: header-single.php:38 header.php:38 inc/template-tags.php:125
+msgid " and "
+msgstr ""
+
+#: header-single.php:41 header.php:41 inc/template-tags.php:128
+msgid ", "
+msgstr ""
+
+#: header-single.php:100 header.php:97
 msgid "Skip to content"
 msgstr ""
 
-#: header-single.php:55 header-single.php:63 header-single.php:76
-#: header-single.php:110 header-single.php:144 header-single.php:225
-#: header-single.php:260 header.php:63 header.php:96 header.php:106
-#: header.php:142 header.php:176 header.php:257 header.php:293
+#: header-single.php:114 header-single.php:122 header-single.php:135
+#: header-single.php:168 header-single.php:210 header-single.php:291
+#: header-single.php:326 header.php:118 header.php:151 header.php:161
+#: header.php:197 header.php:241 header.php:322 header.php:364
 msgid "Menu"
 msgstr ""
 
-#: header.php:51 template-parts/header/header-search.php:20
+#: header.php:106 template-parts/header/header-search.php:20
 msgid "What are you looking for?"
 msgstr ""
 
-#: header.php:320 template-parts/header/header-search.php:11
+#: header.php:391 template-parts/header/header-search.php:11
 msgid "Close Search"
 msgstr ""
 
-#: header.php:320 header.php:321 template-parts/header/header-search.php:11
+#: header.php:391 header.php:392 template-parts/header/header-search.php:11
 #: template-parts/header/header-search.php:12
 msgid "Open Search"
 msgstr ""
@@ -320,66 +328,74 @@ msgid "Decoration marker style"
 msgstr ""
 
 #: inc/child-customizer.php:337
+msgid "Marker background image"
+msgstr ""
+
+#: inc/child-customizer.php:363
 msgid "Pagination style"
 msgstr ""
 
-#: inc/child-customizer.php:349
+#: inc/child-customizer.php:374
 msgid "Font sizes"
 msgstr ""
 
-#: inc/child-customizer.php:367
+#: inc/child-customizer.php:392 inc/child-customizer.php:570
 msgid "Unit"
 msgstr ""
 
-#: inc/child-customizer.php:396
+#: inc/child-customizer.php:421 inc/child-customizer.php:592
 msgid "Force font-size by using !important"
 msgstr ""
 
-#: inc/child-customizer.php:413
+#: inc/child-customizer.php:438 inc/child-customizer.php:609
 msgid "p"
 msgstr ""
 
-#: inc/child-customizer.php:431
+#: inc/child-customizer.php:456 inc/child-customizer.php:627
 msgid "H1"
 msgstr ""
 
-#: inc/child-customizer.php:448
+#: inc/child-customizer.php:473 inc/child-customizer.php:644
 msgid "H2"
 msgstr ""
 
-#: inc/child-customizer.php:465
+#: inc/child-customizer.php:490 inc/child-customizer.php:661
 msgid "H3"
 msgstr ""
 
-#: inc/child-customizer.php:482
+#: inc/child-customizer.php:507 inc/child-customizer.php:678
 msgid "H4"
 msgstr ""
 
-#: inc/child-customizer.php:499
+#: inc/child-customizer.php:524 inc/child-customizer.php:695
 msgid "H5"
 msgstr ""
 
-#: inc/child-customizer.php:517
+#: inc/child-customizer.php:542 inc/child-customizer.php:713
 msgid "H6"
 msgstr ""
 
-#: inc/child-customizer.php:533
+#: inc/child-customizer.php:551
+msgid "Font sizes mobile"
+msgstr ""
+
+#: inc/child-customizer.php:729
 msgid "Featured Font"
 msgstr ""
 
-#: inc/child-customizer.php:534
+#: inc/child-customizer.php:730
 msgid "Example: Libre Basquesville"
 msgstr ""
 
-#: inc/child-customizer.php:551
+#: inc/child-customizer.php:747
 msgid "Accent Font Provider Import Code or URL"
 msgstr ""
 
-#: inc/child-customizer.php:567
+#: inc/child-customizer.php:763
 msgid "Accent font"
 msgstr ""
 
-#: inc/child-customizer.php:568
+#: inc/child-customizer.php:764
 msgid "Example: Dosis"
 msgstr ""
 
@@ -387,55 +403,51 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: inc/metaboxes.php:14
+#: inc/metaboxes.php:23
 msgid "Sorry, we said wrong"
 msgstr ""
 
-#: inc/metaboxes.php:35
+#: inc/metaboxes.php:44
 msgid "Check to enable the author info: "
 msgstr ""
 
-#: inc/metaboxes.php:39
+#: inc/metaboxes.php:48
 msgid "Author bio"
 msgstr ""
 
-#: inc/metaboxes.php:54
-msgid "Check to enable the \"sorry we said wrong: "
+#: inc/metaboxes.php:79
+msgid "Video URL to be shown on twitter sharing preview: "
 msgstr ""
 
-#: inc/metaboxes.php:58
+#: inc/metaboxes.php:99
+msgid "Check to enable the \"sorry we said wrong\": "
+msgstr ""
+
+#: inc/metaboxes.php:103
 msgid "Sorry we said wrong"
 msgstr ""
 
-#: inc/metaboxes.php:80
+#: inc/metaboxes.php:125
 msgid "Original Publisher name"
 msgstr ""
 
-#: inc/metaboxes.php:87
+#: inc/metaboxes.php:132
 msgid "Original Publisher link"
 msgstr ""
 
-#: inc/template-tags.php:94
+#: inc/template-tags.php:105
 msgid "By"
 msgstr ""
 
-#: inc/template-tags.php:101
-msgid " and "
-msgstr ""
-
-#: inc/template-tags.php:104
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:125
+#: inc/template-tags.php:149
 msgid "by"
 msgstr ""
 
-#: inc/template-tags.php:245
+#: inc/template-tags.php:269
 msgid ","
 msgstr ""
 
-#: inc/template-tags.php:252
+#: inc/template-tags.php:276
 msgid "Posted in"
 msgstr ""
 
@@ -491,19 +503,19 @@ msgstr ""
 msgid "Filters"
 msgstr ""
 
-#: searchform.php:46
+#: searchform.php:47
 msgid "Topics"
 msgstr ""
 
-#: searchform.php:68
+#: searchform.php:67
 msgid "Regions"
 msgstr ""
 
-#: searchform.php:94 searchform.php:103
+#: searchform.php:93 searchform.php:102
 msgid "Latest"
 msgstr ""
 
-#: searchform.php:100
+#: searchform.php:99
 msgid "Oldest"
 msgstr ""
 
@@ -566,30 +578,30 @@ msgstr ""
 msgid "Discovery"
 msgstr ""
 
-#: template-parts/header/mobile-sidebar.php:47
+#: template-parts/header/mobile-sidebar.php:48
 msgid "MORE"
 msgstr ""
 
-#: template-parts/header/mobile-sidebar.php:69
-#: template-parts/header/mobile-sidebar.php:144
+#: template-parts/header/mobile-sidebar.php:70
+#: template-parts/header/mobile-sidebar.php:148
 msgid "Language"
 msgstr ""
 
-#: template-parts/header/mobile-sidebar.php:79
-#: template-parts/header/mobile-sidebar.php:197
+#: template-parts/header/mobile-sidebar.php:80
+#: template-parts/header/mobile-sidebar.php:201
 msgid "Dark mode"
 msgstr ""
 
-#: template-parts/header/mobile-sidebar.php:95
-#: template-parts/header/mobile-sidebar.php:167
+#: template-parts/header/mobile-sidebar.php:96
+#: template-parts/header/mobile-sidebar.php:171
 msgid "Type size"
 msgstr ""
 
-#: template-parts/header/mobile-sidebar.php:123
+#: template-parts/header/mobile-sidebar.php:125
 msgid "Follow us"
 msgstr ""
 
-#: template-parts/header/mobile-sidebar.php:187
+#: template-parts/header/mobile-sidebar.php:191
 msgid "Share"
 msgstr ""
 
