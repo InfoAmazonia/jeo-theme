@@ -29,6 +29,11 @@
         background: transparent;
     }
 
+    @include mobile {
+        .anchor-text {
+            margin-bottom: 0;
+        }
+    }
 
     .mc4wp-form-fields {
         & > div {
