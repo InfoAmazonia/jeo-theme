@@ -11,7 +11,12 @@
 get_header('single');
 the_post();
 
-$parent_type_category = get_category_by_slug('type')->cat_ID;
+$parent_type_category = get_category_by_slug('type');
+
+if($parent_type_category) {
+	$parent_type_category = $parent_type_category->cat_ID;
+}
+
 $post_categories = get_the_category();
 $post_child_category = null;
 foreach ($post_categories as $post_cat) {
