@@ -153,7 +153,7 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 							</div>
 						</div>
 
-						<p class="title"> <?php echo wp_kses_post(get_the_title()); ?></p>
+						<p class="title"> <?php echo esc_html(wp_kses_post(get_the_title())); ?></p>
 						<div class="page--share">
 							<div class="twitter">
 								<a href="https://twitter.com/intent/tweet?text=<?= $urlTweetShare ?>" target="_blank"><i class="fab fa-twitter"></i></a>
