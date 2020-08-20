@@ -1,153 +1,194 @@
 <?php
-/**
- * Newspack Scott functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Newspack Scott
- */
+require __DIR__ . '/inc/generic-css-injection.php';
+require __DIR__ . '/inc/template-tags.php';
+require __DIR__ . '/inc/api.php';
+require __DIR__ . '/inc/newspack-functions-overwrites.php';
+require __DIR__ . '/inc/widgets.php';
+require __DIR__ . '/inc/metaboxes.php';
+require __DIR__ . '/inc/gutenberg-blocks.php';
+require __DIR__ . '/inc/menus.php';
+require __DIR__ . '/classes/ajax-pv.php';
+require __DIR__ . '/classes/library_related-posts.php';
 
-function childtheme_add_post_formats(){
 
-	add_theme_support( 'post-formats', array('gallery', 'video','image', 'link', 'audio') );
-	
+
+add_filter('post_link', 'custom_get_permalink', 10, 3);
+
+function custom_get_permalink($url, $post, $leavename = false) {
+	$external_source_link = get_post_meta($post->ID, 'external-source-link', true);
+	if ($external_source_link) {
+		return $external_source_link;
 	}
-	
-add_action( 'after_setup_theme', 'childtheme_add_post_formats', 11 );
 
-if ( ! function_exists( 'newspack_scott_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function newspack_scott_setup() {
-		// Remove the default editor styles
-		remove_editor_styles();
-		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
-		add_editor_style( 'styles/style-editor.css' );
-	}
-endif;
-add_action( 'after_setup_theme', 'newspack_scott_setup', 12 );
-
-/**
- * Function to load style pack's Google Fonts.
- */
-function newspack_scott_fonts_url() {
-	$fonts_url = '';
-
-	/**
-	* Translators: If there are characters in your language that are not
-	* supported by Roboto , translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$roboto = esc_html_x( 'on', 'Roboto font: on or off', 'newspack-scott' );
-	if ( 'off' !== $roboto ) {
-		$font_families   = array();
-		$font_families[] = 'Roboto:400,400i,600,600i';
-
-		$query_args = array(
-			'family'  => urlencode( implode( '|', $font_families ) ),
-			'subset'  => urlencode( 'latin,latin-ext' ),
-			'display' => urlencode( 'swap' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
-	return esc_url_raw( $fonts_url );
+	return $url;
 }
 
-/**
- * Display custom color CSS in customizer and on frontend.
- */
-function newspack_scott_custom_colors_css_wrap() {
-	// Only bother if we haven't customized the color.
-	if ( ( ! is_customize_preview() && 'default' === get_theme_mod( 'theme_colors', 'default' ) ) || is_admin() ) {
+add_filter('pre_get_posts', '_search_pre_get_posts', 1);
+
+function _search_pre_get_posts($query) {
+	global $wp_query;
+	//var_dump();
+
+	if (is_admin() || !$query->is_main_query()) {
+		return $query;
+	}
+
+	if (isset($query->query['p']) && strpos($query->query['p'], ':redirect') > 0) {
+		$query->query['p'] = intval($query->query['p']);
+		$query->is_404 = false;
+		$query->is_page = true;
+		$query->is_home = false;
+	}
+
+
+	if ($query->is_search() && $query->is_main_query()) {
+		//$query->set('post_type', [$query->query['post_type']]);
+		// Date filter
+		if (isset($_GET['daterange'])) {
+			$date_range = explode(' - ', $_GET['daterange'], 2);
+			if (sizeof($date_range) == 2) {
+				$from_date = date_parse($date_range[0]);
+				$to_date   = date_parse($date_range[1]);
+				$after  = null;
+				$before = null;
+
+				if ($from_date && checkdate($from_date['month'], $from_date['day'], $from_date['year'])) {
+					$after = array(
+						'year'  => $from_date['year'],
+						'month' => $from_date['month'],
+						'day'   => $from_date['day'],
+					);
+				}
+				// Same for the "to" date.
+				if ($to_date && checkdate($to_date['month'], $to_date['day'], $to_date['year'])) {
+					$before = array(
+						'year'  => $to_date['year'],
+						'month' => $to_date['month'],
+						'day'   => $to_date['day'],
+					);
+				}
+
+
+				$date_query = array();
+				if ($after) {
+					$date_query['after'] = $after;
+				}
+				if ($before) {
+					$date_query['before'] = $before;
+				}
+				if ($after || $before) {
+					$date_query['inclusive'] = true;
+				}
+
+				if (!empty($date_query)) {
+					$query->set('date_query', $date_query);
+				}
+			}
+		}
+
+		if (isset($_GET['order'])) {
+			$order_option = $_GET['order'];
+			$query->set('orderby', 'date');
+
+			if ($order_option == 'ASC' || $order_option == 'DESC') {
+				$query->set('order', $_GET['order']);
+			}
+			//var_dump($query);
+		}
+
+		$categories = "";
+
+
+		if (isset($_GET['topic']) && !empty($_GET['topic'])) {
+			$categories .= implode(",", $_GET['topic']);
+		}
+
+		if(!empty($categories)) {
+			$categories .= ",";
+		}
+
+		if(isset($_GET['region']) && !empty($_GET['region'])) {
+			$categories .= implode(",", $_GET['region']);
+		}
+
+		// echo $categories;
+
+		if(!empty($categories)) {
+			$query->set('category_name', $categories);
+		}
+
+		//var_dump($query);
+
+	}
+
+	return $query;
+}
+
+add_filter('pre_get_posts', 'feed_rss_filter', 2);
+function feed_rss_filter($query) {
+	if ($query->is_feed) {
+		$query->set('meta_query', array(
+			'relation' => 'OR',
+			array(
+				'key'     => 'external-source-link',
+				'compare' => 'NOT EXISTS',
+			),
+
+			array(
+				'key'     => 'external-source-link',
+				'value'   => '',
+				'compare' => '=',
+			),
+		));
+	}
+
+	return $query;
+}
+
+
+
+function ns_filter_avatar($avatar, $id_or_email, $size, $default, $alt, $args) {
+	$headers = @get_headers($args['url']);
+	if (!preg_match("|200|", $headers[0])) {
 		return;
 	}
-	require_once get_stylesheet_directory() . '/inc/child-color-patterns.php';
-	?>
-
-	<style type="text/css" id="custom-theme-colors-scott">
-		<?php echo newspack_scott_custom_colors_css(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	</style>
-	<?php
+	return $avatar;
 }
-add_action( 'wp_head', 'newspack_scott_custom_colors_css_wrap' );
+add_filter('get_avatar', 'ns_filter_avatar', 10, 6);
 
-/**
- * Display custom font CSS in customizer and on frontend.
- */
-function newspack_scott_typography_css_wrap() {
-	if ( is_admin() || ( ! get_theme_mod( 'font_body', '' ) && ! get_theme_mod( 'font_header', '' ) && ! get_theme_mod( 'accent_allcaps', true ) ) ) {
-		return;
-	}
-	?>
-
-	<style type="text/css" id="custom-theme-fonts-scott">
-		<?php echo newspack_scott_custom_typography_css(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	</style>
-
-<?php
-}
-add_action( 'wp_head', 'newspack_scott_typography_css_wrap' );
-
-
-/**
- * Enqueue scripts and styles.
- */
-function newspack_scott_scripts() {
-	// Enqueue Google fonts.
-	wp_enqueue_style( 'newspack-scott-fonts', newspack_scott_fonts_url(), array('jeo-theme-bootstrap'), null );
-	wp_enqueue_style( 'jeo-theme-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all' );
-	wp_enqueue_style( 'jeo-theme-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", array(), '4.5', 'all'  );
-	wp_enqueue_style('app', get_stylesheet_directory_uri() . '/dist/app.css', []);
-    wp_enqueue_script('main-app', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery']);
-	//wp_enqueue_script( 'jeo-theme-scripts', get_stylesheet_directory_uri()."/js/main.js", array(), "0.1.0");
-}
-add_action( 'wp_enqueue_scripts', 'newspack_scott_scripts' );
-
-
-/**
- * Enqueue supplemental block editor styles.
- */
-function newspack_scott_editor_customizer_styles() {
-	// Enqueue Google fonts.
-	wp_enqueue_style( 'newspack-scott-fonts', newspack_scott_fonts_url(), array(), null );
-
-	// Check for color or font customizations.
-	$theme_customizations = '';
-	require_once get_stylesheet_directory() . '/inc/child-color-patterns.php';
-
-	if ( 'custom' === get_theme_mod( 'theme_colors' ) ) {
-		// Include color patterns.
-		$theme_customizations .= newspack_scott_custom_colors_css();
-	}
-
-	if ( get_theme_mod( 'font_body', '' ) || get_theme_mod( 'font_header', '' ) || get_theme_mod( 'accent_allcaps', true ) ) {
-		$theme_customizations .= newspack_scott_custom_typography_css();
-	}
-
-	// If there are any, add those styles inline.
-	if ( $theme_customizations ) {
-		// Enqueue a non-existant file to hook our inline styles to:
-		wp_register_style( 'newspack-scott-editor-inline-styles', false );
-		wp_enqueue_style( 'newspack-scott-editor-inline-styles' );
-		// Add inline styles:
-		wp_add_inline_style( 'newspack-scott-editor-inline-styles', $theme_customizations );
+if (!function_exists('jeo_comment_form')) {
+	function jeo_comment_form() {
+		comment_form([
+			'logged_in_as' => null,
+			'title_reply' => null,
+		]);
 	}
 }
-add_action( 'enqueue_block_editor_assets', 'newspack_scott_editor_customizer_styles' );
 
-/**
- * Custom typography styles for child theme.
- */
+function remove_website_field($fields) {
+	unset($fields['url']);
+	return $fields;
+}
+add_filter('comment_form_default_fields', 'remove_website_field');
 
-require get_stylesheet_directory() . '/inc/child-typography.php';
 
-/**
- * Customizer functions.
- */
-require get_stylesheet_directory() . '/inc/child-customizer.php';
+// its suppose to fix (https://github.com/WordPress/gutenberg/issues/18098)
+global $wp_embed;
+add_filter('the_content', array($wp_embed, 'autoembed'), 9);
+
+add_filter('comment_form_fields', 'move_comment_field');
+function move_comment_field($fields) {
+	$comment_field = $fields['comment'];
+	unset($fields['comment']);
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+
+
+function wpseo_no_show_article_author_facebook( $facebook ) {
+    if ( is_single() ) {
+        return false;
+    }
+    return $facebook;
+}
+add_filter( 'wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1 );

@@ -11,7 +11,18 @@
 <div class="site-branding">
 
     <?php
-        newspack_the_custom_logo();
+        if(!empty(get_theme_mod( 'logo_dark_image', '' ))) { ?>
+        <a href="/">
+        <?php
+            echo wp_get_attachment_image(
+                get_theme_mod( 'logo_dark_image', '' ),
+                'newspack-footer-logo',
+                '',
+                array( 'class' => 'header-logo dark-logo' )
+            ); ?>
+        </a>
+        <?php }
+        child_newspack_the_custom_logo();					
 		if ( false === $header_center_logo) :
     ?>
 

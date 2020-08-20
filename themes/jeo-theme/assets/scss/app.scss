@@ -20,6 +20,13 @@
 
 /* ----- 4: COMPONENTS ------- */
 //@import '4-components/c-forms';
+@import '4-components/c-sorry-said-wrong';
+@import '4-components/c-pullquote-block';
+@import '4-components/c-credited-image-block';
+@import '4-components/c-audio-player';
+@import '4-components/c-jeomap';
+@import '4-components/c-cookies';
+@import '4-components/c-article-block';
 
 
 /* ----- 5: PAGES ------- */
@@ -29,5 +36,21 @@
 @import '5-pages/p-archive';
 @import '5-pages/p-404';
 @import '5-pages/p-home';
+@import '5-pages/p-page';
+@import '5-pages/p-category';
+@import '5-pages/p-contact';
 
 
+/* ----- 6: WIDGETS ------- */
+@import '6-widgets/w-most-read';
+@import '6-widgets/w-story-maps';
+@import '6-widgets/w-newsletter';
+@import '6-widgets/w-image-gallery';
+@import '6-widgets/w-video-gallery';
+@import '6-widgets/w-embed-template';
+@import '6-widgets/w-credited-image-block';
+
+
+/* ----- 7: VENDORS ------- */
+@import './../vendor/sss/sss.css';
+@import './../vendor/select2/select2.min.css'

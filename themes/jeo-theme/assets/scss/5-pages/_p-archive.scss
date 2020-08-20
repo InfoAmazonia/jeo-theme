@@ -1,0 +1,239 @@
+.archive .page-header{
+  margin: 0;
+}
+
+.archive {
+    #page{
+        @include mobile{
+            margin-top: -50px;
+        }
+
+        @include tablet {
+            margin-top: 0px;
+        }
+    }
+    
+    .decoration-square,
+    .decoration-left,
+    .decoration-eye,
+    .decoration-custom {
+        h1.page-title.article-section-title {
+            display: flex;
+        }
+    }
+
+    .decoration-square {
+        h1.page-title.article-section-title::before {
+            margin-top: size(2);
+        } 
+    }
+
+    .decoration-eye {
+        h1.page-title.article-section-title::before {
+            margin-top: size(1);
+        } 
+    }
+
+    .decoration-top {
+        .page-description {
+            display: inline;
+        }
+
+        @include mobile {
+            h1.page-title.article-section-title {
+                position: relative;
+                display: flex;
+            }
+            h1.page-title.article-section-title::before {
+                position: absolute;
+                top: size(-10);
+            }
+        }
+    }
+    
+    article {
+        &.entry{
+            margin-top: 30px;
+        }
+        .entry-meta {
+            font-size: size(14);
+            
+            @include tablet{
+                margin-bottom: 0px;
+            }
+
+        }
+        .cat-links{
+            color: #555D66;
+            &::before {
+                display: none;
+            }
+        }
+
+        .entry-content {
+            p {
+                font-size: size(16);
+                letter-spacing: 0;
+                line-height: 22px;
+
+                @include mobile{
+                    display: none;
+                }
+            }
+        }
+    }
+    #main {
+        @include desktop{
+            width: 65%;
+        }
+    }
+
+    .post-thumbnail{
+        @include mobile{
+            margin-right: 10px;
+            width: 40%;
+        }
+    }
+
+    .category-header .page-subtitle {
+        display: none;
+    }
+
+    @include tablet {
+        .author .author-main-content {
+            display: block;
+            text-align: center;
+            padding-top: size(30);
+        }
+    }
+}
+
+
+.archive:not(.paged) {
+    .custom-archive {
+        article.has-post-thumbnail:first-of-type .post-thumbnail {
+            @include desktop{
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    .entry-title {
+        font-size: 1.2em !important;
+        @include mobile {
+            font-size: size(16) !important;
+        }
+    
+    }
+
+    article.has-post-thumbnail:first-of-type .entry-header{
+        @include desktop{
+            margin: 0;
+        }
+    }
+
+    article.has-post-thumbnail:last-of-type {
+        margin-bottom: 30px;
+    }
+}
+
+/* ARCHIVE EXCEPT AUTHOR */
+.custom-archive {
+    .page-header{
+
+        @include mobile{
+            margin-top: 30px;
+        }
+        
+        margin-bottom: 40px;
+        .page-subtitle, .page-description {
+           font-size: size(18);
+            color: #555D66;
+        }
+
+        .category-header{
+            .page-description {
+                display: inline;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    span.author.vcard {
+        background: transparent;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+
+    article {
+        &:first-of-type{
+            width: 100%;
+            margin-bottom: 40px;
+
+            .entry-meta  {
+                @include tablet{
+                        margin-bottom: 0.5rem;
+                }
+            }
+            .entry-content {
+                p {
+                    @include mobile{
+                        display: block;
+                    }
+                }
+            }
+            
+        }
+
+        .entry-container{
+            h2.entry-title {
+                margin-bottom: 10px;
+                @include mobile{
+                    margin-bottom: 5px;
+                }
+            }
+
+            .entry-meta .byline{
+                @include mobile{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    article.has-post-thumbnail{
+        @include mobile{
+            display: flex;
+        }
+        .post-thumbnail{
+            flex-basis: 35%;
+            @include desktop{
+                max-width: 35%;
+            }
+
+            &:first-of-type{
+                width: 100%;
+            }
+        }
+
+        .entry-container{
+            @include mobile{
+                flex-basis: 65%;
+            }
+        }
+        
+        &:first-of-type {
+            display: block;
+        }
+    }   
+}
+
+
+.dark-theme {
+    &.archive {
+        .page-title .page-description  {
+            color: white;
+        }
+    }
+}
