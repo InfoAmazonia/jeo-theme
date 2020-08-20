@@ -190,6 +190,13 @@ body {
     max-width: 50%;
 }
 
+@include tablet {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 .form-group {
     margin-bottom: 1rem;
 }
