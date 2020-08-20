@@ -91,10 +91,15 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 
 		</main><!-- #main -->
 
+		
+		
 		<div class="after-post-content-widget-area">
-			<?php dynamic_sidebar('after_post_widget_area'); ?>
+			<?php if ( is_single() ):
+				dynamic_sidebar('after_post_widget_area'); 
+			endif;
+			?>
 		</div>
-
+		
 		<div class="main-content">
 			<?php
 			// If comments are open or we have at least one comment, load up the comment template.

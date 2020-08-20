@@ -98,8 +98,12 @@ else: ?>
 			<?php endwhile; ?>
 
 		</main><!-- #main -->
+		
 		<div class="after-post-content-widget-area">
-			<?php dynamic_sidebar('after_post_widget_area'); ?>
+			<?php if ( is_single() ):
+				dynamic_sidebar('after_post_widget_area'); 
+			endif;
+			?>
 		</div>
 
 		<div class="main-content">

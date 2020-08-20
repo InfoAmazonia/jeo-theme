@@ -74,9 +74,13 @@
     </main><!-- #main -->
 
     <div class="content">
-        <div class="after-post-content-widget-area">
-            <?php dynamic_sidebar('after_post_widget_area'); ?>
-        </div>
+        
+		<div class="after-post-content-widget-area">
+			<?php if ( is_single() ):
+				dynamic_sidebar('after_post_widget_area'); 
+			endif;
+			?>
+		</div>
         <div class="main-content">
             <?php
             // If comments are open or we have at least one comment, load up the comment template.
