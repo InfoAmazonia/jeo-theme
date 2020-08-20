@@ -106,18 +106,18 @@ add_action('wp_head', 'newspack_scott_typography_css_wrap');
 function newspack_scott_scripts() {
 	// Enqueue Google fonts.
 	wp_deregister_script('jquery');
-	wp_enqueue_script('njquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', [], '2.1.4', true);
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', [], '2.1.4', true);
 
 	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), [], null);
 	
 	if(is_search()) {
-		wp_enqueue_script('momenta', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', ['njquery'], null, true);
+		wp_enqueue_script('momenta', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', ['jquery'], null, true);
 		wp_enqueue_style('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', [], '0.1.0', 'all');
-		wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['njquery', 'momenta'], '0.1.0', true);
+		wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['jquery', 'momenta'], '0.1.0', true);
 	}
 
 	wp_enqueue_style('app', get_stylesheet_directory_uri() . '/dist/app.css', ['newspack-style'], filemtime(get_stylesheet_directory() . '/dist/app.css'), 'all');
-	wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js', ['njquery'], null, true);
+	wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery'], null, true);
 }
 
 function non_blocking_styles() {
@@ -125,7 +125,7 @@ function non_blocking_styles() {
 }
 
 function category_deletion_script() {
-	wp_enqueue_script('category-deletion-warning', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/category-deletion-warning.js', ['njquery'], true);
+	wp_enqueue_script('category-deletion-warning', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/category-deletion-warning.js', ['jquery'], true);
 }
 
 function featured_image_position_cleaner_script() {
