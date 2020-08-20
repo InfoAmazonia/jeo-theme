@@ -14,7 +14,12 @@ global $post;
 $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $post_title = wp_kses_post(get_the_title());
 
-$parent_type_category = get_category_by_slug('type')->cat_ID;
+$parent_type_category = get_category_by_slug('type');
+
+if($parent_type_category) {
+	$parent_type_category = $parent_type_category->cat_ID;
+}
+
 $post_categories = get_the_category();
 $post_child_category = null;
 
@@ -25,7 +30,11 @@ foreach ($post_categories as $post_cat) {
 	}
 }
 
-$authors = get_coauthors();
+$authors = [];
+if (function_exists('get_coauthors')) {
+	$authors = get_coauthors();
+}
+
 $author_count = count($authors);
 $twitter_nicknames_text = ', by ';
 
