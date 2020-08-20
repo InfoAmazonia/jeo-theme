@@ -138,6 +138,10 @@
         flex-direction: column;
         text-align: center;
 
+        @include mobile {
+            display: initial;
+        }
+
         .fa-envelope {
             margin: 20px;
         }
