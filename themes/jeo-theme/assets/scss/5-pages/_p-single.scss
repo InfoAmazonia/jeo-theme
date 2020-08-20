@@ -42,14 +42,32 @@
         margin-bottom: 60px;
     }
 
+    .video-gallery-block, #page .video-gallery-block {
+        h2 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 38px;
+            margin-bottom: 30px;
+            font-family: var(--primary-font);
+        }
+    }
 
     .entry-content {
 
         .wp-block-newspack-blocks-homepage-articles {
+            .article-section-title{
+                font-family: var(--primary-font);
+
+                &::before{
+                    display:none;
+                }
+            }
             .entry-wrapper {
                 .entry-title {
                     a {
                         color: #111;
+                        font-family: var(--primary-font);
                     }
                 }
             }
