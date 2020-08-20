@@ -424,8 +424,11 @@ header.site-header {
     .top-header-contain {
         background-color: var(--primary);
         height: 40px;
-        display: flex;
         align-items: center;
+
+        @include desktop{
+            display: flex;
+        }
 
         div#social-nav-contain {
             display: flex;
