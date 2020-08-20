@@ -106,31 +106,33 @@ add_action('wp_head', 'newspack_scott_typography_css_wrap');
 function newspack_scott_scripts() {
 	// Enqueue Google fonts.
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', [], '2.1.4');
+	wp_enqueue_script('njquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', [], '2.1.4', true);
 
-	wp_enqueue_style('bootstrap', "https://cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.min.css", [], '4.5', 'all');
-	wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', ['jquery'], '0.0.0');
-	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), ['bootstrap'], null);
-	wp_enqueue_style('fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all');
+	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), [], null);
 	
 	if(is_search()) {
-		wp_enqueue_script('momenta', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', ['jquery']);
+		wp_enqueue_script('momenta', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', ['njquery'], null, true);
 		wp_enqueue_style('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', [], '0.1.0', 'all');
-		wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['jquery', 'momenta'], '0.1.0');
+		wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['njquery', 'momenta'], '0.1.0', true);
 	}
 
 	wp_enqueue_style('app', get_stylesheet_directory_uri() . '/dist/app.css', ['newspack-style'], filemtime(get_stylesheet_directory() . '/dist/app.css'), 'all');
-	wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js', ['jquery'], true);
+	wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js', ['njquery'], null, true);
+}
+
+function non_blocking_styles() {
+	wp_enqueue_style('fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css", array(), '5.12.0', 'all');
 }
 
 function category_deletion_script() {
-	wp_enqueue_script('category-deletion-warning', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/category-deletion-warning.js', ['jquery'], true);
+	wp_enqueue_script('category-deletion-warning', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/category-deletion-warning.js', ['njquery'], true);
 }
 
 function featured_image_position_cleaner_script() {
 	wp_enqueue_script('featured-image-position', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/featured-image-cleaner.js', '', true);
 }
 
+add_action('get_footer', 'non_blocking_styles');
 add_action('wp_enqueue_scripts', 'newspack_scott_scripts');
 add_action('admin_enqueue_scripts', 'category_deletion_script');
 add_action('admin_enqueue_scripts', 'featured_image_position_cleaner_script');
