@@ -139,7 +139,7 @@
         text-align: center;
 
         @include mobile {
-            display: initial;
+            display: block;
         }
 
         .fa-envelope {
