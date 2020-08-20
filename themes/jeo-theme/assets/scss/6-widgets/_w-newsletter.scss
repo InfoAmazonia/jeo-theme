@@ -149,6 +149,7 @@
         .newsletter-header p {
             text-align: center;
             line-height: 40px;
+            margin: 0px;
         }
 
         .anchor-text {
@@ -176,6 +177,13 @@
 
 
         }
+
+        p {
+
+            &.last-edition {
+                margin-top: 0px;
+            }
+        }
     }
 
     .mc4wp-response {
@@ -193,6 +201,7 @@
         font-size: size(32);
         font-weight: bold;
         text-transform: capitalize;
+        margin: 0px;
     }
 
 
@@ -243,10 +252,12 @@
             }
         }
 
-        &.last-edition a {
-            color: var(--primary);
-            font-size: size(14);
-            font-weight: bold;
+        &.last-edition {
+            a {
+                color: var(--primary);
+                font-size: size(14);
+                font-weight: bold;
+            }
         }
     }
 }
