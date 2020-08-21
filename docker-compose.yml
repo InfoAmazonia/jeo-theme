@@ -13,7 +13,7 @@ services:
       WORDPRESS_DB_HOST: mariadb
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DEBUG: 'true'
+      WORDPRESS_DEBUG: 'false'
       WORDPRESS_TABLE_PREFIX: 'pk_'
     volumes:
       - ./wp-content:/var/www/html/wp-content
