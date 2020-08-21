@@ -3,6 +3,7 @@
 function generic_css_injection($starter = "")
 {
 	$decoration_style = get_theme_mod('decoration_style', 'square');
+	$decoration_marker_color = get_theme_mod('decoration_marker_color', 'var(--primary)');
 
 	if ($decoration_style !== 'square') {
 		if ($decoration_style == 'top') {
@@ -11,7 +12,8 @@ function generic_css_injection($starter = "")
 					display: block;
 					height: 3px;
 					width: 30px;    
-					margin-bottom: 10px;                
+					margin-bottom: 10px;
+					background-color: ' . $decoration_marker_color . ' !important;
 				}
 			';
 		} else if ($decoration_style == 'left') {
@@ -20,6 +22,7 @@ function generic_css_injection($starter = "")
 					width: 3px;    
 					margin-right: 20px;
 					height: auto;
+					background-color: ' . $decoration_marker_color . ' !important;
 				}
 
 				.article-section-title, .cat-links {
@@ -40,6 +43,13 @@ function generic_css_injection($starter = "")
 
 			';
 		}
+	} else {
+		$starter .= '
+			.accent-header:not(.widget-title)::before, .article-section-title::before, .cat-links::before, .page-title::before {
+				background-color: ' . $decoration_marker_color . ' !important;
+			}
+
+		';
 	}
 
 

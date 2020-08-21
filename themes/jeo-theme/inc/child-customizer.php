@@ -52,6 +52,14 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Add decoration marker color
+	$wp_customize->add_setting(
+		'decoration_marker_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
 	$wp_customize->add_control(
 		new WP_Customize_Cropped_Image_Control(
 			$wp_customize,
@@ -317,6 +325,18 @@ function newspack_scott_customizer($wp_customize)
 				'top' => 'Top rectangle',
 				'left' => 'Left bar',
 				'custom' => 'Custom',
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'decoration_marker_color',
+			array(
+				'label' => __('Decoration marker color', 'jeo'),
+				'description' => __('Leave empty to use primary color'),
+				'section'     => 'title_tagline',
 			)
 		)
 	);
