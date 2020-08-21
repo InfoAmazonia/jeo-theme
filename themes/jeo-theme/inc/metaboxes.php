@@ -2,7 +2,7 @@
 function register_metaboxes() {
 	add_meta_box(
 		'display-autor-info',
-		'Show author bio',
+		'Show author biography',
 		'display_autor_bio_callback',
 		'post',
 		'side',
@@ -41,11 +41,11 @@ function display_autor_bio_callback() {
 ?>
 
 	<p>
-		<span class="jeo-row-title"><?php _e('Check to enable the author info: ', 'jeo') ?></span>
+		<span class="jeo-row-title"><?php _e('Check to enable the author biography: ', 'jeo') ?></span>
 		<div class="jeo-row-content">
 			<label for="author-bio-display">
 				<input type="checkbox" name="author-bio-display" id="author-bio-display" value="false" <?php if (isset($jeo_stored_meta['author-bio-display'])) checked($jeo_stored_meta['author-bio-display'][0], true); ?> />
-				<?php _e('Author bio', 'jeo') ?>
+				<?php _e('Author biography', 'jeo') ?>
 			</label>
 
 		</div>
@@ -56,19 +56,7 @@ function display_autor_bio_callback() {
 
 function twitter_opinion_video_callback() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
-	$jeo_stored_meta = get_post_meta(get_the_ID());
-
-	$parent_type_category = get_category_by_slug('type')->cat_ID;
-	$post_categories = get_the_category();
-	$post_child_category = null;
-
-	foreach ($post_categories as $post_cat) {
-		if ($parent_type_category == $post_cat->parent) {
-			$post_child_category = $post_cat;
-			break;
-		}
-	}
-	
+	$jeo_stored_meta = get_post_meta(get_the_ID());	
 	?>
 
 		<p>
