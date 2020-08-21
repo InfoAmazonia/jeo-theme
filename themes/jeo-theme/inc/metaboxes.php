@@ -68,13 +68,9 @@ function twitter_opinion_video_callback() {
 			break;
 		}
 	}
-?>
-<?//php if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['video'])): 
-	if(true):
-?>
-	<?//php if ($post_child_category->slug === 'video') : 
-		if (true):
+	
 	?>
+
 		<p>
 			<span class="jeo-row-title"><?php _e('Video URL to be shown on twitter sharing preview: ', 'jeo') ?></span>
 			<div class="jeo-row-content">
@@ -83,9 +79,6 @@ function twitter_opinion_video_callback() {
 				</label>
 			</div>
 		</p>
-	<?php endif; ?>
-<?php endif; ?>
-	
 
 <?php
 }
