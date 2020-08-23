@@ -201,7 +201,7 @@ body {
 }
 
 @include tablet {
-    .col-md-6 {
+    .col-md-6, .col-sm-3, .col-sm-9  {
         flex: 0 0 100%;
         max-width: 100%;
     }
