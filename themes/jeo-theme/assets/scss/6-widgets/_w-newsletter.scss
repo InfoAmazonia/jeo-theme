@@ -99,6 +99,7 @@
                     font-weight: bold;
                     letter-spacing: 0;
                     line-height: 24px;
+                    padding: 18px;
 
                     @include tablet {
                         width: 77px;
@@ -122,6 +123,7 @@
             p {
                 &.link {
                     text-align: right;
+                    margin-bottom: 0;
                 }
 
                 &.anchor-text {
