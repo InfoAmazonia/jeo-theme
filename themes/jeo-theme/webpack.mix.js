@@ -24,6 +24,7 @@ mix.react('./assets/javascript/blocks/imageGallery/index.js', 'imageGallery.js')
 mix.react('./assets/javascript/blocks/videoGallery/index.js', 'videoGallery.js');
 mix.react('./assets/javascript/blocks/imageBlock/index.js', 'imageBlock.js');
 mix.react('./assets/javascript/blocks/newsletter/index.js', 'newsletter.js');
+mix.react('./assets/javascript/blocks/linkDropdown/index.js', 'linkDropdown.js');
 
 mix.webpackConfig({
 	...defaultConfig,
