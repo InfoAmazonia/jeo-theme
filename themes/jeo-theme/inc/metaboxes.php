@@ -2,8 +2,8 @@
 function register_metaboxes() {
 	add_meta_box(
 		'display-autor-info',
-		'Show author bio',
-		'display_autor_bio_callback',
+		'Show author options',
+		'display_author_callback',
 		'post',
 		'side',
 		'default',
@@ -35,17 +35,28 @@ function register_metaboxes() {
 	);
 }
 
-function display_autor_bio_callback() {
+function display_author_callback() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
 	$jeo_stored_meta = get_post_meta(get_the_ID());
 ?>
 
 	<p>
-		<span class="jeo-row-title"><?php _e('Check to enable the author info: ', 'jeo') ?></span>
+		<!-- <span class="jeo-row-title"><?php _e('Authors biography: ', 'jeo') ?></span> -->
 		<div class="jeo-row-content">
 			<label for="author-bio-display">
 				<input type="checkbox" name="author-bio-display" id="author-bio-display" value="false" <?php if (isset($jeo_stored_meta['author-bio-display'])) checked($jeo_stored_meta['author-bio-display'][0], true); ?> />
-				<?php _e('Author bio', 'jeo') ?>
+				<?php _e('Authors biography', 'jeo') ?>
+			</label>
+
+		</div>
+	</p>
+
+	<p>
+		<!-- <span class="jeo-row-title"><?php _e('Authors listing: ', 'jeo') ?></span> -->
+		<div class="jeo-row-content">
+			<label for="authors-listing">
+				<input type="checkbox" name="authors-listing" id="authors-listing" value="false" <?php if (isset($jeo_stored_meta['authors-listing'])) checked($jeo_stored_meta['authors-listing'][0], true); ?> />
+				<?php _e('Authors listing', 'jeo') ?>
 			</label>
 
 		</div>
@@ -56,29 +67,9 @@ function display_autor_bio_callback() {
 
 function twitter_opinion_video_callback() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
-	$jeo_stored_meta = get_post_meta(get_the_ID());
-
-	$parent_type_category = get_category_by_slug('type');
-
-	if($parent_type_category) {
-		$parent_type_category = $parent_type_category->cat_ID;
-	}
-	$post_categories = get_the_category();
-	$post_child_category = null;
-
-	foreach ($post_categories as $post_cat) {
-		if ($parent_type_category == $post_cat->parent) {
-			$post_child_category = $post_cat;
-			break;
-		}
-	}
-?>
-<?//php if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['video'])): 
-	if(true):
-?>
-	<?//php if ($post_child_category->slug === 'video') : 
-		if (true):
+	$jeo_stored_meta = get_post_meta(get_the_ID());	
 	?>
+
 		<p>
 			<span class="jeo-row-title"><?php _e('Video URL to be shown on twitter sharing preview: ', 'jeo') ?></span>
 			<div class="jeo-row-content">
@@ -87,9 +78,6 @@ function twitter_opinion_video_callback() {
 				</label>
 			</div>
 		</p>
-	<?php endif; ?>
-<?php endif; ?>
-	
 
 <?php
 }
@@ -163,6 +151,12 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'author-bio-display', true);
 	} else {
 		update_post_meta($post_id, 'author-bio-display', false);
+	}
+
+	if (isset($_POST['authors-listing'])) {
+		update_post_meta($post_id, 'authors-listing', true);
+	} else {
+		update_post_meta($post_id, 'authors-listing', false);
 	}
 
 	if (isset($_POST['enable-post-erratum'])) {
