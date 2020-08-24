@@ -595,6 +595,65 @@
             }
         }
     }
+
+
+
+    /* SINGLE Post block */
+    .wp-block-newspack-blocks-homepage-articles{
+
+        &.ts-2, &.ts-3, &.ts-4, &.ts-5 {
+            .entry-meta {
+                font-size: size(14);
+            }
+            .entry-wrapper{
+                p{
+                   font-size: size(16);
+                   line-height: 22px;
+                }
+            }
+
+        }
+
+        /*block font-size: 2*/
+        &.ts-2 article {
+            /*@include desktop{*/
+                .entry-title {
+                     font-size: size(16);
+                 }
+            /*}*/
+        }
+
+
+        /*block font-size: 3*/
+        &.ts-3 article {
+            @include desktop{
+                .entry-title {
+                     font-size: size(18);
+                 }
+            }
+
+        }
+
+        /*block font-size: 4*/
+        &.ts-4 article {
+            @include desktop{
+                .entry-title {
+                     font-size: size(24);
+                 }
+            }
+        }
+
+        /*block font-size: 5*/
+        &.ts-5 article {
+            @include desktop{
+                .entry-title {
+                     font-size: size(28);
+                 }
+            }
+        }
+
+    }
+
 }
 
 

@@ -12,7 +12,7 @@
             font-size: size(18);
             font-weight: bold;
             letter-spacing: 0;
-            line-height: 21px;
+            line-height: 24px;
             text-transform: uppercase;
             margin-bottom: 30px;
         }
@@ -20,7 +20,8 @@
         &-content {
             color: #0A0A0A;
             letter-spacing: 0;
-            line-height: 32px;
+            font-size: size(16);
+            line-height: 22px;
             margin-bottom: 0px;
         }
     }
