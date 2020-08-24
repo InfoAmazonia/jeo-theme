@@ -131,3 +131,11 @@
         }
     }
 }
+
+.wp-block-newspack-blocks-homepage-articles {
+    .entry-meta .byline {
+        a {
+            color: var(--primary);
+        }
+    }
+}
