@@ -58,7 +58,11 @@ function twitter_opinion_video_callback() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
 	$jeo_stored_meta = get_post_meta(get_the_ID());
 
-	$parent_type_category = get_category_by_slug('type')->cat_ID;
+	$parent_type_category = get_category_by_slug('type');
+
+	if($parent_type_category) {
+		$parent_type_category = $parent_type_category->cat_ID;
+	}
 	$post_categories = get_the_category();
 	$post_child_category = null;
 
