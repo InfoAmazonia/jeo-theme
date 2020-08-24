@@ -181,6 +181,42 @@ add_action('init', 'custom_embed_template');
 
 
 /**
+ * Content box
+ */
+function content_box_template() {
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/contentBox.asset.php');
+
+	wp_register_script(
+		'content-box',
+		get_stylesheet_directory_uri() . '/dist/contentBox.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'content-box',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/contentBox/style.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/contentBox/style.css'),
+		'all'
+	);
+
+	register_block_type('jeo-theme/content-box', array(
+		'render_callback' => 'content_box_render_callback',
+		'editor_script' => 'content-box',
+		'editor_style'  => 'content-box',
+	));
+}
+
+function content_box_render_callback($block_attributes, $content) {
+	return "asdasdasdadfsd" . $content;
+}
+
+add_action('init', 'content_box_template');
+
+/**
  * Image Gallery
  */
 function custom_image_gallery_block() {

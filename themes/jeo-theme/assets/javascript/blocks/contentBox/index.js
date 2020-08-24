@@ -4,9 +4,9 @@ import { __ } from "@wordpress/i18n";
 import { Button, SelectControl, TextControl } from "@wordpress/components";
 //const {  } = wp.editor;
 
-wp.blocks.registerBlockType("jeo-theme/embed-template", {
-	title: "Embed Template",
-	icon: "format-video",
+wp.blocks.registerBlockType("jeo-theme/content-box", {
+	title: "Content Box",
+	icon: "format-aside",
 	category: "common",
 	supports: {
 		align: false,
@@ -25,17 +25,15 @@ wp.blocks.registerBlockType("jeo-theme/embed-template", {
 		} = props;
 		
 		const TEMPLATE =  [ 
-				[ 'core/paragraph', { placeholder: 'Embed title' }],
-				[ 'core/paragraph', { placeholder: 'Author' } ],
-				[ 'core/embed' ],
+				[ 'core/paragraph', { placeholder: 'Insert the text of the content box here' } ],
 		];
 		  
 		return (
 			<>
-				<div className="embed-item-template" key="container">
+				<div className="content-box">
 					<div>
 						<InnerBlocks
-							allowedBlocks={[ 'core/embed', 'core/paragraph' ]}
+							allowedBlocks={[ 'core/paragraph' ]}
 							template={TEMPLATE}
 							templateLock="all"
 						/>
@@ -58,7 +56,7 @@ wp.blocks.registerBlockType("jeo-theme/embed-template", {
 
 		return (
 			<>	
-				<div className="embed-template-block">
+				<div className="content-box">
 					<InnerBlocks.Content/>
 				</div>
 			</>
