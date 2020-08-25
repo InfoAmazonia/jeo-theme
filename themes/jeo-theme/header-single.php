@@ -39,7 +39,7 @@ $author_count = count($authors);
 $twitter_nicknames_text = ', by ';
 
 $i = 1;
-if (get_post_meta(get_the_ID(), 'author-bio-display', true)) :
+if (get_post_meta(get_the_ID(), 'authors-listing', true)) :
 	foreach ($authors as $author) {
 
 		$i++;
@@ -87,7 +87,7 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) :
+	<?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) :
 		foreach ($authors as $author) :
 			$authorDisplayName =  get_the_author_meta('display_name', $author->ID) . $sep; ?>
 			<meta property="article:author" content="<?php echo $authorDisplayName; ?>" />

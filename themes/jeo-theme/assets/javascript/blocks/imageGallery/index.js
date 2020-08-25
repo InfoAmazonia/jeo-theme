@@ -1,13 +1,8 @@
-const { MediaUpload, RichText } = wp.editor;
-const { Button } = wp.components;
-const { __ }                = wp.i18n;
-const { registerBlockType } = wp.blocks;
+import { MediaUpload, RichText } from "@wordpress/block-editor";
+import { Button } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
 
-
-
-
-
-registerBlockType('jeo-theme/custom-image-gallery-block', {
+wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
     title: __('Image Gallery'),
     icon: 'format-gallery',
     category: 'common',
@@ -23,7 +18,7 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
 
         images: {
             type: 'array',
-        },   
+        },
 
         imagesDescriptions: {
             type: 'array',
@@ -34,16 +29,16 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
         }
     },
 
-    edit({ attributes, className, setAttributes}) {
+    edit({ attributes, className, setAttributes }) {
         const { galleryTitle = "", images = [], imagesDescriptions = [], imagesCredits = [] } = attributes;
         console.log(attributes);
 
-        images.forEach( (element, index) => {
-            if(!imagesDescriptions[index]) {
+        images.forEach((element, index) => {
+            if (!imagesDescriptions[index]) {
                 imagesDescriptions[index] = "";
             }
 
-            if(!imagesCredits[index]) {
+            if (!imagesCredits[index]) {
                 imagesCredits[index] = "";
             }
         });
@@ -66,7 +61,7 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
         }
 
         const displayImages = (images) => {
-            
+
             //console.log(external_link_api); 
             return (
                 images.map((image, index) => {
@@ -77,35 +72,39 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
                             <RichText
                                 tagName="span"
                                 className="description-field"
-                                value={ imagesDescriptions[index] }
-                                formattingControls={ [ 'bold', 'italic' ] } 
-                                onChange={ ( content ) => {
-                                    setAttributes( { imagesDescriptions: imagesDescriptions.map( (item, i) => {
-                                        if (i == index) {
-                                            return content;
-                                        } else {
-                                            return item;
-                                        }
-                                    }) } )
-                                } }
-                                placeholder={ __( 'Type here your description' ) } 
+                                value={imagesDescriptions[index]}
+                                formattingControls={['bold', 'italic']}
+                                onChange={(content) => {
+                                    setAttributes({
+                                        imagesDescriptions: imagesDescriptions.map((item, i) => {
+                                            if (i == index) {
+                                                return content;
+                                            } else {
+                                                return item;
+                                            }
+                                        })
+                                    })
+                                }}
+                                placeholder={__('Type here your description')}
                             />
 
                             <RichText
                                 tagName="span"
                                 className="credit-field"
-                                value={ imagesCredits[index] }
-                                formattingControls={ [ 'bold', 'italic' ] } 
-                                onChange={ ( content ) => {
-                                    setAttributes( { imagesCredits: imagesCredits.map( (item, i) => {
-                                        if (i == index) {
-                                            return content;
-                                        } else {
-                                            return item;
-                                        }
-                                    }) } )
-                                } }
-                                placeholder={ __( 'Type the credits here' ) } 
+                                value={imagesCredits[index]}
+                                formattingControls={['bold', 'italic']}
+                                onChange={(content) => {
+                                    setAttributes({
+                                        imagesCredits: imagesCredits.map((item, i) => {
+                                            if (i == index) {
+                                                return content;
+                                            } else {
+                                                return item;
+                                            }
+                                        })
+                                    })
+                                }}
+                                placeholder={__('Type the credits here')}
                             />
                             <div className='remove-item' onClick={() => removeImage(index)}><span class="dashicons dashicons-trash"></span></div>
                         </div>
@@ -120,12 +119,12 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
                 <RichText
                     tagName="h2"
                     className="gallery-title"
-                    value={ galleryTitle }
-                    formattingControls={ [ 'bold', 'italic' ] } 
-                    onChange={ ( galleryTitle ) => {
-                        setAttributes( { galleryTitle } )
-                    } }
-                    placeholder={ __( 'Type a title' ) } 
+                    value={galleryTitle}
+                    formattingControls={['bold', 'italic']}
+                    onChange={(galleryTitle) => {
+                        setAttributes({ galleryTitle })
+                    }}
+                    placeholder={__('Type a title')}
                 />
                 <div className="gallery-grid">
                     {displayImages(images)}
@@ -165,9 +164,9 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
                             />
 
                             <div class="image-meta">
-                                <div class="image-description"> <RichText.Content tagName="span" value={ imagesDescriptions[index] } /></div>
+                                <div class="image-description"> <RichText.Content tagName="span" value={imagesDescriptions[index]} /></div>
                                 <i class="fas fa-camera"></i>
-                                <div class="image-credit"> <RichText.Content tagName="span" value={ imagesCredits[index] } /></div>
+                                <div class="image-credit"> <RichText.Content tagName="span" value={imagesCredits[index]} /></div>
                             </div>
 
                         </div>
@@ -180,7 +179,7 @@ registerBlockType('jeo-theme/custom-image-gallery-block', {
             <div className="image-gallery">
                 <div className="image-gallery-wrapper">
                     <div className="gallery-title">
-                        <RichText.Content tagName="h2" value={ galleryTitle } />
+                        <RichText.Content tagName="h2" value={galleryTitle} />
                     </div>
                     <div className="actions">
                         <button action="display-grid">

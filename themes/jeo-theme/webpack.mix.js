@@ -20,6 +20,7 @@ mix.js(assets_dir + '/javascript/app.js', '');
 mix.sass(assets_dir + '/scss/app.scss', '').sourceMaps();
 
 mix.react('./assets/javascript/blocks/embedTemplate/index.js', 'embedTemplate.js');
+mix.react('./assets/javascript/blocks/contentBox/index.js', 'contentBox.js');
 mix.react('./assets/javascript/blocks/imageGallery/index.js', 'imageGallery.js');
 mix.react('./assets/javascript/blocks/videoGallery/index.js', 'videoGallery.js');
 mix.react('./assets/javascript/blocks/imageBlock/index.js', 'imageBlock.js');

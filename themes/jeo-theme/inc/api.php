@@ -58,6 +58,7 @@ class API {
             register_rest_route( 'api', '/external-link', array(
                 'methods' => 'GET',
                 'callback' => 'API::get_external_title',
+                'permission_callback' => __return_true(),
                 'args' => [
                     'target_link' => array(
                         'required' => true,
