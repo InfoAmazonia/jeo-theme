@@ -70,7 +70,7 @@ class newsletter_widget extends WP_Widget {
 					<?= do_shortcode($instance['newsletter_shortcode']) ?>
 				<?php endif; ?>
 				<?php if (!empty($instance['adicional_content'])) : ?>
-					<p class="link"><?= _e($instance['adicional_content'], 'jeo') ?></p>
+					<p class="link-add"><?= _e($instance['adicional_content'], 'jeo') ?></p>
 				<?php endif; ?>
 				<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'vertical') : ?>
 					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
