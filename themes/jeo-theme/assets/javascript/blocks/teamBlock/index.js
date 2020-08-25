@@ -1,5 +1,4 @@
 import { MediaUpload, RichText } from "@wordpress/block-editor";
-import { Button } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { registerBlockType } from "@wordpress/blocks";
 

@@ -1,7 +1,7 @@
-const { MediaUpload, RichText } = wp.editor;
-const { Button } = wp.components;
-const { __ }                = wp.i18n;
-const { registerBlockType } = wp.blocks;
+import { MediaUpload, RichText } from "@wordpress/block-editor";
+import { Button } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
+import { registerBlockType } from "@wordpress/blocks";
 
 registerBlockType('jeo-theme/custom-link-dropdown', {
     title: __('Link Dropdown'),

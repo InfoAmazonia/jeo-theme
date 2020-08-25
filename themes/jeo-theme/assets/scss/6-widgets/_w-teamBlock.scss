@@ -6,8 +6,13 @@
     .teamBlock-wrapper {
         padding: size(20) size(20) size(20) size(60);
 
+        @include tablet {
+            padding: size(20) 0 size(20) size(0);
+        }
+
         .title {
             font-size: size(26);
+            margin-left: size(15);
         }
 
         .team-container {
@@ -16,10 +21,19 @@
             grid-template-columns: 1fr 1fr;
             padding-top: size(32);
 
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+            }
+
             .member {
                 display: flex;
                 flex-direction: row;
                 margin-bottom: size(32);
+
+                @include tablet {
+                    margin-left: size(15);
+                }
 
                 .picture-container {
                     width: size(85);
