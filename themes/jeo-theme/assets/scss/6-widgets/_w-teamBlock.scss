@@ -3,6 +3,11 @@
     border-radius: size(10);
     font-family: var(--primary-font);
 
+    @include desktop {
+        margin-left: -4rem;
+        margin-right: -4rem;
+    }
+
     .teamBlock-wrapper {
         padding: size(20) size(20) size(20) size(60);
 
@@ -19,7 +24,7 @@
             display: grid;
             grid-gap: size(32);
             grid-template-columns: 1fr 1fr;
-            padding-top: size(32);
+            padding-top: size(16);
 
             @include tablet {
                 display: flex;
@@ -29,7 +34,7 @@
             .member {
                 display: flex;
                 flex-direction: row;
-                margin-bottom: size(32);
+                margin-bottom: size(16);
                 align-items: center;
 
                 @include tablet {
@@ -71,5 +76,19 @@
                 }
             }
         }
+    }
+}
+
+
+
+.dark-theme {
+    .team-block {
+        background-color: rgba(238, 238, 238, 0.2);
+            .title-container {
+                .title{
+                    color: #F5F5F5;
+                    opacity: 0.60;
+                }
+            }
     }
 }
