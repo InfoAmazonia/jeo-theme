@@ -4,12 +4,17 @@
     }
 
     .controls {
-        cursor: pointer;
         display: flex;
         flex-direction: row;
 
         .arrow-icon {
+            display: none;
             margin: auto size(10);
+            margin-left: auto;
+
+                @include mobile {
+                    display: block;
+                }
         }
 
         .dropdown-title {
@@ -44,8 +49,10 @@
     }
 
     .sections.saved-block {
-        height: 0;
-        overflow: hidden;
-        opacity: 0;
+        @include mobile {
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
     }
 }
