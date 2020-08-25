@@ -405,14 +405,18 @@
                     .cat-links {
                         opacity: 0.6;
                         color: #FFFFFF;
+                        font-size: size(18);
                     }
                 }
             }
         }
 
         &.wpnbha .cat-links{
-            font-size: size(18);
+            font-size: size(14);
             font-family: var(--primary-font);
+            a   { 
+                color: var(--primary);
+            }
         }
 
         &.ts-2,
