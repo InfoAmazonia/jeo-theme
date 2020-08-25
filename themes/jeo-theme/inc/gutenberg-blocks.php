@@ -253,3 +253,25 @@ function custom_image_gallery_block() {
 }
 
 add_action('init', 'custom_image_gallery_block');
+
+/**
+ * Toolbar tooltip
+ */
+
+add_action('enqueue_block_editor_assets', 'toolbar_tooltip');
+
+function toolbar_tooltip() {
+	wp_enqueue_script(
+		'toolbar-tooltip',
+		get_stylesheet_directory_uri() . '/dist/tooltip.js',
+		array( 'wp-compose', 'wp-data', 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor' ),
+		'',
+		true
+	);
+
+	wp_enqueue_style(
+		'text-highlight-button-editor-css',
+		get_stylesheet_directory_uri() . '/assets/javascript/toolbar/tooltip/dashboard.css',
+		array( 'wp-edit-blocks' )
+	);
+}
