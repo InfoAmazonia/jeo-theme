@@ -246,7 +246,8 @@
             text-align: center;
 
             a {
-                color: var(--primary)
+                color: var(--primary);
+                font-weight: bold;
             }
 
             a:hover {
@@ -259,6 +260,16 @@
                 color: var(--primary);
                 font-size: size(14);
                 font-weight: bold;
+            }
+        }
+
+        &.link-add{
+            font-size: size(14);
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 19px;
+            a {
+                color: var(--primary);
             }
         }
     }
