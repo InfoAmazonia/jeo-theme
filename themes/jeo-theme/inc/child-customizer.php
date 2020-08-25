@@ -95,6 +95,24 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Add content box title
+	$wp_customize->add_setting(
+		'content_box_title',
+		array(
+			'default'           => '',
+			//'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'content_box_title',
+		array(
+			'label'   => __( 'Content box title', 'newspack' ),
+			'section' => 'title_tagline',
+			'type'    => 'text',
+		)
+	);
+
 	// Add sticky logo control and ooption to header
 	$wp_customize->add_setting(
 		'logo_sticky_image',
@@ -750,6 +768,43 @@ function newspack_scott_customizer($wp_customize)
 			'description' => __( 'Example: Libre Basquesville' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
+		)
+	);
+
+
+	// Menu font
+	$wp_customize->add_setting(
+		'menu_font',
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'menu_font',
+		array(
+			'label'       => __( 'Menu font', 'newspack' ),
+			'description' => __( 'Example: Open Sans. If it is empty, the Header Font is used.' ),
+			'section'     => 'newspack_typography',
+			'type'        => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_menu_size',
+		array(
+			'default'  => '1',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'typo_menu_size',
+		array(
+			'type' => 'number',
+			'section' => 'newspack_typography',
+			'label' => __( 'Menu font size (rem)', 'newspack' ),
+			'input_attrs' => $range_atttrs,
 		)
 	);
 

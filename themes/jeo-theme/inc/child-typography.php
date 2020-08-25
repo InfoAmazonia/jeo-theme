@@ -186,21 +186,36 @@ function newspack_scott_custom_typography_css() {
 		}
 	}';
 
-	if (!empty(get_theme_mod( 'accent_font', ''))) {
-		$accent_font = wp_kses( get_theme_mod( 'accent_font'), null );
+	if (!empty(get_theme_mod( 'menu_font', ''))) {
+		$menu_font = wp_kses( get_theme_mod( 'menu_font'), null );
 
-		$theme_css .= '
-		.accent-header:not(.widget-title), .article-section-title, .archive .article-section-title, .archive .article-section-title .page-description, .page-title, #secondary .widget-title, .author-bio .accent-header span,.tags-links span:first-child, .single .cat-links {
-			font-family: "' . $accent_font . '", "sans-serif";
-		}
+		if($menu_font) {
+			$theme_css .= '
+			header.site-header .bottom-header-contain .nav1 .main-menu > li {
+				font-family: "' . $menu_font . '", "sans-serif";
+			}
 
-		.category-most-read .header, .image-gallery .image-gallery-header {
-			font-family: "' . $accent_font . '", "sans-serif";
+			:root {
+				--menu-font: "' . $menu_font . '", "sans-serif";
+			}
+			';
 		}
-		:root {
-			--accent-font: "' . $accent_font . '", "sans-serif";
+	}
+
+	if (!empty(get_theme_mod( 'typo_menu_size', ''))) {
+		$typo_menu_size = wp_kses( get_theme_mod( 'typo_menu_size'), null );
+
+		if($typo_menu_size) {
+			$theme_css .= '
+			header.site-header .bottom-header-contain .nav1 .main-menu > li {
+				font-size: ' . $typo_menu_size . 'rem;
+			}
+
+			:root {
+				--menu-size: "' . $typo_menu_size . 'rem;
+			}
+			';
 		}
-		';
 	}
 
 	if (!empty(get_theme_mod( 'single_featured_font', ''))) {

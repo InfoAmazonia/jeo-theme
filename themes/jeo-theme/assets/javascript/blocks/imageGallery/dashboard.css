@@ -36,6 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #333;
 }
 
 .image-gallery .select-images-button.is-button.is-default.is-large {
