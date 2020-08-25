@@ -30,7 +30,7 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 		  
 		return (
 			<>
-				<div className="content-box">
+				<div className="content-box--text">
 					<div>
 						<InnerBlocks
 							allowedBlocks={[ 'core/paragraph' ]}
@@ -56,7 +56,7 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 
 		return (
 			<>	
-				<div className="content-box">
+				<div className="content-box--text">
 					<InnerBlocks.Content/>
 				</div>
 			</>

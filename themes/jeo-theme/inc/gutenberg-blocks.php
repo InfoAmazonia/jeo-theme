@@ -211,7 +211,12 @@ function content_box_template() {
 }
 
 function content_box_render_callback($block_attributes, $content) {
-	return "asdasdasdadfsd" . $content;
+	$final_result = '<div class="content-box">';
+	$final_result .= '	<h2 class="content-box--title">'. get_theme_mod('content_box_title') .'</h2>';
+	$final_result .= '	'. $content;
+	$final_result .= '</div>';
+
+	return $final_result;
 }
 
 add_action('init', 'content_box_template');
