@@ -381,10 +381,19 @@
     /* HOMEPAGE Post block */
     .wp-block-newspack-blocks-homepage-articles {
 
-        &.image-alignbehind .cat-links {
-            opacity: 0.6;
-            color: #FFFFFF;
+        /* Main highlight InfoAmazonia*/
+        &.image-alignbehind{
+            &.alignfull{
+                padding-left: 0px;
+                padding-right: 0px;
+                margin-top: 0px;
+            }
+            .cat-links {
+                opacity: 0.6;
+                color: #FFFFFF;
+            }
         }
+
         &.wpnbha .cat-links{
             font-size: size(18);
             font-family: var(--primary-font);

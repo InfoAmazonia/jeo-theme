@@ -753,6 +753,43 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+
+	// Menu font
+	$wp_customize->add_setting(
+		'menu_font',
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'menu_font',
+		array(
+			'label'       => __( 'Menu font', 'newspack' ),
+			'description' => __( 'Example: Open Sans. If it is empty, the Header Font is used.' ),
+			'section'     => 'newspack_typography',
+			'type'        => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_menu_size',
+		array(
+			'default'  => '1',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'typo_menu_size',
+		array(
+			'type' => 'number',
+			'section' => 'newspack_typography',
+			'label' => __( 'Menu font size (rem)', 'newspack' ),
+			'input_attrs' => $range_atttrs,
+		)
+	);
+
 	// Accent text font 
 	$wp_customize->add_setting(
 		'accent_font_import_code_alternate',

@@ -257,9 +257,16 @@ header.site-header {
 
     .bottom-header-contain {
         background-color: var(--secondary);
-        height: 50px;
         display: flex;
         align-items: center;
+
+        &.desktop-only{
+            height: 45px;
+        }
+
+        &.post-header{
+            height: 50px;
+        }
 
         @include mobile {
             display: none;
