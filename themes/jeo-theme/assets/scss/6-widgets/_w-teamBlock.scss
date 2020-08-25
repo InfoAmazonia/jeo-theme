@@ -1,0 +1,94 @@
+.team-block {
+    background-color: #F5F5F5;
+    border-radius: size(10);
+    font-family: var(--primary-font);
+
+    @include desktop {
+        margin-left: -4rem;
+        margin-right: -4rem;
+    }
+
+    .teamBlock-wrapper {
+        padding: size(20) size(20) size(20) size(60);
+
+        @include tablet {
+            padding: size(20) 0 size(20) size(0);
+        }
+
+        .title {
+            font-size: size(26);
+            margin-left: size(15);
+        }
+
+        .team-container {
+            display: grid;
+            grid-gap: size(32);
+            grid-template-columns: 1fr 1fr;
+            padding-top: size(16);
+
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .member {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: size(16);
+                align-items: center;
+
+                @include tablet {
+                    margin-left: size(15);
+                }
+
+                .member-wrapper {
+                    flex-basis: 35%;
+
+                    .picture-container {
+                        width: size(85);
+                        height: size(85);
+                        overflow: hidden;
+                        border-radius: 50%;
+    
+                        .member-picture {
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+
+                .member-info {
+                    margin-left: size(16);
+                    flex-basis: 65%;
+
+                    .member-name {
+                        font-size: size(18);
+                        font-weight: bold;
+                        margin-bottom: 0;
+                        margin-top: 0px;
+                    }
+
+                    .member-function {
+                        font-size: size(16);
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.dark-theme {
+    .team-block {
+        background-color: #23282D;
+            .title-container {
+                .title{
+                    color: #F5F5F5;
+                    opacity: 0.60;
+                }
+            }
+    }
+}
