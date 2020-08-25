@@ -1,70 +1,51 @@
-.link-dropdown .controls {
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-}
+.link-dropdown {
+    .section > * {
+        margin: auto 0;
+    }
 
-.link-dropdown .controls .arrow-icon {
-    margin: auto 10px;
-}
+    .controls {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
 
-.link-dropdown .dropdown-title {
-    font-size: 18px;
-    color: #555D66;
-    font-family: var(--primary-font);
-}
+        .arrow-icon {
+            margin: auto size(10);
+        }
 
-.link-dropdown .sections {
-    border-top: 1px solid #DDDDDD;
-}
+        .dropdown-title {
+            font-size: size(18);
+            color: #555D66;
+            font-family: var(--primary-font);
+        }
+    }
 
-.link-dropdown .sections.saved-block {
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-}
+    .sections {
+        border-top: size(1) solid #DDDDDD;
 
+        .section {
+            display: flex;
+            flex-direction: row;
+            margin-top: size(20);
+            margin-left: size(10);
 
-.link-dropdown .section {
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-left: 10px;
-}
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                font-family: var(--primary-font);
+                font-size: size(16);
+                color: #191E23 !important;
 
-.link-dropdown .section {
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-left: 10px;
-}
+                &:hover {
+                    font-size: size(16);
+                    color: #555D66 !important;
+                }
+            }
+        }
+    }
 
-.link-dropdown .section > * {
-    margin: auto 0;
-}
-
-.link-dropdown .section a {
-    text-decoration: none;
-    font-weight: bold;
-    font-family: var(--primary-font);
-    font-size: 16px;
-    color: #191E23 !important;
-}
-
-.link-dropdown .section a:hover {
-    font-size: 16px;
-    color: #555D66 !important;
-}
-
-.link-dropdown .inputs {
-    display: flex;
-    flex-direction: row;
-}
-
-.link-dropdown .inputs p, .link-dropdown .section .section-url {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #DDDDDD;
-    border-radius: 10px;
-    min-width: 20%;
+    .sections.saved-block {
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
 }
