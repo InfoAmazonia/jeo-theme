@@ -1,5 +1,14 @@
 window.addEventListener("DOMContentLoaded", function () {
-    if(document.querySelector('.link-dropdown')) {
+    const isMobile = () => {
+        const deviceWidth = document.documentElement.clientWidth;
+
+        if (deviceWidth >= 830) return false;
+        
+        return true;
+    }
+    
+
+    if(document.querySelector('.link-dropdown') && isMobile()) {
         document.querySelector('.link-dropdown .controls.saved-block').onclick = () => {
             const sections = document.querySelector('.link-dropdown .sections');
             const arrowIcon = document.querySelector('.link-dropdown .arrow-icon');
