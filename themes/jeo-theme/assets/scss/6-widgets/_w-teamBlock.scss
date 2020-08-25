@@ -35,20 +35,26 @@
                     margin-left: size(15);
                 }
 
-                .picture-container {
-                    width: size(85);
-                    height: size(85);
-                    overflow: hidden;
-                    border-radius: 50%;
+                .member-wrapper {
+                    flex-basis: 35%;
 
-                    .member-picture {
-                        height: 100%;
-                        object-fit: cover;
+                    .picture-container {
+                        width: size(85);
+                        height: size(85);
+                        overflow: hidden;
+                        border-radius: 50%;
+    
+                        .member-picture {
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
 
+
                 .member-info {
                     margin-left: size(16);
+                    flex-basis: 65%;
 
                     .member-name {
                         font-size: size(18);

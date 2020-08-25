@@ -149,13 +149,15 @@ registerBlockType('jeo-theme/custom-team-block', {
 
                     return (
                         <div className="member">
-                            <div className="picture-container">
-                                <img
-                                    className="member-picture"
-                                    key={profilePicture.id}
-                                    src={profilePicture.url}
-                                    alt={profilePicture.alt}
-                                />
+                            <div className="member-wrapper">
+                                <div className="picture-container">
+                                    <img
+                                        className="member-picture"
+                                        key={profilePicture.id}
+                                        src={profilePicture.url}
+                                        alt={profilePicture.alt}
+                                    />
+                                </div>
                             </div>
                             <div className="member-info">
                                 <RichText.Content className="member-name" tagName="p" value={ profileNames[index] } />
