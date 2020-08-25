@@ -1,29 +1,29 @@
 .team-block {
     background-color: #F5F5F5;
-    border-radius: 0.625rem;
+    border-radius: size(10);
     font-family: var(--primary-font);
 
     .teamBlock-wrapper {
-        padding: 1.25rem 1.25rem 1.25rem 3.75rem;
+        padding: size(20) size(20) size(20) size(60);
 
         .title {
-            font-size: 1.625rem;
+            font-size: size(26);
         }
 
         .team-container {
             display: grid;
-            grid-gap: 2rem;
+            grid-gap: size(32);
             grid-template-columns: 1fr 1fr;
-            padding-top: 2rem;
+            padding-top: size(32);
 
             .member {
                 display: flex;
                 flex-direction: row;
-                margin-bottom: 2rem;
+                margin-bottom: size(32);
 
                 .picture-container {
-                    width: 5.3125rem;
-                    height: 5.3125rem;
+                    width: size(85);
+                    height: size(85);
                     overflow: hidden;
                     border-radius: 50%;
 
@@ -34,7 +34,7 @@
                 }
 
                 .member-info {
-                    margin-left: 1rem;
+                    margin-left: size(16);
 
                     .member-name {
                         font-size: size(18);
