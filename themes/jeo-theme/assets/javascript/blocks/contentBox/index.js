@@ -32,6 +32,7 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 			<>
 				<div className="content-box--text">
 					<div>
+						<h3> Content box </h3>
 						<InnerBlocks
 							allowedBlocks={[ 'core/paragraph' ]}
 							template={TEMPLATE}
