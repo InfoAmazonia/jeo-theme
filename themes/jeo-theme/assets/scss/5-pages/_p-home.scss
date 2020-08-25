@@ -387,10 +387,26 @@
                 padding-left: 0px;
                 padding-right: 0px;
                 margin-top: 0px;
-            }
-            .cat-links {
-                opacity: 0.6;
-                color: #FFFFFF;
+
+                figure.post-thumbnail a {
+                    padding-top: unset;
+                    overflow: unset;
+                    position: unset;
+                    display: unset;
+                    height: unset;
+                }
+
+                .entry-wrapper {
+                    max-width: 90%;
+                    width: 1200px;
+                    margin: 30px auto;
+                    padding: 0px;
+
+                    .cat-links {
+                        opacity: 0.6;
+                        color: #FFFFFF;
+                    }
+                }
             }
         }
 
