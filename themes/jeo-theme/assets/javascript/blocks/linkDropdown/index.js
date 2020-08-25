@@ -3,11 +3,9 @@ const { Button } = wp.components;
 const { __ }                = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-//TODO: CHANGE ICON
-
 registerBlockType('jeo-theme/custom-link-dropdown', {
     title: __('Link Dropdown'),
-    icon: 'format-gallery',
+    icon: 'editor-ul',
     category: 'common',
     keywords: [
         __('link'),

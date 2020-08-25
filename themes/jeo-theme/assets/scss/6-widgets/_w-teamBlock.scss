@@ -1,0 +1,53 @@
+.team-block {
+    background-color: #F5F5F5;
+    border-radius: 0.625rem;
+    font-family: var(--primary-font);
+
+    .teamBlock-wrapper {
+        padding: 1.25rem 1.25rem 1.25rem 3.75rem;
+
+        .title {
+            font-size: 1.625rem;
+        }
+
+        .team-container {
+            display: grid;
+            grid-gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 2rem;
+
+            .member {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 2rem;
+
+                .picture-container {
+                    width: 5.3125rem;
+                    height: 5.3125rem;
+                    overflow: hidden;
+                    border-radius: 50%;
+
+                    .member-picture {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .member-info {
+                    margin-left: 1rem;
+
+                    .member-name {
+                        font-size: size(18);
+                        font-weight: bold;
+                        margin-bottom: 0;
+                    }
+
+                    .member-function {
+                        font-size: size(16);
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
