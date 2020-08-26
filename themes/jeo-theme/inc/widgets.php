@@ -61,7 +61,7 @@ class newsletter_widget extends WP_Widget {
 				<p class="anchor-text">
 				<?= _e($instance['subtitle'], 'jeo') ?>
 					<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'horizontal') : ?>
-						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?>
+						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">' . __('SEE LAST EDITION', 'jeo') . '</a>' ?>
 					<?php endif; ?>
 				</p>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
@@ -73,7 +73,7 @@ class newsletter_widget extends WP_Widget {
 					<p class="link-add"><?= _e($instance['adicional_content'], 'jeo') ?></p>
 				<?php endif; ?>
 				<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'vertical') : ?>
-					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
+					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">'. __('SEE LAST EDITION', 'jeo'). '</a>' ?></p>
 				<?php endif; ?>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
 			</div>
