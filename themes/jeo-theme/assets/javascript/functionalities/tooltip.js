@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         tooltip.onclick = function() {
             this.classList.toggle('active');
+            document.querySelectorAll('.tooltip-block.active').forEach(item => { if(item != this) item.classList.remove('active')})
         }
     })
 })
