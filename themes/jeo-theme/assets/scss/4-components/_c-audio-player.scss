@@ -98,3 +98,28 @@
         }
     }
 }
+
+.dark-theme {
+    .audio-fake-player {
+        background: rgba(238, 238, 238, 0.15);
+
+        .player-meta {
+            .audio-bar {
+                background-color: rgba(245, 245, 245, 0.5);
+
+                .fill-bar {
+                    width: 0%;
+                    background: var(--primary);
+                    height: inherit;
+                    transition: all .03s;
+                    border-radius: 20px;
+                }
+            }
+    
+            .current-time, .total-time  {
+                color: #F5F5F5
+            }
+        }
+    }
+    
+}
