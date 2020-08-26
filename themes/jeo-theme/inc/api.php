@@ -58,11 +58,12 @@ class API {
             register_rest_route( 'api', '/external-link', array(
                 'methods' => 'GET',
                 'callback' => 'API::get_external_title',
-                'permission_callback' => __return_true(),
+                'permission_callback' => function() {
+                    return true;
+                },
                 'args' => [
                     'target_link' => array(
                         'required' => true,
-                        //'validate_callback' => 'API::validate_medal_slug'
                     ),
                 ],
             ) );
