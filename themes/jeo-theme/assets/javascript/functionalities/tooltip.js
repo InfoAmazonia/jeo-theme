@@ -13,12 +13,8 @@ window.addEventListener("DOMContentLoaded", function () {
         tooltipElement.classList.add('tooltip-block--content');
         tooltipElement.innerText = contentTooltip;
 
-        const closeIcon = document.createElement('i');
-        closeIcon.classList.add('fas', 'fa-times-circle');
 
         tooltip.innerText = referenceWord;
-
-        tooltipElement.appendChild(closeIcon);
         tooltip.appendChild(tooltipElement);
 
         tooltip.onclick = function() {
