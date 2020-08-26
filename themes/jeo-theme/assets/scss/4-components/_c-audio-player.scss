@@ -123,3 +123,11 @@
     }
     
 }
+
+.entry .entry-content .wp-block-audio {
+    figcaption {
+        text-align: center;
+        font-family: var(--featured-font);
+        margin-top: 15px;
+    }
+}
