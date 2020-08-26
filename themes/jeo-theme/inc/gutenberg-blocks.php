@@ -112,6 +112,69 @@ function custom_newsletter_block() {
 
 add_action('init', 'custom_newsletter_block');
 
+/**
+ * Link Dropdown
+ */
+function custom_link_dropdown() {
+
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/linkDropdown.asset.php');
+
+	wp_register_script(
+		'custom-link-dropdown',
+		get_stylesheet_directory_uri() . '/dist/linkDropdown.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'custom-link-dropdown',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/linkDropdown/linkDropdown.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/linkDropdown/linkDropdown.css'),
+		'all'
+	);
+
+	register_block_type('jeo-theme/custom-link-dropdown', array(
+		'editor_script' => 'custom-link-dropdown',
+		'editor_style'  => 'custom-link-dropdown',
+		'style'         => 'custom-link-dropdown',
+	));
+}
+
+add_action('init', 'custom_link_dropdown');
+
+function custom_team_block() {
+
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/teamBlock.asset.php');
+
+	wp_register_script(
+		'custom-team-block',
+		get_stylesheet_directory_uri() . '/dist/teamBlock.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'custom-team-block',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/teamBlock/teamBlock.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/teamBlock/teamBlock.css'),
+		'all'
+	);
+
+	register_block_type('jeo-theme/custom-team-block', array(
+		'editor_script' => 'custom-team-block',
+		'editor_style'  => 'custom-team-block',
+		'style'         => 'custom-team-block',
+	));
+}
+
+add_action('init', 'custom_team_block');
+
 
 /**
  * Video gallery
