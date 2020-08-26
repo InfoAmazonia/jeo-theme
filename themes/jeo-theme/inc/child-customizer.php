@@ -405,6 +405,15 @@ function newspack_scott_customizer($wp_customize)
 			)
 		)
 	);
+
+	$wp_customize->add_section(
+		'republish_modal',
+		array(
+			'title' => esc_html__('Republish Modal', 'newspack'),
+			'section' => 'republish',
+		)
+	);
+
 	// Typography Heading Desktop
 	$wp_customize->add_section(
 		'typo_heading_sizes',
@@ -422,6 +431,57 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_setting(
+		'republish_modal_title',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'republish_modal_title',
+		array(
+			'type' => 'text',
+			'section' => 'republish_modal',
+			'label' => __('Republish Modal Title'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'republish_modal_introduction',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'republish_modal_introduction',
+		array(
+			'type' => 'textarea',
+			'section' => 'republish_modal',
+			'label' => __('Republish Modal Introduction (it is allowed to use HTML tags)'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'republish_modal_bullets_introduction',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'republish_modal_bullets_introduction',
+		array(
+			'type' => 'textarea',
+			'section' => 'republish_modal',
+			'label' => __('Republish Modal Introduction (it is allowed to use HTML tags)'),
+		)
+	);
+
 	$wp_customize->add_control(
 		'typo_unit',
 		array(
@@ -435,6 +495,7 @@ function newspack_scott_customizer($wp_customize)
 			)
 		)
 	);
+
 
 
 	$range_atttrs = array(
