@@ -71,7 +71,7 @@ function newspack_scott_custom_typography_css() {
 	}
 
 
-	$font_unit = get_theme_mod('typo_unit', 'em');
+	$font_unit = get_theme_mod('typo_unit', 'rem');
 	$forced_size = get_theme_mod('typo_important')? '!important' : '';
 
 	$theme_css .= '
@@ -128,7 +128,7 @@ function newspack_scott_custom_typography_css() {
 		}
 	';
 
-	$font_unit = get_theme_mod('typo_unit_mobile', 'em');
+	$font_unit = get_theme_mod('typo_unit_mobile', 'rem');
 	$forced_size = get_theme_mod('typo_important_mobile')? '!important' : '';
 
 	/* Font size for mobile */
