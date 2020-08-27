@@ -19,15 +19,15 @@ window.addEventListener("DOMContentLoaded", function () {
     document
         .querySelectorAll(".category-audio .wp-block-audio")
         .forEach(function (audio_wrapper, index) {
-            if(index >= 1){
-                return
-            }
-            
             // Build fake player structure
             audio_wrapper.insertAdjacentHTML(
                 "afterbegin",
                 '<div class="audio-fake-player"> <div class="player-meta"> <span class="current-time">0:00</span> <div class="audio-bar"><div class="fill-bar"></div></div> <span class="total-time">1:15</span> </div> <button class="play-button"> <i class="fas fa-play"></i> </button> </div>'
             );
+
+            if(!index){
+                audio_wrapper.querySelector('.audio-fake-player').classList.add('first-fake-audio-element');
+            }
 
             const player = audio_wrapper.querySelector("audio");
             player.classList.add('hide');
