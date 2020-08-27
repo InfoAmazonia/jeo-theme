@@ -904,6 +904,15 @@
                     }
                 }
             }
+
+            .cat-links {
+                a {
+                    color: #F5F5F5;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
         }
 
         .cat-links {
