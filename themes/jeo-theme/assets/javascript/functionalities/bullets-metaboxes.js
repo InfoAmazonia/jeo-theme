@@ -13,13 +13,10 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         republishPostsLabel.onclick = () => {
-            console.log('a')
             if(document.querySelector('input[id="republish_post"]').checked) {
-                console.log('b')
                 republishPostsBullets.style.display = 'block';
                 bulletsMetaboxesTitle.style.display = 'block';
             } else {
-                console.log('c')
                 republishPostsBullets.style.display = 'none';
                 bulletsMetaboxesTitle.style.display = 'none';
             }
