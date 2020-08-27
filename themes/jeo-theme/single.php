@@ -117,6 +117,7 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 		
 		<?php 
 			if(!is_page()) {
+				get_template_part('template-parts/content/content', 'republish-post'); 
 				get_template_part('template-parts/content/content', 'related-posts'); 
 			}
 		?>
