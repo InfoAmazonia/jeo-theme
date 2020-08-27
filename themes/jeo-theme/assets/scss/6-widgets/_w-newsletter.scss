@@ -110,12 +110,23 @@
                         }
                     }
 
+                    /* arrow in button*/
                     i {
                         display: none;
 
                         @include tablet {
                             display: block;
                         }
+                    }
+
+                    /* label in button*/
+                    .mc4wp__btn-label {
+                        display: block;
+
+                        @include tablet {
+                            display: none;
+                        }
+
                     }
                 }
             }
