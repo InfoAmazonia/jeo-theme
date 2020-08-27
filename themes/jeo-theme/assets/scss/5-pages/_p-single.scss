@@ -684,63 +684,155 @@
             display: none;
 
             .shadow {
-                z-index:2;
+                z-index: 2;
                 position: fixed;
-                top:0;
-                left:0; 
-                width:100%;
-                height:100vh;
+                top: 0;
+                left: 0; 
+                width: 100%;
+                height: 100vh;
                 background: rgba(0,0,0,0.6);
-                display:flex;
+                display: flex;
                 justify-content: center;
                 align-items: center;
             }
     
             .hideModal {
-                z-index:-1;
-                opacity:0;
+                z-index: -1;
+                opacity: 0;
                 animation: hide .25s;
                 transform: scale(0);
             } @keyframes hide {
                 from{
-                    z-index:2;
+                    z-index: 2;
                     transform: scale(1);
-                    opacity:1;
+                    opacity: 1;
                 } to{
-                    z-index:-1;
+                    z-index: -1;
                     transform: scale(0);
                     opacity: 0;
                 }
             }
     
             .showModal{
-                opacity:1;
-                z-index:2;
+                opacity: 1;
+                z-index: 2;
                 animation: show .2s;
                 
                 transform: scale(1);
             } @keyframes show {
                 from{
                     transform: scale(0);
-                    opacity:0;
-                    z-index:-1;
+                    opacity:  0;
+                    z-index: -1;
                 } to{  
                     transform: scale(1);
                     opacity: 1;
-                    z-index:2;
+                    z-index: 2;
                 }
             }
     
             .republish-post-modal {
                 .main-modal {
-                    width:size(350);
-                    height:size(300);
+                    @include tablet {
+                        overflow-y: scroll;
+                    }
+
+                    @include mobile {
+                        width: 95vw;
+                    }
+
+                    margin-top: 2vw;
+                    width: 60vw;
+                    height: 80vh;
                     background: #fff;
-                    border-radius:5%;
-                    display:flex;
-                    justify-content: center;
-                    align-items:center;
-                    flex-direction: column;
+                    border-radius: size(10);
+
+                    .close-button {
+                        float: right;
+                        background-color: unset;
+                        color: #555D66;
+                    }
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        padding: size(50) size(0) size(50) size(30);
+
+                        .title {
+                            font-family: var(--primary-font);
+                            font-size: size(18);
+                            font-weight: bold;
+                        }
+
+                        .introduction, .bullets-introduction {
+                            font-family: var(--primary-font);
+                            font-size: size(15);
+                        }
+
+                        .controls {
+                            float: right;
+
+                            button {
+                                border-radius: 0;
+                                margin: 0;
+                                width: size(80);
+
+                                &:hover {
+                                    opacity: 0.75;
+                                }
+                            }
+
+                            .text-button {
+                                background-color: #cccccc;
+                                color: #555D66;      
+                            }
+
+                            .html-button {
+                                background-color: #555D66;
+                                color: white;
+                            }
+                        }
+
+                        .copied-content {
+                            background-color: #cccccc;
+                            color: #555D66;
+                            .content {
+                                padding: 0;
+
+                                .wrapper {
+                                    overflow-y: scroll;
+                                    height: size(130);
+                                    color: #555D66;
+                                    margin-right: 0;
+                                    margin-left: 0;
+                                    max-width: 100%;
+                                    
+                                    p {
+                                        padding: size(5) size(20);
+                                        font-size: size(12);
+                                        max-width: 100%;
+                                    }
+                                }
+
+                                .wrapper-raw-text {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .copy-button {
+                            cursor: pointer;
+                            float: right;
+                            font-family: var(--primary-font);
+                            font-size: size(12);
+                            color: white;
+                            font-weight: bold;
+                            background-color: #59811A;
+                            border-radius: size(15);
+                            padding: size(8) size(12);
+                            margin-top: size(15);
+                        }
+                    }
                 }
             }
         }

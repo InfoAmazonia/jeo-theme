@@ -478,7 +478,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'textarea',
 			'section' => 'republish_modal',
-			'label' => __('Republish Modal Introduction (it is allowed to use HTML tags)'),
+			'label' => __('Republish Modal Bullets Introduction (it is allowed to use HTML tags)'),
 		)
 	);
 
