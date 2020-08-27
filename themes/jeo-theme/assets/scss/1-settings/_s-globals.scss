@@ -95,7 +95,11 @@ body {
     }
 }
 
-@include tablet {
+/* @include tablet */
+/*
+782px because newspack is breaking at that point
+*/
+@media only screen and (max-width: 782px){
     body {
         padding-top: 50px;
     }
