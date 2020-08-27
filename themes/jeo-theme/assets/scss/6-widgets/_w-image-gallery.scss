@@ -2,7 +2,7 @@
     margin-bottom: 3em;
     background-color: #f5f5f5;
     border-radius: 10px 10px 0 0;
-    
+
     button {
         padding: 0;
         border-radius: 10px;
@@ -349,4 +349,10 @@
 
 .wp-block-cover .wp-block-jeo-theme-custom-image-gallery-block {
     z-index: 2;
+}
+
+.dark-theme {
+    .image-gallery:not(.wp-block-jeo-theme-custom-image-gallery-block) {
+        background-color: #23282d;
+    }
 }
