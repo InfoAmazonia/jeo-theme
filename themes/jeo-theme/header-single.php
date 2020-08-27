@@ -100,7 +100,6 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 </head>
 
 <body <?php body_class(); ?>>
-	<?php dynamic_sidebar('republish_modal_bullets') ?>
 	<?php
 
 	do_action('wp_body_open');

@@ -9,7 +9,6 @@
  *
  * @package Newspack
  */
-
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -21,7 +20,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php dynamic_sidebar('republish_modal_bullets') ?>
 	<?php
 
 	do_action('wp_body_open');

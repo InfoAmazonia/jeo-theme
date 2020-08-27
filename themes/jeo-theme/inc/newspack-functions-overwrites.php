@@ -132,10 +132,15 @@ function featured_image_position_cleaner_script() {
 	wp_enqueue_script('featured-image-position', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/featured-image-cleaner.js', '', true);
 }
 
+function bullets_metaboxes_script() {
+	wp_enqueue_script('bullets-metaboxes', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/bullets-metaboxes.js', ['jquery'], true);
+}
+
 add_action('get_footer', 'non_blocking_styles');
 add_action('wp_enqueue_scripts', 'newspack_scott_scripts');
 add_action('admin_enqueue_scripts', 'category_deletion_script');
 add_action('admin_enqueue_scripts', 'featured_image_position_cleaner_script');
+add_action('admin_enqueue_scripts', 'bullets_metaboxes_script');
 
 
 
