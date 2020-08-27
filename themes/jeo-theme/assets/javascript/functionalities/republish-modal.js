@@ -65,6 +65,11 @@ window.addEventListener("DOMContentLoaded", function () {
                 document.body.removeChild(elem);
             }
         }
+
+        // Hide bullets introductions if there is no bullet
+        if(!document.querySelector('.bullet-description')) {
+            document.querySelector('.bullets-introduction').style.display = 'none';
+        }
     }
 });
 
