@@ -773,6 +773,10 @@
                         .introduction, .bullets-introduction, ul li.bullet-description {
                             font-family: var(--primary-font);
                             font-size: size(18);
+                            a {
+                                color: var(--primary);
+                                font-weight: bold;
+                            }
                         }
 
                         .bullets-introduction{
@@ -838,7 +842,7 @@
                             font-size: size(12);
                             color: white;
                             font-weight: bold;
-                            background-color: #59811A;
+                            background-color: var(--primary);
                             border-radius: size(15);
                             padding: size(8) size(12);
                             margin-top: size(15);
