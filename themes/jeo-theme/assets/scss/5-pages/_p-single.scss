@@ -751,12 +751,23 @@
                         float: right;
                         background-color: unset;
                         color: #555D66;
+
+                        @include mobile {
+                            position: fixed;
+                            background-color: white;
+                            width: 85%;
+                            margin-left: size(20);
+
+                            i {
+                                float: right;
+                            }
+                        }
                     }
 
                     .content {
                         display: flex;
                         flex-direction: column;
-                        padding: size(50) size(0) size(50) size(30);
+                        padding: size(50) size(16) size(50) size(30);
 
                         .title {
                             font-family: var(--primary-font);
