@@ -227,6 +227,24 @@ body {
     display: block!important;
 }
 
+@media (min-width: 1024px){
+    .d-lg-block {
+        display: block!important;
+    }
+    .d-lg-none {
+        display: none!important;
+    }
+}
+
+@media (min-width: 768px){
+    .d-md-block {
+        display: block!important;
+    }
+
+    .d-md-none {
+        display: none!important;
+    }
+}
 
 @media (min-width: 576px){
     .d-sm-none {
