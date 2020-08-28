@@ -85,7 +85,9 @@ function republish_post_callback() {
 
 	if($bullet_widget) {
 		$bullet_widget = $bullet_widget[0];
-		$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+		if (isset($wp_registered_widgets[$bullet_widget])) {
+			$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+		}
 	}
 	
 ?>
@@ -200,7 +202,9 @@ function meta_save($post_id) {
 
 	if($bullet_widget) {
 		$bullet_widget = $bullet_widget[0];
-		$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+		if (isset($wp_registered_widgets[$bullet_widget])) {
+			$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+		}
 	}
 
 
