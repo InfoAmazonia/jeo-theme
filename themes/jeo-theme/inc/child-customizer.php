@@ -479,6 +479,7 @@ function newspack_scott_customizer($wp_customize)
 			'type' => 'textarea',
 			'section' => 'republish_modal',
 			'label' => __('Republish Modal Bullets Introduction (it is allowed to use HTML tags)'),
+			'description' => __('The bullets can be created as Bullet Widget on Widgets panel.')
 		)
 	);
 
