@@ -23,8 +23,8 @@
 
     @include mobile {
         max-width: 100%;
-        float: none;
-        margin: 0px;
+        /*float: none;
+        margin: 0px;*/
     }
 }
 
@@ -39,8 +39,8 @@
 
     @include mobile {
         max-width: 100%;
-        float: none;
-        margin: 0px;
+        /*float: none;
+        margin: 0px;*/
     }
 }
 
@@ -54,8 +54,8 @@ figure.wp-block-pullquote.alignright.is-style-solid-color {
 
     @include mobile {
         max-width: 100%;
-        float: none;
-        margin: 0px;
+        /* float: none;
+        margin: 0px; */
     }
 }
 
@@ -69,8 +69,8 @@ figure.wp-block-pullquote.alignleft.is-style-solid-color {
 
     @include mobile {
         max-width: 100%;
-        float: none;
-        margin: 0px;
+        /* float: none;
+        margin: 0px; */
     }
 }
 
