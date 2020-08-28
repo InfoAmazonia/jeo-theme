@@ -19,6 +19,15 @@ function register_metaboxes() {
 	);
 
 	add_meta_box(
+		'project-link',
+		'Project Link',
+		'project_link_callback',
+		'project',
+		'side',
+		'default',
+	);
+
+	add_meta_box(
 		'erratum-block',
 		__('Sorry, we said wrong', 'jeo'),
 		'display_erratum_block',
@@ -33,6 +42,21 @@ function register_metaboxes() {
 		'side',
 		'default',
 	);
+}
+
+function project_link_callback() {
+	$jeo_stored_meta = get_post_meta(get_the_ID());	
+	?>
+
+		<p>
+			<div class="jeo-row-content">
+				<label for="project-link">
+					<input placeholder="Requires https://" style="width: 100%" type="text" name="project-link" id="project-link" value="<?php if (isset($jeo_stored_meta['project-link'])) echo $jeo_stored_meta['project-link'][0]; ?>"  />
+				</label>
+			</div>
+		</p>
+
+<?php
 }
 
 function display_author_callback() {
@@ -179,6 +203,10 @@ function meta_save($post_id) {
 
 	if (isset($_POST['external-title'])) {
 		update_post_meta($post_id, 'external-title', $_POST['external-title']);
+	}
+
+	if (isset($_POST['project-link'])) {
+		update_post_meta($post_id, 'project-link', $_POST['project-link']);
 	}
 }
 
