@@ -769,7 +769,7 @@
 
                         @include mobile {
                             width: 87%;
-                            margin-left: 0;
+                            margin-left: size(10);
                         }
                     }
 
@@ -780,18 +780,14 @@
 
                         .title {
                             font-family: var(--primary-font);
-                            font-size: size(22);
+                            font-size: size(18);
                             font-weight: bold;
                             margin: 0 0 0.5em;
                         }
                         
                         .introduction, .bullets-introduction, ul li.bullet-description {
                             font-family: var(--primary-font);
-                            font-size: size(18);
-                        }
-
-                        p.bullets-introduction {
-                            margin: 0px;
+                            font-size: size(15);
                         }
 
                         .controls {
@@ -801,7 +797,6 @@
                                 border-radius: 0;
                                 margin: 0;
                                 width: size(80);
-                                font-family: var(--primary-font);
 
                                 &:hover {
                                     opacity: 0.75;
@@ -1114,20 +1109,10 @@
                     }
                 }
             }
-
-            .cat-links {
-                a {
-                    color: #F5F5F5;
-                    &:hover {
-                        color: white;
-                    }
-                }
-            }
         }
 
         .cat-links {
             a {
-                color: #F5F5F5;
                 &:hover {
                     color: white;
                 }
