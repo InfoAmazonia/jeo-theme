@@ -751,22 +751,37 @@
                         float: right;
                         background-color: unset;
                         color: #555D66;
+
+                        @include mobile {
+                            position: fixed;
+                            background-color: white;
+                            width: 85%;
+                            margin-left: size(20);
+
+                            i {
+                                float: right;
+                            }
+                        }
                     }
 
                     .content {
                         display: flex;
                         flex-direction: column;
-                        padding: size(50) size(0) size(50) size(30);
+                        padding: size(50) size(16) size(50) size(30);
 
                         .title {
                             font-family: var(--primary-font);
-                            font-size: size(18);
+                            font-size: size(22);
                             font-weight: bold;
                         }
 
-                        .introduction, .bullets-introduction {
+                        .introduction, .bullets-introduction, ul li.bullet-description {
                             font-family: var(--primary-font);
-                            font-size: size(15);
+                            font-size: size(18);
+                        }
+
+                        p.bullets-introduction {
+                            margin: 0px;
                         }
 
                         .controls {
