@@ -16,7 +16,7 @@
     <div class="republish-post">
         <div class="republish-post-label-wrapper">
             <div class="republish-post-label">
-                <i class="fa fa-retweet icon" aria-hidden="true"></i>
+                <i class="fas fa-sync-alt icon"></i>
                 <p class="text"><?php esc_html_e('REPUBLISH THIS CONTENT'); ?></p>
             </div>
         </div>
