@@ -63,7 +63,7 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
                 sections.map((section, index) => {
                     return (
                         <div className="section">
-                            <a href={sectionsLinks[index]} target="_blank">{section}</a>
+                            <a href={sectionsLinks[index]} target="_blank" rel="noopener noreferrer">{section}</a>
                             <RichText
                                 tagName="p"
                                 className="section-url"
@@ -159,7 +159,7 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
                 sections.map((section, index) => {
                     return (
                         <div className="section">
-                            <a href={sectionsLinks[index]} target="_blank">{sections[index]}</a>
+                            <a href={sectionsLinks[index]} target="_blank" rel="noopener noreferrer">{sections[index]}</a>
                         </div>
                     )
                 })
