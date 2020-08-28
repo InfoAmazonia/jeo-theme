@@ -80,8 +80,14 @@ function republish_post_callback() {
 
 	global $wp_registered_widgets;	
 	$widgets = wp_get_sidebars_widgets(); 
-	$bullet_widget = $widgets['republish_modal_bullets'][0];
-	$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+	$bullet_widget = $widgets['republish_modal_bullets'];
+	$bullets = [];
+
+	if($bullet_widget) {
+		$bullet_widget = $bullet_widget[0];
+		$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+	}
+	
 ?>
 
 	<p>
@@ -99,7 +105,7 @@ function republish_post_callback() {
 	</p>
 	<div class="republish-posts-bullets">
 		<?php foreach($bullets as $bullet): ?>
-			<p>
+			<p class="bullet-paragraph">
 				<div class="jeo-row-content">
 					<label for="<?php echo str_replace(' ', '_', $bullet['title']); ?>">
 						<input type="checkbox" name="<?php echo str_replace(' ', '_', $bullet['title']); ?>" id="<?php echo str_replace(' ', '_', $bullet['title']); ?>" value="false" <?php if (isset($jeo_stored_meta[str_replace(' ', '_', $bullet['title'])])) checked($jeo_stored_meta[str_replace(' ', '_', $bullet['title'])][0], true); ?> />
@@ -188,8 +194,15 @@ function meta_save($post_id) {
 	//Republish post function variables
 	global $wp_registered_widgets;
 	$widgets = wp_get_sidebars_widgets(); 
-	$bullet_widget = $widgets['republish_modal_bullets'][0];
-	$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+	
+	$bullet_widget = $widgets['republish_modal_bullets'];
+	$bullets = [];
+
+	if($bullet_widget) {
+		$bullet_widget = $bullet_widget[0];
+		$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+	}
+
 
 	// Checks save status - overcome autosave, etc.
 	$is_autosave = wp_is_post_autosave($post_id);

@@ -733,6 +733,8 @@
     
             .republish-post-modal {
                 .main-modal {
+                    overflow-y: scroll;
+
                     @include tablet {
                         overflow-y: scroll;
                     }
@@ -752,15 +754,21 @@
                         background-color: unset;
                         color: #555D66;
 
-                        @include mobile {
-                            position: fixed;
-                            background-color: white;
-                            width: 85%;
-                            margin-left: size(20);
+                        position: fixed;
+                        background-color: white;
+                        width: 58vw;
+                        margin-left: size(20);
 
-                            i {
-                                float: right;
-                            }
+                        i {
+                            float: right;
+                        }
+
+                        @include tablet {
+                            width: 55vw;
+                        }
+
+                        @include mobile {
+                            width: 87%;
                         }
                     }
 

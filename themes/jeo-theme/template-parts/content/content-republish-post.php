@@ -2,15 +2,24 @@
     $isRepublishablePost = get_post_meta(get_the_ID(), 'republish_post', true);
 
     global $wp_registered_widgets;
-	$widgets = wp_get_sidebars_widgets(); 
-	$bullet_widget = $widgets['republish_modal_bullets'][0];
-    $bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+    $widgets = wp_get_sidebars_widgets(); 
+    $content = null;
     
     $my_postid = get_the_ID();//This is page id or post id
     $content_post = get_post($my_postid);
     $content = $content_post->post_content;
     $content = apply_filters('the_content', $content);
     $content = str_replace(']]>', ']]&gt;', $content);
+    
+    $bullet_widget = $widgets['republish_modal_bullets'];
+    $bullets = [];
+
+	if($bullet_widget) {
+		$bullet_widget = $bullet_widget[0];
+        $bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+        
+	}
+
 ?>
 <?php if($isRepublishablePost): ?>
     <div class="republish-post">
