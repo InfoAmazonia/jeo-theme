@@ -733,50 +733,36 @@
     
             .republish-post-modal {
                 .main-modal {
-                    overflow-y: scroll;
-
-                    @include tablet {
-                        overflow-y: scroll;
-                    }
-
                     @include mobile {
                         width: 95vw;
                     }
 
+                    position: relative;
                     margin-top: 2vw;
                     width: 60vw;
-                    height: 80vh;
                     background: #fff;
                     border-radius: size(10);
+                    padding-top: size(40);
+                    overflow: hidden;
 
                     .close-button {
-                        float: right;
-                        background-color: unset;
                         color: #555D66;
-
-                        position: fixed;
-                        background-color: white;
-                        width: 58vw;
-                        margin-left: size(20);
-
-                        i {
-                            float: right;
-                        }
-
-                        @include tablet {
-                            width: 55vw;
-                        }
-
-                        @include mobile {
-                            width: 87%;
-                            margin-left: size(10);
-                        }
+                        background-color: transparent;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
                     }
 
                     .content {
                         display: flex;
                         flex-direction: column;
                         padding: size(50) size(16) size(50) size(30);
+                        max-height: size(650);
+                        overflow-y: scroll;
+
+                        @include tablet {
+                            max-height: (500);
+                        }
 
                         .title {
                             font-family: var(--primary-font);

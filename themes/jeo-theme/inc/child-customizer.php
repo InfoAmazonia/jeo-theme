@@ -452,7 +452,7 @@ function newspack_scott_customizer($wp_customize)
 		'republish_modal_introduction',
 		array(
 			'default'  => '',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'wp_filter_post_kses',
 		)
 	);
 
@@ -469,7 +469,7 @@ function newspack_scott_customizer($wp_customize)
 		'republish_modal_bullets_introduction',
 		array(
 			'default'  => '',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'wp_filter_post_kses',
 		)
 	);
 

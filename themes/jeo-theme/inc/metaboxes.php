@@ -80,7 +80,7 @@ function republish_post_callback() {
 
 	global $wp_registered_widgets;	
 	$widgets = wp_get_sidebars_widgets(); 
-	$bullet_widget = $widgets['republish_modal_bullets'];
+	$bullet_widget = array_key_exists('republish_modal_bullets', $widgets)? $widgets['republish_modal_bullets'] : null;
 	$bullets = [];
 
 	if($bullet_widget) {
@@ -197,7 +197,7 @@ function meta_save($post_id) {
 	global $wp_registered_widgets;
 	$widgets = wp_get_sidebars_widgets(); 
 	
-	$bullet_widget = $widgets['republish_modal_bullets'];
+	$bullet_widget = array_key_exists('republish_modal_bullets', $widgets)? $widgets['republish_modal_bullets'] : null;
 	$bullets = [];
 
 	if($bullet_widget) {

@@ -10,16 +10,15 @@
     $content = $content_post->post_content;
     $content = apply_filters('the_content', $content);
     $content = str_replace(']]>', ']]&gt;', $content);
-    
-    $bullet_widget = $widgets['republish_modal_bullets'];
+
+    $bullet_widget = array_key_exists('republish_modal_bullets', $widgets)? $widgets['republish_modal_bullets'] : null;
     $bullets = [];
 
 	if($bullet_widget) {
 		$bullet_widget = $bullet_widget[0];
         $bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
         
-	}
-
+    }
 ?>
 <?php if($isRepublishablePost): ?>
     <div class="republish-post">
@@ -38,8 +37,8 @@
                     <div>
                         <div class="content main">
                             <p class="title"><?php echo get_theme_mod('republish_modal_title', __('Republish'))?></p>
-                            <p class="introduction"><?= _e(get_theme_mod('republish_modal_introduction', __(''))) ?></p>
-                            <p class="bullets-introduction"><?= _e(get_theme_mod('republish_modal_bullets_introduction', __(''))) ?></p>
+                            <p class="introduction"><?= get_theme_mod('republish_modal_introduction', '') ?></p>
+                            <p class="bullets-introduction"><?= get_theme_mod('republish_modal_bullets_introduction', '') ?></p>
 
                             <ul>
                                 <?php foreach($bullets as $bullet): ?>
