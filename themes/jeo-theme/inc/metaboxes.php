@@ -10,6 +10,15 @@ function register_metaboxes() {
 	);
 
 	add_meta_box(
+		'republish-post',
+		'Republish Post',
+		'republish_post_callback',
+		'post',
+		'side',
+		'default',
+	);
+
+	add_meta_box(
 		'twitter-opinion-video',
 		'Twitter video preview',
 		'twitter_opinion_video_callback',
@@ -61,6 +70,54 @@ function display_author_callback() {
 
 		</div>
 	</p>
+
+<?php
+}
+
+function republish_post_callback() {
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());
+
+	global $wp_registered_widgets;	
+	$widgets = wp_get_sidebars_widgets(); 
+	$bullet_widget = array_key_exists('republish_modal_bullets', $widgets)? $widgets['republish_modal_bullets'] : null;
+	$bullets = [];
+
+	if($bullet_widget) {
+		$bullet_widget = $bullet_widget[0];
+		if (isset($wp_registered_widgets[$bullet_widget])) {
+			$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+		}
+	}
+	
+?>
+
+	<p>
+		<!-- <span class="jeo-row-title"><?php _e('Add republish link: ', 'jeo') ?></span> -->
+		<div class="jeo-row-content">
+			<label for="republish_post">
+				<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+				<?php _e('Add republish link', 'jeo') ?>
+			</label>
+
+		</div>
+	</p>
+	<p class="bullets-metaboxes-title">
+		<span class="jeo-row-title"><?php _e('Bullets: ', 'jeo') ?></span>
+	</p>
+	<div class="republish-posts-bullets">
+		<?php foreach($bullets as $bullet): ?>
+			<p class="bullet-paragraph">
+				<div class="jeo-row-content">
+					<label for="<?php echo str_replace(' ', '_', $bullet['title']); ?>">
+						<input type="checkbox" name="<?php echo str_replace(' ', '_', $bullet['title']); ?>" id="<?php echo str_replace(' ', '_', $bullet['title']); ?>" value="false" <?php if (isset($jeo_stored_meta[str_replace(' ', '_', $bullet['title'])])) checked($jeo_stored_meta[str_replace(' ', '_', $bullet['title'])][0], true); ?> />
+						<?php _e($bullet['title'], 'jeo') ?>
+					</label>
+
+				</div>
+			</p>
+		<?php endforeach; ?>
+	</div>
 
 <?php
 }
@@ -136,6 +193,21 @@ function display_external_post_callback() {
  */
 function meta_save($post_id) {
 
+	//Republish post function variables
+	global $wp_registered_widgets;
+	$widgets = wp_get_sidebars_widgets(); 
+	
+	$bullet_widget = array_key_exists('republish_modal_bullets', $widgets)? $widgets['republish_modal_bullets'] : null;
+	$bullets = [];
+
+	if($bullet_widget) {
+		$bullet_widget = $bullet_widget[0];
+		if (isset($wp_registered_widgets[$bullet_widget])) {
+			$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+		}
+	}
+
+
 	// Checks save status - overcome autosave, etc.
 	$is_autosave = wp_is_post_autosave($post_id);
 	$is_revision = wp_is_post_revision($post_id);
@@ -159,6 +231,12 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'authors-listing', false);
 	}
 
+	if (isset($_POST['republish_post'])) {
+		update_post_meta($post_id, 'republish_post', true);
+	} else {
+		update_post_meta($post_id, 'republish_post', false);
+	}
+
 	if (isset($_POST['enable-post-erratum'])) {
 		update_post_meta($post_id, 'enable-post-erratum', true);
 	} else {
@@ -179,6 +257,15 @@ function meta_save($post_id) {
 
 	if (isset($_POST['external-title'])) {
 		update_post_meta($post_id, 'external-title', $_POST['external-title']);
+	}
+
+	//Republish post metaboxes
+	foreach($bullets as $bullet) {
+		if (isset($_POST[str_replace(' ', '_', $bullet['title'])])) {
+			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), true);
+		} else {
+			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), false);
+		}
 	}
 }
 
