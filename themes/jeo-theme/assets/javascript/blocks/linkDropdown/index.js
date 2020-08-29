@@ -1,5 +1,5 @@
 import { MediaUpload, RichText } from "@wordpress/block-editor";
-import { Button } from "@wordpress/components";
+import { Button, RadioControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { registerBlockType } from "@wordpress/blocks";
 
@@ -15,6 +15,9 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
 		align: ['left', 'right'],
 	},
     attributes: {
+        option: {
+            type: 'string',
+		},
         dropdownTitle: {
             type: 'string',
 		},
@@ -34,7 +37,7 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
     },
 
     edit({ attributes, setAttributes}) {
-        const { dropdownTitle = "", sections = [], sectionsLinks = [], newSectionTitle = '', newSectionURL = ''} = attributes;
+        const { dropdownTitle = "", sections = [], sectionsLinks = [], newSectionTitle = '', newSectionURL = '', option = 's'} = attributes;
 
         sections.forEach( (element, index) => {
             if(!sectionsLinks[index]) {
@@ -58,12 +61,19 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
         }
 
         const displaySections = (sections) => {
-            
+            const isBlank = option === "n";
+
             return (
                 sections.map((section, index) => {
                     return (
                         <div className="section">
-                            <a href={sectionsLinks[index]} target="_blank" rel="noopener noreferrer">{section}</a>
+                            <a
+                                href={sectionsLinks[index]}
+                                target={isBlank && '_blank'} // Initial test
+                                rel={isBlank && 'noopener noreferrer'}  // Add this to fix
+                            >
+                                {section}
+                            </a>
                             <RichText
                                 tagName="p"
                                 className="section-url"
@@ -88,6 +98,16 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
 
         return (
             <div className="link-dropdown">
+                <RadioControl
+                    label="Target"
+                    selected={ option }
+                    options={ [
+                        { label: 'New page', value: 'n' },
+                        { label: 'Same page', value: 's' },
+                    ] }
+                    onChange={ (option) => { setAttributes( { option: option } ) } }
+
+                />
 				<div className="controls">
 					<RichText
 						tagName="h2"
@@ -152,14 +172,20 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
     },
 
     save: ({ attributes }) => {
-        const { dropdownTitle = "", sections = [], sectionsLinks = []} = attributes;
-
+        const { dropdownTitle = "", sections = [], sectionsLinks = [], option="s"} = attributes;
+        const isBlank = option === "n";
         const displaySections = (sections) => {
             return (
                 sections.map((section, index) => {
                     return (
                         <div className="section">
-                            <a href={sectionsLinks[index]} target="_blank" rel="noopener noreferrer">{sections[index]}</a>
+                            <a
+                            href={sectionsLinks[index]}
+                            target={isBlank && '_blank'} // Initial test
+                            rel={isBlank && 'noopener noreferrer'}  // Add this to fix
+                            >
+                                {sections[index]}
+                            </a>
                         </div>
                     )
                 })
