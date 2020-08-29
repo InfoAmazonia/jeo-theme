@@ -61,19 +61,26 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
         }
 
         const displaySections = (sections) => {
-            const isBlank = option === "n";
 
             return (
                 sections.map((section, index) => {
                     return (
                         <div className="section">
-                            <a
-                                href={sectionsLinks[index]}
-                                target={isBlank && '_blank'} // Initial test
-                                rel={isBlank && 'noopener noreferrer'}  // Add this to fix
-                            >
-                                {section}
-                            </a>
+                            <RichText
+                                tagName="p"
+                                className="section-url"
+                                value={ section }
+                                formattingControls={ [ 'bold', 'italic' ] } 
+                                onChange={ ( updatedSectionTitle ) => {
+                                    setAttributes( { sections: sections.map( (item, i) => {
+                                        if (i == index) {
+                                            return updatedSectionTitle;
+                                        } else {
+                                            return item;
+                                        }
+                                    }) } )
+                                } }
+                            />
                             <RichText
                                 tagName="p"
                                 className="section-url"
