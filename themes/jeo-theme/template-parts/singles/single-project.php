@@ -54,7 +54,8 @@
 
 	<div class="after-post-content-widget-area">
 			<?php if ( is_single() ):
-				dynamic_sidebar('after_post_widget_area'); 
+                get_template_part('template-parts/content/content', 'republish-post'); 
+                dynamic_sidebar('after_post_widget_area'); 
 			endif;
 			?>
 		</div>
