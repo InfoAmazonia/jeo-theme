@@ -71,7 +71,7 @@ function newspack_scott_custom_typography_css() {
 	}
 
 
-	$font_unit = get_theme_mod('typo_unit', 'em');
+	$font_unit = get_theme_mod('typo_unit', 'rem');
 	$forced_size = get_theme_mod('typo_important')? '!important' : '';
 
 	$theme_css .= '
@@ -128,7 +128,7 @@ function newspack_scott_custom_typography_css() {
 		}
 	';
 
-	$font_unit = get_theme_mod('typo_unit_mobile', 'em');
+	$font_unit = get_theme_mod('typo_unit_mobile', 'rem');
 	$forced_size = get_theme_mod('typo_important_mobile')? '!important' : '';
 
 	/* Font size for mobile */
@@ -186,21 +186,53 @@ function newspack_scott_custom_typography_css() {
 		}
 	}';
 
-	if (!empty(get_theme_mod( 'accent_font', ''))) {
-		$accent_font = wp_kses( get_theme_mod( 'accent_font'), null );
+	if (!empty(get_theme_mod( 'special_heading_font', ''))) {
+		$special_heading_font = wp_kses( get_theme_mod( 'special_heading_font'), null );
 
-		$theme_css .= '
-		.accent-header:not(.widget-title), .article-section-title, .archive .article-section-title, .archive .article-section-title .page-description, .page-title, #secondary .widget-title, .author-bio .accent-header span,.tags-links span:first-child, .single .cat-links {
-			font-family: "' . $accent_font . '", "sans-serif";
-		}
+		if($special_heading_font) {
+			$theme_css .= '
+			header.site-header .bottom-header-contain.post-header p.title,
+			.wp-block-newspack-blocks-homepage-articles .entry-title,
+			.single .related-posts .posts .entry-container .title,
+			.single .related-posts .posts .entry-container .title a, 
+			.post-template-single-feature .related-posts .posts .entry-container .title, 
+			.post-template-single-feature .related-posts .posts .entry-container .title a, 
+			.post-template-single-wide .related-posts .posts .entry-container .title,
+			.post-template-single-wide .related-posts .posts .entry-container .title a,
+			.newsletter .newsletter-header p,
+			.home h2:not(.article-section-title), 
+			.home h3:not(.article-section-title),
+			.home h4:not(.article-section-title),
+			.home h5:not(.article-section-title),
+			.home h6:not(.article-section-title),
+			.home__readmore-bkg h2,
+			.archive .entry-title,
+			.category-most-read .posts .post .post-link .post-title,
+			.search .entry-title {
+				font-family: "' . $special_heading_font . '", "sans-serif";
+			}
 
-		.category-most-read .header, .image-gallery .image-gallery-header {
-			font-family: "' . $accent_font . '", "sans-serif";
+			:root {
+				--special-heading-font: "' . $special_heading_font . '", "sans-serif";
+			}
+			';
 		}
-		:root {
-			--accent-font: "' . $accent_font . '", "sans-serif";
+	}
+
+	if (!empty(get_theme_mod( 'typo_menu_size', ''))) {
+		$typo_menu_size = wp_kses( get_theme_mod( 'typo_menu_size'), null );
+
+		if($typo_menu_size) {
+			$theme_css .= '
+			header.site-header .bottom-header-contain .nav1 .main-menu > li {
+				font-size: ' . $typo_menu_size . 'rem;
+			}
+
+			:root {
+				--menu-size: "' . $typo_menu_size . 'rem;
+			}
+			';
 		}
-		';
 	}
 
 	if (!empty(get_theme_mod( 'single_featured_font', ''))) {

@@ -32,6 +32,15 @@ function widgets_areas() {
 		'before_title'  => '<h2 class="author_page_sidebar">',
 		'after_title'   => '</h2>',
 	));
+
+	register_sidebar(array(
+		'name'          => 'Republish modal bullets',
+		'id'            => 'republish_modal_bullets',
+		'before_widget' => '<div class="widget-area-after-post">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
 }
 add_action('widgets_init', 'widgets_areas');
 
@@ -61,7 +70,7 @@ class newsletter_widget extends WP_Widget {
 				<p class="anchor-text">
 				<?= _e($instance['subtitle'], 'jeo') ?>
 					<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'horizontal') : ?>
-						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?>
+						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">' . __('SEE LAST EDITION', 'jeo') . '</a>' ?>
 					<?php endif; ?>
 				</p>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
@@ -70,10 +79,10 @@ class newsletter_widget extends WP_Widget {
 					<?= do_shortcode($instance['newsletter_shortcode']) ?>
 				<?php endif; ?>
 				<?php if (!empty($instance['adicional_content'])) : ?>
-					<p class="link"><?= _e($instance['adicional_content'], 'jeo') ?></p>
+					<p class="link-add"><?= _e($instance['adicional_content'], 'jeo') ?></p>
 				<?php endif; ?>
 				<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'vertical') : ?>
-					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">SEE LAST EDITION</a>' ?></p>
+					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">'. __('SEE LAST EDITION', 'jeo'). '</a>' ?></p>
 				<?php endif; ?>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
 			</div>
@@ -133,6 +142,40 @@ class newsletter_widget extends WP_Widget {
 		</p>
 
 
+	<?php
+	}
+}
+
+class bullet_widget extends WP_Widget {
+
+	// The construct part  
+	function __construct() {
+		parent::__construct(
+			'bullet_widget',
+			__('Bullet', 'bullet_widget_domain'),
+			array('description' => __('Bullet widget', 'bullet_widget_domain'),)
+		);
+	}
+
+	public function widget($args, $instance) {
+?>
+	<? if ($instance) : ?>
+	<?php endif; ?>
+	<?php
+	}
+
+	public function form($instance) {
+		$title = !empty($instance['title']) ? $instance['title'] : esc_html__('', 'jeo');
+		$description = !empty($instance['description']) ? $instance['description'] : esc_html__('', 'jeo');
+	?>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_attr_e('Title:', 'jeo'); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('description')); ?>"><?php esc_attr_e('Description:', 'jeo'); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('description')); ?>" name="<?php echo esc_attr($this->get_field_name('description')); ?>" type="textarea" value="<?php echo esc_attr($description); ?>">
+		</p>
 	<?php
 	}
 }
@@ -348,9 +391,14 @@ function story_maps_load_widget() {
 	register_widget('story_maps_widget');
 }
 
+function bullet_load_widget() {
+	register_widget('bullet_widget');
+}
+
 add_action( 'widgets_init', 'newsletter_load_widget' );
 add_action( 'widgets_init', 'most_read_load_widget' );
 add_action( 'widgets_init', 'story_maps_load_widget' );
+add_action( 'widgets_init', 'bullet_load_widget' );
 add_filter('post_gallery', 'my_post_gallery_widget', 10, 2);
 
 

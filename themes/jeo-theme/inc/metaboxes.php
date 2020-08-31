@@ -2,8 +2,17 @@
 function register_metaboxes() {
 	add_meta_box(
 		'display-autor-info',
-		'Show author bio',
-		'display_autor_bio_callback',
+		'Show author options',
+		'display_author_callback',
+		'post',
+		'side',
+		'default',
+	);
+
+	add_meta_box(
+		'republish-post',
+		'Republish Post',
+		'republish_post_callback',
 		'post',
 		'side',
 		'default',
@@ -35,17 +44,28 @@ function register_metaboxes() {
 	);
 }
 
-function display_autor_bio_callback() {
+function display_author_callback() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
 	$jeo_stored_meta = get_post_meta(get_the_ID());
 ?>
 
 	<p>
-		<span class="jeo-row-title"><?php _e('Check to enable the author info: ', 'jeo') ?></span>
+		<!-- <span class="jeo-row-title"><?php _e('Authors biography: ', 'jeo') ?></span> -->
 		<div class="jeo-row-content">
 			<label for="author-bio-display">
 				<input type="checkbox" name="author-bio-display" id="author-bio-display" value="false" <?php if (isset($jeo_stored_meta['author-bio-display'])) checked($jeo_stored_meta['author-bio-display'][0], true); ?> />
-				<?php _e('Author bio', 'jeo') ?>
+				<?php _e('Authors biography', 'jeo') ?>
+			</label>
+
+		</div>
+	</p>
+
+	<p>
+		<!-- <span class="jeo-row-title"><?php _e('Authors listing: ', 'jeo') ?></span> -->
+		<div class="jeo-row-content">
+			<label for="authors-listing">
+				<input type="checkbox" name="authors-listing" id="authors-listing" value="false" <?php if (isset($jeo_stored_meta['authors-listing'])) checked($jeo_stored_meta['authors-listing'][0], true); ?> />
+				<?php _e('Authors listing', 'jeo') ?>
 			</label>
 
 		</div>
@@ -54,31 +74,59 @@ function display_autor_bio_callback() {
 <?php
 }
 
-function twitter_opinion_video_callback() {
+function republish_post_callback() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
 	$jeo_stored_meta = get_post_meta(get_the_ID());
 
-	$parent_type_category = get_category_by_slug('type');
+	global $wp_registered_widgets;	
+	$widgets = wp_get_sidebars_widgets(); 
+	$bullet_widget = array_key_exists('republish_modal_bullets', $widgets)? $widgets['republish_modal_bullets'] : null;
+	$bullets = [];
 
-	if($parent_type_category) {
-		$parent_type_category = $parent_type_category->cat_ID;
-	}
-	$post_categories = get_the_category();
-	$post_child_category = null;
-
-	foreach ($post_categories as $post_cat) {
-		if ($parent_type_category == $post_cat->parent) {
-			$post_child_category = $post_cat;
-			break;
+	if($bullet_widget) {
+		$bullet_widget = $bullet_widget[0];
+		if (isset($wp_registered_widgets[$bullet_widget])) {
+			$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
 		}
 	}
+	
 ?>
-<?//php if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['video'])): 
-	if(true):
-?>
-	<?//php if ($post_child_category->slug === 'video') : 
-		if (true):
+
+	<p>
+		<!-- <span class="jeo-row-title"><?php _e('Add republish link: ', 'jeo') ?></span> -->
+		<div class="jeo-row-content">
+			<label for="republish_post">
+				<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+				<?php _e('Add republish link', 'jeo') ?>
+			</label>
+
+		</div>
+	</p>
+	<p class="bullets-metaboxes-title">
+		<span class="jeo-row-title"><?php _e('Bullets: ', 'jeo') ?></span>
+	</p>
+	<div class="republish-posts-bullets">
+		<?php foreach($bullets as $bullet): ?>
+			<p class="bullet-paragraph">
+				<div class="jeo-row-content">
+					<label for="<?php echo str_replace(' ', '_', $bullet['title']); ?>">
+						<input type="checkbox" name="<?php echo str_replace(' ', '_', $bullet['title']); ?>" id="<?php echo str_replace(' ', '_', $bullet['title']); ?>" value="false" <?php if (isset($jeo_stored_meta[str_replace(' ', '_', $bullet['title'])])) checked($jeo_stored_meta[str_replace(' ', '_', $bullet['title'])][0], true); ?> />
+						<?php _e($bullet['title'], 'jeo') ?>
+					</label>
+
+				</div>
+			</p>
+		<?php endforeach; ?>
+	</div>
+
+<?php
+}
+
+function twitter_opinion_video_callback() {
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());	
 	?>
+
 		<p>
 			<span class="jeo-row-title"><?php _e('Video URL to be shown on twitter sharing preview: ', 'jeo') ?></span>
 			<div class="jeo-row-content">
@@ -87,9 +135,6 @@ function twitter_opinion_video_callback() {
 				</label>
 			</div>
 		</p>
-	<?php endif; ?>
-<?php endif; ?>
-	
 
 <?php
 }
@@ -148,6 +193,21 @@ function display_external_post_callback() {
  */
 function meta_save($post_id) {
 
+	//Republish post function variables
+	global $wp_registered_widgets;
+	$widgets = wp_get_sidebars_widgets(); 
+	
+	$bullet_widget = array_key_exists('republish_modal_bullets', $widgets)? $widgets['republish_modal_bullets'] : null;
+	$bullets = [];
+
+	if($bullet_widget) {
+		$bullet_widget = $bullet_widget[0];
+		if (isset($wp_registered_widgets[$bullet_widget])) {
+			$bullets = $wp_registered_widgets[$bullet_widget]['callback'][0]->get_settings();
+		}
+	}
+
+
 	// Checks save status - overcome autosave, etc.
 	$is_autosave = wp_is_post_autosave($post_id);
 	$is_revision = wp_is_post_revision($post_id);
@@ -163,6 +223,18 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'author-bio-display', true);
 	} else {
 		update_post_meta($post_id, 'author-bio-display', false);
+	}
+
+	if (isset($_POST['authors-listing'])) {
+		update_post_meta($post_id, 'authors-listing', true);
+	} else {
+		update_post_meta($post_id, 'authors-listing', false);
+	}
+
+	if (isset($_POST['republish_post'])) {
+		update_post_meta($post_id, 'republish_post', true);
+	} else {
+		update_post_meta($post_id, 'republish_post', false);
 	}
 
 	if (isset($_POST['enable-post-erratum'])) {
@@ -185,6 +257,15 @@ function meta_save($post_id) {
 
 	if (isset($_POST['external-title'])) {
 		update_post_meta($post_id, 'external-title', $_POST['external-title']);
+	}
+
+	//Republish post metaboxes
+	foreach($bullets as $bullet) {
+		if (isset($_POST[str_replace(' ', '_', $bullet['title'])])) {
+			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), true);
+		} else {
+			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), false);
+		}
 	}
 }
 

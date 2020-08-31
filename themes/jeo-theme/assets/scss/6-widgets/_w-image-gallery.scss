@@ -1,6 +1,7 @@
 .image-gallery:not(.wp-block-jeo-theme-custom-image-gallery-block) {
     margin-bottom: 3em;
     background-color: #f5f5f5;
+    border-radius: 10px 10px 0 0;
 
     button {
         padding: 0;
@@ -130,10 +131,33 @@
             height: 0;
             overflow: hidden;
             padding-top: 56.25%;
+
+            .gallery-grid {
+                .sss {
+                    @include tablet {
+                        writing-mode: vertical-lr;
+                        grid-auto-rows: size(100);
+                        grid-template-columns: repeat(1, 17.6vh);
+                    }
+                }
+            }
+    
         }
 
         &.fullscreen {
             position: fixed;
+
+            @include tablet {
+                .image-gallery-wrapper {
+                    overflow-y: auto;
+                }
+
+                .gallery-grid {
+                    .sss {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+            }
         }
 
         .dots-wrapper {
@@ -145,10 +169,14 @@
             top: 0;
             left: 0;
             padding: 5px 21px 21px 21px;
-            overflow-y: auto;
             max-height: 100%;
             z-index: 2;
             width: 100%;
+
+            .gallery-grid {
+                overflow-y: auto;
+                padding-bottom: 20px;
+            }
         }
 
         .gallery-title {
@@ -164,12 +192,6 @@
                 display: grid;
                 grid-template-columns: repeat(7, 1fr);
                 grid-gap: 23px;
-
-                @include tablet {
-                    writing-mode: vertical-lr;
-                    grid-auto-rows: size(100);
-                    grid-template-columns: repeat(1, 17.6vh);
-                }
             }
         }
 
@@ -187,22 +209,6 @@
         .sssprev,
         .sssnext {
             display: none;
-        }
-    }
-
-    &.grid-display.fullscreen {
-        .gallery-grid {
-            @include tablet {
-                margin-left: calc(50% - 35vw);
-                margin-right: calc(50% - 35vw);
-                
-                .sss {
-                        display: grid;
-                        grid-gap: 23px;
-                        writing-mode: unset;
-                        grid-template-columns: repeat(2, 17.6vh);
-                }
-            }
         }
     }
 
@@ -348,4 +354,10 @@
 
 .wp-block-cover .wp-block-jeo-theme-custom-image-gallery-block {
     z-index: 2;
+}
+
+.dark-theme {
+    .image-gallery:not(.wp-block-jeo-theme-custom-image-gallery-block) {
+        background-color: #23282d;
+    }
 }

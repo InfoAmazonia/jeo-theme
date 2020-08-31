@@ -64,7 +64,7 @@ else: ?>
 					<?php if($isImageBehind) : ?>
 						<div class="entry-subhead">
 							<div class="entry-meta"> 
-								<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
+								<?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) : ?>
 									<?php newspack_posted_by(); ?>
 								<?php endif; ?>
 								<div></div>
@@ -118,6 +118,7 @@ else: ?>
 		
 		<?php 
 			if(!is_page()) {
+				get_template_part('template-parts/content/content', 'republish-post'); 
 				get_template_part('template-parts/content/content', 'related-posts'); 
 			}
 		?>
