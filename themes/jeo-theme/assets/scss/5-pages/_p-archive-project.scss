@@ -1,0 +1,30 @@
+.post-type-archive  {
+    header.page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .taxonomy-description {
+            max-width: 427px;
+            color: #0A0A0A;
+            font-size: size(18);
+            letter-spacing: 0;
+            line-height: size(22);
+            font-style: normal;
+        }
+    }
+
+    main#main.site-main {
+        width: 100%;
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 31px;
+
+            .project-card {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
