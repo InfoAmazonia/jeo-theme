@@ -283,18 +283,8 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'external-title', $_POST['external-title']);
 	}
 
-<<<<<<< HEAD
 	if (isset($_POST['project-link'])) {
 		update_post_meta($post_id, 'project-link', $_POST['project-link']);
-=======
-	//Republish post metaboxes
-	foreach($bullets as $bullet) {
-		if (isset($_POST[str_replace(' ', '_', $bullet['title'])])) {
-			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), true);
-		} else {
-			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), false);
-		}
->>>>>>> cd303a5211eed2b3a2ea207282af9bda30078b80
 	}
 }
 
