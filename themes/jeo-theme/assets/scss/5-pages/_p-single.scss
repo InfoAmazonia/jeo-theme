@@ -1005,6 +1005,10 @@
                 text-align: left;
                 margin-bottom: 0;
                 font-weight: bold;
+
+                @include tablet {
+                    text-align: center;
+                }
             }
         }
     }

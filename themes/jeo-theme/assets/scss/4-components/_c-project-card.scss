@@ -35,6 +35,10 @@
         z-index: 2;
         color: #FFFFFF;
 
+        @include tablet {
+            bottom: 15px;
+        }
+
         h3 {
             font-size: size(40);
             font-weight: bold;
