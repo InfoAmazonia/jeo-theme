@@ -127,6 +127,10 @@
             color: var(--primary) !important;
             text-decoration: underline !important;
         }
+
+        &.wp-block-cover.has-background-dim:not(.has-background-gradient):before {
+            border-radius: 40px;
+        }
     }
 
     /* Newsletter in Mekong Eye*/
