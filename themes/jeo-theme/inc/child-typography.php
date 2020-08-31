@@ -206,7 +206,9 @@ function newspack_scott_custom_typography_css() {
 			.home h5,
 			.home h6,
 			.home__readmore-bkg h2,
-			.archive .entry-title {
+			.archive .entry-title,
+			.category-most-read .posts .post .post-link .post-title,
+			.search .entry-title {
 				font-family: "' . $special_heading_font . '", "sans-serif";
 			}
 
