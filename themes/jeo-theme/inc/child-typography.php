@@ -186,17 +186,34 @@ function newspack_scott_custom_typography_css() {
 		}
 	}';
 
-	if (!empty(get_theme_mod( 'menu_font', ''))) {
-		$menu_font = wp_kses( get_theme_mod( 'menu_font'), null );
+	if (!empty(get_theme_mod( 'special_heading_font', ''))) {
+		$special_heading_font = wp_kses( get_theme_mod( 'special_heading_font'), null );
 
-		if($menu_font) {
+		if($special_heading_font) {
 			$theme_css .= '
-			header.site-header .bottom-header-contain .nav1 .main-menu > li {
-				font-family: "' . $menu_font . '", "sans-serif";
+			header.site-header .bottom-header-contain.post-header p.title,
+			.wp-block-newspack-blocks-homepage-articles .entry-title,
+			.single .related-posts .posts .entry-container .title,
+			.single .related-posts .posts .entry-container .title a, 
+			.post-template-single-feature .related-posts .posts .entry-container .title, 
+			.post-template-single-feature .related-posts .posts .entry-container .title a, 
+			.post-template-single-wide .related-posts .posts .entry-container .title,
+			.post-template-single-wide .related-posts .posts .entry-container .title a,
+			.newsletter .newsletter-header p,
+			.home h2:not(.article-section-title), 
+			.home h3:not(.article-section-title),
+			.home h4:not(.article-section-title),
+			.home h5:not(.article-section-title),
+			.home h6:not(.article-section-title),
+			.home__readmore-bkg h2,
+			.archive .entry-title,
+			.category-most-read .posts .post .post-link .post-title,
+			.search .entry-title {
+				font-family: "' . $special_heading_font . '", "sans-serif";
 			}
 
 			:root {
-				--menu-font: "' . $menu_font . '", "sans-serif";
+				--special-heading-font: "' . $special_heading_font . '", "sans-serif";
 			}
 			';
 		}
