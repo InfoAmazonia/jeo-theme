@@ -944,7 +944,7 @@
     }
 }
 
-// Opinion single style
+// Project single style
 #primary.project {
     margin-top: -4rem; // neutralize father inner padding
 
@@ -1070,6 +1070,17 @@
 
 .dark-theme.single #primary.project header {
     background-color: rgba(255, 255, 255, 0.05);
+
+
+
+    .cat-links {
+        a {
+            color: #F5F5F5;
+            &:hover {
+                color: white;
+            }
+        }
+    }
 }
 
 
