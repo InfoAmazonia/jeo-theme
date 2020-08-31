@@ -211,6 +211,40 @@ add_action('init', 'custom_video_gallery');
 
 
 /**
+ * Team member
+ */
+function team_member_block() {
+
+	// automatically load dependencies and version
+	$asset_file = include(get_stylesheet_directory() . '/dist/teamMember.asset.php');
+
+	wp_register_script(
+		'team-member',
+		get_stylesheet_directory_uri() . '/dist/teamMember.js',
+		$asset_file['dependencies'],
+		$asset_file['version']
+		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
+	);
+
+	wp_register_style(
+		'team-member',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/teamMember/style.css',
+		[],
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/teamMember/style.css'),
+		'all'
+	);
+
+	register_block_type('jeo-theme/team-member', array(
+		'editor_script' => 'team-member',
+		'editor_style'  => 'team-member',
+		//'style'         => 'custom-newsletter-block',
+	));
+}
+
+add_action('init', 'team_member_block');
+
+
+/**
  * Embed template
  */
 function custom_embed_template() {

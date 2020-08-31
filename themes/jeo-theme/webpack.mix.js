@@ -29,6 +29,7 @@ mix.react('./assets/javascript/blocks/imageBlock/index.js', 'imageBlock.js');
 mix.react('./assets/javascript/blocks/newsletter/index.js', 'newsletter.js');
 mix.react('./assets/javascript/blocks/linkDropdown/index.js', 'linkDropdown.js');
 mix.react('./assets/javascript/blocks/teamBlock/index.js', 'teamBlock.js');
+mix.react('./assets/javascript/blocks/teamMember/index.js', 'teamMember.js');
 
 mix.webpackConfig({
 	...defaultConfig,

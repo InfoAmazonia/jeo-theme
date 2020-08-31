@@ -27,6 +27,7 @@
 @import '4-components/c-jeomap';
 @import '4-components/c-cookies';
 @import '4-components/c-article-block';
+@import '4-components/c-project-card';
 
 
 /* ----- 5: PAGES ------- */
@@ -34,11 +35,13 @@
 @import '5-pages/p-search';
 @import '5-pages/p-author';
 @import '5-pages/p-archive';
+@import '5-pages/p-archive-project';
 @import '5-pages/p-404';
 @import '5-pages/p-home';
 @import '5-pages/p-page';
 @import '5-pages/p-category';
 @import '5-pages/p-contact';
+@import '5-pages/p-about-us';
 
 
 /* ----- 6: WIDGETS ------- */
@@ -49,8 +52,8 @@
 @import '6-widgets/w-video-gallery';
 @import '6-widgets/w-embed-template';
 @import '6-widgets/w-credited-image-block';
-@import '6-widgets/w-teamBlock';
-@import '6-widgets/w-linkDropdown';
+@import '6-widgets/w-team-block';
+@import '6-widgets/w-link-dropdown';
 @import '6-widgets/w-content-box';
 @import '6-widgets/w-tooltip';
 
