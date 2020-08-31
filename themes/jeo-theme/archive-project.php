@@ -16,7 +16,7 @@ get_header();
 				</h1>
 
 				<div class="taxonomy-description">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cumque!
+					<?= get_theme_mod('description_project_archive', '') ?>
 				</div>
 
 		</header><!-- .page-header -->
