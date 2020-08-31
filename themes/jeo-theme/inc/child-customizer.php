@@ -834,19 +834,19 @@ function newspack_scott_customizer($wp_customize)
 	);
 
 
-	// Menu font
+	// Special Heading font. Used in InfoAmazonia
 	$wp_customize->add_setting(
-		'menu_font',
+		'special_heading_font',
 		array(
 			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
 
 	$wp_customize->add_control(
-		'menu_font',
+		'special_heading_font',
 		array(
-			'label'       => __( 'Menu font', 'newspack' ),
-			'description' => __( 'Example: Open Sans. If it is empty, the Header Font is used.' ),
+			'label'       => __( 'Special heading font', 'newspack' ),
+			'description' => __( 'Example: Open Sans Condensed. If it is empty, the Header Font is used.' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
 		)
