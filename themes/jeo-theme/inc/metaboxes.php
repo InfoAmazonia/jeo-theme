@@ -286,6 +286,15 @@ function meta_save($post_id) {
 	if (isset($_POST['project-link'])) {
 		update_post_meta($post_id, 'project-link', $_POST['project-link']);
 	}
+
+	foreach($bullets as $bullet){
+		if (isset($_POST[str_replace(' ', '_', $bullet['title'])])) {
+			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), true);
+		} else {
+			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), false);
+		}
+		
+	}
 }
 
 add_action('save_post', 'meta_save');
