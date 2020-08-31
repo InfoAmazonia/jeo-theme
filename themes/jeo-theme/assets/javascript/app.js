@@ -14,6 +14,7 @@ import "./functionalities/search-filters";
 import "./functionalities/tooltip";
 import "./functionalities/link-dropdown";
 import "./functionalities/project-single";
+import "./functionalities/republish-modal";
 
 // Other options
 import "./cookies";
