@@ -208,7 +208,8 @@ function newspack_scott_custom_typography_css() {
 			.home__readmore-bkg h2,
 			.archive .entry-title,
 			.category-most-read .posts .post .post-link .post-title,
-			.search .entry-title {
+			.search .entry-title,
+			.project-card--meta h3 {
 				font-family: "' . $special_heading_font . '", "sans-serif";
 			}
 
