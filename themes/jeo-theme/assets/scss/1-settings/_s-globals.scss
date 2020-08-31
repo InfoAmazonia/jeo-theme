@@ -412,3 +412,49 @@ input[type='submit']:focus {
 }
 
 .dark-theme {}
+
+
+/* icons for post type: audio, video, maps*/
+.archive, .search {
+    article  {
+        &.category-map, &.category-video, &.category-audio {
+            figure.post-thumbnail a:after {
+                content: "";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                position: absolute;
+                width: 20%;
+                height: 36%;
+                background: var(--primary);
+                bottom: 0;
+                z-index: 1;
+                right: 0;
+                font-family: "Font Awesome 5 Free";
+                font-weight: normal;
+                font-size: 18px;
+            }
+        }
+
+        &.category-map {
+            figure.post-thumbnail a:after {
+                content: "\f279";
+            }
+        }
+
+        &.category-video {
+            figure.post-thumbnail a:after {
+                content: "\f04b";
+                font-weight: 800;
+            }
+        }
+
+        &.category-audio {
+            figure.post-thumbnail a:after {
+                content: "\f025";
+                font-weight: 800;
+            }
+        }
+    }
+}

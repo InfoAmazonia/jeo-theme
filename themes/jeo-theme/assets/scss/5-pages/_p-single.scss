@@ -944,6 +944,145 @@
     }
 }
 
+// Project single style
+#primary.project {
+    margin-top: -4rem; // neutralize father inner padding
+
+    @include mobile {
+        margin-top: 0px;
+    }   
+
+    header {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        background-color: #F5F5F5;
+
+        margin: 0 calc( 50% - 50vw);
+        width: 100vw;
+
+        .entry-header {
+            .project-link {
+                background-color: var(--primary);
+                color: white;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 18px 51px;
+                width: fit-content;
+                border-radius: 10px;
+                text-transform: uppercase;
+                font-weight: bold;
+                position: absolute;
+                bottom: -90px;
+                right: 0;
+                font-size: size(14);
+            }
+        }
+
+        .cat-links {
+            display: flex;
+            margin-bottom: 40px;
+
+            .custom-separator {
+                color: #555D66;
+            }
+
+            a:last-child {
+                color: #555D66;
+            }
+
+
+            a:first-of-type {
+                opacity: 0.5;
+                color: #555D66;
+            }
+
+        }
+
+        .wrapper-entry-title {
+            h1 {
+                text-align: left;
+                margin-bottom: 0;
+                font-weight: bold;
+
+                @include tablet {
+                    text-align: center;
+                }
+            }
+        }
+    }
+  
+    .main-content {
+        .project-link {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 18px 51px;
+            width: 100%;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: size(14);
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        
+        .entry-subhead {
+            .entry-meta {
+                /* justify-content: flex-start;*/
+                @include desktop{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                .byline.single-author-opinion {
+                    @include desktop{
+                        line-height: 36px;
+                    }
+                }
+                .posted-by {
+                    margin: auto size(5) auto size(5);
+                }
+
+                .author-avatar img {
+                    border-radius: 50%;
+                }
+
+                .avatar-default {
+                    display: none;
+                }
+            }
+        }
+
+        @include mobile {
+            margin: auto;
+            max-width: 90% !important;
+            width: 1200px;
+        }
+    }
+}
+
+.dark-theme.single #primary.project header {
+    background-color: rgba(255, 255, 255, 0.05);
+
+
+
+    .cat-links {
+        a {
+            color: #F5F5F5;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
 
 // Video single style
 #primary.video {

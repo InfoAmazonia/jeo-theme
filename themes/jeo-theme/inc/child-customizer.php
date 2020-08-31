@@ -414,6 +414,30 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_section(
+		'project_archive',
+		array(
+			'title' => esc_html__('Projects Archive', 'jeo'),
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'description_project_archive',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'description_project_archive',
+		array(
+			'type' => 'textarea',
+			'section' => 'project_archive',
+			'label' => __('Description', 'jeo'),
+		)
+	);
+
 	// Typography Heading Desktop
 	$wp_customize->add_section(
 		'typo_heading_sizes',
@@ -482,6 +506,9 @@ function newspack_scott_customizer($wp_customize)
 			'description' => __('The bullets can be created as Bullet Widget on Widgets panel.')
 		)
 	);
+
+
+	
 
 	$wp_customize->add_control(
 		'typo_unit',
