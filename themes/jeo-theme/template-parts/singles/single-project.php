@@ -38,11 +38,11 @@
             get_template_part('template-parts/content/content', 'single');
             ?>
             
-            <?php if (get_post_meta(get_the_ID(), 'project-link', true) && !empty(get_post_meta(get_the_ID(), 'project-link', true))) : ?>
+            <!-- <?php if (get_post_meta(get_the_ID(), 'project-link', true) && !empty(get_post_meta(get_the_ID(), 'project-link', true))) : ?>
                 <a class="project-link" href="<?= get_post_meta(get_the_ID(), 'project-link', true) ?>">
                     <?= __('Access project page') ?>
                 </a>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
 
 
