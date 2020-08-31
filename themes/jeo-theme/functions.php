@@ -2,6 +2,7 @@
 require __DIR__ . '/inc/generic-css-injection.php';
 require __DIR__ . '/inc/template-tags.php';
 require __DIR__ . '/inc/api.php';
+require __DIR__ . '/inc/post-types.php';
 require __DIR__ . '/inc/newspack-functions-overwrites.php';
 require __DIR__ . '/inc/widgets.php';
 require __DIR__ . '/inc/metaboxes.php';

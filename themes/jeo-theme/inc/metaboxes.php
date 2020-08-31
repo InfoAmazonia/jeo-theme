@@ -13,7 +13,7 @@ function register_metaboxes() {
 		'republish-post',
 		'Republish Post',
 		'republish_post_callback',
-		'post',
+		['post', 'project'],
 		'side',
 		'default',
 	);
@@ -23,6 +23,15 @@ function register_metaboxes() {
 		'Twitter video preview',
 		'twitter_opinion_video_callback',
 		'post',
+		'side',
+		'default',
+	);
+
+	add_meta_box(
+		'project-link',
+		'Project Link',
+		'project_link_callback',
+		'project',
 		'side',
 		'default',
 	);
@@ -42,6 +51,21 @@ function register_metaboxes() {
 		'side',
 		'default',
 	);
+}
+
+function project_link_callback() {
+	$jeo_stored_meta = get_post_meta(get_the_ID());	
+	?>
+
+		<p>
+			<div class="jeo-row-content">
+				<label for="project-link">
+					<input placeholder="Requires https://" style="width: 100%" type="text" name="project-link" id="project-link" value="<?php if (isset($jeo_stored_meta['project-link'])) echo $jeo_stored_meta['project-link'][0]; ?>"  />
+				</label>
+			</div>
+		</p>
+
+<?php
 }
 
 function display_author_callback() {
@@ -259,13 +283,8 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'external-title', $_POST['external-title']);
 	}
 
-	//Republish post metaboxes
-	foreach($bullets as $bullet) {
-		if (isset($_POST[str_replace(' ', '_', $bullet['title'])])) {
-			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), true);
-		} else {
-			update_post_meta($post_id, str_replace(' ', '_', $bullet['title']), false);
-		}
+	if (isset($_POST['project-link'])) {
+		update_post_meta($post_id, 'project-link', $_POST['project-link']);
 	}
 }
 
