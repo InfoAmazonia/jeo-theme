@@ -13,7 +13,7 @@ function register_metaboxes() {
 		'republish-post',
 		'Republish Post',
 		'republish_post_callback',
-		'post',
+		['post', 'project'],
 		'side',
 		'default',
 	);

@@ -13,7 +13,7 @@ the_post();
 
 
 
-
+get_template_part('template-parts/content/content', 'republish-post'); 
 get_template_part('template-parts/singles/single', 'project'); ?>
 
 <?php
