@@ -669,7 +669,7 @@
                     margin-bottom: auto;
                     margin-right: size(5);
                 }
-    
+
                 .text {
                     font-family: var(--primary-font);
                     font-size: size(14);
@@ -695,7 +695,7 @@
                 justify-content: center;
                 align-items: center;
             }
-    
+
             .hideModal {
                 z-index: -1;
                 opacity: 0;
@@ -712,12 +712,12 @@
                     opacity: 0;
                 }
             }
-    
+
             .showModal{
                 opacity: 1;
                 z-index: 2;
                 animation: show .2s;
-                
+
                 transform: scale(1);
             } @keyframes show {
                 from{
@@ -730,7 +730,7 @@
                     z-index: 2;
                 }
             }
-    
+
             .republish-post-modal {
                 .main-modal {
                     @include mobile {
@@ -754,14 +754,16 @@
                     }
 
                     .content {
+                        overflow-y: scroll;
                         display: flex;
                         flex-direction: column;
                         padding: size(50) size(16) size(50) size(30);
-                        max-height: size(800);
+                        max-height: size(650);
 
-                        @include mobile {
-                            max-height: 60vh;
+                        @include tablet {
+                            max-height: (60vh);
                         }
+
 
                         .title {
                             font-family: var(--primary-font);
@@ -769,7 +771,7 @@
                             font-weight: bold;
                             margin: 0 0 0.5em;
                         }
-                        
+
                         .introduction, .bullets-introduction, ul li.bullet-description {
                             font-family: var(--primary-font);
                             font-size: size(18);
@@ -815,13 +817,12 @@
                                 padding: 0;
 
                                 .wrapper {
-                                    overflow-y: scroll;
                                     height: size(130);
                                     color: #555D66;
                                     margin-right: 0;
                                     margin-left: 0;
                                     max-width: 100%;
-                                    
+
                                     p {
                                         padding: size(5) size(20);
                                         font-size: size(12);
