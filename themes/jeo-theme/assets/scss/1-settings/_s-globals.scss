@@ -200,10 +200,26 @@ body {
     max-width: 50%;
 }
 
+.col-md-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 @include tablet {
-    .col-md-6, .col-sm-3, .col-sm-9  {
+    .col-md-6, .col-sm-3, .col-sm-9, .col-md-10  {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .search .col-md-10 {
+        padding-right: 0px;
+        padding-left: 0px;
     }
 }
 
