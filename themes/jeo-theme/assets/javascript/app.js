@@ -11,7 +11,9 @@ import "./functionalities/cover-block";
 import "./functionalities/video-gallery";
 import "./functionalities/image-gallery";
 import "./functionalities/search-filters";
+import "./functionalities/tooltip";
 import "./functionalities/link-dropdown";
+import "./functionalities/republish-modal";
 
 // Other options
 import "./cookies";
