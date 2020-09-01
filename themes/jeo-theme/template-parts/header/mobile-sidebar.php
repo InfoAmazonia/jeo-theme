@@ -153,8 +153,9 @@ if (newspack_is_amp()) : ?>
 					<ul>
 						<?php foreach (icl_get_languages() as $language) : ?>
 							<li>
+								<?php //var_dump($language) ?>
 								<a href="<?= $language['url'] ?>">
-									<?= $language['code'] ?>
+									<?= $language['translated_name'] ?>
 								</a>
 							</li>
 						<?php endforeach ?>

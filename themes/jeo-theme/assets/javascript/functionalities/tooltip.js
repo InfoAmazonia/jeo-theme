@@ -4,6 +4,13 @@ window.addEventListener("DOMContentLoaded", function () {
         return finalString + ': ' + item;
     };
 
+    document.addEventListener('click', function(event) {
+        var isClickInsideElement = event.target.classList.contains('tooltip-block');
+        if (!isClickInsideElement) {
+            document.querySelectorAll('.tooltip-block').forEach(tooltip => tooltip.classList.remove('active'));
+        }
+    });
+
     document.querySelectorAll('.tooltip-block').forEach(tooltip => {
         const splitResult = tooltip.innerText.split(': ');
         const referenceWord = splitResult[0];
