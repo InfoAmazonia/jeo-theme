@@ -808,6 +808,11 @@ header.site-header {
 
     .wrapper {
         justify-content: center;
+
+        @include mobile {
+            flex-wrap: nowrap;
+            max-width: 100%;
+        }
     }
 
     @include tablet {
