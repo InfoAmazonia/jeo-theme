@@ -1,10 +1,15 @@
-<section id="primary" class="content-area opinion <?php echo esc_attr(newspack_get_category_tag_classes(get_the_ID())) . ' ' . newspack_featured_image_position(); ?>">
+<section id="primary" class="content-area project <?php echo esc_attr(newspack_get_category_tag_classes(get_the_ID())) . ' ' . newspack_featured_image_position(); ?>">
     <main id=" main" class="site-main">
         <header>
             <div class="wrapper">
                 <div class="entry-header">
                     <?php set_query_var('hide_post_meta', true); ?>
                     <?php get_template_part('template-parts/header/entry', 'header'); ?>
+                    <?php if (get_post_meta(get_the_ID(), 'project-link', true) && !empty(get_post_meta(get_the_ID(), 'project-link', true))) : ?>
+                        <a class="project-link" href="<?= get_post_meta(get_the_ID(), 'project-link', true) ?>">
+                            <?= __('Access project page') ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </header>
@@ -16,7 +21,6 @@
                         <?php newspack_posted_by(); ?>
                     <?php endif; ?>
                     <div></div>
-                    <?php newspack_posted_on(); ?>
                 </div><!-- .meta-info -->
                 <?php
                 // Display Jetpack Share icons, if enabled
@@ -33,6 +37,12 @@
 
             get_template_part('template-parts/content/content', 'single');
             ?>
+            
+            <!-- <?php if (get_post_meta(get_the_ID(), 'project-link', true) && !empty(get_post_meta(get_the_ID(), 'project-link', true))) : ?>
+                <a class="project-link" href="<?= get_post_meta(get_the_ID(), 'project-link', true) ?>">
+                    <?= __('Access project page') ?>
+                </a>
+            <?php endif; ?> -->
 
 
 
@@ -44,7 +54,8 @@
 
 	<div class="after-post-content-widget-area">
 			<?php if ( is_single() ):
-				dynamic_sidebar('after_post_widget_area'); 
+                get_template_part('template-parts/content/content', 'republish-post'); 
+                dynamic_sidebar('after_post_widget_area'); 
 			endif;
 			?>
 		</div>
@@ -59,10 +70,4 @@
         ?>
         
 	</div>
-	<?php 
-        if(!is_page()) {
-            get_template_part('template-parts/content/content', 'republish-post'); 
-            get_template_part('template-parts/content/content', 'related-posts'); 
-        }
-    ?>
 </section><!-- #primary -->

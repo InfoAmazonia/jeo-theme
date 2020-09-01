@@ -147,13 +147,15 @@
         &.fullscreen {
             position: fixed;
 
-            .image-gallery-wrapper {
-                overflow-y: auto;
-            }
+            @include tablet {
+                .image-gallery-wrapper {
+                    overflow-y: auto;
+                }
 
-            .gallery-grid {
-                .sss {
-                    grid-template-columns: repeat(2, 1fr);
+                .gallery-grid {
+                    .sss {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
                 }
             }
         }
