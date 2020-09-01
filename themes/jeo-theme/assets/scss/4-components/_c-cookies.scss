@@ -13,7 +13,7 @@ wordpress.org/plugins/complianz-gdpr/
     }
 }
 
-#cc-window {
+#cc-window.cc-window {
     position: inherit;
     font-family: var(--primary);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
@@ -34,6 +34,29 @@ wordpress.org/plugins/complianz-gdpr/
             width: 100%;
             display: block;
         }
+
+        .cc-compliance{
+    
+            .cc-btn.cc-dismiss {
+                background-color: transparent !important;
+                border: 0px;
+            }
+        
+            .cc-btn.cc-allow, 
+            .cc-btn.cc-accept-all,
+            .cc-btn.cc-show-settings {
+                border: 2px solid #FFFFFF !important;
+                border-radius: 15px;
+                color: #fff;
+                text-transform: uppercase;
+                background-color: transparent;
+
+                &:hover {
+                    background: transparent;
+                }
+            }
+        }
+    
     }
 
 
@@ -77,20 +100,6 @@ wordpress.org/plugins/complianz-gdpr/
             display: none;
         }
     }
-
-    .cc-btn.cc-dismiss {
-        background-color: transparent !important;
-        border: 0px;
-    }
-
-    .cc-btn.cc-save.cc-allow {
-        border: 2px solid #FFFFFF !important;
-        border-radius: 15px;
-        color: #fff;
-        text-transform: uppercase;
-        background-color: transparent;
-    }
-
 
 }
 
