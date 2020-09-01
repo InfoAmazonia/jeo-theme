@@ -67,9 +67,17 @@ $tablet-width: 830px;
 $desktop-width: 1025px;
 $large-width: 1600px;
 $medium-width: 1200px;
+$tablet-up-width: 782px;
+
 
 @mixin mobile {
     @media (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile-up {
+    @media (min-width: #{$tablet-width}) {
         @content;
     }
 }
@@ -82,6 +90,12 @@ $medium-width: 1200px;
 
 @mixin tablet-only {
     @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: #{$tablet-up-width}) {
         @content;
     }
 }
