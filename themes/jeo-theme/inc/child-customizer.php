@@ -71,7 +71,7 @@ function newspack_scott_customizer($wp_customize)
 				'settings'    => 'header_background_image',
 				'flex_width'  => false,
 				'flex_height' => true,
-				'width'       => 400,
+				'width'       => 1800,
 				'height'      => 300,
 			)
 		)
