@@ -45,19 +45,23 @@ wordpress.org/plugins/complianz-gdpr/
 
             margin-top: 15px;
     
-            .cc-btn.cc-dismiss {
+            .cc-btn.cc-dismiss,
+            .cc-btn.cc-show-settings,
+            .cc-btn.cc-allow {
                 background-color: transparent !important;
                 border: 0px;
             }
-        
-            .cc-btn.cc-allow, 
-            .cc-btn.cc-accept-all,
-            .cc-btn.cc-show-settings {
+         
+            .cc-btn.cc-accept-all{
                 border: 2px solid #FFFFFF !important;
                 border-radius: 15px;
                 color: #fff;
                 text-transform: uppercase;
                 background-color: transparent;
+
+                @include desktop{
+                    order: 3;
+                }
 
                 &:hover {
                     background: transparent;
