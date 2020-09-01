@@ -27,6 +27,12 @@ wordpress.org/plugins/complianz-gdpr/
         min-width: 320px;
     }
 
+    /* vertical center align preferences*/
+    &.cc-type-categories.cc-top .cmplz-categories-wrap {
+        display: flex;
+        align-items: center;
+    }
+
     .jeo {
         justify-content: space-between;
         margin: auto;
@@ -41,15 +47,22 @@ wordpress.org/plugins/complianz-gdpr/
             display: block;
         }
 
+        .cmplz-categories-wrap{
+            font-size: 14px;
+        }
         .cc-compliance{
-
-            margin-top: 15px;
     
             .cc-btn.cc-dismiss,
             .cc-btn.cc-show-settings,
+            .cc-btn.cc-save-settings,
             .cc-btn.cc-allow {
                 background-color: transparent !important;
                 border: 0px;
+            }
+
+            /* When acept all + view preferences is enable, 'only functional' is hidden */
+            a.cc-btn.cc-dismiss {
+                display: none;
             }
          
             .cc-btn.cc-accept-all{
