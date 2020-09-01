@@ -51,6 +51,11 @@ wordpress.org/plugins/complianz-gdpr/
             font-size: 14px;
         }
         .cc-compliance{
+
+            @include mobile {
+                display: flex !important;
+                flex-direction: column;
+            }
     
             .cc-btn.cc-dismiss,
             .cc-btn.cc-show-settings,
@@ -66,6 +71,16 @@ wordpress.org/plugins/complianz-gdpr/
             }
          
             .cc-btn.cc-accept-all{
+                
+                @include mobile {
+                    width: 100%;
+                    order: 1;
+                }
+
+                @include tablet {
+                    order: 1;
+                }
+
                 border: 2px solid #FFFFFF !important;
                 border-radius: 15px;
                 color: #fff;
@@ -78,6 +93,12 @@ wordpress.org/plugins/complianz-gdpr/
 
                 &:hover {
                     background: transparent;
+                }
+            }
+
+            .cc-btn.cc-save-settings, .cc-btn.cc-btn.cc-show-settings {
+                @include mobile {
+                    margin-left: auto;
                 }
             }
         }
