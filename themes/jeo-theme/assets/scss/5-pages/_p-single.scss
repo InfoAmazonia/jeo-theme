@@ -1157,6 +1157,17 @@
 
 }
 
+.single-project.has-large-featured-image.single-featured-image-behind .site-content, .single-project.single-featured-image-behind .site-content {
+    margin-top: 4rem;
+}
+
+.dark-theme.single-project.single-featured-image-behind .site-content {
+    .wrapper-entry-title {
+        color: white;
+    }
+}
+
+
 .single:not(.has-large-featured-image) .entry-header {
     border-bottom: 0px;
     max-width: 58.334%;
