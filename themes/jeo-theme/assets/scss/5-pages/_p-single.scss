@@ -1148,7 +1148,6 @@
 
 .has-featured-image.single-featured-image-behind {
     section#primary {
-
         &.category-opinion,
         &.video {
             margin-top: 0;
@@ -1159,6 +1158,17 @@
 
 .single-project.has-large-featured-image.single-featured-image-behind .site-content, .single-project.single-featured-image-behind .site-content {
     margin-top: 4rem;
+    
+    @include mobile {
+        margin-top: 0;
+    }
+}
+
+
+.single-project.has-large-featured-image.single-featured-image-behind,  .single-project.single-featured-image-behind {
+    @include mobile {
+        padding-top: 0;
+    }
 }
 
 .dark-theme.single-project.single-featured-image-behind .site-content {
