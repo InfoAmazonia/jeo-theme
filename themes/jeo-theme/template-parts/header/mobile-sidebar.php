@@ -155,7 +155,7 @@ if (newspack_is_amp()) : ?>
 							<li>
 								<?php //var_dump($language) ?>
 								<a href="<?= $language['url'] ?>">
-									<?= $language['translated_name'] ?>
+									<?= $language['code'] ?>
 								</a>
 							</li>
 						<?php endforeach ?>
