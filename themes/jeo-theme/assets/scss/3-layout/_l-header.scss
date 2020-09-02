@@ -1040,6 +1040,17 @@ header#masthead {
     }
 
     header.site-header .bottom-header-contain.post-header.active {
-        box-shadow: none;
+        background-color: #191E23;
+        box-shadow: 0 3px 6px 0 #000000;
+
+        .left {
+            .menu-btn {
+                color: #F5F5F5;
+            }
+        }
+
+        .title {
+            color: white;
+        }
     }
 }
