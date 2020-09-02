@@ -13,13 +13,25 @@ wordpress.org/plugins/complianz-gdpr/
     }
 }
 
-#cc-window {
+#cc-window.cc-window {
     position: inherit;
     font-family: var(--primary);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
     background-color: #555D66;
     color: #fff;
     padding: 20px 20px 25px;
+    border-radius: 0px;
+
+    /* iphone 5: 320px */
+    &.cc-type-categories.cc-floating {
+        min-width: 320px;
+    }
+
+    /* vertical center align preferences*/
+    &.cc-type-categories.cc-top .cmplz-categories-wrap {
+        display: flex;
+        align-items: center;
+    }
 
     .jeo {
         justify-content: space-between;
@@ -34,6 +46,63 @@ wordpress.org/plugins/complianz-gdpr/
             width: 100%;
             display: block;
         }
+
+        .cmplz-categories-wrap{
+            font-size: 14px;
+        }
+        .cc-compliance{
+
+            @include mobile {
+                display: flex !important;
+                flex-direction: column;
+            }
+    
+            .cc-btn.cc-dismiss,
+            .cc-btn.cc-show-settings,
+            .cc-btn.cc-save-settings,
+            .cc-btn.cc-allow {
+                background-color: transparent !important;
+                border: 0px;
+            }
+
+            /* When acept all + view preferences is enable, 'only functional' is hidden */
+            a.cc-btn.cc-dismiss {
+                display: none;
+            }
+         
+            .cc-btn.cc-accept-all{
+                
+                @include mobile {
+                    width: 100%;
+                    order: 1;
+                }
+
+                @include tablet {
+                    order: 1;
+                }
+
+                border: 2px solid #FFFFFF !important;
+                border-radius: 15px;
+                color: #fff;
+                text-transform: uppercase;
+                background-color: transparent;
+
+                @include desktop{
+                    order: 3;
+                }
+
+                &:hover {
+                    background: transparent;
+                }
+            }
+
+            .cc-btn.cc-save-settings, .cc-btn.cc-btn.cc-show-settings {
+                @include mobile {
+                    margin-left: auto;
+                }
+            }
+        }
+    
     }
 
 
@@ -71,26 +140,13 @@ wordpress.org/plugins/complianz-gdpr/
             margin-bottom: 0px;
             font-size: 16px;
             line-height: 19px;
+            text-align: left;
         }
 
         .cc-link {
             display: none;
         }
     }
-
-    .cc-btn.cc-dismiss {
-        background-color: transparent !important;
-        border: 0px;
-    }
-
-    .cc-btn.cc-save.cc-allow {
-        border: 2px solid #FFFFFF !important;
-        border-radius: 15px;
-        color: #fff;
-        text-transform: uppercase;
-        background-color: transparent;
-    }
-
 
 }
 

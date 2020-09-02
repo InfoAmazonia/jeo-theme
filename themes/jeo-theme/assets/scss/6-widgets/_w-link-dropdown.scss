@@ -56,3 +56,10 @@
         }
     }
 }
+
+.dark-theme{
+    .link-dropdown .section a {
+        color: white !important;
+        opacity: 0.6;
+    }
+}
