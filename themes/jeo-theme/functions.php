@@ -95,6 +95,9 @@ function _search_pre_get_posts($query) {
 				$query->set('order', $_GET['order']);
 			}
 			//var_dump($query);
+		} else {
+			$query->set('orderby', 'date');
+			$query->set('order', 'DESC');
 		}
 
 		$categories = "";
