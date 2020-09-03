@@ -928,7 +928,7 @@ header#masthead {
             display: block;
         }
 
-        .search-toggle span {
+        .search-toggle span, .mobile-menu-toggle {
             color: var(--search-dark-icon-color);
             background: transparent;
         }

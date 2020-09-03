@@ -263,9 +263,31 @@ function newspack_the_sticky_logo() {
  * Decides which logo to use, based on Customizer settings and current post.
  */
 function newspack_the_mobile_logo() {
-	if ( has_custom_logo() ) {
-		the_custom_logo();
-	}
+	if ( has_custom_logo() ) :?>
+		<a class="custom-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php
+
+			$classes = 'custom-logo light-logo ' . (!empty(get_theme_mod( 'logo_dark_image', '' ))? 'defined-dark' : 'undefined-dark');
+			echo wp_get_attachment_image(
+				get_theme_mod( 'custom_logo', '' ),
+				'logo-sticky-image',
+				'',
+				array( 'class' =>  $classes)
+			);
+			?>
+
+			<?php
+				if(!empty(get_theme_mod( 'logo_dark_image', '' ))) {
+					echo wp_get_attachment_image(
+						get_theme_mod( 'logo_dark_image', '' ),
+						'logo-sticky-image',
+						'',
+						array( 'class' => 'custom-logo dark-logo' )
+					);
+				}
+			?>
+		</a>
+	<?php endif; 
 }
 
 function newspack_author_social_links( $author_id, $size = 24 ) {
