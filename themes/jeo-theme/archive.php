@@ -52,7 +52,7 @@ get_header();
 
 
 			<?php do_action( 'before_archive_posts' ); ?>
-			<div class="about-the-author-section d-block d-sm-none">
+			<div class="about-the-author-section top-author">
 				<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
 					<p><?php echo get_the_author_meta('description'); ?></p>
 				<?php endif; ?>
@@ -81,7 +81,7 @@ get_header();
 			</main><!-- #main -->
 			<aside class="author-page-sidebar">
     			<div>
-					<div class="about-the-author-section d-none d-sm-block">
+					<div class="about-the-author-section">
 						<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
 							<h4><?php _e('ABOUT THE AUTHOR', 'jeo') ?></h4>
 							<p><?php echo get_the_author_meta('description'); ?></p>

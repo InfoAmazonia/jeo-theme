@@ -62,3 +62,80 @@
         }
     }
 }
+
+.show-image {
+    article  {
+        &.category-map, &.category-video, &.category-audio {
+            figure.post-thumbnail a:after {
+                content: "";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                position: absolute;
+                width: 80px;
+                height: 33%;
+                background: var(--primary);
+                bottom: 0;
+                z-index: 1;
+                right: 0;
+                font-family: "Font Awesome 5 Free";
+                font-weight: normal;
+                font-size: 30px;
+            }
+        }
+
+        &.category-map {
+            figure.post-thumbnail a:after {
+                content: "\f279";
+            }
+        }
+
+        &.category-video {
+            figure.post-thumbnail a:after {
+                content: "\f04b";
+                font-weight: 800;
+            }
+        }
+
+        &.category-audio {
+            figure.post-thumbnail a:after {
+                content: "\f025";
+                font-weight: 800;
+            }
+        }
+    }
+}
+
+.wp-block-newspack-blocks-homepage-articles:not(.show-image) {
+    article {
+        &.category-audio {
+            display: flex;
+
+            &:before {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                width: 38px;
+                min-width: 38px;
+                height: 38px;
+                background: var(--primary);
+                font-family: "Font Awesome 5 Free";
+                font-weight: normal;
+                font-size: 19px;
+                content: "\f025";
+                font-weight: 800;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+    .entry-meta .byline {
+        a {
+            color: var(--primary);
+        }
+    }
+}

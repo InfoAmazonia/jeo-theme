@@ -56,6 +56,12 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php if (get_post_meta(get_the_ID(), 'project-link', true) && !empty(get_post_meta(get_the_ID(), 'project-link', true))) : ?>
+		<a class="project-link" href="<?= get_post_meta(get_the_ID(), 'project-link', true) ?>">
+			<?= __('Access project page') ?>
+		</a>
+	<?php endif; ?>
+
 	<footer class="entry-footer">
 		<?php newspack_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

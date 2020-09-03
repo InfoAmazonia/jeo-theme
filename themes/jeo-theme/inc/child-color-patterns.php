@@ -86,9 +86,21 @@ function newspack_scott_custom_colors_css() {
 
 	if(!get_theme_mod( 'header_image_bg_dark_mode', true )) {
 		$theme_css .= '.dark-theme .middle-header-contain {
-				background-color:' . get_theme_mod('header_background_color_hex', '#fff	') . '1a;
+				background-color:' . get_theme_mod('header_background_color_hex', '#fff	') . ';
 				background-image: none;
 			}
+
+		@media only screen and (max-width: 782px) {
+			.dark-theme .bottom-header-contain.post-header {
+				background-color: #191E23 ;
+				background-image: none !important;
+			}
+
+			.dark-theme header.site-header .bottom-header-contain.post-header {
+				background-color: #191E23;
+				background-image: none !important;
+			}
+		}
 		';
 	}
 

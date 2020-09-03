@@ -132,10 +132,15 @@ function featured_image_position_cleaner_script() {
 	wp_enqueue_script('featured-image-position', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/featured-image-cleaner.js', '', true);
 }
 
+function bullets_metaboxes_script() {
+	wp_enqueue_script('bullets-metaboxes', get_stylesheet_directory_uri() . '/assets/javascript/functionalities/bullets-metaboxes.js', ['jquery'], true);
+}
+
 add_action('get_footer', 'non_blocking_styles');
 add_action('wp_enqueue_scripts', 'newspack_scott_scripts');
 add_action('admin_enqueue_scripts', 'category_deletion_script');
 add_action('admin_enqueue_scripts', 'featured_image_position_cleaner_script');
+add_action('admin_enqueue_scripts', 'bullets_metaboxes_script');
 
 
 
@@ -195,21 +200,62 @@ function newspack_the_sticky_logo() {
 	if ( $has_sticky_logo ) : ?>
 		<a class="custom-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<?php
+			// echo wp_get_attachment_image(
+			// 	get_theme_mod( 'logo_sticky_image', '' ),
+			// 	'logo-sticky-image',
+			// 	'',
+			// 	array( 'class' => 'custom-logo' )
+			// );
+
+			$classes = 'custom-logo light-logo ' . (!empty(get_theme_mod( 'logo_dark_image', '' ))? 'defined-dark' : 'undefined-dark');
 			echo wp_get_attachment_image(
 				get_theme_mod( 'logo_sticky_image', '' ),
 				'logo-sticky-image',
 				'',
-				array( 'class' => 'custom-logo' )
+				array( 'class' =>  $classes)
 			);
+			?>
+
+			<?php
+				if(!empty(get_theme_mod( 'logo_dark_image', '' ))) {
+					echo wp_get_attachment_image(
+						get_theme_mod( 'logo_dark_image', '' ),
+						'full',
+						'',
+						array( 'class' => 'custom-logo dark-logo' )
+					);
+				}
 			?>
 		</a>
 	<?php
-	endif;
-
 	// Otherwise, return the regular logo:
-	if ( !$has_sticky_logo && has_custom_logo() ) {
-		the_custom_logo();
-	}
+	elseif ( !$has_sticky_logo && has_custom_logo() ):
+		?>
+		
+		<a class="custom-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php
+
+			$classes = 'custom-logo light-logo ' . (!empty(get_theme_mod( 'logo_dark_image', '' ))? 'defined-dark' : 'undefined-dark');
+			echo wp_get_attachment_image(
+				get_theme_mod( 'custom_logo', '' ),
+				'logo-sticky-image',
+				'',
+				array( 'class' =>  $classes)
+			);
+			?>
+
+			<?php
+				if(!empty(get_theme_mod( 'logo_dark_image', '' ))) {
+					echo wp_get_attachment_image(
+						get_theme_mod( 'logo_dark_image', '' ),
+						'logo-sticky-image',
+						'',
+						array( 'class' => 'custom-logo dark-logo' )
+					);
+				}
+			?>
+		</a> <?php
+	endif;
 }
 
 
@@ -217,9 +263,31 @@ function newspack_the_sticky_logo() {
  * Decides which logo to use, based on Customizer settings and current post.
  */
 function newspack_the_mobile_logo() {
-	if ( has_custom_logo() ) {
-		the_custom_logo();
-	}
+	if ( has_custom_logo() ) :?>
+		<a class="custom-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php
+
+			$classes = 'custom-logo light-logo ' . (!empty(get_theme_mod( 'logo_dark_image', '' ))? 'defined-dark' : 'undefined-dark');
+			echo wp_get_attachment_image(
+				get_theme_mod( 'custom_logo', '' ),
+				'logo-sticky-image',
+				'',
+				array( 'class' =>  $classes)
+			);
+			?>
+
+			<?php
+				if(!empty(get_theme_mod( 'logo_dark_image', '' ))) {
+					echo wp_get_attachment_image(
+						get_theme_mod( 'logo_dark_image', '' ),
+						'logo-sticky-image',
+						'',
+						array( 'class' => 'custom-logo dark-logo' )
+					);
+				}
+			?>
+		</a>
+	<?php endif; 
 }
 
 function newspack_author_social_links( $author_id, $size = 24 ) {

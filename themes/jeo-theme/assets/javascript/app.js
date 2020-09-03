@@ -11,6 +11,10 @@ import "./functionalities/cover-block";
 import "./functionalities/video-gallery";
 import "./functionalities/image-gallery";
 import "./functionalities/search-filters";
+import "./functionalities/tooltip";
+import "./functionalities/link-dropdown";
+import "./functionalities/project-single";
+import "./functionalities/republish-modal";
 
 // Other options
 import "./cookies";
@@ -65,7 +69,15 @@ window.addEventListener("DOMContentLoaded", function () {
                         },
                     });
 
-                    const metaarea = element.closest("article").querySelector('.entry-meta');
+                    let metaarea = element.closest("article").querySelector(".entry-meta");
+                    
+                    if (!metaarea) {
+                        metaarea = document.createElement("div");
+                        metaarea.classList.add("entry-meta");
+
+                        element.closest("article").querySelector(".entry-wrapper").appendChild(metaarea);
+                    }
+
                     metaarea.insertBefore(externalSourceLink, metaarea.firstChild);
                 }
             } catch (err) {
@@ -78,7 +90,7 @@ window.addEventListener("DOMContentLoaded", function () {
 (function ($) {
     jQuery(document).ready(function () {
         // Fix JEO-plugin and Vue conflit.
-        document.querySelectorAll('.vue-component').forEach(function(element) {
+        document.querySelectorAll('.vue-component').forEach(function (element) {
             new Vue({
                 el: element,
             });
@@ -96,8 +108,8 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         // prevents comments from hiding when a direct comment hash is set
-        if(!(document.location.hash.length && document.location.hash.slice(1,8) == 'comment')) {
-            jQuery(".toggable-comments-form").hide();   
+        if (!(document.location.hash.length && document.location.hash.slice(1, 8) == 'comment')) {
+            jQuery(".toggable-comments-form").hide();
         }
 
         if (jQuery(".toggable-comments-area").length) {
