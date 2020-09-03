@@ -4390,6 +4390,7 @@ body.page .entry-title {
 
 @media only screen and (min-width: 782px) {
   .newspack-front-page .entry .entry-content .alignwide,
+  .project-template-single-wide .entry .entry-content .alignwide,
   .post-template-single-wide .entry .entry-content .alignwide,
   .page-template-single-wide .entry .entry-content .alignwide {
     margin-right: calc( 25% - 25vw);
