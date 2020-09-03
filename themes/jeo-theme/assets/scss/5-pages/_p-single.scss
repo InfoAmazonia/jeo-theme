@@ -517,9 +517,9 @@
             .post {
                 flex-basis: calc(33.33333% - 16px);
 
-                @include mobile {
+                @include tablet {
                     display: flex;
-                    margin-bottom: 20px;
+                    margin-bottom: size(40);
                 }
             }
 
