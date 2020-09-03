@@ -1,4 +1,12 @@
 .home {
+
+    .entry .entry-content hr.wp-block-separator {
+        height: 3px;
+        border-radius: 10px;
+        background-color: #DDDDDD;
+        border-top: 0px;
+    }
+
     .wp-block-newspack-blocks-carousel .swiper-slide {
         @include tablet {
             max-height: none;
@@ -86,7 +94,7 @@
         }
     }
 
-    /* Read more in Ekuatorial*/
+    /* Read more section in Ekuatorial  / InfoAmazonia */
     &__readmore-bkg {
         border-radius: 40px;
         padding: 35px 113px;
@@ -96,14 +104,32 @@
             padding: 50px 20px;
         }
 
-        h2 {
-            font-size: size(30);
-            margin: 20px 0px;
+        p {
+            font-size: size(18);
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 24px;
+        }
+
+
+        .wp-block-columns {
+            align-items: center;
+        }
+
+        .wp-block-column{
+            h2 {
+                font-size: size(32);
+                margin-top: 10px;
+            }    
         }
 
         a {
             color: var(--primary) !important;
             text-decoration: underline !important;
+        }
+
+        &.wp-block-cover.has-background-dim:not(.has-background-gradient):before {
+            border-radius: 40px;
         }
     }
 
@@ -358,10 +384,50 @@
 
     /* HOMEPAGE Post block */
     .wp-block-newspack-blocks-homepage-articles {
+
+        /* Main highlight InfoAmazonia*/
+        &.image-alignbehind{
+            &.alignfull{
+                padding-left: 0px;
+                padding-right: 0px;
+                margin-top: 0px;
+
+                figure.post-thumbnail a {
+                    padding-top: unset;
+                    overflow: unset;
+                    position: unset;
+                    display: unset;
+                    height: unset;
+                }
+
+                .entry-wrapper {
+                    max-width: 90%;
+                    width: 1200px;
+                    margin: 30px auto;
+                    padding: 0px;
+
+                    .cat-links {
+                        opacity: 0.6;
+                        color: #FFFFFF;
+                        font-size: size(18);
+                    }
+                }
+            }
+        }
+
+        &.wpnbha .cat-links{
+            font-size: size(14);
+            font-family: var(--primary-font);
+            a   { 
+                color: var(--primary);
+            }
+        }
+
         &.ts-2,
         &.ts-3,
         &.ts-4,
-        &.ts-5 {
+        &.ts-5,
+        &.ts-7 {
             .entry-meta {
                 font-size: size(14);
             }
@@ -415,8 +481,19 @@
             }
         }
 
+        /*block font-size: 7*/
+        &.ts-7 article {
+            @include desktop {
+                .entry-title {
+                    font-size: size(50);
+                }
+            }
+        }
     }
 
+    .wpnbha img.avatar {
+        border-radius: 50px;
+    }
 
     .wp-block-columns {
         margin-bottom: 0px;
@@ -455,6 +532,15 @@ hr {
     }
 
     .wp-block-cover.has-background-dim.home__newsletter-bkg {
+        // overwrite inline style css
+        background-color: var(--primary-opacity-1) !important;
+
+        p.has-text-color.has-secondary-color {
+            color: white;
+        }
+    }
+
+    .wp-block-cover.has-background-dim.home__readmore-bkg {
         // overwrite inline style css
         background-color: var(--primary-opacity-1) !important;
 

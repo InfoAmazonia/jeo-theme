@@ -282,3 +282,41 @@ function newspack_categories()
 		); // WPCS: XSS OK.
 	}
 }
+
+/**
+ * Prints HTML with meta information for the tags and comments.
+ */
+function newspack_entry_footer() {
+
+	// Hide author, post date, category and tag text for pages.
+	if ( 'post' === get_post_type() || 'project' === get_post_type() ) {
+		/* translators: used between list items; followed by a space. */
+		$tags_list = get_the_tag_list( '', '<span class="sep">' . esc_html__( ',', 'newspack' ) . '&nbsp;</span>' );
+		if ( $tags_list ) {
+			printf(
+				/* translators: 1: posted in label, only visible to screen readers. 2: list of tags. */
+				'<span class="tags-links"><span>%1$s </span>%2$s</span>',
+				esc_html__( 'Tagged:', 'newspack' ),
+				$tags_list
+			); // WPCS: XSS OK.
+		}
+	}
+
+	// Edit post link.
+	edit_post_link(
+		sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post; only visible to screen readers. */
+				__( 'Edit <span class="screen-reader-text">%s</span>', 'newspack' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		),
+		'<span class="edit-link">' . newspack_get_icon_svg( 'edit', 16 ),
+		'</span>'
+	);
+}

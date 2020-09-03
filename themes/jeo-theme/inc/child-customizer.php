@@ -52,6 +52,14 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// Add decoration marker color
+	$wp_customize->add_setting(
+		'decoration_marker_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
 	$wp_customize->add_control(
 		new WP_Customize_Cropped_Image_Control(
 			$wp_customize,
@@ -63,7 +71,7 @@ function newspack_scott_customizer($wp_customize)
 				'settings'    => 'header_background_image',
 				'flex_width'  => false,
 				'flex_height' => true,
-				'width'       => 400,
+				'width'       => 1800,
 				'height'      => 300,
 			)
 		)
@@ -84,6 +92,24 @@ function newspack_scott_customizer($wp_customize)
 		'label' => esc_html__( 'Use backgroud image in dark mode?', 'jeo' ),
 		'description' => esc_html__( 'By disabling this, the header will use the default background with some opacity applied.', 'newspack' ),
 		'section' => 'header_section_appearance',
+		)
+	);
+
+	// Add content box title
+	$wp_customize->add_setting(
+		'content_box_title',
+		array(
+			'default'           => '',
+			//'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'content_box_title',
+		array(
+			'label'   => __( 'Content box title', 'newspack' ),
+			'section' => 'title_tagline',
+			'type'    => 'text',
 		)
 	);
 
@@ -321,6 +347,18 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'decoration_marker_color',
+			array(
+				'label' => __('Decoration marker color', 'jeo'),
+				'description' => __('Leave empty to use primary color'),
+				'section'     => 'title_tagline',
+			)
+		)
+	);
+
 	$wp_customize->add_setting(
 		'decoration_style_background_image',
 		array(
@@ -367,6 +405,39 @@ function newspack_scott_customizer($wp_customize)
 			)
 		)
 	);
+
+	$wp_customize->add_section(
+		'republish_modal',
+		array(
+			'title' => esc_html__('Republish Modal', 'newspack'),
+			'section' => 'republish',
+		)
+	);
+
+	$wp_customize->add_section(
+		'project_archive',
+		array(
+			'title' => esc_html__('Projects Archive', 'jeo'),
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'description_project_archive',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'description_project_archive',
+		array(
+			'type' => 'textarea',
+			'section' => 'project_archive',
+			'label' => __('Description', 'jeo'),
+		)
+	);
+
 	// Typography Heading Desktop
 	$wp_customize->add_section(
 		'typo_heading_sizes',
@@ -384,6 +455,61 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_setting(
+		'republish_modal_title',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'republish_modal_title',
+		array(
+			'type' => 'text',
+			'section' => 'republish_modal',
+			'label' => __('Republish Modal Title'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'republish_modal_introduction',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'wp_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'republish_modal_introduction',
+		array(
+			'type' => 'textarea',
+			'section' => 'republish_modal',
+			'label' => __('Republish Modal Introduction (it is allowed to use HTML tags)'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'republish_modal_bullets_introduction',
+		array(
+			'default'  => '',
+			'sanitize_callback' => 'wp_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'republish_modal_bullets_introduction',
+		array(
+			'type' => 'textarea',
+			'section' => 'republish_modal',
+			'label' => __('Republish Modal Bullets Introduction (it is allowed to use HTML tags)'),
+			'description' => __('The bullets can be created as Bullet Widget on Widgets panel.')
+		)
+	);
+
+
+	
+
 	$wp_customize->add_control(
 		'typo_unit',
 		array(
@@ -397,6 +523,7 @@ function newspack_scott_customizer($wp_customize)
 			)
 		)
 	);
+
 
 
 	$range_atttrs = array(
@@ -730,6 +857,43 @@ function newspack_scott_customizer($wp_customize)
 			'description' => __( 'Example: Libre Basquesville' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
+		)
+	);
+
+
+	// Special Heading font. Used in InfoAmazonia
+	$wp_customize->add_setting(
+		'special_heading_font',
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		)
+	);
+
+	$wp_customize->add_control(
+		'special_heading_font',
+		array(
+			'label'       => __( 'Special heading font', 'newspack' ),
+			'description' => __( 'Example: Open Sans Condensed. If it is empty, the Header Font is used.' ),
+			'section'     => 'newspack_typography',
+			'type'        => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'typo_menu_size',
+		array(
+			'default'  => '1',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'typo_menu_size',
+		array(
+			'type' => 'number',
+			'section' => 'newspack_typography',
+			'label' => __( 'Menu font size (rem)', 'newspack' ),
+			'input_attrs' => $range_atttrs,
 		)
 	);
 

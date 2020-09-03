@@ -99,6 +99,7 @@
                     font-weight: bold;
                     letter-spacing: 0;
                     line-height: 24px;
+                    padding: 18px;
 
                     @include tablet {
                         width: 77px;
@@ -109,6 +110,7 @@
                         }
                     }
 
+                    /* arrow in button*/
                     i {
                         display: none;
 
@@ -116,12 +118,23 @@
                             display: block;
                         }
                     }
+
+                    /* label in button*/
+                    .mc4wp__btn-label {
+                        display: block;
+
+                        @include tablet {
+                            display: none;
+                        }
+
+                    }
                 }
             }
 
             p {
                 &.link {
                     text-align: right;
+                    margin-bottom: 0;
                 }
 
                 &.anchor-text {
@@ -244,7 +257,8 @@
             text-align: center;
 
             a {
-                color: var(--primary)
+                color: var(--primary);
+                font-weight: bold;
             }
 
             a:hover {
@@ -257,6 +271,16 @@
                 color: var(--primary);
                 font-size: size(14);
                 font-weight: bold;
+            }
+        }
+
+        &.link-add{
+            font-size: size(14);
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 19px;
+            a {
+                color: var(--primary);
             }
         }
     }
