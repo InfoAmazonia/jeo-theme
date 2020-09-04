@@ -6,7 +6,7 @@ Author: Hacklab
 Author URI: https://newspack.blog
 Description:
 Requires at least: WordPress 4.9.6
-Version: 0.2.1
+Version: 0.3.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: newspack-theme
@@ -4415,6 +4415,7 @@ body.page .entry-title {
 
 @media only screen and (min-width: 782px) {
   .newspack-front-page .entry .entry-content .alignwide,
+  .project-template-single-wide .entry .entry-content .alignwide,
   .post-template-single-wide .entry .entry-content .alignwide,
   .page-template-single-wide .entry .entry-content .alignwide {
     margin-left: calc( 25% - 25vw);
@@ -4422,6 +4423,7 @@ body.page .entry-title {
     max-width: 100vw;
   }
   .newspack-front-page .entry .entry-content .alignwide.wp-block-cover,
+  .project-template-single-wide .entry .entry-content .alignwide,
   .post-template-single-wide .entry .entry-content .alignwide.wp-block-cover,
   .page-template-single-wide .entry .entry-content .alignwide.wp-block-cover {
     width: auto;
@@ -4454,6 +4456,7 @@ body.page .entry-title {
 }
 
 .newspack-front-page .entry .entry-content .alignfull,
+.project-template-single-wide .entry .entry-content .alignfull,
 .post-template-single-wide .entry .entry-content .alignfull,
 .page-template-single-wide .entry .entry-content .alignfull {
   margin-left: calc( 50% - 50vw);
@@ -4462,6 +4465,7 @@ body.page .entry-title {
 }
 
 .newspack-front-page .entry .entry-content .alignfull.wp-block-cover,
+.project-template-single-wide .entry .entry-content .alignfull,
 .post-template-single-wide .entry .entry-content .alignfull.wp-block-cover,
 .page-template-single-wide .entry .entry-content .alignfull.wp-block-cover {
   width: 100vw;

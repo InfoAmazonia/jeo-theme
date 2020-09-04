@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: One column wide
- * Template Post Type: post, page
+ * Template Post Type: post, page, project
  *
  * The template for displaying all single posts
  *
@@ -25,7 +25,9 @@ foreach ($post_categories as $post_cat) {
 		break;
 	}
 }
-if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['opinion', 'audio', 'video'])):
+if(is_singular('project')):
+	get_template_part('template-parts/singles/single', 'project');
+elseif(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['opinion', 'audio', 'video'])):
 	if ($post_child_category->slug === 'opinion') : ?>
 		<?php get_template_part('template-parts/singles/single', 'opinion');
 	elseif ($post_child_category->slug === 'audio') : ?>
