@@ -25,8 +25,6 @@
             font-size: size(16);
         }
 
-        
-
         .post {
             &:not(:last-child) {
                 border-bottom: 1px solid rgb(230, 230, 230);
@@ -63,6 +61,11 @@
                     font-size: size(14);
                 }
             }
+
+            .post-thumbnail {
+                width: 100%;
+            }
+            
         }
     }
 }
