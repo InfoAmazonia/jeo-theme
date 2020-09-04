@@ -156,8 +156,6 @@
 
 }
 
-
-
 .author-page-sidebar {
     /* desktop / tablet*/
     @media only screen and (min-width: 782px) {
@@ -166,7 +164,9 @@
 
     /* mobile */
     @media only screen and (max-width: 781px) {
-        display: none;
+        .about-the-author-section{
+            display: none;
+        }
     }
 }
 
