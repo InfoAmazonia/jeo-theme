@@ -521,6 +521,11 @@
                     display: flex;
                     margin-bottom: 20px;
                 }
+
+                /* fix responsive for this resolution*/
+                @media screen and (max-width: 829px) and (min-width: 550px) {
+                    margin-bottom: 70px !important;
+                }
             }
 
             .thumbnail {
