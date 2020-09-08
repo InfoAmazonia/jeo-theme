@@ -133,7 +133,9 @@
         }
     }
 
-    article.has-post-thumbnail:last-of-type {
+    article.has-post-thumbnail:last-of-type,
+    article:last-of-type
+     {
         margin-bottom: 30px;
     }
 }

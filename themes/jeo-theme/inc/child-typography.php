@@ -236,6 +236,19 @@ function newspack_scott_custom_typography_css() {
 		}
 	}
 
+	if (!empty(get_theme_mod( 'accent_font', ''))) {
+		$accent_font = wp_kses( get_theme_mod( 'accent_font'), null );
+
+		$theme_css .= '
+		.accent-header:not(.widget-title), .article-section-title, .page-title, #secondary .widget-title, .author-bio .accent-header span, #colophon .widget-title, .tags-links span:first-child, .single .cat-links {
+			font-family: "' . $accent_font . '", "sans-serif";
+		}
+		:root {
+			--accent-font: "' . $accent_font . '", "sans-serif";
+		}
+		';
+	}
+
 	if (!empty(get_theme_mod( 'single_featured_font', ''))) {
 		$featured_font = wp_kses( get_theme_mod( 'single_featured_font'), null );
 		$default_font = get_theme_mod('font_body');
