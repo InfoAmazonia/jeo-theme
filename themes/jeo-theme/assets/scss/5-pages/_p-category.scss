@@ -7,7 +7,11 @@ header.page-header.category {
 }
 
 aside.category-page-sidebar {
-    @include desktop{
-        width: 26%;
+    /* desktop / tablet*/
+    /*
+    782px because newspack is breaking at that point
+    */
+    @media only screen and (min-width: 782px) {
+        width: 25%;
     }
 }
