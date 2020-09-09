@@ -24,6 +24,12 @@ function custom_get_permalink($url, $post, $leavename = false) {
 	return $url;
 }
 
+add_action( 'after_setup_theme', 'jeo_setup' );
+
+function jeo_setup() {
+	load_theme_textdomain( 'jeo', get_stylesheet_directory() . '/lang' );
+}
+
 add_filter('pre_get_posts', '_search_pre_get_posts', 1);
 
 function _search_pre_get_posts($query) {
@@ -95,6 +101,9 @@ function _search_pre_get_posts($query) {
 				$query->set('order', $_GET['order']);
 			}
 			//var_dump($query);
+		} else {
+			$query->set('orderby', 'date');
+			$query->set('order', 'DESC');
 		}
 
 		$categories = "";

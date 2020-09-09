@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     "top",
                     document.querySelector(".bottom-header-contain.desktop-only")
                         .offsetTop +
-                    50 +
+                    45 +
                     "px"
                 );
             }
@@ -46,6 +46,8 @@ window.addEventListener("DOMContentLoaded", function () {
         50 +
         "px"
     );
+
+
     jQuery("header #header-search").css(
         "height",
         jQuery(window).height() -

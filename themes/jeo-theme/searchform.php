@@ -35,47 +35,49 @@ $unique_id = wp_unique_id('search-form-');
 				<?php 
 				$topics_category = get_category_by_slug('topic');
 				$categories = get_categories(
-					array( 'parent' =>  $topics_category->cat_ID)
+					array( 'parent' =>  isset($topics_category->cat_ID) ? $topics_category->cat_ID : null)
 				);
 
 				//var_dump($categories);
+				if($topics_category):
 				?>
+					<div class="filters--item">
+						<!-- <input type="text" placeholder="Testing" class="option-filter"> -->
+						<select multiple name="topic[]" id="topics">
+							<option value=""> <?php _e('Topics', 'jeo') ?> </option>
+							<?php
+							foreach ($categories as $term) : ?>
+								<option <?= (!empty($_GET['topic']) && in_array($term->slug, $_GET['topic']))? 'selected ' : ''  ?>value="<?= $term->slug ?>" <?= isset($_GET['topic']) && $_GET['topic'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
-				<div class="filters--item">
-					<!-- <input type="text" placeholder="Testing" class="option-filter"> -->
-					<select multiple name="topic[]" id="topics">
-						<option value=""> <?php _e('Topics', 'jeo') ?> </option>
-						<?php
-						foreach ($categories as $term) : ?>
-							<option <?= (!empty($_GET['topic']) && in_array($term->slug, $_GET['topic']))? 'selected ' : ''  ?>value="<?= $term->slug ?>" <?= isset($_GET['topic']) && $_GET['topic'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
-
-						<?php endforeach; ?>
-					</select>
-				</div>
+							<?php endforeach; ?>
+						</select>
+					</div>
+				<?php endif ?>
 
 				<?php 
 				$regions_category = get_category_by_slug('regions');
 				$categories = get_categories(
-					array( 'parent' =>  $regions_category->cat_ID)
+					array( 'parent' =>  isset($topics_category->cat_ID) ? $topics_category->cat_ID : null)
 				);
 
 				//var_dump($categories);
+
+				if($regions_category):
 				?>
 
-				<div class="filters--item">
-					<select multiple name="region[]" id="regions">
-						<option value=""> <?php _e('Regions', 'jeo') ?> </option>
-						<?php
-						
+					<div class="filters--item">
+						<select multiple name="region[]" id="regions">
+							<option value=""> <?php _e('Regions', 'jeo') ?> </option>
+							<?php
+							
 
-						foreach ($categories as $term) : ?>
-							<option <?= (!empty($_GET['region']) && in_array($term->slug, $_GET['region']))? 'selected ' : ''  ?> value="<?= $term->slug ?>" <?= isset($_GET['region']) && $_GET['region'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
+							foreach ($categories as $term) : ?>
+								<option <?= (!empty($_GET['region']) && in_array($term->slug, $_GET['region']))? 'selected ' : ''  ?> value="<?= $term->slug ?>" <?= isset($_GET['region']) && $_GET['region'] == $term->slug ? 'selected' : '' ?>> <?= $term->name ?> </option>
 
-						<?php endforeach; ?>
-					</select>
-				</div>
-
-				
+							<?php endforeach; ?>
+						</select>
+					</div>
+				<?php endif ?>				
 
 
 			</div>

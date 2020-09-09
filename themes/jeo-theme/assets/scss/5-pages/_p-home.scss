@@ -392,12 +392,18 @@
                 padding-right: 0px;
                 margin-top: 0px;
 
-                figure.post-thumbnail a {
-                    padding-top: unset;
-                    overflow: unset;
-                    position: unset;
-                    display: unset;
-                    height: unset;
+                figure.post-thumbnail {
+
+                    &:after{
+                        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #000000 100%);
+                    }
+                    a {
+                        padding-top: unset;
+                        overflow: unset;
+                        position: unset;
+                        display: unset;
+                        height: unset;
+                    }
                 }
 
                 .entry-wrapper {

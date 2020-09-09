@@ -415,6 +415,14 @@ function newspack_scott_customizer($wp_customize)
 	);
 
 	$wp_customize->add_section(
+		'post_sharing',
+		array(
+			'title' => esc_html__('Post Sharing', 'newspack'),
+			'section' => 'post_sharing',
+		)
+	);
+
+	$wp_customize->add_section(
 		'project_archive',
 		array(
 			'title' => esc_html__('Projects Archive', 'jeo'),
@@ -507,8 +515,107 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	$wp_customize->add_setting(
+		'twitter_sharing',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'newspack_sanitize_checkbox',
+		)
+	);
 
-	
+	$wp_customize->add_control(
+		'twitter_sharing',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_sharing',
+			'label' => __('Twitter'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'facebook_sharing',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'newspack_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'facebook_sharing',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_sharing',
+			'label' => __('Facebook'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'whatsapp_sharing',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'newspack_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'whatsapp_sharing',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_sharing',
+			'label' => __('Whatsapp'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'wechat_sharing',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'newspack_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'wechat_sharing',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_sharing',
+			'label' => __('WeChat'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'mail_sharing',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'newspack_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'mail_sharing',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_sharing',
+			'label' => __('Mail'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'line_sharing',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'newspack_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'line_sharing',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_sharing',
+			'label' => __('Line'),
+		)
+	);
 
 	$wp_customize->add_control(
 		'typo_unit',

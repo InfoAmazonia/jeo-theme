@@ -175,14 +175,7 @@ body {
     transition: all .2s ease-in-out;
 }
 
-.d-block {
-    display: block;
-}
-
-.d-none {
-    display: none;
-}
-
+/* INI: Css for grid */
 .row {
     display: -webkit-box;
     display: -webkit-flex;
@@ -193,103 +186,6 @@ body {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-}
-
-.col-sm-9 {
-    flex: 0 0 75%;
-    max-width: 75%;
-}
-
-.col-sm-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-}
-
-.col-md-6 {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-.col-md-10 {
-    flex: 0 0 83.333333%;
-    max-width: 83.333333%;
-}
-
-
-.no-gutters {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-@include tablet {
-
-    .col-md-6,
-    .col-sm-3,
-    .col-sm-9,
-    .col-md-10 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .search .col-md-10 {
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.col-md-12 {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-
-.d-none {
-    display: none !important;
-}
-
-.d-block {
-    display: block !important;
-}
-
-@media (min-width: 1024px) {
-    .d-lg-block {
-        display: block !important;
-    }
-
-    .d-lg-none {
-        display: none !important;
-    }
-}
-
-@media (min-width: 768px) {
-    .d-md-block {
-        display: block !important;
-    }
-
-    .d-md-none {
-        display: none !important;
-    }
-}
-
-@media (min-width: 576px) {
-    .d-sm-none {
-        display: none !important;
-    }
-}
-
-@media (min-width: 576px) {
-    .d-sm-block {
-        display: block !important;
-    }
 }
 
 
@@ -362,6 +258,108 @@ body {
     padding-left: 15px;
 }
 
+.col-sm-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.col-sm-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-md-6 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-md-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+
+.col-md-12 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+@include tablet {
+
+    .col-md-6,
+    .col-sm-3,
+    .col-sm-9,
+    .col-md-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .search .col-md-10 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+/* END */
+
+/* INI: css for visibility */
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+@media (min-width: 1024px) {
+    .d-lg-block {
+        display: block !important;
+    }
+
+    .d-lg-none {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .d-md-block {
+        display: block !important;
+    }
+
+    .d-md-none {
+        display: none !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .d-sm-none {
+        display: none !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .d-sm-block {
+        display: block !important;
+    }
+}
+/* END */
+
 input[type='text']:focus,
 input[type='email']:focus,
 input[type='url']:focus,
@@ -430,34 +428,32 @@ input[type='submit']:focus {
                 color: white;
                 position: absolute;
                 width: 20%;
-                height: 36%;
+                height: 33%;
                 background: var(--primary);
                 bottom: 0;
                 z-index: 1;
                 right: 0;
-                font-family: "Font Awesome 5 Free";
-                font-weight: normal;
-                font-size: 18px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 33%;
             }
         }
 
         &.category-map {
             figure.post-thumbnail a:after {
-                content: "\f279";
+                background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='map' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' class='svg-inline--fa fa-map fa-w-18 fa-3x'%3E%3Cpath fill='white' d='M560.02 32c-1.96 0-3.98.37-5.96 1.16L384.01 96H384L212 35.28A64.252 64.252 0 0 0 191.76 32c-6.69 0-13.37 1.05-19.81 3.14L20.12 87.95A32.006 32.006 0 0 0 0 117.66v346.32C0 473.17 7.53 480 15.99 480c1.96 0 3.97-.37 5.96-1.16L192 416l172 60.71a63.98 63.98 0 0 0 40.05.15l151.83-52.81A31.996 31.996 0 0 0 576 394.34V48.02c0-9.19-7.53-16.02-15.98-16.02zM224 90.42l128 45.19v285.97l-128-45.19V90.42zM48 418.05V129.07l128-44.53v286.2l-.64.23L48 418.05zm480-35.13l-128 44.53V141.26l.64-.24L528 93.95v288.97z' class=''%3E%3C/path%3E%3C/svg%3E");
             }
         }
 
         &.category-video {
             figure.post-thumbnail a:after {
-                content: "\f04b";
-                font-weight: 800;
+                background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='play' class='svg-inline--fa fa-play fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='white' d='M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z'%3E%3C/path%3E%3C/svg%3E");
             }
         }
 
         &.category-audio {
             figure.post-thumbnail a:after {
-                content: "\f025";
-                font-weight: 800;
+                background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='headphones' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-headphones fa-w-16 fa-3x'%3E%3Cpath fill='white' d='M256 32C114.52 32 0 146.496 0 288v48a32 32 0 0 0 17.689 28.622l14.383 7.191C34.083 431.903 83.421 480 144 480h24c13.255 0 24-10.745 24-24V280c0-13.255-10.745-24-24-24h-24c-31.342 0-59.671 12.879-80 33.627V288c0-105.869 86.131-192 192-192s192 86.131 192 192v1.627C427.671 268.879 399.342 256 368 256h-24c-13.255 0-24 10.745-24 24v176c0 13.255 10.745 24 24 24h24c60.579 0 109.917-48.098 111.928-108.187l14.382-7.191A32 32 0 0 0 512 336v-48c0-141.479-114.496-256-256-256z' class=''%3E%3C/path%3E%3C/svg%3E");
             }
         }
     }
