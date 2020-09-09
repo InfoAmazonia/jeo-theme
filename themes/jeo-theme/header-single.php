@@ -163,17 +163,7 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 						</div>
 
 						<p class="title"> <?php echo esc_html(wp_kses_post(get_the_title())); ?></p>
-						<div class="page--share">
-							<div class="twitter">
-								<a href="https://twitter.com/intent/tweet?text=<?= $urlTweetShare ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-							</div>
-							<div class="facebook">
-								<a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_the_permalink() ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
-							</div>
-							<div class="mail">
-								<a href="mailto:?subject=<?= the_title() ?>&body=<?= get_the_permalink() ?>" target="_blank"><i class="far fa-envelope"></i></a>
-							</div>
-						</div>
+						<?php get_template_part( 'template-parts/content/content', 'social-networks' ); ?>
 					</div><!-- .wrapper -->
 				</div><!-- .bottom-header-contain -->
 			<?php else : ?>
@@ -368,18 +358,7 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 
 							<p class="title"><?php echo wp_kses_post(get_the_title()); ?></p>
 
-							<div class="page--share">
-
-								<div class="twitter">
-									<a href="https://twitter.com/intent/tweet?text=<?= $urlTweetShare ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-								</div>
-								<div class="facebook">
-									<a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_the_permalink() ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
-								</div>
-								<div class="mail">
-									<a href="mailto:?subject=<?= the_title() ?>&body=<?= get_the_permalink() ?>" target="_blank"><i class="far fa-envelope"></i></a>
-								</div>
-							</div>
+							<?php get_template_part( 'template-parts/content/content', 'social-networks' ); ?>
 
 							<div class="nav-wrapper desktop-only">
 								<div id="tertiary-nav-contain">
