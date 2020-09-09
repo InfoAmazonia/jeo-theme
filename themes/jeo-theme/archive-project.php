@@ -41,12 +41,24 @@ get_header();
 						<?php the_post_thumbnail() ?>
 						<div class="project-card--meta">
 							<div class="categories">
-							<?php
-								foreach (get_the_category() as $category){
-									echo $category->name;
-									break;
-								} ?>
+							<?php global $post; ?>
+							<?php 
+								$primary_category = get_post_meta($post->ID, '_yoast_wpseo_primary_category', true );
+
+								if(!empty($primary_category)):
+									echo get_term($primary_category)->name;
+								else:
+									$term_list = wp_get_post_terms($post->ID, 'category', ['fields' => 'all']);
+									foreach($term_list as $term) {										
+										echo $term->name;
+										break;
+									}
+
+								endif;
+							
+							?>
 							</div>
+							
 
 							<h3 class="title">
 								<?php the_title() ?>

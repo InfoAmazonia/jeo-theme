@@ -46,7 +46,7 @@
             }
 
             .post-link {
-                all: unset;
+                /* all: unset; */
                 cursor: pointer;
 
                 .post-title {
@@ -55,6 +55,7 @@
                     font-size: size(16);
                     letter-spacing: 0;
                     line-height: 20px;
+                    color: #0A0A0A;
                 }
     
                 .post-author {
@@ -63,21 +64,34 @@
                     font-size: size(14);
                 }
             }
+
+            .post-thumbnail {
+                width: 100%;
+            }
         }
     }
 }
 
-
+/* Dark mode */
 .dark-theme {
     .category-most-read {
         background: #23282D;
 
-        p.post-title {
-            color: #f5f5f5;
-        }
+        .posts {
 
-        .posts .post .post-link .post-author {
-            color: white;
+            .post {
+                .post-link {
+
+                    .post-title {
+                        color: #f5f5f5;
+                    }
+
+                    .post-author {
+                        color: white;
+                    }
+
+                }
+            }
         }
     }
 }

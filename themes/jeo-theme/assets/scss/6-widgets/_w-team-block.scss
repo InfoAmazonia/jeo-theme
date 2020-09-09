@@ -47,6 +47,10 @@
             margin-left: 0px;
             flex: 0 0 calc(66% - 20px);
 
+            @include mobile{
+                flex: auto;
+            }
+
             p {
                 margin-top: 0;
                 margin-bottom: 0;
