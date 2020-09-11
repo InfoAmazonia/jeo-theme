@@ -1,3 +1,15 @@
+.single {
+    .jeomap nav a {
+        color: #404040;
+        font-weight: normal;
+
+        &:hover{
+            color: #555;
+        }
+    }
+}
+
+
 .jeomap {
     .legend-container {
         a.more-info-button {
