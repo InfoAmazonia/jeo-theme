@@ -346,11 +346,15 @@
         }
 
         .wrapper-entry-title {
-            margin: 45px auto;
-
-            @include large {
+            /* margin: 45px auto; */
+            /*@include large {
                 margin: 120px auto;
-            }
+            }*/
+            margin: auto;
+            min-height: 385px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             @include mobile {
                 margin: 60px auto;
