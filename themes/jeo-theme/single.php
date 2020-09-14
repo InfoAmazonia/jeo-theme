@@ -12,7 +12,6 @@ get_header('single');
 the_post();
 
 $parent_type_category = get_category_by_slug('type');
-
 if($parent_type_category) {
 	$parent_type_category = $parent_type_category->cat_ID;
 }
@@ -22,9 +21,15 @@ $post_child_category = null;
 foreach ($post_categories as $post_cat) {
 	if ($parent_type_category == $post_cat->parent) {
 		$post_child_category = $post_cat;
+
+		if(function_exists('icl_object_id')) {
+			$post_child_category = get_term_for_default_lang($post_child_category->term_id, 'category');
+		}
+
 		break;
 	}
 }
+
 if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['opinion', 'audio', 'video'])):
 	if ($post_child_category->slug === 'opinion') : ?>
 		<?php get_template_part('template-parts/singles/single', 'opinion');
