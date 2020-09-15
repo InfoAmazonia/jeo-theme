@@ -13,8 +13,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.tooltip-block').forEach(tooltip => {
         const splitResult = tooltip.innerText.split(': ');
-        
-        if(splitResult.length == 1) {
+
+        if(splitResult.length == 1 || !splitResult.length ) {
             tooltip.classList.remove('tooltip-block');
             return;
         }
