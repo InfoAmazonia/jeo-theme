@@ -1,0 +1,228 @@
+.mb-social-icons
+{
+	float: left;
+	text-decoration: none;
+	margin: 0px 4px 0px 20px;
+}
+.mb-debug-output{
+	padding-top: 35px;
+}
+#ux_div_header p{
+	line-height: 1em !important;
+}
+#ux_tbl_email_logs p
+{
+	line-height: 1.5em !important;
+}
+.wpmb-iframe-pricing {
+	position: absolute !important;
+	border: none;
+	height: 600px;
+	width: 100% !important;
+	align: center !important;
+}
+.mb-email-setup-wizard {
+	font-size: 12px !important;
+}
+.mail-bank-setup-steps li {
+		width: 100%;
+		float: left;
+		padding: 0 0 .8em;
+		margin: 0;
+		text-align: center;
+		position: relative;
+		border-bottom: 4px solid #ccc;
+		line-height: 1.4em;
+}
+.mail-bank-setup-steps li.active {
+		border-color: #5E503F;
+		color: #5E503F;
+		font-weight: 700;
+}
+.mail-bank-setup-steps li {
+		width: 100%;
+		float: left;
+		padding: 0 0 .8em;
+		margin: 0;
+		text-align: center;
+		position: relative;
+		border-bottom: 4px solid #ccc;
+		line-height: 1.4em;
+}
+.mail-bank-setup-steps li::before {
+		font-weight: 600;
+		content: '';
+		border: 4px solid #ccc;
+		border-radius: 100%;
+		width: 12px;
+		height: 14px;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -6px;
+		margin-bottom: -8px;
+		background: #fff;
+}
+.mail-bank-setup-steps li.active::before {
+	content: '';
+	border: 4px solid #ccc;
+	border-radius: 100%;
+	width: 12px;
+	height: 14px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -6px;
+	margin-bottom: -8px;
+	border-color: #5E503F;
+	background: #5E503F;
+}
+.mail-bank-buttons {
+	min-width:100px !important;
+	color:#fff !important;
+	margin-bottom:7px !important;
+	padding:2px 8px !important;
+	background-color: #5E503F !important;
+	font-size:11px !important;
+}
+.custom-details-body
+{
+	 position: relative;
+	 padding: 15px !important;
+}
+.form-wizard {
+	padding-top: 20px !important;
+}
+.form-wizard .steps
+{
+	text-align: center;
+	padding: 10px 0;
+	margin-bottom: 15px;
+	background-color: #fff;
+	background-image: none;
+	filter: none;
+	border: 0px;
+	box-shadow: none;
+}
+.form-wizard .steps > li > a.step
+{
+	background-color: #fff;
+	background-image: none;
+	filter: none;
+	border: 0px;
+	box-shadow: none;
+	text-decoration: none;
+}
+.form-wizard .steps > li > a.step:hover
+{
+	background: none;
+}
+.form-wizard .steps > li > a.step > .number
+{
+	background-color: #eee;
+	display: inline-block;
+	text-align: center !important;
+	font-size: 16px;
+	font-weight: 300;
+	padding: 11px 15px 13px 15px;
+	margin-right: 10px;
+	height: 45px;
+	width: 45px;
+	-webkit-border-radius: 50% !important;
+	-moz-border-radius: 50% !important;
+	border-radius: 50% !important;
+}
+.form-wizard .steps > li > a.step > .desc {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 300;
+	color: #ccc;
+}
+.form-wizard .steps > li.active > a.step .desc {
+	font-weight: 600;
+	color: #333;
+}
+@media (min-width: 768px) {
+	 .nav-justified > li
+	 {
+			display: table-cell;
+			width: 33%;
+	 }
+}
+.custom-line-separator {
+	 height: 1px;
+	 background: #717171 none repeat scroll 0% 0%;
+	 border-bottom: 1px solid #DDD;
+	 margin: 65px 0px 10px 0px;
+	 position: initial;
+}
+.mail-bank-admin-notice {
+	 margin-left:11px!important
+}
+.mail-bank-admin-notice-link {
+	 text-decoration:none!important
+}
+.controls-description {
+	font-size: 12px;
+}
+.mb-email-sent{
+	background: green;
+	color: white;
+	padding: 4px;
+	font-size: 12px;
+	margin-top: 10px;
+}
+.mb-email-not-sent {
+	background: red;
+	color: white;
+	padding: 4px;
+	font-size: 12px;
+	margin-top: 10px;
+}
+/* Firefox old*/
+@-moz-keyframes blink {
+		0% {
+				opacity:1;
+		}
+		50% {
+				opacity:0;
+		}
+		100% {
+				opacity:1;
+		}
+}
+@-webkit-keyframes blink {
+		0% {
+				opacity:1;
+		}
+		50% {
+				opacity:0;
+		}
+		100% {
+				opacity:1;
+		}
+}
+/* IE */
+@-ms-keyframes blink {
+		0% {
+				opacity:1;
+		}
+		50% {
+				opacity:0;
+		}
+		100% {
+				opacity:1;
+		}
+}
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+		0% {
+				opacity:1;
+		}
+		50% {
+				opacity:0;
+		}
+		100% {
+				opacity:1;
+		}
+}

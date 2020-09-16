@@ -1,0 +1,259 @@
+@media print
+{
+	.page-container
+	{
+		margin: 0px !important;
+		padding: 0px !important;
+	}
+	.page-content
+	{
+		padding: 0 !important;
+		min-height: 300px !important;
+		padding: 0px 20px 20px !important;
+		margin: 0 !important;
+		background-color: #fff !important;
+	}
+}
+.page-container
+{
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	margin-top:24px !important;
+	margin-right:24px !important;
+	margin-left:24px !important;
+}
+.page-container:before, .page-container:after
+{
+	content: " ";
+	display: table;
+}
+.page-container:after
+{
+	clear: both;
+}
+@media (max-width: 991px)
+{
+	 /* Page container */
+	 .page-container
+	 {
+			margin: 0 !important;
+			padding: 0 !important;
+	 }
+}
+.mb-pro-options {
+		background-color: #6A9A1F;
+		color: #fff !important;
+		margin-bottom: 10px !important;
+}
+.mb-tech-banker-community {
+		background-color: #D43F3F !important;
+}
+.mb-community-btn {
+		background-color: #D43F3F !important;
+		color: #fff !important;
+		margin-bottom: 10px !important;
+}
+.mb-dashboard-links {
+	color: #fff !important;
+	text-decoration: none;
+}
+.tech-banker-column {
+	padding-left: 10px !important
+}
+.tech-banker-dashboard-listing {
+	font-size: 13px !important;
+	color: #fff !important;
+	margin-left: 5px !important;
+}
+.mb-dashboard-icons {
+	margin-left: 10px !important;
+}
+.tech-banker-dashboard-heading {
+	color: yellow !important;
+	text-transform: uppercase;
+}
+.tech-banker-facebook {
+		background-color: #3b5998 !important;
+		color: #fff;
+}
+.tech-banker-bloc {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		box-shadow: rgba(69, 65, 78, 0.35) 0px 1px 10px 1px;
+		background-color: #fff;
+		margin: 0 auto 15px;
+		overflow: hidden;
+}
+.tech-banker-sup-buttons {
+		display: inline-block;
+		width: 100%;
+}
+.tech-banker-bloc .mb-content-wrap {
+		position: relative;
+		padding: 0 20px 20px;
+		z-index: 2;
+		text-align: center;
+}
+.tech-banker-bloc .button.tech-banker-button {
+		margin-top: 10px !important;
+}
+.tech-banker-bloc p.content {
+		padding: 0 10px;
+		line-height: 1.6em;
+}
+.tech-banker-facebook .tech-banker-img {
+		position: relative;
+		z-index: 2;
+		 padding: 30px 30px 0;
+		margin: 0 0 18px;
+		text-align: center;
+}
+.tech-banker-facebook .tech-banker-img img {
+		max-width: 200px;
+}
+.tech-banker-facebook .button.tech-banker-button {
+		background-color: #fff;
+		color: #3b5998;
+		box-shadow: rgba(69, 65, 78, 0.35) 0px 1px 10px 1px;
+}
+.tech-banker-facebook .button.tech-banker-button:hover {
+		background-color: #597dca;
+		color: #fff;
+		box-shadow: rgba(69, 65, 78, 0.35) 0px 1px 10px 1px;
+}
+.button.tech-banker-button {
+		background-color: #13aff0;
+		color: #fff;
+		height: auto;
+		font-size: 12px;
+		line-height: 1;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 14px 20px;
+		border: 0;
+		cursor: pointer;
+		text-align: center;
+		letter-spacing: .1em;
+		border-radius: 3px;
+		transition: all .3s ease;
+}
+.tech-banker-ribbon>div {
+		background-color: #3fc387  !important;
+		-webkit-transform: translateY(-50%) translateX(-55%) translateX(35px) rotate(-45deg);
+	 -ms-transform: translateY(-50%) translateX(-55%) translateX(35px) rotate(-45deg);
+	 transform: translateY(-50%) translateX(-55%) translateX(35px) rotate(-45deg);
+		left: 0;
+		width: 200%;
+		margin-top: 28px;
+		font-size: 13px;
+		line-height: 2;
+		font-weight: 800;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		text-align: center;
+}
+.tech-banker-ribbon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100px;
+		height: 100px;
+		z-index: 1;
+		overflow: hidden;
+}
+.tech-banker-icon-review
+{
+	opacity:1 !important;
+	position:initial !important;
+	vertical-align: middle;
+}
+.custom-dashboard
+{
+	background-color: #5E503F;
+}
+.tech-banker-bloc i {
+	position: absolute;
+	bottom: -30px;
+	right: -26px;
+	width: auto;
+	height: auto;
+	font-size: 120px;
+	opacity: .07;
+	z-index: 1;
+}
+.tech-banker-bloc .content-wrap {
+	position: relative;
+	padding: 0 13px 25px;
+	z-index: 2;
+	text-align: left !important;
+}
+.button.tech-banker-review-button:active .button.tech-banker-review-button:focus .button.tech-banker-review-button:hover {
+	background-color: #0b7cac;
+	color: #fff !important;
+}
+.tech-banker-leave-review {
+	background-color: #5E503F;
+	color: #fff !important;
+}
+.tech-banker-bloc .button.tech-banker-review {
+	margin: 15px 0 10px;
+}
+.tech-banker-review {
+	background-color: #5E503F !important;
+}
+.tech-banker-bloc .tech-banker-review {
+	box-shadow: rgba(69, 65, 78, 0.35) 0px 1px 10px 1px;
+}
+.tech-banker-sup-buttons .button.wpmb-button.wpmb-youtube-btn {
+	color: #fff;
+	background-color: #C6AC8F;
+	float: left;
+	width: 100%;
+	margin-right: 10px !important;
+}
+.tech-banker-sup-buttons .button.wpmb-button {
+	padding: 14px 6px;
+}
+.button.wpmb-button {
+	height: auto;
+	line-height: 1;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 14px 20px;
+	border: 0;
+	cursor: pointer;
+	text-align: center;
+	letter-spacing: .1em;
+	border-radius: 3px;
+	transition: all .3s ease;
+}
+.tech-banker-sup-buttons .button.wpmb-button.wpmb-youtube-btn:hover {
+	background-color: #5E503F;
+	color: #fff !important;
+}
+.tech-banker-sup-buttons .button.wpmb-button.wpmb-docu-btn:hover {
+	background-color: #5E503F;
+	color: #fff !important;
+}
+.tech-banker-sup-buttons .button.wpmb-button.wpmb-docu-btn {
+	background-color: #C6AC8F;
+	width: 100% !important;
+	color: #fff !important;
+
+}
+.tech-banker-sup-buttons .button.wpmb-button.wpmb-support-btn {
+		background-color: #C6AC8F;
+		width: 100%;
+		color: #fff !important;
+}
+.tech-banker-sup-buttons .button.wpmb-button.wpmb-support-btn:hover {
+		background-color: #5E503F;
+		color: #fff !important;
+}
+.tech-banker-sup-buttons {
+	margin-bottom: 10px !important;
+}

@@ -1,0 +1,459 @@
+# Translation of Plugins - GA Google Analytics - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - GA Google Analytics - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-08-16 06:23:20+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - GA Google Analytics - Stable (latest release)\n"
+
+#: ga-google-analytics.php:328
+msgid "(for Google Tag Manager), which is not supported. Please try again with a supported tracking code."
+msgstr "(para Google Tag Manager), que no es compatible. Por favor, vuelve a intentarlo con un código de seguimiento compatible."
+
+#: ga-google-analytics.php:327
+msgid "Error: your tracking code begins with"
+msgstr "Error: tu código de seguimiento comienza con"
+
+#: inc/settings-display.php:216
+msgid "Enable tracking in WP Admin Area (adds tracking code only; to view stats log into your Google account)"
+msgstr "Activar el seguimiento en el área de administración de WP (solo añade código de seguimiento; para ver las estadísticas, accede a tu cuenta de Google)"
+
+#: inc/settings-display.php:229
+msgid "For advanced features, check out"
+msgstr "Para funciones avanzadas, échale un vistazo a"
+
+#: inc/settings-display.php:227
+msgid "More Options"
+msgstr "Más opciones"
+
+#: inc/settings-display.php:190
+msgid "Note: you can use"
+msgstr "Nota: puedes usar"
+
+#: inc/settings-display.php:189
+msgid "user opt-out"
+msgstr "exclusión voluntaria del usuario"
+
+#: inc/settings-display.php:187
+msgid "multiple trackers"
+msgstr "seguimiento múltiple"
+
+#: inc/settings-display.php:177
+msgid "optimize"
+msgstr "optimizar"
+
+#: inc/settings-display.php:174
+msgid "for Global Site Tag. This is useful for things like"
+msgstr "para la etiqueta global de sitio. Esto es útil para cosas como"
+
+#: inc/settings-display.php:50
+msgid "PRO Version"
+msgstr "Versión Pro"
+
+#: inc/settings-display.php:50 inc/settings-display.php:230
+msgid "GA Google Analytics Pro"
+msgstr "GA Google Analytics Pro"
+
+#: inc/settings-display.php:49
+msgid "Check out the"
+msgstr "Echa un vistazo a"
+
+#: ga-google-analytics.php:154
+msgid "Homepage"
+msgstr "Página de inicio"
+
+#: ga-google-analytics.php:135
+msgid "Go&nbsp;Pro"
+msgstr "Hazte&nbsp;Pro"
+
+#: ga-google-analytics.php:134
+msgid "Get GA Pro!"
+msgstr "¡Obtén GA Pro!"
+
+#: inc/settings-display.php:175
+msgid "tracker objects"
+msgstr "objetos de seguimiento"
+
+#: inc/settings-display.php:195
+msgid "Custom Code"
+msgstr "Código a medida"
+
+#: inc/settings-display.php:208
+msgid "Display Custom Code"
+msgstr "Mostrar código personalizado"
+
+#: inc/settings-display.php:205
+msgid "Custom Code Location"
+msgstr "Ubicación personalizada del código"
+
+#: inc/settings-display.php:158
+msgid "Tracking Code Location"
+msgstr "Ubicación del código de seguimiento"
+
+#: ga-google-analytics.php:125
+msgid "Settings"
+msgstr "Configurar"
+
+#: inc/settings-display.php:21
+msgid "Overview"
+msgstr "Vista previa"
+
+#: inc/support-panel.php:69
+msgid "Any size donation helps me to continue developing this free plugin and other awesome WordPress resources."
+msgstr "Cualquier donación me ayuda a seguir desarrollando este plugin gratuito y otros recursos increíbles de WordPress."
+
+#: inc/support-panel.php:67
+msgid "and is greatly appreciated."
+msgstr "y es muy apreciada."
+
+#: inc/support-panel.php:65
+msgid "or by making a"
+msgstr "o haciendo una"
+
+#: inc/support-panel.php:63
+msgid "Thank you for using"
+msgstr "Gracias por usar"
+
+#: inc/support-panel.php:61
+msgid "donation"
+msgstr "donación"
+
+#: inc/support-panel.php:59
+msgid "books"
+msgstr "libros"
+
+#: inc/support-panel.php:57
+msgid "Donate via PayPal"
+msgstr "Donar a través de PayPal"
+
+#: inc/support-panel.php:56
+msgid "Plugin Planet"
+msgstr "Plugin Planet"
+
+#: inc/settings-display.php:278
+msgid "@"
+msgstr "@"
+
+#: inc/settings-display.php:277
+msgid "Jeff Starr on Twitter"
+msgstr "Jeff Starr en Twitter"
+
+#: inc/settings-display.php:276
+msgid "by"
+msgstr "por"
+
+#: inc/settings-display.php:259
+msgid "Show Support"
+msgstr "Mostrar Apoyo"
+
+#: inc/settings-display.php:209
+msgid "after"
+msgstr "después"
+
+#: inc/support-panel.php:66
+msgid "Your generous support helps to ensure future development of"
+msgstr "Tu generoso apoyo ayuda a asegurar el desarrollo futuro de"
+
+#: inc/support-panel.php:64
+msgid "Please show support by purchasing one of my"
+msgstr "Por favor, muestra tu apoyo comprando uno de mis"
+
+#: inc/support-panel.php:60
+msgid "plugins"
+msgstr "plugins"
+
+#: inc/settings-display.php:249
+msgid "Click the link to restore the default plugin options."
+msgstr "Haz clic en el enlace para restaurar las opciones predeterminadas del plugin."
+
+#: inc/settings-display.php:176 inc/settings-display.php:188
+msgid "and"
+msgstr "y"
+
+#: inc/settings-display.php:190
+msgid "to output the current user ID."
+msgstr "para mostrar el ID del usuario actual."
+
+#: inc/settings-display.php:88
+msgid "Google Analytics Help Center"
+msgstr "Centro de ayuda de Google Analytics"
+
+#: inc/settings-display.php:86
+msgid "Google Analytics account"
+msgstr "cuenta de Google Analytics"
+
+#: inc/support-panel.php:65 inc/settings-display.php:76
+msgid "or"
+msgstr "o"
+
+#: ga-google-analytics.php:85 inc/support-panel.php:5
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: inc/support-panel.php:55
+msgid "Perishable Press Books"
+msgstr "Perishable Press Books"
+
+#: inc/settings-display.php:279
+msgid "Obsessive Web Development"
+msgstr "Obsessive Web Development"
+
+#: inc/settings-display.php:145 inc/settings-display.php:149
+msgid "Force SSL"
+msgstr "Forzar SSL"
+
+#: inc/settings-display.php:137 inc/settings-display.php:141
+msgid "IP Anonymization"
+msgstr "Anonimización de IP"
+
+#: inc/settings-display.php:129
+msgid "Link Attribution"
+msgstr "Atribución de enlaces"
+
+#: ga-google-analytics.php:409
+msgid "(deprecated)"
+msgstr "(obsoleto)"
+
+#: ga-google-analytics.php:405
+msgid "(new method)"
+msgstr "(nuevo método)"
+
+#: ga-google-analytics.php:377 ga-google-analytics.php:381
+msgid ")"
+msgstr ")"
+
+#: ga-google-analytics.php:249
+msgid "No changes made to options."
+msgstr "No se hicieron cambios en las opciones"
+
+#: inc/settings-display.php:133
+msgid "Enhanced Link Attribution"
+msgstr "Atribución mejorada de enlaces "
+
+#: inc/settings-display.php:121 inc/settings-display.php:125
+msgid "Display Advertising"
+msgstr "Mostrar anuncios"
+
+#: ga-google-analytics.php:393 inc/settings-display.php:75
+msgid "Universal Analytics"
+msgstr "Universal Analytics"
+
+#. Plugin Name of the plugin
+#: ga-google-analytics.php:66 ga-google-analytics.php:84
+msgid "GA Google Analytics"
+msgstr "GA Google Analytics"
+
+#: inc/settings-display.php:199
+msgid "Here you may specify any markup to be displayed in the"
+msgstr "Aquí puedse especificar cualquier código para que se muestre en "
+
+#: inc/settings-display.php:186
+msgid "Any code entered here will be added to the GA code snippet. This is useful for things like creating"
+msgstr "Cualquier código introducido aquí se añadirá al fragmento de código GA. Esto es útil para cosas como crear"
+
+#: inc/settings-display.php:182
+msgid "Custom GA Code"
+msgstr "Código GA personalizado"
+
+#: inc/settings-display.php:173
+msgid "for Universal Analytics, or added to"
+msgstr "para Universal Analytics, o añadido a"
+
+#: inc/settings-display.php:172
+msgid "Any code entered here will be added to"
+msgstr "Cualquier código que se introduzca aquí se añadirá a"
+
+#: inc/settings-display.php:163
+msgid "If in doubt, go with the head option."
+msgstr "En caso de duda, elige la opción head."
+
+#: inc/settings-display.php:162
+msgid "Tip: Google recommends including the tracking code in the page head, but including it in the footer can benefit page performance."
+msgstr "Consejo: Google recomienda incluir el código de seguimiento en la cabecera de la página, pero incluirlo en el pie de página puede mejorar el rendimiento de la página."
+
+#: inc/settings-display.php:87
+msgid "To check that the GA tacking code is included, look at the source code of your web page(s). Learn more at the"
+msgstr "Para comprobar que se ha incluido el código de seguimiento de GA, mira el código fuente de tu web. Obtén más información en el"
+
+#: inc/settings-display.php:85
+msgid "Note that it can take 24-48 hours after adding the tracking code before any analytical data appears in your"
+msgstr "Ten en cuenta que pueden pasar de 24 a 48 horas después de añadir el código de seguimiento antes de que aparezcan los datos de analítica en tu"
+
+#: inc/settings-display.php:81
+msgid "Save changes and done. After 24-48 hours, you can log into your Google Analytics account to view your stats."
+msgstr "Guarda los cambios y listo. Después de 24-48 horas, puedes acceder a tu cuenta de Google Analytics para ver tus estadísticas."
+
+#: inc/settings-display.php:78
+msgid "Configure any other plugin settings as desired (optional)"
+msgstr "Configura cualquier otro ajuste del plugin (opcional)"
+
+#: inc/settings-display.php:75
+msgid "Choose either"
+msgstr "Elige entre"
+
+#: inc/settings-display.php:73
+msgid "Enter your GA Tracking ID"
+msgstr "Introduce tu ID de seguimiento de GA"
+
+#: inc/settings-display.php:72
+msgid "Visit the \"Plugin Settings\" panel"
+msgstr "Visita el panel «Ajustes del plugin»"
+
+#: inc/settings-display.php:69
+msgid "How to use this plugin:"
+msgstr "Cómo usar este plugin:"
+
+#: inc/settings-display.php:40
+msgid "give it a 5-star rating"
+msgstr "dale una calificación de 5 estrellas"
+
+#: inc/settings-display.php:39
+msgid "THANK YOU for your support!"
+msgstr "¡GRACIAS por tu apoyo!"
+
+#: inc/settings-display.php:33 inc/settings-display.php:100
+msgid "Plugin Settings"
+msgstr "Ajustes del plugin"
+
+#: inc/settings-display.php:32 inc/settings-display.php:63
+msgid "How to Use"
+msgstr "Cómo usar"
+
+#: inc/settings-display.php:29
+msgid "This plugin adds the GA Tracking Code to your site. Log in to your Google account to view your stats."
+msgstr "Este plugin añade el código de seguimiento de GA a tu sitio. Accede a tu cuenta de Google para ver tus estadísticas."
+
+#: ga-google-analytics.php:395
+msgid "Legacy"
+msgstr "Heredado"
+
+#: ga-google-analytics.php:394 inc/settings-display.php:76
+msgid "Global Site Tag"
+msgstr "Etiqueta global del sitio"
+
+#: ga-google-analytics.php:281 ga-google-analytics.php:287
+msgid "Cheatin&rsquo; huh?"
+msgstr "¿Haciendo trampas, eh?"
+
+#: ga-google-analytics.php:160
+msgid "Rate this plugin"
+msgstr "Valora este plugin"
+
+#: ga-google-analytics.php:114
+msgid "Are you sure you want to restore all default options?"
+msgstr "¿Está seguro de que quieres restaurar todas las opciones predeterminadas?"
+
+#: ga-google-analytics.php:185
+msgid "WP Admin Area"
+msgstr "escritorio de WP"
+
+#: inc/settings-display.php:124 inc/settings-display.php:132
+#: inc/settings-display.php:140 inc/settings-display.php:148
+msgid "Enable support for"
+msgstr "Activar la compatibilidad con"
+
+#: ga-google-analytics.php:159
+msgid "Click here to rate and review this plugin on WordPress.org"
+msgstr "Haz clic aquí para valorar y escribir una reseñade este plugin en WordPress.org"
+
+#: inc/settings-display.php:38
+msgid "If you like this plugin, please"
+msgstr "Si te gusta este plugin, por favor"
+
+#: ga-google-analytics.php:153 inc/settings-display.php:34
+#: inc/settings-display.php:275
+msgid "Plugin Homepage"
+msgstr "Web del plugin"
+
+#: inc/settings-display.php:9
+msgid "Toggle all panels"
+msgstr "Alternar todos los paneles"
+
+#: ga-google-analytics.php:185
+msgid "to upgrade WordPress and try again."
+msgstr "para actualizar WordPress e intentarlo de nuevo."
+
+#: ga-google-analytics.php:182
+msgid "requires WordPress "
+msgstr "necesita WordPress "
+
+#: inc/settings-display.php:237
+msgid "Save Changes"
+msgstr "Guardar los cambios"
+
+#: inc/settings-display.php:223
+msgid "Disable tracking of Admin-level users"
+msgstr "Desactivar el seguimiento de los usuarios con perfil administrador"
+
+#: inc/settings-display.php:220
+msgid "Admin Users"
+msgstr "Usuarios administradores"
+
+#: inc/settings-display.php:168
+msgid "Custom Tracker Objects"
+msgstr "Objetos de seguimiento personalizados"
+
+#: inc/settings-display.php:112
+msgid "Tracking Method"
+msgstr "Método de seguimiento"
+
+#: inc/settings-display.php:108
+msgid "GA Tracking ID"
+msgstr "ID de seguimiento de GA"
+
+#: ga-google-analytics.php:472
+msgid "Restore default plugin options"
+msgstr "Restaurar las opciones por defecto del plugin"
+
+#: ga-google-analytics.php:401
+msgid "(default)"
+msgstr "(por defecto)"
+
+#: ga-google-analytics.php:245
+msgid "Default options restored."
+msgstr "Se han restaurado las opciones por defecto."
+
+#: ga-google-analytics.php:184
+msgid "Please return to the"
+msgstr "Por favor, vuelve al"
+
+#: inc/settings-display.php:245
+msgid "Restore Defaults"
+msgstr "Restaurar los valores por defecto"
+
+#: inc/settings-display.php:213
+msgid "Admin Area"
+msgstr "Área de administración"
+
+#: inc/settings-display.php:209
+msgid "the GA tracking code (leave unchecked to display"
+msgstr "del código de seguimiento de GA (déjalo sin marcar para que se muestre"
+
+#: inc/settings-display.php:208
+msgid "before"
+msgstr "antes"
+
+#: inc/settings-display.php:209
+msgid "the tracking code)"
+msgstr "del código de seguimiento)"
+
+#: inc/settings-display.php:200
+msgid "section (or in the footer, depending on the \"Tracking Code Location\" setting, above)."
+msgstr "sección (o en el pie de página, según el ajuste anterior «Ubicación del código de seguimiento»)."
+
+#: ga-google-analytics.php:381
+msgid "Include tracking code in page footer (via"
+msgstr "Incluir el código de seguimiento en el pie de página (mediante"
+
+#: ga-google-analytics.php:377
+msgid "Include tracking code in page head (via"
+msgstr "Incluir el código de seguimiento en la cabecera de la página (mediante"
+
+#: ga-google-analytics.php:183
+msgid " or higher, and has been deactivated! "
+msgstr " o superior ¡y ha sido desactivado! "

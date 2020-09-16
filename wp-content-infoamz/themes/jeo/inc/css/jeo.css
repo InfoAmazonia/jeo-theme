@@ -1,0 +1,195 @@
+/*
+ * Map styles
+ */
+
+.map-container {
+	position: relative;
+}
+
+.map-container .map {
+	width: 100%;
+	height: 100%;
+}
+
+.map .cartodb-logo {
+	display: none !important;
+}
+
+.fullscreen-map,
+.fullscreen-map.map-container {
+	z-index: 9999999;
+	position: fixed !important;
+	top: 0;
+	bottom:0;
+	left: 0;
+	right: 0;
+	width: auto !important;
+	height: auto !important;
+}
+
+.map-fullscreen .mapgroup-container,
+.map-fullscreen .mapgroup-container .mapgroup,
+.map-fullscreen.map-container {
+	background: #fff;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+.leaflet-control .map-fullscreen {
+	background-image: url(../img/fullscreen-button.png);
+	background-position: 6px 6px;
+	background-repeat: no-repeat;
+}
+
+.fullscreen-map .leaflet-control .map-fullscreen {
+	background-position: -18px 6px;
+}
+
+.lang-en,
+.lang-pt,
+.lang-es {
+	display: none;
+}
+
+body.locale-en-us .lang-en,
+body.locale-pt-br .lang-pt,
+body.locale-es-es .lang-es {
+	display: block;
+}
+
+body.pt-BR .lang-pt,
+body.en-US .lang-en,
+body.es-ES .lang-es {
+	display: block;
+}
+
+.leaflet-control .widget-title {
+	padding: 5px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 80%;
+	display: block;
+}
+
+/*
+ * Search form
+ */
+
+.leaflet-control.jeo-geocode {
+	max-width: 300px;
+	background: #fff;
+}
+
+.leaflet-control.jeo-geocode .map-search {
+	margin: 0;
+	padding: 0;
+	display: block;
+	border-bottom: 1px solid #eee;
+}
+
+.leaflet-control.jeo-geocode .map-search input {
+	border: 0;
+	background: transparent;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 5px;
+	display: block;
+	outline: none;
+	margin: 0;
+}
+
+.leaflet-control.jeo-geocode .geocode-results .widget-title {
+	border-top: 1px solid #f0f0f0;
+}
+
+.leaflet-control.jeo-geocode .geocode-results ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.leaflet-control.jeo-geocode .geocode-results ul li {
+	padding: 3px 5px;
+	margin: 0;
+	border-bottom: 1px solid #f3f3f3;
+	cursor: pointer;
+}
+
+.leaflet-control.jeo-geocode .geocode-results ul li:hover {
+	background-color: #f3f3f3;
+}
+
+.leaflet-control.jeo-geocode .geocode-results .clear-search {
+	float: right;
+	font-size: 80%;
+	padding: 5px;
+}
+
+/*
+ * Switch layers
+ */
+
+.leaflet-control.jeo-filter-layers {
+	background: #fff;
+	max-width: 300px;
+}
+
+.leaflet-control.jeo-filter-layers .switch-layers,
+.leaflet-control.jeo-filter-layers .swap-layers {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.leaflet-control.jeo-filter-layers .switch-layers li,
+.leaflet-control.jeo-filter-layers .swap-layers li {
+	margin: 0;
+	padding: 5px;
+	cursor: pointer;
+	border-bottom: 1px solid #f3f3f3;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	opacity: .5;
+}
+
+.leaflet-control.jeo-filter-layers .switch-layers li.active,
+.leaflet-control.jeo-filter-layers .swap-layers li.active {
+	opacity: 1;
+}
+
+.leaflet-control.jeo-filter-layers .switch-layers li:hover,
+.leaflet-control.jeo-filter-layers .swap-layers li:hover {
+	opacity: .7;
+}
+
+.leaflet-control.jeo-filter-layers .swap-layers li.active:hover {
+	opacity: 1;
+}
+
+.map-container {
+	overflow: hidden;
+}
+
+
+/*
+ * Markers
+ */
+.leaflet-popup-content {
+	max-width: 150px;
+	margin: 10px;
+}
+.leaflet-popup-close-button {
+	display: none !important;
+}
+.leaflet-popup-content small {
+		color: #96979C;
+}
+.leaflet-popup-content h4 {
+	margin: 0;
+}

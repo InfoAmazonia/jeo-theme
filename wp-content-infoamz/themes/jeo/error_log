@@ -1,0 +1,4 @@
+[16-Sep-2014 00:26:00 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/k0007911/public_html/wp-content/themes/jeo/index.php on line 1
+[16-Sep-2014 01:33:37 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/k0007911/public_html/wp-content/themes/jeo/index.php on line 1
+[16-Sep-2014 02:29:50 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/k0007911/public_html/wp-content/themes/jeo/index.php on line 1
+[16-Sep-2014 04:02:42 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/k0007911/public_html/wp-content/themes/jeo/index.php on line 1

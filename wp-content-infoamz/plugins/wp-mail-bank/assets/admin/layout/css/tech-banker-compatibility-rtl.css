@@ -1,0 +1,276 @@
+.tech-banker-display-notice {
+	line-height: 1.6em;
+}
+.tech-banker-deactivation
+{
+	line-height: 28px !important;
+	list-style: disc !important;
+	margin-right: 20px !important;
+}
+.tech-banker-compatiblity-warning {
+	margin:5px 0px 15px 10px;
+}
+.tech-banker-deactivation-button {
+	margin-right:10px !important;
+}
+.button.deactivation-cancel-popup-button {
+	border-width : 0px !important;
+	font-size : 13px !important;
+	height : 100% !important;
+}
+.deactivation-cancel-popup-button {
+	border : none !important;
+	box-shadow: none !important;
+	background : #D43F3F !important;
+	color : #fff !important;
+	display : inline-block !important;
+	text-decoration : none !important;
+	border-style : outset !important;
+	text-align: center !important;
+	margin-left: 0px !important;
+}
+.deactivation-cancel-popup-button:hover {
+	color : #fff !important;
+	text-decoration : none !important;
+}
+.deactivation-skip-popup-button {
+	border : none !important;
+	box-shadow: none !important;
+	color : #fff !important;
+	background : #5E503F !important;
+	text-decoration : none !important;
+	font-size : 13px !important;
+	display : inline-block !important;
+	height : 100% !important;
+}
+.deactivation-skip-popup-button:hover {
+	color : #fff !important;
+}
+.tech-banker-feedback-form {
+	height: auto;
+	width: 40% !important;
+	top: 406px;
+	left: 30% !important;
+	display: block;
+}
+.tech-banker-feedback-form .ui-dialog-title {
+	 color : red !important;
+}
+.tech-banker-feedback-form .ui-dialog-titlebar {
+	background : #f7f7f7 !important;
+}
+.tech-banker-feedback-form .ui-dialog-buttonpane {
+	background : #f7f7f7 !important;
+}
+.form-control {
+	font-size: 14px;
+	font-weight: normal;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	box-shadow: none;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	margin-top:10px;
+	margin-left:18px;
+	width: 98%;
+	padding: 7px;
+}
+.form-group .input-inline
+{
+	margin-right: 4px;
+}
+.form-group
+{
+   margin-bottom: 15px;
+}
+.col-md-6
+	{
+		width: 50%;
+		float: left;
+	}
+	.col-md-12
+	{
+		width: 100%;
+	}
+	.tech-banker-admin-notice
+	{
+		margin-left:11px!important
+	}
+.tech-banker-admin-notice-link
+{
+	text-decoration:none!important
+}
+.tech-banker-pro-options {
+		background-color: #5E503F !important;
+		color: #fff !important;
+}
+.btn
+{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 13px;
+	line-height: 1.6;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.update-nag {
+	width: 95%;
+	padding: 10px;
+}
+div.processing_overlay
+{
+	-moz-animation: spin 2s infinite linear!important;
+	-o-animation: spin 2s infinite linear!important;
+	-webkit-animation: spin 2s infinite linear!important;
+	animation: spin 2s infinite linear!important;
+}
+div.processing_overlay
+{
+	font-family: tech-banker;
+	font-size: 50px;
+	line-height: 80px;
+	font-weight: normal;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	outline: none;
+	color: #ffffff !important;
+	border: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke:1px;
+}
+div.processing_overlay:before
+{
+	content: "\e013";
+}
+div.processing_overlay > div
+{
+	-webkit-animation: spin 2s infinite linear!important;
+	-moz-animation: spin 2s infinite linear!important;
+	-ms-animation: spin 2s infinite linear!important;
+	-o-animation: spin 2s infinite linear!important;
+	animation: spin 2s infinite linear!important;
+}
+.portlet > .portlet-title > .caption > i
+{
+	color:#fff;
+}
+@font-face
+{
+	font-family: tech-banker;
+	src: url(font/tech-banker.eot);
+	src: url(font/tech-banker.eot?#iefix) format('embedded-opentype'),
+	url(font/tech-banker.woff) format('woff'), url(font/tech-banker.ttf)
+	format('truetype'), url(font/tech-banker.svg) format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+div.opacity_overlay
+{
+	background-color: #202124 !important;
+	opacity: 0.7;
+	width: 100% !important;
+	height: 100% !important;
+	z-index: 999999 !important;
+	position: fixed !important;
+	top: 0 !important;
+}
+.loader_opacity
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+div.loader_opacity
+{
+	z-index: 999999;
+	margin-top: -40px;
+	margin-left: -40px;
+}
+div.loader_opacity
+{
+	margin: 10px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	color: #ffffff;
+	background-color: #202124;
+}
+div.loader_opacity
+{
+	-moz-box-shadow: 0 0 3px #000;
+	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+	box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+}
+@-ms-keyframes spin
+{
+	from
+	{
+		-ms-transform: rotate(0deg);
+	}
+	to
+	{
+		-ms-transform: rotate(360deg);
+	}
+}
+@-moz-keyframes spin
+{
+	from
+	{
+		-moz-transform: rotate(0deg);
+	}
+	to
+	{
+		-moz-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes spin
+{
+	from
+	{
+		-webkit-transform: rotate(0deg);
+	}
+	to
+	{
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes spin
+{
+	from
+	{
+		transform:rotate(0deg);
+	}
+	to
+	{
+		transform:rotate(360deg);
+	}
+}
+.admin-notice-offer-banner
+{
+	padding:10px 10px 10px 3px;
+}
+.notice-dismiss
+{
+	left: 1015px !important;
+}

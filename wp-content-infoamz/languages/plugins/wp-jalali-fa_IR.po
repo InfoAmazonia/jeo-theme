@@ -1,0 +1,247 @@
+# Translation of Plugins - wp-jalali - Stable (latest release) in Persian
+# This file is distributed under the same license as the Plugins - wp-jalali - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-09-23 18:16:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: fa\n"
+"Project-Id-Version: Plugins - wp-jalali - Stable (latest release)\n"
+
+#. Author of the plugin/theme
+msgid "Zakrot Web Solutions (in collaboration with WP-Persian team)"
+msgstr "زاکروت، راهکارهای مبتنی بر وب - با همکاری تیم وردپرس فارسی"
+
+#. Description of the plugin/theme
+msgid "Full Jalali calendar support for Wordpress and localization improvements for Persian/Afghan/Tajik users."
+msgstr "پشتیبانی کامل از تقویم جلالی، محلی‌سازی و بهبوده یافته برای کابران فارسی زبان/افغان/تاجیک وردپرس."
+
+#. Plugin Name of the plugin/theme
+msgid "wp-jalali"
+msgstr "وردپرس فارسی"
+
+#: wp-jalali-init.php:183
+msgid "Powered BY persian wordpress"
+msgstr "قدرت گرفته از وردپرس فارسی"
+
+#: wp-jalali-init.php:118
+msgid "setting"
+msgstr "تنظیمات"
+
+#: widget/widget_calendar.php:200 widget/widget_calendar.php:202
+#: widget/widget_calendar.php:212 widget/widget_calendar.php:214
+msgid "View posts for %1$s %2$s"
+msgstr "نمایش نوشته‌های  %1$s %2$s"
+
+#: widget/widget_calendar.php:29
+msgid "jcalendar short name of week"
+msgstr "نمایش نام ایام هفته بصورت خلاصه"
+
+#: widget/widget_calendar.php:9
+msgid "jalali calendar widget"
+msgstr "ابزارک تقویم شمسی"
+
+#: widget/widget_calendar.php:9 widget/widget_calendar.php:15
+#: widget/widget_calendar.php:45
+msgid "jalali calendar"
+msgstr "تقویم شمسی"
+
+#: widget/widget_archive.php:73
+msgid "show dropdown list (not work in post by post)"
+msgstr "نمایش به صورت لیست بازشو (به استثنای حالت نوشته به نوشته)"
+
+#: widget/widget_archive.php:67
+msgid "show count of post (not work in post by post)"
+msgstr "نمایش تعداد نوشته‌ها (به استثنای حالت نوشته به نوشته)"
+
+#: widget/widget_archive.php:60
+msgid "link count(zero to unlimit)"
+msgstr "تعداد (0 برای نمایش همه)"
+
+#: widget/widget_archive.php:55
+msgid "post by post"
+msgstr "نوشته به نوشته"
+
+#: widget/widget_archive.php:50
+msgid "daily"
+msgstr "روزانه"
+
+#: widget/widget_archive.php:45
+msgid "monthly"
+msgstr "ماهیانه"
+
+#: widget/widget_archive.php:40
+msgid "yearly"
+msgstr "سالیانه"
+
+#: widget/widget_archive.php:33 widget/widget_calendar.php:22
+msgid "title"
+msgstr "عنوان ابزارک"
+
+#: widget/widget_archive.php:9
+msgid "jalali archive widget"
+msgstr "ابزارک بایگانی شمسی"
+
+#: widget/widget_archive.php:9 widget/widget_archive.php:16
+#: widget/widget_archive.php:92
+msgid "jalali archive"
+msgstr "بایگانی شمسی"
+
+#: inc/wp-jalali-admin.php:130
+msgid "Other WordPress News"
+msgstr "نمایش اخبار وردپرس انگلیسی"
+
+#: inc/wp-jalali-admin.php:118
+msgid "WordPress Development Blog"
+msgstr "نمایش سیاره وردپرس انگلیسی"
+
+#: inc/wp-jalali-admin.php:94
+msgid "WP Jalali successful installed. please check %soptions%s"
+msgstr "افزونه وردپرس فارسی با موفقیت نصب شد. لطفا %sتنظیمات%s را بررسی نمایید."
+
+#: inc/wp-jalali-admin.php:21
+msgid "About"
+msgstr "درباره"
+
+#: inc/wp-jalali-admin.php:21
+msgid "WP Jalali About"
+msgstr "درباره"
+
+#: inc/wp-jalali-admin.php:13
+msgid "WP Jalali"
+msgstr "وردپرس فارسی"
+
+#: inc/wp-jalali-admin.php:12
+msgid "WP Jalali Options"
+msgstr "تنظیمات وردپرس فارسی"
+
+#: inc/wp-jalali-admin-option.php:183
+msgid "Save Changes"
+msgstr "ذخیره‌ی تغییرات"
+
+#: inc/wp-jalali-admin-option.php:165
+msgid "2) If you choose this option changes or amendments made ​​shall be irrevocable."
+msgstr "۲) در صورت انتخاب این گزینه تغییرات و اصلاحیه‌های انجام شده غیرقابل برگشت خواهند بود."
+
+#: inc/wp-jalali-admin-option.php:163
+msgid "1) Your configured apply only on the texts from now going to Publish."
+msgstr "۱) تغییرات تنها بر روی نوشته‌هایی که از حالا به بعد ذخیره می‌کنید اعمال می‌شود."
+
+#: inc/wp-jalali-admin-option.php:161
+msgid "Note:"
+msgstr "دقت داشته باشید:"
+
+#: inc/wp-jalali-admin-option.php:159
+msgid "This option helps you save the settings youve selected to database when publish post, it will lower your server resource usage, this option is recommended Offer for Popular sites,"
+msgstr "این گزینه به شما کمک می‌کند تنظیمات مورد نظری که در بالا انتخاب کردید هنگام ذخیره نوشته صورت بگیرد، به این صورت میزان مصرف منابع سرور شما کمتر می‌شود، این گزینه به سایت‌های پربازدید توصیه می‌شود،"
+
+#: inc/wp-jalali-admin-option.php:151 inc/wp-jalali-admin-option.php:154
+msgid "Specific Settings"
+msgstr "تنظیمات خاص"
+
+#: inc/wp-jalali-admin-option.php:143
+msgid "Automatically convert the Arabic letters (ي) and (ك) to Persian letters (ی) and (ک) during the intelligent searching for all possible combinations."
+msgstr "تبدیل خودکار حروف «ي» و «ك» عربی به «ی» و «ک» فارسی در هنگام نمایش و جستجوی هوشمند برای تمامی ترکیب‌های ممکن در هنگام جستجو."
+
+#: inc/wp-jalali-admin-option.php:138
+msgid "Use \"٫\" Instead \".\" As an indication of decimal numbers."
+msgstr "استفاده از «٫» به جای «.» به عنوان نشانه اعداد اعشاری."
+
+#: inc/wp-jalali-admin-option.php:131 inc/wp-jalali-admin-option.php:134
+msgid "Writings Rule"
+msgstr "قواعد نگارشی"
+
+#: inc/wp-jalali-admin-option.php:121
+msgid "Categories"
+msgstr "فهرست دسته‌ها"
+
+#: inc/wp-jalali-admin-option.php:116
+msgid "Comments Counter"
+msgstr "تعداد دیدگاه‌ها"
+
+#: inc/wp-jalali-admin-option.php:111
+msgid "Comments"
+msgstr "متن دیدگاه‌ها"
+
+#: inc/wp-jalali-admin-option.php:106
+msgid "Dates"
+msgstr "تاریخ‌ها"
+
+#: inc/wp-jalali-admin-option.php:101
+msgid "Excerpts"
+msgstr "متن خلاصه‌ها"
+
+#: inc/wp-jalali-admin-option.php:95
+msgid "Posts Title"
+msgstr "عنوان نوشته‌ها"
+
+#: inc/wp-jalali-admin-option.php:90
+msgid "Posts"
+msgstr "متن نوشته‌ها"
+
+#: inc/wp-jalali-admin-option.php:84 inc/wp-jalali-admin-option.php:87
+msgid "Convert numbers to Farsi"
+msgstr "تبدیل اعداد به فارسی"
+
+#: inc/wp-jalali-admin-option.php:76
+msgid "Month names according to the Iran: Farvardin, Ordibehesht, etc /Afghanistan: Hamal, Thor, etc."
+msgstr "نام ماه‌ها مطابق با کشور ایران: فروردین، اردیبهشت و... /افغانستان: حمل، ثور و... ."
+
+#: inc/wp-jalali-admin-option.php:73
+msgid "Afghanistan"
+msgstr "افغانستان"
+
+#: inc/wp-jalali-admin-option.php:72
+msgid "Iran"
+msgstr "ایران"
+
+#: inc/wp-jalali-admin-option.php:68
+msgid "Show Full month name, instead Short format. like: March not MAR."
+msgstr "نمایش نام ماه بصورت کامل، مثال: «اردیبهشت» به جای «ارد»."
+
+#: inc/wp-jalali-admin-option.php:63
+msgid "The default clock set Iran / Tehran, This option configured Time difference Iran/Tehran on WordPress and your Host."
+msgstr "ساعت پیش‌فرض ایران/تهران باشد، این گزینه به شما کمک می‌کند اختلاف ساعت ایران/تهران در وردپرس با سرور سایت شما تنظیم شود."
+
+#: inc/wp-jalali-admin-option.php:58
+msgid "Dates in archive title become Shamsi, for example from March 2014 to Farvardin 1387."
+msgstr "تاریخ در عنوان بایگانی مطالب به تاریخ شمسی تبدیل شود، مثلا از مارس 2014 به فروردین ۱۳۸۷."
+
+#: inc/wp-jalali-admin-option.php:53
+msgid "Automatically turned date in posts, for example yoursite.ir/2008/04/02/post to yoursite.ir/1387/01/13/post."
+msgstr "تبدیل خودکار تاریخ در نوشته‌ها، مثلا از yoursite.ir/2008/04/02/post به yoursite.ir/1387/01/13/post."
+
+#: inc/wp-jalali-admin-option.php:48
+msgid "Dates in all parts of Wordpress turn from Gregorian to Shamsi."
+msgstr "تاریخ تمامی بخش‌های وردپرس از میلادی به شمسی تبدیل شود."
+
+#: inc/wp-jalali-admin-option.php:42 inc/wp-jalali-admin-option.php:45
+msgid "Date and time Settings"
+msgstr "تنظیمات تاریخ و ساعت"
+
+#: inc/wp-jalali-admin-option.php:36
+msgid "The font appear correction in Wordpress Dashboard, change font size and leading to better management of the environment."
+msgstr "اصلاح ظاهر مدیریت شامل تغییر قلم،‌ تغییر اندازه قلم‌ها و... که منجر به زیباتر شدن محیط مدیریت می‌شود."
+
+#: inc/wp-jalali-admin-option.php:30 inc/wp-jalali-admin-option.php:33
+msgid "Visual Option"
+msgstr "تنظیمات دیداری"
+
+#: inc/wp-jalali-admin-option.php:25 inc/wp-jalali-admin.php:135
+msgid "wp-persian planet"
+msgstr "نمایش سیاره وردپرس فارسی"
+
+#: inc/wp-jalali-admin-option.php:24 inc/wp-jalali-admin.php:123
+msgid "wp-persian news Blog"
+msgstr "نمایش اخبار وردپرس فارسی"
+
+#: inc/wp-jalali-admin-option.php:21
+msgid "How to Display news in Dashboard"
+msgstr "چگونگی نمایش اخبار در پیشخوان"
+
+#: inc/wp-jalali-admin-option.php:9
+msgid "wp persian option"
+msgstr "تنظیمات وردپرس فارسی"

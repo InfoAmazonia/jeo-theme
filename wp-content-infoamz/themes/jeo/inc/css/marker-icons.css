@@ -1,0 +1,112 @@
+#marker-icon-metabox .marker-icon-container {
+	float: left;
+	width: 33%;
+	position: relative;
+	padding-top: 310px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+#marker-icon-metabox .marker-icon-container .tip {
+	display: none;
+}
+
+#marker-icon-metabox .marker-icon-selector {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 300px;
+	overflow: hidden;
+	border: 1px solid #cfcfcf;
+	background: #fefefe;
+	border-radius: 3px;
+}
+
+#marker-icon-metabox .marker-icon-selector.editing {
+	cursor: crosshair;
+	background: #eee;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQXAS03w2/5YAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAVSURBVAjXY2DAAu7evft/4AQZGBgATWoVhQLfozMAAAAASUVORK5CYII=);
+}
+
+#marker-icon-metabox .marker-icon-selector .point {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQXATU2NnNRrwAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAsSURBVDjLY2AgEhgbG/8nVi0TAw3AqKGjhg4FQxlJySlUB6PZdNTQUUOJAAA0EgTuMnmHIQAAAABJRU5ErkJggg==);
+}
+
+#marker-icon-metabox .marker-icon-selector .console {
+	font-size: 9px;
+	line-height: 9px;
+	display: none;
+	margin: 5px;
+	text-transform: uppercase;
+	font-family: monospace;
+}
+
+#marker-icon-metabox .marker-icon-selector button.use-default {
+	position: absolute;
+	bottom: 5px;
+	right: 67%;
+	left: 5px;
+}
+
+
+#marker-icon-metabox .marker-icon-selector button.cancel {
+	position: absolute;
+	bottom: 5px;
+	left: 34%;
+	right: 34%;
+}
+#marker-icon-metabox .marker-icon-selector button.save {
+	position: absolute;
+	bottom: 5px;
+	left: 67%;
+	right: 5px;
+}
+
+#marker-icon-metabox .marker-icon-selector.editing .console {
+	display: block;
+}
+
+#marker-icon-metabox .marker-icon-selector img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+#marker-icon-metabox .marker-icon-settings {
+	display: none;
+}
+
+#marker-icon-metabox .marker-icon-setting {
+	width: 33%;
+	float: left;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 0 0 0 40px;
+}
+
+/*
+ * Relationship metabox
+ */
+
+#marker-icon-relationship-metabox ul li {
+	float: left;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	text-align: center;
+	margin: 0 10px 0 0;
+}
+
+#marker-icon-relationship-metabox ul li label {
+	display: block;
+	margin-bottom: 5px;
+}
