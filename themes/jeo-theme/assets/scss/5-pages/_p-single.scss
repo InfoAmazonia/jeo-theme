@@ -339,6 +339,10 @@
     .featured-image-behind {
         min-height: auto !important;
 
+        .wp-post-image {
+            height: 100%;
+        }
+
         .entry-header {
             margin: 1.25em auto 1.5rem;
 
