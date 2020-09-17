@@ -14,18 +14,16 @@
 
         .publisher-name {
             color: rgba(85, 93, 102, 0.699);
-            ;
             border: 1px solid var(--primary);
             border-radius: 5px;
             padding: 5px;
-            font-size: size(13);
+            font-size: size(14);
         }
     }
 
 
     .featured-image-behind {
         .publisher-name {
-            opacity: 0.5;
             color: #FFFFFF;
         }
     }
@@ -1292,6 +1290,13 @@
         }
 
 
+        &:not(.single-featured-image-behind) {
+            .publisher-name {
+                color: #fff !important;
+                opacity: 0.7;
+            }
+        }
+
         #content {
             #primary {
                 article {
@@ -1349,11 +1354,6 @@
                     color: white;
                 }
             }
-        }
-
-        .publisher-name {
-            color: #F5F5F5 !important;
-            opacity: 0.5;
         }
 
         .post-date {
