@@ -17,6 +17,18 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 		<?php
 		$subtitle = get_post_meta($post->ID, 'newspack_post_subtitle', true);
 		?>
+
+		<div class="publishers">
+			<?php 
+				$terms = get_the_terms( $post->ID , 'publisher' );
+				if ($terms):
+				foreach ( $terms as $term ) {
+			?>
+				<span class="publisher-name"><?php echo $term->name; ?></span>
+			<?php }
+				endif;
+			?>
+		</div>
 		<div class="wrapper-entry-title">
 			<h1 class="entry-title <?php echo $subtitle ? 'entry-title--with-subtitle' : ''; ?>">
 				<?php echo wp_kses_post(get_the_title()); ?>
@@ -44,6 +56,8 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 				<?php endif; ?>
 				<?php newspack_posted_on(); ?>
 			</div><!-- .meta-info -->
+			
+			
 			<?php
 			// Display Jetpack Share icons, if enabled
 			if (function_exists('sharing_display')) {

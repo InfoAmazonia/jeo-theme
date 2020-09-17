@@ -9,8 +9,18 @@
 .post-template-single-feature,
 .post-template-single-wide {
 
+    .publishers {
+        margin-bottom: 30px;
+    }
 
-
+    .publisher-name {
+        color:  rgba(85, 93, 102, 0.699);;
+        border: 1px solid var(--primary);
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 12px;
+    }
+    
     .decoration-top {
         @include mobile {
             .cat-links {
