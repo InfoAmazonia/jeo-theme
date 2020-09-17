@@ -71,9 +71,3 @@
 .wp-block[data-align=full][data-type="jeo-theme/custom-image-block-editor"] {
     max-width: 100vw;
 }
-
-/* alignment */
-.block-editor-block-list__layout .block-editor-block-list__block[data-align=right][aria-label~="Credited"] .block-editor-block-list__block-edit,
-.block-editor-block-list__layout .block-editor-block-list__block[data-align=left][aria-label~="Credited"] .block-editor-block-list__block-edit{
-    width: 50%;
-}
