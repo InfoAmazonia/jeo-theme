@@ -93,3 +93,10 @@
   .wp-block-pullquote.is-style-jeo .wp-block-pullquote__citation {
     text-transform: none !important;
   }
+
+
+/* alignment */
+.block-editor-block-list__layout .block-editor-block-list__block[data-align=right][aria-label~="Pullquote"] .block-editor-block-list__block-edit,
+.block-editor-block-list__layout .block-editor-block-list__block[data-align=left][aria-label~="Pullquote"] .block-editor-block-list__block-edit{
+    width: 50%;
+}
