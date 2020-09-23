@@ -1,8 +1,10 @@
-.archive .page-header{
-  margin: 0;
+.archive, .blog {
+    .page-header {
+        margin: 0;    
+    } 
 }
 
-.archive {
+.archive, .blog {
     #page{
         @include mobile{
             margin-top: -50px;
@@ -108,8 +110,7 @@
     }
 }
 
-
-.archive:not(.paged) {
+.archive:not(.paged), .blog:not(.paged) {
     .custom-archive {
         article.has-post-thumbnail:first-of-type .post-thumbnail {
             @include desktop{
@@ -138,6 +139,43 @@
      {
         margin-bottom: 30px;
     }
+}
+
+.archive:not(.paged), .blog:not(.paged) {
+    .custom-archive {
+        article.has-post-thumbnail:first-of-type .post-thumbnail {
+            @include desktop{
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    .entry-title {
+        font-size: 1.2em !important;
+        @include mobile {
+            font-size: size(16) !important;
+        }
+    
+    }
+
+    article.has-post-thumbnail:first-of-type .entry-header{
+        @include desktop{
+            margin: 0;
+        }
+    }
+
+    article.has-post-thumbnail:last-of-type,
+    article:last-of-type
+     {
+        margin-bottom: 30px;
+    }
+
+    article.has-post-thumbnail{
+        &:first-of-type {
+            display: block;
+        }
+    }   
 }
 
 /* ARCHIVE EXCEPT AUTHOR */
@@ -223,10 +261,6 @@
             @include mobile{
                 flex-basis: 65%;
             }
-        }
-        
-        &:first-of-type {
-            display: block;
         }
     }   
 }
