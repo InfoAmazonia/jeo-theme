@@ -269,3 +269,19 @@
         }
     }
 }
+
+/* from styles.css */
+@media only screen and (min-width: 782px) {
+    .archive .has-post-thumbnail, 
+    .blog .has-post-thumbnail, 
+    .search .has-post-thumbnail {
+        .post-thumbnail {
+            max-width: 100%;
+            margin: 0 2em 0 0;
+        }
+
+         .entry-container {
+            flex-basis: 65%;
+        }
+    }
+}
