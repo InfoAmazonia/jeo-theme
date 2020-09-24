@@ -16,6 +16,12 @@ get_header();
 ?>
 
 	<section id="primary" class="content-area custom-archive">
+			<header class="page-header">
+				<span>
+					<?php single_post_title( '<h1 class="page-title article-section-title category-header page-description">', '</h1>' ); ?>
+				</span>
+
+			</header><!-- .page-header -->
 		<main id="main" class="site-main">
 		<?php
 		if ( have_posts() ) {
@@ -40,19 +46,12 @@ get_header();
 		?>
 		</main><!-- .site-main -->
 
-        <?php
-			if ( is_page() ) {
-				get_sidebar();
-			} else {
-				?>
-                <aside class="category-page-sidebar">
-    			<div class="content">
-					<?php dynamic_sidebar('category_page_sidebar') ?>
-				</div>
-			</aside>
-        <?php 
-			}
-		?>
+		<!-- old: get_sidebar() -->
+        <aside class="category-page-sidebar">
+    		<div class="content">
+				<?php dynamic_sidebar('category_page_sidebar') ?>
+			</div>
+		</aside>
 	</section><!-- .content-area -->
 
 <?php
