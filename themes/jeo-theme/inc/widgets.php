@@ -159,7 +159,7 @@ class bullet_widget extends WP_Widget {
 
 	public function widget($args, $instance) {
 ?>
-	<? if ($instance) : ?>
+	<?php if ($instance) : ?>
 	<?php endif; ?>
 	<?php
 	}
