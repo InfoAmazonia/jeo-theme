@@ -24,10 +24,10 @@ function custom_get_permalink($url, $post, $leavename = false) {
 	return $url;
 }
 
-add_action( 'after_setup_theme', 'jeo_setup' );
+add_action('after_setup_theme', 'jeo_setup');
 
 function jeo_setup() {
-	load_theme_textdomain( 'jeo', get_stylesheet_directory() . '/lang' );
+	load_theme_textdomain('jeo', get_stylesheet_directory() . '/lang');
 }
 
 add_filter('pre_get_posts', '_search_pre_get_posts', 1);
@@ -113,17 +113,17 @@ function _search_pre_get_posts($query) {
 			$categories .= implode(",", $_GET['topic']);
 		}
 
-		if(!empty($categories)) {
+		if (!empty($categories)) {
 			$categories .= ",";
 		}
 
-		if(isset($_GET['region']) && !empty($_GET['region'])) {
+		if (isset($_GET['region']) && !empty($_GET['region'])) {
 			$categories .= implode(",", $_GET['region']);
 		}
 
 		// echo $categories;
 
-		if(!empty($categories)) {
+		if (!empty($categories)) {
 			$query->set('category_name', $categories);
 		}
 
@@ -195,26 +195,113 @@ function move_comment_field($fields) {
 }
 
 
-function wpseo_no_show_article_author_facebook( $facebook ) {
-    if ( is_single() ) {
-        return false;
-    }
-    return $facebook;
+function wpseo_no_show_article_author_facebook($facebook) {
+	if (is_single()) {
+		return false;
+	}
+	return $facebook;
 }
-add_filter( 'wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1 );
+add_filter('wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1);
 
-function get_term_for_default_lang( $term, $taxonomy ) {
+function get_term_for_default_lang($term, $taxonomy) {
 	global $icl_adjust_id_url_filter_off;
 
-	$term_id = is_int( $term ) ? $term : $term->term_id;
+	$term_id = is_int($term) ? $term : $term->term_id;
 
-	$default_term_id = (int) icl_object_id( $term_id, $taxonomy, true, 'en' );
+	$default_term_id = (int) icl_object_id($term_id, $taxonomy, true, 'en');
 
 	$orig_flag_value = $icl_adjust_id_url_filter_off;
 
 	$icl_adjust_id_url_filter_off = true;
-	$term = get_term( $default_term_id, $taxonomy );
+	$term = get_term($default_term_id, $taxonomy);
 	$icl_adjust_id_url_filter_off = $orig_flag_value;
 
 	return $term;
+}
+
+
+function get_term_for_lang($term, $taxonomy, $land_code) {
+	global $icl_adjust_id_url_filter_off;
+
+	$term_id = is_int($term) ? $term : $term->term_id;
+
+	$default_term_id = (int) icl_object_id($term_id, $taxonomy, true, $land_code);
+
+	$orig_flag_value = $icl_adjust_id_url_filter_off;
+
+	$icl_adjust_id_url_filter_off = true;
+	$term = get_term($default_term_id, $taxonomy);
+	$icl_adjust_id_url_filter_off = $orig_flag_value;
+
+	return $term;
+}
+
+
+if (!get_option('migrated-blog-post')) {
+	add_option('migrated-blog-post', 1);
+
+	$queryA = new WP_Query([
+		'post_type' => 'blog-post',
+		'posts_per_page' => -1,
+		'suppress_filters' => true
+	]);
+
+	while ($queryA->have_posts()) {
+		$queryA->the_post();
+
+		$post_id =  get_the_ID();
+		$post_language = wpml_get_language_information($post_id)['language_code'];
+		$english_opinion_term = get_term_by('slug', 'opinion', 'category');
+
+		// This term is relative to the current post translation
+		$opinion_term_translated = get_term_for_lang($english_opinion_term, 'category', $post_language);
+
+
+		// var_dump($english_opinion_term);
+		// var_dump($opinion_term_translated);
+
+
+		// Set post type to simple post
+		set_post_type($post_id, 'post');
+
+		// Add translated opinion term
+		wp_set_object_terms($post_id, $opinion_term_translated->term_id, 'category', true);
+	}
+}
+
+
+if(!get_option('migrated-geolocation-meta')){
+	add_option('migrated-geolocation-meta', 1);
+	
+	$query = new WP_Query([
+		'posts_per_page' => -1,
+		'suppress_filters' => true,
+		'meta_query' => array(
+			array(
+					'key' => 'geocode_latitude',
+				'value'   => array(''),
+				'compare' => 'NOT IN'
+			),
+	    ),
+
+	]);
+
+	while ( $query->have_posts() ) {
+		$query->the_post();
+
+		$source_lat = get_post_meta(get_the_ID(), 'geocode_latitude', true);
+		$source_lon = get_post_meta(get_the_ID(), 'geocode_longitude', true);
+		$source_geocode = get_post_meta(get_the_ID(), 'geocode_address', true);
+
+		// Build "_related_point" object
+		$related_point = array(
+			'_geocode_lat' => $source_lat,
+			'_geocode_lon' => $source_lon,
+			'relevance' => 'primary',
+			'_geocode_full_address' => $source_geocode
+
+		);
+
+		update_post_meta( get_the_ID(), '_related_point', $related_point );
+	}
 }
