@@ -219,57 +219,6 @@ function get_term_for_default_lang($term, $taxonomy) {
 	return $term;
 }
 
-
-function get_term_for_lang($term, $taxonomy, $land_code) {
-	global $icl_adjust_id_url_filter_off;
-
-	$term_id = is_int($term) ? $term : $term->term_id;
-
-	$default_term_id = (int) icl_object_id($term_id, $taxonomy, true, $land_code);
-
-	$orig_flag_value = $icl_adjust_id_url_filter_off;
-
-	$icl_adjust_id_url_filter_off = true;
-	$term = get_term($default_term_id, $taxonomy);
-	$icl_adjust_id_url_filter_off = $orig_flag_value;
-
-	return $term;
-}
-
-
-if (!get_option('migrated-blog-post')) {
-	add_option('migrated-blog-post', 1);
-
-	$queryA = new WP_Query([
-		'post_type' => 'blog-post',
-		'posts_per_page' => -1,
-		'suppress_filters' => true
-	]);
-
-	while ($queryA->have_posts()) {
-		$queryA->the_post();
-
-		$post_id =  get_the_ID();
-		$post_language = wpml_get_language_information($post_id)['language_code'];
-		$english_opinion_term = get_term_by('slug', 'opinion', 'category');
-
-		// This term is relative to the current post translation
-		$opinion_term_translated = get_term_for_lang($english_opinion_term, 'category', $post_language);
-
-
-		// var_dump($english_opinion_term);
-		// var_dump($opinion_term_translated);
-
-
-		// Set post type to simple post
-		set_post_type($post_id, 'post');
-
-		// Add translated opinion term
-		wp_set_object_terms($post_id, $opinion_term_translated->term_id, 'category', true);
-	}
-}
-
-
 if(!get_option('migrated-geolocation-meta')){
 	add_option('migrated-geolocation-meta', 1);
 	
