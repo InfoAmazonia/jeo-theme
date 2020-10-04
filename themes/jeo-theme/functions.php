@@ -305,3 +305,54 @@ if(!get_option('migrated-geolocation-meta')){
 		update_post_meta( get_the_ID(), '_related_point', $related_point );
 	}
 }
+
+/*Script for Mekong Eye - migration - external link */
+$wpdb->prefix;
+
+function publisher_mee_query() {
+	global $wpdb;
+	if(!get_option('external-link')){
+
+			/*1. Get all distinct pub_name and set them as term 'partner' - taxonomy 'partner' */
+			add_option('external-link', 1);
+			$publishers = $wpdb->get_results("SELECT distinct meta_value from $wpdb->postmeta WHERE (meta_key = 'pub_name')");
+			foreach($publishers as $publisher){
+				$newpartner = wp_insert_term( $publisher->meta_value, 'partner');
+			}
+	
+
+			/*2. Get all posts that has filled url field */
+			$query = new WP_Query([
+				'posts_per_page' => -1,
+				'meta_query' => array(
+					array(
+						'key' => 'url',
+						'value'   => array(''),
+						'compare' => 'NOT IN'
+					),
+				),
+			]);
+	
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$id = get_the_ID();
+	
+				$pub_name = get_post_meta($id, 'pub_name', true);
+				$url = get_post_meta($id, 'url', true);
+
+				if ($pub_name) {
+					$partner = get_term_by('name', $pub_name, 'partner');
+				} else {
+					$partner = get_term_by('slug','general-publisher', 'partner');
+				}
+	
+				// add partner taxonomy to post
+				wp_set_object_terms(get_the_ID(),$partner->term_id, 'partner');
+	
+				// update meta: external title , external source link
+				update_post_meta($id, 'external-title', $partner->name);
+				update_post_meta($id, 'external-source-link', $url);
+			}
+	  }
+	}
+add_action( 'init', 'publisher_mee_query' );
