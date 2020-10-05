@@ -20,8 +20,25 @@
 
             &.entry {
                 margin-top: 30px;
+
+                .cat-links{
+                    font-size: size(18);
+
+                    @include mobile {
+                        font-size: size(16) !important;
+                    }
+                }
+
+                .entry-title {
+                    font-size: size(24) !important;
+            
+                    @include mobile {
+                        font-size: size(16) !important;
+                    }
+            
+                }
             }
-        
+
             .entry-content p {
                 font-size: size(16);
                 letter-spacing: 0;
