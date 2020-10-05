@@ -225,7 +225,8 @@ function newspack_scott_custom_typography_css() {
 
 		if($typo_menu_size) {
 			$theme_css .= '
-			header.site-header .bottom-header-contain .nav1 .main-menu > li {
+			header.site-header .bottom-header-contain .nav1 .main-menu > li,
+			header.site-header .bottom-header-contain .nav1 .sub-menu > li {
 				font-size: ' . $typo_menu_size . 'rem;
 			}
 
