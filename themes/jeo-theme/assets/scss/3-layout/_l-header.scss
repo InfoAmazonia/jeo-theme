@@ -528,6 +528,10 @@ header.site-header {
                 background-color: #F5F5F5;
             }
         }
+
+        ul.sub-menu li {
+            padding-left: 0;
+        }
     }
 
     .social-navigation {
@@ -774,6 +778,7 @@ header.site-header {
 
 .mobile-menu-opened #mobile-sidebar-fallback {
     left: 0;
+    overflow: auto;
 }
 
 #mobile-sidebar-fallback {
