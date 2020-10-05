@@ -17,7 +17,7 @@
             font-weight: bold;
         }
     }
-    
+
     .posts {
         padding: 30px;
 
@@ -25,7 +25,7 @@
             font-size: size(16);
         }
 
-        
+
 
         .post {
             &:not(:last-child) {
@@ -34,12 +34,13 @@
 
             &:not(:first-child) {
                 margin-top: 30px;
+
                 .post-thumbnail {
                     display: none;
                 }
             }
 
-            &:last-of-type { 
+            &:last-of-type {
                 p.post-author {
                     margin-bottom: 0px;
                 }
@@ -56,10 +57,14 @@
                     letter-spacing: 0;
                     line-height: 20px;
                     color: #0A0A0A;
+
+                    &:first-of-type {
+                        margin-top: 0px;
+                    }
                 }
-    
+
                 .post-author {
-                    color: rgba(25,30,35,0.5);
+                    color: rgba(25, 30, 35, 0.5);
                     margin-bottom: 20px;
                     font-size: size(14);
                 }
