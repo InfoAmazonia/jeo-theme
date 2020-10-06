@@ -56,9 +56,7 @@
 
                 .post-thumbnail {
                     flex-basis: 35%;
-                    @include mobile {
-                        margin-right: 10px;
-                    }
+                    margin-right: 10px;
                 }
 
                 .entry-container {
