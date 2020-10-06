@@ -56,7 +56,9 @@
 
                 .post-thumbnail {
                     flex-basis: 35%;
-                    margin-right: 10px;
+                    @include mobile {
+                        margin-right: 10px;
+                    }
                 }
 
                 .entry-container {
@@ -371,6 +373,24 @@
 
         form.search-form .filters--item .select2-selection__choice {
             background-color: var(--primary-opacity-1);
+        }
+
+        .cat-links {
+            a {
+                &:hover {
+                    opacity: 0.7;
+                    color: #767676;
+                }
+            }
+        }
+
+        .entry-meta .byline{ 
+            a {
+                &:hover {
+                    opacity: 0.7;
+                    color: #767676;
+                }
+            }
         }
     }
 }

@@ -267,6 +267,24 @@
         .page-title .page-description {
             color: white;
         }
+
+        .cat-links {
+            a {
+                &:hover {
+                    opacity: 0.7;
+                    color: #767676;
+                }
+            }
+        }
+
+        .entry-meta .byline{ 
+            a {
+                &:hover {
+                    opacity: 0.7;
+                    color: #767676;
+                }
+            }
+        }
     }
 }
 
