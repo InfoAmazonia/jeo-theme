@@ -13,9 +13,7 @@
         margin-bottom: 30px;
 
         .publisher-name {
-            color: rgba(85, 93, 102, 0.699);
-            border: 1px solid var(--primary);
-            border-radius: 5px;
+            color: var(--primary);
             padding: 5px;
             font-size: size(14);
             font-family: var(--primary-font);

@@ -24,7 +24,7 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 				if ($terms):
 				foreach ( $terms as $term ) {
 			?>
-				<span class="publisher-name"><?php echo $term->name; ?></span>
+				<span class="publisher-name"><i class="fas fa-sync-alt"></i> <?php echo $term->name; ?></span>
 			<?php }
 				endif;
 			?>
