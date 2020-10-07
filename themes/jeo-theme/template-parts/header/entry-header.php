@@ -18,17 +18,8 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 		$subtitle = get_post_meta($post->ID, 'newspack_post_subtitle', true);
 		?>
 
-		<div class="publishers">
-			<?php 
-				$terms = get_the_terms( $post->ID , 'publisher' );
-				if ($terms):
-				foreach ( $terms as $term ) {
-			?>
-				<span class="publisher-name"><i class="fas fa-sync-alt"></i> <?php echo $term->name; ?></span>
-			<?php }
-				endif;
-			?>
-		</div>
+		
+		
 		<div class="wrapper-entry-title">
 			<h1 class="entry-title <?php echo $subtitle ? 'entry-title--with-subtitle' : ''; ?>">
 				<?php echo wp_kses_post(get_the_title()); ?>
@@ -50,10 +41,28 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 
 	<?php if (!is_page() && 'behind' !== newspack_featured_image_position() && !get_query_var('hide_post_meta')) : ?>
 		<div class="entry-subhead">
+		<?php 
+			$terms = get_the_terms( $post->ID , 'partner' );
+			$story_url = 'http://www.google.com';//get_post_meta($post->ID, 'url', true);
+			var_dump($terms);
+			if (!is_wp_error($terms)):?>
+				<div class="publishers">
+					<?php foreach ( $terms as $term ) {?>
+						<span class="publisher-name">
+							<?php echo esc_html__('By', 'newspack'); ?>
+							<a href="<?= $story_url ?>" >
+								<i class="fas fa-sync-alt publisher-icon"></i>
+								<?php echo $term->name; ?>
+							</a>
+						</span>
+					<?php }?>
+				</div>
+			<?php endif;?>
 			<div class="entry-meta">
-				<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
+				<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true) && empty( $terms )) : ?>
 					<?php newspack_posted_by(); ?>
 				<?php endif; ?>
+				<div></div>
 				<?php newspack_posted_on(); ?>
 			</div><!-- .meta-info -->
 			

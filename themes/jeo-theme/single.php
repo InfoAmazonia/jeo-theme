@@ -63,8 +63,27 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 			<div class="main-content">
 				<?php if ($isImageBehind) : ?>
 					<div class="entry-subhead">
+					<!-- publishers -->
+					<?php 
+						$terms = get_the_terms( $post->ID , 'publisher' );
+						$story_url = 'http://www.google.com';//get_post_meta($post->ID, 'url', true);
+
+					if ($terms):?>
+						<div class="publishers">
+							<?php foreach ( $terms as $term ) {?>
+								<span class="publisher-name">
+									<?php echo esc_html__('By', 'newspack'); ?>
+									<a href="<?= $story_url ?>" >
+										<i class="fas fa-sync-alt"></i>
+										<?php echo $term->name; ?>
+									</a>
+								</span>
+							<?php }?>
+						</div>
+					<?php endif;?>
+					<!-- publishers -->
 						<div class="entry-meta">
-							<?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) : ?>
+							<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
 								<?php newspack_posted_by(); ?>
 							<?php endif; ?>
 							<div></div>

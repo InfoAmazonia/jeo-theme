@@ -10,13 +10,17 @@
 .post-template-single-wide {
 
     .publishers {
-        margin-bottom: 30px;
 
         .publisher-name {
             color: var(--primary);
             padding: 5px;
             font-size: size(14);
             font-family: var(--primary-font);
+        }
+
+        .publisher-icon{
+            margin-right: 3px;
+            margin-left: 3px;
         }
     }
 
@@ -157,7 +161,7 @@
             align-items: center;
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            /*width: 100%;*/ /* It was commented due to publishers*/
 
             @include mobile {
                 display: inherit;
@@ -1291,13 +1295,10 @@
                 color: white;
             }
         }
-
-
-        &:not(.single-featured-image-behind) {
-            .publisher-name {
-                color: #fff !important;
-                opacity: 0.7;
-            }
+        
+        .publisher-name {
+            color: #fff !important;
+            opacity: 0.7;
         }
 
         #content {
