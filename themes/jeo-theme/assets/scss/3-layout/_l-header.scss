@@ -1007,9 +1007,15 @@ header#masthead {
         }
 
         &.mobile-sidebar {
-            nav.main-navigation ul > li > a{
-                &:hover {
+            nav.main-navigation {
+                ul > li > a{
+                    &:hover {
                         color: #23282D;
+                    }
+                }
+
+                ul li:hover a {
+                    color: #23282D;
                 }
             }
         }
