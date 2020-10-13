@@ -236,7 +236,7 @@ function get_term_for_lang($term, $taxonomy, $land_code) {
 	return $term;
 }
 
-
+/* Script 1: Migrated Blog Post (infoamazonia) */
 if (!get_option('migrated-blog-post')) {
 	add_option('migrated-blog-post', 1);
 
@@ -269,7 +269,7 @@ if (!get_option('migrated-blog-post')) {
 	}
 }
 
-
+/* Script 2: Migrated Geolocation meta (infoamazonia / Ekuatorial) */
 if(!get_option('migrated-geolocation-meta')){
 	add_option('migrated-geolocation-meta', 1);
 	
@@ -306,7 +306,7 @@ if(!get_option('migrated-geolocation-meta')){
 	}
 }
 
-/*Script for Mekong Eye - migration - external link */
+/*Script 3: for Mekong Eye - migration - external link */
 $wpdb->prefix;
 
 function publisher_mee_query() {
@@ -356,3 +356,68 @@ function publisher_mee_query() {
 	  }
 	}
 add_action( 'init', 'publisher_mee_query' );
+
+/* Script 4: Move Topic to tag*/
+function move_topic_to_tag() {
+	/* List of topic */
+	$tax = array( 'agriculture',
+	'biodiversity',
+	'climate',
+	'dams',
+	'energy',
+	'environment',
+	'fishery',
+	'forests',
+	'gender',
+	'global-context',
+	'health',
+	'human-rights',
+	'industry',
+	'infrastructure',
+	'investment',
+	'land-grab',
+	'lead',
+	'media',
+	'mining',
+	'oil-gas',
+	'policy',
+	'pollution',
+	'renewable',
+	'society-community',
+	'tourism',
+	'transportation',
+	'water-management',
+	'wildlife');
+
+	if (!get_option('topic-tag')) {
+		add_option('topic-tag', 1);
+		$queryA = new WP_Query([
+			'post_type'         => 'post',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'topic',
+					'field' => 'slug',
+					'terms' => $tax,
+				)
+			),
+		]);
+	
+
+		while ($queryA->have_posts()) {
+			$queryA->the_post();
+	
+			$post_id =  get_the_ID();
+			echo $post_id ;
+
+			$topics_list = get_the_terms($post_id, 'topic');
+		
+			foreach($topics_list as $topic){
+				if(!has_tag($topic->slug)){
+					wp_set_post_tags( $post_id , $topic->slug, true );
+				}
+			}
+		}
+	}
+}
+add_action('init', 'move_topic_to_tag'); 
