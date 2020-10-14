@@ -43,6 +43,8 @@
 
                 .togable-panel {
                     background: #2D3235;
+                    
+                    @extend .scroll-bar-style;
 
                     .components-tab-panel__tabs {
                         background: #2D3235;
@@ -191,4 +193,47 @@
             }
         }
     }
+}
+
+.scroll-bar-style {
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-button {
+		width: 0px;
+		height: 0px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba(237, 237, 237, 0.205);
+		border: 0px none white;
+		border-radius: 3px;
+
+		&:hover {
+			background: #b1b1b1;
+		}
+
+		&:active {
+			background: #b1b1b1;
+		}
+	}
+
+	&::-webkit-scrollbar-track {
+		background: rgba(237, 237, 237, 0.205);
+		border: 0px none #ffffff;
+		border-radius: 0px;
+
+		&:hover {
+			background: rgba( 0, 0, 0, 0.05 );
+		}
+
+		&:active {
+			background: #eee;
+		}
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: transparent;
+	}
 }
