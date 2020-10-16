@@ -242,8 +242,10 @@ function newspack_categories()
 
 	// Only display Yoast primary category if set.
 	if (class_exists('WPSEO_Primary_Term')) {
-		$primary_term = new WPSEO_Primary_Term('category', get_the_ID());
-		$category_id = $primary_term->get_primary_term();
+		// $primary_term = new WPSEO_Primary_Term('category', get_the_ID());
+		$category_id = get_post_meta(get_the_ID(), '_yoast_wpseo_primary_category', true);
+
+		// var_dump(get_term());
 
 		$parent_type_category = get_category_by_slug('type');
 		if($parent_type_category) {

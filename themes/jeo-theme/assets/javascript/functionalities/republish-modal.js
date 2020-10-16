@@ -27,20 +27,21 @@ window.addEventListener("DOMContentLoaded", function () {
             rawText.style.display = 'none';
             htmlText.style.display = 'block';
 
-            htmlButton.style.backgroundColor = '#555D66';
-            htmlButton.style.color = 'white';
-            textButton.style.backgroundColor = '#cccccc'
-            textButton.style.color = '#555D66';
+            htmlButton.style.backgroundColor = '#cccccc';
+            htmlButton.style.color = '#555D66';
+
+            textButton.style.backgroundColor = '#555D66';
+            textButton.style.color = 'white';
         }
 
         textButton.onclick = () => {
             rawText.style.display = 'block';
             htmlText.style.display = 'none';
 
-            htmlButton.style.backgroundColor = '#cccccc';
-            htmlButton.style.color = '#555D66';
-            textButton.style.backgroundColor = '#555D66'
-            textButton.style.color = 'white';
+            htmlButton.style.backgroundColor = '#555D66';
+            htmlButton.style.color = 'white';
+            textButton.style.backgroundColor = '#cccccc'
+            textButton.style.color = '#555D66';
         }
 
         // Copy button

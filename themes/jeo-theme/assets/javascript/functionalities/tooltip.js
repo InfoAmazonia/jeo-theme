@@ -13,6 +13,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.tooltip-block').forEach(tooltip => {
         const splitResult = tooltip.innerText.split(': ');
+
+        if(splitResult.length == 1 || !splitResult.length ) {
+            tooltip.classList.remove('tooltip-block');
+            return;
+        }
+
         const referenceWord = splitResult[0];
         const contentTooltip = splitResult.length >= 1? splitResult.splice(1).reduce(stringAcumulator): '';
 

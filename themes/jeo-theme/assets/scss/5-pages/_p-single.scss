@@ -9,8 +9,6 @@
 .post-template-single-feature,
 .post-template-single-wide {
 
-
-
     .decoration-top {
         @include mobile {
             .cat-links {
@@ -312,6 +310,10 @@
     .featured-image-behind {
         min-height: auto !important;
 
+        .wp-post-image {
+            height: 100%;
+        }
+
         .entry-header {
             margin: 1.25em auto 1.5rem;
 
@@ -346,11 +348,15 @@
         }
 
         .wrapper-entry-title {
-            margin: 45px auto;
-
-            @include large {
+            /* margin: 45px auto; */
+            /*@include large {
                 margin: 120px auto;
-            }
+            }*/
+            margin: auto;
+            min-height: 385px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             @include mobile {
                 margin: 60px auto;
@@ -705,15 +711,13 @@
                 z-index: -1;
                 opacity: 0;
                 animation: hide .25s;
-                transform: scale(0);
+                transform: scale(1);
             } @keyframes hide {
                 from{
                     z-index: 2;
-                    transform: scale(1);
                     opacity: 1;
                 } to{
                     z-index: -1;
-                    transform: scale(0);
                     opacity: 0;
                 }
             }
@@ -721,16 +725,14 @@
             .showModal{
                 opacity: 1;
                 z-index: 3;
-                animation: show .2s;
+                animation: show .30s;
 
                 transform: scale(1);
             } @keyframes show {
                 from{
-                    transform: scale(0);
                     opacity:  0;
                     z-index: -1;
-                } to{  
-                    transform: scale(1);
+                } to{
                     opacity: 1;
                     z-index: 2;
                 }
@@ -805,13 +807,13 @@
                             }
 
                             .text-button {
-                                background-color: #cccccc;
-                                color: #555D66;      
+                                background-color: #555D66;
+                                color: white;    
                             }
 
                             .html-button {
-                                background-color: #555D66;
-                                color: white;
+                                background-color: #cccccc;
+                                color: #555D66; 
                             }
                         }
 

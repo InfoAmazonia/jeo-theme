@@ -1,10 +1,20 @@
-.archive .page-header{
-  margin: 0;
-}
+.archive,
+.blog {
+    .page-header {
+        margin: 0;
+    }
 
-.archive {
-    #page{
-        @include mobile{
+    .entry-title {
+        font-size: size(24) !important;
+
+        @include mobile {
+            font-size: size(16) !important;
+        }
+
+    }
+
+    #page {
+        @include mobile {
             margin-top: -50px;
         }
 
@@ -12,7 +22,7 @@
             margin-top: 0px;
         }
     }
-    
+
     .decoration-square,
     .decoration-left,
     .decoration-eye,
@@ -25,13 +35,13 @@
     .decoration-square {
         h1.page-title.article-section-title::before {
             margin-top: size(2);
-        } 
+        }
     }
 
     .decoration-eye {
         h1.page-title.article-section-title::before {
             margin-top: size(1);
-        } 
+        }
     }
 
     .decoration-top {
@@ -44,29 +54,39 @@
                 position: relative;
                 display: flex;
             }
+
             h1.page-title.article-section-title::before {
                 position: absolute;
                 top: size(-10);
             }
         }
     }
-    
+
     article {
-        &.entry{
+        &.entry {
             margin-top: 30px;
         }
+
         .entry-meta {
             font-size: size(14);
-            
-            @include tablet{
+
+            @include tablet {
                 margin-bottom: 0px;
             }
 
         }
-        .cat-links{
+
+        .cat-links {
+            display: block;
             color: #555D66;
+            font-size: size(18);
+
             &::before {
                 display: none;
+            }
+
+            @include mobile {
+                font-size: size(16) !important;
             }
         }
 
@@ -76,20 +96,21 @@
                 letter-spacing: 0;
                 line-height: 22px;
 
-                @include mobile{
+                @include mobile {
                     display: none;
                 }
             }
         }
     }
+
     #main {
-        @include desktop{
+        @include desktop {
             width: 65%;
         }
     }
 
-    .post-thumbnail{
-        @include mobile{
+    .post-thumbnail {
+        @include mobile {
             margin-right: 10px;
             width: 40%;
         }
@@ -108,53 +129,71 @@
     }
 }
 
-
-.archive:not(.paged) {
+.archive:not(.paged),
+.blog:not(.paged) {
     .custom-archive {
-        article.has-post-thumbnail:first-of-type .post-thumbnail {
-            @include desktop{
+        article {
+            &:first-of-type {
+                display: block;
+
+                .entry-content {
+                    p {
+                        @include mobile {
+                            display: block;
+                        }
+                    }
+                }
+
+                .entry-title {
+                    font-size: size(28) !important;
+
+                    @include mobile {
+                        font-size: size(16) !important;
+                    }
+                }
+            }
+
+            &.has-post-thumbnail:first-of-type .post-thumbnail {
                 max-width: 100%;
                 margin-bottom: 15px;
             }
         }
     }
-    
-    .entry-title {
-        font-size: 1.2em !important;
-        @include mobile {
-            font-size: size(16) !important;
-        }
-    
-    }
 
-    article.has-post-thumbnail:first-of-type .entry-header{
-        @include desktop{
+    article.has-post-thumbnail:first-of-type .entry-header {
+        @include desktop {
             margin: 0;
         }
     }
 
     article.has-post-thumbnail:last-of-type,
-    article:last-of-type
-     {
+    article:last-of-type {
         margin-bottom: 30px;
     }
 }
 
+/* BLOG - from styles.css */
+.blog article .cat-links span.custom-separator {
+    padding: 0px 5px;
+}
+
 /* ARCHIVE EXCEPT AUTHOR */
 .custom-archive {
-    .page-header{
+    .page-header {
 
-        @include mobile{
+        @include mobile {
             margin-top: 30px;
         }
-        
+
         margin-bottom: 40px;
-        .page-subtitle, .page-description {
-           font-size: size(18);
+
+        .page-subtitle,
+        .page-description {
+            font-size: size(18);
             color: #555D66;
         }
 
-        .category-header{
+        .category-header {
             .page-description {
                 display: inline;
                 text-transform: uppercase;
@@ -169,73 +208,98 @@
     }
 
     article {
-        &:first-of-type{
+        &:first-of-type {
             width: 100%;
             margin-bottom: 40px;
 
-            .entry-meta  {
-                @include tablet{
-                        margin-bottom: 0.5rem;
+            .entry-meta {
+                @include tablet {
+                    margin-bottom: 0.5rem;
                 }
             }
-            .entry-content {
-                p {
-                    @include mobile{
-                        display: block;
-                    }
-                }
-            }
-            
         }
 
-        .entry-container{
+        .entry-container {
             h2.entry-title {
                 margin-bottom: 10px;
-                @include mobile{
+
+                @include mobile {
                     margin-bottom: 5px;
                 }
             }
 
-            .entry-meta .byline{
-                @include mobile{
+            .entry-meta .byline {
+                @include mobile {
                     display: none;
                 }
             }
         }
     }
 
-    article.has-post-thumbnail{
-        @include mobile{
+    article.has-post-thumbnail {
+        @include mobile {
             display: flex;
         }
-        .post-thumbnail{
+
+        .post-thumbnail {
             flex-basis: 35%;
-            @include desktop{
+
+            @include desktop {
                 max-width: 35%;
             }
 
-            &:first-of-type{
+            &:first-of-type {
                 width: 100%;
             }
         }
 
-        .entry-container{
-            @include mobile{
+        .entry-container {
+            @include mobile {
                 flex-basis: 65%;
             }
         }
-        
-        &:first-of-type {
-            display: block;
-        }
-    }   
+    }
 }
 
 
 .dark-theme {
     &.archive {
-        .page-title .page-description  {
+        .page-title .page-description {
             color: white;
+        }
+
+        .cat-links {
+            a {
+                &:hover {
+                    opacity: 0.7;
+                    color: #767676;
+                }
+            }
+        }
+
+        .entry-meta .byline{ 
+            a {
+                &:hover {
+                    opacity: 0.7;
+                    color: #767676;
+                }
+            }
+        }
+    }
+}
+
+/* from styles.css */
+@media only screen and (min-width: 782px) {
+    .archive .has-post-thumbnail, 
+    .blog .has-post-thumbnail, 
+    .search .has-post-thumbnail {
+        .post-thumbnail {
+            max-width: 100%;
+            margin: 0 2em 0 0;
+        }
+
+         .entry-container {
+            flex-basis: 65%;
         }
     }
 }

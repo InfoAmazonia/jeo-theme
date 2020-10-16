@@ -22,6 +22,11 @@ $post_child_category = null;
 foreach ($post_categories as $post_cat) {
 	if ($parent_type_category == $post_cat->parent) {
 		$post_child_category = $post_cat;
+
+		if(function_exists('icl_object_id')) {
+			$post_child_category = get_term_for_default_lang($post_child_category->term_id, 'category');
+		}
+
 		break;
 	}
 }

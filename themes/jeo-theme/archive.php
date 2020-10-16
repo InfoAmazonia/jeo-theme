@@ -81,12 +81,12 @@ get_header();
 			</main><!-- #main -->
 			<aside class="author-page-sidebar">
     			<div>
-					<div class="about-the-author-section">
-						<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
+					<?php if ( strlen(trim(get_the_author_meta('description'))) > 0 ) : ?>
+						<div class="about-the-author-section">
 							<h4><?php _e('ABOUT THE AUTHOR', 'jeo') ?></h4>
 							<p><?php echo get_the_author_meta('description'); ?></p>
-						<?php endif; ?>
-					</div>
+						</div>
+					<?php endif; ?>
 					<?php dynamic_sidebar('author_page_sidebar') ?>
 				</div>
 			</aside>		</section><!-- #primary -->
