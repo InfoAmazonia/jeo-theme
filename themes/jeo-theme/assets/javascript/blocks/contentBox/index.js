@@ -68,9 +68,9 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 
 		return (
 			<>	
-				<div className="content-box--text">
-					<RichText.Content tagName="h2" value={ title } />
-					<InnerBlocks.Content/>
+				<div>
+					<RichText.Content tagName="h3" value={ title } className="content-box--title"/>
+					<InnerBlocks.Content className="content-box--text"/>
 				</div>
 			</>
 		);

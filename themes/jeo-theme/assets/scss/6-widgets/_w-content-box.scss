@@ -1,7 +1,7 @@
 .content-box {
     background-color: #F5F5F5;
     border-radius: 20px;
-    padding: 28px 30px;
+    padding: 35px;
     font-size: size(18);
 
     &--title {
@@ -12,7 +12,10 @@
         line-height: size(24);
         text-transform: uppercase;
         margin-top: 0;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+    }
+    h3{ 
+        font-family: var(--primary-font);
     }
 
     &--text {
@@ -20,6 +23,14 @@
         font-size: size(18);
         letter-spacing: 0;
         line-height: 32px;
+
+        &:last-of-type {
+            margin: 0px;
+        }
+    }
+
+    p:last-of-type {
+        margin: 0px;
     }
 }
 
