@@ -48,3 +48,25 @@
         }
     }
 }
+
+.we-said-wrong-tooltip {
+    display: none;
+    background-color: #EEEEEE;
+    padding: size(10);
+    width: size(200);
+    color: #555D66;
+    position: absolute;
+    top: 80%;
+    left: 500px;
+    font-weight: normal;
+}
+
+@include desktop {
+    .we-said-wrong-icon:hover ~ .we-said-wrong-tooltip {
+        display: block;
+    }
+}
+
+#erratum {
+    scroll-margin-top: size(100);
+}
