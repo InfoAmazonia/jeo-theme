@@ -95,24 +95,6 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
-	// Add content box title
-	$wp_customize->add_setting(
-		'content_box_title',
-		array(
-			'default'           => '',
-			//'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		'content_box_title',
-		array(
-			'label'   => __( 'Content box title', 'newspack' ),
-			'section' => 'title_tagline',
-			'type'    => 'text',
-		)
-	);
-
 	// Add sticky logo control and ooption to header
 	$wp_customize->add_setting(
 		'logo_sticky_image',
