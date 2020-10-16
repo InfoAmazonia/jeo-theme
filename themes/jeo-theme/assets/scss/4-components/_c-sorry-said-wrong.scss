@@ -40,13 +40,17 @@
                 color: #F5F5F5;
                 opacity: 0.60;
             }
-    
+
             &-content {
                 color: #F5F5F5;
                 letter-spacing: 0;
             }
         }
     }
+}
+
+.we-said-wrong__link {
+    position: relative;
 }
 
 .we-said-wrong-tooltip {
@@ -56,13 +60,17 @@
     width: size(200);
     color: #555D66;
     position: absolute;
-    top: 80%;
-    left: 500px;
+    left: 0px;
     font-weight: normal;
+
+    p {
+        margin: 0px;
+        font-size: size(14);
+    }
 }
 
 @include desktop {
-    .we-said-wrong-icon:hover ~ .we-said-wrong-tooltip {
+    .we-said-wrong-icon:hover~.we-said-wrong-tooltip {
         display: block;
     }
 }

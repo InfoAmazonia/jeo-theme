@@ -36,7 +36,7 @@ function newspack_posted_on()
 				}
 
 				if(get_post_meta(get_the_ID(), 'enable-post-erratum', true)): ?>
-					<a href="#erratum">
+					<a href="#erratum" class="we-said-wrong__link">
 						<i class="fas fa-exclamation-triangle we-said-wrong-icon"></i>
 						<div class="we-said-wrong-tooltip">
 							<p><?php echo __( 'We made a mistake. This content has been changed' ); ?></p>
