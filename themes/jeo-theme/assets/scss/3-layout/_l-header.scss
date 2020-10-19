@@ -1072,3 +1072,8 @@ header#masthead {
 .mobile-sidebar .nav1 .main-menu > li.menu-item-has-children .submenu-expand {
     display: none;
 } 
+
+/* replace css in style.css*/
+.header-search-contain #header-search{
+    z-index: 10;
+}
