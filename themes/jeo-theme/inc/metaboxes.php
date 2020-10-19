@@ -53,6 +53,20 @@ function register_metaboxes() {
 	);
 }
 
+function is_edit_page($new_edit = null){
+    global $pagenow;
+    //make sure we are on the backend
+    if (!is_admin()) return false;
+
+
+    if($new_edit == "edit")
+        return in_array( $pagenow, array( 'post.php',  ) );
+    elseif($new_edit == "new") //check for new post page
+        return in_array( $pagenow, array( 'post-new.php' ) );
+    else //check for either new or edit
+        return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
+}
+
 function project_link_callback() {
 	$jeo_stored_meta = get_post_meta(get_the_ID());	
 	?>
@@ -120,7 +134,15 @@ function republish_post_callback() {
 		<!-- <span class="jeo-row-title"><?php _e('Add republish link: ', 'jeo') ?></span> -->
 		<div class="jeo-row-content">
 			<label for="republish_post">
-				<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+				<?php if(is_edit_page('new')): ?>
+					<?php if(get_theme_mod('republish_in_all_posts', false)): ?>			
+						<input type="checkbox" name="republish_post" id="republish_post" value="false" checked />
+					<?php else: ?>
+						<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+					<?php endif; ?>
+				<?php else: ?>
+					<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+				<?php endif; ?>
 				<?php _e('Add republish link', 'jeo') ?>
 			</label>
 
