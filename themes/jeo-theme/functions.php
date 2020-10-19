@@ -421,3 +421,153 @@ function move_topic_to_tag() {
 	}
 }
 add_action('init', 'move_topic_to_tag'); 
+
+
+
+/* Script 5: Remove modified date */
+function remove_modified_date() {
+	global $wpdb;
+	/* List of categories' slug */
+	$slugs = array( 'article',
+	'audio',
+	'map',
+	'photo-essay',
+	'region',
+	'asean',
+	'cambodia',
+	'china',
+	'global',
+	'laos',
+	'mekong',
+	'myanmar',
+	'thailand',
+	'vietnam',
+	'report',
+	'story',
+	'uncategorized',
+	'video');
+
+	if (!get_option('remove-update-date')) {
+		add_option('remove-update-date', 1);
+		$queryA = new WP_Query([
+			'post_type'         => 'post',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'slug',
+					'terms' => $slugs,
+				)
+			),
+		]);
+	
+		while ($queryA->have_posts()) {
+			$queryA->the_post();
+			$post_id = get_the_ID();
+			$post_date = get_the_date('c');
+			$wpdb->query("UPDATE mee_posts SET post_modified = '{$post_date}', post_modified_gmt = '{$post_date}'  WHERE ID = {$post_id}" );
+
+		}
+	}
+}
+add_action('init', 'remove_modified_date'); 
+
+
+
+
+/* Script 6: Close comments */
+function close_comments() {
+	global $wpdb;
+	if (!get_option('close-comments-hkb')) {
+		add_option('close-comments-hkb', 1);
+		$wpdb->query("UPDATE mee_posts SET comment_status = 'closed', ping_status = 'closed' WHERE post_status = 'publish'" );
+	}
+}
+add_action('init', 'close_comments'); 
+
+
+
+/* Script 7: Move Home Region to Region*/
+function move_homeregion_to_region() {
+	/* List of HomeRegion */
+	$homeregions = array( 'asean',
+	'cambodia',
+	'laos',
+	'myanmar',
+	'thailand',
+	'mekong',
+	'vietnam');
+
+	if (!get_option('homeregion-region-mee')) {
+		add_option('homeregion-region-mee', 1);
+		$queryA = new WP_Query([
+			'post_type'         => 'post',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'home_region',
+					'field' => 'slug',
+					'terms' => $homeregions,
+				)
+			),
+		]);
+	
+		while ($queryA->have_posts()) {
+			$queryA->the_post();
+	
+			$post_id =  get_the_ID();
+
+			$homeregion_list = get_the_terms($post_id, 'home_region');
+			var_dump($homeregion_list);
+			foreach($homeregion_list as $homeregion){
+				if(!in_category( $homeregion->slug)){
+					$region = get_term_by('slug',$homeregion->slug, 'category');
+					wp_set_object_terms($post_id, $region->term_id, 'category', true);
+				}
+			}
+		}
+	}
+}
+add_action('init', 'move_homeregion_to_region'); 
+
+
+/* Script 8: Remove uncategorized*/
+function remove_uncategorized() {
+	$homeregions = array( 'asean',
+	'cambodia',
+	'laos',
+	'myanmar',
+	'thailand',
+	'mekong',
+	'vietnam');
+	if (!get_option('remove-uncategorized-hkb')) {
+		add_option('remove-uncategorized-hkb', 1);
+		$queryA = new WP_Query([
+			'post_type'         => 'post',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'slug',
+					'terms' => $homeregions,
+				)
+			),
+		]);
+	
+		echo 'Total de posts';
+		echo $queryA->found_posts;
+		while ($queryA->have_posts()) {
+			$queryA->the_post();
+	
+			$post_id =  get_the_ID();
+			echo 'O id:';
+			echo $post_id ;
+			$categories = get_the_category();
+			$default = get_cat_name( get_option( 'default_category' ) );
+			if( count( $categories ) >= 2 && in_category( $default) ) {
+			  wp_remove_object_terms($post_id, $default, 'category' );
+			}
+		}
+	}
+}
+add_action('init', 'remove_uncategorized'); 
