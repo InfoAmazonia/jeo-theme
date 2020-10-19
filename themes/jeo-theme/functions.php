@@ -24,10 +24,10 @@ function custom_get_permalink($url, $post, $leavename = false) {
 	return $url;
 }
 
-add_action( 'after_setup_theme', 'jeo_setup' );
+add_action('after_setup_theme', 'jeo_setup');
 
 function jeo_setup() {
-	load_theme_textdomain( 'jeo', get_stylesheet_directory() . '/lang' );
+	load_theme_textdomain('jeo', get_stylesheet_directory() . '/lang');
 }
 
 add_filter('pre_get_posts', '_search_pre_get_posts', 1);
@@ -113,17 +113,17 @@ function _search_pre_get_posts($query) {
 			$categories .= implode(",", $_GET['topic']);
 		}
 
-		if(!empty($categories)) {
+		if (!empty($categories)) {
 			$categories .= ",";
 		}
 
-		if(isset($_GET['region']) && !empty($_GET['region'])) {
+		if (isset($_GET['region']) && !empty($_GET['region'])) {
 			$categories .= implode(",", $_GET['region']);
 		}
 
 		// echo $categories;
 
-		if(!empty($categories)) {
+		if (!empty($categories)) {
 			$query->set('category_name', $categories);
 		}
 
@@ -195,26 +195,229 @@ function move_comment_field($fields) {
 }
 
 
-function wpseo_no_show_article_author_facebook( $facebook ) {
-    if ( is_single() ) {
-        return false;
-    }
-    return $facebook;
+function wpseo_no_show_article_author_facebook($facebook) {
+	if (is_single()) {
+		return false;
+	}
+	return $facebook;
 }
-add_filter( 'wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1 );
+add_filter('wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1);
 
-function get_term_for_default_lang( $term, $taxonomy ) {
+function get_term_for_default_lang($term, $taxonomy) {
 	global $icl_adjust_id_url_filter_off;
 
-	$term_id = is_int( $term ) ? $term : $term->term_id;
+	$term_id = is_int($term) ? $term : $term->term_id;
 
-	$default_term_id = (int) icl_object_id( $term_id, $taxonomy, true, 'en' );
+	$default_term_id = (int) icl_object_id($term_id, $taxonomy, true, 'en');
 
 	$orig_flag_value = $icl_adjust_id_url_filter_off;
 
 	$icl_adjust_id_url_filter_off = true;
-	$term = get_term( $default_term_id, $taxonomy );
+	$term = get_term($default_term_id, $taxonomy);
 	$icl_adjust_id_url_filter_off = $orig_flag_value;
 
 	return $term;
 }
+
+
+function get_term_for_lang($term, $taxonomy, $land_code) {
+	global $icl_adjust_id_url_filter_off;
+
+	$term_id = is_int($term) ? $term : $term->term_id;
+
+	$default_term_id = (int) icl_object_id($term_id, $taxonomy, true, $land_code);
+
+	$orig_flag_value = $icl_adjust_id_url_filter_off;
+
+	$icl_adjust_id_url_filter_off = true;
+	$term = get_term($default_term_id, $taxonomy);
+	$icl_adjust_id_url_filter_off = $orig_flag_value;
+
+	return $term;
+}
+
+/* Script 1: Migrated Blog Post (infoamazonia) */
+if (!get_option('migrated-blog-post')) {
+	add_option('migrated-blog-post', 1);
+
+	$queryA = new WP_Query([
+		'post_type' => 'blog-post',
+		'posts_per_page' => -1,
+		'suppress_filters' => true
+	]);
+
+	while ($queryA->have_posts()) {
+		$queryA->the_post();
+
+		$post_id =  get_the_ID();
+		$post_language = wpml_get_language_information($post_id)['language_code'];
+		$english_opinion_term = get_term_by('slug', 'opinion', 'category');
+
+		// This term is relative to the current post translation
+		$opinion_term_translated = get_term_for_lang($english_opinion_term, 'category', $post_language);
+
+
+		// var_dump($english_opinion_term);
+		// var_dump($opinion_term_translated);
+
+
+		// Set post type to simple post
+		set_post_type($post_id, 'post');
+
+		// Add translated opinion term
+		wp_set_object_terms($post_id, $opinion_term_translated->term_id, 'category', true);
+	}
+}
+
+/* Script 2: Migrated Geolocation meta (infoamazonia / Ekuatorial) */
+if(!get_option('migrated-geolocation-meta')){
+	add_option('migrated-geolocation-meta', 1);
+	
+	$query = new WP_Query([
+		'posts_per_page' => -1,
+		'suppress_filters' => true,
+		'meta_query' => array(
+			array(
+					'key' => 'geocode_latitude',
+				'value'   => array(''),
+				'compare' => 'NOT IN'
+			),
+	    ),
+
+	]);
+
+	while ( $query->have_posts() ) {
+		$query->the_post();
+
+		$source_lat = get_post_meta(get_the_ID(), 'geocode_latitude', true);
+		$source_lon = get_post_meta(get_the_ID(), 'geocode_longitude', true);
+		$source_geocode = get_post_meta(get_the_ID(), 'geocode_address', true);
+
+		// Build "_related_point" object
+		$related_point = array(
+			'_geocode_lat' => $source_lat,
+			'_geocode_lon' => $source_lon,
+			'relevance' => 'primary',
+			'_geocode_full_address' => $source_geocode
+
+		);
+
+		update_post_meta( get_the_ID(), '_related_point', $related_point );
+	}
+}
+
+/*Script 3: for Mekong Eye - migration - external link */
+$wpdb->prefix;
+
+function publisher_mee_query() {
+	global $wpdb;
+	if(!get_option('external-link')){
+
+			/*1. Get all distinct pub_name and set them as term 'partner' - taxonomy 'partner' */
+			add_option('external-link', 1);
+			$publishers = $wpdb->get_results("SELECT distinct meta_value from $wpdb->postmeta WHERE (meta_key = 'pub_name')");
+			foreach($publishers as $publisher){
+				$newpartner = wp_insert_term( $publisher->meta_value, 'partner');
+			}
+	
+
+			/*2. Get all posts that has filled url field */
+			$query = new WP_Query([
+				'posts_per_page' => -1,
+				'meta_query' => array(
+					array(
+						'key' => 'url',
+						'value'   => array(''),
+						'compare' => 'NOT IN'
+					),
+				),
+			]);
+	
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$id = get_the_ID();
+	
+				$pub_name = get_post_meta($id, 'pub_name', true);
+				$url = get_post_meta($id, 'url', true);
+
+				if ($pub_name) {
+					$partner = get_term_by('name', $pub_name, 'partner');
+				} else {
+					$partner = get_term_by('slug','general-publisher', 'partner');
+				}
+	
+				// add partner taxonomy to post
+				wp_set_object_terms(get_the_ID(),$partner->term_id, 'partner');
+	
+				// update meta: external title , external source link
+				update_post_meta($id, 'external-title', $partner->name);
+				update_post_meta($id, 'external-source-link', $url);
+			}
+	  }
+	}
+add_action( 'init', 'publisher_mee_query' );
+
+/* Script 4: Move Topic to tag*/
+function move_topic_to_tag() {
+	/* List of topic */
+	$tax = array( 'agriculture',
+	'biodiversity',
+	'climate',
+	'dams',
+	'energy',
+	'environment',
+	'fishery',
+	'forests',
+	'gender',
+	'global-context',
+	'health',
+	'human-rights',
+	'industry',
+	'infrastructure',
+	'investment',
+	'land-grab',
+	'lead',
+	'media',
+	'mining',
+	'oil-gas',
+	'policy',
+	'pollution',
+	'renewable',
+	'society-community',
+	'tourism',
+	'transportation',
+	'water-management',
+	'wildlife');
+
+	if (!get_option('topic-tag')) {
+		add_option('topic-tag', 1);
+		$queryA = new WP_Query([
+			'post_type'         => 'post',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'topic',
+					'field' => 'slug',
+					'terms' => $tax,
+				)
+			),
+		]);
+	
+
+		while ($queryA->have_posts()) {
+			$queryA->the_post();
+	
+			$post_id =  get_the_ID();
+			echo $post_id ;
+
+			$topics_list = get_the_terms($post_id, 'topic');
+		
+			foreach($topics_list as $topic){
+				if(!has_tag($topic->slug)){
+					wp_set_post_tags( $post_id , $topic->slug, true );
+				}
+			}
+		}
+	}
+}
+add_action('init', 'move_topic_to_tag'); 
