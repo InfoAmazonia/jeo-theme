@@ -12,7 +12,9 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 		align: false,
 	},
 	attributes: {
-		
+		title: {
+			type: "string",
+		},	
 	},
 
 	edit: (props) => {
@@ -20,6 +22,7 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 			className,
 			isSelected,
 			attributes: {
+				title,
 			},
 			setAttributes,
 		} = props;
@@ -32,7 +35,15 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 			<>
 				<div className="content-box--text">
 					<div>
-						<h3> Content box </h3>
+						<RichText
+							tagName="h3"
+							className="content-box-title"
+							value={ title }
+							onChange={ ( title ) => {
+								setAttributes( { title } )
+							} }
+							placeholder={ __( 'Content Box Title' ) } 
+						/>
 						<InnerBlocks
 							allowedBlocks={[ 'core/paragraph' ]}
 							template={TEMPLATE}
@@ -57,8 +68,9 @@ wp.blocks.registerBlockType("jeo-theme/content-box", {
 
 		return (
 			<>	
-				<div className="content-box--text">
-					<InnerBlocks.Content/>
+				<div>
+					<RichText.Content tagName="h3" value={ title } className="content-box--title"/>
+					<InnerBlocks.Content className="content-box--text"/>
 				</div>
 			</>
 		);
