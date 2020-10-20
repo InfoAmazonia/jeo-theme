@@ -391,7 +391,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_section(
 		'republish_modal',
 		array(
-			'title' => esc_html__('Republish Modal', 'newspack'),
+			'title' => esc_html__('Republish', 'newspack'),
 			'section' => 'republish',
 		)
 	);
@@ -442,6 +442,23 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'default'  => 'rem',
 			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'republish_in_all_posts',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'republish_in_all_posts',
+		array(
+			'type' => 'checkbox',
+			'section' => 'republish_modal',
+			'label' => __('Republish in all posts'),
 		)
 	);
 
