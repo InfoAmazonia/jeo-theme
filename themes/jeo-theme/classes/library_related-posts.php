@@ -58,10 +58,19 @@ class related_posts {
         }, $_terms);
 
         $post_types_categories = [];
-        array_push($post_types_categories, get_category_by_slug( 'image-gallery' )->term_id);
-        array_push($post_types_categories, get_category_by_slug( 'opinion' )->term_id);
-        array_push($post_types_categories, get_category_by_slug( 'video' )->term_id);
-        array_push($post_types_categories, get_category_by_slug( 'audio' )->term_id);
+
+        if(function_exists('icl_object_id')) {
+            array_push(get_term_for_default_lang(get_category_by_slug( 'image-gallery' )->cat_ID, 'category')->term_id);
+            array_push(get_term_for_default_lang(get_category_by_slug( 'opinion' )->cat_ID, 'category')->term_id);
+            array_push(get_term_for_default_lang(get_category_by_slug( 'video' )->cat_ID, 'category')->term_id);
+            array_push(get_term_for_default_lang(get_category_by_slug( 'audio' )->cat_ID, 'category')->term_id);
+        } else {
+            array_push($post_types_categories, get_category_by_slug( 'image-gallery' )->cat_ID);
+            array_push($post_types_categories, get_category_by_slug( 'opinion' )->cat_ID);
+            array_push($post_types_categories, get_category_by_slug( 'video' )->cat_ID);
+            array_push($post_types_categories, get_category_by_slug( 'audio' )->cat_ID);
+        }
+        
 
         foreach($post_types_categories as $key => $value) {  
             if (($k = array_search($value, $_terms)) !== false) {
