@@ -5,10 +5,10 @@
             //--sidebar-width: 30%;
 
 
-           /* .default-sidebar {
-                margin-left: 0;
+           .default-sidebar {
+                /*margin-left: 0;*/
                 transition: all .2s ease;
-            }*/
+            }
 
             &.active:not(.embed) {
                 .default-sidebar {
@@ -140,7 +140,7 @@
                                         color: rgba(245, 245, 245, 0.603);
                                     }
 
-                                    .title {
+                                    .title, small {
                                         color: #F5F5F5;
                                     }
 
