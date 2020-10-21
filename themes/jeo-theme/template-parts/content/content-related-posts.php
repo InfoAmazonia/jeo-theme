@@ -4,11 +4,8 @@
     foreach($posts as $key=>$value) {
         array_push($posts_ids, $value->ID);
     }
-
     
     $posts_query_args['post__in'] = $posts_ids;
-
-    
 
     $related_posts = new \WP_Query($posts_query_args); 
 ?>
