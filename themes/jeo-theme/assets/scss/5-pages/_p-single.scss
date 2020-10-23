@@ -12,10 +12,15 @@
     .publishers {
 
         .publisher-name {
-            color: var(--primary);
             padding: 5px;
+            color: var(--primary);
             font-size: size(14);
             font-family: var(--primary-font);
+            a {
+                color: var(--primary);
+                font-size: size(14);
+                font-family: var(--primary-font);
+            }
         }
 
         .publisher-icon{
@@ -1296,10 +1301,10 @@
             }
         }
         
-        .publisher-name {
+       /* .publisher-name {
             color: #fff !important;
             opacity: 0.7;
-        }
+        }*/
 
         #content {
             #primary {
