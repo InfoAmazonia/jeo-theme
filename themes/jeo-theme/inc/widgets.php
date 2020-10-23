@@ -290,33 +290,6 @@ class most_read_widget extends WP_Widget {
 	}
 }
 
-class story_maps_widget extends WP_Widget {
-
-	// The construct part  
-	function __construct() {
-		parent::__construct(
-			'story_maps_widget',
-			__('Story Maps', 'story_maps_widget_domain'),
-			array('description' => __('Story Maps', 'story_maps_widget_domain'),)
-		);
-	}
-
-	public function widget($args, $instance) {
-	?>
-		<div class="category-story-maps">
-			<div class="header">
-				<p>STORY MAPS</p>
-			</div>
-			<div class="maps">
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-			</div>
-		</div>
-<?php
-	}
-}
-
 function my_post_gallery_widget($output, $attr) {
     global $post;
 
@@ -387,17 +360,12 @@ function most_read_load_widget() {
 	register_widget('most_read_widget');
 }
 
-function story_maps_load_widget() {
-	register_widget('story_maps_widget');
-}
-
 function bullet_load_widget() {
 	register_widget('bullet_widget');
 }
 
 add_action( 'widgets_init', 'newsletter_load_widget' );
 add_action( 'widgets_init', 'most_read_load_widget' );
-add_action( 'widgets_init', 'story_maps_load_widget' );
 add_action( 'widgets_init', 'bullet_load_widget' );
 add_filter('post_gallery', 'my_post_gallery_widget', 10, 2);
 
@@ -429,6 +397,4 @@ add_filter('in_widget_form', 'image_gallery_form', 10, 3 );
 add_filter( 'widget_update_callback', 'widget_save_form', 10, 2 );
 add_action('widgets_init', 'newsletter_load_widget');
 add_action('widgets_init', 'most_read_load_widget');
-add_action('widgets_init', 'story_maps_load_widget');
-
 ?>

@@ -15,6 +15,7 @@ import "./functionalities/tooltip";
 import "./functionalities/link-dropdown";
 import "./functionalities/project-single";
 import "./functionalities/republish-modal";
+import "./functionalities/storymap";
 
 // Other options
 import "./cookies";
