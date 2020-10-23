@@ -4,15 +4,12 @@
     foreach($posts as $key=>$value) {
         array_push($posts_ids, $value->ID);
     }
-
     
     $posts_query_args['post__in'] = $posts_ids;
 
-    
-
     $related_posts = new \WP_Query($posts_query_args); 
 ?>
-<?php if(sizeof($related_posts->posts) >= 3 && get_option('related_posts__use', false)): ?>
+<?php if(sizeof($related_posts->posts) >= 3 && sizeof($posts_ids) != 0 && get_option('related_posts__use', false)): ?>
             <div class="related-posts">
                 <p class="title-section"><?= __('Related Posts') ?></p>
 

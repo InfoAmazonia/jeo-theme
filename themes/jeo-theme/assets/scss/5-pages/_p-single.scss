@@ -1029,7 +1029,7 @@
                 justify-content: center;
                 align-items: center;
                 padding: 18px 51px;
-                width: fit-content;
+                /* width: fit-content; not compatible with Safari*/
                 border-radius: 10px;
                 text-transform: uppercase;
                 font-weight: bold;
