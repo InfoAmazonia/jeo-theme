@@ -1,0 +1,29 @@
+.site-breadcrumb {
+    .wrapper {
+        padding: 30px 0px 0px;
+        > span {
+            font-size: size(14);
+            &::before {
+                margin: 0px;
+                width: 0px;
+            }
+        }
+    }
+}
+
+.dark-theme.single  {
+    .site-breadcrumb {
+        .wrapper {
+            > span a {
+                color: #F5F5F5;
+                opacity: 0.5;
+            }
+
+            .breadcrumb_last {
+                color: #F5F5F5;
+                opacity: 0.7;
+            }
+        }
+    }
+}
+    
