@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: One column
+ * Template Name: One column /
  * Template Post Type: post, page, project
  *
  * The template for displaying all single posts
