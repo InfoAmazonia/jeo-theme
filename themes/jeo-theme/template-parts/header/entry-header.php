@@ -42,22 +42,32 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 	<?php if (!is_page() && 'behind' !== newspack_featured_image_position() && !get_query_var('hide_post_meta')) : ?>
 		<div class="entry-subhead">
 		<?php 
-			$terms = get_the_terms( $post->ID , 'partner' );
-			$story_url = 'http://www.google.com';//get_post_meta($post->ID, 'url', true);
-			var_dump($terms);
-			if (!is_wp_error($terms)):?>
-				<div class="publishers">
-					<?php foreach ( $terms as $term ) {?>
-						<span class="publisher-name">
-							<?php echo esc_html__('By', 'newspack'); ?>
-							<a href="<?= $story_url ?>" >
-								<i class="fas fa-sync-alt publisher-icon"></i>
-								<?php echo $term->name; ?>
-							</a>
-						</span>
-					<?php }?>
-				</div>
-			<?php endif;?>
+			$partner_link = get_post_meta($post->ID, 'partner-link', true); 
+
+			if (class_exists('WPSEO_Primary_Term')) {
+				$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', get_the_id() );
+				$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+				$term = get_term( $wpseo_primary_term );
+
+				if ($term ) {
+			
+					$partner_name = $term->name;
+					$category_slug = $term->slug;
+					?>
+					<div class="publishers">
+									<span class="publisher-name">
+										<?php echo esc_html__('By', 'newspack'); ?>
+										<a href="<?= $partner_link ?>" >
+											<i class="fas fa-sync-alt publisher-icon"></i>
+											<?php echo $partner_name; ?>
+										</a>
+									</span>
+							</div>
+							<?php 
+
+				}
+			}?>
+				
 			<div class="entry-meta">
 				<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true) && empty( $terms )) : ?>
 					<?php newspack_posted_by(); ?>
