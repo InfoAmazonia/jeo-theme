@@ -1,7 +1,7 @@
 <?php
 
-// Register Custom Taxonomy
-function custom_taxonomy() {
+// Exemple - Register Custom Taxonomy
+/*function custom_taxonomy() {
 
 	$labels = array(
 		'name'                       => _x( 'Publishers', 'Taxonomy General Name', 'text_domain' ),
@@ -39,4 +39,4 @@ function custom_taxonomy() {
 
 }
 
-add_action( 'init', 'custom_taxonomy', 0 );
+add_action( 'init', 'custom_taxonomy', 0 );*/
