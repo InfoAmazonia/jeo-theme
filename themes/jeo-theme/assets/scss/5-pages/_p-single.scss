@@ -16,6 +16,7 @@
             color: var(--primary);
             font-size: size(14);
             font-family: var(--primary-font);
+
             a {
                 color: var(--primary);
                 font-size: size(14);
@@ -23,7 +24,7 @@
             }
         }
 
-        .publisher-icon{
+        .publisher-icon {
             margin-right: 3px;
             margin-left: 3px;
         }
@@ -166,7 +167,8 @@
             align-items: center;
             display: flex;
             justify-content: space-between;
-            /*width: 100%;*/ /* It was commented due to publishers*/
+            /*width: 100%;*/
+            /* It was commented due to publishers*/
 
             @include mobile {
                 display: inherit;
@@ -1300,8 +1302,8 @@
                 color: white;
             }
         }
-        
-       /* .publisher-name {
+
+        /* .publisher-name {
             color: #fff !important;
             opacity: 0.7;
         }*/

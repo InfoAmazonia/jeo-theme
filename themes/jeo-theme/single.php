@@ -65,22 +65,30 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 					<div class="entry-subhead">
 					<!-- publishers -->
 					<?php 
-						$terms = get_the_terms( $post->ID , 'publisher' );
-						$story_url = 'http://www.google.com';//get_post_meta($post->ID, 'url', true);
+						
+						if (class_exists('WPSEO_Primary_Term')) {
+							$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', get_the_id() );
+							$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+							$term = get_term( $wpseo_primary_term );
 
-					if ($terms):?>
-						<div class="publishers">
-							<?php foreach ( $terms as $term ) {?>
-								<span class="publisher-name">
-									<?php echo esc_html__('By', 'newspack'); ?>
-									<a href="<?= $story_url ?>" >
-										<i class="fas fa-sync-alt"></i>
-										<?php echo $term->name; ?>
-									</a>
-								</span>
-							<?php }?>
-						</div>
-					<?php endif;?>
+							if ($term ) {
+						
+								$partner_name = $term->name;
+								$category_slug = $term->slug;
+								?>
+								<div class="publishers">
+												<span class="publisher-name">
+													<?php echo esc_html__('By', 'newspack'); ?>
+													<a href="<?= $partner_link ?>" >
+														<i class="fas fa-sync-alt publisher-icon"></i>
+														<?php echo $partner_name; ?>
+													</a>
+												</span>
+										</div>
+										<?php 
+
+							}
+						}?>
 					<!-- publishers -->
 						<div class="entry-meta">
 							<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
