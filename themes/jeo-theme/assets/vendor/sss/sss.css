@@ -4,7 +4,12 @@
 	/* padding: 0; */
 	position: relative;
 	display: block;
-	overflow: hidden;
+}
+
+@media (min-width: 500px) {
+	.sss {
+		overflow: hidden;
+	}
 }
 
 /* .ssslide {
