@@ -19,6 +19,15 @@ function register_metaboxes() {
 	);
 
 	add_meta_box(
+		'media-partner-republish',
+		'Media partner republished link',
+		'media_partner_republish_callback',
+		'post',
+		'side',
+		'default',
+	);
+
+	add_meta_box(
 		'twitter-opinion-video',
 		'Twitter video preview',
 		'twitter_opinion_video_callback',
@@ -185,6 +194,26 @@ function twitter_opinion_video_callback() {
 <?php
 }
 
+function media_partner_republish_callback() {
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());	
+	?>
+
+		
+
+	<p>
+		<div class="jeo-row-content">
+			<label for="partner-link">
+				<?php _e('Media partner link (It works with selected media partners)', 'jeo-textdomain') ?>
+				<input placeholder="Requires https:// or http//" type="text" style="width: 100%" name="partner-link" id="partner-link" value="<?php if (isset($jeo_stored_meta['partner-link'])) echo $jeo_stored_meta['partner-link'][0]; ?>" />
+			</label>
+
+		</div>
+	</p>
+
+<?php
+}
+
 function display_erratum_block() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
 	$jeo_stored_meta = get_post_meta(get_the_ID());
@@ -281,6 +310,10 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'republish_post', true);
 	} else {
 		update_post_meta($post_id, 'republish_post', false);
+	}
+
+	if (isset($_POST['partner-link'])) {
+		update_post_meta($post_id, 'partner-link', $_POST['partner-link']);
 	}
 
 	if (isset($_POST['enable-post-erratum'])) {
