@@ -204,8 +204,8 @@ function media_partner_republish_callback() {
 	<p>
 		<div class="jeo-row-content">
 			<label for="partner-link">
-				<?php _e('Media partner link', 'jeo-textdomain') ?>
-				<input type="text" style="width: 100%" name="partner-link" id="partner-link" value="<?php if (isset($jeo_stored_meta['partner-link'])) echo $jeo_stored_meta['partner-link'][0]; ?>" />
+				<?php _e('Media partner link (It works with selected media partners)', 'jeo-textdomain') ?>
+				<input placeholder="Requires https:// or http//" type="text" style="width: 100%" name="partner-link" id="partner-link" value="<?php if (isset($jeo_stored_meta['partner-link'])) echo $jeo_stored_meta['partner-link'][0]; ?>" />
 			</label>
 
 		</div>
