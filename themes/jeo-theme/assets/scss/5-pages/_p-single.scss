@@ -1494,7 +1494,11 @@
             }
         }
 
+    }
 
-
+    @media only screen and (min-width: 600px) {
+        .wp-block-columns {
+            width: unset;
+        }
     }
 }
