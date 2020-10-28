@@ -918,6 +918,12 @@
         }
     }
 
+
+    @media only screen and (min-width: 600px) {
+        .wp-block-group.alignfull .wp-block-columns {
+            width: unset;
+        }
+    }
 }
 
 
@@ -1494,11 +1500,5 @@
             }
         }
 
-    }
-
-    @media only screen and (min-width: 600px) {
-        .wp-block-columns {
-            width: unset;
-        }
     }
 }
