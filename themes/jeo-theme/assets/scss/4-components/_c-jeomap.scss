@@ -1,43 +1,10 @@
-.jeomap {
-    .legend-container {
-        a.more-info-button {
-            font-size: 14px !important;
-            padding: 3px !important;
-            background: var(--primary) !important;
-            color: #fff !important;
-            border-radius: 5px;
-            border: 0px !important;
-            text-transform: uppercase;
+.single {
+    .jeomap nav a {
+        color: #404040;
+        font-weight: normal;
 
-            &:hover {
-                color: #fff;
-                background: var(--primary-darker-15) !important;
-            }
-        }
-    }
-
-    .mapboxgl-popup-close-button {
-        background: var(--primary) !important;
-        color: #fff !important;
-
-        span {
-            font-size: 35px !important;
-            line-height: 25px;
-        }
-    }
-
-    .mapboxgl-ctrl-attrib-inner a {
-        color: #191E23 !important;
-
-        &:hover {
-            color: #555 !important;
-        }
-    }
-
-    .map-content-layers-list {
-        h3 {
-            font-size: 16px !important;
-            font-weight: normal !important;
+        &:hover{
+            color: #555;
         }
     }
 }
@@ -45,7 +12,7 @@
 .dark-theme{
     .jeomap {
         .more-info-overlayer {
-            color: #191E23 
+            color: #191E23 ;
         }
     }
 }

@@ -1,0 +1,239 @@
+.page-template-discovery {
+    #discovery {
+        
+        .discovery-block {
+            //--sidebar-width: 30%;
+
+
+           /*.default-sidebar {
+                margin-left: 0;
+                transition: all .2s ease;
+            }*/
+
+            &.active:not(.embed) {
+                .default-sidebar {
+                //    margin-left: var(--padding-left);
+                    transition: all .2s ease;
+                    box-shadow: 13px 0px 11px -9px rgba(0, 0, 0, 0.31)
+                }
+
+               /* .animated-background.placeholder {
+                    width: calc(var(--sidebar-width) + var(--padding-left));
+                }
+
+                .discovery-map {
+                    margin-left: calc(var(--sidebar-width) + var(--padding-left));
+                }*/
+            }
+
+        }
+    }
+    
+    &.dark-theme {
+        .discovery-block {
+            background: #2D3235;
+
+            .default-sidebar {
+                background: #2D3235;
+
+                .discovery-title {
+                    color: #F5F5F5;
+                    opacity: 0.6;
+                }
+
+                .togable-panel {
+                    background: #2D3235;
+                    
+                    @extend .scroll-bar-style;
+
+                    .components-tab-panel__tabs {
+                        background: #2D3235;
+
+                        button {
+                            color: #F5F5F5;
+
+                            &:after {
+                                opacity: 0.75;
+                            }
+                        }
+                    }
+
+                    .stories-tab, .maps-tab {
+                        .search-area {
+                            input {
+                                background: transparent;
+                                border: 2px solid rgba(221, 221, 221, 0.699);
+                                color: rgba(245, 245, 245, 0.5);
+                                border-right: 0px;
+                            }
+                        }
+                    }
+
+                    .maps-tab {
+                        .selected-layers {
+                            border: 2px solid rgba(221, 221, 221, 0.699);
+                            border-bottom: 0;
+
+                            &--title, &--content, .status {
+                                color: #F5F5F5;
+                            }
+
+
+                            &--content {
+                                .remove-layer {
+                                    opacity: 0.7;
+                                    color: white;
+                                }
+                            }
+
+                        }
+
+                        .map-itens {
+                            .map-item {
+                                &, .description {
+                                    color: #F5F5F5
+                                }
+
+                                .layers-toggles {
+                                    .layer-toggle {
+                                        color: white;
+                                    }
+                                }
+
+                                .layers-toggle {
+                                    color: white;
+                                }
+
+                            }
+                        }
+                    }
+
+                    .stories-tab {
+                        .toggle-filters {
+                            color: #F5F5F5;
+                        
+                            svg {
+                                color: rgba(85, 93, 102, 0.404)
+                            }
+                        }
+
+                        .filters  {
+                            input, select, input::placeholder {
+                                color: #F5F5F5;
+                                border-color: rgba(221, 221, 221, 0.5);
+                            }
+
+                            select option {
+                                color: #F5F5F5;
+                                background: #2D3235
+                            }
+                        }
+
+                        .stories {
+                            .card {
+                                &:hover, &.active {
+                                    background-color: rgba(245, 245, 245, 0.11);
+                                }
+
+                                .sideway {
+                                    .categories {
+                                        color: rgba(245, 245, 245, 0.603);
+                                    }
+
+                                    .title, small {
+                                        color: #F5F5F5;
+                                    }
+
+                                    .date {
+                                        color: rgba(245, 245, 245, 0.5);
+                                    }
+                                }
+                            }
+                        }
+                    
+                    }
+                }
+
+                .collapse-toolbar {
+                    background: #2D3235;
+
+                    svg {
+                        color: rgba(245, 245, 245, 0.603);
+                    }
+                }
+            }
+
+            .discovery-map {
+                .share-toolbar {
+                    background: #2D3235;
+
+                    .options {
+                        opacity: 0.95;
+                    }
+
+                    .share {
+                        color: white;
+                        border-color: white;
+                    }
+                }
+
+                .mapboxgl-control-container {
+                    .mapboxgl-ctrl-top-left {
+                        button {
+                            &.mapboxgl-ctrl-zoom-out, &.mapboxgl-ctrl-zoom-in, &.mapboxgl-ctrl-fullscreen {
+                                background-color: #2D3235;
+
+                                span {
+                                    filter: brightness(0) invert(1)
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.scroll-bar-style {
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-button {
+		width: 0px;
+		height: 0px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba(237, 237, 237, 0.205);
+		border: 0px none white;
+		border-radius: 3px;
+
+		&:hover {
+			background: #b1b1b1;
+		}
+
+		&:active {
+			background: #b1b1b1;
+		}
+	}
+
+	&::-webkit-scrollbar-track {
+		background: rgba(237, 237, 237, 0.205);
+		border: 0px none #ffffff;
+		border-radius: 0px;
+
+		&:hover {
+			background: rgba( 0, 0, 0, 0.05 );
+		}
+
+		&:active {
+			background: #eee;
+		}
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+}

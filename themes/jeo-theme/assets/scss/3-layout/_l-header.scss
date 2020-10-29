@@ -272,7 +272,8 @@ header.site-header {
             display: none;
         }
 
-        .nav1 .main-menu>li {
+        .nav1 .main-menu>li, 
+        .nav1 .sub-menu > li {
             font-size: size(14);
             color: white;
         }
@@ -528,6 +529,10 @@ header.site-header {
                 background-color: #F5F5F5;
             }
         }
+
+        ul.sub-menu li {
+            padding-left: 0;
+        }
     }
 
     .social-navigation {
@@ -774,6 +779,7 @@ header.site-header {
 
 .mobile-menu-opened #mobile-sidebar-fallback {
     left: 0;
+    overflow: auto;
 }
 
 #mobile-sidebar-fallback {
@@ -1001,9 +1007,15 @@ header#masthead {
         }
 
         &.mobile-sidebar {
-            nav.main-navigation ul > li > a{
-                &:hover {
+            nav.main-navigation {
+                ul > li > a{
+                    &:hover {
                         color: #23282D;
+                    }
+                }
+
+                ul li:hover a {
+                    color: #23282D;
                 }
             }
         }
@@ -1054,4 +1066,14 @@ header#masthead {
             color: white;
         }
     }
+}
+
+/* hide button to expand optios in sidebar */
+.mobile-sidebar .nav1 .main-menu > li.menu-item-has-children .submenu-expand {
+    display: none;
+} 
+
+/* replace css in style.css*/
+.header-search-contain #header-search{
+    z-index: 10;
 }

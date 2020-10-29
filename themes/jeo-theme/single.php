@@ -12,7 +12,6 @@ get_header('single');
 the_post();
 
 $parent_type_category = get_category_by_slug('type');
-
 if($parent_type_category) {
 	$parent_type_category = $parent_type_category->cat_ID;
 }
@@ -22,9 +21,15 @@ $post_child_category = null;
 foreach ($post_categories as $post_cat) {
 	if ($parent_type_category == $post_cat->parent) {
 		$post_child_category = $post_cat;
+
+		if(function_exists('icl_object_id')) {
+			$post_child_category = get_term_for_default_lang($post_child_category->term_id, 'category');
+		}
+
 		break;
 	}
 }
+
 if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, ['opinion', 'audio', 'video'])):
 	if ($post_child_category->slug === 'opinion') : ?>
 		<?php get_template_part('template-parts/singles/single', 'opinion');
@@ -58,8 +63,44 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 			<div class="main-content">
 				<?php if ($isImageBehind) : ?>
 					<div class="entry-subhead">
+					<!-- publishers -->
+					<?php 
+						$partners = get_the_terms( get_the_id(), 'partner');
+						if ($partners && count($partners) > 0){
+							$partner_link = get_post_meta($post->ID, 'partner-link', true); 
+							if (class_exists('WPSEO_Primary_Term')) {
+								$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', get_the_id() );
+								$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+								$term = get_term( $wpseo_primary_term );
+
+								if ($term || count($partners) == 1 ) {
+
+									$partner_name = '';
+									if($term) {
+										$partner_name = $term->name;
+									} else if (count($partners) == 1) {
+										$partner_name = $partners[0]->name;
+									}
+
+									?>
+									<div class="publishers">
+													<span class="publisher-name">
+														<?php echo esc_html__('By', 'newspack'); ?>
+														<a href="<?= $partner_link ?>" >
+															<i class="fas fa-sync-alt publisher-icon"></i>
+															<?php echo $partner_name; ?>
+														</a>
+													</span>
+											</div>
+											<?php 
+
+								} 
+							}
+						}
+					?>
+					<!-- publishers -->
 						<div class="entry-meta">
-							<?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) : ?>
+							<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
 								<?php newspack_posted_by(); ?>
 							<?php endif; ?>
 							<div></div>

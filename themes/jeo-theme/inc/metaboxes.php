@@ -19,6 +19,15 @@ function register_metaboxes() {
 	);
 
 	add_meta_box(
+		'media-partner-republish',
+		'Media partner republished link',
+		'media_partner_republish_callback',
+		'post',
+		'side',
+		'default',
+	);
+
+	add_meta_box(
 		'twitter-opinion-video',
 		'Twitter video preview',
 		'twitter_opinion_video_callback',
@@ -51,6 +60,20 @@ function register_metaboxes() {
 		'side',
 		'default',
 	);
+}
+
+function is_edit_page($new_edit = null){
+    global $pagenow;
+    //make sure we are on the backend
+    if (!is_admin()) return false;
+
+
+    if($new_edit == "edit")
+        return in_array( $pagenow, array( 'post.php',  ) );
+    elseif($new_edit == "new") //check for new post page
+        return in_array( $pagenow, array( 'post-new.php' ) );
+    else //check for either new or edit
+        return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
 }
 
 function project_link_callback() {
@@ -120,7 +143,15 @@ function republish_post_callback() {
 		<!-- <span class="jeo-row-title"><?php _e('Add republish link: ', 'jeo') ?></span> -->
 		<div class="jeo-row-content">
 			<label for="republish_post">
-				<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+				<?php if(is_edit_page('new')): ?>
+					<?php if(get_theme_mod('republish_in_all_posts', false)): ?>			
+						<input type="checkbox" name="republish_post" id="republish_post" value="false" checked />
+					<?php else: ?>
+						<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+					<?php endif; ?>
+				<?php else: ?>
+					<input type="checkbox" name="republish_post" id="republish_post" value="false" <?php if (isset($jeo_stored_meta['republish_post'])) checked($jeo_stored_meta['republish_post'][0], true); ?> />
+				<?php endif; ?>
 				<?php _e('Add republish link', 'jeo') ?>
 			</label>
 
@@ -159,6 +190,26 @@ function twitter_opinion_video_callback() {
 				</label>
 			</div>
 		</p>
+
+<?php
+}
+
+function media_partner_republish_callback() {
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());	
+	?>
+
+		
+
+	<p>
+		<div class="jeo-row-content">
+			<label for="partner-link">
+				<?php _e('Media partner link (It works with selected media partners)', 'jeo-textdomain') ?>
+				<input placeholder="Requires https:// or http//" type="text" style="width: 100%" name="partner-link" id="partner-link" value="<?php if (isset($jeo_stored_meta['partner-link'])) echo $jeo_stored_meta['partner-link'][0]; ?>" />
+			</label>
+
+		</div>
+	</p>
 
 <?php
 }
@@ -259,6 +310,10 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'republish_post', true);
 	} else {
 		update_post_meta($post_id, 'republish_post', false);
+	}
+
+	if (isset($_POST['partner-link'])) {
+		update_post_meta($post_id, 'partner-link', $_POST['partner-link']);
 	}
 
 	if (isset($_POST['enable-post-erratum'])) {

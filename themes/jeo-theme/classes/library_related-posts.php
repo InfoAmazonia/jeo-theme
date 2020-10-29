@@ -57,8 +57,21 @@ class related_posts {
             return $el->term_taxonomy_id;
         }, $_terms);
 
-        //Remove audio, video, long-form, news, image-gallery, opinion from filters
-        $post_types_categories = [33, 80, 65, 34, 64, 32];
+        $post_types_categories = [];
+
+        if(function_exists('icl_object_id')) {
+            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'image-gallery' )->cat_ID, 'category')->term_id);
+            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'opinion' )->cat_ID, 'category')->term_id);
+            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'video' )->cat_ID, 'category')->term_id);
+            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'audio' )->cat_ID, 'category')->term_id);
+        } else {
+            array_push($post_types_categories, get_category_by_slug( 'image-gallery' )->cat_ID);
+            array_push($post_types_categories, get_category_by_slug( 'opinion' )->cat_ID);
+            array_push($post_types_categories, get_category_by_slug( 'video' )->cat_ID);
+            array_push($post_types_categories, get_category_by_slug( 'audio' )->cat_ID);
+        }
+        
+
         foreach($post_types_categories as $key => $value) {  
             if (($k = array_search($value, $_terms)) !== false) {
                 unset($_terms[$k]);

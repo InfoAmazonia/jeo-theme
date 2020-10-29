@@ -59,7 +59,7 @@ class newsletter_widget extends WP_Widget {
 
 	public function widget($args, $instance) {
 ?>
-	<? if ($instance) : ?>
+	<?php if ($instance) : ?>
 		<div class="category-page-sidebar">
 			<div class="newsletter <?= _e($instance['model_type'], 'jeo') ?> <?= $instance['custom_style'] ?>">
 				<?= ($instance['model_type'] == 'horizontal') ? '<div>' : '' ?>
@@ -70,7 +70,7 @@ class newsletter_widget extends WP_Widget {
 				<p class="anchor-text">
 				<?= _e($instance['subtitle'], 'jeo') ?>
 					<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'horizontal') : ?>
-						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">' . __('SEE LAST EDITION', 'jeo') . '</a>' ?>
+						<?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">' . __('VIEW PAST EDITIONS', 'jeo') . '</a>' ?>
 					<?php endif; ?>
 				</p>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
@@ -82,7 +82,7 @@ class newsletter_widget extends WP_Widget {
 					<p class="link-add"><?= _e($instance['adicional_content'], 'jeo') ?></p>
 				<?php endif; ?>
 				<?php if (!empty($instance['last_edition_link']) && $instance['model_type'] == 'vertical') : ?>
-					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">'. __('SEE LAST EDITION', 'jeo'). '</a>' ?></p>
+					<p class="last-edition"><?= empty($instance['last_edition_link']) ? '' :  '<a href="' . $instance['last_edition_link'] . '">'. __('VIEW PAST EDITIONS', 'jeo'). '</a>' ?></p>
 				<?php endif; ?>
 				<?= ($instance['model_type'] == 'horizontal') ? '</div>' : '' ?>
 			</div>
@@ -159,7 +159,7 @@ class bullet_widget extends WP_Widget {
 
 	public function widget($args, $instance) {
 ?>
-	<? if ($instance) : ?>
+	<?php if ($instance) : ?>
 	<?php endif; ?>
 	<?php
 	}
@@ -290,33 +290,6 @@ class most_read_widget extends WP_Widget {
 	}
 }
 
-class story_maps_widget extends WP_Widget {
-
-	// The construct part  
-	function __construct() {
-		parent::__construct(
-			'story_maps_widget',
-			__('Story Maps', 'story_maps_widget_domain'),
-			array('description' => __('Story Maps', 'story_maps_widget_domain'),)
-		);
-	}
-
-	public function widget($args, $instance) {
-	?>
-		<div class="category-story-maps">
-			<div class="header">
-				<p>STORY MAPS</p>
-			</div>
-			<div class="maps">
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-				<p>Título do conteúdo que geralmente será um título grande</p>
-			</div>
-		</div>
-<?php
-	}
-}
-
 function my_post_gallery_widget($output, $attr) {
     global $post;
 
@@ -387,17 +360,12 @@ function most_read_load_widget() {
 	register_widget('most_read_widget');
 }
 
-function story_maps_load_widget() {
-	register_widget('story_maps_widget');
-}
-
 function bullet_load_widget() {
 	register_widget('bullet_widget');
 }
 
 add_action( 'widgets_init', 'newsletter_load_widget' );
 add_action( 'widgets_init', 'most_read_load_widget' );
-add_action( 'widgets_init', 'story_maps_load_widget' );
 add_action( 'widgets_init', 'bullet_load_widget' );
 add_filter('post_gallery', 'my_post_gallery_widget', 10, 2);
 
@@ -429,6 +397,4 @@ add_filter('in_widget_form', 'image_gallery_form', 10, 3 );
 add_filter( 'widget_update_callback', 'widget_save_form', 10, 2 );
 add_action('widgets_init', 'newsletter_load_widget');
 add_action('widgets_init', 'most_read_load_widget');
-add_action('widgets_init', 'story_maps_load_widget');
-
 ?>

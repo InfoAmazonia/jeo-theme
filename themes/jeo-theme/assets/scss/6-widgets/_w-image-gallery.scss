@@ -67,6 +67,13 @@
 .image-gallery.wp-block-jeo-theme-custom-image-gallery-block {
     position: relative;
     min-width: 100%;
+    margin-bottom: 70px;
+
+    @media (max-width: 500px) {
+        .image-description {
+            width: 100%;
+        }
+    }
 
     &:before {
         content: "";
@@ -251,6 +258,10 @@
         margin: auto;
         width: 100%;
 
+        @media (max-width: 500px) {
+            bottom: 10px;
+        }
+
         .dot {
             width: 11px;
             height: 11px;
@@ -302,7 +313,10 @@
         position: relative;
         padding-top: 56.25%;
         height: 0;
-        overflow: hidden;
+
+        @include desktop {
+            overflow: hidden;
+        }
 
         img {
             position: absolute;
@@ -314,6 +328,14 @@
         }
 
         .image-meta {
+            @media (max-width: 500px) {
+                position: unset;
+
+                .image-credit {
+                    display: none;
+                }
+            }
+
             position: absolute;
             bottom: 0;
             background-color: rgba(25, 30, 35, 0.8);

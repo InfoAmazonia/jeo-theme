@@ -3,6 +3,7 @@ require __DIR__ . '/inc/generic-css-injection.php';
 require __DIR__ . '/inc/template-tags.php';
 require __DIR__ . '/inc/api.php';
 require __DIR__ . '/inc/post-types.php';
+require __DIR__ . '/inc/custom-taxonomies.php';
 require __DIR__ . '/inc/newspack-functions-overwrites.php';
 require __DIR__ . '/inc/widgets.php';
 require __DIR__ . '/inc/metaboxes.php';
@@ -202,3 +203,19 @@ function wpseo_no_show_article_author_facebook( $facebook ) {
     return $facebook;
 }
 add_filter( 'wpseo_opengraph_author_facebook', 'wpseo_no_show_article_author_facebook', 10, 1 );
+
+function get_term_for_default_lang( $term, $taxonomy ) {
+	global $icl_adjust_id_url_filter_off;
+
+	$term_id = is_int( $term ) ? $term : $term->term_id;
+
+	$default_term_id = (int) icl_object_id( $term_id, $taxonomy, true, 'en' );
+
+	$orig_flag_value = $icl_adjust_id_url_filter_off;
+
+	$icl_adjust_id_url_filter_off = true;
+	$term = get_term( $default_term_id, $taxonomy );
+	$icl_adjust_id_url_filter_off = $orig_flag_value;
+
+	return $term;
+}

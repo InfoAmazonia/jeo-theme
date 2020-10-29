@@ -64,6 +64,15 @@ window.addEventListener("DOMContentLoaded", function () {
             ).offset().left + "px"
         );
 
+    if(document.querySelectorAll('.page-template-discovery').length) {
+        document.querySelector('.page-template-discovery').style.setProperty(
+            "--padding-left",
+            jQuery(
+                ".bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle"
+            ).offset().left + "px"
+        );
+    }
+
     jQuery(".more-menu--content").css(
         "left",
         jQuery("aside#mobile-sidebar-fallback").offset().left +
