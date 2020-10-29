@@ -11,5 +11,5 @@ wp-content/mu-plugins/*
 wp-content/languages/*
 
 mariadb/data/
-documentation/site
+documentation/site/
 
