@@ -27,7 +27,7 @@
                 <?php if (!is_page() && 'behind' !== newspack_featured_image_position() && !get_query_var('hide_post_meta')) : ?>
                     <div class="entry-subhead">
                         <div class="entry-meta">
-                            <?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
+                            <?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) : ?>
                                 <?php newspack_posted_by(); ?>
                             <?php endif; ?>
                             <?php newspack_posted_on(); ?>
@@ -48,7 +48,7 @@
 					?>
 					<!-- publishers -->
                     <div class="entry-meta">
-                        <?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
+                        <?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) : ?>
                             <?php newspack_posted_by(); ?>
                         <?php endif; ?>
                         <div></div>

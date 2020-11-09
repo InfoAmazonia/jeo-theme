@@ -48,7 +48,7 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 			<!-- publishers -->
 				
 			<div class="entry-meta">
-				<?php if (get_post_meta(get_the_ID(), 'author-bio-display', true) && empty( $terms )) : ?>
+				<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
 					<?php newspack_posted_by(); ?>
 				<?php endif; ?>
 				<div></div>
