@@ -110,10 +110,6 @@ function _search_pre_get_posts($query) {
 		$categories = "";
 
 
-		if (isset($_GET['topic']) && !empty($_GET['topic'])) {
-			$categories .= implode(",", $_GET['topic']);
-		}
-
 		if(!empty($categories)) {
 			$categories .= ",";
 		}
@@ -122,12 +118,18 @@ function _search_pre_get_posts($query) {
 			$categories .= implode(",", $_GET['region']);
 		}
 
+		if (isset($_GET['topic']) && !empty($_GET['topic'])) {
+			$tags = implode(",", $_GET['topic']);
+		}
 		// echo $categories;
 
 		if(!empty($categories)) {
 			$query->set('category_name', $categories);
 		}
 
+		if(!empty($tags)) {
+			$query->set('tag', $tags);
+		}
 		//var_dump($query);
 
 	}
