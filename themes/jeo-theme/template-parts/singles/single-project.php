@@ -17,7 +17,7 @@
         <div class="main-content">
             <div class="entry-subhead">
                 <div class="entry-meta">
-                    <?php if (get_post_meta(get_the_ID(), 'author-bio-display', true)) : ?>
+                    <?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) : ?>
                         <?php newspack_posted_by(); ?>
                     <?php endif; ?>
                     <div></div>

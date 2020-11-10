@@ -73,38 +73,7 @@ elseif(isset($post_child_category->slug) && in_array ( $post_child_category->slu
 						<div class="entry-subhead">
 							<!-- publishers -->
 							<?php 
-								$partners = get_the_terms( get_the_id(), 'partner');
-								if ($partners && count($partners) > 0){
-									$partner_link = get_post_meta($post->ID, 'partner-link', true); 
-									if (class_exists('WPSEO_Primary_Term')) {
-										$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', get_the_id() );
-										$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
-										$term = get_term( $wpseo_primary_term );
-
-										if ($term || count($partners) == 1 ) {
-
-											$partner_name = '';
-											if($term) {
-												$partner_name = $term->name;
-											} else if (count($partners) == 1) {
-												$partner_name = $partners[0]->name;
-											}
-
-											?>
-											<div class="publishers">
-															<span class="publisher-name">
-																<?php echo esc_html__('By', 'newspack'); ?>
-																<a href="<?= $partner_link ?>" >
-																	<i class="fas fa-sync-alt publisher-icon"></i>
-																	<?php echo $partner_name; ?>
-																</a>
-															</span>
-													</div>
-													<?php 
-
-										} 
-									}
-								}
+								show_publishers($post->ID);
 							?>
 							<!-- publishers -->
 							<div class="entry-meta"> 

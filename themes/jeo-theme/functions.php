@@ -110,10 +110,6 @@ function _search_pre_get_posts($query) {
 		$categories = "";
 
 
-		if (isset($_GET['topic']) && !empty($_GET['topic'])) {
-			$categories .= implode(",", $_GET['topic']);
-		}
-
 		if(!empty($categories)) {
 			$categories .= ",";
 		}
@@ -122,12 +118,18 @@ function _search_pre_get_posts($query) {
 			$categories .= implode(",", $_GET['region']);
 		}
 
+		if (isset($_GET['topic']) && !empty($_GET['topic'])) {
+			$tags = implode(",", $_GET['topic']);
+		}
 		// echo $categories;
 
 		if(!empty($categories)) {
 			$query->set('category_name', $categories);
 		}
 
+		if(!empty($tags)) {
+			$query->set('tag', $tags);
+		}
 		//var_dump($query);
 
 	}
@@ -218,4 +220,41 @@ function get_term_for_default_lang( $term, $taxonomy ) {
 	$icl_adjust_id_url_filter_off = $orig_flag_value;
 
 	return $term;
+}
+
+
+function show_publishers($id){
+	if(taxonomy_exists('partner')){
+		$partners = get_the_terms( get_the_id(), 'partner');
+		if ($partners && count($partners) > 0){
+			$partner_link = get_post_meta($id, 'partner-link', true); 
+			if (class_exists('WPSEO_Primary_Term')) {
+				$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', get_the_id() );
+				$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+				$term = get_term( $wpseo_primary_term );
+
+				if ($term || count($partners) == 1 ) {
+
+					$partner_name = '';
+					if($term) {
+						$partner_name = $term->name;
+					} else if (count($partners) == 1) {
+						$partner_name = $partners[0]->name;
+					}
+
+					?>
+					<div class="publishers">
+									<span class="publisher-name">
+										<?php echo esc_html__('By', 'newspack'); ?>
+										<a href="<?= $partner_link ?>" >
+											<i class="fas fa-sync-alt publisher-icon"></i>
+											<?php echo $partner_name; ?>
+										</a>
+									</span>
+							</div>
+							<?php 
+				} 
+			}
+		}
+	}
 }
