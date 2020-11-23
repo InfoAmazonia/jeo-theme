@@ -201,9 +201,11 @@ class most_read_widget extends WP_Widget {
 		$posts_query_args = [];
 
 		if(is_category()) {
-			$category = get_the_category()[0];
+			global $wp_query;
+
+			$category = $wp_query->get_queried_object();
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
-			$posts_query_args['category__in'] = [$category->cat_ID];
+			$posts_query_args['category__in'] = [$category->term_id];
 		} else if(is_tag()) {
 			$tag = get_queried_object();
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
@@ -212,7 +214,8 @@ class most_read_widget extends WP_Widget {
 			$author = get_the_author_meta('ID');
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 			$posts_query_args['author__in'] = [$author];
-
+		} else {
+			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 		}
 
 		$ids = array();
