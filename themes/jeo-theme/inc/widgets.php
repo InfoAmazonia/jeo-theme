@@ -201,9 +201,11 @@ class most_read_widget extends WP_Widget {
 		$posts_query_args = [];
 
 		if(is_category()) {
-			$category = get_the_category()[0];
+			global $wp_query;
+
+			$category = $wp_query->get_queried_object();
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
-			$posts_query_args['category__in'] = [$category->cat_ID];
+			$posts_query_args['category__in'] = [$category->term_id];
 		} else if(is_tag()) {
 			$tag = get_queried_object();
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
@@ -212,7 +214,8 @@ class most_read_widget extends WP_Widget {
 			$author = get_the_author_meta('ID');
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 			$posts_query_args['author__in'] = [$author];
-
+		} else {
+			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 		}
 
 		$ids = array();
@@ -241,6 +244,8 @@ class most_read_widget extends WP_Widget {
 								$author_id = get_post_field( 'post_author', $value );
 								$author = get_the_author_meta('display_name', $author_id);
 								$url = get_permalink($value);
+								$date_format = get_option( 'date_format' );
+								$date = get_the_date($date_format, $value);
 							?>
 								<div class="post">
 									<a class="post-link" href="<?php echo $url; ?>">
@@ -248,7 +253,7 @@ class most_read_widget extends WP_Widget {
 											<div class="post-thumbnail"><?php echo get_the_post_thumbnail($value); ?></div>
 										<?php endif ?>
 										<p class="post-title"><?php echo $title; ?></p>
-										<p class="post-author">by <strong><?php echo $author; ?></strong></p>
+										<p class="post-date"><?php echo $date; ?></p>
 									</a>
 								</div>
 							<?php } ?>
