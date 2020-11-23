@@ -258,3 +258,9 @@ function show_publishers($id){
 		}
 	}
 }
+
+/* Remove 'this is a story from media partners */
+add_action( 'init', 'the_content_remove_plugin_filter' );
+function the_content_remove_plugin_filter() {
+    remove_filter( 'the_content', 'Newspack_Media_Partners::add_content_partner_logo', 10 );
+}
