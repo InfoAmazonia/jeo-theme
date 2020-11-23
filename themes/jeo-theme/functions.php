@@ -244,15 +244,21 @@ function show_publishers($id){
 
 					?>
 					<div class="publishers">
-									<span class="publisher-name">
-										<?php echo esc_html__('By', 'newspack'); ?>
+						<span class="publisher-name">
+							<?php echo esc_html__('By', 'newspack'); ?>
+								<?php  
+									if ($partner_link) {?>
 										<a href="<?= $partner_link ?>" >
 											<i class="fas fa-sync-alt publisher-icon"></i>
 											<?php echo $partner_name; ?>
 										</a>
-									</span>
-							</div>
-							<?php 
+									<?php } else { ?>
+										<i class="fas fa-sync-alt publisher-icon"></i>
+										<?php echo $partner_name; 
+									}?>
+								</span>
+					</div>
+					<?php 
 				} 
 			}
 		}
