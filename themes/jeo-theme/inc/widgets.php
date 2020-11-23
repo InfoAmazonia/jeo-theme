@@ -244,6 +244,8 @@ class most_read_widget extends WP_Widget {
 								$author_id = get_post_field( 'post_author', $value );
 								$author = get_the_author_meta('display_name', $author_id);
 								$url = get_permalink($value);
+								$date_format = get_option( 'date_format' );
+								$date = get_the_date($date_format, $value);
 							?>
 								<div class="post">
 									<a class="post-link" href="<?php echo $url; ?>">
@@ -251,7 +253,7 @@ class most_read_widget extends WP_Widget {
 											<div class="post-thumbnail"><?php echo get_the_post_thumbnail($value); ?></div>
 										<?php endif ?>
 										<p class="post-title"><?php echo $title; ?></p>
-										<p class="post-author">by <strong><?php echo $author; ?></strong></p>
+										<p class="post-author"><?php echo $date; ?></p>
 									</a>
 								</div>
 							<?php } ?>
