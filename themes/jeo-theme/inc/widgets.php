@@ -253,7 +253,7 @@ class most_read_widget extends WP_Widget {
 											<div class="post-thumbnail"><?php echo get_the_post_thumbnail($value); ?></div>
 										<?php endif ?>
 										<p class="post-title"><?php echo $title; ?></p>
-										<p class="post-author"><?php echo $date; ?></p>
+										<p class="post-date"><?php echo $date; ?></p>
 									</a>
 								</div>
 							<?php } ?>
