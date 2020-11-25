@@ -1,4 +1,4 @@
-.archive{ 
+.archive{
     .author {
         background-color: #F5F5F5;
         padding: 60px 0px 50px 0px;
@@ -7,21 +7,21 @@
         .author-content {
             display: flex;
             flex-direction: column;
-    
+
             .author-social-links a {
                 color: var(--primary);
                 margin: 0 20% 0 0;
-    
+
                 &:hover {
                     color: var(--secondary);
                 }
             }
         }
-    
+
         img {
             border-radius: 50%;
-            height: 100% !important;
-            width: auto !important; 
+            height: 100%;
+            width: auto;
         }
         .author-main-content {
             margin: auto;
@@ -39,7 +39,7 @@
 
 .archive.author {
 
-    article { 
+    article {
         .cat-links {
 
             span.custom-separator {
@@ -123,9 +123,9 @@
     .site-content {
         margin-top: 0px;
     }
-    
+
     .author-social-links {
-    
+
         @include tablet{
             text-align: center;
             display: inline-flex;
@@ -133,7 +133,7 @@
 
         li {
             margin-right: 40px;
-            
+
             &:last-child {
                 margin-right: 0px;
             }
@@ -236,7 +236,7 @@
 .dark-theme {
     .page-header.author {
         background-color: rgba(255,255,255,0.05);
-        
+
         .author-content {
             h1 {
                 color: white;
