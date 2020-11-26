@@ -148,14 +148,8 @@ function _author_pre_get_posts($query) {
 
 		$meta_query[] = [
 			'relation' => 'OR',
-			[
-				'key' => 'author-bio-display',
-				'value' => 1,
-			],
-			[
-				'key' => 'authors-listing',
-				'value' => 1,
-			],
+			['key' => 'author-bio-display', 'value' => 1],
+			['key' => 'authors-listing', 'value' => 1],
 		];
 
 		$query->set('meta_query', $meta_query);
