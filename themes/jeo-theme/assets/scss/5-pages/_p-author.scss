@@ -142,7 +142,9 @@
 
     .page-header .avatar {
         margin-right: 2.1875rem !important;
-
+        height: 120px;
+        width: 120px;
+        
         @include tablet{
             margin-right: 0px !important;
             text-align: center;
