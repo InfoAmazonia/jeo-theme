@@ -80,9 +80,9 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 			<meta name="twitter:card" content="player" />
 			<meta name="twitter:title" content="<?php echo $post_title . $twitter_nicknames_text; ?>" />
 			<meta name="twitter:site" content="" />
-			<meta name="twitter:player" content="<?php echo video_embed_url(get_post_meta($post->ID, 'twitter-opinion-video', true)); ?>" />
+			<meta name="twitter:player" content="<?php echo get_post_meta($post->ID, 'twitter-opinion-video', true); ?>" />
 			<meta name="twitter:player:width" content="720" />
-			<meta name="twitter:player:height" content="405" />
+			<meta name="twitter:player:height" content="720" />
 			<meta name="twitter:image" content="<?php echo esc_url($featured_img_url); ?>" />
 		<?php endif; ?>
 	<?php endif; ?>
