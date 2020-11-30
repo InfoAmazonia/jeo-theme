@@ -266,7 +266,6 @@ function show_publishers($id){
 					?>
 					<div class="publishers">
 						<span class="publisher-name">
-							<?php echo esc_html__('By', 'newspack'); ?>
 								<?php
 									if ($partner_link) {?>
 										<a href="<?= $partner_link ?>" >
