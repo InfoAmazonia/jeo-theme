@@ -35,7 +35,6 @@ add_filter('pre_get_posts', '_search_pre_get_posts', 1);
 
 function _search_pre_get_posts($query) {
 	global $wp_query;
-	//var_dump();
 
 	if (is_admin() || !$query->is_main_query()) {
 		return $query;
@@ -130,8 +129,30 @@ function _search_pre_get_posts($query) {
 		if(!empty($tags)) {
 			$query->set('tag', $tags);
 		}
-		//var_dump($query);
 
+	}
+
+	return $query;
+}
+
+add_filter('pre_get_posts', '_author_pre_get_posts', 1);
+
+function _author_pre_get_posts($query) {
+
+	if ($query->is_author()) {
+
+		$meta_query = $query->get('meta_query');
+		if (!is_array($meta_query)) {
+			$meta_query = [];
+		}
+
+		$meta_query[] = [
+			'relation' => 'OR',
+			['key' => 'author-bio-display', 'value' => 1],
+			['key' => 'authors-listing', 'value' => 1],
+		];
+
+		$query->set('meta_query', $meta_query);
 	}
 
 	return $query;
@@ -227,7 +248,7 @@ function show_publishers($id){
 	if(taxonomy_exists('partner')){
 		$partners = get_the_terms( get_the_id(), 'partner');
 		if ($partners && count($partners) > 0){
-			$partner_link = get_post_meta($id, 'partner-link', true); 
+			$partner_link = get_post_meta($id, 'partner-link', true);
 			if (class_exists('WPSEO_Primary_Term')) {
 				$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', get_the_id() );
 				$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
@@ -246,7 +267,7 @@ function show_publishers($id){
 					<div class="publishers">
 						<span class="publisher-name">
 							<?php echo esc_html__('By', 'newspack'); ?>
-								<?php  
+								<?php
 									if ($partner_link) {?>
 										<a href="<?= $partner_link ?>" >
 											<i class="fas fa-sync-alt publisher-icon"></i>
@@ -254,12 +275,12 @@ function show_publishers($id){
 										</a>
 									<?php } else { ?>
 										<i class="fas fa-sync-alt publisher-icon"></i>
-										<?php echo $partner_name; 
+										<?php echo $partner_name;
 									}?>
 								</span>
 					</div>
-					<?php 
-				} 
+					<?php
+				}
 			}
 		}
 	}

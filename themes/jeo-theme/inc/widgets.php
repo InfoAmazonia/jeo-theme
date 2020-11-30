@@ -48,7 +48,7 @@ add_action('widgets_init', 'widgets_areas');
 // Creates  widgets
 class newsletter_widget extends WP_Widget {
 
-	// The construct part  
+	// The construct part
 	function __construct() {
 		parent::__construct(
 			'newsletter_widget',
@@ -148,7 +148,7 @@ class newsletter_widget extends WP_Widget {
 
 class bullet_widget extends WP_Widget {
 
-	// The construct part  
+	// The construct part
 	function __construct() {
 		parent::__construct(
 			'bullet_widget',
@@ -182,7 +182,7 @@ class bullet_widget extends WP_Widget {
 
 class most_read_widget extends WP_Widget {
 
-	// The construct part  
+	// The construct part
 	function __construct() {
 		parent::__construct(
 			'most_read_widget',
@@ -214,6 +214,11 @@ class most_read_widget extends WP_Widget {
 			$author = get_the_author_meta('ID');
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 			$posts_query_args['author__in'] = [$author];
+			$posts_query_args['meta_query'] = [[
+				'relation' => 'OR',
+				['key' => 'author-bio-display', 'value' => 1],
+				['key' => 'authors-listing', 'value' => 1],
+			]];
 		} else {
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 		}
@@ -225,7 +230,7 @@ class most_read_widget extends WP_Widget {
 
 		$posts_query_args['post__in'] = $ids;
 		$posts_query_args['orderby'] = 'post__in';
-		$most_read_query = new \WP_Query($posts_query_args); 
+		$most_read_query = new \WP_Query($posts_query_args);
 
 		foreach ($most_read_query->posts as $post => $value) {
 			array_push($posts_ids, $value->ID);
@@ -239,7 +244,7 @@ class most_read_widget extends WP_Widget {
 							<p><?= $instance['title'] ?> </p>
 						</div>
 						<div class="posts">
-							<?php foreach(array_slice($posts_ids, 0, $instance['max_posts']) as $key=>$value){ 
+							<?php foreach(array_slice($posts_ids, 0, $instance['max_posts']) as $key=>$value){
 								$title = get_the_title($value);
 								$author_id = get_post_field( 'post_author', $value );
 								$author = get_the_author_meta('display_name', $author_id);
@@ -377,9 +382,9 @@ add_filter('post_gallery', 'my_post_gallery_widget', 10, 2);
 
 // IMAGE GALLERY FORM
 function image_gallery_form( $widget, $return, $instance ) {
- 
+
     if ( 'media_gallery' == $widget->id_base ) {
- 
+
         $see_more_url = isset( $instance['see_more_url'] ) ? $instance['see_more_url'] : '';
         ?>
             <p>
@@ -393,7 +398,7 @@ function image_gallery_form( $widget, $return, $instance ) {
 }
 
 function widget_save_form( $instance, $new_instance ) {
-	
+
 	$instance['see_more_url'] = $new_instance['see_more_url'];
 	return $instance;
 }
