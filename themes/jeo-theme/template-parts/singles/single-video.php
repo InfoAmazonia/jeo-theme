@@ -42,16 +42,16 @@
                 <?php endif; ?>
 
                 <div class="entry-subhead">
-					<!-- publishers -->
-					<?php 
-						show_publishers($post->ID);
-					?>
-					<!-- publishers -->
                     <div class="entry-meta">
                         <?php if (get_post_meta(get_the_ID(), 'authors-listing', true)) : ?>
                             <?php newspack_posted_by(); ?>
                         <?php endif; ?>
                         <div></div>
+                        <!-- publishers -->
+                        <?php 
+                            show_publishers($post->ID);
+                        ?>
+                        <!-- publishers -->
                         <?php newspack_posted_on(); ?>
                     </div><!-- .meta-info -->
                     <?php
