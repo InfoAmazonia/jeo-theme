@@ -270,3 +270,23 @@ add_action( 'init', 'the_content_remove_plugin_filter' );
 function the_content_remove_plugin_filter() {
     remove_filter( 'the_content', 'Newspack_Media_Partners::add_content_partner_logo', 10 );
 }
+
+function video_embed_url($url) {	
+	if (empty($url)) {	
+		return $url;	
+	}	
+
+	$youtube_matches = [];	
+	$is_youtube = preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $youtube_matches);	
+	if ($is_youtube) {	
+		return 'https://www.youtube.com/embed/' . $youtube_matches[1];	
+	}	
+
+	$vimeo_matches = [];	
+	$is_vimeo = preg_match("/\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_\-]+)?/", $url, $vimeo_matches);	
+	if ($is_vimeo) {	
+		return 'https://player.vimeo.com/video/' . $vimeo_matches[1];	
+	}	
+
+	return $url;	
+}
