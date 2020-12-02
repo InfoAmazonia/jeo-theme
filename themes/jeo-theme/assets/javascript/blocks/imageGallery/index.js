@@ -134,9 +134,11 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
             }
         });
 
-        const onSortEnd = ({ collection, newIndex, oldIndex }) => {
+        const onSortEnd = ({ newIndex, oldIndex }) => {
             setAttributes({
-                images: arrayMove(collection, oldIndex, newIndex)
+                images: arrayMove(images, oldIndex, newIndex),
+                imagesCredits: arrayMove(imagesCredits, oldIndex, newIndex),
+                imagesDescriptions: arrayMove(imagesDescriptions, oldIndex, newIndex),
             });
         };
 
