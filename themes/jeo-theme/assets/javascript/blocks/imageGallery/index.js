@@ -1,6 +1,98 @@
 import { MediaUpload, RichText } from "@wordpress/block-editor";
-import { Button } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
+import { SortableContainer, SortableElement } from 'react-sortable-hoc';
+import arrayMove from 'array-move';
+
+const DraggableImage = SortableElement(({ credits, description, image, removeImage, setDescription, setCredits }) => {
+    return (
+        <div className="gallery-item-container">
+            <img className='gallery-item' src={image.url} key={image.id} />
+            <RichText
+                tagName="span"
+                className="description-field"
+                value={description}
+                formattingControls={['bold', 'italic']}
+                onChange={setDescription}
+                placeholder={__('Type here your description')}
+            />
+            <RichText
+                tagName="span"
+                className="credit-field"
+                value={credits}
+                formattingControls={['bold', 'italic']}
+                onChange={setCredits}
+                placeholder={__('Type the credits here')}
+            />
+            <div className="remove-item" onClick={removeImage}><span class="dashicons dashicons-trash"></span></div>
+        </div>
+    );
+});
+
+const ImageGallery = SortableContainer(({ images, imagesCredits, imagesDescriptions, setAttributes }) => {
+    const removeImage = (index) => {
+        return () => {
+            const newImages = images.filter((image, i) => {
+                if (i != index) {
+                    return image;
+                }
+            });
+
+            imagesDescriptions.splice(index, 1);
+            imagesCredits.splice(index, 1);
+
+            setAttributes({
+                images: newImages,
+                imagesDescriptions,
+                imagesCredits,
+            });
+        }
+    };
+
+    const updateItem = (key, collection, index) => {
+        return (content) => {
+            setAttributes({
+                [key]: collection.map((item, i) => {
+                    if (i == index) {
+                        return content;
+                    } else {
+                        return item;
+                    }
+                })
+            });
+        };
+    };
+
+    return (
+        <div className="gallery-grid">
+            {images.map((image, index) => {
+                return (
+                    <DraggableImage
+                        collection={images}
+                        credits={imagesCredits[index]}
+                        description={imagesDescriptions[index]}
+                        image={image}
+                        index={index}
+                        key={image.id}
+                        removeImage={removeImage(index)}
+                        setCredits={updateItem('imagesCredits', imagesCredits, index)}
+                        setDescription={updateItem('imagesDescriptions', imagesDescriptions, index)}
+                    />
+                );
+            })}
+            <MediaUpload
+                onSelect={(media) => { setAttributes({ images: [...images, ...media] }); }}
+                type="image"
+                multiple={true}
+                value={images}
+                render={({ open }) => (
+                    <div className="select-images-button is-button is-default is-large" onClick={open}>
+                        <span class="dashicons dashicons-plus"></span>
+                    </div>
+                )}
+            />
+        </div>
+    );
+});
 
 wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
     title: __('Image Gallery'),
@@ -31,9 +123,8 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
 
     edit({ attributes, className, setAttributes }) {
         const { galleryTitle = "", images = [], imagesDescriptions = [], imagesCredits = [] } = attributes;
-        console.log(attributes);
 
-        images.forEach((element, index) => {
+        images.forEach((image, index) => {
             if (!imagesDescriptions[index]) {
                 imagesDescriptions[index] = "";
             }
@@ -43,76 +134,11 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
             }
         });
 
-        const removeImage = (removeImageIndex) => {
-            const newImages = images.filter((image, index) => {
-                if (index != removeImageIndex) {
-                    return image;
-                }
-            });
-
-            imagesDescriptions.splice(removeImageIndex, 1);
-            imagesCredits.splice(removeImageIndex, 1);
-
+        const onSortEnd = ({ collection, newIndex, oldIndex }) => {
             setAttributes({
-                images: newImages,
-                imagesDescriptions,
-                imagesCredits,
-            })
-        }
-
-        const displayImages = (images) => {
-
-            //console.log(external_link_api); 
-            return (
-                images.map((image, index) => {
-                    //console.log(image);
-                    return (
-                        <div className="gallery-item-container">
-                            <img className='gallery-item' src={image.url} key={image.id} />
-                            <RichText
-                                tagName="span"
-                                className="description-field"
-                                value={imagesDescriptions[index]}
-                                formattingControls={['bold', 'italic']}
-                                onChange={(content) => {
-                                    setAttributes({
-                                        imagesDescriptions: imagesDescriptions.map((item, i) => {
-                                            if (i == index) {
-                                                return content;
-                                            } else {
-                                                return item;
-                                            }
-                                        })
-                                    })
-                                }}
-                                placeholder={__('Type here your description')}
-                            />
-
-                            <RichText
-                                tagName="span"
-                                className="credit-field"
-                                value={imagesCredits[index]}
-                                formattingControls={['bold', 'italic']}
-                                onChange={(content) => {
-                                    setAttributes({
-                                        imagesCredits: imagesCredits.map((item, i) => {
-                                            if (i == index) {
-                                                return content;
-                                            } else {
-                                                return item;
-                                            }
-                                        })
-                                    })
-                                }}
-                                placeholder={__('Type the credits here')}
-                            />
-                            <div className='remove-item' onClick={() => removeImage(index)}><span class="dashicons dashicons-trash"></span></div>
-                        </div>
-                    )
-                })
-
-            )
-        }
+                images: arrayMove(collection, oldIndex, newIndex)
+            });
+        };
 
         return (
             <div className="image-gallery">
@@ -121,34 +147,22 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
                     className="gallery-title"
                     value={galleryTitle}
                     formattingControls={['bold', 'italic']}
-                    onChange={(galleryTitle) => {
-                        setAttributes({ galleryTitle })
-                    }}
+                    onChange={(galleryTitle) => {setAttributes({ galleryTitle })}}
                     placeholder={__('Type a title')}
                 />
-                <div className="gallery-grid">
-                    {displayImages(images)}
-                    <MediaUpload
-                        onSelect={(media) => { setAttributes({ images: [...images, ...media] }); }}
-                        type="image"
-                        multiple={true}
-                        value={images}
-                        render={({ open }) => (
-                            <div className="select-images-button is-button is-default is-large" onClick={open}>
-                                <span class="dashicons dashicons-plus"></span>
-                            </div>
-                        )}
-                    />
-                </div>
-
+                <ImageGallery
+                    images={images}
+                    imagesCredits={imagesCredits}
+                    imagesDescriptions={imagesDescriptions}
+                    onSortEnd={onSortEnd}
+                    setAttributes={setAttributes}
+                />
             </div>
-
         );
     },
 
     save: ({ attributes }) => {
         const { galleryTitle = "", images = [], imagesDescriptions = [], imagesCredits = [] } = attributes;
-        //console.log(imagesDescriptions);
 
         const displayImages = (images) => {
             return (
