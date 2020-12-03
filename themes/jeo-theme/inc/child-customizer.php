@@ -397,6 +397,14 @@ function newspack_scott_customizer($wp_customize)
 	);
 
 	$wp_customize->add_section(
+		'post_excerpt',
+		array(
+			'title' => esc_html__('Post excerpt', 'newspack'),
+			'section' => 'post_excerpt',
+		)
+	);
+
+	$wp_customize->add_section(
 		'post_sharing',
 		array(
 			'title' => esc_html__('Post Sharing', 'newspack'),
@@ -1049,7 +1057,7 @@ function newspack_scott_customizer($wp_customize)
 		'disable_excerpt_in_all_posts',
 		array(
 			'type' => 'checkbox',
-			'section' => 'republish_modal',
+			'section' => 'post_excerpt',
 			'label' => __('Hide post excerpt in all posts'),
 		)
 	);
