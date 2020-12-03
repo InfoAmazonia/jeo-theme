@@ -9,10 +9,17 @@
 .post-template-single-feature,
 .post-template-single-wide {
 
+    .author-partner {
+        display: flex;
+        
+        .byline {
+           margin-right: 5px !important;
+        }
+    }
     .publishers {
 
         .publisher-name {
-            padding: 5px;
+            padding: 5px 0px;
             color: var(--primary);
             font-size: size(14);
             font-family: var(--primary-font);

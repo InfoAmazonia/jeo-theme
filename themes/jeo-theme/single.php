@@ -64,15 +64,16 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 				<?php if ($isImageBehind) : ?>
 					<div class="entry-subhead">
 						<div class="entry-meta">
-							<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
-								<?php newspack_posted_by(); ?>
-							<?php endif; ?>
-							<div></div>
-							<!-- publishers -->
-							<?php 
-								show_publishers($post->ID);
-							?>
-							<!-- publishers -->
+								<div class="author-partner">
+									<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
+										<?php newspack_posted_by(); ?>
+									<?php endif; ?>
+									<!-- publishers -->
+									<?php 
+										show_publishers($post->ID);
+									?>
+									<!-- publishers -->
+								</div>
 							<?php newspack_posted_on(); ?>
 						</div><!-- .meta-info -->
 						<?php
