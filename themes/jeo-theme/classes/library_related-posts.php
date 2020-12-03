@@ -71,6 +71,7 @@ class related_posts {
             
             if($cat_opinion) {
                 array_push($post_types_categories, get_term_for_default_lang($cat_opinion->cat_ID, 'category')->term_id);
+            }
 
             if($cat_video) {
                 array_push($post_types_categories, get_term_for_default_lang($cat_video->cat_ID, 'category')->term_id);
