@@ -21,6 +21,10 @@
     border-radius: 5px;
 }
 
+.image-gallery .gallery-item-container.moving {
+    padding-top: 0;
+}
+
 .image-gallery .gallery-item-container img {
     position: absolute;
     top: 0;

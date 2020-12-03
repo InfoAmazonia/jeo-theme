@@ -154,6 +154,7 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
                 />
                 <ImageGallery
                     axis="xy"
+                    helperClass="moving"
                     helperContainer={document.querySelector('.gallery-grid')}
                     images={images}
                     imagesCredits={imagesCredits}
