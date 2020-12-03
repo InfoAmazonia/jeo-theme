@@ -257,7 +257,7 @@ function show_publishers($id){
 				if ($term || count($partners) == 1 ) {
 
 					$partner_name = '';
-					if($term) {
+					if($term && isset($term->term_id)) {
 						$partner_name = $term->name;
 					} else if (count($partners) == 1) {
 						$partner_name = $partners[0]->name;
