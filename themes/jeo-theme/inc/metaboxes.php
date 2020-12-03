@@ -11,8 +11,17 @@ function register_metaboxes() {
 
 	add_meta_box(
 		'republish-post',
-		'Republish Post',
+		'Republish post',
 		'republish_post_callback',
+		['post', 'project'],
+		'side',
+		'default',
+	);
+
+	add_meta_box(
+		'hide-post-excerpt',
+		'Post excerpt',
+		'hide_post_excerpt_callback',
 		['post', 'project'],
 		'side',
 		'default',
@@ -177,6 +186,24 @@ function republish_post_callback() {
 <?php
 }
 
+function hide_post_excerpt_callback() {
+	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
+	$jeo_stored_meta = get_post_meta(get_the_ID());
+?>
+
+	<p>
+		<!-- <span class="jeo-row-title"><?php _e('Hide post excerpt: ', 'jeo') ?></span> -->
+		<div class="jeo-row-content">
+			<label for="hide_post_excerpt">
+					<input type="checkbox" name="hide_post_excerpt" id="hide_post_excerpt" value="false" <?php if (isset($jeo_stored_meta['hide_post_excerpt'])) checked($jeo_stored_meta['hide_post_excerpt'][0], true); ?> />
+				<?php _e('Hide post excerpt', 'jeo') ?>
+			</label>
+
+		</div>
+	</p>
+<?php
+}
+
 function twitter_opinion_video_callback() {
 	wp_nonce_field(basename(__FILE__), 'jeo_nonce');
 	$jeo_stored_meta = get_post_meta(get_the_ID());	
@@ -310,6 +337,12 @@ function meta_save($post_id) {
 		update_post_meta($post_id, 'republish_post', true);
 	} else {
 		update_post_meta($post_id, 'republish_post', false);
+	}
+
+	if (isset($_POST['hide_post_excerpt'])) {
+		update_post_meta($post_id, 'hide_post_excerpt', true);
+	} else {
+		update_post_meta($post_id, 'hide_post_excerpt', false);
 	}
 
 	if (isset($_POST['partner-link'])) {

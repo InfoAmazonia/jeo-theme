@@ -1036,6 +1036,23 @@ function newspack_scott_customizer($wp_customize)
 			'type'        => 'text',
 		)
 	);
+
+	$wp_customize->add_setting(
+		'disable_excerpt_in_all_posts',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'disable_excerpt_in_all_posts',
+		array(
+			'type' => 'checkbox',
+			'section' => 'republish_modal',
+			'label' => __('Hide post excerpt in all posts'),
+		)
+	);
 }
 add_action('customize_register', 'newspack_scott_customizer', 99);
 
