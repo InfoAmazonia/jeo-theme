@@ -59,16 +59,44 @@ class related_posts {
 
         $post_types_categories = [];
 
+        $cat_image_gallery = get_category_by_slug( 'image-gallery' );
+        $cat_opinion = get_category_by_slug( 'opinion' );
+        $cat_video = get_category_by_slug( 'video' );
+        $cat_audio = get_category_by_slug( 'audio' );
+
         if(function_exists('icl_object_id')) {
-            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'image-gallery' )->cat_ID, 'category')->term_id);
-            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'opinion' )->cat_ID, 'category')->term_id);
-            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'video' )->cat_ID, 'category')->term_id);
-            array_push($post_types_categories, get_term_for_default_lang(get_category_by_slug( 'audio' )->cat_ID, 'category')->term_id);
+            if($cat_image_gallery && isset($cat_image_gallery->cat_ID)) {
+                array_push($post_types_categories, get_term_for_default_lang($cat_image_gallery->cat_ID, 'category')->term_id);
+            }
+            
+            if($cat_opinion && isset($cat_opinion->cat_ID)) {
+                array_push($post_types_categories, get_term_for_default_lang($cat_opinion->cat_ID, 'category')->term_id);
+            }
+
+            if($cat_video && isset($cat_video->cat_ID)) {
+                array_push($post_types_categories, get_term_for_default_lang($cat_video->cat_ID, 'category')->term_id);
+            }
+
+            if($cat_audio && isset($cat_audio->cat_ID)) {
+                array_push($post_types_categories, get_term_for_default_lang($cat_audio->cat_ID, 'category')->term_id);
+            }
         } else {
-            array_push($post_types_categories, get_category_by_slug( 'image-gallery' )->cat_ID);
-            array_push($post_types_categories, get_category_by_slug( 'opinion' )->cat_ID);
-            array_push($post_types_categories, get_category_by_slug( 'video' )->cat_ID);
-            array_push($post_types_categories, get_category_by_slug( 'audio' )->cat_ID);
+
+            if($cat_image_gallery && isset($cat_image_gallery->cat_ID)) {
+                array_push($post_types_categories, $cat_image_gallery->cat_ID);
+            }
+            
+            if($cat_opinion && isset($cat_opinion->cat_ID)) {
+                array_push($post_types_categories, $cat_opinion->cat_ID);
+            }
+
+            if($cat_video && isset($cat_video->cat_ID)) {
+                array_push($post_types_categories, $cat_video->cat_ID);
+            }
+
+            if($cat_audio && isset($cat_audio->cat_ID)) {
+                array_push($post_types_categories, $cat_audio->cat_ID);
+            }
         }
         
 
