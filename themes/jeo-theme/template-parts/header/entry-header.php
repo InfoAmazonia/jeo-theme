@@ -67,7 +67,13 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 		<?php if('large' == newspack_featured_image_position() || 'small' == newspack_featured_image_position()): ?>
 			<?php if(has_excerpt()): ?>
 				<h1 class="post-excerpt">
-					<?php the_excerpt(); ?>
+					<?php
+						global $post;
+						
+						if(! boolval(get_theme_mod('disable_excerpt_in_all_posts', false)) && ! boolval(get_post_meta($post->ID, 'hide_post_excerpt', true ))) {
+							the_excerpt();
+						}
+					?>
 				</h1>
 			<?php endif ?>
 		<?php endif; ?>
