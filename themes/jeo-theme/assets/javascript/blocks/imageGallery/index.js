@@ -153,10 +153,13 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
                     placeholder={__('Type a title')}
                 />
                 <ImageGallery
+                    axis="xy"
+                    helperContainer={document.querySelector('.gallery-grid')}
                     images={images}
                     imagesCredits={imagesCredits}
                     imagesDescriptions={imagesDescriptions}
                     onSortEnd={onSortEnd}
+                    pressDelay={200}
                     setAttributes={setAttributes}
                 />
             </div>
