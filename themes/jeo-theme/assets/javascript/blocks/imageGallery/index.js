@@ -11,7 +11,7 @@ const DraggableImage = SortableElement(({ credits, description, image, removeIma
                 tagName="span"
                 className="description-field"
                 value={description}
-                formattingControls={['bold', 'italic']}
+                allowedFormats={['core/bold', 'core/italic']}
                 onChange={setDescription}
                 placeholder={__('Type here your description')}
             />
@@ -19,7 +19,7 @@ const DraggableImage = SortableElement(({ credits, description, image, removeIma
                 tagName="span"
                 className="credit-field"
                 value={credits}
-                formattingControls={['bold', 'italic']}
+                allowedFormats={['core/bold', 'core/italic']}
                 onChange={setCredits}
                 placeholder={__('Type the credits here')}
             />
