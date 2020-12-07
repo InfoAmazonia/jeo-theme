@@ -98,9 +98,44 @@ else: ?>
 					}
 
 					// Place smaller featured images inside of 'content' area.
-					if ( 'small' === newspack_featured_image_position() ) {
-						newspack_post_thumbnail();
-					}
+					if ( 'small' === newspack_featured_image_position() ): ?>
+						<div class="featured-image-small">
+							<?php newspack_post_thumbnail(); ?>
+
+							<?php if(class_exists('Newspack_Image_Credits') && (!empty(Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id())['credit']) || !empty(get_post(get_post_thumbnail_id())->post_content))): ?>
+								<div class="image-info">
+									<div class="image-info-container">
+										<div class="wrapper">
+											<div class="image-meta">
+												<?php
+												if (class_exists('Newspack_Image_Credits')) {
+													$image_meta = Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id()); ?>
+													<?= (isset($image_meta['credit_url']) && !empty($image_meta['credit_url'])) ? '<a href="' . $image_meta['credit_url'] . '">' : null ?>
+													<span class="credit">
+														<?= $image_meta['credit'] ?>
+
+														<?= isset($image_meta['organization']) && !empty($image_meta['organization']) ? ' / ' . $image_meta['organization'] : null ?>
+													</span>
+													<?= (isset($image_meta['credit_url']) && !empty($image_meta['credit_url'])) ? '</a>' : null ?>
+
+												<?php
+												}
+												?>
+											</div>
+
+										</div>
+									</div>
+									<i class="fas fa-camera"></i>
+								</div>
+							<?php endif; ?>
+							<p class="description">
+								<?php
+								//var_dump(get_post(get_post_thumbnail_id()));
+								?>
+								<?= get_post(get_post_thumbnail_id())->post_content ?>
+							</p>
+						</div><!-- .featured-image-small -->
+					<?php endif;
 
 					if ( is_page() ) {
 						get_template_part( 'template-parts/content/content', 'page' );

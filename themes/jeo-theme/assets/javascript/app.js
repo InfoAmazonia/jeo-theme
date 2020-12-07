@@ -108,6 +108,28 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         }
 
+        if (jQuery(".single .featured-image-large").length) {
+            jQuery(".featured-image-large .image-info i").click(function () {
+                jQuery(".featured-image-large .image-info-container").toggleClass(
+                    "active"
+                );
+                jQuery(".featured-image-large .image-info i").toggleClass(
+                    "fa-info-circle fa-times-circle "
+                );
+            });
+        }
+
+        if (jQuery(".single .featured-image-small").length) {
+            jQuery(".featured-image-small .image-info i").click(function () {
+                jQuery(".featured-image-small .image-info-container").toggleClass(
+                    "active"
+                );
+                jQuery(".featured-image-small .image-info i").toggleClass(
+                    "fa-info-circle fa-times-circle "
+                );
+            });
+        }
+
         // prevents comments from hiding when a direct comment hash is set
         if (!(document.location.hash.length && document.location.hash.slice(1, 8) == 'comment')) {
             jQuery(".toggable-comments-form").hide();
