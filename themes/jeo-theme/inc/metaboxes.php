@@ -193,6 +193,7 @@ function hide_post_excerpt_callback() {
 
 	<p>
 		<!-- <span class="jeo-row-title"><?php _e('Hide post excerpt: ', 'jeo') ?></span> -->
+		<span><?php _e('See general option (set in Customizer) ', 'jeo') ?></span>
 		<div class="jeo-row-content">
 			<label for="hide_post_excerpt">
 					<input type="checkbox" name="hide_post_excerpt" id="hide_post_excerpt" value="false" <?php if (isset($jeo_stored_meta['hide_post_excerpt'])) checked($jeo_stored_meta['hide_post_excerpt'][0], true); ?> />
