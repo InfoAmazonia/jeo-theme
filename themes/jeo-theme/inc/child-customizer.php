@@ -397,6 +397,14 @@ function newspack_scott_customizer($wp_customize)
 	);
 
 	$wp_customize->add_section(
+		'post_excerpt',
+		array(
+			'title' => esc_html__('Post excerpt', 'newspack'),
+			'section' => 'post_excerpt',
+		)
+	);
+
+	$wp_customize->add_section(
 		'post_sharing',
 		array(
 			'title' => esc_html__('Post Sharing', 'newspack'),
@@ -1034,6 +1042,23 @@ function newspack_scott_customizer($wp_customize)
 			'description' => __( 'Example: Dosis' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'disable_excerpt_in_all_posts',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'disable_excerpt_in_all_posts',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_excerpt',
+			'label' => __('Hide post excerpt in all posts'),
 		)
 	);
 }
