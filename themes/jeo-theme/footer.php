@@ -27,8 +27,26 @@
 			<div class="wrapper site-info-contain">
 				<?php
 					$custom_copyright = get_theme_mod( 'footer_copyright', '' );
+					$has_footer_logo = false;
+
+					if ( '' !== get_theme_mod( 'copyright_logo', '' ) && 0 !== get_theme_mod( 'copyright_logo', '' ) ) {
+						$has_footer_logo = true;
+					}
 				?>
-				<img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logos/JEOminip.svg';?>">
+
+				<?php if ( $has_footer_logo ) : ?>
+					<?php
+						echo wp_get_attachment_image(
+							get_theme_mod( 'copyright_logo', '' ),
+							'copyright-logo',
+							'',
+							array( 'class' => 'footer-logo' )
+						);
+					?>
+				<?php else: ?>
+						<img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logos/JEOminip.svg';?>">
+				<?php endif; ?>
+				
 				<span class="copyright"><?php echo esc_html( $custom_copyright ); ?></span>
 				<div class="credit">
 					<p><?= __('Site por') ?></p>

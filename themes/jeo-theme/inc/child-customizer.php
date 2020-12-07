@@ -1061,6 +1061,30 @@ function newspack_scott_customizer($wp_customize)
 			'label' => __('Hide post excerpt in all posts'),
 		)
 	);
+
+	$wp_customize->add_setting(
+		'copyright_logo',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'copyright_logo',
+			array(
+				'label'       => esc_html__( 'Copyright logo', 'newspack' ),
+				'section'     => 'footer_options',
+				'settings'    => 'copyright_logo',
+				'flex_width'  => true,
+				'flex_height' => true,
+				'width'       => 200,
+				'height'      => 30,
+			)
+		)
+	);
 }
 add_action('customize_register', 'newspack_scott_customizer', 99);
 

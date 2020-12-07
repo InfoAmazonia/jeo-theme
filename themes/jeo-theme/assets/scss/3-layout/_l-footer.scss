@@ -70,14 +70,16 @@ footer {
 
             .copyright {
                 align-self: center;
-                margin-bottom: 0;
+                margin-top: auto;
+                margin-bottom: auto;
             }
 
             .credit {
                 display: flex;
                 flex-direction: row;
                 height: fit-content;
-                margin-top: 7px;
+                margin-top: auto;
+                margin-bottom: auto;
 
                 p, a {
                     font-size: size(12);
