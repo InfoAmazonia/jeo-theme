@@ -1,8 +1,92 @@
-.team-members > div  > .editor-block-list__layout.block-editor-block-list__layout {
+.wp-admin
+.team-members {
+    background-color: #F5F5F5;
+    border-radius: size(10);
+    font-family: var(--primary-font);
+    padding: 30px;background-color: #F5F5F5;
+}
+
+.wp-admin
+.team-members > h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: size(18);
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #555D66;
+}
+
+.wp-admin
+.team-members
+.block-editor-block-list__layout >
+.block-editor-block-list__block.wp-block[aria-label="Block: Team member"]{
+    margin: 45px !important;
+}
+
+.wp-admin
+.team-members > div  > .block-editor-block-list__layout {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.team-members .wp-block.editor-block-list__block.block-editor-block-list__block {
+.wp-admin
+.team-members
+.wp-block.editor-block-list__block.block-editor-block-list__block {
     margin: initial;
+}
+
+.wp-admin
+.team-members img {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.wp-admin
+.team-members .team-member-item figure > div {
+    width: 100px !important;
+}
+
+.wp-admin
+.team-members
+.team-member-item 
+.block-editor-block-list__layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.wp-admin
+.team-members
+.team-member-item 
+.block-editor-block-list__layout > div {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.wp-admin
+.team-members
+.team-member-item 
+.block-editor-block-list__layout
+.block-list-appender {
+    display: none;
+}
+
+.wp-admin
+.team-members
+.team-member-item
+.block-editor-block-list__layout > div:first-of-type
+p:nth-child(1) {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.wp-admin
+.team-members
+.team-member-item
+.block-editor-block-list__layout > div:first-of-type
+p:nth-child(2) {
+    margin-top: 0;
 }
