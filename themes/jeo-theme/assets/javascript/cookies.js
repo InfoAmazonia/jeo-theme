@@ -29,11 +29,13 @@ window.addEventListener("DOMContentLoaded", function () {
         darkerScreen.style.display = 'block';
     }
 
-    const buttons = document.querySelectorAll('.cc-compliance .cc-btn:not(.cc-show-settings)');
+    const buttons = document.querySelectorAll('.cc-compliance .cc-btn');
 
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
-            darkerScreen.style.display = 'none';
+            if(!button.classList.contains('cc-show-settings')) {
+                darkerScreen.style.display = 'none';
+            }
         });
       });
 
