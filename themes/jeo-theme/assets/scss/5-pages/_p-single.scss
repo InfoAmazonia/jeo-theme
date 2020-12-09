@@ -498,7 +498,6 @@
     }
 
     .featured-image-large, .featured-image-small {
-
         &__credit-wrapper{
             position: relative;
 
@@ -506,6 +505,7 @@
                 max-width: 100%;
                 display: flex;
                 flex-direction: row;
+                width: 100%;
                /* margin-top: -44px;
                 margin-right: 2px;
                 float: right;*/
@@ -533,7 +533,7 @@
                     z-index: 1;
                     margin-right: -27px;
                     border-radius: 25px;
-                    width: fit-content;
+                    width: 100%;
                     font-weight: normal;
                     /* height: 0; */
                     color: rgba(25, 30, 35, 0.7);
