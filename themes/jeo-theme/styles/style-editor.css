@@ -1140,3 +1140,21 @@ blockquote
 .wp-block[data-type='core/pullquote'][data-align='right'] .wp-block-pullquote p {
   font-size: 1.2em;
 }
+
+.wp-block[data-type='newspack-blocks/homepage-articles'] .wp-block-button {
+  border-top: 2px solid #ddd;
+  text-align: center;
+}
+.wp-block[data-type='newspack-blocks/homepage-articles'] .wp-block-button div[role='textbox'] {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #555d66;
+  opacity: 1;
+  background-color: transparent;
+}
+.wp-block[data-type='newspack-blocks/homepage-articles'] .wp-block-button div[role='textbox'] span::after {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #555d66;
+  opacity: 1;
+}
