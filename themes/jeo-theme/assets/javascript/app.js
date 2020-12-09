@@ -114,7 +114,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     "active"
                 );
                 jQuery(".featured-image-large .image-info i").toggleClass(
-                    "fa-info-circle fa-times-circle "
+                    "fa-info-circle fa-times"
                 );
             });
         }
@@ -125,7 +125,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     "active"
                 );
                 jQuery(".featured-image-small .image-info i").toggleClass(
-                    "fa-info-circle fa-times-circle "
+                    "fa-info-circle fa-times"
                 );
             });
         }
