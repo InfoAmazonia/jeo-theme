@@ -29,12 +29,13 @@ window.addEventListener("DOMContentLoaded", function () {
         darkerScreen.style.display = 'block';
     }
 
-    const buttons = [document.querySelector('.cc-window a.cc-deny'), document.querySelector('.cc-window a.cc-allow')]
-    buttons.map(button => {
-        button.onclick = () => {
+    const buttons = document.querySelectorAll('.cc-btn');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
             darkerScreen.style.display = 'none';
-        }
-    });
+        });
+      });
 
     if(document.querySelector('.cc-bottom')) {
         document.querySelector('.cc-bottom').onclick = () => {
