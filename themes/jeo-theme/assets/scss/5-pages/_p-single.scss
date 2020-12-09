@@ -505,35 +505,36 @@
                 max-width: 100%;
                 display: flex;
                 flex-direction: row;
-                width: 100%;
                /* margin-top: -44px;
                 margin-right: 2px;
                 float: right;*/
                 position: absolute;
                 bottom: 10px;
+                right: 0;
     
                 i {
                     font-size: 14px;
                     z-index: 1;
                     align-self: flex-end;
+                    margin-bottom: 5px;
+                    margin-right: 5px;
                     color: rgba(25, 30, 35, 0.7);
                     background: rgba(255, 255, 255, 0.7);
                     padding: 5px;
-                    margin-bottom: 5px;
                     border-radius: 50%;
                     cursor: pointer;
 
                     &.fa-times {
                         align-self: center !important;
+                        margin-bottom: 0px;
                     }
                 }
     
                 .image-info-container {
                     max-width: 100%;
                     z-index: 1;
-                    margin-right: -27px;
+                    margin-right: -18px;
                     border-radius: 25px;
-                    width: 100%;
                     font-weight: normal;
                     /* height: 0; */
                     color: rgba(25, 30, 35, 0.7);
