@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function () {
         darkerScreen.style.display = 'block';
     }
 
-    const buttons = document.querySelectorAll('.cc-btn:not(.cc-show-settings)');
+    const buttons = document.querySelectorAll('.cc-compliance .cc-btn:not(.cc-show-settings)');
 
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
