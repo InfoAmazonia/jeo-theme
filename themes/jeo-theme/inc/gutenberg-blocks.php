@@ -157,7 +157,7 @@ function custom_team_block() {
 		$asset_file['version']
 		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
 	);
-
+	
 	wp_register_style(
 		'custom-team-block',
 		get_stylesheet_directory_uri() . '/assets/javascript/blocks/teamBlock/teamBlock.css',

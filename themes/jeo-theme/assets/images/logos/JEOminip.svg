@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="199px" height="31px" viewBox="0 0 199 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>JEOminip</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="JEOminip" transform="translate(2.000000, 0.000000)">
+            <text id="JEO" font-family="OpenSans-Semibold, Open Sans" font-size="18" font-weight="500" letter-spacing="-0.9" fill="#191E23">
+                <tspan x="31" y="22">JEO</tspan>
+            </text>
+            <text id="geojournalism-platfo" font-family="OpenSans, Open Sans" font-size="12" font-weight="normal" fill="#191E23">
+                <tspan x="66" y="21">geojournalism platform</tspan>
+            </text>
+            <g id="Group-4" stroke="#191E23" stroke-linecap="square" stroke-width="2">
+                <path d="M0,29.6417666 C4.66666667,30.5856274 7,28.9695705 7,24.7935957 C7,20.6176209 7,12.7602404 7,1.22145433" id="Path-10-Copy-44"></path>
+                <path d="M3.66666667,29.8886453 C5.42666682,29.9108836 6.57703328,29.9068681 7.11776606,29.8765987 C9.92814424,29.7192783 11.3333333,28.0210736 11.3333333,24.7819846 C11.3333333,20.6080668 11.3333333,12.7545567 11.3333333,1.22145433" id="Path-10-Copy-45" opacity="0.7"></path>
+                <path d="M2.66666667,29.8886453 C7.91398263,29.9108836 10.8135126,29.9068681 11.3652564,29.8765987 C14.2328633,29.7192783 15.6666667,28.0210736 15.6666667,24.7819846 C15.6666667,20.6080668 15.6666667,12.7545567 15.6666667,1.22145433" id="Path-10-Copy-46" opacity="0.5"></path>
+                <line x1="3.66666667" y1="1.05661916" x2="15.6666667" y2="1.05661916" id="Line-Copy-26"></line>
+            </g>
+        </g>
+    </g>
+</svg>
