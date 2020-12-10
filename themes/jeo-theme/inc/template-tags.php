@@ -267,12 +267,11 @@ function newspack_categories()
 				$post_cat_slug = $post_cat;
 			}
 
-				if($post_cat_slug) {
-					$post_cat_slug = $post_cat_slug->slug;
+			if($post_cat_slug) {
+				$post_cat_slug = $post_cat_slug->slug;
 
-					if ($post_cat_slug == 'uncategorized') {
-						$uncategorized = true;
-					}
+				if ($post_cat_slug == 'uncategorized') {
+					$uncategorized = true;
 				}
 			}
 
