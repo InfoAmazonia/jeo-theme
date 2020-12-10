@@ -257,8 +257,22 @@ function newspack_categories()
 
 		$post_categories = get_the_category();
 		$post_child_category = null;
+		$uncategorized = false;
+
 		foreach ( $post_categories as $post_cat ) {
-			if ( $parent_type_category == $post_cat->parent || $post_cat->slug == 'uncategorized' ) {
+			if(function_exists('icl_object_id')) {
+				$post_cat_slug = get_term_for_default_lang($post_cat->term_id, 'category');
+
+				if($post_cat_slug) {
+					$post_cat_slug = $post_cat_slug->slug;
+
+					if ($post_cat_slug == 'uncategorized') {
+						$uncategorized = true;
+					}
+				}
+			}
+
+			if ( $parent_type_category == $post_cat->parent || $uncategorized ) {
 				$post_child_category = $post_cat;
 			}
 		}
@@ -266,16 +280,17 @@ function newspack_categories()
 		
 		if($post_child_category) {
 			$categories_list .= '<a href="' . esc_url(get_category_link($post_child_category->term_id)) . '" rel="category tag">' . $post_child_category->name . '</a>';
-			if ($post_child_category->slug != 'uncategorized') {
+			if (!$uncategorized) {
 				$categories_list .= '<span class="custom-separator"> / </span>';
 			}
 		}
 		
-		
-		if ($category_id && $post_child_category->slug != 'uncategorized') {
-			$category = get_term($category_id);
-			if ($category) {
-				$categories_list .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . $category->name . '</a>';
+		if($post_child_category) {
+			if ($category_id && !$uncategorized) {
+				$category = get_term($category_id);
+				if ($category) {
+					$categories_list .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . $category->name . '</a>';
+				}
 			}
 		}
 	}
