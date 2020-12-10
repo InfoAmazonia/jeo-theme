@@ -157,17 +157,19 @@ function custom_team_block() {
 		$asset_file['version']
 		//filemtime(get_stylesheet_directory() . '/dist/imageBlock.js')
 	);
+	
 	wp_register_style(
 		'custom-team-block',
-		get_stylesheet_directory_uri() . '/assets/javascript/blocks/teamBlock/teamBlock.scss',
+		get_stylesheet_directory_uri() . '/assets/javascript/blocks/teamBlock/teamBlock.css',
 		[],
-		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/teamBlock/teamBlock.scss'),
+		filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/teamBlock/teamBlock.css'),
 		'all'
 	);
 
 	register_block_type('jeo-theme/custom-team-block', array(
 		'editor_script' => 'custom-team-block',
 		'editor_style'  => 'custom-team-block',
+		'style'         => 'custom-team-block',
 	));
 }
 
