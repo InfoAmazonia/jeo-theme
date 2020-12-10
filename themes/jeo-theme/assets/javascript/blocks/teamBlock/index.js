@@ -2,6 +2,8 @@ import { RichText, InnerBlocks } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 import { registerBlockType } from "@wordpress/blocks";
 
+import "./teamBlock.scss";
+
 registerBlockType('jeo-theme/custom-team-block', {
     title: __('Team'),
     icon: 'buddicons-buddypress-logo',
