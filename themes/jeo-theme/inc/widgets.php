@@ -201,6 +201,8 @@ class most_read_widget extends WP_Widget {
 	}
 
 	public function widget($args, $instance) {
+		$authors = get_coauthors();
+		$authors_ids = [];
 		$category = '';
 		$tag = '';
 		$author = '';
@@ -220,9 +222,12 @@ class most_read_widget extends WP_Widget {
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 			$posts_query_args['tag__in'] = [$tag->term_id];
 		} else if(is_author()) {
-			$author = get_the_author_meta('ID');
+			foreach($authors as $author) {
+				array_push($authors_ids, $author->ID);
+			}
+
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
-			$posts_query_args['author__in'] = [$author];
+			$posts_query_args['author__in'] = $authors_ids;
 			$posts_query_args['meta_query'] = [[
 				'relation' => 'OR',
 				['key' => 'author-bio-display', 'value' => 1],
