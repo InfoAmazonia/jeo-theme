@@ -26,22 +26,33 @@
 
 			<div class="wrapper site-info-contain">
 				<?php
-					$copyright_info   = get_bloginfo( 'name' );
 					$custom_copyright = get_theme_mod( 'footer_copyright', '' );
-					if ( ! empty( $custom_copyright ) ) {
-						$copyright_info = $custom_copyright;
+					$has_footer_logo = false;
+
+					if ( '' !== get_theme_mod( 'copyright_logo', '' ) && 0 !== get_theme_mod( 'copyright_logo', '' ) ) {
+						$has_footer_logo = true;
 					}
 				?>
-				<?php if ( ! empty( $copyright_info ) ) : ?>
-					<span class="copyright">&copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php echo esc_html( $copyright_info ); ?>.</span>
-				<?php endif; ?>
 
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'newspack' ) ); ?>" class="imprint">
+				<?php if ( $has_footer_logo ) : ?>
 					<?php
-					/* translators: %s: WordPress. */
-					printf( esc_html__( 'Proudly powered by %s.', 'newspack' ), 'WordPress' );
+						echo wp_get_attachment_image(
+							get_theme_mod( 'copyright_logo', '' ),
+							'copyright-logo',
+							'',
+							array( 'class' => 'footer-logo' )
+						);
 					?>
-				</a>
+				<?php else: ?>
+						<img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logos/JEOminip.svg';?>">
+				<?php endif; ?>
+				
+				<span class="copyright"><?php echo esc_html( $custom_copyright ); ?></span>
+				<div class="credit">
+					<p><?= __('Site por') ?></p>
+					<a href="https://hacklab.com.br" class="hacklab">Hacklab</a>
+					<a href="https://hacklab.com.br" class="hacklab-decoration-marker">/</a>
+				</div>
 
 				<?php
 				if ( function_exists( 'the_privacy_policy_link' ) ) {

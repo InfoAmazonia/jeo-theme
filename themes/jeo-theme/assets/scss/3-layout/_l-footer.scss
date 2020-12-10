@@ -58,7 +58,48 @@ footer {
     }
 
     .site-info {
-        display: none;
+        font-size: size(12);
+        background: #F5F5F5;
+
+        .wrapper.site-info-contain {
+            border: none;
+
+            & > *:last-child {
+                margin-left: auto;
+            }
+
+            .copyright {
+                align-self: center;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            .credit {
+                display: flex;
+                flex-direction: row;
+                height: fit-content;
+                margin-top: auto;
+                margin-bottom: auto;
+
+                p, a {
+                    font-size: size(12);
+                    margin: 0;
+                    font-weight: bold;
+                }
+
+                p {
+                    margin-right: 3px;
+                }
+
+                .hacklab {
+                    color: #191E23;
+                }
+
+                .hacklab-decoration-marker {
+                    color: #E84118;
+                }
+            }
+        }
     }
 
     @include desktop {
