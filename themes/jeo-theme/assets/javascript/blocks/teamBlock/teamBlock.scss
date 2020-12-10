@@ -1,77 +1,78 @@
 .team-members {
-	background-color: #F5F5F5;
+	background-color: #f5f5f5;
 	border-radius: size(10);
 	font-family: var(--primary-font);
 	padding: 30px;
-    background-color: #F5F5F5;
+	background-color: #f5f5f5;
+	
+	.block-editor-block-list__layout > .block-editor-block-list__block.wp-block[aria-label="Block: Team member"] {
+		margin: 5px !important;
+	}
 
-    .block-editor-block-list__layout >
-    .block-editor-block-list__block.wp-block[aria-label="Block: Team member"]{
-        margin: 5px !important;
-    }
-    
 	> h2 {
 		margin-top: 0;
 		text-transform: uppercase;
 		font-size: 18px;
 		font-weight: bold;
 		margin-bottom: 40px;
-		color: #555D66 !important;
-    }
-    
-	> div {
+		color: #555d66 !important;
+	}
 
+	> div {
 		> .block-editor-block-list__layout {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 		}
-    }
-    
+	}
+
 	.wp-block.editor-block-list__block.block-editor-block-list__block {
 		margin: initial;
-    }
-    
+	}
+
 	img {
 		width: 100px !important;
 		height: 100px !important;
 		object-fit: cover;
 		border-radius: 50%;
-    }
-    
+	}
+
 	.team-member-item {
 		figure {
-			> div:not(.block-editor-media-placeholder) {
-				width: 100px !important;
-			}
-        }
-        
-		.block-editor-block-list__layout {
-			display: flex;
-            flex-direction: row;
-            
 			> div {
-				margin-top: auto;
-				margin-bottom: auto;
+				&:not(.block-editor-media-placeholder) {
+					width: 100px !important;
+				}
+			}
+		}
+
+		.block-editor-inner-blocks {
+			> .block-editor-block-list__layout {
 				display: flex;
-                flex-direction: column;
-                margin-left: 0;
+			}
+		}
+
+		.block-editor-block-list__layout {
+			> div {
+				height: fit-content;
+				place-self: center;
+				margin-left: 0;
 
 				&:first-of-type {
 					p {
-                        margin-left: 0;
+						margin-left: 0;
 
 						&:nth-child(1) {
 							font-weight: bold;
 							margin-bottom: 0;
-                        }
-                        
+						}
+
 						&:nth-child(2) {
 							margin-top: 0;
 						}
 					}
 				}
-            }
-            
+			}
+			
 			.block-list-appender {
 				display: none;
 			}
