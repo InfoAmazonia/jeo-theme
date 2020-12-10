@@ -4,7 +4,7 @@ function register_metaboxes() {
 		'display-autor-info',
 		'Show author options',
 		'display_author_callback',
-		'post',
+		['post', 'project'],
 		'side',
 		'default',
 	);
