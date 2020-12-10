@@ -50,6 +50,8 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
             setAttributes({
                 mediaURL: media.url,
                 mediaID: media.id,
+                title: media.description,
+                mediaDescription: media.caption
             });
         };
 
