@@ -264,7 +264,7 @@ function newspack_categories()
 			if(function_exists('icl_object_id')) {
 				$post_cat_slug = get_term_for_default_lang($post_cat->term_id, 'category');
 			} else {
-				$post_cat_slug = $post_cat->slug;
+				$post_cat_slug = $post_cat;
 			}
 
 				if($post_cat_slug) {
