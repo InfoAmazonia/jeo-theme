@@ -258,10 +258,14 @@ function newspack_categories()
 		$post_categories = get_the_category();
 		$post_child_category = null;
 		$uncategorized = false;
+		$post_cat_slug = null;
 
 		foreach ( $post_categories as $post_cat ) {
 			if(function_exists('icl_object_id')) {
 				$post_cat_slug = get_term_for_default_lang($post_cat->term_id, 'category');
+			} else {
+				$post_cat_slug = $post_cat->slug;
+			}
 
 				if($post_cat_slug) {
 					$post_cat_slug = $post_cat_slug->slug;
