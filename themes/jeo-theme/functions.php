@@ -310,3 +310,4 @@ function video_embed_url($url) {
 
 	return $url;	
 }
+

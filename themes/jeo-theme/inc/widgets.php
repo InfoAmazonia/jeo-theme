@@ -41,6 +41,15 @@ function widgets_areas() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	));
+
+	register_sidebar(array(
+		'name'          => 'Project Archive Description',
+		'id'            => 'project_archive_description',
+		'before_widget' => '<div class="widget-project_archive_description">',
+		'after_widget'  => '</div>',
+		'before_title' => '<!--',
+		'after_title' => '-->',
+	));
 }
 add_action('widgets_init', 'widgets_areas');
 
