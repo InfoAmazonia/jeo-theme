@@ -406,6 +406,10 @@
             @include mobile {
                 margin: 60px auto;
             }
+
+            @include tablet {
+                min-height: auto;
+            }
         }
 
         /* novo */
