@@ -41,7 +41,7 @@
             }
 
             &:last-of-type {
-                p.post-author {
+                p.post-author, p.post-date {
                     margin-bottom: 0px;
                 }
             }
@@ -63,7 +63,7 @@
                     }
                 }
 
-                .post-author {
+                .post-author, .post-date {
                     color: rgba(25, 30, 35, 0.5);
                     margin-bottom: 20px;
                     font-size: size(14);
@@ -91,7 +91,7 @@
                         color: #f5f5f5;
                     }
 
-                    .post-author {
+                    .post-author, .post-date {
                         color: white;
                     }
 

@@ -397,34 +397,18 @@ function newspack_scott_customizer($wp_customize)
 	);
 
 	$wp_customize->add_section(
-		'post_sharing',
+		'post_excerpt',
 		array(
-			'title' => esc_html__('Post Sharing', 'newspack'),
-			'section' => 'post_sharing',
+			'title' => esc_html__('Post excerpt', 'newspack'),
+			'section' => 'post_excerpt',
 		)
 	);
 
 	$wp_customize->add_section(
-		'project_archive',
+		'post_sharing',
 		array(
-			'title' => esc_html__('Projects Archive', 'jeo'),
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'description_project_archive',
-		array(
-			'default'  => '',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		'description_project_archive',
-		array(
-			'type' => 'textarea',
-			'section' => 'project_archive',
-			'label' => __('Description', 'jeo'),
+			'title' => esc_html__('Post Sharing', 'newspack'),
+			'section' => 'post_sharing',
 		)
 	);
 
@@ -1034,6 +1018,47 @@ function newspack_scott_customizer($wp_customize)
 			'description' => __( 'Example: Dosis' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'disable_excerpt_in_all_posts',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'disable_excerpt_in_all_posts',
+		array(
+			'type' => 'checkbox',
+			'section' => 'post_excerpt',
+			'label' => __('Hide post excerpt in all posts'),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'copyright_logo',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'copyright_logo',
+			array(
+				'label'       => esc_html__( 'Copyright logo', 'newspack' ),
+				'section'     => 'footer_options',
+				'settings'    => 'copyright_logo',
+				'flex_width'  => true,
+				'flex_height' => true,
+				'width'       => 200,
+				'height'      => 30,
+			)
 		)
 	);
 }

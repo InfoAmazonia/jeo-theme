@@ -7,12 +7,14 @@
 }
 
 .image-gallery .gallery-grid {
+    cursor: grabbing;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0.625rem;
 }
 
 .image-gallery .gallery-item-container {
+    cursor: pointer;
     display: block;
     height: 0;
     padding-top: 56.25%;
@@ -21,7 +23,16 @@
     border-radius: 5px;
 }
 
+.image-gallery .rich-text {
+    cursor: text;
+}
+
+.image-gallery .gallery-item-container.moving {
+    padding-top: 0;
+}
+
 .image-gallery .gallery-item-container img {
+    cursor: grab;
     position: absolute;
     top: 0;
     height: 100%;
@@ -41,6 +52,7 @@
     justify-content: center;
     align-items: center;
     color: #333;
+    cursor: pointer;
 }
 
 .image-gallery .select-images-button.is-button.is-default.is-large {

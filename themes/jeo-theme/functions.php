@@ -35,7 +35,6 @@ add_filter('pre_get_posts', '_search_pre_get_posts', 1);
 
 function _search_pre_get_posts($query) {
 	global $wp_query;
-	//var_dump();
 
 	if (is_admin() || !$query->is_main_query()) {
 		return $query;
@@ -130,8 +129,30 @@ function _search_pre_get_posts($query) {
 		if(!empty($tags)) {
 			$query->set('tag', $tags);
 		}
-		//var_dump($query);
 
+	}
+
+	return $query;
+}
+
+add_filter('pre_get_posts', '_author_pre_get_posts', 1);
+
+function _author_pre_get_posts($query) {
+
+	if ($query->is_author()) {
+
+		$meta_query = $query->get('meta_query');
+		if (!is_array($meta_query)) {
+			$meta_query = [];
+		}
+
+		$meta_query[] = [
+			'relation' => 'OR',
+			['key' => 'author-bio-display', 'value' => 1],
+			['key' => 'authors-listing', 'value' => 1],
+		];
+
+		$query->set('meta_query', $meta_query);
 	}
 
 	return $query;
@@ -227,7 +248,7 @@ function show_publishers($id){
 	if(taxonomy_exists('partner')){
 		$partners = get_the_terms( get_the_id(), 'partner');
 		if ($partners && count($partners) > 0){
-			$partner_link = get_post_meta($id, 'partner-link', true); 
+			$partner_link = get_post_meta($id, 'partner-link', true);
 			if (class_exists('WPSEO_Primary_Term')) {
 				$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', get_the_id() );
 				$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
@@ -236,7 +257,7 @@ function show_publishers($id){
 				if ($term || count($partners) == 1 ) {
 
 					$partner_name = '';
-					if($term) {
+					if($term && isset($term->term_id)) {
 						$partner_name = $term->name;
 					} else if (count($partners) == 1) {
 						$partner_name = $partners[0]->name;
@@ -244,17 +265,49 @@ function show_publishers($id){
 
 					?>
 					<div class="publishers">
-									<span class="publisher-name">
-										<?php echo esc_html__('By', 'newspack'); ?>
+						<span class="publisher-name">
+								<?php
+									if ($partner_link) {?>
 										<a href="<?= $partner_link ?>" >
 											<i class="fas fa-sync-alt publisher-icon"></i>
 											<?php echo $partner_name; ?>
 										</a>
-									</span>
-							</div>
-							<?php 
-				} 
+									<?php } else { ?>
+										<i class="fas fa-sync-alt publisher-icon"></i>
+										<?php echo $partner_name;
+									}?>
+								</span>
+					</div>
+					<?php
+				}
 			}
 		}
 	}
 }
+
+/* Remove 'this is a story from media partners */
+add_action( 'init', 'the_content_remove_plugin_filter' );
+function the_content_remove_plugin_filter() {
+    remove_filter( 'the_content', 'Newspack_Media_Partners::add_content_partner_logo', 10 );
+}
+
+function video_embed_url($url) {	
+	if (empty($url)) {	
+		return $url;	
+	}	
+
+	$youtube_matches = [];	
+	$is_youtube = preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $youtube_matches);	
+	if ($is_youtube) {	
+		return 'https://www.youtube.com/embed/' . $youtube_matches[1];	
+	}	
+
+	$vimeo_matches = [];	
+	$is_vimeo = preg_match("/\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_\-]+)?/", $url, $vimeo_matches);	
+	if ($is_vimeo) {	
+		return 'https://player.vimeo.com/video/' . $vimeo_matches[1];	
+	}	
+
+	return $url;	
+}
+

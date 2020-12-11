@@ -16,7 +16,7 @@ get_header();
 				</h1>
 
 				<div class="taxonomy-description">
-					<?= get_theme_mod('description_project_archive', '') ?>
+					<?php dynamic_sidebar('project_archive_description'); ?>
 				</div>
 
 		</header><!-- .page-header -->

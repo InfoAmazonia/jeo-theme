@@ -257,32 +257,52 @@ function newspack_categories()
 
 		$post_categories = get_the_category();
 		$post_child_category = null;
+		$uncategorized = false;
+		$post_cat_slug = null;
+
 		foreach ( $post_categories as $post_cat ) {
-			if ( $parent_type_category == $post_cat->parent ) {
+			if(function_exists('icl_object_id')) {
+				$post_cat_slug = get_term_for_default_lang($post_cat->term_id, 'category');
+			} else {
+				$post_cat_slug = $post_cat;
+			}
+
+			if($post_cat_slug) {
+				$post_cat_slug = $post_cat_slug->slug;
+
+				if ($post_cat_slug == 'uncategorized') {
+					$uncategorized = true;
+				}
+			}
+
+			if ( $parent_type_category == $post_cat->parent || $uncategorized ) {
 				$post_child_category = $post_cat;
 			}
 		}
-
 		$post_child_category;
-
+		
 		if($post_child_category) {
-			$categories_list .= '<a href="' . esc_url(get_category_link($post_child_category->term_id)) . '" rel="category tag">' . $post_child_category->name . '</a> <span class="custom-separator"> / </span>';
+			$categories_list .= '<a href="' . esc_url(get_category_link($post_child_category->term_id)) . '" rel="category tag">' . $post_child_category->name . '</a>';
+			if (!$uncategorized) {
+				$categories_list .= '<span class="custom-separator"> / </span>';
+			}
 		}
-
-				
-		if ($category_id) {
-			$category = get_term($category_id);
-			if ($category) {
-				$categories_list .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . $category->name . '</a>';
+		
+		if($post_child_category) {
+			if ($category_id && !$uncategorized) {
+				$category = get_term($category_id);
+				if ($category) {
+					$categories_list .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . $category->name . '</a>';
+				}
 			}
 		}
 	}
-
+	
 	if (!$categories_list) {
 		/* translators: used between list items; followed by a space. */
 		$categories_list = get_the_category_list('<span class="sep">' . esc_html__(',', 'newspack') . '&nbsp;</span>');
 	}
-
+	
 	if ($categories_list) {
 		printf(
 			/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
@@ -292,6 +312,7 @@ function newspack_categories()
 
 		); // WPCS: XSS OK.
 	}
+
 }
 
 /**

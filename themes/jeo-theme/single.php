@@ -57,22 +57,22 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 				<header class="entry-header">
 					<?php get_template_part('template-parts/header/entry', 'header'); ?>
 				</header>
-
 			<?php endif; ?>
 
 			<div class="main-content">
 				<?php if ($isImageBehind) : ?>
 					<div class="entry-subhead">
-						<!-- publishers -->
-						<?php 
-							show_publishers($post->ID);
-						?>
-						<!-- publishers -->
 						<div class="entry-meta">
-							<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
-								<?php newspack_posted_by(); ?>
-							<?php endif; ?>
-							<div></div>
+								<div class="author-partner">
+									<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
+										<?php newspack_posted_by(); ?>
+									<?php endif; ?>
+									<!-- publishers -->
+									<?php 
+										show_publishers($post->ID);
+									?>
+									<!-- publishers -->
+								</div>
 							<?php newspack_posted_on(); ?>
 						</div><!-- .meta-info -->
 						<?php
@@ -91,9 +91,46 @@ if(isset($post_child_category->slug) && in_array ( $post_child_category->slug, [
 				}
 
 				// Place smaller featured images inside of 'content' area.
-				if ('small' === newspack_featured_image_position()) :
-					newspack_post_thumbnail();
-				endif;
+				if ('small' === newspack_featured_image_position()) : ?>
+					<div class="featured-image-small">
+						<div class="featured-image-small__credit-wrapper">
+							<?php newspack_post_thumbnail(); ?>
+
+							<?php if(class_exists('Newspack_Image_Credits') && (!empty(Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id())['credit']) || !empty(get_post(get_post_thumbnail_id())->post_content))): ?>
+								<div class="image-info">
+									<div class="image-info-container">
+										<div class="wrapper">
+											<div class="image-meta">
+												<?php
+												if (class_exists('Newspack_Image_Credits')) {
+													$image_meta = Newspack_Image_Credits::get_media_credit(get_post_thumbnail_id()); ?>
+													<?= (isset($image_meta['credit_url']) && !empty($image_meta['credit_url'])) ? '<a href="' . $image_meta['credit_url'] . '">' : null ?>
+													<span class="credit">
+														<?= $image_meta['credit'] ?>
+
+														<?= isset($image_meta['organization']) && !empty($image_meta['organization']) ? ' / ' . $image_meta['organization'] : null ?>
+													</span>
+													<?= (isset($image_meta['credit_url']) && !empty($image_meta['credit_url'])) ? '</a>' : null ?>
+
+												<?php
+												}
+												?>
+											</div>
+
+										</div>
+									</div>
+									<i class="fas fa-camera"></i>
+								</div>
+							<?php endif; ?>
+						</div>
+						<p class="description">
+							<?php
+							//var_dump(get_post(get_post_thumbnail_id()));
+							?>
+							<?= get_post(get_post_thumbnail_id())->post_content ?>
+						</p>
+					</div><!-- .featured-image-small -->
+				<?php endif;
 
 				get_template_part('template-parts/content/content', 'single');
 				?>
