@@ -83,8 +83,12 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 30%);
         z-index: 1;
+
+        @include mobile {
+            background: linear-gradient(90deg, rgba(0,0,0,0.6), transparent 30%, transparent 70%, rgba(0,0,0,0.6));
+        }
     }
 
     &.fullscreen {
@@ -100,10 +104,10 @@
             .sss {
                 max-height: 100vh;
             }
-    
+
             .gallery-item-container {
                 position: initial;
-    
+
             }
 
             .image-gallery-wrapper {
@@ -114,16 +118,16 @@
 
                 @include tablet {
                     height: 100%;
-                    
+
                     .dots-wrapper {
                         display: none;
                     }
                 }
-                
+
             }
         }
 
-        
+
     }
 
     &.grid-display {
@@ -148,7 +152,7 @@
                     }
                 }
             }
-    
+
         }
 
         &.fullscreen {

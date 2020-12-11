@@ -41,17 +41,17 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 
 	<?php if (!is_page() && 'behind' !== newspack_featured_image_position() && !get_query_var('hide_post_meta')) : ?>
 		<div class="entry-subhead">
-			<!-- publishers -->
-			<?php 
-				show_publishers($post->ID);
-			?>
-			<!-- publishers -->
-				
 			<div class="entry-meta">
-				<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
-					<?php newspack_posted_by(); ?>
-				<?php endif; ?>
-				<div></div>
+				<div class="author-partner">
+					<?php if (get_post_meta(get_the_ID(), 'authors-listing', true) && empty( $terms )) : ?>
+						<?php newspack_posted_by(); ?>
+					<?php endif; ?>
+					<!-- publishers -->
+					<?php 
+						show_publishers($post->ID);
+					?>
+					<!-- publishers -->
+				</div>
 				<?php newspack_posted_on(); ?>
 			</div><!-- .meta-info -->
 			
@@ -67,7 +67,13 @@ if (!get_query_var('model') || get_query_var('model') !== 'video') :
 		<?php if('large' == newspack_featured_image_position() || 'small' == newspack_featured_image_position()): ?>
 			<?php if(has_excerpt()): ?>
 				<h1 class="post-excerpt">
-					<?php the_excerpt(); ?>
+					<?php
+						global $post;
+						
+						if(! boolval(get_theme_mod('disable_excerpt_in_all_posts', false)) && ! boolval(get_post_meta($post->ID, 'hide_post_excerpt', true ))) {
+							the_excerpt();
+						}
+					?>
 				</h1>
 			<?php endif ?>
 		<?php endif; ?>
