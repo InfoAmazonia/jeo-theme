@@ -45,6 +45,16 @@
 			}
 		}
 
+		> div {
+			border: 2px solid #3d3d3d;
+			padding: 0 1px;
+			border-radius: 5px;
+		}
+
+		figcaption {
+			display: none;
+		}
+
 		.block-editor-inner-blocks {
 			> .block-editor-block-list__layout {
 				display: flex;
@@ -58,8 +68,11 @@
 				margin-left: 0;
 
 				&:first-of-type {
+					margin-left: 10px;
+
 					p {
 						margin-left: 0;
+						font-size: 13px;
 
 						&:nth-child(1) {
 							font-weight: bold;
