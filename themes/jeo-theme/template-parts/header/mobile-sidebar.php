@@ -144,7 +144,7 @@ if (newspack_is_amp()) : ?>
 				<button action="language-options">
 					<span> <?= constant('ICL_LANGUAGE_CODE') ?> </span>
 
-					<div class="item--title">
+					<div class="item--title language-title">
 						<?= __("Language", "jeo") ?>
 					</div>
 				</button>
