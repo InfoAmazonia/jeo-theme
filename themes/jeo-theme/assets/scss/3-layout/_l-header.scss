@@ -843,6 +843,11 @@ header.site-header {
             button[action=language-options]{
                 span {
                     text-transform: capitalize;
+                    font-size: 18px;
+                }
+
+                .language-title{
+                    margin-top: 4px;
                 }
             }
             
