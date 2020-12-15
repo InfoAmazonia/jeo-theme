@@ -175,6 +175,22 @@ body {
     transition: all .2s ease-in-out;
 }
 
+/*style.css*/
+.entry .entry-content .has-primary-background-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color.has-primary-background-color {
+  background-color: var(--primary);
+}
+
+.entry .entry-content .has-primary-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color p,
+.entry .entry-content .wp-block-button.has-primary-color,
+.entry .entry-content .is-style-outline .wp-block-button__link.has-primary-color:not(:hover),
+.entry .entry-content .wp-block-button__link.is-style-outline.has-primary-color:not(:hover) {
+  color: var(--primary);
+}
+
+
 /* INI: Css for grid */
 .row {
     display: -webkit-box;
