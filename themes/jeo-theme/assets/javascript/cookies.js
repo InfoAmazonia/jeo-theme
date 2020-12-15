@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", function () {
     darkerScreen.style.top = '0';
     document.querySelector('body').appendChild(darkerScreen);
 
-    if (!parent.classList.contains('cc-invisible') || parent.style.display != 'none') {
+    if ((parent && !parent.classList.contains('cc-invisible')) || ( parent && parent.style.display != 'none')) {
         darkerScreen.style.display = 'block';
     }
 
