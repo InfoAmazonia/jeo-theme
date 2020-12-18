@@ -3,11 +3,12 @@
     .has-more-button button {
         background: transparent;
         color: #555d66;
-        font-size: 14px;
+        font-size: size(14) !important;
         width: 100%;
         border-top: 2px solid #ddd;
         text-transform: uppercase;
         font-weight: bold;
+        border-radius: 0px;
     }
 
     .entry .entry-content hr.wp-block-separator {
@@ -263,13 +264,6 @@
         }
     }
 
-    .has-more-button button {
-        background: transparent;
-        color: #555d66;
-        font-size: size(14) !important;
-        width: 100%;
-        border-top: 2px solid #dddddd;
-    }
 
     a.external-link {
         color: var(--primary);

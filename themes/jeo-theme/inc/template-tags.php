@@ -286,6 +286,8 @@ function newspack_categories()
 			if (!$uncategorized) {
 				$categories_list .= '<span class="custom-separator"> / </span>';
 			}
+		} else {
+			$categories_list .= '<a href="' . esc_url(get_category_link($category_id)) . '" rel="category tag">' . get_cat_name($category_id) . '</a>';
 		}
 		
 		if($post_child_category) {
