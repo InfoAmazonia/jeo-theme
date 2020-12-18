@@ -64,7 +64,7 @@
 
 	<?php if (get_post_meta(get_the_ID(), 'project-link', true) && !empty(get_post_meta(get_the_ID(), 'project-link', true))) : ?>
 		<a class="project-link" href="<?= get_post_meta(get_the_ID(), 'project-link', true) ?>">
-			<?= __('Access project page') ?>
+			<?= __('Access project page', 'jeo') ?>
 		</a>
 	<?php endif; ?>
 

@@ -62,7 +62,7 @@ class newsletter_widget extends WP_Widget {
 		parent::__construct(
 			'newsletter_widget',
 			__('Newsletter', 'newsletter_widget_domain'),
-			array('description' => __('Newsletter widget', 'newsletter_widget_domain'),)
+			array('description' => __('Newsletter widget', 'jeo'),)
 		);
 	}
 
@@ -162,7 +162,7 @@ class bullet_widget extends WP_Widget {
 		parent::__construct(
 			'bullet_widget',
 			__('Bullet', 'bullet_widget_domain'),
-			array('description' => __('Bullet widget', 'bullet_widget_domain'),)
+			array('description' => __('Bullet widget', 'jeo'),)
 		);
 	}
 
@@ -196,7 +196,7 @@ class most_read_widget extends WP_Widget {
 		parent::__construct(
 			'most_read_widget',
 			__('Most Read', 'most_read_widget_domain'),
-			array('description' => __('Most Read Widget', 'most_read_widget_domain'),)
+			array('description' => __('Most Read Widget', 'jeo'),)
 		);
 	}
 

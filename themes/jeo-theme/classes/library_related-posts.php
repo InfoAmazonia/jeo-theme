@@ -10,7 +10,7 @@ class related_posts {
     static function settings_api_init() {
         add_settings_field(
             'related_posts__use',
-            __('Posts Relacionados', 'guaraci'),
+            __('Posts Relacionados', 'jeo' ),
             'guaraci\\related_posts::settings',
             'reading'
         );

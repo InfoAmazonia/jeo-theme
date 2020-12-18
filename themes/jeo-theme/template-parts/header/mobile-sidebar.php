@@ -30,7 +30,7 @@ if (newspack_is_amp()) : ?>
 			<div class="discovery-menu">
 				<div class="discovery-title">
 					<a href="<?= $button_url ?>" class="discovery-link">
-						<?= __('Discovery') ?>
+						<?= __('Discovery', 'jeo') ?>
 					</a>
 				</div>
 			</div>
