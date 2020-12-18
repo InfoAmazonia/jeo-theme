@@ -11,7 +11,7 @@
 ?>
 <?php if(sizeof($related_posts->posts) >= 3 && sizeof($posts_ids) != 0 && get_option('related_posts__use', false)): ?>
             <div class="related-posts">
-                <p class="title-section"><?= __('Related Posts') ?></p>
+                <p class="title-section"><?= __('Related Posts', 'jeo') ?></p>
 
                 <div class="posts">
                     <?php foreach($related_posts->posts as $key=>$value): ?>

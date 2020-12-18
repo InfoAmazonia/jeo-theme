@@ -27,7 +27,7 @@ function newspack_scott_customizer($wp_customize)
 			'header_background_color_hex',
 			array(
 				'label' => __('Background color', 'newspack'),
-				'description' => __('Leave empty to use default'),
+				'description' => __('Leave empty to use default', 'jeo'),
 				'section'     => 'header_section_appearance',
 			)
 		)
@@ -161,7 +161,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'select',
 			'section' => 'header_section_appearance',
-			'label' => __('Discovery button style'),
+			'label' => __('Discovery button style', 'jeo'),
 			'default'  => 'solid',
 			'choices' => array(
 				'solid' => 'Solid',
@@ -182,7 +182,7 @@ function newspack_scott_customizer($wp_customize)
 		'discovery_button_link',
 		array(
 			'label'       => __( 'Discovery button link', 'newspack' ),
-			'description' => __( 'Leave it empty to hide.' ),
+			'description' => __( 'Leave it empty to hide.', 'jeo' ),
 			'section'     => 'header_section_appearance',
 			'default'     => '',
 			'type'        => 'text',
@@ -319,7 +319,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'select',
 			'section' => 'title_tagline',
-			'label' => __('Decoration marker style'),
+			'label' => __('Decoration marker style', 'jeo'),
 			'choices' => array(
 				'square' => 'Square',
 				'top' => 'Top rectangle',
@@ -335,7 +335,7 @@ function newspack_scott_customizer($wp_customize)
 			'decoration_marker_color',
 			array(
 				'label' => __('Decoration marker color', 'jeo'),
-				'description' => __('Leave empty to use primary color'),
+				'description' => __('Leave empty to use primary color', 'jeo'),
 				'section'     => 'title_tagline',
 			)
 		)
@@ -380,7 +380,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'select',
 			'section' => 'title_tagline',
-			'label' => __('Pagination style'),
+			'label' => __('Pagination style', 'jeo'),
 			'choices' => array(
 				'rectangle' => 'Square',
 				'circle' => 'Circle',
@@ -442,7 +442,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'republish_modal',
-			'label' => __('Republish in all posts'),
+			'label' => __('Republish in all posts', 'jeo'),
 		)
 	);
 
@@ -459,7 +459,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'text',
 			'section' => 'republish_modal',
-			'label' => __('Republish Modal Title'),
+			'label' => __('Republish Modal Title', 'jeo'),
 		)
 	);
 
@@ -476,7 +476,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'textarea',
 			'section' => 'republish_modal',
-			'label' => __('Republish Modal Introduction (it is allowed to use HTML tags)'),
+			'label' => __('Republish Modal Introduction (it is allowed to use HTML tags)', 'jeo'),
 		)
 	);
 
@@ -493,8 +493,8 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'textarea',
 			'section' => 'republish_modal',
-			'label' => __('Republish Modal Bullets Introduction (it is allowed to use HTML tags)'),
-			'description' => __('The bullets can be created as Bullet Widget on Widgets panel.')
+			'label' => __('Republish Modal Bullets Introduction (it is allowed to use HTML tags)'), 'jeo',
+			'description' => __('The bullets can be created as Bullet Widget on Widgets panel.', 'jeo')
 		)
 	);
 
@@ -511,7 +511,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'post_sharing',
-			'label' => __('Twitter'),
+			'label' => __('Twitter', 'jeo'),
 		)
 	);
 
@@ -528,7 +528,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'post_sharing',
-			'label' => __('Facebook'),
+			'label' => __('Facebook', 'jeo'),
 		)
 	);
 
@@ -545,7 +545,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'post_sharing',
-			'label' => __('Whatsapp'),
+			'label' => __('Whatsapp', 'jeo'),
 		)
 	);
 
@@ -562,7 +562,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'post_sharing',
-			'label' => __('WeChat'),
+			'label' => __('WeChat', 'jeo'),
 		)
 	);
 
@@ -579,7 +579,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'post_sharing',
-			'label' => __('Mail'),
+			'label' => __('Mail', 'jeo'),
 		)
 	);
 
@@ -596,7 +596,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'post_sharing',
-			'label' => __('Line'),
+			'label' => __('Line', 'jeo'),
 		)
 	);
 
@@ -605,7 +605,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'select',
 			'section' => 'typo_heading_sizes',
-			'label' => __('Unit'),
+			'label' => __('Unit', 'jeo'),
 			'choices' => array(
 				'px' => 'px',
 				'rem' => 'rem',
@@ -635,7 +635,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'typo_heading_sizes',
-			'label' => __('Force font-size by using !important'),
+			'label' => __('Force font-size by using !important', 'jeo'),
 		)
 	);
 
@@ -652,7 +652,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
-			'label' => __('p'),
+			'label' => __('p', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -670,7 +670,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
-			'label' => __('H1'),
+			'label' => __('H1', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -687,7 +687,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
-			'label' => __('H2'),
+			'label' => __('H2', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -704,7 +704,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
-			'label' => __('H3'),
+			'label' => __('H3', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -721,7 +721,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
-			'label' => __('H4'),
+			'label' => __('H4', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -738,7 +738,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
-			'label' => __('H5'),
+			'label' => __('H5', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -756,7 +756,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes',
-			'label' => __('H6'),
+			'label' => __('H6', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -784,7 +784,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'select',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('Unit'),
+			'label' => __('Unit', 'jeo'),
 			'choices' => array(
 				'px' => 'px',
 				'rem' => 'rem',
@@ -806,7 +806,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('Force font-size by using !important'),
+			'label' => __('Force font-size by using !important', 'jeo'),
 		)
 	);
 
@@ -823,7 +823,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('p'),
+			'label' => __('p', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -841,7 +841,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('H1'),
+			'label' => __('H1', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -858,7 +858,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('H2'),
+			'label' => __('H2', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -875,7 +875,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('H3'),
+			'label' => __('H3', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -892,7 +892,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('H4'),
+			'label' => __('H4', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -909,7 +909,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('H5'),
+			'label' => __('H5', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -927,7 +927,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'typo_heading_sizes_mobile',
-			'label' => __('H6'),
+			'label' => __('H6', 'jeo'),
 			'input_attrs' => $range_atttrs,
 		)
 	);
@@ -944,7 +944,7 @@ function newspack_scott_customizer($wp_customize)
 		'single_featured_font',
 		array(
 			'label'       => __( 'Featured Font', 'newspack' ),
-			'description' => __( 'Example: Libre Basquesville' ),
+			'description' => __( 'Example: Libre Basquesville', 'jeo' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
 		)
@@ -963,7 +963,7 @@ function newspack_scott_customizer($wp_customize)
 		'special_heading_font',
 		array(
 			'label'       => __( 'Special heading font', 'newspack' ),
-			'description' => __( 'Example: Open Sans Condensed. If it is empty, the Header Font is used.' ),
+			'description' => __( 'Example: Open Sans Condensed. If it is empty, the Header Font is used.', 'jeo' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
 		)
@@ -1015,7 +1015,7 @@ function newspack_scott_customizer($wp_customize)
 		'accent_font',
 		array(
 			'label'       => __( 'Accent font', 'newspack' ),
-			'description' => __( 'Example: Dosis' ),
+			'description' => __( 'Example: Dosis', 'jeo' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
 		)
@@ -1034,7 +1034,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'post_excerpt',
-			'label' => __('Hide post excerpt in all posts'),
+			'label' => __('Hide post excerpt in all posts', 'jeo'),
 		)
 	);
 

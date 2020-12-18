@@ -12,7 +12,7 @@ get_header();
 	<section id="primary" class="content-area custom-archive">
 		<header class="page-header">
 				<h1 class="page-title article-section-title category-header">
-					<span class="page-description"><?= __('Maps');  ?></span>
+					<span class="page-description"><?= __('Maps', 'jeo');  ?></span>
 				</h1>
 
 		</header><!-- .page-header -->

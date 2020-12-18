@@ -39,7 +39,7 @@ function newspack_posted_on()
 					<a href="#erratum" class="we-said-wrong__link">
 						<i class="fas fa-exclamation-triangle we-said-wrong-icon"></i>
 						<div class="we-said-wrong-tooltip">
-							<p><?php echo __( 'We made a mistake. This content has been changed' ); ?></p>
+							<p><?php echo __( 'We made a mistake. This content has been changed', 'jeo' ); ?></p>
 						</div>
 					</a>
 				<?php endif ?>
