@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-09 09:19-0300\n"
-"PO-Revision-Date: 2020-09-09 09:20-0300\n"
-"Last-Translator: \n"
+"Project-Id-Version: jeo\n"
+"POT-Creation-Date: 2020-12-21 10:23-0300\n"
+"PO-Revision-Date: 2020-12-21 10:33-0300\n"
 "Language-Team: \n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"Last-Translator: \n"
+"Language: pt_BR\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:17
@@ -27,11 +27,17 @@ msgstr ""
 msgid "Back to the home"
 msgstr ""
 
+#: archive-map.php:15
+msgid "Maps"
+msgstr ""
+
 #: archive-project.php:15
 msgid "Special Projects"
 msgstr ""
 
 #: archive.php:15 archive.php:44
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:82
+#: node_modules/@wordpress/components/src/query-controls/index.js:89
 msgid "Author"
 msgstr ""
 
@@ -39,47 +45,51 @@ msgstr ""
 msgid "ABOUT THE AUTHOR"
 msgstr ""
 
-#: assets/javascript/blocks/imageBlock/index.js:82
+#: assets/javascript/blocks/contentBox/index.js:45
+msgid "Content Box Title"
+msgstr ""
+
+#: assets/javascript/blocks/imageBlock/index.js:84
 msgid "Upload Image"
 msgstr ""
 
-#: assets/javascript/blocks/imageBlock/index.js:82
+#: assets/javascript/blocks/imageBlock/index.js:84
 msgid "Replace image"
 msgstr ""
 
-#: assets/javascript/blocks/imageBlock/index.js:94
+#: assets/javascript/blocks/imageBlock/index.js:96
 msgid "Write a info here."
 msgstr ""
 
-#: assets/javascript/blocks/imageBlock/index.js:112
+#: assets/javascript/blocks/imageBlock/index.js:114
 msgid "Write a description here."
 msgstr ""
 
-#: assets/javascript/blocks/imageGallery/index.js:6
-msgid "Image Gallery"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:10
-msgid "materialtheme"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:11
-msgid "photos"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:12
-msgid "images"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:88
+#: assets/javascript/blocks/imageGallery/index.js:16
 msgid "Type here your description"
 msgstr ""
 
-#: assets/javascript/blocks/imageGallery/index.js:107
+#: assets/javascript/blocks/imageGallery/index.js:24
 msgid "Type the credits here"
 msgstr ""
 
-#: assets/javascript/blocks/imageGallery/index.js:127
+#: assets/javascript/blocks/imageGallery/index.js:98
+msgid "Image Gallery"
+msgstr ""
+
+#: assets/javascript/blocks/imageGallery/index.js:102
+msgid "materialtheme"
+msgstr ""
+
+#: assets/javascript/blocks/imageGallery/index.js:103
+msgid "photos"
+msgstr ""
+
+#: assets/javascript/blocks/imageGallery/index.js:104
+msgid "images"
+msgstr ""
+
+#: assets/javascript/blocks/imageGallery/index.js:153
 #: assets/javascript/blocks/linkDropdown/index.js:127
 #: assets/javascript/blocks/videoGallery/index.js:42
 msgid "Type a title"
@@ -133,39 +143,24 @@ msgstr ""
 msgid "Adicional Information"
 msgstr ""
 
-#: assets/javascript/blocks/teamBlock/index.js:6
-#: assets/javascript/blocks/teamBlock/index.js:10
+#: assets/javascript/blocks/teamBlock/index.js:8
+#: assets/javascript/blocks/teamBlock/index.js:12
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:7
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:8
 msgid "Team"
 msgstr ""
 
-#: assets/javascript/blocks/teamBlock/index.js:11
+#: assets/javascript/blocks/teamBlock/index.js:13
 msgid "Members"
 msgstr ""
 
-#: assets/javascript/blocks/teamBlock/index.js:44
+#: assets/javascript/blocks/teamBlock/index.js:46
 msgid "Type a team section title"
-msgstr ""
-
-#: classes/class-newspack-style-packs-core.php:178
-msgid "Style Packs"
-msgstr ""
-
-#: classes/class-newspack-style-packs-core.php:194
-#: classes/class-newspack-style-packs-core.php:366
-msgid "Default"
-msgstr ""
-
-#: classes/class-newspack-style-packs-core.php:199
-msgid "Active Style"
 msgstr ""
 
 #: classes/class-newspack-walker-comment.php:52
 #, php-format
 msgid "%s <span class=\"screen-reader-text says\">says:</span>"
-msgstr ""
-
-#: classes/class-newspack-walker-comment.php:64
-msgid "Article author"
 msgstr ""
 
 #: classes/class-newspack-walker-comment.php:77
@@ -174,6 +169,14 @@ msgid "%1$s at %2$s"
 msgstr ""
 
 #: classes/class-newspack-walker-comment.php:85
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/index.js:603
+#: node_modules/@wordpress/block-editor/build-module/components/media-edit/index.native.js:30
+#: node_modules/@wordpress/block-editor/build-module/components/tool-selector/index.js:62
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/link-viewer.js:37
+#: node_modules/@wordpress/block-editor/src/components/link-control/index.js:614
+#: node_modules/@wordpress/block-editor/src/components/media-edit/index.native.js:24
+#: node_modules/@wordpress/block-editor/src/components/tool-selector/index.js:73
+#: node_modules/@wordpress/block-editor/src/components/url-popover/link-viewer.js:42
 msgid "Edit"
 msgstr ""
 
@@ -223,10 +226,13 @@ msgid "Comments"
 msgstr ""
 
 #: comments.php:114
+#: node_modules/@wordpress/components/build-module/guide/index.js:99
+#: node_modules/@wordpress/components/src/guide/index.js:105
 msgid "Previous"
 msgstr ""
 
 #: comments.php:115
+#: node_modules/@wordpress/components/build-module/guide/index.js:102
 msgid "Next"
 msgstr ""
 
@@ -234,48 +240,21 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:39
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: footer.php:42
-#, php-format
-msgid "Proudly powered by %s."
-msgstr ""
-
-#: header-single.php:48 inc/template-tags.php:131
-#: template-parts/content/content-social-networks.php:19
-msgid " and "
-msgstr ""
-
-#: header-single.php:51 inc/template-tags.php:134
-#: template-parts/content/content-social-networks.php:22
-msgid ", "
+#: footer.php:52
+msgid "Site by"
 msgstr ""
 
 #: header-single.php:122 header.php:43
 msgid "Skip to content"
 msgstr ""
 
-#: header-single.php:136 header-single.php:144 header-single.php:157
-#: header-single.php:180 header-single.php:222 header-single.php:303
-#: header-single.php:344 header.php:64 header.php:97 header.php:107
-#: header.php:143 header.php:187 header.php:268 header.php:310
-msgid "Menu"
+#: header-single.php:391 header.php:360
+msgid "Highlight Menu"
 msgstr ""
 
 #: header.php:52 template-parts/header/header-search.php:20
 msgid "What are you looking for?"
 msgstr "O que você procura?"
-
-#: header.php:337 template-parts/header/header-search.php:11
-msgid "Close Search"
-msgstr ""
-
-#: header.php:337 header.php:338 template-parts/header/header-search.php:11
-#: template-parts/header/header-search.php:12
-msgid "Open Search"
-msgstr ""
 
 #: inc/child-customizer.php:29
 msgid "Background color"
@@ -285,301 +264,243 @@ msgstr ""
 msgid "Leave empty to use default"
 msgstr ""
 
-#: inc/child-customizer.php:40
-msgid "Display Author Social Media links"
-msgstr ""
-
-#: inc/child-customizer.php:41
-msgid ""
-"Display social media links with the author bio on individual posts and "
-"author archives (this option requires the Yoast plugin)."
-msgstr ""
-
-#: inc/child-customizer.php:68
-msgid "Background image"
-msgstr ""
-
-#: inc/child-customizer.php:69
-msgid ""
-"Upload an image to be used as header background. Choosing a background image "
-"and background color causes overlap."
-msgstr ""
-
-#: inc/child-customizer.php:92
-msgid "Use backgroud image in dark mode?"
-msgstr ""
-
-#: inc/child-customizer.php:93
-msgid ""
-"By disabling this, the header will use the default background with some "
-"opacity applied."
-msgstr ""
-
-#: inc/child-customizer.php:110
-msgid "Content box title"
-msgstr ""
-
-#: inc/child-customizer.php:130
-msgid "Logo sticky image"
-msgstr ""
-
-#: inc/child-customizer.php:131
-msgid ""
-"Upload an image to be used as sticky logo. If there are no sticky logo, the "
-"main logo will be used instead"
-msgstr ""
-
-#: inc/child-customizer.php:156
-msgid "Logo dark image"
-msgstr ""
-
-#: inc/child-customizer.php:157
-msgid ""
-"Dark logo to be displayed. The default dark mode logo is your logo masked "
-"with white."
-msgstr ""
-
-#: inc/child-customizer.php:182
+#: inc/child-customizer.php:164
 msgid "Discovery button style"
 msgstr ""
 
-#: inc/child-customizer.php:202
+#: inc/child-customizer.php:184
 msgid "Discovery button link"
 msgstr ""
 
-#: inc/child-customizer.php:203
+#: inc/child-customizer.php:185
 msgid "Leave it empty to hide."
 msgstr ""
 
-#: inc/child-customizer.php:223
+#: inc/child-customizer.php:205
 msgid "Site description color"
 msgstr ""
 
-#: inc/child-customizer.php:242
+#: inc/child-customizer.php:224
 msgid "Search icon color"
 msgstr ""
 
-#: inc/child-customizer.php:260
+#: inc/child-customizer.php:242
 msgid "Search dark icon color"
 msgstr ""
 
-#: inc/child-customizer.php:279
+#: inc/child-customizer.php:261
 msgid "Social dark icon color "
 msgstr ""
 
-#: inc/child-customizer.php:297
+#: inc/child-customizer.php:279
 msgid "Search icon background"
 msgstr ""
 
-#: inc/child-customizer.php:320
+#: inc/child-customizer.php:302
 msgid "Search icon background color"
 msgstr ""
 
-#: inc/child-customizer.php:340
+#: inc/child-customizer.php:322
 msgid "Decoration marker style"
 msgstr ""
 
-#: inc/child-customizer.php:355
+#: inc/child-customizer.php:337
 msgid "Decoration marker color"
 msgstr ""
 
-#: inc/child-customizer.php:356
+#: inc/child-customizer.php:338
 msgid "Leave empty to use primary color"
 msgstr ""
 
-#: inc/child-customizer.php:375
-msgid "Marker background image"
-msgstr ""
-
-#: inc/child-customizer.php:401
+#: inc/child-customizer.php:383
 msgid "Pagination style"
 msgstr ""
 
-#: inc/child-customizer.php:412
-msgid "Republish Modal"
-msgstr ""
-
-#: inc/child-customizer.php:420
-msgid "Post Sharing"
-msgstr ""
-
-#: inc/child-customizer.php:428
-msgid "Projects Archive"
-msgstr ""
-
 #: inc/child-customizer.php:445
-msgid "Description"
+msgid "Republish in all posts"
 msgstr ""
 
-#: inc/child-customizer.php:453
-msgid "Font sizes"
-msgstr ""
-
-#: inc/child-customizer.php:479
+#: inc/child-customizer.php:462
 msgid "Republish Modal Title"
 msgstr ""
 
-#: inc/child-customizer.php:496
+#: inc/child-customizer.php:479
 msgid "Republish Modal Introduction (it is allowed to use HTML tags)"
 msgstr ""
 
-#: inc/child-customizer.php:513
+#: inc/child-customizer.php:496
 msgid "Republish Modal Bullets Introduction (it is allowed to use HTML tags)"
 msgstr ""
 
-#: inc/child-customizer.php:514
+#: inc/child-customizer.php:497
 msgid "The bullets can be created as Bullet Widget on Widgets panel."
 msgstr ""
 
-#: inc/child-customizer.php:531
+#: inc/child-customizer.php:514
 msgid "Twitter"
 msgstr ""
 
-#: inc/child-customizer.php:548
+#: inc/child-customizer.php:531
 msgid "Facebook"
 msgstr ""
 
-#: inc/child-customizer.php:565
+#: inc/child-customizer.php:548
 msgid "Whatsapp"
 msgstr ""
 
-#: inc/child-customizer.php:582
+#: inc/child-customizer.php:565
 msgid "WeChat"
 msgstr ""
 
-#: inc/child-customizer.php:599
+#: inc/child-customizer.php:582
 msgid "Mail"
 msgstr ""
 
-#: inc/child-customizer.php:616
+#: inc/child-customizer.php:599
 msgid "Line"
 msgstr ""
 
-#: inc/child-customizer.php:625 inc/child-customizer.php:804
+#: inc/child-customizer.php:608 inc/child-customizer.php:787
 msgid "Unit"
 msgstr ""
 
-#: inc/child-customizer.php:655 inc/child-customizer.php:826
+#: inc/child-customizer.php:638 inc/child-customizer.php:809
 msgid "Force font-size by using !important"
 msgstr ""
 
-#: inc/child-customizer.php:672 inc/child-customizer.php:843
+#: inc/child-customizer.php:655 inc/child-customizer.php:826
 msgid "p"
 msgstr ""
 
-#: inc/child-customizer.php:690 inc/child-customizer.php:861
+#: inc/child-customizer.php:673 inc/child-customizer.php:844
 msgid "H1"
 msgstr ""
 
-#: inc/child-customizer.php:707 inc/child-customizer.php:878
+#: inc/child-customizer.php:690 inc/child-customizer.php:861
 msgid "H2"
 msgstr ""
 
-#: inc/child-customizer.php:724 inc/child-customizer.php:895
+#: inc/child-customizer.php:707 inc/child-customizer.php:878
 msgid "H3"
 msgstr ""
 
-#: inc/child-customizer.php:741 inc/child-customizer.php:912
+#: inc/child-customizer.php:724 inc/child-customizer.php:895
 msgid "H4"
 msgstr ""
 
-#: inc/child-customizer.php:758 inc/child-customizer.php:929
+#: inc/child-customizer.php:741 inc/child-customizer.php:912
 msgid "H5"
 msgstr ""
 
-#: inc/child-customizer.php:776 inc/child-customizer.php:947
+#: inc/child-customizer.php:759 inc/child-customizer.php:930
 msgid "H6"
 msgstr ""
 
-#: inc/child-customizer.php:785
-msgid "Font sizes mobile"
-msgstr ""
-
-#: inc/child-customizer.php:963
+#: inc/child-customizer.php:946
 msgid "Featured Font"
 msgstr ""
 
-#: inc/child-customizer.php:964
+#: inc/child-customizer.php:947
 msgid "Example: Libre Basquesville"
 msgstr ""
 
-#: inc/child-customizer.php:982
+#: inc/child-customizer.php:965
 msgid "Special heading font"
 msgstr ""
 
-#: inc/child-customizer.php:983
+#: inc/child-customizer.php:966
 msgid "Example: Open Sans Condensed. If it is empty, the Header Font is used."
 msgstr ""
 
-#: inc/child-customizer.php:1002
+#: inc/child-customizer.php:985
 msgid "Menu font size (rem)"
 msgstr ""
 
-#: inc/child-customizer.php:1018
+#: inc/child-customizer.php:1001
 msgid "Accent Font Provider Import Code or URL"
 msgstr ""
 
-#: inc/child-customizer.php:1034
+#: inc/child-customizer.php:1017
 msgid "Accent font"
 msgstr ""
 
-#: inc/child-customizer.php:1035
+#: inc/child-customizer.php:1018
 msgid "Example: Dosis"
+msgstr ""
+
+#: inc/child-customizer.php:1037
+msgid "Hide post excerpt in all posts"
 msgstr ""
 
 #: inc/menus.php:3
 msgid "More"
 msgstr ""
 
-#: inc/metaboxes.php:41
+#: inc/metaboxes.php:59
 msgid "Sorry, we said wrong"
-msgstr ""
+msgstr "Desculpa, erramos"
 
-#: inc/metaboxes.php:77
+#: inc/metaboxes.php:109
 msgid "Authors biography: "
 msgstr ""
 
-#: inc/metaboxes.php:81
+#: inc/metaboxes.php:113
 msgid "Authors biography"
 msgstr ""
 
-#: inc/metaboxes.php:88
+#: inc/metaboxes.php:120
 msgid "Authors listing: "
 msgstr ""
 
-#: inc/metaboxes.php:92
+#: inc/metaboxes.php:124
 msgid "Authors listing"
 msgstr ""
 
-#: inc/metaboxes.php:120
+#: inc/metaboxes.php:152
 msgid "Add republish link: "
 msgstr ""
 
-#: inc/metaboxes.php:124
+#: inc/metaboxes.php:164
 msgid "Add republish link"
 msgstr ""
 
-#: inc/metaboxes.php:130
+#: inc/metaboxes.php:170
 msgid "Bullets: "
 msgstr ""
 
-#: inc/metaboxes.php:155
+#: inc/metaboxes.php:195
+msgid "Hide post excerpt: "
+msgstr ""
+
+#: inc/metaboxes.php:199
+msgid "See general option (set in Customizer) "
+msgstr ""
+
+#: inc/metaboxes.php:201
+msgid "Hide post excerpt"
+msgstr ""
+
+#: inc/metaboxes.php:215
 msgid "Video URL to be shown on twitter sharing preview: "
 msgstr ""
 
-#: inc/metaboxes.php:172
+#: inc/metaboxes.php:236
+msgid "Media partner link (It works with selected media partners)"
+msgstr ""
+
+#: inc/metaboxes.php:252
 msgid "Check to enable the \"sorry we said wrong\": "
 msgstr ""
 
-#: inc/metaboxes.php:176
+#: inc/metaboxes.php:256
 msgid "Sorry we said wrong"
 msgstr ""
 
-#: inc/metaboxes.php:198
+#: inc/metaboxes.php:278
 msgid "Original Publisher name"
 msgstr ""
 
-#: inc/metaboxes.php:205
+#: inc/metaboxes.php:285
 msgid "Original Publisher link"
 msgstr ""
 
@@ -683,110 +604,3431 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
-#: inc/template-tags.php:111
-msgid "By"
-msgstr ""
+#: inc/template-tags.php:42
+msgid "We made a mistake. This content has been changed"
+msgstr "Temos um error, desculpa!"
 
-#: inc/template-tags.php:155
-msgid "by"
-msgstr ""
-
-#: inc/template-tags.php:278 inc/template-tags.php:300
-msgid ","
-msgstr ""
-
-#: inc/template-tags.php:285
-msgid "Posted in"
-msgstr ""
-
-#: inc/template-tags.php:305
-msgid "Tagged:"
-msgstr ""
-
-#: inc/template-tags.php:316 template-parts/content/content-page.php:35
+#: inc/template-tags.php:344 template-parts/content/content-page.php:35
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/widgets.php:55
+#: inc/widgets.php:64
 msgid "Newsletter"
 msgstr ""
 
-#: inc/widgets.php:56
+#: inc/widgets.php:65
 msgid "Newsletter widget"
 msgstr ""
 
-#: inc/widgets.php:73 inc/widgets.php:85
-msgid "SEE LAST EDITION"
+#: inc/widgets.php:82 inc/widgets.php:94
+msgid "VIEW PAST EDITIONS"
 msgstr ""
 
-#: inc/widgets.php:100
-msgid "vertical"
-msgstr ""
-
-#: inc/widgets.php:104
+#: inc/widgets.php:113
 msgid "You are not allowed to add HTML in any of those fields"
 msgstr ""
 
-#: inc/widgets.php:109
+#: inc/widgets.php:116
+msgid "Model type:"
+msgstr ""
+
+#: inc/widgets.php:118
 msgid "Horizontal"
 msgstr ""
 
-#: inc/widgets.php:110
+#: inc/widgets.php:119
 msgid "Vertical"
 msgstr ""
 
-#: inc/widgets.php:155
+#: inc/widgets.php:124 inc/widgets.php:181 inc/widgets.php:295
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets.php:129
+msgid "Subtitle:"
+msgstr ""
+
+#: inc/widgets.php:134
+msgid "Newsletter form shortcode:"
+msgstr ""
+
+#: inc/widgets.php:139
+msgid "Last edition link:"
+msgstr ""
+
+#: inc/widgets.php:144
+msgid "Adicional Content:"
+msgstr ""
+
+#: inc/widgets.php:149
+msgid "Container style:"
+msgstr ""
+
+#: inc/widgets.php:164
 msgid "Bullet"
 msgstr ""
 
-#: inc/widgets.php:156
+#: inc/widgets.php:165
 msgid "Bullet widget"
 msgstr ""
 
-#: inc/widgets.php:189
+#: inc/widgets.php:185
+msgid "Description:"
+msgstr ""
+
+#: inc/widgets.php:198
 msgid "Most Read"
 msgstr ""
 
-#: inc/widgets.php:190
+#: inc/widgets.php:199
 msgid "Most Read Widget"
 msgstr ""
 
-#: inc/widgets.php:267
-msgid "show"
+#: inc/widgets.php:299
+msgid "Mininum quantity of posts needed to show the widget:"
 msgstr ""
 
-#: inc/widgets.php:299 inc/widgets.php:300
-msgid "Story Maps"
+#: inc/widgets.php:303
+msgid "Maximum quantity of posts shown in the widget:"
 msgstr ""
 
-#: inc/widgets.php:414
+#: inc/widgets.php:307
+msgid "Featured image setting:"
+msgstr ""
+
+#: inc/widgets.php:406
 msgid "See more URL (requires https://)"
 msgstr ""
 
-#: search.php:17
-msgid "Search results"
+#: node_modules/@vue/component-compiler-utils/node_modules/prettier/parser-typescript.js:1
+msgid "."
+msgstr ""
+
+#: node_modules/@vue/component-compiler-utils/node_modules/prettier/parser-typescript.js:1
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:14
+#: node_modules/prettier/parser-typescript.js:14
+msgid "Elapsed:: "
+msgstr ""
+
+#: node_modules/@vue/component-compiler-utils/node_modules/prettier/parser-typescript.js:1
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:14
+#: node_modules/prettier/parser-typescript.js:14
+msgid "placeOpenBraceOnNewLineForControlBlocks"
+msgstr ""
+
+#: node_modules/@vue/component-compiler-utils/node_modules/prettier/parser-typescript.js:1
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:14
+#: node_modules/prettier/parser-typescript.js:14
+msgid "placeOpenBraceOnNewLineForFunctions"
+msgstr ""
+
+#: node_modules/@wordpress/a11y/build-module/add-intro-text.js:18
+#: node_modules/@wordpress/a11y/src/add-intro-text.js:19
+msgid "Notifications"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/alignment-toolbar/index.js:21
+#: node_modules/@wordpress/block-editor/src/components/alignment-toolbar/index.js:16
+msgid "Align text left"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/alignment-toolbar/index.js:25
+#: node_modules/@wordpress/block-editor/src/components/alignment-toolbar/index.js:21
+msgid "Align text center"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/alignment-toolbar/index.js:29
+#: node_modules/@wordpress/block-editor/src/components/alignment-toolbar/index.js:26
+msgid "Align text right"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/alignment-toolbar/index.js:42
+#: node_modules/@wordpress/block-editor/src/components/alignment-toolbar/index.js:41
+msgid "Change text alignment"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-alignment-matrix-toolbar/index.js:16
+#: node_modules/@wordpress/block-editor/src/components/block-alignment-matrix-toolbar/index.js:19
+msgid "Change matrix alignment"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-alignment-toolbar/index.js:19
+#: node_modules/@wordpress/block-editor/src/components/block-alignment-toolbar/index.js:19
+msgid "Align left"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-alignment-toolbar/index.js:23
+#: node_modules/@wordpress/block-editor/src/components/block-alignment-toolbar/index.js:23
+msgid "Align center"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-alignment-toolbar/index.js:27
+#: node_modules/@wordpress/block-editor/src/components/block-alignment-toolbar/index.js:27
+msgid "Align right"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-alignment-toolbar/index.js:31
+#: node_modules/@wordpress/block-editor/src/components/block-alignment-toolbar/index.js:31
+msgid "Wide width"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-alignment-toolbar/index.js:35
+#: node_modules/@wordpress/block-editor/src/components/block-alignment-toolbar/index.js:35
+msgid "Full width"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-alignment-toolbar/index.js:69
+#: node_modules/@wordpress/block-editor/src/components/block-alignment-toolbar/index.js:77
+msgid "Change alignment"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-breadcrumb/index.js:52
+#: node_modules/@wordpress/block-editor/src/components/block-breadcrumb/index.js:45
+msgid "Block breadcrumb"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-breadcrumb/index.js:60
+#: node_modules/@wordpress/block-editor/src/components/block-breadcrumb/index.js:61
+#: node_modules/@wordpress/block-editor/src/components/block-breadcrumb/index.js:64
+msgid "Document"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-compare/index.js:69
+#: node_modules/@wordpress/block-editor/src/components/block-compare/index.js:76
+msgid "Current"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-compare/index.js:72
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.js:90
+#: node_modules/@wordpress/block-editor/src/components/block-compare/index.js:79
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.js:76
+msgid "Convert to HTML"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-compare/index.js:76
+#: node_modules/@wordpress/block-editor/src/components/block-compare/index.js:85
+msgid "After Conversion"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-inspector/index.js:49
+#: node_modules/@wordpress/block-editor/src/components/block-inspector/index.js:58
+msgid "No block selected."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-inspector/index.js:60
+#: node_modules/@wordpress/block-editor/build-module/components/block-switcher/index.js:162
+#: node_modules/@wordpress/block-editor/src/components/block-inspector/index.js:70
+#: node_modules/@wordpress/block-editor/src/components/block-switcher/index.js:157
+msgid "Styles"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-inspector/index.js:85
+#: node_modules/@wordpress/block-editor/src/components/block-inspector/index.js:104
+msgid "Advanced"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-contextual-toolbar.js:51
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-contextual-toolbar.js:39
+msgid "Block tools"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-crash-warning.js:14
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-crash-warning.js:13
+msgid "This block has encountered an error and cannot be previewed."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.js:73
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.js:46
+msgid "Convert to Classic Block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.js:76
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.js:50
+msgid "Attempt Block Recovery"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.js:92
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.js:83
+msgid "This block contains unexpected or invalid content."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.js:94
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.js:90
+msgid "Resolve Block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.js:102
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-convert-button.js:17
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.js:100
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-convert-button.js:12
+msgid "Convert to Blocks"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.native.js:17
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.native.js:14
+#, javascript-format
+msgid "%s block. This block has invalid content"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.native.js:20
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-invalid-warning.native.js:21
+msgid "Problem displaying block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/block-wrapper.js:106
+#: node_modules/@wordpress/block-editor/src/components/block-list/block-wrapper.js:105
+#, javascript-format
+msgid "Block: %s"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/index.native.js:273
+#: node_modules/@wordpress/block-editor/src/components/block-list/index.native.js:298
+msgid "Add paragraph block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-list/insertion-point.native.js:29
+#: node_modules/@wordpress/block-editor/src/components/block-list/insertion-point.native.js:30
+msgid "ADD BLOCK HERE"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mobile-toolbar/block-actions-menu.native.js:55
+#: node_modules/@wordpress/block-editor/src/components/block-mobile-toolbar/block-actions-menu.native.js:49
+#, javascript-format
+msgid "Remove %s"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mobile-toolbar/block-actions-menu.native.js:64
+#: node_modules/@wordpress/block-editor/src/components/block-mobile-toolbar/block-actions-menu.native.js:59
+#, javascript-format
+msgid "%s Settings"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mobile-toolbar/block-actions-menu.native.js:113
+#: node_modules/@wordpress/block-editor/src/components/block-mobile-toolbar/block-actions-menu.native.js:116
+msgid "Double tap to open Action Sheet with available options"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mobile-toolbar/block-actions-menu.native.js:113
+#: node_modules/@wordpress/block-editor/src/components/block-mobile-toolbar/block-actions-menu.native.js:117
+msgid "Double tap to open Bottom Sheet with available options"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mobile-toolbar/block-actions-menu.native.js:115
+#: node_modules/@wordpress/block-editor/src/components/block-mobile-toolbar/block-actions-menu.native.js:122
+msgid "Open Block Actions Menu"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/button.js:48
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/button.js:54
+#: node_modules/@wordpress/block-editor/src/components/block-mover/button.js:46
+#: node_modules/@wordpress/block-editor/src/components/block-mover/button.js:51
+msgid "Move right"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/button.js:48
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/button.js:54
+#: node_modules/@wordpress/block-editor/src/components/block-mover/button.js:46
+#: node_modules/@wordpress/block-editor/src/components/block-mover/button.js:51
+msgid "Move left"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/button.js:51
+#: node_modules/@wordpress/block-editor/src/components/block-mover/button.js:48
+msgid "Move up"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/button.js:57
+#: node_modules/@wordpress/block-editor/src/components/block-mover/button.js:53
+msgid "Move down"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:50
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:63
+#, javascript-format
+msgid "Block %s is the only block, and cannot be moved"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:59
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:76
+#, javascript-format
+msgid "Move %1$s block from position %2$d down to position %3$d"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:64
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:104
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:88
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:162
+#, javascript-format
+msgid "Move %1$s block from position %2$d left to position %3$d"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:69
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:109
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:100
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:174
+#, javascript-format
+msgid "Move %1$s block from position %2$d right to position %3$d"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:79
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:117
+#, javascript-format
+msgid "Block %1$s is at the end of the content and can’t be moved down"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:84
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:127
+#, javascript-format
+msgid "Block %1$s is at the end of the content and can’t be moved left"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:89
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:137
+#, javascript-format
+msgid "Block %1$s is at the end of the content and can’t be moved right"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:99
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:151
+#, javascript-format
+msgid "Move %1$s block from position %2$d up to position %3$d"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:119
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:191
+#, javascript-format
+msgid "Block %1$s is at the beginning of the content and can’t be moved up"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:124
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:201
+#, javascript-format
+msgid "Block %1$s is at the beginning of the content and can’t be moved left"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:129
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:211
+#, javascript-format
+msgid "Block %1$s is at the beginning of the content and can’t be moved right"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:150
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:241
+msgid "Blocks cannot be moved up as they are already at the top"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js:154
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.js:246
+msgid "Blocks cannot be moved down as they are already at the bottom"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:17
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:14
+msgid "Double tap to move the block to the left"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:18
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:15
+msgid "Double tap to move the block to the right"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:21
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:17
+#, javascript-format
+msgid "Move %s Left"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:24
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:19
+#, javascript-format
+msgid "Move %s Right"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:27
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:22
+#, javascript-format
+msgid "Move block left from position %1$s to position %2$s"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:30
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:26
+#, javascript-format
+msgid "Move block right from position %1$s to position %2$s"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:35
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:33
+msgid "Double tap to move the block up"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:36
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:34
+msgid "Double tap to move the block down"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:39
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:36
+#, javascript-format
+msgid "Move %s Up"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:42
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:38
+#, javascript-format
+msgid "Move %s Down"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:45
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:40
+#, javascript-format
+msgid "Move block up from row %1$s to row %2$s"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.native.js:48
+#: node_modules/@wordpress/block-editor/src/components/block-mover/mover-description.native.js:42
+#, javascript-format
+msgid "Move block down from row %1$s to row %2$s"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/appender.js:27
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/appender.js:28
+#, javascript-format
+msgid "Add block at position %1$d, Level %2$d"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/block-select-button.js:50
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/block-slot.js:76
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/list-item.js:38
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/block-select-button.js:67
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/block-slot.js:94
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/list-item.js:47
+msgid "(selected block)"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/block.js:188
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/block.js:173
+msgid "Go to block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/dropdown.js:46
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/index.js:36
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/dropdown.js:56
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/index.js:37
+msgid "Block navigation"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/editor.js:19
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/editor.js:18
+msgid "Navigation item"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/tree.js:36
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/tree.js:37
+msgid "Block navigation structure"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-navigation/utils.js:8
+#: node_modules/@wordpress/block-editor/src/components/block-navigation/utils.js:9
+#, javascript-format
+msgid "Block %1$d of %2$d, Level %3$d"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-parent-selector/index.js:55
+#: node_modules/@wordpress/block-editor/src/components/block-parent-selector/index.js:49
+#, javascript-format
+msgid "Select parent (%s)"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-mode-toggle.js:29
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-mode-toggle.js:30
+msgid "Edit as HTML"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-mode-toggle.js:29
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-mode-toggle.js:30
+msgid "Edit visually"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-dropdown.js:100
+#: node_modules/@wordpress/block-editor/build-module/components/warning/index.js:42
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-settings-dropdown.js:96
+#: node_modules/@wordpress/block-editor/src/components/warning/index.js:38
+msgid "More options"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-dropdown.js:121
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-settings-dropdown.js:124
+#: template-parts/content/content-republish-post.php:67
+msgid "Copy"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-dropdown.js:124
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-settings-dropdown.js:135
+msgid "Duplicate"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-dropdown.js:127
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-settings-dropdown.js:147
+msgid "Insert Before"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-dropdown.js:130
+#: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-settings-dropdown.js:156
+msgid "Insert After"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-settings/button.native.js:18
+#: node_modules/@wordpress/block-editor/src/components/block-settings/button.native.js:13
+msgid "Open Settings"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-switcher/index.js:115
+#: node_modules/@wordpress/block-editor/src/components/block-switcher/index.js:101
+msgid "Block icon"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-switcher/index.js:139
+#: node_modules/@wordpress/block-editor/src/components/block-switcher/index.js:123
+msgid "Change block type or style"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-switcher/index.js:168
+#: node_modules/@wordpress/block-editor/src/components/block-switcher/index.js:171
+msgid "Transform to"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-switcher/index.js:184
+#: node_modules/@wordpress/block-editor/build-module/components/preview-options/index.js:36
+#: node_modules/@wordpress/block-editor/src/components/block-switcher/index.js:196
+#: node_modules/@wordpress/block-editor/src/components/preview-options/index.js:36
+msgid "Preview"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-variation-picker/index.js:19
+#: node_modules/@wordpress/block-editor/src/components/block-variation-picker/index.js:15
+msgid "Choose variation"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-variation-picker/index.js:21
+#: node_modules/@wordpress/block-editor/src/components/block-variation-picker/index.js:16
+msgid "Select a variation to start with."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-variation-picker/index.js:36
+#: node_modules/@wordpress/block-editor/src/components/block-variation-picker/index.js:40
+msgid "Block variations"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/block-variation-picker/index.js:60
+#: node_modules/@wordpress/block-editor/src/components/block-variation-picker/index.js:65
+msgid "Skip"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/caption/index.native.js:24
+#: node_modules/@wordpress/block-editor/src/components/caption/index.native.js:21
+msgid "Write caption…"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/color-style-selector/index.js:68
+#: node_modules/@wordpress/block-editor/src/components/color-style-selector/index.js:67
+msgid "Open Colors Selector"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors-gradients/control.js:30
+#: node_modules/@wordpress/block-editor/src/components/colors-gradients/control.js:29
+#, javascript-format
+msgid "(Color: %s)"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors-gradients/control.js:33
+#: node_modules/@wordpress/block-editor/src/components/colors-gradients/control.js:32
+#, javascript-format
+msgid "(Gradient: %s)"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors-gradients/control.js:108
+#: node_modules/@wordpress/block-editor/src/components/colors-gradients/control.js:131
+msgid "Solid"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors-gradients/control.js:114
+#: node_modules/@wordpress/block-editor/build-module/components/gradient-picker/panel.js:29
+#: node_modules/@wordpress/block-editor/src/components/colors-gradients/control.js:138
+#: node_modules/@wordpress/block-editor/src/components/gradient-picker/panel.js:27
+msgid "Gradient"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors-gradients/panel-color-gradient-settings.js:30
+#: node_modules/@wordpress/block-editor/src/components/colors-gradients/panel-color-gradient-settings.js:22
+#, javascript-format
+msgid "(%s: color %s)"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors-gradients/panel-color-gradient-settings.js:33
+#: node_modules/@wordpress/block-editor/src/components/colors-gradients/panel-color-gradient-settings.js:25
+#, javascript-format
+msgid "(%s: gradient %s)"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors/use-colors.js:45
+#: node_modules/@wordpress/block-editor/build-module/hooks/color.js:290
+#: node_modules/@wordpress/block-editor/src/components/colors/use-colors.js:37
+#: node_modules/@wordpress/block-editor/src/hooks/color.js:296
+msgid "Text Color"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors/use-colors.js:46
+#: node_modules/@wordpress/block-editor/build-module/hooks/color.js:294
+#: node_modules/@wordpress/block-editor/src/components/colors/use-colors.js:38
+#: node_modules/@wordpress/block-editor/src/hooks/color.js:305
+msgid "Background Color"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/colors/use-colors.js:55
+#: node_modules/@wordpress/block-editor/build-module/components/colors/use-colors.js:58
+#: node_modules/@wordpress/block-editor/build-module/hooks/color-panel.js:59
+#: node_modules/@wordpress/block-editor/src/components/colors/use-colors.js:50
+#: node_modules/@wordpress/block-editor/src/components/colors/use-colors.js:60
+#: node_modules/@wordpress/block-editor/src/hooks/color-panel.js:55
+msgid "Color settings"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/contrast-checker/index.js:21
+#: node_modules/@wordpress/block-editor/src/components/contrast-checker/index.js:23
+msgid ""
+"This color combination may be hard for people to read. Try using a darker "
+"background color and/or a brighter text color."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/contrast-checker/index.js:21
+#: node_modules/@wordpress/block-editor/src/components/contrast-checker/index.js:26
+msgid ""
+"This color combination may be hard for people to read. Try using a brighter "
+"background color and/or a darker text color."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/contrast-checker/index.js:27
+#: node_modules/@wordpress/block-editor/src/components/contrast-checker/index.js:34
+msgid "This color combination may be hard for people to read."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/copy-handler/index.js:40
+#: node_modules/@wordpress/block-editor/src/components/copy-handler/index.js:38
+#, javascript-format
+msgid "Copied \"%s\" to clipboard."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/copy-handler/index.js:41
+#: node_modules/@wordpress/block-editor/src/components/copy-handler/index.js:43
+#, javascript-format
+msgid "Moved \"%s\" to clipboard."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/copy-handler/index.js:44
+#: node_modules/@wordpress/block-editor/src/components/copy-handler/index.js:51
+#, javascript-format
+msgid "Copied %d blocks to clipboard."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/copy-handler/index.js:45
+#: node_modules/@wordpress/block-editor/src/components/copy-handler/index.js:56
+#, javascript-format
+msgid "Moved %d blocks to clipboard."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/default-block-appender/index.js:33
+#: node_modules/@wordpress/block-editor/src/components/default-block-appender/index.js:34
+msgid "Start writing or type / to choose a block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/default-block-appender/index.js:53
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:37
+#: node_modules/@wordpress/block-editor/src/components/default-block-appender/index.js:58
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:26
+msgid "Add block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/default-block-appender/index.native.js:35
+#: node_modules/@wordpress/block-editor/src/components/default-block-appender/index.native.js:37
+#: node_modules/@wordpress/components/build-module/mobile/html-text-input/index.native.js:110
+#: node_modules/@wordpress/components/src/mobile/html-text-input/test/index.native.js:28
+msgid "Start writing…"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/default-style-picker/index.js:34
+#: node_modules/@wordpress/block-editor/src/components/default-style-picker/index.js:41
+msgid "Not set"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/default-style-picker/index.js:51
+#: node_modules/@wordpress/block-editor/src/components/default-style-picker/index.js:58
+msgid "Default Style"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/floating-toolbar/index.native.js:77
+#: node_modules/@wordpress/block-editor/src/components/floating-toolbar/index.native.js:85
+msgid "Navigate Up"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/gradient-picker/control.js:27
+#: node_modules/@wordpress/block-editor/src/components/gradient-picker/control.js:23
+msgid "Gradient Presets"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/image-size-control/index.js:40
+#: node_modules/@wordpress/block-editor/src/components/image-size-control/index.js:40
+msgid "Image size"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/image-size-control/index.js:48
+#: node_modules/@wordpress/block-editor/src/components/image-size-control/index.js:49
+msgid "Image dimensions"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/image-size-control/index.js:53
+#: node_modules/@wordpress/block-editor/src/components/image-size-control/index.js:55
+msgid "Width"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/image-size-control/index.js:64
+#: node_modules/@wordpress/block-editor/src/components/image-size-control/index.js:65
+msgid "Height"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/image-size-control/index.js:75
+#: node_modules/@wordpress/block-editor/src/components/image-size-control/index.js:76
+msgid "Image size presets"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/image-size-control/index.js:90
+#: node_modules/@wordpress/block-editor/src/components/image-size-control/index.js:106
+#: node_modules/@wordpress/components/build-module/box-control/index.js:142
+#: node_modules/@wordpress/components/build-module/date-time/index.js:106
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:118
+#: node_modules/@wordpress/components/build-module/range-control/index.js:269
+#: node_modules/@wordpress/components/src/box-control/index.js:131
+#: node_modules/@wordpress/components/src/range-control/index.js:289
+msgid "Reset"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/block-list.js:155
+#: node_modules/@wordpress/block-editor/src/components/inserter/block-list.js:167
+msgid "Uncategorized"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/block-list.js:178
+#: node_modules/@wordpress/block-editor/src/components/inserter/block-list.js:202
+msgid "Reusable"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/block-list.js:189
+#: node_modules/@wordpress/block-editor/src/components/inserter/block-list.js:216
+msgid "Manage all reusable blocks"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns.js:95
+#: node_modules/@wordpress/block-editor/src/components/inserter/block-patterns.js:81
+msgid "Search Results"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/hooks/use-patterns-state.js:44
+#: node_modules/@wordpress/block-editor/src/components/inserter/hooks/use-patterns-state.js:38
+#, javascript-format
+msgid "Pattern \"%s\" inserted."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.js:172
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:263
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.js:151
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:244
+msgid "Add a block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.js:258
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.js:245
+#, javascript-format
+msgid "%s block added"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:45
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:36
+msgid "Double tap to add a block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:77
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:58
+msgid "Add Block Before"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:82
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:64
+msgid "Replace Current Block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:87
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:70
+msgid "Add Block After"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:92
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:76
+msgid "Add To Beginning"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/index.native.js:97
+#: node_modules/@wordpress/block-editor/src/components/inserter/index.native.js:82
+msgid "Add To End"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/menu.js:103
+#: node_modules/@wordpress/block-editor/src/components/inserter/menu.js:94
+msgid "A tip for using the block editor"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/menu.js:129
+#: node_modules/@wordpress/block-editor/src/components/inserter/menu.js:127
+msgid "Blocks"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/menu.js:134
+#: node_modules/@wordpress/block-editor/src/components/inserter/menu.js:132
+msgid "Patterns"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/no-results.js:15
+#: node_modules/@wordpress/block-editor/src/components/inserter/no-results.js:14
+msgid "No results found."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/preview-panel.js:38
+#: node_modules/@wordpress/block-editor/src/components/inserter/preview-panel.js:49
+msgid "No Preview Available."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/search-form.js:24
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/search-form.js:28
+#: node_modules/@wordpress/block-editor/src/components/inserter/search-form.js:22
+#: node_modules/@wordpress/block-editor/src/components/inserter/search-form.js:28
+msgid "Search for a block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/tips.js:10
+#: node_modules/@wordpress/block-editor/src/components/inserter/tips.js:11
+msgid "While writing, you can press <kbd>/</kbd> to quickly insert new blocks."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/tips.js:12
+#: node_modules/@wordpress/block-editor/src/components/inserter/tips.js:17
+msgid "Indent a list by pressing <kbd>space</kbd> at the beginning of a line."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/tips.js:14
+#: node_modules/@wordpress/block-editor/src/components/inserter/tips.js:23
+msgid ""
+"Outdent a list by pressing <kbd>backspace</kbd> at the beginning of a line."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/tips.js:16
+#: node_modules/@wordpress/block-editor/src/components/inserter/tips.js:27
+msgid "Drag files into the editor to automatically insert media blocks."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/inserter/tips.js:16
+#: node_modules/@wordpress/block-editor/src/components/inserter/tips.js:28
+msgid "Change a block's type by pressing the block icon on the toolbar."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:101
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:138
+msgid "Duplicate the selected block(s)."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:110
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:148
+msgid "Remove the selected block(s)."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:119
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:159
+msgid "Insert a new block before the selected block(s)."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:128
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:171
+msgid "Insert a new block after the selected block(s)."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:137
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:182
+msgid "Remove multiple selected blocks."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:148
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:197
+msgid "Select all text when typing. Press again to select all blocks."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:157
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:208
+msgid "Clear selection."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js:165
+#: node_modules/@wordpress/block-editor/src/components/keyboard-shortcuts/index.js:217
+msgid "Navigate to the nearest toolbar."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/line-height-control/index.js:71
+#: node_modules/@wordpress/block-editor/src/components/line-height-control/index.js:72
+msgid "Line height"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/index.js:420
+#: node_modules/@wordpress/block-editor/src/components/link-control/index.js:410
+msgid "An unknown error occurred during creation. Please try again."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/index.js:468
+#: node_modules/@wordpress/block-editor/src/components/link-control/index.js:459
+msgid "Recently updated"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/index.js:470
+#: node_modules/@wordpress/block-editor/src/components/link-control/index.js:462
+#, javascript-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/index.js:540
+#: node_modules/@wordpress/block-editor/src/components/link-control/index.js:554
+msgid "Creating"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/index.js:585
+#: node_modules/@wordpress/block-editor/src/components/link-control/index.js:586
+msgid "Currently selected"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/search-create-button.js:39
+#: node_modules/@wordpress/block-editor/src/components/link-control/search-create-button.js:44
+#, javascript-format
+msgid "New page: <mark>%s</mark>"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/search-input.js:63
+#: node_modules/@wordpress/block-editor/src/components/link-control/search-input.js:54
+msgid "Search or type url"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/search-input.js:72
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/button.js:89
+#: node_modules/@wordpress/block-editor/src/components/link-control/search-input.js:65
+#: node_modules/@wordpress/block-editor/src/components/url-input/button.js:65
+msgid "Submit"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/search-item.js:46
+#: node_modules/@wordpress/block-editor/src/components/link-control/search-item.js:54
+msgid "Press ENTER to add this link"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/settings-drawer.js:20
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:235
+#: node_modules/@wordpress/block-editor/src/components/link-control/settings-drawer.js:15
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:232
+msgid "Open in new tab"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/link-control/settings-drawer.js:53
+#: node_modules/@wordpress/block-editor/src/components/link-control/settings-drawer.js:48
+msgid "Currently selected link settings"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-edit/index.native.js:37
+#: node_modules/@wordpress/block-editor/build-module/components/media-replace-flow/index.js:38
+#: node_modules/@wordpress/block-editor/src/components/media-edit/index.native.js:32
+#: node_modules/@wordpress/block-editor/src/components/media-replace-flow/index.js:41
+msgid "Replace"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:51
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/index.js:391
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:40
+#: node_modules/@wordpress/block-editor/src/components/url-input/index.js:430
+msgid "URL"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:52
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:41
+msgid "Paste or type URL"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:58
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/preview.native.js:91
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/link-editor.js:36
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:48
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/preview.native.js:89
+#: node_modules/@wordpress/block-editor/src/components/url-popover/link-editor.js:40
+#: node_modules/@wordpress/components/build-module/color-picker/index.native.js:171
+#: node_modules/@wordpress/components/src/color-picker/index.native.js:170
+msgid "Apply"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:255
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:209
+msgid "To edit this block, you need permission to upload media."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:265
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:221
+msgid "Upload a media file or pick one from your media library."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:268
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:226
+msgid ""
+"Upload an audio file, pick one from your media library, or add one with a "
+"URL."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:270
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:230
+msgid ""
+"Upload an image file, pick one from your media library, or add one with a "
+"URL."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:272
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:234
+msgid ""
+"Upload a video file, pick one from your media library, or add one with a URL."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:277
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:58
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:240
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:67
+#: node_modules/@wordpress/blocks/build-module/store/reducer.js:36
+#: node_modules/@wordpress/blocks/src/store/reducer.js:36
+msgid "Media"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:280
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:243
+msgid "Audio"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:282
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:61
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:245
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:69
+msgid "Image"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:284
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:63
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:247
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:71
+msgid "Video"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:326
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:329
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:298
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:302
+#: node_modules/@wordpress/components/build-module/color-picker/index.native.js:157
+#: node_modules/@wordpress/components/build-module/mobile/picker/index.android.js:110
+#: node_modules/@wordpress/components/build-module/mobile/picker/index.ios.js:47
+#: node_modules/@wordpress/components/src/color-picker/index.native.js:149
+#: node_modules/@wordpress/components/src/mobile/picker/index.android.js:87
+#: node_modules/@wordpress/components/src/mobile/picker/index.ios.js:23
+msgid "Cancel"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:350
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:322
+msgid "Insert from URL"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:392
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:367
+msgid "Media Library"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:406
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.js:419
+#: node_modules/@wordpress/block-editor/build-module/components/media-replace-flow/index.js:161
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:392
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.js:423
+#: node_modules/@wordpress/block-editor/src/components/media-replace-flow/index.js:158
+msgid "Upload"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:71
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:78
+msgid "ADD IMAGE"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:73
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:80
+msgid "ADD VIDEO"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:75
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:82
+msgid "ADD IMAGE OR VIDEO"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:79
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:86
+msgid "Double tap to select"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:82
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:88
+msgid "Double tap to select an image"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:84
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:90
+msgid "Double tap to select a video"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-placeholder/index.native.js:130
+#: node_modules/@wordpress/block-editor/src/components/media-placeholder/index.native.js:154
+#, javascript-format
+msgid "%s block. Empty"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-replace-flow/index.js:79
+#: node_modules/@wordpress/block-editor/src/components/media-replace-flow/index.js:81
+msgid "The media file has been replaced"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-replace-flow/index.js:147
+#: node_modules/@wordpress/block-editor/src/components/media-replace-flow/index.js:140
+msgid "Open Media Library"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-replace-flow/index.js:174
+#: node_modules/@wordpress/block-editor/src/components/media-replace-flow/index.js:177
+msgid "Current media URL:"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload-progress/index.native.js:176
+#: node_modules/@wordpress/block-editor/src/components/media-upload-progress/index.native.js:131
+msgid ""
+"Failed to insert media.\n"
+"Please tap for options."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload/index.native.js:32
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload/index.native.js:47
+#: node_modules/@wordpress/block-editor/src/components/media-upload/index.native.js:21
+#: node_modules/@wordpress/block-editor/src/components/media-upload/index.native.js:36
+msgid "Take a Video"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload/index.native.js:33
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload/index.native.js:40
+#: node_modules/@wordpress/block-editor/src/components/media-upload/index.native.js:22
+#: node_modules/@wordpress/block-editor/src/components/media-upload/index.native.js:28
+msgid "Take a Photo"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload/index.native.js:34
+#: node_modules/@wordpress/block-editor/src/components/media-upload/index.native.js:23
+msgid "Take a Photo or Video"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload/index.native.js:54
+#: node_modules/@wordpress/block-editor/src/components/media-upload/index.native.js:44
+msgid "Choose from device"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/media-upload/index.native.js:61
+#: node_modules/@wordpress/block-editor/src/components/media-upload/index.native.js:52
+msgid "WordPress Media Library"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/button.native.js:28
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/button.native.js:34
+msgid "Double tap to select layout"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/preview.native.js:105
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/preview.native.js:106
+msgid "Template Preview"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:7
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:8
+msgid "About"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:14
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:17
+msgid ""
+"Visitors will want to know who is on the other side of the page. Use this "
+"space to write about yourself, your site, your business, or anything you "
+"want. Use the testimonials below to quote others, talking about the same "
+"thing – in their own words."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:20
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:26
+msgid ""
+"This is sample content, included with the template to illustrate its "
+"features. Remove or replace it with your own words and media."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:26
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:34
+msgid "What People Say"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:37
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:49
+msgid "The way to get started is to quit talking and begin doing."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:39
+msgid "Walt Disney"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:48
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:65
+msgid ""
+"It is our choices, Harry, that show what we truly are, far more than our "
+"abilities."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:50
+msgid "J.K. Rowling"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:59
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:81
+msgid "Don’t cry because it’s over, smile because it happened."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:61
+msgid "Dr. Seuss"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:83
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:116
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:112
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:151
+msgid "Let’s build something together!"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/about.native.js:95
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:25
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:152
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:128
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:194
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/about.native.js:126
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:31
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:202
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:165
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:238
+msgid "Get in Touch"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/blog.native.js:7
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/blog.native.js:8
+msgid "Blog"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/blog.native.js:19
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/blog.native.js:23
+msgid "Welcome to our new blog"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:7
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:8
+msgid "Contact"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:14
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:17
+msgid ""
+"Let's talk 👋 Don't hesitate to reach out with the contact information below, "
+"or send a message using the form."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:32
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:39
+msgid "10 Street Road"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:38
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:46
+msgid "City, 10100"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:44
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:53
+msgid "USA"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:50
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:61
+msgid "<a href=\"mailto:mail@example.com\">mail@example.com</a>"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/contact.native.js:56
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/contact.native.js:69
+msgid "(555)555-1234"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:7
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:8
+msgid "Portfolio"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:15
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:18
+msgid ""
+"My portfolio showcases various projects created throughout my career. See my "
+"contact information below and get in touch."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:27
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:83
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:33
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:110
+msgid "Project Name"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:63
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:119
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:85
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:162
+msgid "A description of the project and the works presented."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/portfolio.native.js:139
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/portfolio.native.js:187
+msgid "Let's build something together!"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:7
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:8
+msgid "Services"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:14
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:17
+msgid ""
+"We offer a range of services to help you achieve the results you're after. "
+"Not sure what you need, or what it costs? We can explain what services are "
+"right for you and tell you more about our fees. Get in touch below."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:38
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:48
+msgid "Inspiration"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:45
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:70
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:94
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:57
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:90
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:122
+msgid "A short description of the services you offer."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/services.native.js:63
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/services.native.js:81
+msgid "Strategy"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:15
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:18
+msgid ""
+"We are a small team of talented professionals with a wide range of skills "
+"and experience. We love what we do, and we do it with passion. We look "
+"forward to working with you."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:38
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:46
+msgid "Sally Smith"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:46
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:93
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:140
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:55
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:113
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:171
+msgid "Position or Job Title"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:55
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:102
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:149
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:66
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:124
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:182
+msgid ""
+"A short bio with personal history, key achievements, or an interesting fact."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:64
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:111
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:158
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:78
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:136
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:194
+msgid "Email me: <a href=\"mailto:mail@example.com\">mail@example.com</a>"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:85
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:104
+msgid "Juan Pérez"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:132
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:162
+msgid "Samuel the Dog"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/templates/team.native.js:181
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/templates/team.native.js:223
+msgid "Want to work with us?"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/page-template-picker/tooltip/index.native.js:83
+#: node_modules/@wordpress/block-editor/src/components/page-template-picker/tooltip/index.native.js:90
+msgid "Try a starter layout"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/preview-options/index.js:47
+#: node_modules/@wordpress/block-editor/src/components/preview-options/index.js:48
+msgid "Desktop"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/preview-options/index.js:53
+#: node_modules/@wordpress/block-editor/src/components/preview-options/index.js:55
+msgid "Tablet"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/preview-options/index.js:59
+#: node_modules/@wordpress/block-editor/src/components/preview-options/index.js:62
+msgid "Mobile"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/responsive-block-control/index.js:34
+#: node_modules/@wordpress/block-editor/src/components/responsive-block-control/index.js:30
+#: node_modules/@wordpress/components/build-module/box-control/utils.js:16
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:83
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:65
+#: node_modules/@wordpress/components/src/box-control/utils.js:17
+#: node_modules/@wordpress/components/src/query-controls/index.js:90
+msgid "All"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/responsive-block-control/index.js:39
+#: node_modules/@wordpress/block-editor/src/components/responsive-block-control/index.js:35
+msgid "Small screens"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/responsive-block-control/index.js:42
+#: node_modules/@wordpress/block-editor/src/components/responsive-block-control/index.js:39
+msgid "Medium screens"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/responsive-block-control/index.js:45
+#: node_modules/@wordpress/block-editor/src/components/responsive-block-control/index.js:43
+msgid "Large screens"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/responsive-block-control/index.js:54
+#: node_modules/@wordpress/block-editor/src/components/responsive-block-control/index.js:56
+#, javascript-format
+msgid "Use the same %s on all screensizes."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/responsive-block-control/index.js:57
+#: node_modules/@wordpress/block-editor/src/components/responsive-block-control/index.js:62
+msgid ""
+"Toggle between using the same value for all screen sizes or using a unique "
+"value per screen size."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/rich-text/format-toolbar/index.js:34
+#: node_modules/@wordpress/block-editor/src/components/rich-text/format-toolbar/index.js:45
+msgid "More rich text controls"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/skip-to-selected-block/index.js:27
+#: node_modules/@wordpress/block-editor/src/components/skip-to-selected-block/index.js:26
+msgid "Skip to the selected block"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/spacing-panel-control/index.js:32
+#: node_modules/@wordpress/block-editor/src/components/spacing-panel-control/index.js:28
+msgid "Spacing"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/tool-selector/index.js:49
+#: node_modules/@wordpress/block-editor/build-module/components/tool-selector/index.js:56
+#: node_modules/@wordpress/block-editor/src/components/tool-selector/index.js:57
+#: node_modules/@wordpress/block-editor/src/components/tool-selector/index.js:63
+msgid "Tools"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/tool-selector/index.js:65
+#: node_modules/@wordpress/block-editor/src/components/tool-selector/index.js:82
+msgid "Select"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/tool-selector/index.js:69
+#: node_modules/@wordpress/block-editor/src/components/tool-selector/index.js:91
+msgid ""
+"Tools offer different interactions for block selection & editing. To select, "
+"press Escape, to go back to editing, press Enter."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/ungroup-button/index.native.js:30
+#: node_modules/@wordpress/block-editor/src/components/ungroup-button/index.native.js:26
+msgid "Ungroup"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/button.js:65
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:256
+#: node_modules/@wordpress/block-editor/src/components/url-input/button.js:36
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:265
+msgid "Edit link"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/button.js:65
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:256
+#: node_modules/@wordpress/block-editor/src/components/url-input/button.js:36
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:265
+msgid "Insert link"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/button.js:82
+#: node_modules/@wordpress/block-editor/src/components/url-input/button.js:56
+#: node_modules/@wordpress/components/build-module/date-time/index.js:110
+#: node_modules/@wordpress/components/build-module/mobile/modal-header-bar/button.native.js:46
+#: node_modules/@wordpress/components/build-module/mobile/modal-header-bar/button.native.js:49
+#: node_modules/@wordpress/components/src/date-time/index.js:172
+msgid "Close"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/index.js:182
+#: node_modules/@wordpress/block-editor/src/components/url-input/index.js:193
+#: node_modules/@wordpress/components/build-module/autocomplete/index.js:270
+#: node_modules/@wordpress/components/build-module/form-token-field/index.js:546
+#: node_modules/@wordpress/components/src/autocomplete/index.js:241
+#: node_modules/@wordpress/components/src/form-token-field/index.js:525
+msgid "No results."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/index.js:302
+#: node_modules/@wordpress/block-editor/src/components/url-input/index.js:323
+msgid "Link selected."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/index.js:347
+#: node_modules/@wordpress/block-editor/src/components/url-input/index.js:383
+msgid "Paste URL or type to search"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-input/index.native.js:32
+#: node_modules/@wordpress/block-editor/src/components/url-input/index.native.js:28
+msgid "Paste URL"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:178
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:180
+msgid "Media File"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:183
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:186
+msgid "Attachment Page"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:239
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:237
+msgid "Link Rel"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:245
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:244
+msgid "Link CSS Class"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js:292
+#: node_modules/@wordpress/block-editor/src/components/url-popover/image-url-input-ui.js:316
+msgid "Remove link"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/url-popover/index.js:80
+#: node_modules/@wordpress/block-editor/src/components/url-popover/index.js:62
+msgid "Link settings"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/video-player/index.native.js:88
+#: node_modules/@wordpress/block-editor/build-module/components/video-player/index.native.js:94
+#: node_modules/@wordpress/block-editor/src/components/video-player/index.native.js:61
+#: node_modules/@wordpress/block-editor/src/components/video-player/index.native.js:76
+msgid "Problem opening the video"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/video-player/index.native.js:88
+#: node_modules/@wordpress/block-editor/src/components/video-player/index.native.js:63
+msgid "No application can handle this request. Please install a Web browser."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/video-player/index.native.js:94
+#: node_modules/@wordpress/block-editor/src/components/video-player/index.native.js:77
+msgid "An unknown error occurred. Please try again."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/components/writing-flow/index.js:537
+#: node_modules/@wordpress/block-editor/src/components/writing-flow/index.js:639
+msgid "Multiple selected blocks"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/anchor.js:78
+#: node_modules/@wordpress/block-editor/src/hooks/anchor.js:76
+msgid "HTML anchor"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/anchor.js:79
+#: node_modules/@wordpress/block-editor/src/hooks/anchor.js:80
+msgid ""
+"Enter a word or two — without spaces — to make a unique web address just for "
+"this heading, called an “anchor.” Then, you’ll be able to link directly to "
+"this section of your page."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/anchor.js:81
+#: node_modules/@wordpress/block-editor/src/hooks/anchor.js:88
+msgid "Learn more about anchors"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/color.js:300
+#: node_modules/@wordpress/block-editor/src/hooks/color.js:321
+msgid "Link Color"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/custom-class-name.js:64
+#: node_modules/@wordpress/block-editor/src/hooks/custom-class-name.js:70
+msgid "Additional CSS class(es)"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/custom-class-name.js:71
+#: node_modules/@wordpress/block-editor/src/hooks/custom-class-name.js:81
+msgid "Separate multiple classes with spaces."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/padding.js:71
+#: node_modules/@wordpress/block-editor/src/hooks/padding.js:70
+msgid "Padding"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/hooks/typography.js:23
+#: node_modules/@wordpress/block-editor/src/hooks/typography.js:38
+msgid "Typography"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/actions.js:1120
+#: node_modules/@wordpress/block-editor/src/store/actions.js:883
+msgid ""
+"You are currently in navigation mode. Navigate blocks using the Tab key and "
+"Arrow keys. Use Left and Right Arrow keys to move between nesting levels. To "
+"exit navigation mode and edit the selected block, press Enter."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/actions.js:1122
+#: node_modules/@wordpress/block-editor/src/store/actions.js:889
+msgid ""
+"You are currently in edit mode. To return to the navigation mode, press "
+"Escape."
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:39
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:41
+msgid "Black"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:43
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:46
+msgid "Cyan bluish gray"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:47
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:51
+msgid "White"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:51
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:56
+msgid "Pale pink"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:55
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:60
+msgid "Vivid red"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:59
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:62
+msgid "Luminous vivid orange"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:63
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:67
+msgid "Luminous vivid amber"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:67
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:72
+msgid "Light green cyan"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:71
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:77
+msgid "Vivid green cyan"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:75
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:82
+msgid "Pale cyan blue"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:79
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:87
+msgid "Vivid cyan blue"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:83
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:92
+msgid "Vivid purple"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:110
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:127
+msgid "Thumbnail"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:113
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:128
+#: node_modules/@wordpress/components/build-module/dimension-control/sizes.js:35
+#: node_modules/@wordpress/components/src/dimension-control/sizes.js:36
+msgid "Medium"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:116
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:129
+#: node_modules/@wordpress/components/build-module/dimension-control/sizes.js:38
+#: node_modules/@wordpress/components/src/dimension-control/sizes.js:40
+msgid "Large"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:119
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:130
+msgid "Full Size"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:139
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:156
+msgid "Vivid cyan blue to vivid purple"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:143
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:162
+msgid "Light green cyan to vivid green cyan"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:147
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:168
+msgid "Luminous vivid amber to luminous vivid orange"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:151
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:174
+msgid "Luminous vivid orange to vivid red"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:155
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:180
+msgid "Very light gray to cyan bluish gray"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:159
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:186
+msgid "Cool to warm spectrum"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:163
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:192
+msgid "Blush light purple"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:167
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:198
+msgid "Blush bordeaux"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:171
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:204
+msgid "Luminous dusk"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:175
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:210
+msgid "Pale ocean"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:179
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:216
+msgid "Electric grass"
+msgstr ""
+
+#: node_modules/@wordpress/block-editor/build-module/store/defaults.js:183
+#: node_modules/@wordpress/block-editor/src/store/defaults.js:222
+msgid "Midnight"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/api/utils.js:178
+#: node_modules/@wordpress/blocks/src/api/utils.js:188
+#, javascript-format
+msgid "%1$s Block. Row %2$d. %3$s"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/api/utils.js:183
+#: node_modules/@wordpress/blocks/src/api/utils.js:197
+#, javascript-format
+msgid "%1$s Block. Row %2$d"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/api/utils.js:188
+#: node_modules/@wordpress/blocks/src/api/utils.js:205
+#, javascript-format
+msgid "%1$s Block. Column %2$d. %3$s"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/api/utils.js:193
+#: node_modules/@wordpress/blocks/src/api/utils.js:214
+#, javascript-format
+msgid "%1$s Block. Column %2$d"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/api/utils.js:199
+#: node_modules/@wordpress/blocks/src/api/utils.js:223
+#, javascript-format
+msgid "%1$s Block. %2$s"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/api/utils.js:204
+#: node_modules/@wordpress/blocks/src/api/utils.js:231
+#, javascript-format
+msgid "%s Block"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/store/reducer.js:33
+#: node_modules/@wordpress/blocks/src/store/reducer.js:35
+#: template-parts/content/content-republish-post.php:53
+msgid "Text"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/store/reducer.js:39
+#: node_modules/@wordpress/blocks/src/store/reducer.js:37
+msgid "Design"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/store/reducer.js:42
+#: node_modules/@wordpress/blocks/src/store/reducer.js:38
+msgid "Widgets"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/store/reducer.js:45
+#: node_modules/@wordpress/blocks/src/store/reducer.js:39
+msgid "Embeds"
+msgstr ""
+
+#: node_modules/@wordpress/blocks/build-module/store/reducer.js:48
+#: node_modules/@wordpress/blocks/src/store/reducer.js:40
+msgid "Reusable blocks"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/index.js:38
+#: node_modules/@wordpress/components/src/alignment-matrix-control/index.js:36
+msgid "Alignment Matrix Control"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:13
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:19
+msgid "Top Left"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:14
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:20
+msgid "Top Center"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:15
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:21
+msgid "Top Right"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:16
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:22
+msgid "Center Left"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:17
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:23
+msgid "Center Center"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:18
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:24
+msgid "Center Right"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:19
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:25
+msgid "Bottom Left"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:20
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:26
+msgid "Bottom Center"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/alignment-matrix-control/utils.js:21
+#: node_modules/@wordpress/components/src/alignment-matrix-control/utils.js:27
+msgid "Bottom Right"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/angle-picker-control/index.js:93
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/index.native.js:102
+#: node_modules/@wordpress/components/src/angle-picker-control/index.js:82
+#: node_modules/@wordpress/components/src/custom-gradient-picker/index.native.js:103
+msgid "Angle"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/index.js:54
+#: node_modules/@wordpress/components/src/box-control/index.js:52
+msgid "Box Control"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/linked-button.js:20
+#: node_modules/@wordpress/components/src/box-control/linked-button.js:15
+msgid "Unlink Sides"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/linked-button.js:20
+#: node_modules/@wordpress/components/src/box-control/linked-button.js:16
+msgid "Link Sides"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/utils.js:17
+#: node_modules/@wordpress/components/src/box-control/utils.js:18
+msgid "Top"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/utils.js:18
+#: node_modules/@wordpress/components/src/box-control/utils.js:19
+msgid "Bottom"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/utils.js:19
+#: node_modules/@wordpress/components/src/box-control/utils.js:20
+msgid "Left"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/utils.js:20
+#: node_modules/@wordpress/components/src/box-control/utils.js:21
+msgid "Right"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/box-control/utils.js:21
+#: node_modules/@wordpress/components/src/box-control/utils.js:22
+msgid "Mixed"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.js:43
+#: node_modules/@wordpress/components/build-module/color-palette/index.js:53
+#: node_modules/@wordpress/components/src/color-palette/index.js:45
+#: node_modules/@wordpress/components/src/color-palette/index.js:56
+#, javascript-format
+msgid "Color code: %s"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.js:52
+#: node_modules/@wordpress/components/src/color-palette/index.js:54
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:22
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:35
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:41
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:80
+#, javascript-format
+msgid "Color: %s"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.js:77
+#: node_modules/@wordpress/components/src/color-palette/index.js:83
+msgid "Custom color picker"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.js:79
+#: node_modules/@wordpress/components/src/color-palette/index.js:85
+msgid "Custom color"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.js:82
+#: node_modules/@wordpress/components/build-module/gradient-picker/index.js:59
+#: node_modules/@wordpress/components/src/color-palette/index.js:92
+msgid "Clear"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.native.js:48
+#: node_modules/@wordpress/components/src/color-palette/index.native.js:72
+msgid "Navigates to customize the gradient"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.native.js:48
+#: node_modules/@wordpress/components/src/color-palette/index.native.js:73
+msgid "Navigates to custom color picker"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-palette/index.native.js:50
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:43
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:100
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:108
+#: node_modules/@wordpress/components/src/color-palette/index.native.js:74
+#: node_modules/@wordpress/components/src/font-size-picker/index.js:39
+#: node_modules/@wordpress/components/src/font-size-picker/index.js:94
+msgid "Custom"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/alpha.js:228
+#: node_modules/@wordpress/components/src/color-picker/alpha.js:170
+msgid "Alpha value, from 0 (transparent) to 1 (fully opaque)."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/hue.js:225
+#: node_modules/@wordpress/components/src/color-picker/hue.js:161
+msgid "Hue value in degrees, from 0 to 359."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/hue.js:233
+#: node_modules/@wordpress/components/src/color-picker/hue.js:173
+msgid "Move the arrow left or right to change hue."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:173
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:189
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:117
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:130
+msgid "RGB mode active"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:178
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:121
+msgid "Hue/saturation/lightness mode active"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:184
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:126
+msgid "Hex color mode active"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:240
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:170
+msgid "Color value in hexadecimal"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:248
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:181
+msgid "Color value in RGB"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:291
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:234
+msgid "Color value in HSL"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/inputs.js:343
+#: node_modules/@wordpress/components/src/color-picker/inputs.js:294
+msgid "Change color format"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/saturation.js:230
+#: node_modules/@wordpress/components/src/color-picker/saturation.js:170
+msgid "Choose a shade"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/color-picker/saturation.js:237
+#: node_modules/@wordpress/components/src/color-picker/saturation.js:180
+msgid ""
+"Use your arrow keys to change the base color. Move up to lighten the color, "
+"down to darken, left to decrease saturation, and right to increase "
+"saturation."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/control-points.js:112
+#: node_modules/@wordpress/components/src/custom-gradient-picker/control-points.js:102
+#, javascript-format
+msgid "Gradient control point at position %1$s with color code %2$s."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/control-points.js:123
+#: node_modules/@wordpress/components/src/custom-gradient-picker/control-points.js:122
+msgid ""
+"Use your left or right arrow keys or drag and drop with the mouse to change "
+"the gradient position. Press the button to change the color or remove the "
+"control point."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/control-points.js:228
+#: node_modules/@wordpress/components/src/custom-gradient-picker/control-points.js:278
+msgid "Remove Control Point"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/index.js:73
+#: node_modules/@wordpress/components/src/custom-gradient-picker/index.js:76
+msgid "Type"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/index.js:77
+#: node_modules/@wordpress/components/src/custom-gradient-picker/index.js:82
+msgid "Linear Gradient"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/index.js:82
+#: node_modules/@wordpress/components/src/custom-gradient-picker/index.js:88
+msgid "Radial Gradient"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/custom-gradient-picker/index.native.js:94
+#: node_modules/@wordpress/components/src/custom-gradient-picker/index.native.js:93
+msgid "Gradient Type"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:78
+msgid "Click to Select"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:78
+#: node_modules/@wordpress/components/src/date-time/index.js:67
+msgid ""
+"Click the right or left arrows to select other months in the past or the "
+"future."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:78
+msgid "Click the desired day to select it."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:78
+msgid "Navigating with a keyboard"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:82
+msgid "Select the date in focus."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:83
+msgid "Left and Right Arrows"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:86
+msgid "Move backward (left) or forward (right) by one day."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:87
+#: node_modules/@wordpress/components/src/date-time/index.js:113
+msgid "Up and Down Arrows"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:90
+#: node_modules/@wordpress/components/src/date-time/index.js:122
+msgid "Move backward (up) or forward (down) by one week."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:91
+msgid "Page Up and Page Down"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:92
+msgid "PgUp/PgDn"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:94
+msgid "Move backward (PgUp) or forward (PgDn) by one month."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:95
+#: node_modules/@wordpress/components/src/date-time/index.js:141
+msgid "Home and End"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:96
+#: node_modules/@wordpress/components/src/date-time/index.js:142
+msgid "Home/End"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:98
+msgid "Go to the first (home) or last (end) day of a week."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/index.js:110
+#: node_modules/@wordpress/components/src/date-time/index.js:173
+msgid "Calendar Help"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:310
+#: node_modules/@wordpress/components/src/date-time/time.js:228
+msgid "Month"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:317
+#: node_modules/@wordpress/components/src/date-time/time.js:234
+msgid "January"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:319
+msgid "February"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:321
+#: node_modules/@wordpress/components/src/date-time/time.js:236
+msgid "March"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:323
+msgid "April"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:325
+#: node_modules/@wordpress/components/src/date-time/time.js:238
+msgid "May"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:327
+msgid "June"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:329
+#: node_modules/@wordpress/components/src/date-time/time.js:240
+msgid "July"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:331
+msgid "August"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:333
+#: node_modules/@wordpress/components/src/date-time/time.js:242
+msgid "September"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:335
+msgid "October"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:337
+#: node_modules/@wordpress/components/src/date-time/time.js:244
+msgid "November"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:339
+msgid "December"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:348
+#: node_modules/@wordpress/components/src/date-time/time.js:258
+msgid "Day"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:380
+#: node_modules/@wordpress/components/src/date-time/time.js:284
+msgid "Date"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:385
+msgid "Year"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:394
+msgid "Time"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:399
+#: node_modules/@wordpress/components/src/date-time/time.js:309
+msgid "Hours"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:412
+#: node_modules/@wordpress/components/src/date-time/time.js:326
+msgid "Minutes"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:427
+#: node_modules/@wordpress/components/src/date-time/time.js:344
+msgid "AM"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/date-time/time.js:432
+msgid "PM"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/dimension-control/index.js:54
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:40
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/color-cell.native.js:29
+#: node_modules/@wordpress/components/src/dimension-control/index.js:51
+#: node_modules/@wordpress/components/src/font-size-picker/index.js:35
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/color-cell.native.js:25
+msgid "Default"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/dimension-control/sizes.js:29
+#: node_modules/@wordpress/components/src/dimension-control/sizes.js:28
+msgid "None"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/dimension-control/sizes.js:32
+#: node_modules/@wordpress/components/src/dimension-control/sizes.js:32
+msgid "Small"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/dimension-control/sizes.js:41
+#: node_modules/@wordpress/components/src/dimension-control/sizes.js:44
+msgid "Extra Large"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/drop-zone/index.js:106
+msgid "Drop files to upload"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/external-link/index.js:44
+#: node_modules/@wordpress/components/src/external-link/index.js:41
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/external-link/index.native.js:20
+#: node_modules/@wordpress/components/src/external-link/index.native.js:17
+msgid "Open link in a browser"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/focal-point-picker/index.js:283
+#: node_modules/@wordpress/components/src/focal-point-picker/index.js:246
+msgid "Horizontal pos."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/focal-point-picker/index.js:294
+msgid "Vertical pos."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:81
+#: node_modules/@wordpress/components/src/font-size-picker/index.js:73
+msgid "Font size"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:85
+msgid "Preset size"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/font-size-picker/index.js:120
+msgid "Custom Size"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/form-token-field/index.js:616
+#: node_modules/@wordpress/components/src/form-token-field/index.js:595
+msgid "Add item"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/form-token-field/index.js:664
+msgid "Separate with commas, spaces, or the Enter key."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/form-token-field/index.js:664
+msgid "Separate with commas or the Enter key."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/form-token-field/index.js:698
+msgid "Item added."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/form-token-field/index.js:699
+msgid "Item removed."
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/form-token-field/index.js:700
+msgid "Remove item"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/form-token-field/token.js:55
+#: node_modules/@wordpress/components/src/form-token-field/token.js:48
+#, javascript-format
+msgid "%1$s (%2$s of %3$s)"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/gradient-picker/index.js:40
+#: node_modules/@wordpress/components/build-module/gradient-picker/index.js:50
+#: node_modules/@wordpress/components/src/gradient-picker/index.js:38
+#: node_modules/@wordpress/components/src/gradient-picker/index.js:51
+#, javascript-format
+msgid "Gradient code: %s"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/gradient-picker/index.js:49
+#: node_modules/@wordpress/components/src/gradient-picker/index.js:49
+#, javascript-format
+msgid "Gradient: %s"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/guide/index.js:94
+#: node_modules/@wordpress/components/build-module/guide/index.js:105
+#: node_modules/@wordpress/components/src/guide/index.js:94
+#: node_modules/@wordpress/components/src/guide/index.js:121
+msgid "Finish"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/guide/page-control.js:24
+#: node_modules/@wordpress/components/src/guide/page-control.js:25
+msgid "Guide controls"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/guide/page-control.js:37
+#, javascript-format
+msgid "Page %1$d of %2$d"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/cell.native.js:277
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/cell.native.js:298
+msgid "Double tap to edit this value"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/color-cell.native.js:27
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/color-cell.native.js:22
+msgid "Double tap to go to color settings"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/navigation-header.native.js:33
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/navigation-header.native.js:41
+msgid "Go back"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/navigation-header.native.js:34
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/navigation-header.native.js:43
+msgid "Navigates to the previous content sheet"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/navigation-header.native.js:44
+msgid "Back"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/radio-cell.native.js:29
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/radio-cell.native.js:28
+msgid "Double tap to select the option"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/range-cell.native.js:178
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/range-cell.native.js:137
+#, javascript-format
+msgid "Current value is %s"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/range-cell.native.js:227
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/range-cell.native.js:192
+msgid "Double tap to change the value using slider"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/stepper-cell/index.native.js:165
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/stepper-cell/index.native.js:121
+#, javascript-format
+msgid "%1$s. Current value is %2$s"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/bottom-sheet/switch-cell.native.js:38
+#: node_modules/@wordpress/components/src/mobile/bottom-sheet/switch-cell.native.js:40
+msgid "Double tap to toggle setting"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/color-settings/index.native.js:152
+#: node_modules/@wordpress/components/src/mobile/color-settings/index.native.js:155
+msgid "Select a color"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/color-settings/index.native.js:187
+#: node_modules/@wordpress/components/build-module/mobile/color-settings/index.native.js:195
+#: node_modules/@wordpress/components/src/mobile/color-settings/index.native.js:209
+msgid "Customize Gradient"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/mobile/html-text-input/index.native.js:98
+#: node_modules/@wordpress/components/src/mobile/html-text-input/index.native.js:94
+#: node_modules/@wordpress/components/src/mobile/html-text-input/test/index.native.js:35
+msgid "Add title"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/modal/header.js:21
+#: node_modules/@wordpress/components/src/modal/header.js:20
+msgid "Close dialog"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/notice/index.js:111
+#: node_modules/@wordpress/components/build-module/snackbar/index.js:77
+#: node_modules/@wordpress/components/src/snackbar/index.js:80
+msgid "Dismiss this notice"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:36
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:31
+#: node_modules/@wordpress/components/src/query-controls/index.js:36
+#: node_modules/@wordpress/components/src/query-controls/index.native.js:31
+msgid "Order by"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:39
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:34
+msgid "Newest to oldest"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:42
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:37
+#: node_modules/@wordpress/components/src/query-controls/index.js:44
+#: node_modules/@wordpress/components/src/query-controls/index.native.js:39
+msgid "Oldest to newest"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:46
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:41
+#: node_modules/@wordpress/components/src/query-controls/index.js:49
+#: node_modules/@wordpress/components/src/query-controls/index.native.js:44
+msgid "A → Z"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:50
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:45
+#: node_modules/@wordpress/components/src/query-controls/index.js:54
+#: node_modules/@wordpress/components/src/query-controls/index.native.js:49
+msgid "Z → A"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:69
+msgid "Categories"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:88
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:69
+#: node_modules/@wordpress/components/src/query-controls/index.native.js:75
+msgid "Number of items"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.native.js:64
+msgid "Category"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:8
+#: node_modules/prettier/parser-typescript.js:8
+msgid "0.0.0"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:8
+#: node_modules/prettier/parser-typescript.js:8
+msgid "0.0.0-0"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:14
+#: node_modules/prettier/parser-typescript.js:14
+msgid ":: Added:: "
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:14
+#: node_modules/prettier/parser-typescript.js:14
+msgid ":: Close:: "
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/node_modules/prettier/parser-typescript.js:14
+#: node_modules/prettier/parser-typescript.js:14
+msgid " TS"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:20
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:32
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:38
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:61
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-collapsible-whitespace.js:20
+msgid "Hello World…"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:23
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:43
+msgid "HelloWorld…"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:37
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:60
+msgid "Hello World..."
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-ellipsis.js:42
+msgid "HelloWorld..."
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-placeholders-only.js:20
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-placeholders-only.js:23
+#, javascript-format
+msgid "Hello %s"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-placeholders-only.js:26
+#, javascript-format
+msgid "%d%%"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-placeholders-only.js:31
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/valid-sprintf.js:26
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/valid-sprintf.js:60
+#, javascript-format
+msgid "%s"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-placeholders-only.js:35
+#, javascript-format
+msgid "%s%s"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-variables.js:20
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-variables.js:35
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-variables.js:47
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:26
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:42
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:58
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:64
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:65
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:88
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:89
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:112
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:128
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:129
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:158
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:159
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:164
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:165
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:170
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:171
+msgid "Hello World"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-no-variables.js:23
+msgid "HelloWorld"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:134
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-text-domain.js:135
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:225
+#: node_modules/jest/node_modules/yargs/lib/usage.js:225
+msgid "default"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:28
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:47
+#, javascript-format
+msgid "Address: %s"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:56
+#, javascript-format
+msgid "Name: %s"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:63
+#, javascript-format
+msgid "Surname: %s"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/i18n-translator-comments.js:72
+#, javascript-format
+msgid "Preference: %s"
+msgstr ""
+
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/valid-sprintf.js:97
+#: node_modules/@wordpress/eslint-plugin/rules/__tests__/valid-sprintf.js:127
+#, javascript-format
+msgid "%%"
+msgstr ""
+
+#: node_modules/@wordpress/i18n/benchmark/index.js:15
+msgid "Translate"
+msgstr ""
+
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:51
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:61
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:62
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:68
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:158
+msgid "hello"
+msgstr ""
+
+#: node_modules/@wordpress/i18n/src/test/create-i18n.js:163
+msgid "cheeseburger"
+msgstr ""
+
+#: node_modules/@wordpress/i18n/tools/pot-to-php.js:82
+msgid "${ original }"
+msgstr ""
+
+#: node_modules/@wordpress/keycodes/build-module/index.js:244
+#: node_modules/@wordpress/keycodes/src/index.js:213
+msgid "Comma"
+msgstr ""
+
+#: node_modules/@wordpress/keycodes/build-module/index.js:244
+#: node_modules/@wordpress/keycodes/src/index.js:215
+msgid "Period"
+msgstr ""
+
+#: node_modules/@wordpress/keycodes/build-module/index.js:244
+#: node_modules/@wordpress/keycodes/src/index.js:217
+msgid "Backtick"
+msgstr ""
+
+#: node_modules/@wordpress/rich-text/build-module/component/index.native.js:839
+#: node_modules/@wordpress/rich-text/src/component/index.native.js:845
+msgid "Insert mention"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:105
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:105
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:105
+#: node_modules/webidl-conversions/lib/index.js:105
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:105
+msgid "is not a finite number"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:172
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:188
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:172
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:188
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:172
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:188
+#: node_modules/webidl-conversions/lib/index.js:172
+#: node_modules/webidl-conversions/lib/index.js:188
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:172
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:188
+msgid "is not a finite floating-point value"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:198
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:198
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:198
+#: node_modules/webidl-conversions/lib/index.js:198
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:198
+msgid "is outside the range of a single-precision floating-point value"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:228
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:228
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:228
+#: node_modules/webidl-conversions/lib/index.js:228
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:228
+msgid "is a symbol, which cannot be converted to a string"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:239
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:239
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:239
+#: node_modules/webidl-conversions/lib/index.js:239
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:239
+msgid "is not a valid ByteString"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:276
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:276
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:276
+#: node_modules/webidl-conversions/lib/index.js:276
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:276
+msgid "is not an object"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:288
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:288
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:288
+#: node_modules/webidl-conversions/lib/index.js:288
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:288
+msgid "is not a function"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:314
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:314
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:314
+#: node_modules/webidl-conversions/lib/index.js:308
+#: node_modules/webidl-conversions/lib/index.js:343
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:314
+msgid "is not a view on an ArrayBuffer object"
+msgstr ""
+
+#: node_modules/domexception/node_modules/webidl-conversions/lib/index.js:322
+#: node_modules/jsdom/node_modules/webidl-conversions/lib/index.js:322
+#: node_modules/w3c-xmlserializer/node_modules/webidl-conversions/lib/index.js:322
+#: node_modules/webidl-conversions/lib/index.js:351
+#: node_modules/whatwg-url/node_modules/webidl-conversions/lib/index.js:322
+msgid "is not an ArrayBuffer object or a view on one"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs-parser/index.js:372
+#: node_modules/jest/node_modules/yargs-parser/index.js:372
+#: node_modules/npm-package-json-lint/node_modules/yargs-parser/index.js:372
+#: node_modules/stylelint/node_modules/yargs-parser/index.js:372
+#, javascript-format
+msgid "Argument unexpected for: %s"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs-parser/index.js:382
+#: node_modules/jest-runtime/node_modules/yargs-parser/index.js:392
+#: node_modules/jest-runtime/node_modules/yargs-parser/index.js:446
+#: node_modules/jest/node_modules/yargs-parser/index.js:382
+#: node_modules/jest/node_modules/yargs-parser/index.js:392
+#: node_modules/jest/node_modules/yargs-parser/index.js:446
+#: node_modules/laravel-mix/node_modules/yargs-parser/index.js:349
+#: node_modules/npm-package-json-lint/node_modules/yargs-parser/index.js:382
+#: node_modules/npm-package-json-lint/node_modules/yargs-parser/index.js:392
+#: node_modules/npm-package-json-lint/node_modules/yargs-parser/index.js:446
+#: node_modules/sass-graph/node_modules/yargs-parser/index.js:367
+#: node_modules/stylelint/node_modules/yargs-parser/index.js:382
+#: node_modules/stylelint/node_modules/yargs-parser/index.js:392
+#: node_modules/stylelint/node_modules/yargs-parser/index.js:446
+#: node_modules/webpack-cli/node_modules/yargs-parser/index.js:367
+#: node_modules/webpack-dev-server/node_modules/yargs-parser/index.js:367
+#: node_modules/yargs-parser/index.js:368
+#, javascript-format
+msgid "Not enough arguments following: %s"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs-parser/index.js:591
+#: node_modules/jest/node_modules/yargs-parser/index.js:591
+#: node_modules/laravel-mix/node_modules/yargs-parser/index.js:515
+#: node_modules/npm-package-json-lint/node_modules/yargs-parser/index.js:591
+#: node_modules/sass-graph/node_modules/yargs-parser/index.js:541
+#: node_modules/stylelint/node_modules/yargs-parser/index.js:591
+#: node_modules/webpack-cli/node_modules/yargs-parser/index.js:541
+#: node_modules/webpack-dev-server/node_modules/yargs-parser/index.js:541
+#: node_modules/yargs-parser/index.js:539
+#, javascript-format
+msgid "Invalid JSON config file: %s"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs-parser/index.js:941
+#: node_modules/jest/node_modules/yargs-parser/index.js:941
+#: node_modules/npm-package-json-lint/node_modules/yargs-parser/index.js:941
+#: node_modules/stylelint/node_modules/yargs-parser/index.js:941
+#, javascript-format
+msgid "Invalid configuration: %s, opts.count excludes opts.array."
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs-parser/index.js:944
+#: node_modules/jest/node_modules/yargs-parser/index.js:944
+#: node_modules/npm-package-json-lint/node_modules/yargs-parser/index.js:944
+#: node_modules/stylelint/node_modules/yargs-parser/index.js:944
+#, javascript-format
+msgid "Invalid configuration: %s, opts.count excludes opts.narg."
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:92
+#: node_modules/jest/node_modules/yargs/lib/usage.js:92
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:91
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:92
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:92
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:92
+#: node_modules/yargs/lib/usage.js:92
+msgid "Positionals:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:149
+#: node_modules/jest/node_modules/yargs/lib/usage.js:149
+msgid "Options:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:194
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:196
+#: node_modules/jest/node_modules/yargs/lib/usage.js:194
+#: node_modules/jest/node_modules/yargs/lib/usage.js:196
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:191
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:193
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:192
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:194
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:192
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:194
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:192
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:194
+#: node_modules/yargs/lib/usage.js:193 node_modules/yargs/lib/usage.js:195
+msgid "command"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:205
+#: node_modules/jest/node_modules/yargs/lib/usage.js:205
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:202
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:203
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:203
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:203
+#: node_modules/yargs/lib/usage.js:204
+msgid "Commands:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:227
+#: node_modules/jest/node_modules/yargs/lib/usage.js:227
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:220
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:225
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:225
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:225
+#: node_modules/yargs/lib/usage.js:226
+msgid "aliases:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:298
+#: node_modules/jest/node_modules/yargs/lib/usage.js:298
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:283
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:288
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:288
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:288
+#: node_modules/yargs/lib/usage.js:289
+msgid "boolean"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:299
+#: node_modules/jest/node_modules/yargs/lib/usage.js:299
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:284
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:289
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:289
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:289
+#: node_modules/yargs/lib/usage.js:290
+msgid "count"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:300
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:301
+#: node_modules/jest/node_modules/yargs/lib/usage.js:300
+#: node_modules/jest/node_modules/yargs/lib/usage.js:301
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:285
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:286
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:290
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:291
+#: node_modules/terser/dist/bundle.min.js:1
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:290
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:291
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:290
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:291
+#: node_modules/yargs/lib/usage.js:291 node_modules/yargs/lib/usage.js:292
+msgid "string"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:302
+#: node_modules/jest/node_modules/yargs/lib/usage.js:302
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:287
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:292
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:292
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:292
+#: node_modules/yargs/lib/usage.js:293
+msgid "array"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:303
+#: node_modules/jest/node_modules/yargs/lib/usage.js:303
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:288
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:293
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:293
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:293
+#: node_modules/yargs/lib/usage.js:294
+msgid "number"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:308
+#: node_modules/jest/node_modules/yargs/lib/usage.js:308
+#, javascript-format
+msgid "deprecated: %s"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:309
+#: node_modules/jest/node_modules/yargs/lib/usage.js:309
+msgid "deprecated"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:312
+#: node_modules/jest/node_modules/yargs/lib/usage.js:312
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:292
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:297
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:297
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:297
+#: node_modules/yargs/lib/usage.js:298
+msgid "required"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:313
+#: node_modules/jest/node_modules/yargs/lib/usage.js:313
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:293
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:298
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:298
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:298
+#: node_modules/yargs/lib/usage.js:299
+msgid "choices:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:332
+#: node_modules/jest/node_modules/yargs/lib/usage.js:332
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:312
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:317
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:317
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:317
+#: node_modules/yargs/lib/usage.js:318
+msgid "Examples:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:464
+#: node_modules/jest/node_modules/yargs/lib/usage.js:464
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:431
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:436
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:436
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:436
+#: node_modules/yargs/lib/usage.js:444
+msgid "generated-value"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/usage.js:486
+#: node_modules/jest/node_modules/yargs/lib/usage.js:486
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:218
+#: node_modules/laravel-mix/node_modules/yargs/lib/usage.js:453
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:223
+#: node_modules/sass-graph/node_modules/yargs/lib/usage.js:458
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:223
+#: node_modules/webpack-cli/node_modules/yargs/lib/usage.js:458
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:223
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/usage.js:458
+#: node_modules/yargs/lib/usage.js:224 node_modules/yargs/lib/usage.js:466
+msgid "default:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/validation.js:206
+#: node_modules/jest/node_modules/yargs/lib/validation.js:206
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:147
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:147
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:147
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:147
+#: node_modules/yargs/lib/validation.js:162
+msgid "Invalid values:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/validation.js:209
+#: node_modules/jest/node_modules/yargs/lib/validation.js:209
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:150
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:150
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:150
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:150
+#: node_modules/yargs/lib/validation.js:165
+#, javascript-format
+msgid "Argument: %s, Given: %s, Choices: %s"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/validation.js:239
+#: node_modules/jest/node_modules/yargs/lib/validation.js:239
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:180
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:180
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:180
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:180
+#: node_modules/yargs/lib/validation.js:195
+#, javascript-format
+msgid "Argument check failed: %s"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/validation.js:308
+#: node_modules/jest/node_modules/yargs/lib/validation.js:308
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:256
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:256
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:256
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:256
+#: node_modules/yargs/lib/validation.js:264
+msgid "Implications failed:"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/validation.js:347
+#: node_modules/jest/node_modules/yargs/lib/validation.js:347
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:295
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:295
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:295
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:295
+#: node_modules/yargs/lib/validation.js:303
+#, javascript-format
+msgid "Arguments %s and %s are mutually exclusive"
+msgstr ""
+
+#: node_modules/jest-runtime/node_modules/yargs/lib/validation.js:368
+#: node_modules/jest/node_modules/yargs/lib/validation.js:368
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:316
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:316
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:316
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:316
+#: node_modules/yargs/lib/validation.js:324
+#, javascript-format
+msgid "Did you mean %s?"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "num"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "template_head"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "comment2"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "regexp"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "operator"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "eof"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "expand"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "punc"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "arrow"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "name"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "atom"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "keyword"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "("
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid ")"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid ":"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid ";"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid ","
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "]"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "}"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "{"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "["
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+msgid "Program"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/terser/dist/bundle.min.js:1
+msgid "BlockStatement"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:29
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:52
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:29
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:52
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:29
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:52
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:29
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:52
+#: node_modules/yargs/lib/validation.js:29
+#: node_modules/yargs/lib/validation.js:52
+#, javascript-format
+msgid "Not enough non-option arguments: got %s, need at least %s"
+msgstr ""
+
+#: node_modules/laravel-mix/node_modules/yargs/lib/validation.js:40
+#: node_modules/sass-graph/node_modules/yargs/lib/validation.js:40
+#: node_modules/webpack-cli/node_modules/yargs/lib/validation.js:40
+#: node_modules/webpack-dev-server/node_modules/yargs/lib/validation.js:40
+#: node_modules/yargs/lib/validation.js:40
+#, javascript-format
+msgid "Too many non-option arguments: got %s, maximum of %s"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./shims"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "url-parse"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "inherits"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "json3"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/random"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/escape"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/url"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/event"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/transport"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/object"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/browser"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./utils/log"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./event/event"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./event/eventtarget"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./location"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./event/close"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./event/trans-message"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./info-receiver"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./version"
+msgstr ""
+
+#: node_modules/sockjs-client/dist/sockjs.min.js:2
+msgid "./iframe-bootstrap"
+msgstr ""
+
+#: node_modules/terser/dist/bundle.min.js:1
+msgid "big_int"
+msgstr ""
+
+#: node_modules/webidl-conversions/lib/index.js:320
+msgid "is not a view on an DataView object"
 msgstr ""
 
 #: searchform.php:28
 msgid "Filters"
-msgstr ""
+msgstr "Filtros"
 
-#: searchform.php:47
+#: searchform.php:42
 msgid "Topics"
 msgstr ""
 
-#: searchform.php:70
+#: searchform.php:65
 msgid "Regions"
 msgstr ""
 
-#: searchform.php:95 searchform.php:104
-msgid "Latest"
-msgstr ""
+#: searchform.php:85
+msgid "results"
+msgstr "resultados"
 
-#: searchform.php:101
+#: searchform.php:89
+msgid "Sort by:"
+msgstr "Ordenado por:"
+
+#: searchform.php:91 searchform.php:100
+msgid "Latest"
+msgstr "Mais recentes"
+
+#: searchform.php:97
 msgid "Oldest"
-msgstr ""
+msgstr "Mais antigos"
 
 #: template-parts/content/content-none.php:14
 msgid "Nothing Found"
@@ -811,58 +4053,46 @@ msgid ""
 msgstr ""
 
 #: template-parts/content/content-page.php:21
-#: template-parts/content/content-single.php:48
+#: template-parts/content/content-single.php:54
 #: template-parts/content/content.php:38
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content/content-related-posts.php:17
+#: template-parts/content/content-related-posts.php:14
 msgid "Related Posts"
-msgstr ""
-
-#: template-parts/content/content-republish-post.php:28
-msgid "REPUBLISH THIS CONTENT"
 msgstr ""
 
 #: template-parts/content/content-republish-post.php:39
 msgid "Republish"
 msgstr ""
 
-#: template-parts/content/content-republish-post.php:53
-msgid "Text"
-msgstr ""
-
-#: template-parts/content/content-republish-post.php:67
-msgid "Copy"
-msgstr ""
-
-#: template-parts/content/content-single.php:24
+#: template-parts/content/content-single.php:30
 #: template-parts/content/content.php:25
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content/content-single.php:38
+#: template-parts/content/content-single.php:44
 msgid "Sorry, We said wrong"
-msgstr ""
+msgstr "Desculpa, erramos"
 
-#: template-parts/content/content-single.php:61
+#: template-parts/content/content-single.php:67
 #: template-parts/singles/single-project.php:10
 #: template-parts/singles/single-project.php:43
 msgid "Access project page"
 msgstr ""
 
-#: template-parts/header/desktop-sidebar.php:12
-#: template-parts/header/desktop-sidebar.php:18
-#: template-parts/header/mobile-sidebar.php:13
-#: template-parts/header/subpage-sidebar.php:12
-#: template-parts/header/subpage-sidebar.php:18
-msgid "Close"
+#: template-parts/footer/below-footer-widgets.php:9
+msgid "Below Footer"
+msgstr ""
+
+#: template-parts/footer/footer-widgets.php:10
+msgid "Footer"
 msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:33
 msgid "Discovery"
-msgstr ""
+msgstr "EXPLORADOR"
 
 #: template-parts/header/mobile-sidebar.php:48
 msgid "MORE"
@@ -893,13 +4123,6 @@ msgstr ""
 
 #: template-parts/post/author-bio.php:42
 msgid "About the writer"
-msgstr ""
-
-#: template-parts/post/author-bio.php:95 template-parts/post/author-bio.php:105
-#: template-parts/post/author-bio.php:155
-#: template-parts/post/author-bio.php:165
-#, php-format
-msgid "More by %s"
 msgstr ""
 
 #: template-parts/post/discussion-meta.php:21
