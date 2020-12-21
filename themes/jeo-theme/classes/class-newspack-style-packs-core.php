@@ -363,7 +363,7 @@ class Style_Pack_Customize_Control_Radio_Image extends WP_Customize_Control {
 						if ( array_key_exists( $key, $config['styles'] ) ) {
 							$title = $config['styles'][ $key ];
 						} else {
-							$title = esc_html__( 'Default' );
+							$title = esc_html__( 'Default', 'jeo' );
 						}
 					} else {
 						$title = $config['styles'][ $key ];

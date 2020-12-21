@@ -14,14 +14,14 @@ get_header();
 		<main id="main" class="site-main">
             <div class="error-404">
                 <h1>
-                    <?php _e( 'Error', 'newspack' ); ?>
+                    <?php _e( 'Error', 'jeo' ); ?>
                     <strong>404</strong>
                 </h1> 
                 <p>
-                    <?php _e( 'Oops! That page can&rsquo;t be found.', 'newspack' ); ?>
+                    <?php _e( 'Oops! That page can&rsquo;t be found.', 'jeo' ); ?>
                 </p> 
                 <a href="/" class="button">
-                    <span><?php _e( 'Back to the home', 'newspack' ); ?></span>
+                    <span><?php _e( 'Back to the home', 'jeo' ); ?></span>
                 </a>
             </div>
 

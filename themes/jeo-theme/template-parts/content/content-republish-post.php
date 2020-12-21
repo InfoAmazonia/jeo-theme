@@ -36,7 +36,7 @@
                     </button>
                     <div>
                         <div class="content main">
-                            <p class="title"><?php echo get_theme_mod('republish_modal_title', __('Republish'))?></p>
+                            <p class="title"><?php echo get_theme_mod('republish_modal_title', __('Republish', 'jeo'))?></p>
                             <p class="introduction"><?= get_theme_mod('republish_modal_introduction', '') ?></p>
                             <p class="bullets-introduction"><?= get_theme_mod('republish_modal_bullets_introduction', '') ?></p>
 
