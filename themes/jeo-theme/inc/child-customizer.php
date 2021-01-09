@@ -66,7 +66,7 @@ function newspack_scott_customizer($wp_customize)
 			'header_background_image',
 			array(
 				'label'       => esc_html__('Background image', 'newspack'),
-				'description' => esc_html__('Upload an image to be used as header background. Choosing a background image and background color causes overlap.', 'newspack'),
+				'description' => esc_html__('Upload an image to be used as header background. Choosing a background image and background color causes overlap.', 'jeo'),
 				'section'     => 'header_section_appearance',
 				'settings'    => 'header_background_image',
 				'flex_width'  => false,
@@ -90,7 +90,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 		'type' => 'checkbox',
 		'label' => esc_html__( 'Use backgroud image in dark mode?', 'jeo' ),
-		'description' => esc_html__( 'By disabling this, the header will use the default background with some opacity applied.', 'newspack' ),
+		'description' => esc_html__( 'By disabling this, the header will use the default background with some opacity applied.', 'jeo' ),
 		'section' => 'header_section_appearance',
 		)
 	);
@@ -109,8 +109,8 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'logo_sticky_image',
 			array(
-				'label'       => esc_html__('Logo sticky image', 'newspack'),
-				'description' => esc_html__('Upload an image to be used as sticky logo. If there are no sticky logo, the main logo will be used instead', 'newspack'),
+				'label'       => esc_html__('Logo sticky image', 'jeo'),
+				'description' => esc_html__('Upload an image to be used as sticky logo. If there are no sticky logo, the main logo will be used instead', 'jeo'),
 				'section'     => 'title_tagline',
 				'settings'    => 'logo_sticky_image',
 				'flex_width'  => false,
@@ -135,8 +135,8 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'logo_dark_image',
 			array(
-				'label'       => esc_html__('Logo dark image', 'newspack'),
-				'description' => esc_html__('Dark logo to be displayed. The default dark mode logo is your logo masked with white.', 'newspack'),
+				'label'       => esc_html__('Logo dark image', 'jeo'),
+				'description' => esc_html__('Dark logo to be displayed. The default dark mode logo is your logo masked with white.', 'jeo'),
 				'section'     => 'title_tagline',
 				'settings'    => 'logo_dark_image',
 				'flex_width'  => false,
@@ -354,7 +354,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'decoration_style_background_image',
 			array(
-				'label'       => esc_html__('Marker background image', 'newspack'),
+				'label'       => esc_html__('Marker background image', 'jeo'),
 				'description' => esc_html__('', 'newspack'),
 				'section'     => 'title_tagline',
 				'settings'    => 'decoration_style_background_image',
@@ -391,7 +391,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_section(
 		'republish_modal',
 		array(
-			'title' => esc_html__('Republish', 'newspack'),
+			'title' => esc_html__('Republish', 'jeo'),
 			'section' => 'republish',
 		)
 	);
@@ -399,7 +399,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_section(
 		'post_excerpt',
 		array(
-			'title' => esc_html__('Post excerpt', 'newspack'),
+			'title' => esc_html__('Post excerpt', 'jeo'),
 			'section' => 'post_excerpt',
 		)
 	);
@@ -407,7 +407,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_section(
 		'post_sharing',
 		array(
-			'title' => esc_html__('Post Sharing', 'newspack'),
+			'title' => esc_html__('Post Sharing', 'jeo'),
 			'section' => 'post_sharing',
 		)
 	);
@@ -416,7 +416,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_section(
 		'typo_heading_sizes',
 		array(
-			'title' => esc_html__('Font sizes', 'newspack'),
+			'title' => esc_html__('Font sizes', 'jeo'),
 			'section' => 'newspack_typography',
 		)
 	);
@@ -765,7 +765,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_section(
 		'typo_heading_sizes_mobile',
 		array(
-			'title' => esc_html__('Font sizes mobile', 'newspack'),
+			'title' => esc_html__('Font sizes mobile', 'jeo'),
 			'section' => 'newspack_typography',
 		)
 	);
@@ -1051,7 +1051,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'copyright_logo',
 			array(
-				'label'       => esc_html__( 'Copyright logo', 'newspack' ),
+				'label'       => esc_html__( 'Copyright logo', 'jeo' ),
 				'section'     => 'footer_options',
 				'settings'    => 'copyright_logo',
 				'flex_width'  => true,

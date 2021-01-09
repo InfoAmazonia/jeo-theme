@@ -177,7 +177,7 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 							<?php if (true === $show_slideout_sidebar && is_active_sidebar('header-1')) : ?>
 								<button class="desktop-menu-toggle" on="tap:desktop-sidebar.toggle">
 									<?php echo wp_kses(newspack_get_icon_svg('menu', 20), newspack_sanitize_svgs()); ?>
-									<?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'newspack'))); ?>
+									<?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'jeo'))); ?>
 								</button>
 							<?php endif; ?>
 
@@ -219,7 +219,7 @@ $urlTweetShare = urldecode(get_the_title() . ' ' . get_the_permalink() . $twitte
 						<?php if (true === $header_simplified && true === $show_slideout_sidebar && is_active_sidebar('header-1')) : ?>
 							<button class="desktop-menu-toggle" on="tap:desktop-sidebar.toggle">
 								<?php echo wp_kses(newspack_get_icon_svg('menu', 20), newspack_sanitize_svgs()); ?>
-								<span><?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'newspack'))); ?></span>
+								<span><?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'jeo'))); ?></span>
 							</button>
 						<?php endif; ?>
 

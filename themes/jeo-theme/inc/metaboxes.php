@@ -234,7 +234,7 @@ function media_partner_republish_callback() {
 	<p>
 		<div class="jeo-row-content">
 			<label for="partner-link">
-				<?php _e('Media partner link (It works with selected media partners)', 'jeo-textdomain') ?>
+				<?php _e('Media partner link (It works with selected media partners)', 'jeo') ?>
 				<br><br>
 				<input placeholder="Requires https:// or http//" type="text" style="width: 100%" name="partner-link" id="partner-link" value="<?php if (isset($jeo_stored_meta['partner-link'])) echo $jeo_stored_meta['partner-link'][0]; ?>" />
 			</label>
@@ -255,7 +255,7 @@ function display_erratum_block() {
 		<div class="jeo-row-content">
 			<label for="enable-post-erratum">
 				<input type="checkbox" name="enable-post-erratum" id="enable-post-erratum" value="false" <?php if (isset($jeo_stored_meta['enable-post-erratum'])) checked($jeo_stored_meta['enable-post-erratum'][0], true); ?> />
-				<?php _e('Sorry we said wrong', 'jeo-textdomain') ?>
+				<?php _e('Sorry we said wrong', 'jeo') ?>
 			</label>
 			<p>
 				<label for="post-erratum">

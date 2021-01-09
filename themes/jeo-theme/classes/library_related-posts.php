@@ -25,7 +25,7 @@ class related_posts {
         ?>
         <p>
             <label>
-                <input name="related_posts__use" id="related_posts__use" type="checkbox" value="1" class="code" <?= checked( 1, get_option( 'related_posts__use' ), false ) ?> /> <?php _e('Usar posts relacionados') ?>
+                <input name="related_posts__use" id="related_posts__use" type="checkbox" value="1" class="code" <?= checked( 1, get_option( 'related_posts__use' ), false ) ?> /> <?php _e('Use related posts', 'jeo') ?>
             </label>
         </p>
         <p>
