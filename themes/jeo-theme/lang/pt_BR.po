@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jeo\n"
-"POT-Creation-Date: 2020-12-21 10:23-0300\n"
-"PO-Revision-Date: 2020-12-21 10:33-0300\n"
+"POT-Creation-Date: 2021-01-07 16:35-0300\n"
+"PO-Revision-Date: 2021-01-07 16:54-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10,22 +10,10 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"X-Poedit-KeywordsList: __; _e;esc_attr_e\n"
 "Last-Translator: \n"
 "Language: pt_BR\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: 404.php:17
-msgid "Error"
-msgstr ""
-
-#: 404.php:21
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: 404.php:24
-msgid "Back to the home"
-msgstr ""
 
 #: archive-map.php:15
 msgid "Maps"
@@ -33,16 +21,6 @@ msgstr ""
 
 #: archive-project.php:15
 msgid "Special Projects"
-msgstr ""
-
-#: archive.php:15 archive.php:44
-#: node_modules/@wordpress/components/build-module/query-controls/index.js:82
-#: node_modules/@wordpress/components/src/query-controls/index.js:89
-msgid "Author"
-msgstr ""
-
-#: archive.php:86
-msgid "ABOUT THE AUTHOR"
 msgstr ""
 
 #: assets/javascript/blocks/contentBox/index.js:45
@@ -180,28 +158,8 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: classes/class-newspack-walker-comment.php:90
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
 #: classes/library_related-posts.php:13
-msgid "Posts Relacionados"
-msgstr ""
-
-#: classes/library_related-posts.php:28
-msgid "Usar posts relacionados"
-msgstr ""
-
-#: classes/library_related-posts.php:33
-msgid "Tag weight"
-msgstr ""
-
-#: classes/library_related-posts.php:39
-msgid "Category weight"
-msgstr ""
-
-#: classes/library_related-posts.php:45
-msgid "Date weight"
+msgid "Related posts"
 msgstr ""
 
 #: comments.php:33
@@ -244,17 +202,13 @@ msgstr ""
 msgid "Site by"
 msgstr ""
 
-#: header-single.php:122 header.php:43
-msgid "Skip to content"
-msgstr ""
-
 #: header-single.php:391 header.php:360
 msgid "Highlight Menu"
 msgstr ""
 
 #: header.php:52 template-parts/header/header-search.php:20
 msgid "What are you looking for?"
-msgstr "O que você procura?"
+msgstr ""
 
 #: inc/child-customizer.php:29
 msgid "Background color"
@@ -438,70 +392,6 @@ msgstr ""
 
 #: inc/metaboxes.php:59
 msgid "Sorry, we said wrong"
-msgstr "Desculpa, erramos"
-
-#: inc/metaboxes.php:109
-msgid "Authors biography: "
-msgstr ""
-
-#: inc/metaboxes.php:113
-msgid "Authors biography"
-msgstr ""
-
-#: inc/metaboxes.php:120
-msgid "Authors listing: "
-msgstr ""
-
-#: inc/metaboxes.php:124
-msgid "Authors listing"
-msgstr ""
-
-#: inc/metaboxes.php:152
-msgid "Add republish link: "
-msgstr ""
-
-#: inc/metaboxes.php:164
-msgid "Add republish link"
-msgstr ""
-
-#: inc/metaboxes.php:170
-msgid "Bullets: "
-msgstr ""
-
-#: inc/metaboxes.php:195
-msgid "Hide post excerpt: "
-msgstr ""
-
-#: inc/metaboxes.php:199
-msgid "See general option (set in Customizer) "
-msgstr ""
-
-#: inc/metaboxes.php:201
-msgid "Hide post excerpt"
-msgstr ""
-
-#: inc/metaboxes.php:215
-msgid "Video URL to be shown on twitter sharing preview: "
-msgstr ""
-
-#: inc/metaboxes.php:236
-msgid "Media partner link (It works with selected media partners)"
-msgstr ""
-
-#: inc/metaboxes.php:252
-msgid "Check to enable the \"sorry we said wrong\": "
-msgstr ""
-
-#: inc/metaboxes.php:256
-msgid "Sorry we said wrong"
-msgstr ""
-
-#: inc/metaboxes.php:278
-msgid "Original Publisher name"
-msgstr ""
-
-#: inc/metaboxes.php:285
-msgid "Original Publisher link"
 msgstr ""
 
 #: inc/post-types.php:8 inc/post-types.php:9
@@ -606,7 +496,7 @@ msgstr ""
 
 #: inc/template-tags.php:42
 msgid "We made a mistake. This content has been changed"
-msgstr "Temos um error, desculpa!"
+msgstr ""
 
 #: inc/template-tags.php:344 template-parts/content/content-page.php:35
 #, php-format
@@ -625,20 +515,8 @@ msgstr ""
 msgid "VIEW PAST EDITIONS"
 msgstr ""
 
-#: inc/widgets.php:113
-msgid "You are not allowed to add HTML in any of those fields"
-msgstr ""
-
 #: inc/widgets.php:116
 msgid "Model type:"
-msgstr ""
-
-#: inc/widgets.php:118
-msgid "Horizontal"
-msgstr ""
-
-#: inc/widgets.php:119
-msgid "Vertical"
 msgstr ""
 
 #: inc/widgets.php:124 inc/widgets.php:181 inc/widgets.php:295
@@ -695,10 +573,6 @@ msgstr ""
 
 #: inc/widgets.php:307
 msgid "Featured image setting:"
-msgstr ""
-
-#: inc/widgets.php:406
-msgid "See more URL (requires https://)"
 msgstr ""
 
 #: node_modules/@vue/component-compiler-utils/node_modules/prettier/parser-typescript.js:1
@@ -1159,7 +1033,6 @@ msgstr ""
 
 #: node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-dropdown.js:121
 #: node_modules/@wordpress/block-editor/src/components/block-settings-menu/block-settings-dropdown.js:124
-#: template-parts/content/content-republish-post.php:67
 msgid "Copy"
 msgstr ""
 
@@ -2539,7 +2412,6 @@ msgstr ""
 
 #: node_modules/@wordpress/blocks/build-module/store/reducer.js:33
 #: node_modules/@wordpress/blocks/src/store/reducer.js:35
-#: template-parts/content/content-republish-post.php:53
 msgid "Text"
 msgstr ""
 
@@ -3222,6 +3094,11 @@ msgstr ""
 
 #: node_modules/@wordpress/components/build-module/query-controls/index.js:69
 msgid "Categories"
+msgstr ""
+
+#: node_modules/@wordpress/components/build-module/query-controls/index.js:82
+#: node_modules/@wordpress/components/src/query-controls/index.js:89
+msgid "Author"
 msgstr ""
 
 #: node_modules/@wordpress/components/build-module/query-controls/index.js:88
@@ -4002,54 +3879,18 @@ msgstr ""
 msgid "is not a view on an DataView object"
 msgstr ""
 
-#: searchform.php:28
-msgid "Filters"
-msgstr "Filtros"
-
-#: searchform.php:42
-msgid "Topics"
-msgstr ""
-
-#: searchform.php:65
-msgid "Regions"
-msgstr ""
-
-#: searchform.php:85
-msgid "results"
-msgstr "resultados"
-
-#: searchform.php:89
-msgid "Sort by:"
-msgstr "Ordenado por:"
-
 #: searchform.php:91 searchform.php:100
 msgid "Latest"
-msgstr "Mais recentes"
+msgstr ""
 
 #: searchform.php:97
 msgid "Oldest"
-msgstr "Mais antigos"
-
-#: template-parts/content/content-none.php:14
-msgid "Nothing Found"
 msgstr ""
 
 #: template-parts/content/content-none.php:24
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content/content-none.php:37
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: template-parts/content/content-none.php:44
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
 msgstr ""
 
 #: template-parts/content/content-page.php:21
@@ -4074,7 +3915,7 @@ msgstr ""
 
 #: template-parts/content/content-single.php:44
 msgid "Sorry, We said wrong"
-msgstr "Desculpa, erramos"
+msgstr ""
 
 #: template-parts/content/content-single.php:67
 #: template-parts/singles/single-project.php:10
@@ -4092,7 +3933,7 @@ msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:33
 msgid "Discovery"
-msgstr "EXPLORADOR"
+msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:48
 msgid "MORE"
