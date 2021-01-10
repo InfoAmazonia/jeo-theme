@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JEO\n"
-"POT-Creation-Date: 2021-01-09 00:49-0300\n"
-"PO-Revision-Date: 2021-01-09 00:51-0300\n"
+"POT-Creation-Date: 2021-01-10 15:50-0300\n"
+"PO-Revision-Date: 2021-01-10 15:51-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10,7 +10,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html__\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html__;esc_html_e\n"
 "Last-Translator: \n"
 "Language: en_US\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -138,7 +138,7 @@ msgid "Subtitle"
 msgstr ""
 
 #: assets/javascript/blocks/newsletter/index.js:114
-msgid "Adicional Information"
+msgid "Additional Information"
 msgstr ""
 
 #: assets/javascript/blocks/teamBlock/index.js:8
@@ -260,8 +260,10 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header-single.php:180 header-single.php:222 header.php:64 header.php:143
-#: header.php:187
+#: header-single.php:136 header-single.php:144 header-single.php:157
+#: header-single.php:180 header-single.php:222 header-single.php:303
+#: header-single.php:344 header.php:64 header.php:97 header.php:107
+#: header.php:143 header.php:187 header.php:268 header.php:310
 msgid "Menu"
 msgstr ""
 
@@ -271,6 +273,15 @@ msgstr ""
 
 #: header.php:52 template-parts/header/header-search.php:20
 msgid "What are you looking for?"
+msgstr ""
+
+#: header.php:337 template-parts/header/header-search.php:11
+msgid "Close Search"
+msgstr ""
+
+#: header.php:337 header.php:338 template-parts/header/header-search.php:11
+#: template-parts/header/header-search.php:12
+msgid "Open Search"
 msgstr ""
 
 #: inc/child-customizer.php:29
@@ -532,7 +543,7 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: inc/metaboxes.php:59
+#: inc/metaboxes.php:59 template-parts/content/content-single.php:44
 msgid "Sorry, we said wrong"
 msgstr ""
 
@@ -780,7 +791,7 @@ msgid "Last edition link:"
 msgstr ""
 
 #: inc/widgets.php:144
-msgid "Adicional Content:"
+msgid "Additional Content:"
 msgstr ""
 
 #: inc/widgets.php:149
@@ -825,6 +836,10 @@ msgstr ""
 
 #: inc/widgets.php:406
 msgid "See more URL (requires https://)"
+msgstr ""
+
+#: search.php:17
+msgid "Search results"
 msgstr ""
 
 #: searchform.php:28
@@ -887,6 +902,10 @@ msgstr ""
 msgid "Related Posts"
 msgstr ""
 
+#: template-parts/content/content-republish-post.php:28
+msgid "REPUBLISH THIS CONTENT"
+msgstr ""
+
 #: template-parts/content/content-republish-post.php:53
 msgid "Text"
 msgstr ""
@@ -901,10 +920,6 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content/content-single.php:44
-msgid "Sorry, We said wrong"
-msgstr ""
-
 #: template-parts/content/content-single.php:67
 #: template-parts/singles/single-project.php:10
 #: template-parts/singles/single-project.php:43
@@ -917,6 +932,14 @@ msgstr ""
 
 #: template-parts/footer/footer-widgets.php:10
 msgid "Footer"
+msgstr ""
+
+#: template-parts/header/desktop-sidebar.php:12
+#: template-parts/header/desktop-sidebar.php:18
+#: template-parts/header/mobile-sidebar.php:13
+#: template-parts/header/subpage-sidebar.php:12
+#: template-parts/header/subpage-sidebar.php:18
+msgid "Close"
 msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:33

@@ -279,7 +279,7 @@ function display_external_post_callback() {
 			<?php _e('You must select a media partner to use as original publisher name', 'jeo') ?>
 			<br><br>
 			<label for="external-source-link">
-				<?php _e('Original Publisher link', 'jeo-textdomain') ?>
+				<?php _e('Original Publisher link', 'jeo') ?>
 				<input type="text" style="width: 100%" name="external-source-link" id="external-source-link" value="<?php if (isset($jeo_stored_meta['external-source-link'])) echo $jeo_stored_meta['external-source-link'][0]; ?>" />
 			</label>
 

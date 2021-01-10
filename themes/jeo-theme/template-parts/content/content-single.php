@@ -41,7 +41,7 @@
 		if(get_post_meta(get_the_ID(), 'enable-post-erratum', true) ) { ?>
 			<div class="sorry-said-wrong" id="erratum">
 				<div class="wrong-title">
-					<?= __('Sorry, We said wrong', 'jeo') ?>
+					<?= __('Sorry, we said wrong', 'jeo') ?>
 				</div>
 				<p class="wrong-content">
 					<?= get_post_meta(get_the_ID(), 'post-erratum', true) ?>

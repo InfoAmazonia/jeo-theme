@@ -30,19 +30,19 @@ class related_posts {
         </p>
         <p>
             <label>
-                <?php _e('Tag weight') ?><br> 
+                <?php _e('Tag weight', 'jeo') ?><br> 
                 <input name="related_posts__tags_weight" id="related_posts__tags_weight" type="number" step="0.1" value="<?= get_option('related_posts__tags_weight', 2) ?>" class="code" />
             </label>
         </p>
         <p>
             <label>
-                <?php _e('Category weight') ?><br> 
+                <?php _e('Category weight', 'jeo') ?><br> 
                 <input name="related_posts__categories_weight" id="related_posts__categories_weight" type="number" step="0.1" value="<?= get_option('related_posts__categories_weight', 1.5) ?>" class="code" />
             </label>
         </p>
         <p>
             <label>
-                <?php _e('Date weight') ?><br> 
+                <?php _e('Date weight', 'jeo') ?><br> 
                 <input name="related_posts__date_weight" id="related_posts__date_weight" type="number" step="0.1" value="<?= get_option('related_posts__date_weight', 10) ?>" class="code" />
             </label>
         </p>

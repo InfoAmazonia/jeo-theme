@@ -141,7 +141,7 @@ class newsletter_widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('adicional_content')); ?>"><?php esc_attr_e('Adicional Content:', 'jeo'); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id('adicional_content')); ?>"><?php esc_attr_e('Additional Content:', 'jeo'); ?></label>
 			<textarea class="widefat" id="<?php echo esc_attr($this->get_field_id('adicional_content')); ?>" name="<?php echo esc_attr($this->get_field_name('adicional_content')); ?>"><?php echo $adicional_content; ?></textarea>
 		</p>
 
@@ -403,7 +403,7 @@ function image_gallery_form( $widget, $return, $instance ) {
         ?>
             <p>
                 <label for="<?php echo $widget->get_field_id('see_more_url'); ?>">
-                    <?php _e( 'See more URL (requires https://)', 'image_gallery' ); ?>
+                    <?php _e( 'See more URL (requires https://)', 'jeo' ); ?>
                 </label>
                 <input class="text" value="<?php echo $see_more_url ?>" type="text" id="<?php echo $widget->get_field_id('see_more_url'); ?>" name="<?php echo $widget->get_field_name('see_more_url'); ?>" />
             </p>

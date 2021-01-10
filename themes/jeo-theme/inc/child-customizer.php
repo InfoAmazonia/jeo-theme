@@ -202,7 +202,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'site_description_color',
 			array(
-				'label' => __('Site description color', 'newspack'),
+				'label' => __('Site description color', 'jeo'),
 				'section'     => 'header_section_appearance',
 			)
 		)
@@ -221,7 +221,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'search_icon_color',
 			array(
-				'label' => __('Search icon color', 'newspack'),
+				'label' => __('Search icon color', 'jeo'),
 				'section'     => 'header_section_appearance',
 			)
 		)
@@ -239,7 +239,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'search_dark_icon_color',
 			array(
-				'label' => __('Search dark icon color', 'newspack'),
+				'label' => __('Search dark icon color', 'jeo'),
 				'section'     => 'header_section_appearance',
 			)
 		)
@@ -258,7 +258,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'social_dark_icon_color',
 			array(
-				'label' => __('Social dark icon color ', 'newspack'),
+				'label' => __('Social dark icon color ', 'jeo'),
 				'section'     => 'header_section_appearance',
 			)
 		)
@@ -276,7 +276,7 @@ function newspack_scott_customizer($wp_customize)
 		'search_background_option',
 		array(
 			'type'    => 'radio',
-			'label'   => __( 'Search icon background', 'newspack' ),
+			'label'   => __( 'Search icon background', 'jeo' ),
 			'choices'  => array(
 				'default' => 'Default',
 				'custom'  => 'Custom',
@@ -962,7 +962,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_control(
 		'special_heading_font',
 		array(
-			'label'       => __( 'Special heading font', 'newspack' ),
+			'label'       => __( 'Special heading font', 'jeo' ),
 			'description' => __( 'Example: Open Sans Condensed. If it is empty, the Header Font is used.', 'jeo' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
@@ -982,7 +982,7 @@ function newspack_scott_customizer($wp_customize)
 		array(
 			'type' => 'number',
 			'section' => 'newspack_typography',
-			'label' => __( 'Menu font size (rem)', 'newspack' ),
+			'label' => __( 'Menu font size (rem)', 'jeo' ),
 			'input_attrs' => $range_atttrs,
 		)
 	);
