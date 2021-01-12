@@ -142,6 +142,14 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
             });
         };
 
+        if ( imagesCredits != attributes.imagesCredits ) {
+            setAttributes( { ...attributes, imagesCredits } );
+        }
+
+        if ( imagesDescriptions != attributes.imagesDescriptions ) {
+            setAttributes( { ...attributes, imagesDescriptions } );
+        }
+
         return (
             <div className="image-gallery">
                 <RichText
