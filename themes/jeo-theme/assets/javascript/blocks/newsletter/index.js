@@ -111,7 +111,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
                 <RichText
                         tagName="p"
                         className="link-add"
-                        placeholder={__("Adicional Information")}
+                        placeholder={__("Additional Information")}
                         value={adicionalContent}
                         onChange={(value) => setAttributes({ adicionalContent: value })}
                 />

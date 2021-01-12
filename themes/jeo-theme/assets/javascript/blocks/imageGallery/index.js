@@ -125,12 +125,12 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
         const { galleryTitle = "", images = [], imagesDescriptions = [], imagesCredits = [] } = attributes;
 
         images.forEach((image, index) => {
-            if (!imagesDescriptions[index]) {
-                imagesDescriptions[index] = "";
+            if ( ! imagesDescriptions[index] && imagesDescriptions[index] != '' ) {
+                imagesDescriptions[index] = image.description;
             }
 
-            if (!imagesCredits[index]) {
-                imagesCredits[index] = "";
+            if ( ! imagesCredits[index] && imagesCredits[index] != '') {
+                imagesCredits[index] = image.caption;
             }
         });
 

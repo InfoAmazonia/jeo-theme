@@ -81,11 +81,12 @@ $unique_id = wp_unique_id('search-form-');
 		<div class="pre-itens-header">
 			<div class="found-itens-quantity">
 				<?php global $wp_query;
-				echo $wp_query->found_posts ?> results
+				echo $wp_query->found_posts ?>
+				<?php _e('results', 'jeo') ?>
 			</div>
 
 			<div class="sorting-method">
-				Sort by:
+				<?php _e('Sort by:', 'jeo') ?>
 				<?php 
 					$button_text = __('Latest', 'jeo');
 					$filtered_value = 'DESC';

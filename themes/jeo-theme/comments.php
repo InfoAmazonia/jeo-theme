@@ -30,9 +30,9 @@ $discussion = newspack_get_discussion_data();
 	<div class="toggable-comments-area">
 		<i class="fas fa-comments" aria-hidden="true"></i>
 		<?php if ($discussion->responses): ?>
-			<span><?= $discussion->responses == '1' ? __('1 comment found. See comment') : sprintf(__('%s comments found. See comments'), $discussion->responses) ?></span>
+			<span><?= $discussion->responses == '1' ? __('1 comment found. See comment', 'jeo') : sprintf(__('%s comments found. See comments', 'jeo'), $discussion->responses) ?></span>
 		<?php else: ?>
-			<span><?= __('There are no comments yet. Leave a comment!') ?></span>
+			<span><?= __('There are no comments yet. Leave a comment!', 'jeo') ?></span>
 		<?php endif; ?>
 
 	</div>
@@ -41,7 +41,7 @@ $discussion = newspack_get_discussion_data();
 			<?php jeo_comment_form();?>
 		<?php else: ?>
 			<div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
-				<span class="comment-leave-title"><?= __('Leave a comment') ?></span>
+				<span class="comment-leave-title"><?= __('Leave a comment', 'jeo') ?></span>
 				<?php
 				// Only show discussion meta information when comments are open and available.
 				if (have_comments() && comments_open()) {
@@ -66,7 +66,7 @@ $discussion = newspack_get_discussion_data();
 						if (have_comments()) {
 							echo esc_html(apply_filters('newspack_comment_section_title_nocomments', $discussion->responses == 1 ? '1 comment' : $discussion->responses . ' comments'));
 						} else {
-							echo esc_html(apply_filters('newspack_comment_section_title', __('Leave a comment', 'newspack')));
+							echo esc_html(apply_filters('newspack_comment_section_title', __('Leave a comment', 'newspack', 'jeo')));
 						}
 					} else {
 						if ('1' == $discussion->responses) {

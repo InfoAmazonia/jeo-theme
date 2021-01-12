@@ -25,7 +25,7 @@
         <div class="republish-post-label-wrapper">
             <div class="republish-post-label">
                 <i class="fas fa-sync-alt icon"></i>
-                <p class="text"><?php esc_html_e('REPUBLISH THIS CONTENT'); ?></p>
+                <p class="text"><?php esc_html_e('REPUBLISH THIS CONTENT', 'jeo'); ?></p>
             </div>
         </div>
         <div class="modal-container">
@@ -36,7 +36,7 @@
                     </button>
                     <div>
                         <div class="content main">
-                            <p class="title"><?php echo get_theme_mod('republish_modal_title', __('Republish'))?></p>
+                            <p class="title"><?php echo get_theme_mod('republish_modal_title', __('Republish', 'jeo'))?></p>
                             <p class="introduction"><?= get_theme_mod('republish_modal_introduction', '') ?></p>
                             <p class="bullets-introduction"><?= get_theme_mod('republish_modal_bullets_introduction', '') ?></p>
 
@@ -50,7 +50,7 @@
                             <div>
                                 <div class="controls">
                                         <button class="html-button">HTML</button>
-                                        <button class="text-button"><?php _e('Text') ?></button>
+                                        <button class="text-button"><?php _e('Text', 'jeo') ?></button>
                                 </div>
                             </div>
                             <div class="copied-content">
@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button class="copy-button"><?php _e('Copy'); ?></button>
+                                <button class="copy-button"><?php _e('Copy', 'jeo'); ?></button>
                             </div>
                         </div>
                     </div>

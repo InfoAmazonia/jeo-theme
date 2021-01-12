@@ -41,7 +41,7 @@
 		if(get_post_meta(get_the_ID(), 'enable-post-erratum', true) ) { ?>
 			<div class="sorry-said-wrong" id="erratum">
 				<div class="wrong-title">
-					<?= __('Sorry, We said wrong', 'jeo') ?>
+					<?= __('Sorry, we said wrong', 'jeo') ?>
 				</div>
 				<p class="wrong-content">
 					<?= get_post_meta(get_the_ID(), 'post-erratum', true) ?>
@@ -64,7 +64,7 @@
 
 	<?php if (get_post_meta(get_the_ID(), 'project-link', true) && !empty(get_post_meta(get_the_ID(), 'project-link', true))) : ?>
 		<a class="project-link" href="<?= get_post_meta(get_the_ID(), 'project-link', true) ?>">
-			<?= __('Access project page') ?>
+			<?= __('Access project page', 'jeo') ?>
 		</a>
 	<?php endif; ?>
 

@@ -39,7 +39,7 @@ function newspack_posted_on()
 					<a href="#erratum" class="we-said-wrong__link">
 						<i class="fas fa-exclamation-triangle we-said-wrong-icon"></i>
 						<div class="we-said-wrong-tooltip">
-							<p><?php echo __( 'We made a mistake. This content has been changed' ); ?></p>
+							<p><?php echo __( 'We made a mistake. This content has been changed', 'jeo' ); ?></p>
 						</div>
 					</a>
 				<?php endif ?>
@@ -286,6 +286,8 @@ function newspack_categories()
 			if (!$uncategorized) {
 				$categories_list .= '<span class="custom-separator"> / </span>';
 			}
+		} else {
+			$categories_list .= '<a href="' . esc_url(get_category_link($category_id)) . '" rel="category tag">' . get_cat_name($category_id) . '</a>';
 		}
 		
 		if($post_child_category) {
