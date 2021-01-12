@@ -41,7 +41,8 @@ class API {
 
         if(sizeof($found_posts)) {
             $found_post = $found_posts[0];
-            $title_meta = get_post_meta( $found_post->ID, 'external-title', true);
+            // $title_meta = get_post_meta( $found_post->ID, 'external-title', true);
+            $title_meta = get_publisher($found_post->ID);
             set_transient(md5($external_link), $title_meta, 5 * MINUTE_IN_SECONDS);
 
             return $title_meta;

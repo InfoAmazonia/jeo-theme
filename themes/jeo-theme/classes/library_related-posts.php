@@ -10,7 +10,7 @@ class related_posts {
     static function settings_api_init() {
         add_settings_field(
             'related_posts__use',
-            __('Posts Relacionados', 'jeo' ),
+            __('Related posts', 'jeo' ),
             'guaraci\\related_posts::settings',
             'reading'
         );
@@ -25,24 +25,24 @@ class related_posts {
         ?>
         <p>
             <label>
-                <input name="related_posts__use" id="related_posts__use" type="checkbox" value="1" class="code" <?= checked( 1, get_option( 'related_posts__use' ), false ) ?> /> <?php _e('Usar posts relacionados') ?>
+                <input name="related_posts__use" id="related_posts__use" type="checkbox" value="1" class="code" <?= checked( 1, get_option( 'related_posts__use' ), false ) ?> /> <?php _e('Use related posts', 'jeo') ?>
             </label>
         </p>
         <p>
             <label>
-                <?php _e('Tag weight') ?><br> 
+                <?php _e('Tag weight', 'jeo') ?><br> 
                 <input name="related_posts__tags_weight" id="related_posts__tags_weight" type="number" step="0.1" value="<?= get_option('related_posts__tags_weight', 2) ?>" class="code" />
             </label>
         </p>
         <p>
             <label>
-                <?php _e('Category weight') ?><br> 
+                <?php _e('Category weight', 'jeo') ?><br> 
                 <input name="related_posts__categories_weight" id="related_posts__categories_weight" type="number" step="0.1" value="<?= get_option('related_posts__categories_weight', 1.5) ?>" class="code" />
             </label>
         </p>
         <p>
             <label>
-                <?php _e('Date weight') ?><br> 
+                <?php _e('Date weight', 'jeo') ?><br> 
                 <input name="related_posts__date_weight" id="related_posts__date_weight" type="number" step="0.1" value="<?= get_option('related_posts__date_weight', 10) ?>" class="code" />
             </label>
         </p>
