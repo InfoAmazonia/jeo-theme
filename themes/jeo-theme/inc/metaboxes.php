@@ -92,7 +92,7 @@ function project_link_callback() {
 		<p>
 			<div class="jeo-row-content">
 				<label for="project-link">
-					<input placeholder="Requires https://" style="width: 100%" type="text" name="project-link" id="project-link" value="<?php if (isset($jeo_stored_meta['project-link'])) echo $jeo_stored_meta['project-link'][0]; ?>"  />
+					<input placeholder="Requires https:// or http//" style="width: 100%" type="text" name="project-link" id="project-link" value="<?php if (isset($jeo_stored_meta['project-link'])) echo $jeo_stored_meta['project-link'][0]; ?>"  />
 				</label>
 			</div>
 		</p>
@@ -216,7 +216,7 @@ function twitter_opinion_video_callback() {
 			<span class="jeo-row-title"><?php _e('Video URL to be shown on twitter sharing preview: ', 'jeo') ?></span>
 			<div class="jeo-row-content">
 				<label for="twitter-opinion-video">
-					<input placeholder="Requires https://" type="text" name="twitter-opinion-video" id="twitter-opinion-video" value="<?php if (isset($jeo_stored_meta['twitter-opinion-video'])) echo $jeo_stored_meta['twitter-opinion-video'][0]; ?>"  />
+					<input placeholder="Requires https:// or http//" type="text" name="twitter-opinion-video" id="twitter-opinion-video" value="<?php if (isset($jeo_stored_meta['twitter-opinion-video'])) echo $jeo_stored_meta['twitter-opinion-video'][0]; ?>"  />
 				</label>
 			</div>
 		</p>
@@ -280,7 +280,7 @@ function display_external_post_callback() {
 			<br><br>
 			<label for="external-source-link">
 				<?php _e('Original Publisher link', 'jeo') ?>
-				<input type="text" style="width: 100%" name="external-source-link" id="external-source-link" value="<?php if (isset($jeo_stored_meta['external-source-link'])) echo $jeo_stored_meta['external-source-link'][0]; ?>" />
+				<input placeholder="Requires https:// or http//"  type="text" style="width: 100%" name="external-source-link" id="external-source-link" value="<?php if (isset($jeo_stored_meta['external-source-link'])) echo $jeo_stored_meta['external-source-link'][0]; ?>" />
 			</label>
 
 		</div>
