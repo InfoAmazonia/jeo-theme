@@ -286,7 +286,7 @@ function show_publishers($id){
 }
 
 function get_publisher($id){
-	$partner_name = 'No media partner';
+	$partner_name = '';
 	if(taxonomy_exists('partner')){
 		$partners = get_the_terms( $id, 'partner');
 		if ($partners && count($partners) > 0){
