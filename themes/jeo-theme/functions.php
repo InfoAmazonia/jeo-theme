@@ -285,6 +285,29 @@ function show_publishers($id){
 	}
 }
 
+function get_publisher($id){
+	$partner_name = '';
+	if(taxonomy_exists('partner')){
+		$partners = get_the_terms( $id, 'partner');
+		if ($partners && count($partners) > 0){
+			if (class_exists('WPSEO_Primary_Term')) {
+				$wpseo_primary_term = new WPSEO_Primary_Term( 'partner', $id );
+				$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
+				$term = get_term( $wpseo_primary_term );
+
+				if ($term || count($partners) == 1 ) {
+					if($term && isset($term->term_id)) {
+						$partner_name = $term->name;
+					} else if (count($partners) == 1) {
+						$partner_name = $partners[0]->name;
+					}
+				}
+			}
+		}
+	}
+	return $partner_name;
+}
+
 /* Remove 'this is a story from media partners */
 add_action( 'init', 'the_content_remove_plugin_filter' );
 function the_content_remove_plugin_filter() {
@@ -310,4 +333,3 @@ function video_embed_url($url) {
 
 	return $url;	
 }
-

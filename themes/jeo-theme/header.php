@@ -61,7 +61,7 @@
 						<?php if (true === $show_slideout_sidebar && is_active_sidebar('header-1')) : ?>
 							<button class="desktop-menu-toggle" on="tap:desktop-sidebar.toggle">
 								<?php echo wp_kses(newspack_get_icon_svg('menu', 20), newspack_sanitize_svgs()); ?>
-								<?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'newspack'))); ?>
+								<?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'jeo'))); ?>
 							</button>
 						<?php endif; ?>
 
@@ -140,7 +140,7 @@
 							<?php if (true === $show_slideout_sidebar && is_active_sidebar('header-1')) : ?>
 								<button class="desktop-menu-toggle" on="tap:desktop-sidebar.toggle">
 									<?php echo wp_kses(newspack_get_icon_svg('menu', 20), newspack_sanitize_svgs()); ?>
-									<?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'newspack'))); ?>
+									<?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'jeo'))); ?>
 								</button>
 							<?php endif; ?>
 
@@ -184,7 +184,7 @@
 						<?php if (true === $header_simplified && true === $show_slideout_sidebar && is_active_sidebar('header-1')) : ?>
 							<button class="desktop-menu-toggle" on="tap:desktop-sidebar.toggle">
 								<?php echo wp_kses(newspack_get_icon_svg('menu', 20), newspack_sanitize_svgs()); ?>
-								<span><?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'newspack'))); ?></span>
+								<span><?php echo esc_html(get_theme_mod('slideout_label', esc_html__('Menu', 'jeo'))); ?></span>
 							</button>
 						<?php endif; ?>
 
@@ -334,7 +334,7 @@
 								// Header is simplified. In mobile has search icon always
 								if (true === $header_simplified || true === $header_center_logo  || false === $header_center_logo) : ?>
 									<button class="search-toggle" on="tap:AMP.setState( { searchVisible: !searchVisible } ), search-form-1.focus" aria-controls="search-menu" [aria-expanded]="searchVisible ? 'true' : 'false'" aria-expanded="false">
-										<span class="screen-reader-text" [text]="searchVisible ? '<?php esc_html_e('Close Search', 'newspack'); ?>' : '<?php esc_html_e('Open Search', 'newspack'); ?>'">
+										<span class="screen-reader-text" [text]="searchVisible ? '<?php esc_html_e('Close Search', 'jeo'); ?>' : '<?php esc_html_e('Open Search', 'newspack'); ?>'">
 											<?php esc_html_e('Open Search', 'newspack'); ?>
 										</span>
 										<span class="search-icon"><?php echo wp_kses(newspack_get_icon_svg('search', 28), newspack_sanitize_svgs()); ?></span>

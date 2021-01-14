@@ -92,7 +92,7 @@ function project_link_callback() {
 		<p>
 			<div class="jeo-row-content">
 				<label for="project-link">
-					<input placeholder="Requires https://" style="width: 100%" type="text" name="project-link" id="project-link" value="<?php if (isset($jeo_stored_meta['project-link'])) echo $jeo_stored_meta['project-link'][0]; ?>"  />
+					<input placeholder="Requires https:// or http//" style="width: 100%" type="text" name="project-link" id="project-link" value="<?php if (isset($jeo_stored_meta['project-link'])) echo $jeo_stored_meta['project-link'][0]; ?>"  />
 				</label>
 			</div>
 		</p>
@@ -196,7 +196,8 @@ function hide_post_excerpt_callback() {
 		
 		<div class="jeo-row-content">
 			<label for="hide_post_excerpt">
-					<?php _e('See general option (set in Customizer) ', 'jeo') ?>
+					<?php _e('If the generic option to hide posts in Customizer Panel is enabled, it will replace this option', 'jeo') ?>
+					<br><br>
 					<input type="checkbox" name="hide_post_excerpt" id="hide_post_excerpt" value="false" <?php if (isset($jeo_stored_meta['hide_post_excerpt'])) checked($jeo_stored_meta['hide_post_excerpt'][0], true); ?> />
 				<?php _e('Hide post excerpt', 'jeo') ?>
 			</label>
@@ -215,7 +216,7 @@ function twitter_opinion_video_callback() {
 			<span class="jeo-row-title"><?php _e('Video URL to be shown on twitter sharing preview: ', 'jeo') ?></span>
 			<div class="jeo-row-content">
 				<label for="twitter-opinion-video">
-					<input placeholder="Requires https://" type="text" name="twitter-opinion-video" id="twitter-opinion-video" value="<?php if (isset($jeo_stored_meta['twitter-opinion-video'])) echo $jeo_stored_meta['twitter-opinion-video'][0]; ?>"  />
+					<input placeholder="Requires https:// or http//" type="text" name="twitter-opinion-video" id="twitter-opinion-video" value="<?php if (isset($jeo_stored_meta['twitter-opinion-video'])) echo $jeo_stored_meta['twitter-opinion-video'][0]; ?>"  />
 				</label>
 			</div>
 		</p>
@@ -233,7 +234,8 @@ function media_partner_republish_callback() {
 	<p>
 		<div class="jeo-row-content">
 			<label for="partner-link">
-				<?php _e('Media partner link (It works with selected media partners)', 'jeo-textdomain') ?>
+				<?php _e('Media partner link (It works with selected media partners)', 'jeo') ?>
+				<br><br>
 				<input placeholder="Requires https:// or http//" type="text" style="width: 100%" name="partner-link" id="partner-link" value="<?php if (isset($jeo_stored_meta['partner-link'])) echo $jeo_stored_meta['partner-link'][0]; ?>" />
 			</label>
 
@@ -253,7 +255,7 @@ function display_erratum_block() {
 		<div class="jeo-row-content">
 			<label for="enable-post-erratum">
 				<input type="checkbox" name="enable-post-erratum" id="enable-post-erratum" value="false" <?php if (isset($jeo_stored_meta['enable-post-erratum'])) checked($jeo_stored_meta['enable-post-erratum'][0], true); ?> />
-				<?php _e('Sorry we said wrong', 'jeo-textdomain') ?>
+				<?php _e('Sorry we said wrong', 'jeo') ?>
 			</label>
 			<p>
 				<label for="post-erratum">
@@ -274,16 +276,11 @@ function display_external_post_callback() {
 
 	<p>
 		<div class="jeo-row-content">
-			<label for="external-title">
-				<?php _e('Original Publisher name', 'jeo-textdomain') ?>
-				<input type="text" style="width: 100%" name="external-title" id="external-title" value="<?php if (isset($jeo_stored_meta['external-title'])) echo $jeo_stored_meta['external-title'][0]; ?>" />
-			</label>
-
+			<?php _e('You must select a media partner to use as original publisher name', 'jeo') ?>
 			<br><br>
-
 			<label for="external-source-link">
-				<?php _e('Original Publisher link', 'jeo-textdomain') ?>
-				<input type="text" style="width: 100%" name="external-source-link" id="external-source-link" value="<?php if (isset($jeo_stored_meta['external-source-link'])) echo $jeo_stored_meta['external-source-link'][0]; ?>" />
+				<?php _e('Original Publisher link', 'jeo') ?>
+				<input placeholder="Requires https:// or http//"  type="text" style="width: 100%" name="external-source-link" id="external-source-link" value="<?php if (isset($jeo_stored_meta['external-source-link'])) echo $jeo_stored_meta['external-source-link'][0]; ?>" />
 			</label>
 
 		</div>
