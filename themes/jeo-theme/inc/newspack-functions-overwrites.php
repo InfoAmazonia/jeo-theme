@@ -114,6 +114,7 @@ function newspack_scott_scripts() {
 		wp_enqueue_script('momenta', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', ['jquery'], null, true);
 		wp_enqueue_style('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', [], '0.1.0', 'all');
 		wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['jquery', 'momenta'], '0.1.0', true);
+		wp_enqueue_style('select2', get_stylesheet_directory_uri() . '/assets/vendor/select2/select2.min.css', [], false, 'all');
 		wp_enqueue_script('select2', get_stylesheet_directory_uri() . '/assets/vendor/select2/select2.min.js', ['jquery'], null, true);
 		wp_enqueue_script('search-filters', get_stylesheet_directory_uri() . '/dist/search-filters.js', ['jquery', 'select2'], null, true);
 	}
