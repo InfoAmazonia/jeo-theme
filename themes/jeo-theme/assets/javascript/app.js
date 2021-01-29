@@ -38,6 +38,7 @@ window.addEventListener("DOMContentLoaded", function () {
             const targetLink = element.getAttribute("href");
             // console.log(element);
 
+
             try {
                 try {
                     element.closest('article').querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
@@ -58,8 +59,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     const external_link_api =
                         document.location.origin +
                         "/wp-json/api/external-link/?target_link=" +
-                        targetLink;
-                    //console.log(external_link_api);
+                        encodeURIComponent(targetLink);
 
                     jQuery.ajax({
                         type: "GET",
