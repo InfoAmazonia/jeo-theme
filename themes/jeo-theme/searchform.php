@@ -52,7 +52,7 @@ $unique_id = wp_unique_id('search-form-');
 				<?php 
 				$regions_category = get_category_by_slug('regions');
 				$categories = get_categories(
-					array( 'parent' =>  isset($topics_category->cat_ID) ? $topics_category->cat_ID : null)
+					array( 'parent' =>  isset($regions_category->cat_ID) ? $regions_category->cat_ID : null)
 				);
 
 				//var_dump($categories);
