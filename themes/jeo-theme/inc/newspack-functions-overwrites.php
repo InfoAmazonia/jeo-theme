@@ -114,6 +114,44 @@ function newspack_scott_scripts() {
 		wp_enqueue_script('momenta', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', ['jquery'], null, true);
 		wp_enqueue_style('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', [], '0.1.0', 'all');
 		wp_enqueue_script('daterangepicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', ['jquery', 'momenta'], '0.1.0', true);
+		wp_enqueue_style('select2', get_stylesheet_directory_uri() . '/assets/vendor/select2/select2.min.css', [], false, 'all');
+		wp_enqueue_script('select2', get_stylesheet_directory_uri() . '/assets/vendor/select2/select2.min.js', ['jquery'], null, true);
+		wp_enqueue_script('search-filters', get_stylesheet_directory_uri() . '/dist/search-filters.js', ['jquery', 'select2'], null, true);
+	}
+
+	if(is_singular()){
+		//We only want the script if it's a singular page
+		$id = get_the_ID();
+		
+		$block_list = [
+			'jeo-theme/custom-image-gallery-block' => function() {
+				wp_enqueue_script('image-gallery', get_stylesheet_directory_uri() . '/dist/image-gallery.js', ['jquery'], null, true);
+			},
+
+			'jeo-theme/custom-image-block-editor' => function() {
+				wp_enqueue_script('image-block', get_stylesheet_directory_uri() . '/dist/image-block.js', ['jquery'], null, true);
+			},
+
+			'jeo-theme/custom-link-dropdown' => function() {
+				wp_enqueue_style(
+					'custom-link-dropdown',
+					get_stylesheet_directory_uri() . '/assets/javascript/blocks/linkDropdown/linkDropdown.css',
+					[],
+					filemtime(get_stylesheet_directory() . '/assets/javascript/blocks/linkDropdown/linkDropdown.css'),
+					'all'
+				);
+			},
+
+			// custom-link-dropdown
+		];
+
+		// Enqueue only used blocks
+		foreach($block_list as $key => $block) {
+			if(has_block($key, $id)){
+				$block();
+			}
+		}
+		
 	}
 
 	wp_enqueue_style('app', get_stylesheet_directory_uri() . '/dist/app.css', ['newspack-style'], filemtime(get_stylesheet_directory() . '/dist/app.css'), 'all');

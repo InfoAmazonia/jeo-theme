@@ -19,6 +19,12 @@ const dist_dir = root_dir + '/dist';
 mix.js(assets_dir + '/javascript/app.js', '');
 mix.sass(assets_dir + '/scss/app.scss', '').sourceMaps();
 
+// Functionalities
+mix.js(assets_dir + '/javascript/functionalities/search-filters.js', '');
+mix.js(assets_dir + '/javascript/functionalities/image-block.js', '');
+
+
+
 
 mix.react('./assets/javascript/toolbar/tooltip/tooltip.js', 'tooltip.js');
 mix.react('./assets/javascript/blocks/embedTemplate/index.js', 'embedTemplate.js');
