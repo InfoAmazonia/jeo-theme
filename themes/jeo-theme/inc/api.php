@@ -17,7 +17,6 @@ class API {
         $external_link = $params['target_link'];
 
         $cached_result = get_transient(md5($external_link));
-        //var_dump($cached_result);
 
         if($cached_result) {
             return $cached_result;
