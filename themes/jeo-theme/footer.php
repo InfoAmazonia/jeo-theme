@@ -49,7 +49,7 @@
 				
 				<span class="copyright"><?php echo esc_html( $custom_copyright ); ?></span>
 				<div class="credit">
-					<p><?= __('Site by', 'jeo') ?></p>
+					<p><?= __('Web development by', 'jeo') ?></p>
 					<a href="https://hacklab.com.br" class="hacklab">Hacklab</a>
 					<a href="https://hacklab.com.br" class="hacklab-decoration-marker">/</a>
 				</div>
