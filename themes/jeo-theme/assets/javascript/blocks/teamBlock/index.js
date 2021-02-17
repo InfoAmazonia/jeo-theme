@@ -5,7 +5,7 @@ import { registerBlockType } from "@wordpress/blocks";
 import "./teamBlock.scss";
 
 registerBlockType('jeo-theme/custom-team-block', {
-    title: __('Team'),
+    title: __('Team', "jeo"),
     icon: 'buddicons-buddypress-logo',
     category: 'common',
     keywords: [
