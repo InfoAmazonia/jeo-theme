@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-17T17:40:02+00:00\n"
+"POT-Creation-Date: 2021-02-17T19:12:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: jeo\n"
@@ -629,12 +629,12 @@ msgid "Date range"
 msgstr ""
 
 #: searchform.php:42
-#: assets/javascript/functionalities/search-filters.js:4
+#: dist/search-filters.js:102
 msgid "Topics"
 msgstr ""
 
 #: searchform.php:65
-#: assets/javascript/functionalities/search-filters.js:5
+#: dist/search-filters.js:104
 msgid "Regions"
 msgstr ""
 
@@ -700,7 +700,7 @@ msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:80
 #: template-parts/header/mobile-sidebar.php:202
-#: assets/javascript/functionalities/dark-mode.js:40
+#: dist/app.js:452
 msgid "Dark mode"
 msgstr ""
 
@@ -721,117 +721,117 @@ msgstr ""
 msgid "About the writer"
 msgstr ""
 
-#: assets/javascript/blocks/imageBlock/index.js:84
-msgid "Upload Image"
-msgstr ""
-
-#: assets/javascript/blocks/imageBlock/index.js:84
-msgid "Replace image"
-msgstr ""
-
-#: assets/javascript/blocks/imageBlock/index.js:96
-msgid "Write a info here."
-msgstr ""
-
-#: assets/javascript/blocks/imageBlock/index.js:114
-msgid "Write a description here."
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:16
-msgid "Type here your description"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:24
-msgid "Type the credits here"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:98
-msgid "Image Gallery"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:102
-msgid "materialtheme"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:103
-msgid "photos"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:104
-msgid "images"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:161
-#: assets/javascript/blocks/linkDropdown/index.js:127
-#: assets/javascript/blocks/videoGallery/index.js:42
-msgid "Type a title"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:7
-msgid "Link Dropdown"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:11
-msgid "link"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:12
-msgid "dropdown"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:143
-msgid "Section title"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:153
-msgid "Section URL (requires HTTPS)"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:159
-msgid "Please, fill all the fields."
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:174
-msgid "Add new section"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:66
-msgid "Select newsletter type:"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:76
-msgid "Add custom css:"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:87
-msgid "Title"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:98
-msgid "Subtitle"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:114
-msgid "Additional Information"
-msgstr ""
-
-#: assets/javascript/blocks/teamBlock/index.js:8
-#: assets/javascript/blocks/teamBlock/index.js:12
-msgid "Team"
-msgstr ""
-
-#: assets/javascript/blocks/teamBlock/index.js:13
-msgid "Members"
-msgstr ""
-
-#: assets/javascript/blocks/teamBlock/index.js:46
-msgid "Type a team section title"
-msgstr ""
-
-#: assets/javascript/functionalities/dark-mode.js:39
+#: dist/app.js:450
 msgid "Light mode"
 msgstr ""
 
-#: assets/javascript/functionalities/search-filters.js:6
+#: dist/imageBlock.js:179
+msgid "Upload Image"
+msgstr ""
+
+#: dist/imageBlock.js:179
+msgid "Replace image"
+msgstr ""
+
+#: dist/imageBlock.js:190
+msgid "Write a info here."
+msgstr ""
+
+#: dist/imageBlock.js:200
+msgid "Write a description here."
+msgstr ""
+
+#: dist/imageGallery.js:212
+msgid "Type here your description"
+msgstr ""
+
+#: dist/imageGallery.js:219
+msgid "Type the credits here"
+msgstr ""
+
+#: dist/imageGallery.js:297
+msgid "Image Gallery"
+msgstr ""
+
+#: dist/imageGallery.js:300
+msgid "materialtheme"
+msgstr ""
+
+#: dist/imageGallery.js:300
+msgid "photos"
+msgstr ""
+
+#: dist/imageGallery.js:300
+msgid "images"
+msgstr ""
+
+#: dist/imageGallery.js:371
+#: dist/linkDropdown.js:283
+#: dist/videoGallery.js:138
+msgid "Type a title"
+msgstr ""
+
+#: dist/linkDropdown.js:146
+msgid "Link Dropdown"
+msgstr ""
+
+#: dist/linkDropdown.js:149
+msgid "link"
+msgstr ""
+
+#: dist/linkDropdown.js:149
+msgid "dropdown"
+msgstr ""
+
+#: dist/linkDropdown.js:300
+msgid "Section title"
+msgstr ""
+
+#: dist/linkDropdown.js:311
+msgid "Section URL (requires HTTPS)"
+msgstr ""
+
+#: dist/linkDropdown.js:315
+msgid "Please, fill all the fields."
+msgstr ""
+
+#: dist/linkDropdown.js:329
+msgid "Add new section"
+msgstr ""
+
+#: dist/newsletter.js:155
+msgid "Select newsletter type:"
+msgstr ""
+
+#: dist/newsletter.js:174
+msgid "Add custom css:"
+msgstr ""
+
+#: dist/newsletter.js:190
+msgid "Title"
+msgstr ""
+
+#: dist/newsletter.js:202
+msgid "Subtitle"
+msgstr ""
+
+#: dist/newsletter.js:217
+msgid "Additional Information"
+msgstr ""
+
+#: dist/search-filters.js:106
 msgid "Clear"
+msgstr ""
+
+#: dist/teamBlock.js:111
+#: dist/teamBlock.js:114
+msgid "Team"
+msgstr ""
+
+#: dist/teamBlock.js:114
+msgid "Members"
+msgstr ""
+
+#: dist/teamBlock.js:140
+msgid "Type a team section title"
 msgstr ""
