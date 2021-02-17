@@ -9,8 +9,8 @@ registerBlockType('jeo-theme/custom-team-block', {
     icon: 'buddicons-buddypress-logo',
     category: 'common',
     keywords: [
-        __('Team'),
-        __('Members'),
+        __('Team', 'jeo'),
+        __('Members', 'jeo'),
 	],
 	supports: {
 		align: true,
@@ -43,7 +43,7 @@ registerBlockType('jeo-theme/custom-team-block', {
 							onChange={ ( title ) => {
 								setAttributes( { title } )
 							} }
-							placeholder={ __( 'Type a team section title' ) } 
+							placeholder={ __( 'Type a team section title', 'jeo' ) } 
 						/>
 						<InnerBlocks
 							allowedBlocks={[ 'jeo-theme/team-member' ]}

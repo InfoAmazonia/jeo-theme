@@ -1,11 +1,18 @@
+import { __ } from '@wordpress/i18n';
+
 window.addEventListener("DOMContentLoaded", function () {
+    const topicsLabel = __( 'Topics', 'jeo' );
+    const regionsLabel = __( 'Regions', 'jeo' );
+    const cancelLabel = __( 'Clear', 'jeo' );
+
+
     if (document.querySelector('body').classList.contains('search')) {
         jQuery('.filters select#topics').select2({
-            placeholder: "Topics",
+            placeholder: topicsLabel,
         });
 
         jQuery('.filters select#regions').select2({
-            placeholder: "Regions",
+            placeholder: regionsLabel,
         });
 
         jQuery('input[name="daterange"]').daterangepicker({
@@ -13,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
             maxDate: new Date(),
             autoUpdateInput: false,
             locale: {
-                cancelLabel: "Clear",
+                cancelLabel: cancelLabel,
             },
         });
 
