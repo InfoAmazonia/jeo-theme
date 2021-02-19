@@ -39,7 +39,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-video-gallery", {
 							onChange={ ( title ) => {
 								setAttributes( { title } )
 							} }
-							placeholder={ __( 'Type a title' ) } 
+							placeholder={ __( 'Type a title', 'jeo' ) } 
 						/>
 						<InnerBlocks
 							allowedBlocks={[ 'jeo-theme/embed-template' ]}

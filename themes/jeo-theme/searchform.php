@@ -14,7 +14,7 @@ $unique_id = wp_unique_id('search-form-');
 		<span class="screen-reader-text"><?php echo esc_html_x('Search for:', 'label', 'newspack'); ?></span>
 	</label>
 	<div class="search-input-wrapper">
-		<input type="search" id="<?php echo esc_attr($unique_id); ?>" class="search-field" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'newspack'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<input type="search" id="<?php echo esc_attr($unique_id); ?>" class="search-field" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'jeo'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 		<button type="submit" class="search-submit">
 			<?php echo wp_kses(newspack_get_icon_svg('search', 28), newspack_sanitize_svgs()); ?>
 			<span class="screen-reader-text">
@@ -29,7 +29,7 @@ $unique_id = wp_unique_id('search-form-');
 			<div class="filters--itens">
 
 				<div class="filters--item">
-					<input type="text" readonly value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" autocomplete="off" placeholder="Date range" name="daterange">
+					<input type="text" readonly value="<?= isset($_GET['daterange']) || !empty($_GET['daterange']) ? $_GET['daterange'] : 'Date range' ?>" replace-empty="<?= !isset($_GET['daterange']) || empty($_GET['daterange']) ? 'true' : 'false' ?>" autocomplete="off" placeholder="<?php echo esc_attr_x('Date range', 'placeholder', 'jeo'); ?>" name="daterange">
 				</div>
 
 				<?php 

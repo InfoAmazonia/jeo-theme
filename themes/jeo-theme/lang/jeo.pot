@@ -1,19 +1,30 @@
+# Copyright (C) 2021 Hacklab
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: JEO\n"
-"POT-Creation-Date: 2021-01-10 15:50-0300\n"
-"PO-Revision-Date: 2021-01-10 15:50-0300\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
+"Project-Id-Version: JEO Theme 1.2.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/jeo-theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html__;esc_html_e\n"
-"X-Poedit-SearchPath-0: .\n"
+"POT-Creation-Date: 2021-02-17T19:12:35+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: jeo\n"
+
+#. Theme Name of the theme
+msgid "JEO Theme"
+msgstr ""
+
+#. Author of the theme
+msgid "Hacklab"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://newspack.blog"
+msgstr ""
 
 #: 404.php:17
 msgid "Error"
@@ -35,7 +46,8 @@ msgstr ""
 msgid "Special Projects"
 msgstr ""
 
-#: archive.php:15 archive.php:44
+#: archive.php:15
+#: archive.php:44
 msgid "Author"
 msgstr ""
 
@@ -43,150 +55,8 @@ msgstr ""
 msgid "ABOUT THE AUTHOR"
 msgstr ""
 
-#: assets/javascript/blocks/contentBox/index.js:45
-msgid "Content Box Title"
-msgstr ""
-
-#: assets/javascript/blocks/imageBlock/index.js:84
-msgid "Upload Image"
-msgstr ""
-
-#: assets/javascript/blocks/imageBlock/index.js:84
-msgid "Replace image"
-msgstr ""
-
-#: assets/javascript/blocks/imageBlock/index.js:96
-msgid "Write a info here."
-msgstr ""
-
-#: assets/javascript/blocks/imageBlock/index.js:114
-msgid "Write a description here."
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:16
-msgid "Type here your description"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:24
-msgid "Type the credits here"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:98
-msgid "Image Gallery"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:102
-msgid "materialtheme"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:103
-msgid "photos"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:104
-msgid "images"
-msgstr ""
-
-#: assets/javascript/blocks/imageGallery/index.js:153
-#: assets/javascript/blocks/linkDropdown/index.js:127
-#: assets/javascript/blocks/videoGallery/index.js:42
-msgid "Type a title"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:7
-msgid "Link Dropdown"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:11
-msgid "link"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:12
-msgid "dropdown"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:143
-msgid "Section title"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:153
-msgid "Section URL (requires HTTPS)"
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:159
-msgid "Please, fill all the fields."
-msgstr ""
-
-#: assets/javascript/blocks/linkDropdown/index.js:174
-msgid "Add new section"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:66
-msgid "Select newsletter type:"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:76
-msgid "Add custom css:"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:87
-msgid "Title"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:98
-msgid "Subtitle"
-msgstr ""
-
-#: assets/javascript/blocks/newsletter/index.js:114
-msgid "Additional Information"
-msgstr ""
-
-#: assets/javascript/blocks/teamBlock/index.js:8
-#: assets/javascript/blocks/teamBlock/index.js:12
-msgid "Team"
-msgstr ""
-
-#: assets/javascript/blocks/teamBlock/index.js:13
-msgid "Members"
-msgstr ""
-
-#: assets/javascript/blocks/teamBlock/index.js:46
-msgid "Type a team section title"
-msgstr ""
-
-#: classes/class-newspack-style-packs-core.php:178
-msgid "Style Packs"
-msgstr ""
-
-#: classes/class-newspack-style-packs-core.php:194
 #: classes/class-newspack-style-packs-core.php:366
 msgid "Default"
-msgstr ""
-
-#: classes/class-newspack-style-packs-core.php:199
-msgid "Active Style"
-msgstr ""
-
-#: classes/class-newspack-walker-comment.php:52
-#, php-format
-msgid "%s <span class=\"screen-reader-text says\">says:</span>"
-msgstr ""
-
-#: classes/class-newspack-walker-comment.php:64
-msgid "Article author"
-msgstr ""
-
-#: classes/class-newspack-walker-comment.php:77
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: classes/class-newspack-walker-comment.php:85
-msgid "Edit"
-msgstr ""
-
-#: classes/class-newspack-walker-comment.php:90
-msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: classes/library_related-posts.php:13
@@ -214,7 +84,6 @@ msgid "1 comment found. See comment"
 msgstr ""
 
 #: comments.php:33
-#, php-format
 msgid "%s comments found. See comments"
 msgstr ""
 
@@ -222,94 +91,38 @@ msgstr ""
 msgid "There are no comments yet. Leave a comment!"
 msgstr ""
 
-#: comments.php:44 comments.php:69 comments.php:124
+#: comments.php:44
 msgid "Leave a comment"
 msgstr ""
 
-#: comments.php:111
-msgid "Comments"
-msgstr ""
-
-#: comments.php:114
-msgid "Previous"
-msgstr ""
-
-#: comments.php:115
-msgid "Next"
-msgstr ""
-
-#: comments.php:140
-msgid "Comments are closed."
-msgstr ""
-
 #: footer.php:52
-msgid "Site by"
+msgid "Web development by"
 msgstr ""
 
-#: header-single.php:48 inc/template-tags.php:134
-#: template-parts/content/content-social-networks.php:19
-msgid " and "
-msgstr ""
-
-#: header-single.php:51 inc/template-tags.php:137
-#: template-parts/content/content-social-networks.php:22
-msgid ", "
-msgstr ""
-
-#: header-single.php:122 header.php:43
-msgid "Skip to content"
-msgstr ""
-
-#: header-single.php:136 header-single.php:144 header-single.php:157
-#: header-single.php:180 header-single.php:222 header-single.php:303
-#: header-single.php:344 header.php:64 header.php:97 header.php:107
-#: header.php:143 header.php:187 header.php:268 header.php:310
+#: header-single.php:180
+#: header-single.php:222
+#: header.php:64
+#: header.php:143
+#: header.php:187
 msgid "Menu"
 msgstr ""
 
-#: header-single.php:391 header.php:360
-msgid "Highlight Menu"
-msgstr ""
-
-#: header.php:52 template-parts/header/header-search.php:20
+#: header.php:52
+#: template-parts/header/header-search.php:20
 msgid "What are you looking for?"
 msgstr ""
 
-#: header.php:337 template-parts/header/header-search.php:11
+#: header.php:337
+#: template-parts/header/header-search.php:11
 msgid "Close Search"
-msgstr ""
-
-#: header.php:337 header.php:338 template-parts/header/header-search.php:11
-#: template-parts/header/header-search.php:12
-msgid "Open Search"
-msgstr ""
-
-#: inc/child-customizer.php:29
-msgid "Background color"
 msgstr ""
 
 #: inc/child-customizer.php:30
 msgid "Leave empty to use default"
 msgstr ""
 
-#: inc/child-customizer.php:40
-msgid "Display Author Social Media links"
-msgstr ""
-
-#: inc/child-customizer.php:41
-msgid ""
-"Display social media links with the author bio on individual posts and "
-"author archives (this option requires the Yoast plugin)."
-msgstr ""
-
-#: inc/child-customizer.php:68
-msgid "Background image"
-msgstr ""
-
 #: inc/child-customizer.php:69
-msgid ""
-"Upload an image to be used as header background. Choosing a background image "
-"and background color causes overlap."
+msgid "Upload an image to be used as header background. Choosing a background image and background color causes overlap."
 msgstr ""
 
 #: inc/child-customizer.php:92
@@ -317,9 +130,7 @@ msgid "Use backgroud image in dark mode?"
 msgstr ""
 
 #: inc/child-customizer.php:93
-msgid ""
-"By disabling this, the header will use the default background with some "
-"opacity applied."
+msgid "By disabling this, the header will use the default background with some opacity applied."
 msgstr ""
 
 #: inc/child-customizer.php:112
@@ -327,9 +138,7 @@ msgid "Logo sticky image"
 msgstr ""
 
 #: inc/child-customizer.php:113
-msgid ""
-"Upload an image to be used as sticky logo. If there are no sticky logo, the "
-"main logo will be used instead"
+msgid "Upload an image to be used as sticky logo. If there are no sticky logo, the main logo will be used instead"
 msgstr ""
 
 #: inc/child-customizer.php:138
@@ -337,17 +146,11 @@ msgid "Logo dark image"
 msgstr ""
 
 #: inc/child-customizer.php:139
-msgid ""
-"Dark logo to be displayed. The default dark mode logo is your logo masked "
-"with white."
+msgid "Dark logo to be displayed. The default dark mode logo is your logo masked with white."
 msgstr ""
 
 #: inc/child-customizer.php:164
 msgid "Discovery button style"
-msgstr ""
-
-#: inc/child-customizer.php:184
-msgid "Discovery button link"
 msgstr ""
 
 #: inc/child-customizer.php:185
@@ -372,10 +175,6 @@ msgstr ""
 
 #: inc/child-customizer.php:279
 msgid "Search icon background"
-msgstr ""
-
-#: inc/child-customizer.php:302
-msgid "Search icon background color"
 msgstr ""
 
 #: inc/child-customizer.php:322
@@ -427,10 +226,6 @@ msgstr ""
 msgid "Republish Modal Introduction (it is allowed to use HTML tags)"
 msgstr ""
 
-#: inc/child-customizer.php:496
-msgid "Republish Modal Bullets Introduction (it is allowed to use HTML tags)"
-msgstr ""
-
 #: inc/child-customizer.php:497
 msgid "The bullets can be created as Bullet Widget on Widgets panel."
 msgstr ""
@@ -459,48 +254,53 @@ msgstr ""
 msgid "Line"
 msgstr ""
 
-#: inc/child-customizer.php:608 inc/child-customizer.php:787
+#: inc/child-customizer.php:608
+#: inc/child-customizer.php:787
 msgid "Unit"
 msgstr ""
 
-#: inc/child-customizer.php:638 inc/child-customizer.php:809
+#: inc/child-customizer.php:638
+#: inc/child-customizer.php:809
 msgid "Force font-size by using !important"
 msgstr ""
 
-#: inc/child-customizer.php:655 inc/child-customizer.php:826
+#: inc/child-customizer.php:655
+#: inc/child-customizer.php:826
 msgid "p"
 msgstr ""
 
-#: inc/child-customizer.php:673 inc/child-customizer.php:844
+#: inc/child-customizer.php:673
+#: inc/child-customizer.php:844
 msgid "H1"
 msgstr ""
 
-#: inc/child-customizer.php:690 inc/child-customizer.php:861
+#: inc/child-customizer.php:690
+#: inc/child-customizer.php:861
 msgid "H2"
 msgstr ""
 
-#: inc/child-customizer.php:707 inc/child-customizer.php:878
+#: inc/child-customizer.php:707
+#: inc/child-customizer.php:878
 msgid "H3"
 msgstr ""
 
-#: inc/child-customizer.php:724 inc/child-customizer.php:895
+#: inc/child-customizer.php:724
+#: inc/child-customizer.php:895
 msgid "H4"
 msgstr ""
 
-#: inc/child-customizer.php:741 inc/child-customizer.php:912
+#: inc/child-customizer.php:741
+#: inc/child-customizer.php:912
 msgid "H5"
 msgstr ""
 
-#: inc/child-customizer.php:759 inc/child-customizer.php:930
+#: inc/child-customizer.php:759
+#: inc/child-customizer.php:930
 msgid "H6"
 msgstr ""
 
 #: inc/child-customizer.php:768
 msgid "Font sizes mobile"
-msgstr ""
-
-#: inc/child-customizer.php:946
-msgid "Featured Font"
 msgstr ""
 
 #: inc/child-customizer.php:947
@@ -519,14 +319,6 @@ msgstr ""
 msgid "Menu font size (rem)"
 msgstr ""
 
-#: inc/child-customizer.php:1001
-msgid "Accent Font Provider Import Code or URL"
-msgstr ""
-
-#: inc/child-customizer.php:1017
-msgid "Accent font"
-msgstr ""
-
 #: inc/child-customizer.php:1018
 msgid "Example: Dosis"
 msgstr ""
@@ -543,7 +335,8 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: inc/metaboxes.php:59 template-parts/content/content-single.php:44
+#: inc/metaboxes.php:59
+#: template-parts/content/content-single.php:44
 msgid "Sorry, we said wrong"
 msgstr ""
 
@@ -580,9 +373,7 @@ msgid "Hide post excerpt: "
 msgstr ""
 
 #: inc/metaboxes.php:199
-msgid ""
-"If the generic option to hide posts in Customizer Panel is enabled, it will "
-"replace this option"
+msgid "If the generic option to hide posts in Customizer Panel is enabled, it will replace this option"
 msgstr ""
 
 #: inc/metaboxes.php:202
@@ -613,7 +404,18 @@ msgstr ""
 msgid "Original Publisher link"
 msgstr ""
 
-#: inc/post-types.php:8 inc/post-types.php:9
+#: inc/post-types.php:6
+msgctxt "Post Type General Name"
+msgid "Projects"
+msgstr ""
+
+#: inc/post-types.php:7
+msgctxt "Post Type Singular Name"
+msgid "Project"
+msgstr ""
+
+#: inc/post-types.php:8
+#: inc/post-types.php:9
 msgid "Projects"
 msgstr ""
 
@@ -725,32 +527,12 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#: inc/template-tags.php:305 inc/template-tags.php:328
-msgid ","
-msgstr ""
-
-#: inc/template-tags.php:312
-msgid "Posted in"
-msgstr ""
-
-#: inc/template-tags.php:333
-msgid "Tagged:"
-msgstr ""
-
-#: inc/template-tags.php:344 template-parts/content/content-page.php:35
-#, php-format
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: inc/widgets.php:64
-msgid "Newsletter"
-msgstr ""
-
 #: inc/widgets.php:65
 msgid "Newsletter widget"
 msgstr ""
 
-#: inc/widgets.php:82 inc/widgets.php:94
+#: inc/widgets.php:82
+#: inc/widgets.php:94
 msgid "VIEW PAST EDITIONS"
 msgstr ""
 
@@ -774,7 +556,9 @@ msgstr ""
 msgid "Vertical"
 msgstr ""
 
-#: inc/widgets.php:124 inc/widgets.php:181 inc/widgets.php:295
+#: inc/widgets.php:124
+#: inc/widgets.php:181
+#: inc/widgets.php:295
 msgid "Title:"
 msgstr ""
 
@@ -798,20 +582,12 @@ msgstr ""
 msgid "Container style:"
 msgstr ""
 
-#: inc/widgets.php:164
-msgid "Bullet"
-msgstr ""
-
 #: inc/widgets.php:165
 msgid "Bullet widget"
 msgstr ""
 
 #: inc/widgets.php:185
 msgid "Description:"
-msgstr ""
-
-#: inc/widgets.php:198
-msgid "Most Read"
 msgstr ""
 
 #: inc/widgets.php:199
@@ -838,19 +614,27 @@ msgstr ""
 msgid "See more URL (requires https://)"
 msgstr ""
 
-#: search.php:17
-msgid "Search results"
+#: searchform.php:17
+msgctxt "placeholder"
+msgid "Search &hellip;"
 msgstr ""
 
 #: searchform.php:28
 msgid "Filters"
 msgstr ""
 
+#: searchform.php:32
+msgctxt "placeholder"
+msgid "Date range"
+msgstr ""
+
 #: searchform.php:42
+#: dist/search-filters.js:102
 msgid "Topics"
 msgstr ""
 
 #: searchform.php:65
+#: dist/search-filters.js:104
 msgid "Regions"
 msgstr ""
 
@@ -862,7 +646,8 @@ msgstr ""
 msgid "Sort by:"
 msgstr ""
 
-#: searchform.php:91 searchform.php:100
+#: searchform.php:91
+#: searchform.php:100
 msgid "Latest"
 msgstr ""
 
@@ -870,32 +655,12 @@ msgstr ""
 msgid "Oldest"
 msgstr ""
 
-#: template-parts/content/content-none.php:14
-msgid "Nothing Found"
+#. Template Name of the theme
+msgid "One column"
 msgstr ""
 
-#: template-parts/content/content-none.php:24
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content/content-none.php:37
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: template-parts/content/content-none.php:44
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: template-parts/content/content-page.php:21
-#: template-parts/content/content-single.php:54
-#: template-parts/content/content.php:38
-msgid "Pages:"
+#. Template Name of the theme
+msgid "One column wide"
 msgstr ""
 
 #: template-parts/content/content-related-posts.php:14
@@ -914,32 +679,10 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: template-parts/content/content-single.php:30
-#: template-parts/content/content.php:25
-#, php-format
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
-
 #: template-parts/content/content-single.php:67
 #: template-parts/singles/single-project.php:10
 #: template-parts/singles/single-project.php:43
 msgid "Access project page"
-msgstr ""
-
-#: template-parts/footer/below-footer-widgets.php:9
-msgid "Below Footer"
-msgstr ""
-
-#: template-parts/footer/footer-widgets.php:10
-msgid "Footer"
-msgstr ""
-
-#: template-parts/header/desktop-sidebar.php:12
-#: template-parts/header/desktop-sidebar.php:18
-#: template-parts/header/mobile-sidebar.php:13
-#: template-parts/header/subpage-sidebar.php:12
-#: template-parts/header/subpage-sidebar.php:18
-msgid "Close"
 msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:33
@@ -957,6 +700,7 @@ msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:80
 #: template-parts/header/mobile-sidebar.php:202
+#: dist/app.js:452
 msgid "Dark mode"
 msgstr ""
 
@@ -977,13 +721,117 @@ msgstr ""
 msgid "About the writer"
 msgstr ""
 
-#: template-parts/post/author-bio.php:95 template-parts/post/author-bio.php:105
-#: template-parts/post/author-bio.php:155
-#: template-parts/post/author-bio.php:165
-#, php-format
-msgid "More by %s"
+#: dist/app.js:450
+msgid "Light mode"
 msgstr ""
 
-#: template-parts/post/discussion-meta.php:21
-msgid "No comments"
+#: dist/imageBlock.js:179
+msgid "Upload Image"
+msgstr ""
+
+#: dist/imageBlock.js:179
+msgid "Replace image"
+msgstr ""
+
+#: dist/imageBlock.js:190
+msgid "Write a info here."
+msgstr ""
+
+#: dist/imageBlock.js:200
+msgid "Write a description here."
+msgstr ""
+
+#: dist/imageGallery.js:212
+msgid "Type here your description"
+msgstr ""
+
+#: dist/imageGallery.js:219
+msgid "Type the credits here"
+msgstr ""
+
+#: dist/imageGallery.js:297
+msgid "Image Gallery"
+msgstr ""
+
+#: dist/imageGallery.js:300
+msgid "materialtheme"
+msgstr ""
+
+#: dist/imageGallery.js:300
+msgid "photos"
+msgstr ""
+
+#: dist/imageGallery.js:300
+msgid "images"
+msgstr ""
+
+#: dist/imageGallery.js:371
+#: dist/linkDropdown.js:283
+#: dist/videoGallery.js:138
+msgid "Type a title"
+msgstr ""
+
+#: dist/linkDropdown.js:146
+msgid "Link Dropdown"
+msgstr ""
+
+#: dist/linkDropdown.js:149
+msgid "link"
+msgstr ""
+
+#: dist/linkDropdown.js:149
+msgid "dropdown"
+msgstr ""
+
+#: dist/linkDropdown.js:300
+msgid "Section title"
+msgstr ""
+
+#: dist/linkDropdown.js:311
+msgid "Section URL (requires HTTPS)"
+msgstr ""
+
+#: dist/linkDropdown.js:315
+msgid "Please, fill all the fields."
+msgstr ""
+
+#: dist/linkDropdown.js:329
+msgid "Add new section"
+msgstr ""
+
+#: dist/newsletter.js:155
+msgid "Select newsletter type:"
+msgstr ""
+
+#: dist/newsletter.js:174
+msgid "Add custom css:"
+msgstr ""
+
+#: dist/newsletter.js:190
+msgid "Title"
+msgstr ""
+
+#: dist/newsletter.js:202
+msgid "Subtitle"
+msgstr ""
+
+#: dist/newsletter.js:217
+msgid "Additional Information"
+msgstr ""
+
+#: dist/search-filters.js:106
+msgid "Clear"
+msgstr ""
+
+#: dist/teamBlock.js:111
+#: dist/teamBlock.js:114
+msgid "Team"
+msgstr ""
+
+#: dist/teamBlock.js:114
+msgid "Members"
+msgstr ""
+
+#: dist/teamBlock.js:140
+msgid "Type a team section title"
 msgstr ""

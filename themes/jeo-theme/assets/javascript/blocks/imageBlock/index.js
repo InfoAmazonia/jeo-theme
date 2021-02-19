@@ -81,7 +81,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
                                             }
                                             onClick={open}
                                         >
-                                            {!mediaID ? __("Upload Image") : __("Replace image")}
+                                            {!mediaID ? __("Upload Image", "jeo") : __("Replace image", "jeo")}
                                         </Button>
                                         {mediaID ? (
                                             <div className="image-wrapper">
@@ -93,7 +93,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
                                                     <RichText
                                                         tagName="span"
                                                         className="image-meta"
-                                                        placeholder={__("Write a info here.")}
+                                                        placeholder={__("Write a info here.", "jeo")}
                                                         value={mediaDescription}
                                                         onChange={onChangeDescription}
                                                     />
@@ -111,7 +111,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
                         <RichText
                             tagName="span"
                             className="callout-title image-description margin-auto"
-                            placeholder={__("Write a description here.")}
+                            placeholder={__("Write a description here.", "jeo")}
                             value={title}
                             onChange={onChangeTitle}
                         />

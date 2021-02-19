@@ -63,7 +63,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
         <div className="newsletter-wrapper" key="container">
           <div class="category-page-sidebar">
           <SelectControl
-              label={ __( 'Select newsletter type:' ) }
+              label={ __( 'Select newsletter type:', 'jeo' ) }
               value={ typeNews }
               onChange={ (value) => {setAttributes( { typeNews: value } ) } }
               options={ [
@@ -73,7 +73,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
               ] }
           />
           <TextControl
-            label={ __( 'Add custom css:' ) }
+            label={ __( 'Add custom css:', 'jeo' ) }
             value={ customStyle }
             onChange={ ( value ) => {setAttributes( { customStyle: value } ) } }
           />
@@ -84,7 +84,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
                   
                     <RichText
                       tagName="p"
-                      placeholder={__("Title")}
+                      placeholder={__("Title", "jeo")}
                       value={title}
                       onChange={(value) => setAttributes({ title: value })}
                     />
@@ -95,7 +95,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
                     <RichText
                         tagName="p"
                         className="anchor-text"
-                        placeholder={__("Subtitle")}
+                        placeholder={__("Subtitle", "jeo")}
                         value={subtitle}
                         onChange={(value) => setAttributes({ subtitle: value })}
                     />
@@ -111,7 +111,7 @@ wp.blocks.registerBlockType("jeo-theme/custom-newsletter-block", {
                 <RichText
                         tagName="p"
                         className="link-add"
-                        placeholder={__("Additional Information")}
+                        placeholder={__("Additional Information", "jeo")}
                         value={adicionalContent}
                         onChange={(value) => setAttributes({ adicionalContent: value })}
                 />
