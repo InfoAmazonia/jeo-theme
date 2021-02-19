@@ -139,7 +139,7 @@ function custom_link_dropdown() {
 	register_block_type('jeo-theme/custom-link-dropdown', array(
 		'editor_script' => 'custom-link-dropdown',
 		'editor_style'  => 'custom-link-dropdown',
-		'style'         => 'custom-link-dropdown',
+		// 'style'         => 'custom-link-dropdown',
 	));
 }
 

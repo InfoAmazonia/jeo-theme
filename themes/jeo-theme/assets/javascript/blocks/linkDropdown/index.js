@@ -4,12 +4,12 @@ import { __ } from "@wordpress/i18n";
 import { registerBlockType } from "@wordpress/blocks";
 
 registerBlockType('jeo-theme/custom-link-dropdown', {
-    title: __('Link Dropdown'),
+    title: __('Link Dropdown', 'jeo'),
     icon: 'editor-ul',
     category: 'common',
     keywords: [
-        __('link'),
-        __('dropdown'),
+        __('link', 'jeo'),
+        __('dropdown', 'jeo'),
 	],
 	supports: {
 		align: ['left', 'right'],
@@ -124,7 +124,7 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
 						onChange={ ( dropdownTitle ) => {
 							setAttributes( { dropdownTitle } )
 						} }
-						placeholder={ __( 'Type a title' ) } 
+						placeholder={ __( 'Type a title', 'jeo' ) } 
 					/>
 					<i class="arrow-icon fas fa-angle-down"></i>
 				</div>
@@ -140,7 +140,7 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
 						onChange={ ( newSectionTitle ) => {
 							setAttributes( { newSectionTitle } )
 						} }
-						placeholder={ __( 'Section title' ) } 
+						placeholder={ __( 'Section title', 'jeo' ) } 
 					/>
 					<RichText
 						tagName="p"
@@ -150,13 +150,13 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
 						onChange={ ( newSectionURL ) => {
 							setAttributes( { newSectionURL } )
 						} }
-						placeholder={ __( 'Section URL (requires HTTPS)' ) } 
+						placeholder={ __( 'Section URL (requires HTTPS)', 'jeo' ) } 
 					/>
 				</div>
 				<Button
 					onClick={() => {
 						if ( !newSectionURL || !newSectionTitle ) {
-							alert(__('Please, fill all the fields.'));
+							alert(__('Please, fill all the fields.', 'jeo'));
 							return;
 						}
 
@@ -171,7 +171,7 @@ registerBlockType('jeo-theme/custom-link-dropdown', {
 					}}
 					isSecondary
 				>
-					{__('Add new section')}
+					{__('Add new section', 'jeo')}
 				</Button>
 
 			</div>

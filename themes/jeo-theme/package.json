@@ -18,6 +18,7 @@
     "@wordpress/block-editor": "^4.2.0",
     "@wordpress/blocks": "^6.19.0",
     "@wordpress/components": "^9.9.0",
+    "@wordpress/i18n": "^3.18.0",
     "@wordpress/scripts": "^12.0.0",
     "array-move": "^3.0.1",
     "laravel-mix": "^4.1.4",

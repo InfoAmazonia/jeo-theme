@@ -13,7 +13,7 @@ const DraggableImage = SortableElement(({ credits, description, image, removeIma
                 value={description}
                 allowedFormats={['core/bold', 'core/italic']}
                 onChange={setDescription}
-                placeholder={__('Type here your description')}
+                placeholder={__('Type here your description', 'jeo')}
             />
             <RichText
                 tagName="span"
@@ -21,7 +21,7 @@ const DraggableImage = SortableElement(({ credits, description, image, removeIma
                 value={credits}
                 allowedFormats={['core/bold', 'core/italic']}
                 onChange={setCredits}
-                placeholder={__('Type the credits here')}
+                placeholder={__('Type the credits here', 'jeo')}
             />
             <div className="remove-item" onClick={removeImage}><span class="dashicons dashicons-trash"></span></div>
         </div>
@@ -95,13 +95,13 @@ const ImageGallery = SortableContainer(({ images, imagesCredits, imagesDescripti
 });
 
 wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
-    title: __('Image Gallery'),
+    title: __('Image Gallery', 'jeo'),
     icon: 'format-gallery',
     category: 'common',
     keywords: [
-        __('materialtheme'),
-        __('photos'),
-        __('images')
+        __('materialtheme', 'jeo'),
+        __('photos', 'jeo'),
+        __('images', 'jeo')
     ],
     attributes: {
         galleryTitle: {
@@ -158,7 +158,7 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
                     value={galleryTitle}
                     formattingControls={['bold', 'italic']}
                     onChange={(galleryTitle) => {setAttributes({ galleryTitle })}}
-                    placeholder={__('Type a title')}
+                    placeholder={__('Type a title', 'jeo')}
                 />
                 <ImageGallery
                     axis="xy"

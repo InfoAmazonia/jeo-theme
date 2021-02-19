@@ -1,5 +1,3 @@
-import Vue from "vue";
-
 // Functionalities
 import "./functionalities/ajax-pv";
 import "./functionalities/dark-mode";
@@ -10,7 +8,7 @@ import "./functionalities/header";
 import "./functionalities/cover-block";
 import "./functionalities/video-gallery";
 import "./functionalities/image-gallery";
-import "./functionalities/search-filters";
+// import "./functionalities/search-filters";
 import "./functionalities/tooltip";
 import "./functionalities/link-dropdown";
 import "./functionalities/project-single";
@@ -22,13 +20,7 @@ import "./cookies";
 
 // Vendors
 // import './../vendor/selectric/selectric.min';
-import './../vendor/select2/select2.min';
 
-// Components
-import ImageBlock from "./components/imageBlock/ImageBlock";
-
-
-Vue.component("image-block", ImageBlock);
 
 window.addEventListener("DOMContentLoaded", function () {
     // External source post API magic <3
@@ -37,6 +29,7 @@ window.addEventListener("DOMContentLoaded", function () {
         .forEach((element) => {
             const targetLink = element.getAttribute("href");
             // console.log(element);
+
 
             try {
                 try {
@@ -58,8 +51,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     const external_link_api =
                         document.location.origin +
                         "/wp-json/api/external-link/?target_link=" +
-                        targetLink;
-                    //console.log(external_link_api);
+                        encodeURIComponent(targetLink);
 
                     jQuery.ajax({
                         type: "GET",
@@ -90,13 +82,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
 (function ($) {
     jQuery(document).ready(function () {
-        // Fix JEO-plugin and Vue conflit.
-        document.querySelectorAll('.vue-component').forEach(function (element) {
-            new Vue({
-                el: element,
-            });
-        });
-
         if (jQuery(".single .featured-image-behind").length) {
             jQuery(".featured-image-behind .image-info i").click(function () {
                 jQuery(".featured-image-behind .image-info-container").toggleClass(

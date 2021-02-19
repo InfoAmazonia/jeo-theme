@@ -1,3 +1,5 @@
+import { __ } from '@wordpress/i18n';
+
 window.addEventListener("DOMContentLoaded", function () {
     if(localStorage.getItem('theme')) {
         if(localStorage.getItem('theme') == "dark") {
@@ -34,16 +36,18 @@ window.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem('theme', localStorage.getItem('theme') == "dark"? "light" : "dark");
 
+        const lightLabel = __( 'Light mode', 'jeo' );
+        const darkLabel = __( 'Dark mode', 'jeo' );
         if(localStorage.getItem('theme') == "dark") {
             try {
                 if(this.querySelector('.item--title').innerHTML) {
-                    this.querySelector('.item--title').innerHTML = "Light mode";
+                    this.querySelector('.item--title').innerHTML = lightLabel;
                 }
             } catch {};
         } else {
             try{
                 if(this.querySelector('.item--title').innerHTML) {
-                    this.querySelector('.item--title').innerHTML = "Dark mode";
+                    this.querySelector('.item--title').innerHTML = darkLabel;
                 }
             } catch {};
         }
