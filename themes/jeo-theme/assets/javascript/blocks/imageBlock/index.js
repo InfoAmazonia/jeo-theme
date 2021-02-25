@@ -5,7 +5,7 @@ import { __ } from "@wordpress/i18n";
 wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
     title: "Credited Image",
     icon: "format-image",
-    category: "common",
+    category: "media",
     supports: {
         align: true,
     },

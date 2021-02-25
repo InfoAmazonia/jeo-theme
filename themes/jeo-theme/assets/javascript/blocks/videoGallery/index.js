@@ -7,7 +7,7 @@ import { Button, SelectControl, TextControl } from "@wordpress/components";
 wp.blocks.registerBlockType("jeo-theme/custom-video-gallery", {
 	title: "Video Gallery",
 	icon: "format-video",
-	category: "common",
+	category: "media",
 	supports: {
 		align: true,
 	},
