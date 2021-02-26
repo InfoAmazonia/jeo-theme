@@ -10,6 +10,13 @@
                 transition: all .2s ease;
             }*/
 
+
+            .discovery-map {
+                .share-toolbar {
+                    z-index: 9;
+                }
+            }
+
             &.active:not(.embed) {
                 .default-sidebar {
                 //    margin-left: var(--padding-left);
@@ -166,6 +173,7 @@
             .discovery-map {
                 .share-toolbar {
                     background: #2D3235;
+                    z-index: 9;
 
                     .options {
                         opacity: 0.95;
