@@ -1,0 +1,16 @@
+ul.wp-block-latest-posts.wp-block-latest-posts__list {
+    li {
+        line-height: 1.2;
+        font-size: 1rem;
+        margin-bottom: 1.5em;
+
+        a {
+            color: #111;
+        }
+
+        time.wp-block-latest-posts__post-date {
+            font-size: .875rem;
+            margin-top: .5em;
+        }
+    }
+}
