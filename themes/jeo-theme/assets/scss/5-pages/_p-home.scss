@@ -387,10 +387,17 @@
     }
 
     /* HOMEPAGE Post block */
+    
     .wp-block-newspack-blocks-homepage-articles {
 
         /* Main highlight InfoAmazonia*/
         &.image-alignbehind{
+
+            /* Fix for Pasifika/Ekuatorial */
+            figure.post-thumbnail a {
+                position: unset;
+            }
+
             &.alignfull{
                 padding-left: 0px;
                 padding-right: 0px;

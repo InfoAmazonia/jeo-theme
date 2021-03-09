@@ -97,7 +97,7 @@ const ImageGallery = SortableContainer(({ images, imagesCredits, imagesDescripti
 wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
     title: __('Image Gallery', 'jeo'),
     icon: 'format-gallery',
-    category: 'common',
+    category: 'media',
     keywords: [
         __('materialtheme', 'jeo'),
         __('photos', 'jeo'),
