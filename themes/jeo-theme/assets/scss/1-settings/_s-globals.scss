@@ -475,6 +475,18 @@ input[type='submit']:focus {
     }
 }
 
+.wp-block-newspack-blocks-homepage-articles.alignfull {
+    article  {
+        // &[class^="category-map"], &[class^="category-video"], &[class^="category-audio"] {
+        &.category-map, &.category-video, &.category-audio {
+            figure.post-thumbnail a:after {
+                // font-size: 300px;
+                display: none;
+            }
+        }
+    }
+}
+
 /*
 .rectangle-copy-20-1 {
     height: 214px;
