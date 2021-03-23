@@ -4,6 +4,7 @@
     "/contentBox.js": "/contentBox.js",
     "/embedTemplate.js": "/embedTemplate.js",
     "/image-block.js": "/image-block.js",
+    "/image-gallery.js": "/image-gallery.js",
     "/imageBlock.js": "/imageBlock.js",
     "/imageGallery.js": "/imageGallery.js",
     "/linkDropdown.js": "/linkDropdown.js",
