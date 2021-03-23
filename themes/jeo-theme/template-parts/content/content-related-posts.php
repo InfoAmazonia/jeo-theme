@@ -1,8 +1,11 @@
 <?php
-    $posts = guaraci\related_posts::get_posts(get_the_id(), 3)->posts;
+    $posts = guaraci\related_posts::get_posts(get_the_ID(), 3)->posts;
+    
     $posts_ids = [];
     foreach($posts as $key=>$value) {
-        array_push($posts_ids, $value->ID);
+        if($value->ID != get_the_ID()) {
+            array_push($posts_ids, $value->ID);
+        }
     }
     
     $posts_query_args['post__in'] = $posts_ids;
