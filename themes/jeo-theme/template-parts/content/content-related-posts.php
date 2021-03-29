@@ -1,23 +1,12 @@
 <?php
     $posts = guaraci\related_posts::get_posts(get_the_ID(), 3)->posts;
-    
-    $posts_ids = [];
-    foreach($posts as $key=>$value) {
-        if($value->ID != get_the_ID()) {
-            array_push($posts_ids, $value->ID);
-        }
-    }
-    
-    $posts_query_args['post__in'] = $posts_ids;
-
-    $related_posts = new \WP_Query($posts_query_args); 
 ?>
-<?php if(sizeof($related_posts->posts) >= 3 && sizeof($posts_ids) != 0 && get_option('related_posts__use', false)): ?>
+<?php if(sizeof($posts) >= 3 && sizeof($posts) != 0 && get_option('related_posts__use', false)): ?>
             <div class="related-posts">
                 <p class="title-section"><?= __('Related Posts', 'jeo') ?></p>
 
                 <div class="posts">
-                    <?php foreach($related_posts->posts as $key=>$value): ?>
+                    <?php foreach($posts as $key=>$value): ?>
                         <div class="post">
                                 <?php if(get_the_post_thumbnail($value->ID)) : ?>
                                     <div class="thumbnail">
@@ -36,6 +25,7 @@
                                     <p class="excerpt"><?php echo get_the_excerpt($value->ID) ?></p>
                                 </div>
                         </div>
+						<?php if($key >= 2) break; ?>
                     <?php endforeach; ?>
                 </div>
             </div>
