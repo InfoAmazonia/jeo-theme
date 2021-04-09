@@ -167,6 +167,7 @@ class related_posts {
 
         $query = new \WP_Query([
             'post__in' => $ids,
+			'post__not_in' => [ $post_id ],
             'post_type' => ['post'],
             'posts_per_page' => -1,
             'orderby' => 'post__in'
