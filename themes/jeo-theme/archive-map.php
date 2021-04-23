@@ -31,6 +31,11 @@ get_header();
 			// Start the Loop.
 			while ( have_posts() ) :
 				the_post(); ?>
+
+				<?php 
+					$hide_post = get_post_meta(get_the_ID(), 'hide_in_discovery', true) == '1'? true : false;
+					if($hide_post) continue;
+				?>
 				
 				<article class="project-card">
 					<a href="<?php the_permalink() ?>" class="project-card--wrapper">

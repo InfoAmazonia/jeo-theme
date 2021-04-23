@@ -22,6 +22,7 @@ mix.sass(assets_dir + '/scss/app.scss', '').sourceMaps();
 // Functionalities
 mix.js(assets_dir + '/javascript/functionalities/search-filters.js', '');
 mix.js(assets_dir + '/javascript/functionalities/image-block.js', '');
+mix.js(assets_dir + '/javascript/functionalities/image-gallery.js', '');
 
 
 
