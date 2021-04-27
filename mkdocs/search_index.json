@@ -118,37 +118,37 @@
         {
             "location": "/tooltip/",
             "text": "\u201cTooltip\u201d style in the \u201cParagraph\u201d block",
-            "title": "Tooltip\u201d style in the \u201cParagraph\u201d block"
+            "title": "Tooltip style in the \"Paragraph\" block"
         },
         {
             "location": "/credit-image/",
             "text": "An image with description and a button that when clicked displays the photo's credits\nIt uses 2 fields: caption (legend) and description\n\n\nExample of how the image is shown on the page / post",
-            "title": "Credited Image\u201d block"
+            "title": "Credited Image block"
         },
         {
             "location": "/image-gallery/",
             "text": "Example of how the block looks on the page / post\n\n\n\n\nEditing the page",
-            "title": "Image gallery\u201d block"
+            "title": "Image gallery block"
         },
         {
             "location": "/video-gallery/",
             "text": "Editing the page\n\n\n\n\nExample of how the block looks on the page / post",
-            "title": "Video gallery\u201d block"
+            "title": "Video gallery block"
         },
         {
             "location": "/newsletter/",
             "text": "There are 2 versions: horizontal and vertical\nThe vertical version works better if it is used in a column\n\n\nEditing the page\n\n\n\n\nExample of how the block looks on the page / post\n\n\n\n\nEditing the page\n\n\n\n\nExample of how the block looks on the page / post",
-            "title": "Newsletter\u201d block"
+            "title": "Newsletter block"
         },
         {
             "location": "/pullquote/",
             "text": "Editing the page",
-            "title": "New style for the \u201cPullquote\u201d block"
+            "title": "New style for the \"Pullquote block\""
         },
         {
             "location": "/content-box/",
             "text": "Editing the page\n\n\n\n\nExample of how the block looks on the page / post",
-            "title": "Content Box\u201d block"
+            "title": "Content Box block"
         },
         {
             "location": "/featured-image/",
