@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Gutenberg - JEO Theme</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Gutenberg";
+    var mkdocs_page_input_path = "gutenberg.md";
+    var mkdocs_page_url = "/gutenberg/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> JEO Theme</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Gutenberg</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#documentacao">Documentação</a></li>
+    
+
+    <li class="toctree-l2"><a href="#differences-between-block-editor-gutenberg-and-classic-editor">Differences between Block Editor Gutenberg and Classic Editor</a></li>
+    
+
+    <li class="toctree-l2"><a href="#here-is-a-selection-of-the-default-blocks-included-with-gutenberg">Here is a selection of the default blocks included with Gutenberg</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#heading">Heading</a></li>
+        
+            <li><a class="toctree-l3" href="#video">Vídeo</a></li>
+        
+            <li><a class="toctree-l3" href="#paragraph">Paragraph</a></li>
+        
+            <li><a class="toctree-l3" href="#columns">Columns</a></li>
+        
+            <li><a class="toctree-l3" href="#youtube">Youtube</a></li>
+        
+            <li><a class="toctree-l3" href="#audio">Audio</a></li>
+        
+            <li><a class="toctree-l3" href="#cover">Cover</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#creating-a-new-blog-post-or-page">Creating a new blog post or page</a></li>
+    
+
+    <li class="toctree-l2"><a href="#block-edit-side-menu">Block edit side menu</a></li>
+    
+
+    <li class="toctree-l2"><a href="#side-document-editing-menu">Side document editing menu</a></li>
+    
+
+    <li class="toctree-l2"><a href="#when-youre-done-you-can-save-your-post-page-as-a-draft-preview-or-publish">When you're done, you can save your post / page as a draft, preview or publish</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../tooltip/">Tooltip” style in the “Paragraph” block</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../credit-image/">Credited Image” block</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../image-gallery/">Image gallery” block</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../video-gallery/">Video gallery” block</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../newsletter/">Newsletter” block</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../pullquote/">New style for the “Pullquote” block</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../content-box/">Content Box” block</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../featured-image/">Featured image</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../template/">Template: default, one column, one column wide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../primary-category/">Primary category</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../categories/">Categories</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../tags/">Tags</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../author/">Author</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../republish-link/">Republish link</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../external-link/">External link</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../new-yoast-location/">New Yoast section location</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../sorry-section/">Sorry section</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../media-partner/">Media partner republish link</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../update-home/">Update home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../darkmode/">Dark Mode</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../type-size/">Type Size options</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../general-configuration-panel/">General</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../site-identity/">Site identity</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../colors/">Colors</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../typography/">Typography</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../menus/">Menus</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../widgets/">Widgets</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../homepage-settings/">Homepage Settings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../header-settings/">Header Settings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../author-bio-settings/">Autor Bio Settings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../template-settings/">Template Settings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../comment-settings/">Comment Settings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../fotter-settings/">Footer Settings</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../post-sharing/">Post Sharing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../font-size/">Font size</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../additional.css/">Additional CSS</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">JEO Theme</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Gutenberg</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>The entire editing experience has been rebuild for media rich pages and posts because since Wordpress 5.0 has included the Gutenberg Editor that give us the ability to build using “Blocks”</p>
+<p>Blocks are pieces of content elements. With them, users can insert, rearrange and style multimedia content with very little technical knowledge. </p>
+<h3 id="documentacao"><a href="https://wordpress.org/gutenberg/">Documentação</a></h3>
+<p><img alt="Gutenberg" src="../img/gutenberg.png" /></p>
+<h2 id="differences-between-block-editor-gutenberg-and-classic-editor">Differences between Block Editor Gutenberg and Classic Editor</h2>
+<p><a href="https://youtu.be/0JZO81A4Cto"><img alt="Gutenberg editor" src="https://img.youtube.com/vi/0JZO81A4Cto/hqdefault.jpg" /></a></p>
+<p>Uses a totally different approach, called ‘Blocks’. You can add blocks for each paragraph, images, videos, galleries, audio, lists, and more. </p>
+<p>With the new editor, you can simply add a table block, select your columns and rows, and start adding content. You can move content elements up and down, edit them as individual blocks, and easily create media-rich content. Is easy to use and learn.</p>
+<p><img alt="Editor clássico" src="../img/classic-editor.png" /></p>
+<p>A text editor with formatting buttons very similar to Microsoft Word.</p>
+<h2 id="here-is-a-selection-of-the-default-blocks-included-with-gutenberg">Here is a selection of the default blocks included with Gutenberg</h2>
+<h3 id="heading">Heading</h3>
+<p><img alt="Heading" src="../img/heading.png" /> Works to break your page into sections. Each heading should indicate the start of a new topic.</p>
+<p>Settings available: Heading Level (H1, H2, H3, H4, H5 or H6 ), text alignment (left, center, right), bold, italic, strikethrough, inks, HTML Anchor and additional CSS Class</p>
+<h3 id="video">Vídeo</h3>
+<p><img alt="Heading" src="../img/video.png" /> Allows you to embed video files and play them back using a simple player</p>
+<h3 id="paragraph">Paragraph</h3>
+<p><img alt="Heading" src="../img/paragraph.png" /> Works to insert paragraphs of text.
+Has an editor to change color, italics, size, links,
+Shows basic formatting buttons like: text alignment, bold, italic, insert-link, and strikethrough buttons.</p>
+<h3 id="columns">Columns</h3>
+<p><img alt="Heading" src="../img/columns.png" /> A way to add columns to your page or post.
+With the Columns block, you can quickly and easily adjust your page’s layout.</p>
+<h3 id="youtube">Youtube</h3>
+<p><img alt="Heading" src="../img/youtube.png" /> Works to embed a video from a youtube link</p>
+<h3 id="audio">Audio</h3>
+<p>![Heading (img/audio.png)] The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.</p>
+<h3 id="cover">Cover</h3>
+<p><img alt="Heading" src="../img/cover.png" /> The Cover block is a fully-customizable element that can serve a number of purposes. It could be used as a classic hero banner, with a full-width photo background and text overlay.</p>
+<h2 id="creating-a-new-blog-post-or-page">Creating a new blog post or page</h2>
+<p><a href="https://youtu.be/4kmbteQH7jA"><img alt="Creating a new blog post or page" src="https://img.youtube.com/vi/4kmbteQH7jA/hqdefault.jpg" /></a></p>
+<h2 id="block-edit-side-menu">Block edit side menu</h2>
+<p>When selecting a block, you will find options for configuring that block in this menu.</p>
+<p><a href="https://youtu.be/9-wyc4AxzHE"><img alt="Block edit side menu" src="https://img.youtube.com/vi/9-wyc4AxzHE/hqdefault.jpg" /></a></p>
+<h2 id="side-document-editing-menu">Side document editing menu</h2>
+<p>When you need to change the general configuration of the product and not a specific block, access this menu. Ex: Categories, tags, featured image.</p>
+<p><a href="https://youtu.be/GIeHn4WDAfs"><img alt="Side document editing menu" src="https://img.youtube.com/vi/GIeHn4WDAfs/hqdefault.jpg" /></a></p>
+<h2 id="when-youre-done-you-can-save-your-post-page-as-a-draft-preview-or-publish">When you're done, you can save your post / page as a draft, preview or publish</h2>
+<p><a href="https://youtu.be/mt4oBNHl1oU"><img alt="When you're done, you can save your post / page as a draft, preview or publish" src="https://img.youtube.com/vi/mt4oBNHl1oU/hqdefault.jpg" /></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tooltip/" class="btn btn-neutral float-right" title="Tooltip” style in the “Paragraph” block">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tooltip/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
