@@ -1,0 +1,44 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Jeo Theme\n\n\nGutenberg\n\n\n\n\nUse of gutenberg (default)\n\n\n\n\nNew Gutenberg blocks - JEO Theme\n\n\n\n\n\u201cTooltip\u201d style in the \u201cParagraph\u201d block\n\n\n\u201cCredited Image\u201d block\n\n\n\u201cImage gallery\u201d block\n\n\n\u201cVideo gallery\u201d block\n\n\n\u201cNewsletter\u201d block\n\n\nNew style for the \u201cPullquote\u201d block\n\n\n\u201cContent Box\u201d block\n\n\n\n\nTaxonomies, Categories and Manage options in Posts / Pages\n\n\n\n\nFeatured image\n\n\nTemplate: default, one column, one column wide\n \n\n\nPrimary category\n \n\n\nCategories\n  \n\n\nTags\n \n\n\nAuthor\n  \n\n\nRepublish link\n \n\n\nExternal link\n \n\n\nNew Yoast section location\n \n\n\nSorry section\n \n\n\nMedia partner republish link\n \n\n\n\n\nHow to update home using JEO-Theme?\n\n\n\n\nUpdate home\n\n\n\n\nOther JEO theme options\n\n\n\n\nDark Mode\n\n\nType Size options\n\n\n\n\nConfiguration panel\n\n\n\n\nGeneral\n\n\nSite identity\n\n\nColors\n\n\nTypography\n\n\nMenus\n\n\nWidgets\n\n\nHomepage Settings\n\n\nHeader Settings\n\n\nAutor Bio Settings\n\n\nTemplate Settings\n\n\nComment Settings\n\n\nFooter Settings\n\n\nPost Sharing\n\n\nFont size\n\n\nAdditional CSS",
+            "title": "Home"
+        },
+        {
+            "location": "/#jeo-theme",
+            "text": "",
+            "title": "Jeo Theme"
+        },
+        {
+            "location": "/#gutenberg",
+            "text": "Use of gutenberg (default)",
+            "title": "Gutenberg"
+        },
+        {
+            "location": "/#new-gutenberg-blocks-jeo-theme",
+            "text": "\u201cTooltip\u201d style in the \u201cParagraph\u201d block  \u201cCredited Image\u201d block  \u201cImage gallery\u201d block  \u201cVideo gallery\u201d block  \u201cNewsletter\u201d block  New style for the \u201cPullquote\u201d block  \u201cContent Box\u201d block",
+            "title": "New Gutenberg blocks - JEO Theme"
+        },
+        {
+            "location": "/#taxonomies-categories-and-manage-options-in-posts-pages",
+            "text": "Featured image  Template: default, one column, one column wide    Primary category    Categories     Tags    Author     Republish link    External link    New Yoast section location    Sorry section    Media partner republish link",
+            "title": "Taxonomies, Categories and Manage options in Posts / Pages"
+        },
+        {
+            "location": "/#how-to-update-home-using-jeo-theme",
+            "text": "Update home",
+            "title": "How to update home using JEO-Theme?"
+        },
+        {
+            "location": "/#other-jeo-theme-options",
+            "text": "Dark Mode  Type Size options",
+            "title": "Other JEO theme options"
+        },
+        {
+            "location": "/#configuration-panel",
+            "text": "General  Site identity  Colors  Typography  Menus  Widgets  Homepage Settings  Header Settings  Autor Bio Settings  Template Settings  Comment Settings  Footer Settings  Post Sharing  Font size  Additional CSS",
+            "title": "Configuration panel"
+        }
+    ]
+}
