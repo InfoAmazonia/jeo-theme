@@ -5,5 +5,6 @@ Example of how the image is shown on the page / post
 
 [![Credit image](https://img.youtube.com/vi/rnhEzAi5FlA/hqdefault.jpg)](https://youtu.be/rnhEzAi5FlA)
 
-![Credit Image](img/credit-image.png)
+![Credit Image](img/Credit-image.png)
+
 ![Credit Image](img/credit-image-2.png)

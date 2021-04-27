@@ -45,7 +45,7 @@ With the Columns block, you can quickly and easily adjust your page’s layout.
 
 
 ### Audio 
-![Heading (img/audio.png)] The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.
+![Heading] (img/audio.png) The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.
 
 
 ### Cover

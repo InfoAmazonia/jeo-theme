@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Jeo Theme\n\n\nGutenberg\n\n\n\n\nUse of gutenberg (default)\n\n\n\n\nNew Gutenberg blocks - JEO Theme\n\n\n\n\n\u201cTooltip\u201d style in the \u201cParagraph\u201d block\n\n\n\u201cCredited Image\u201d block\n\n\n\u201cImage gallery\u201d block\n\n\n\u201cVideo gallery\u201d block\n\n\n\u201cNewsletter\u201d block\n\n\nNew style for the \u201cPullquote\u201d block\n\n\n\u201cContent Box\u201d block\n\n\n\n\nTaxonomies, Categories and Manage options in Posts / Pages\n\n\n\n\nFeatured image\n\n\nTemplate: default, one column, one column wide\n \n\n\nPrimary category\n \n\n\nCategories\n  \n\n\nTags\n \n\n\nAuthor\n  \n\n\nRepublish link\n \n\n\nExternal link\n \n\n\nNew Yoast section location\n \n\n\nSorry section\n \n\n\nMedia partner republish link\n \n\n\n\n\nHow to update home using JEO-Theme?\n\n\n\n\nUpdate home\n\n\n\n\nOther JEO theme options\n\n\n\n\nDark Mode\n\n\nType Size options\n\n\n\n\nConfiguration panel\n\n\n\n\nGeneral\n\n\nSite identity\n\n\nColors\n\n\nTypography\n\n\nMenus\n\n\nWidgets\n\n\nHomepage Settings\n\n\nHeader Settings\n\n\nAutor Bio Settings\n\n\nTemplate Settings\n\n\nComment Settings\n\n\nFooter Settings\n\n\nPost Sharing\n\n\nFont size\n\n\nAdditional CSS",
+            "text": "Jeo Theme\n\n\nGutenberg\n\n\n\n\nUse of gutenberg (default)\n\n\n\n\nNew Gutenberg blocks - JEO Theme\n\n\n\n\n\u201cTooltip\u201d style in the \u201cParagraph\u201d block\n\n\n\u201cCredited Image\u201d block\n\n\n\u201cImage gallery\u201d block\n\n\n\u201cVideo gallery\u201d block\n\n\n\u201cNewsletter\u201d block\n\n\nNew style for the \u201cPullquote\u201d block\n\n\n\u201cContent Box\u201d block\n\n\n\n\nTaxonomies, Categories and Manage options in Posts / Pages\n\n\n\n\nFeatured image\n\n\nTemplate: default, one column, one column wide\n \n\n\nPrimary category\n \n\n\nCategories\n  \n\n\nTags\n \n\n\nAuthor\n  \n\n\nRepublish link\n \n\n\nExternal link\n \n\n\nNew Yoast section location\n \n\n\nSorry section\n \n\n\nMedia partner republish link\n \n\n\n\n\nHow to update home using JEO-Theme?\n\n\n\n\nUpdate home\n\n\n\n\nOther JEO theme options\n\n\n\n\nDark Mode\n\n\nType Size options\n\n\n\n\nConfiguration panel\n\n\n\n\nGeneral\n\n\nSite identity\n\n\nColors\n\n\nTypography\n\n\nMenus\n\n\nWidgets\n\n\nHomepage Settings\n\n\nHeader Settings\n\n\nAutor Bio Settings\n\n\nTemplate Settings\n\n\nFooter Settings\n\n\nPost Sharing\n\n\nFont size\n\n\nAdditional CSS",
             "title": "Home"
         },
         {
@@ -37,12 +37,12 @@
         },
         {
             "location": "/#configuration-panel",
-            "text": "General  Site identity  Colors  Typography  Menus  Widgets  Homepage Settings  Header Settings  Autor Bio Settings  Template Settings  Comment Settings  Footer Settings  Post Sharing  Font size  Additional CSS",
+            "text": "General  Site identity  Colors  Typography  Menus  Widgets  Homepage Settings  Header Settings  Autor Bio Settings  Template Settings  Footer Settings  Post Sharing  Font size  Additional CSS",
             "title": "Configuration panel"
         },
         {
             "location": "/gutenberg/",
-            "text": "The entire editing experience has been rebuild for media rich pages and posts because since Wordpress 5.0 has included the Gutenberg Editor that give us the ability to build using \u201cBlocks\u201d\n\n\nBlocks are pieces of content elements. With them, users can insert, rearrange and style multimedia content with very little technical knowledge. \n\n\nDocumenta\u00e7\u00e3o\n\n\n\n\nDifferences between Block Editor Gutenberg and Classic Editor\n\n\n\n\nUses a totally different approach, called \u2018Blocks\u2019. You can add blocks for each paragraph, images, videos, galleries, audio, lists, and more. \n\n\nWith the new editor, you can simply add a table block, select your columns and rows, and start adding content. You can move content elements up and down, edit them as individual blocks, and easily create media-rich content. Is easy to use and learn.\n\n\n\n\nA text editor with formatting buttons very similar to Microsoft Word.\n\n\nHere is a selection of the default blocks included with Gutenberg\n\n\nHeading\n\n\n Works to break your page into sections. Each heading should indicate the start of a new topic.\n\n\nSettings available: Heading Level (H1, H2, H3, H4, H5 or H6 ), text alignment (left, center, right), bold, italic, strikethrough, inks, HTML Anchor and additional CSS Class\n\n\nV\u00eddeo\n\n\n Allows you to embed video files and play them back using a simple player\n\n\nParagraph\n\n\n Works to insert paragraphs of text.\nHas an editor to change color, italics, size, links,\nShows basic formatting buttons like: text alignment, bold, italic, insert-link, and strikethrough buttons.\n\n\nColumns\n\n\n A way to add columns to your page or post.\nWith the Columns block, you can quickly and easily adjust your page\u2019s layout.\n\n\nYoutube\n\n\n Works to embed a video from a youtube link\n\n\nAudio\n\n\n![Heading (img/audio.png)] The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.\n\n\nCover\n\n\n The Cover block is a fully-customizable element that can serve a number of purposes. It could be used as a classic hero banner, with a full-width photo background and text overlay.\n\n\nCreating a new blog post or page\n\n\n\n\nBlock edit side menu\n\n\nWhen selecting a block, you will find options for configuring that block in this menu.\n\n\n\n\nSide document editing menu\n\n\nWhen you need to change the general configuration of the product and not a specific block, access this menu. Ex: Categories, tags, featured image.\n\n\n\n\nWhen you're done, you can save your post / page as a draft, preview or publish",
+            "text": "The entire editing experience has been rebuild for media rich pages and posts because since Wordpress 5.0 has included the Gutenberg Editor that give us the ability to build using \u201cBlocks\u201d\n\n\nBlocks are pieces of content elements. With them, users can insert, rearrange and style multimedia content with very little technical knowledge. \n\n\nDocumenta\u00e7\u00e3o\n\n\n\n\nDifferences between Block Editor Gutenberg and Classic Editor\n\n\n\n\nUses a totally different approach, called \u2018Blocks\u2019. You can add blocks for each paragraph, images, videos, galleries, audio, lists, and more. \n\n\nWith the new editor, you can simply add a table block, select your columns and rows, and start adding content. You can move content elements up and down, edit them as individual blocks, and easily create media-rich content. Is easy to use and learn.\n\n\n\n\nA text editor with formatting buttons very similar to Microsoft Word.\n\n\nHere is a selection of the default blocks included with Gutenberg\n\n\nHeading\n\n\n Works to break your page into sections. Each heading should indicate the start of a new topic.\n\n\nSettings available: Heading Level (H1, H2, H3, H4, H5 or H6 ), text alignment (left, center, right), bold, italic, strikethrough, inks, HTML Anchor and additional CSS Class\n\n\nV\u00eddeo\n\n\n Allows you to embed video files and play them back using a simple player\n\n\nParagraph\n\n\n Works to insert paragraphs of text.\nHas an editor to change color, italics, size, links,\nShows basic formatting buttons like: text alignment, bold, italic, insert-link, and strikethrough buttons.\n\n\nColumns\n\n\n A way to add columns to your page or post.\nWith the Columns block, you can quickly and easily adjust your page\u2019s layout.\n\n\nYoutube\n\n\n Works to embed a video from a youtube link\n\n\nAudio\n\n\n The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.\n\n\nCover\n\n\n The Cover block is a fully-customizable element that can serve a number of purposes. It could be used as a classic hero banner, with a full-width photo background and text overlay.\n\n\nCreating a new blog post or page\n\n\n\n\nBlock edit side menu\n\n\nWhen selecting a block, you will find options for configuring that block in this menu.\n\n\n\n\nSide document editing menu\n\n\nWhen you need to change the general configuration of the product and not a specific block, access this menu. Ex: Categories, tags, featured image.\n\n\n\n\nWhen you're done, you can save your post / page as a draft, preview or publish",
             "title": "Gutenberg"
         },
         {
@@ -87,7 +87,7 @@
         },
         {
             "location": "/gutenberg/#audio",
-            "text": "![Heading (img/audio.png)] The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.",
+            "text": "The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.",
             "title": "Audio"
         },
         {
@@ -118,37 +118,37 @@
         {
             "location": "/tooltip/",
             "text": "\u201cTooltip\u201d style in the \u201cParagraph\u201d block",
-            "title": "Tooltip\u201d style in the \u201cParagraph\u201d block"
+            "title": "Tooltip style in the \"Paragraph\" block"
         },
         {
             "location": "/credit-image/",
             "text": "An image with description and a button that when clicked displays the photo's credits\nIt uses 2 fields: caption (legend) and description\n\n\nExample of how the image is shown on the page / post",
-            "title": "Credited Image\u201d block"
+            "title": "Credited Image block"
         },
         {
             "location": "/image-gallery/",
             "text": "Example of how the block looks on the page / post\n\n\n\n\nEditing the page",
-            "title": "Image gallery\u201d block"
+            "title": "Image gallery block"
         },
         {
             "location": "/video-gallery/",
             "text": "Editing the page\n\n\n\n\nExample of how the block looks on the page / post",
-            "title": "Video gallery\u201d block"
+            "title": "Video gallery block"
         },
         {
             "location": "/newsletter/",
             "text": "There are 2 versions: horizontal and vertical\nThe vertical version works better if it is used in a column\n\n\nEditing the page\n\n\n\n\nExample of how the block looks on the page / post\n\n\n\n\nEditing the page\n\n\n\n\nExample of how the block looks on the page / post",
-            "title": "Newsletter\u201d block"
+            "title": "Newsletter block"
         },
         {
             "location": "/pullquote/",
             "text": "Editing the page",
-            "title": "New style for the \u201cPullquote\u201d block"
+            "title": "New style for the \"Pullquote block\""
         },
         {
             "location": "/content-box/",
             "text": "Editing the page\n\n\n\n\nExample of how the block looks on the page / post",
-            "title": "Content Box\u201d block"
+            "title": "Content Box block"
         },
         {
             "location": "/featured-image/",
@@ -359,11 +359,6 @@
             "location": "/template-settings/",
             "text": "To access the template settings click here\n\n\n\n\n\n\nHere you can define the featured image default position\n\n\n(Options: Large, Behind article title, and Hidden)\n\n\nAnd you can define the default post template\n\n\n(Options: Default template, One column, One column wide)",
             "title": "Template Settings"
-        },
-        {
-            "location": "/comment-settings/",
-            "text": "",
-            "title": "Comment Settings"
         },
         {
             "location": "/fotter-settings/",

@@ -45,7 +45,6 @@
 - [Header Settings](header-settings.md)
 - [Autor Bio Settings](author-bio-settings.md)
 - [Template Settings](template-settings.md)
-- [Comment Settings](comment-settings.md)
 - [Footer Settings](fotter-settings.md)
 - [Post Sharing](post-sharing.md)
 - [Font size](font-size.md)

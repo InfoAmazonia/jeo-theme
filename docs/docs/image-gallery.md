@@ -5,4 +5,4 @@ Example of how the block looks on the page / post
 
 Editing the page
 
-![Credit Image](img/credit-image.png)
+![Image Gallery](img/image-gallery.png)
