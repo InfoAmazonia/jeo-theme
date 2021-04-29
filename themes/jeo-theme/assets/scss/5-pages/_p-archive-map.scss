@@ -1,0 +1,20 @@
+
+.post-type-archive-map  {
+    main#main.site-main {
+        width: 100%;
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 31px;
+
+            @include tablet {
+                grid-template-columns: auto;
+            }
+
+            .project-card {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
