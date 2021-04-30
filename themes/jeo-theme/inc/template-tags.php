@@ -31,7 +31,7 @@ function newspack_posted_on()
 						($diff->format('%h') * 60) +   
 							$diff->format('%i');       
 				if ($minutes >= 30) { ?>
-					<span class="hide-tablet-down"> (Updated on <?= the_modified_date("j F Y \a\\t G:i") ?>)</span>
+					<span class="hide-tablet-down"> (<?php echo __( 'Updated on', 'jeo' ); ?> <?= the_modified_date("j F Y \a\\t G:i") ?>)</span>
 				<?php 
 				}
 

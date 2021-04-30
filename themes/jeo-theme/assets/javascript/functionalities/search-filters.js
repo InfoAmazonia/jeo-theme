@@ -3,7 +3,8 @@ import { __ } from '@wordpress/i18n';
 window.addEventListener("DOMContentLoaded", function () {
     const topicsLabel = __( 'Topics', 'jeo' );
     const regionsLabel = __( 'Regions', 'jeo' );
-    const cancelLabel = __( 'Clear', 'jeo' );
+    const clearLabel = __( 'Clear', 'jeo' );
+    const applyLabel = __( 'Apply', 'jeo' );
 
 
     if (document.querySelector('body').classList.contains('search')) {
@@ -20,7 +21,8 @@ window.addEventListener("DOMContentLoaded", function () {
             maxDate: new Date(),
             autoUpdateInput: false,
             locale: {
-                cancelLabel: cancelLabel,
+                cancelLabel: clearLabel,
+                applyLabel,
             },
         });
 

@@ -14,7 +14,7 @@ get_header();
 		<div class="col-md-10 margin-auto">
 			<header class="page-header">
 				<h1 class="page-title article-section-title">
-					<?php esc_html_e( 'Search results', 'newspack' ); ?>
+					<?php esc_html_e( 'Search results', 'jeo' ); ?>
 				</h1>
 				<?php get_search_form(array(
 					'aria_label' => 'search-page-form'

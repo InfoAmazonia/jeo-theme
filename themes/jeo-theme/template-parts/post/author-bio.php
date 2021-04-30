@@ -92,7 +92,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 							<a class="author-link" href="<?php echo esc_url(get_author_posts_url($author->ID, $author->user_nicename)); ?>" rel="author">
 								<?php
 								/* translators: %s is the current author's name. */
-								printf(esc_html__('More by %s', 'newspack'), esc_html($author->display_name));
+								printf(esc_html__('More by %s', 'jeo'), esc_html($author->display_name));
 								?>
 							</a>
 						</p>
@@ -102,7 +102,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 						<a class="author-link" href="<?php echo esc_url(get_author_posts_url($author->ID, $author->user_nicename)); ?>" rel="author">
 							<?php
 							/* translators: %s is the current author's name. */
-							printf(esc_html__('More by %s', 'newspack'), esc_html($author->display_name));
+							printf(esc_html__('More by %s', 'jeo'), esc_html($author->display_name));
 							?>
 						</a>
 					<?php endif; ?>
@@ -152,7 +152,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 					<a class="author-link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" rel="author">
 						<?php
 						/* translators: %s is the current author's name. */
-						printf(esc_html__('More by %s', 'newspack'), esc_html(get_the_author()));
+						printf(esc_html__('More by %s', 'jeo'), esc_html(get_the_author()));
 						?>
 					</a>
 				</p>
@@ -162,7 +162,7 @@ if (function_exists('coauthors_posts_links') && is_single() && !empty(get_coauth
 				<a class="author-link" href="<?php echo esc_url(get_author_posts_url($author->ID, $author->user_nicename)); ?>" rel="author">
 					<?php
 					/* translators: %s is the current author's name. */
-					printf(esc_html__('More by %s', 'newspack'), esc_html(get_the_author()));
+					printf(esc_html__('More by %s', 'jeo'), esc_html(get_the_author()));
 					?>
 				</a>
 			<?php endif; ?>
