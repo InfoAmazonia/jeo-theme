@@ -124,7 +124,7 @@
 						if (!empty($button_url)) : ?>
 							<a href="<?= $button_url ?>" class="featured-button <?= get_theme_mod('discovery_button_style', 'solid') ?>">
 								<i class="far fa-map"></i>
-								Discovery
+								<?php echo __( 'Discovery', 'jeo' ); ?></p>
 							</a>
 						<?php endif; ?>
 					</div><!-- .wrapper -->
@@ -290,7 +290,7 @@
 							if (!empty($button_url)) : ?>
 								<a href="<?= $button_url ?>" class="featured-button <?= get_theme_mod('discovery_button_style', 'solid') ?>">
 									<i class="far fa-map"></i>
-									Discovery
+									<?php echo __( 'Discovery', 'jeo' ); ?></p>
 								</a>
 							<?php endif; ?>
 						</div><!-- .wrapper -->

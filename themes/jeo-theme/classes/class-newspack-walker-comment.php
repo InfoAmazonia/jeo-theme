@@ -74,7 +74,7 @@ class Newspack_Walker_Comment extends \Walker_Comment {
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 							<?php
 								/* translators: 1: comment date, 2: comment time */
-								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'newspack' ), get_comment_date( '', $comment ), get_comment_time() );
+								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'jeo' ), get_comment_date( '', $comment ), get_comment_time() );
 							?>
 							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo $comment_timestamp; ?>">
 								<?php echo $comment_timestamp; ?>
@@ -82,12 +82,12 @@ class Newspack_Walker_Comment extends \Walker_Comment {
 						</a>
 						<?php
 							$edit_comment_icon = newspack_get_icon_svg( 'edit', 16 );
-							edit_comment_link( __( 'Edit', 'newspack' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
+							edit_comment_link( __( 'Edit', 'jeo' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
 						?>
 					</div><!-- .comment-metadata -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'newspack' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'jeo' ); ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 

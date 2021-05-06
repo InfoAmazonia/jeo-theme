@@ -26,7 +26,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'header_background_color_hex',
 			array(
-				'label' => __('Background color', 'newspack'),
+				'label' => __('Background color', 'jeo'),
 				'description' => __('Leave empty to use default', 'jeo'),
 				'section'     => 'header_section_appearance',
 			)
@@ -37,8 +37,8 @@ function newspack_scott_customizer($wp_customize)
 		'show_author_social',
 		array(
 		'type' => 'checkbox',
-		'label' => esc_html__( 'Display Author Social Media links', 'newspack' ),
-		'description' => esc_html__( 'Display social media links with the author bio on individual posts and author archives (this option requires the Yoast plugin).', 'newspack' ),
+		'label' => esc_html__( 'Display Author Social Media links', 'jeo' ),
+		'description' => esc_html__( 'Display social media links with the author bio on individual posts and author archives (this option requires the Yoast plugin).', 'jeo' ),
 		'section' => 'author_bio_options',
 		)
 	);
@@ -65,7 +65,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'header_background_image',
 			array(
-				'label'       => esc_html__('Background image', 'newspack'),
+				'label'       => esc_html__('Background image', 'jeo'),
 				'description' => esc_html__('Upload an image to be used as header background. Choosing a background image and background color causes overlap.', 'jeo'),
 				'section'     => 'header_section_appearance',
 				'settings'    => 'header_background_image',
@@ -181,7 +181,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_control(
 		'discovery_button_link',
 		array(
-			'label'       => __( 'Discovery button link', 'newspack' ),
+			'label'       => __( 'Discovery button link', 'jeo' ),
 			'description' => __( 'Leave it empty to hide.', 'jeo' ),
 			'section'     => 'header_section_appearance',
 			'default'     => '',
@@ -299,7 +299,7 @@ function newspack_scott_customizer($wp_customize)
 			$wp_customize,
 			'search_icon_bg_color',
 			array(
-				'label' => __('Search icon background color', 'newspack'),
+				'label' => __('Search icon background color', 'jeo'),
 				'section'     => 'header_section_appearance',
 			)
 		)
@@ -943,7 +943,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_control(
 		'single_featured_font',
 		array(
-			'label'       => __( 'Featured Font', 'newspack' ),
+			'label'       => __( 'Featured Font', 'jeo' ),
 			'description' => __( 'Example: Libre Basquesville', 'jeo' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',
@@ -998,7 +998,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_control(
 		'accent_font_import_code_alternate',
 		array(
-			'label'   => __( 'Accent Font Provider Import Code or URL', 'newspack' ),
+			'label'   => __( 'Accent Font Provider Import Code or URL', 'jeo' ),
 			'section' => 'newspack_typography',
 			'type'    => 'text',
 		)
@@ -1014,7 +1014,7 @@ function newspack_scott_customizer($wp_customize)
 	$wp_customize->add_control(
 		'accent_font',
 		array(
-			'label'       => __( 'Accent font', 'newspack' ),
+			'label'       => __( 'Accent font', 'jeo' ),
 			'description' => __( 'Example: Dosis', 'jeo' ),
 			'section'     => 'newspack_typography',
 			'type'        => 'text',

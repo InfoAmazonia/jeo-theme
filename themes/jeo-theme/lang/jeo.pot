@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: JEO Theme 1.2.1\n"
+"Project-Id-Version: JEO Theme 1.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/jeo-theme\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-17T19:12:35+00:00\n"
+"POT-Creation-Date: 2021-04-30T12:41:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: jeo\n"
@@ -59,6 +59,19 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
+#. translators: 1: comment date, 2: comment time
+#: classes/class-newspack-walker-comment.php:77
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: classes/class-newspack-walker-comment.php:85
+msgid "Edit"
+msgstr ""
+
+#: classes/class-newspack-walker-comment.php:90
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
 #: classes/library_related-posts.php:13
 msgid "Related posts"
 msgstr ""
@@ -92,7 +105,31 @@ msgid "There are no comments yet. Leave a comment!"
 msgstr ""
 
 #: comments.php:44
+#: comments.php:69
+#: comments.php:124
 msgid "Leave a comment"
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:74
+msgctxt "comments title"
+msgid "One reply on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:111
+msgid "Comments"
+msgstr ""
+
+#: comments.php:114
+msgid "Previous"
+msgstr ""
+
+#: comments.php:115
+msgid "Next"
+msgstr ""
+
+#: comments.php:140
+msgid "Comments are closed."
 msgstr ""
 
 #: footer.php:52
@@ -107,6 +144,13 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: header-single.php:327
+#: header.php:127
+#: header.php:293
+#: template-parts/header/mobile-sidebar.php:33
+msgid "Discovery"
+msgstr ""
+
 #: header.php:52
 #: template-parts/header/header-search.php:20
 msgid "What are you looking for?"
@@ -117,8 +161,24 @@ msgstr ""
 msgid "Close Search"
 msgstr ""
 
+#: inc/child-customizer.php:29
+msgid "Background color"
+msgstr ""
+
 #: inc/child-customizer.php:30
 msgid "Leave empty to use default"
+msgstr ""
+
+#: inc/child-customizer.php:40
+msgid "Display Author Social Media links"
+msgstr ""
+
+#: inc/child-customizer.php:41
+msgid "Display social media links with the author bio on individual posts and author archives (this option requires the Yoast plugin)."
+msgstr ""
+
+#: inc/child-customizer.php:68
+msgid "Background image"
 msgstr ""
 
 #: inc/child-customizer.php:69
@@ -153,6 +213,10 @@ msgstr ""
 msgid "Discovery button style"
 msgstr ""
 
+#: inc/child-customizer.php:184
+msgid "Discovery button link"
+msgstr ""
+
 #: inc/child-customizer.php:185
 msgid "Leave it empty to hide."
 msgstr ""
@@ -175,6 +239,10 @@ msgstr ""
 
 #: inc/child-customizer.php:279
 msgid "Search icon background"
+msgstr ""
+
+#: inc/child-customizer.php:302
+msgid "Search icon background color"
 msgstr ""
 
 #: inc/child-customizer.php:322
@@ -303,6 +371,10 @@ msgstr ""
 msgid "Font sizes mobile"
 msgstr ""
 
+#: inc/child-customizer.php:946
+msgid "Featured Font"
+msgstr ""
+
 #: inc/child-customizer.php:947
 msgid "Example: Libre Basquesville"
 msgstr ""
@@ -317,6 +389,14 @@ msgstr ""
 
 #: inc/child-customizer.php:985
 msgid "Menu font size (rem)"
+msgstr ""
+
+#: inc/child-customizer.php:1001
+msgid "Accent Font Provider Import Code or URL"
+msgstr ""
+
+#: inc/child-customizer.php:1017
+msgid "Accent font"
 msgstr ""
 
 #: inc/child-customizer.php:1018
@@ -515,6 +595,10 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
+#: inc/template-tags.php:34
+msgid "Updated on"
+msgstr ""
+
 #: inc/template-tags.php:42
 msgid "We made a mistake. This content has been changed"
 msgstr ""
@@ -614,9 +698,23 @@ msgstr ""
 msgid "See more URL (requires https://)"
 msgstr ""
 
+#: search.php:17
+msgid "Search results"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
 #: searchform.php:17
 msgctxt "placeholder"
 msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:21
+msgctxt "submit button"
+msgid "Search"
 msgstr ""
 
 #: searchform.php:28
@@ -648,10 +746,12 @@ msgstr ""
 
 #: searchform.php:91
 #: searchform.php:100
+#: searchform.php:111
 msgid "Latest"
 msgstr ""
 
 #: searchform.php:97
+#: searchform.php:111
 msgid "Oldest"
 msgstr ""
 
@@ -663,7 +763,16 @@ msgstr ""
 msgid "One column wide"
 msgstr ""
 
-#: template-parts/content/content-related-posts.php:14
+#: template-parts/content/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content/content-none.php:24
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content/content-related-posts.php:6
 msgid "Related Posts"
 msgstr ""
 
@@ -685,8 +794,8 @@ msgstr ""
 msgid "Access project page"
 msgstr ""
 
-#: template-parts/header/mobile-sidebar.php:33
-msgid "Discovery"
+#: template-parts/footer/below-footer-widgets.php:9
+msgid "Below Footer"
 msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:48
@@ -700,7 +809,7 @@ msgstr ""
 
 #: template-parts/header/mobile-sidebar.php:80
 #: template-parts/header/mobile-sidebar.php:202
-#: dist/app.js:452
+#: dist/app.js:451
 msgid "Dark mode"
 msgstr ""
 
@@ -721,7 +830,19 @@ msgstr ""
 msgid "About the writer"
 msgstr ""
 
-#: dist/app.js:450
+#. translators: %s is the current author's name.
+#: template-parts/post/author-bio.php:95
+#: template-parts/post/author-bio.php:105
+#: template-parts/post/author-bio.php:155
+#: template-parts/post/author-bio.php:165
+msgid "More by %s"
+msgstr ""
+
+#: template-parts/post/discussion-meta.php:21
+msgid "No comments"
+msgstr ""
+
+#: dist/app.js:449
 msgid "Light mode"
 msgstr ""
 
@@ -821,6 +942,10 @@ msgstr ""
 
 #: dist/search-filters.js:106
 msgid "Clear"
+msgstr ""
+
+#: dist/search-filters.js:108
+msgid "Apply"
 msgstr ""
 
 #: dist/teamBlock.js:111
