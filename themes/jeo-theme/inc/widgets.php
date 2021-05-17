@@ -61,7 +61,7 @@ class newsletter_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'newsletter_widget',
-			__('Newsletter', 'newsletter_widget_domain'),
+			__('Newsletter', 'jeo'),
 			array('description' => __('Newsletter widget', 'jeo'),)
 		);
 	}
@@ -161,7 +161,7 @@ class bullet_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'bullet_widget',
-			__('Bullet', 'bullet_widget_domain'),
+			__('Bullet', 'jeo'),
 			array('description' => __('Bullet widget', 'jeo'),)
 		);
 	}
@@ -195,7 +195,7 @@ class most_read_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'most_read_widget',
-			__('Most Read', 'most_read_widget_domain'),
+			__('Most Read', 'jeo'),
 			array('description' => __('Most Read Widget', 'jeo'),)
 		);
 	}
@@ -233,6 +233,8 @@ class most_read_widget extends WP_Widget {
 				['key' => 'author-bio-display', 'value' => 1],
 				['key' => 'authors-listing', 'value' => 1],
 			]];
+
+			$posts_query_args['ignore_sticky_posts'] = true;
 		} else {
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 		}

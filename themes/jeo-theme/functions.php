@@ -139,7 +139,8 @@ add_filter('pre_get_posts', '_author_pre_get_posts', 1);
 
 function _author_pre_get_posts($query) {
 
-	if ($query->is_author()) {
+	if ($query->is_author() && !is_admin()) {
+		// die("IS AUTHOR.. DYING");
 
 		$meta_query = $query->get('meta_query');
 		if (!is_array($meta_query)) {
