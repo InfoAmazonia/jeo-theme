@@ -23,6 +23,10 @@
     margin-bottom: 3rem;
     font-family: var(--primary-font);
 
+    @media (min-width: 782px) and (max-width: 1023px) {
+        padding: 15px;
+    }
+
     input[type='email'] {
         background: transparent;
     }
@@ -161,6 +165,11 @@
             text-align: center;
             line-height: 40px;
             margin: 0px;
+
+            @media (min-width: 600px) and (max-width: 1023px) {
+                font-size: size(23);
+                line-height: size(30);
+            }
         }
 
         .anchor-text {
