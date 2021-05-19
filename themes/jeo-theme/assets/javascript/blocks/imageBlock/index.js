@@ -1,5 +1,5 @@
 import { MediaUpload, RichText } from "@wordpress/block-editor";
-import { Button } from "@wordpress/components";
+import { Button, ServerSideRender, Disabled } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 
 wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
@@ -10,17 +10,10 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
         align: true,
     },
     attributes: {
-        title: {
-            type: "string",
-        },
         mediaID: {
             type: "number",
         },
         mediaURL: {
-            type: "string",
-        },
-
-        mediaDescription: {
             type: "string",
         },
     },
@@ -32,8 +25,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
             attributes: {
                 mediaID,
                 mediaURL,
-                title,
-                mediaDescription,
             },
             setAttributes,
         } = props;
@@ -42,16 +33,11 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
             setAttributes({ title: value });
         };
 
-        const onChangeDescription = (value) => {
-            setAttributes({ mediaDescription: value });
-        };
-
         const onSelectImage = (media) => {
             setAttributes({
                 mediaURL: media.url,
                 mediaID: media.id,
-                title: media.description,
-                mediaDescription: media.caption
+                updated: Date.now(),
             });
         };
 
@@ -64,59 +50,37 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
         return (
             <>
                 <div className={wrapClass} key="container">
-                    <div className={imageClasses}>
-                        <div className="callout-image">
-                            <MediaUpload
-                                onSelect={onSelectImage}
-                                type="image"
-                                value={mediaID}
-                                render={({ open }) => (
-                                    <>
-                                        <Button
-                                            isSecondary
-                                            className={
-                                                mediaID
-                                                    ? "image-button margin-auto"
-                                                    : "image-button button-large margin-auto"
-                                            }
-                                            onClick={open}
-                                        >
-                                            {!mediaID ? __("Upload Image", "jeo") : __("Replace image", "jeo")}
-                                        </Button>
-                                        {mediaID ? (
-                                            <div className="image-wrapper">
-                                                <img src={mediaURL} />
-                                                <div class="image-info-wrapper">
-                                                    <span
-                                                        class="dashicons image-icon dashicons-camera-alt"
-                                                    ></span>
-                                                    <RichText
-                                                        tagName="span"
-                                                        className="image-meta"
-                                                        placeholder={__("Write a info here.", "jeo")}
-                                                        value={mediaDescription}
-                                                        onChange={onChangeDescription}
-                                                    />
-                                                </div>
-                                            </div>
-                                        ) : (
-                                                ""
-                                            )}
-                                    </>
-                                )}
-                            />
-                        </div>
-                    </div>
-                    <div className={textClasses}>
-                        <RichText
-                            tagName="span"
-                            className="callout-title image-description margin-auto"
-                            placeholder={__("Write a description here.", "jeo")}
-                            value={title}
-                            onChange={onChangeTitle}
+                    <div className={ "callout-image" + (!mediaID ? ' not-selected' : ' selected-image') } >
+                        <MediaUpload
+                            onSelect={onSelectImage}
+                            type="image"
+                            value={mediaID}
+                            render={({ open }) => (
+                                <>
+                                    <Button
+                                        isPrimary
+                                        className={
+                                            mediaID
+                                                ? "image-button margin-auto"
+                                                : "image-button button-large margin-auto"
+                                        }
+                                        onClick={open}
+                                    >
+                                        {!mediaID ? __("Upload Image", "jeo") : __("Edit image", "jeo")}
+                                    </Button>
+                                </>
+                            )}
                         />
                     </div>
+                    <Disabled>
+                        <ServerSideRender
+                            block="jeo-theme/custom-image-block-editor"
+                            attributes={ {...props.attributes }}
+                        />
+                    </Disabled>
                 </div>
+
+                
             </>
         );
     },
@@ -133,13 +97,6 @@ wp.blocks.registerBlockType("jeo-theme/custom-image-block-editor", {
             },
         } = props;
 
-        return (
-            <>
-                <div className="vue-component image-block-container" key="container">
-                    <image-block alignment={align} title={title} mediaurl={mediaURL} mediadescription={mediaDescription}></image-block>
-                </div>
-            </>
-
-        );
+        return null;
     },
 });
