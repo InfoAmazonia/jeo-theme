@@ -7,7 +7,7 @@ import "./functionalities/video-repositioning";
 import "./functionalities/header";
 import "./functionalities/cover-block";
 import "./functionalities/video-gallery";
-// import "./functionalities/image-gallery";
+import "./functionalities/credited-image";
 // import "./functionalities/search-filters";
 import "./functionalities/tooltip";
 import "./functionalities/link-dropdown";

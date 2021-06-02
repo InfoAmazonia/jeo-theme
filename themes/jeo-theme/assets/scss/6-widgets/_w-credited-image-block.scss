@@ -12,6 +12,26 @@
 
 
 .credited-image-block {
+    &.active {
+        .fas.fa-camera {
+            display: none;
+        }
+
+        .fas.fa-times, .image-meta {
+            display: flex;
+        }
+    }
+
+    &:not(.active) {
+        .fas.fa-camera {
+            display: block;
+        }
+
+        .fas.fa-times, .image-meta {
+            display: none;
+        }
+    }
+
     .image-block-container {
         position: relative;
     }

@@ -33,8 +33,38 @@ function custom_image_block() {
 	register_block_type('jeo-theme/custom-image-block-editor', array(
 		'editor_script' => 'custom-image-block-editor',
 		'editor_style'  => 'custom-image-block-editor',
+		'render_callback' => 'credited_image_render_callback',
+		'attributes' => [
+            'mediaID' => [
+                'type' => 'integer'
+            ],
+            'mediaURL' => [
+                'type' => 'string'
+			],
+			'align' => [
+                'type' => 'string'
+			],
+			'updated' => [
+                'type' => 'string'
+			],
+        ]
 		// 'style'         => 'custom-image-block-block',
+
 	));
+}
+
+function credited_image_render_callback($block_attributes, $content) {
+	$clean_content = str_replace('image-block', 'span', html_entity_decode($content));
+	// $clean_content = str_replace('title', 'class', $clean_content);
+	$old_content = new DOMDocument();
+	$old_content->loadHTML("<html><body>" . $clean_content . "</body></html>");
+
+	ob_start();
+    set_query_var( 'block_params', ['mediaURL' => $block_attributes['mediaURL'], 'mediaID' => $block_attributes['mediaID'], 'align' => isset($block_params['align'])? $block_params['align'] : '-default', 'oldContent' => $old_content]);
+	get_template_part( 'template-parts/blocks/credited-image', 'render');
+	$output = ob_get_clean();
+
+    return $output ;
 }
 
 add_action('init', 'custom_image_block');
