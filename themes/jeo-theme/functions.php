@@ -333,3 +333,15 @@ function video_embed_url($url) {
 
 	return $url;	
 }
+
+add_filter( 'single_template', 'override_storymap_template');
+
+function override_storymap_template($template) {
+	global $post;
+
+	if (is_singular('storymap')) {
+		return __DIR__ . '/jeo/templates/single-story-map.php';
+	}
+
+	return $template;
+}
