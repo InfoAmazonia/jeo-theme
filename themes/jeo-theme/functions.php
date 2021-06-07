@@ -345,3 +345,9 @@ function override_storymap_template($template) {
 
 	return $template;
 }
+function get_language_name($code=''){
+	global $sitepress;
+	$details = $sitepress->get_language_details($code);
+	$language_name = $details['english_name'];
+	return $language_name;
+}

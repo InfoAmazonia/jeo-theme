@@ -828,6 +828,11 @@ header.site-header {
         @include mobile {
             flex-wrap: nowrap;
             max-width: 100%;
+            button[action=language-options]{
+                span {
+                    font-size: 11px!important;
+                }
+            }
         }
     }
 
