@@ -25,13 +25,25 @@ window.addEventListener("DOMContentLoaded", function () {
 
             if (jQuery("header #header-search").hasClass("fixed")) {
                 jQuery("header #header-search").removeClass("fixed");
-                jQuery("header #header-search").css(
-                    "top",
-                    document.querySelector(".bottom-header-contain.desktop-only")
-                        .offsetTop +
-                    45 +
-                    "px"
-                );
+
+                if (!jQuery("body").hasClass("logged-in")) {
+                    jQuery("header #header-search").css(
+                        "top",
+                        document.querySelector(".bottom-header-contain.desktop-only")
+                            .offsetTop +
+                        45 +
+                        "px"
+                    );
+                } else {
+                    jQuery("header #header-search").css(
+                        "top",
+                        document.querySelector(".bottom-header-contain.desktop-only")
+                            .offsetTop +
+                        77 +
+                        "px"
+                    );
+                }
+                
             }
         }
     });
@@ -40,12 +52,23 @@ window.addEventListener("DOMContentLoaded", function () {
         jQuery("header#masthead").toggleClass("hide-header-search");
     });
 
-    jQuery("header #header-search").css(
-        "top",
-        document.querySelector(".bottom-header-contain.desktop-only").offsetTop +
-        50 +
-        "px"
-    );
+    if (!jQuery("body").hasClass("logged-in")) {
+        jQuery("header #header-search").css(
+            "top",
+            document.querySelector(".bottom-header-contain.desktop-only")
+                .offsetTop +
+            45 +
+            "px"
+        );
+    } else {
+        jQuery("header #header-search").css(
+            "top",
+            document.querySelector(".bottom-header-contain.desktop-only")
+                .offsetTop +
+            77 +
+            "px"
+        );
+    }
 
 
     jQuery("header #header-search").css(
