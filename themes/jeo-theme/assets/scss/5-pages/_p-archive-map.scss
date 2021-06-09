@@ -7,7 +7,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 31px;
-
+            
             @include tablet {
                 grid-template-columns: auto;
             }

@@ -46,6 +46,12 @@
             line-height: size(55);
             text-align: center;
             margin: 0;
+            padding: 0 20px;
+
+            @include mobile {
+                font-size: size(30);
+                line-height: 1;
+            }
         }
 
         .categories {
