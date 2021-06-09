@@ -59,8 +59,6 @@ get_header();
 			</div>
 			<main id="main" class="site-main">
 				<?php
-					global $wp_query;
-					// var_dump($wp_query);
 					if ( have_posts() ) :
 						// Start the Loop.
 						while ( have_posts() ) :
