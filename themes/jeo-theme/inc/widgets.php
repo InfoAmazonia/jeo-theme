@@ -201,8 +201,7 @@ class most_read_widget extends WP_Widget {
 	}
 
 	public function widget($args, $instance) {
-		$authors = get_coauthors();
-		$authors_ids = [];
+		$author_id = false;
 		$category = '';
 		$tag = '';
 		$author = '';
@@ -222,12 +221,11 @@ class most_read_widget extends WP_Widget {
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 			$posts_query_args['tag__in'] = [$tag->term_id];
 		} else if(is_author()) {
-			foreach($authors as $author) {
-				array_push($authors_ids, $author->ID);
-			}
-
+			$author = get_queried_object();
+    		$author_name = $author->user_nicename;
+			$author_id = $author->ID;
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
-			$posts_query_args['author__in'] = $authors_ids;
+			$posts_query_args['author_name'] = $author_name;
 			$posts_query_args['meta_query'] = [[
 				'relation' => 'OR',
 				['key' => 'author-bio-display', 'value' => 1],
@@ -240,8 +238,15 @@ class most_read_widget extends WP_Widget {
 		}
 
 		$ids = array();
+
 		foreach ($most_read as $post => $value) {
-			array_push($ids, $value->post_id);
+			if(!is_author()) {
+				array_push($ids, $value->post_id);
+			} else {
+				if(is_coauthor_for_post($author_id, $value->post_id)) {
+					array_push($ids, $value->post_id);
+				}
+			}
 		}
 
 		$posts_query_args['post__in'] = $ids;
