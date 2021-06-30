@@ -346,9 +346,30 @@ function override_storymap_template($template) {
 
 	return $template;
 }
+
 function get_language_name($code=''){
 	global $sitepress;
 	$details = $sitepress->get_language_details($code);
 	$language_name = $details['english_name'];
 	return $language_name;
 }
+
+function fix_author_counting($count, $userid, $post_type, $public_only) {
+
+	$author_args['author_name'] = get_user_by( 'ID', $userid )->user_nicename;
+	$author_args['meta_query'] = [[
+		'relation' => 'OR',
+		['key' => 'author-bio-display', 'value' => 1],
+		['key' => 'authors-listing', 'value' => 1],
+	]];
+
+	$query = new WP_Query( $author_args );
+	$count = $query->found_posts;
+
+	// die("teste");
+	do_action( 'logger', ['username' => $author_args['author_name'], 'id' => $userid, 'count' => $count] );
+
+	return $count;
+}
+
+add_filter('get_usernumposts', 'fix_author_counting', 99, 4);
