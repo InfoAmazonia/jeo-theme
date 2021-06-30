@@ -346,9 +346,30 @@ function override_storymap_template($template) {
 
 	return $template;
 }
+
 function get_language_name($code=''){
 	global $sitepress;
 	$details = $sitepress->get_language_details($code);
 	$language_name = $details['english_name'];
 	return $language_name;
 }
+
+function f_the_author( $display_name ) {
+
+    // $display_name === string $authordata->display_name
+
+    if ( is_feed() ) {
+		$author_bio_display = get_post_meta(get_the_ID(), 'author-bio-display', true);
+		$authors_listing = get_post_meta(get_the_ID(), 'authors-listing', true);
+
+		if($author_bio_display == '1' || $authors_listing == '1') {
+			return $display_name;
+		} else {
+			return "";
+		}
+    }
+
+    return $display_name;
+}
+
+add_filter( 'the_author', 'f_the_author', 99 );
