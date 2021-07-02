@@ -333,3 +333,83 @@ function video_embed_url($url) {
 
 	return $url;	
 }
+function _migrate_translations_posts_georef_do_insert($place_holders, $values) {
+
+    global $wpdb;
+
+    $query           = "INSERT INTO $wpdb->postmeta (`post_id`, `meta_key`, `meta_value` ) VALUES ";
+    $query           .= implode( ', ', $place_holders );
+    $sql             = $wpdb->prepare( "$query ", $values );
+
+    if ( $wpdb->query( $sql ) ) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+function _migrate_translations_posts_georef() {
+	if ( get_option( '_migrate_translations_posts_georef' ) ) {
+		var_dump( get_option( '_migrate_translations_posts_georef' ) );
+		die();
+		return;
+	}
+	$query = new WP_Query( array(
+		'post_type' 		=> 'post',
+		'posts_per_page'	=> 99999
+		)
+	);
+	if ( ! $query->have_posts() ) {
+		return;
+	}
+	$updated_posts = array();
+	while ( $query->have_posts() ) {
+		$query->the_post();
+		global $post, $sitepress, $wpdb;
+
+		$main_post_id = get_the_ID();
+		$main_post = $post;
+		$trid = $sitepress->get_element_trid($post->ID);
+		$translations = $sitepress->get_element_translations($trid);
+		//echo count( $translations );
+		//echo json_encode( $translations );
+		//die();
+		$main_post_meta_related_point = get_post_meta( $main_post_id, '_related_point', true );
+		$main_post_geocode_country = get_post_meta( $main_post_id, '_geocode_country', true );
+		if ( $main_post_geocode_country && count( $translations ) > 1 && in_array( $main_post_id, $updated_posts ) ) {
+			$meta_fields = array();
+			$meta = get_post_meta( $main_post_id );
+			foreach( $meta as $key => $value ) {
+				// check if the post meta is geocode related
+				if ( false !== stripos( $key, '_geocode') ) {
+					$meta_fields[ $key ] = $value[0]; 
+				}
+			}
+			foreach( $translations as $translation ) {
+				if ( $translation->element_id === $main_post_id ) {
+					continue;
+				}
+				$translation_post_id = $translation->element_id;
+				if ( get_post_meta( $translation_post_id, '_related_point', true ) ) {
+					continue;
+				}
+				$values = array();
+				$place_holders = array();
+				array_push( $values, $translation_post_id, $key, $value );
+				update_post_meta( $translation_post_id, '_related_point', $main_post_meta_related_point );
+				foreach( $meta_fields as $key => $value ) {
+					array_push( $values, $translation_post_id, $key, $value );
+					$place_holders[] = "( %d, %s, %s )";
+				}
+				$result = _migrate_translations_posts_georef_do_insert( $place_holders, $values );
+				$updated_posts[] = $translation_post_id;
+			}
+		} else {
+			echo 'caiu aqui';
+			die();
+		}
+	}
+	update_option( '_migrate_translations_posts_georef', $updated_posts, false );
+}
+add_action( 'wp_head', '_migrate_translations_posts_georef', 10 );
