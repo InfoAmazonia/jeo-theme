@@ -121,6 +121,23 @@ function newspack_scott_customizer($wp_customize)
 		)
 	);
 
+	// enable dark mode option
+	$wp_customize->add_setting(
+		'dark_mode',
+			array(
+			'default' => true,
+		)
+	);
+	
+	$wp_customize->add_control(
+		'dark_mode',
+		array(
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Enable dark mode option?', 'jeo' ),
+			'section' => 'title_tagline',
+		)
+	);
+	
 	// Add darkmode logo control
 	$wp_customize->add_setting(
 		'logo_dark_image',

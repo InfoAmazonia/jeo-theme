@@ -194,17 +194,16 @@ if (newspack_is_amp()) : ?>
 			</button>
 		</div>
 
-
-		<div class="item">
-			<button action="dark-mode">
-				<i class="far fa-lightbulb"></i>
-				<div class="item--title">
-					<?= __("Dark mode", "jeo") ?>
-				</div>
-			</button>
-
-
-		</div>
+		<?php if ( get_theme_mod( 'dark_mode', false ) ) : ?>
+			<div class="item">
+				<button action="dark-mode">
+					<i class="far fa-lightbulb"></i>
+					<div class="item--title">
+						<?= __("Dark mode", "jeo") ?>
+					</div>
+				</button>
+			</div>
+		<?php endif;?> 
 	</div>
 
 </div>

@@ -1,6 +1,9 @@
 import { __ } from '@wordpress/i18n';
 
 window.addEventListener("DOMContentLoaded", function () {
+    if ( typeof window.jeo_theme_config !== 'undefined' && ! window.jeo_theme_config.enable_dark_mode ) {
+        return;
+    }
     if(localStorage.getItem('theme')) {
         if(localStorage.getItem('theme') == "dark") {
             jQuery('body').addClass('dark-theme');
