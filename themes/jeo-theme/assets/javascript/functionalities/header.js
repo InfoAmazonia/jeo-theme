@@ -2,6 +2,9 @@ import "./font-size";
 
 window.addEventListener("DOMContentLoaded", function () {
     jQuery(window).scroll(function () {
+        if ( ! document.querySelector( ".bottom-header-contain.desktop-only" ) ) {
+            return;
+        }
         var headerHeight = document.querySelector(
             ".bottom-header-contain.desktop-only"
         ).offsetTop;
@@ -40,29 +43,41 @@ window.addEventListener("DOMContentLoaded", function () {
         jQuery("header#masthead").toggleClass("hide-header-search");
     });
 
-    jQuery("header #header-search").css(
-        "top",
-        document.querySelector(".bottom-header-contain.desktop-only").offsetTop +
-        50 +
-        "px"
-    );
-
-
-    jQuery("header #header-search").css(
-        "height",
-        jQuery(window).height() -
-        document.querySelector(".bottom-header-contain.desktop-only").offsetTop +
-        "px"
-    );
-
-    document
-        .getElementById("mobile-sidebar-fallback")
-        .style.setProperty(
-            "--padding-left",
-            jQuery(
-                ".bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle"
-            ).offset().left + "px"
+    if ( document.querySelector( ".bottom-header-contain.desktop-only" ) ) {
+        jQuery("header #header-search").css(
+            "top",
+            document.querySelector(".bottom-header-contain.desktop-only").offsetTop +
+            50 +
+            "px"
         );
+    
+    
+        jQuery("header #header-search").css(
+            "height",
+            jQuery(window).height() -
+            document.querySelector(".bottom-header-contain.desktop-only").offsetTop +
+            "px"
+        );
+    
+        document
+            .getElementById("mobile-sidebar-fallback")
+            .style.setProperty(
+                "--padding-left",
+                jQuery(
+                    ".bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle"
+                ).offset().left + "px"
+            );
+
+        jQuery(".more-menu--content").css(
+                "left",
+                jQuery("aside#mobile-sidebar-fallback").offset().left +
+                jQuery("aside#mobile-sidebar-fallback").width() +
+                jQuery(
+                    ".bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle"
+                ).offset().left
+        );
+        
+    }
 
     if(document.querySelectorAll('.page-template-discovery').length) {
         document.querySelector('.page-template-discovery').style.setProperty(
@@ -73,14 +88,6 @@ window.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    jQuery(".more-menu--content").css(
-        "left",
-        jQuery("aside#mobile-sidebar-fallback").offset().left +
-        jQuery("aside#mobile-sidebar-fallback").width() +
-        jQuery(
-            ".bottom-header-contain.post-header .mobile-menu-toggle.left-menu-toggle"
-        ).offset().left
-    );
 
     jQuery("button.mobile-menu-toggle").click(function () {
         jQuery(".more-menu--content").css(
