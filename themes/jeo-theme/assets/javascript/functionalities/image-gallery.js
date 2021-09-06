@@ -10,9 +10,6 @@ window.addEventListener("DOMContentLoaded", function () {
             showNav : true
         } );
 
-        //console.log(sss);
-
-
         const dotsArray = Array.from({length: slider.getAttribute('data-total-slides')}, (v, i) => {
             const dot = document.createElement('div');
             dot.classList.add('dot');

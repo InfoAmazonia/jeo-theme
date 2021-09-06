@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'newspack' ); ?></h1>
+		<h1 class="page-title"><?php _e( 'Nothing Found', 'jeo' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -21,7 +21,7 @@
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'newspack' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'jeo' ),
 					array(
 						'a' => array(
 							'href' => array(),

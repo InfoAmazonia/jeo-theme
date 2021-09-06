@@ -7,7 +7,7 @@ import "./functionalities/video-repositioning";
 import "./functionalities/header";
 import "./functionalities/cover-block";
 import "./functionalities/video-gallery";
-// import "./functionalities/image-gallery";
+import "./functionalities/credited-image";
 // import "./functionalities/search-filters";
 import "./functionalities/tooltip";
 import "./functionalities/link-dropdown";
@@ -32,15 +32,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
             try {
-                try {
-                    element.closest('article').querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
-                } catch {
-                    // console.log('post has no image')
-                }
+                
 
                 const targetLinkSource = new URL(targetLink).origin;
                 if (document.location.origin !== targetLinkSource) {
                     element.setAttribute("target", "_blank");
+
+                    try {
+                        element.closest('article').querySelector('figure.post-thumbnail a').setAttribute("target", "_blank");
+                    } catch {
+                        // console.log('post has no image')
+                    }
 
                     const externalSourceLink = document.createElement("a");
                     externalSourceLink.classList.add("external-link");

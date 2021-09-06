@@ -4462,6 +4462,7 @@ body.page .entry-title {
   margin-left: calc( 50% - 50vw);
   margin-right: calc( 50% - 50vw);
   max-width: 100vw;
+  width: 100vw;
 }
 
 .newspack-front-page .entry .entry-content .alignfull.wp-block-cover,

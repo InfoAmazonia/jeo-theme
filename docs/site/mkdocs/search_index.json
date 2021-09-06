@@ -1,0 +1,384 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Jeo Theme\n\n\nGutenberg\n\n\n\n\nUse of gutenberg (default)\n\n\n\n\nNew Gutenberg blocks - JEO Theme\n\n\n\n\n\u201cTooltip\u201d style in the \u201cParagraph\u201d block\n\n\n\u201cCredited Image\u201d block\n\n\n\u201cImage gallery\u201d block\n\n\n\u201cVideo gallery\u201d block\n\n\n\u201cNewsletter\u201d block\n\n\nNew style for the \u201cPullquote\u201d block\n\n\n\u201cContent Box\u201d block\n\n\n\n\nTaxonomies, Categories and Manage options in Posts / Pages\n\n\n\n\nFeatured image\n\n\nTemplate: default, one column, one column wide\n \n\n\nPrimary category\n \n\n\nCategories\n  \n\n\nTags\n \n\n\nAuthor\n  \n\n\nRepublish link\n \n\n\nExternal link\n \n\n\nNew Yoast section location\n \n\n\nSorry section\n \n\n\nMedia partner republish link\n \n\n\n\n\nHow to update home using JEO-Theme?\n\n\n\n\nUpdate home\n\n\n\n\nOther JEO theme options\n\n\n\n\nDark Mode\n\n\nType Size options\n\n\n\n\nConfiguration panel\n\n\n\n\nGeneral\n\n\nSite identity\n\n\nColors\n\n\nTypography\n\n\nMenus\n\n\nWidgets\n\n\nHomepage Settings\n\n\nHeader Settings\n\n\nAutor Bio Settings\n\n\nTemplate Settings\n\n\nFooter Settings\n\n\nPost Sharing\n\n\nFont size\n\n\nAdditional CSS",
+            "title": "Home"
+        },
+        {
+            "location": "/#jeo-theme",
+            "text": "",
+            "title": "Jeo Theme"
+        },
+        {
+            "location": "/#gutenberg",
+            "text": "Use of gutenberg (default)",
+            "title": "Gutenberg"
+        },
+        {
+            "location": "/#new-gutenberg-blocks-jeo-theme",
+            "text": "\u201cTooltip\u201d style in the \u201cParagraph\u201d block  \u201cCredited Image\u201d block  \u201cImage gallery\u201d block  \u201cVideo gallery\u201d block  \u201cNewsletter\u201d block  New style for the \u201cPullquote\u201d block  \u201cContent Box\u201d block",
+            "title": "New Gutenberg blocks - JEO Theme"
+        },
+        {
+            "location": "/#taxonomies-categories-and-manage-options-in-posts-pages",
+            "text": "Featured image  Template: default, one column, one column wide    Primary category    Categories     Tags    Author     Republish link    External link    New Yoast section location    Sorry section    Media partner republish link",
+            "title": "Taxonomies, Categories and Manage options in Posts / Pages"
+        },
+        {
+            "location": "/#how-to-update-home-using-jeo-theme",
+            "text": "Update home",
+            "title": "How to update home using JEO-Theme?"
+        },
+        {
+            "location": "/#other-jeo-theme-options",
+            "text": "Dark Mode  Type Size options",
+            "title": "Other JEO theme options"
+        },
+        {
+            "location": "/#configuration-panel",
+            "text": "General  Site identity  Colors  Typography  Menus  Widgets  Homepage Settings  Header Settings  Autor Bio Settings  Template Settings  Footer Settings  Post Sharing  Font size  Additional CSS",
+            "title": "Configuration panel"
+        },
+        {
+            "location": "/gutenberg/",
+            "text": "The entire editing experience has been rebuild for media rich pages and posts because since Wordpress 5.0 has included the Gutenberg Editor that give us the ability to build using \u201cBlocks\u201d\n\n\nBlocks are pieces of content elements. With them, users can insert, rearrange and style multimedia content with very little technical knowledge. \n\n\nDocumenta\u00e7\u00e3o\n\n\n\n\nDifferences between Block Editor Gutenberg and Classic Editor\n\n\n\n\nUses a totally different approach, called \u2018Blocks\u2019. You can add blocks for each paragraph, images, videos, galleries, audio, lists, and more. \n\n\nWith the new editor, you can simply add a table block, select your columns and rows, and start adding content. You can move content elements up and down, edit them as individual blocks, and easily create media-rich content. Is easy to use and learn.\n\n\n\n\nA text editor with formatting buttons very similar to Microsoft Word.\n\n\nHere is a selection of the default blocks included with Gutenberg\n\n\nHeading\n\n\n Works to break your page into sections. Each heading should indicate the start of a new topic.\n\n\nSettings available: Heading Level (H1, H2, H3, H4, H5 or H6 ), text alignment (left, center, right), bold, italic, strikethrough, inks, HTML Anchor and additional CSS Class\n\n\nV\u00eddeo\n\n\n Allows you to embed video files and play them back using a simple player\n\n\nParagraph\n\n\n Works to insert paragraphs of text.\nHas an editor to change color, italics, size, links,\nShows basic formatting buttons like: text alignment, bold, italic, insert-link, and strikethrough buttons.\n\n\nColumns\n\n\n A way to add columns to your page or post.\nWith the Columns block, you can quickly and easily adjust your page\u2019s layout.\n\n\nYoutube\n\n\n Works to embed a video from a youtube link\n\n\nAudio\n\n\n The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.\n\n\nCover\n\n\n The Cover block is a fully-customizable element that can serve a number of purposes. It could be used as a classic hero banner, with a full-width photo background and text overlay.\n\n\nCreating a new blog post or page\n\n\n\n\nBlock edit side menu\n\n\nWhen selecting a block, you will find options for configuring that block in this menu.\n\n\n\n\nSide document editing menu\n\n\nWhen you need to change the general configuration of the product and not a specific block, access this menu. Ex: Categories, tags, featured image.\n\n\n\n\nWhen you're done, you can save your post / page as a draft, preview or publish",
+            "title": "Gutenberg"
+        },
+        {
+            "location": "/gutenberg/#documentacao",
+            "text": "",
+            "title": "Documenta\u00e7\u00e3o"
+        },
+        {
+            "location": "/gutenberg/#differences-between-block-editor-gutenberg-and-classic-editor",
+            "text": "Uses a totally different approach, called \u2018Blocks\u2019. You can add blocks for each paragraph, images, videos, galleries, audio, lists, and more.   With the new editor, you can simply add a table block, select your columns and rows, and start adding content. You can move content elements up and down, edit them as individual blocks, and easily create media-rich content. Is easy to use and learn.   A text editor with formatting buttons very similar to Microsoft Word.",
+            "title": "Differences between Block Editor Gutenberg and Classic Editor"
+        },
+        {
+            "location": "/gutenberg/#here-is-a-selection-of-the-default-blocks-included-with-gutenberg",
+            "text": "",
+            "title": "Here is a selection of the default blocks included with Gutenberg"
+        },
+        {
+            "location": "/gutenberg/#heading",
+            "text": "Works to break your page into sections. Each heading should indicate the start of a new topic.  Settings available: Heading Level (H1, H2, H3, H4, H5 or H6 ), text alignment (left, center, right), bold, italic, strikethrough, inks, HTML Anchor and additional CSS Class",
+            "title": "Heading"
+        },
+        {
+            "location": "/gutenberg/#video",
+            "text": "Allows you to embed video files and play them back using a simple player",
+            "title": "V\u00eddeo"
+        },
+        {
+            "location": "/gutenberg/#paragraph",
+            "text": "Works to insert paragraphs of text.\nHas an editor to change color, italics, size, links,\nShows basic formatting buttons like: text alignment, bold, italic, insert-link, and strikethrough buttons.",
+            "title": "Paragraph"
+        },
+        {
+            "location": "/gutenberg/#columns",
+            "text": "A way to add columns to your page or post.\nWith the Columns block, you can quickly and easily adjust your page\u2019s layout.",
+            "title": "Columns"
+        },
+        {
+            "location": "/gutenberg/#youtube",
+            "text": "Works to embed a video from a youtube link",
+            "title": "Youtube"
+        },
+        {
+            "location": "/gutenberg/#audio",
+            "text": "The audio block is for uploading your own audio files (most commonly, .mp3 files) to your site.",
+            "title": "Audio"
+        },
+        {
+            "location": "/gutenberg/#cover",
+            "text": "The Cover block is a fully-customizable element that can serve a number of purposes. It could be used as a classic hero banner, with a full-width photo background and text overlay.",
+            "title": "Cover"
+        },
+        {
+            "location": "/gutenberg/#creating-a-new-blog-post-or-page",
+            "text": "",
+            "title": "Creating a new blog post or page"
+        },
+        {
+            "location": "/gutenberg/#block-edit-side-menu",
+            "text": "When selecting a block, you will find options for configuring that block in this menu.",
+            "title": "Block edit side menu"
+        },
+        {
+            "location": "/gutenberg/#side-document-editing-menu",
+            "text": "When you need to change the general configuration of the product and not a specific block, access this menu. Ex: Categories, tags, featured image.",
+            "title": "Side document editing menu"
+        },
+        {
+            "location": "/gutenberg/#when-youre-done-you-can-save-your-post-page-as-a-draft-preview-or-publish",
+            "text": "",
+            "title": "When you're done, you can save your post / page as a draft, preview or publish"
+        },
+        {
+            "location": "/tooltip/",
+            "text": "\u201cTooltip\u201d style in the \u201cParagraph\u201d block",
+            "title": "Tooltip style in the \"Paragraph\" block"
+        },
+        {
+            "location": "/credit-image/",
+            "text": "An image with description and a button that when clicked displays the photo's credits\nIt uses 2 fields: caption (legend) and description\n\n\nExample of how the image is shown on the page / post",
+            "title": "Credited Image block"
+        },
+        {
+            "location": "/image-gallery/",
+            "text": "Example of how the block looks on the page / post\n\n\n\n\nEditing the page",
+            "title": "Image gallery block"
+        },
+        {
+            "location": "/video-gallery/",
+            "text": "Editing the page\n\n\n\n\nExample of how the block looks on the page / post",
+            "title": "Video gallery block"
+        },
+        {
+            "location": "/newsletter/",
+            "text": "There are 2 versions: horizontal and vertical\nThe vertical version works better if it is used in a column\n\n\nEditing the page\n\n\n\n\nExample of how the block looks on the page / post\n\n\n\n\nEditing the page\n\n\n\n\nExample of how the block looks on the page / post",
+            "title": "Newsletter block"
+        },
+        {
+            "location": "/pullquote/",
+            "text": "Editing the page",
+            "title": "New style for the \"Pullquote block\""
+        },
+        {
+            "location": "/content-box/",
+            "text": "Editing the page\n\n\n\n\nExample of how the block looks on the page / post",
+            "title": "Content Box block"
+        },
+        {
+            "location": "/featured-image/",
+            "text": "The Featured image has three main settings options: behind the title,  large and hidden. Depending on which one you choose the layout changes.\n\n\n\n\nThe Featured image  uses 2 fields: Description and Credit",
+            "title": "Featured image"
+        },
+        {
+            "location": "/template/",
+            "text": "Template: default, one column, one column wide.\n\n\n\n\nThe \u201cone column\u201d and \u201cone column wide\u201d options allow to use the \u201cfull width\u201d option of the blocks",
+            "title": "Template: default, one column, one column wide"
+        },
+        {
+            "location": "/template/#template-default-one-column-one-column-wide",
+            "text": "The \u201cone column\u201d and \u201cone column wide\u201d options allow to use the \u201cfull width\u201d option of the blocks",
+            "title": "Template: default, one column, one column wide."
+        },
+        {
+            "location": "/primary-category/",
+            "text": "Primary category (Yoast feature)\n\n\nIf a user clicks on a post\u2019s tag, the tag\u2019s page is opened which shows all posts tagged by that tag",
+            "title": "Primary category"
+        },
+        {
+            "location": "/primary-category/#primary-category-yoast-feature",
+            "text": "If a user clicks on a post\u2019s tag, the tag\u2019s page is opened which shows all posts tagged by that tag",
+            "title": "Primary category (Yoast feature)"
+        },
+        {
+            "location": "/categories/",
+            "text": "Audio\n\n\nWhen selecting the audio category you will have an adapted layout, which highlights the audio block\nVerify that only one of special subcategories (audio, opinion, video) of category 'type' is selected \n\n\n\n\nVideo\n\n\nWhen selecting the video category you will have an adapted layout, which highlights the video block\nVerify that only one of special subcategories (audio, opinion, video) of category 'type' is selected \n\n\n\n\nOpinion\n\n\nWhen selecting the opinion category, you will have an adapted layout, which highlights that this is an opinion post  \n\nVerify that only one of special subcategories (audio, opinion, video) of category 'type' is selected",
+            "title": "Categories"
+        },
+        {
+            "location": "/categories/#audio",
+            "text": "When selecting the audio category you will have an adapted layout, which highlights the audio block\nVerify that only one of special subcategories (audio, opinion, video) of category 'type' is selected",
+            "title": "Audio"
+        },
+        {
+            "location": "/categories/#video",
+            "text": "When selecting the video category you will have an adapted layout, which highlights the video block\nVerify that only one of special subcategories (audio, opinion, video) of category 'type' is selected",
+            "title": "Video"
+        },
+        {
+            "location": "/categories/#opinion",
+            "text": "When selecting the opinion category, you will have an adapted layout, which highlights that this is an opinion post   \nVerify that only one of special subcategories (audio, opinion, video) of category 'type' is selected",
+            "title": "Opinion"
+        },
+        {
+            "location": "/tags/",
+            "text": "If a user clicks on a post\u2019s tag, the tag\u2019s page is opened which shows all posts tagged by that tag",
+            "title": "Tags"
+        },
+        {
+            "location": "/author/",
+            "text": "How to show the author\n\n\n\n\nHow to hide the author",
+            "title": "Author"
+        },
+        {
+            "location": "/republish-link/",
+            "text": "Enable option\n\n\n\n\nInserting options\n\n\n\n\nInserting standard text",
+            "title": "Republish link"
+        },
+        {
+            "location": "/external-link/",
+            "text": "From this functionality you can share a post from another website, inserting in this section the name and link of the website. As soon as the user clicks on the post, they will be taken to the inserted link\n\n\nExternal link configuration\n\n\n\n\n\n\nExternal link example",
+            "title": "External link"
+        },
+        {
+            "location": "/external-link/#external-link-configuration",
+            "text": "",
+            "title": "External link configuration"
+        },
+        {
+            "location": "/external-link/#external-link-example",
+            "text": "",
+            "title": "External link example"
+        },
+        {
+            "location": "/new-yoast-location/",
+            "text": "New Yoast section location",
+            "title": "New Yoast section location"
+        },
+        {
+            "location": "/new-yoast-location/#new-yoast-section-location",
+            "text": "",
+            "title": "New Yoast section location"
+        },
+        {
+            "location": "/sorry-section/",
+            "text": "\u201cSorry, we said wrong\u201d section",
+            "title": "Sorry section"
+        },
+        {
+            "location": "/sorry-section/#sorry-we-said-wrong-section",
+            "text": "",
+            "title": "\u201cSorry, we said wrong\u201d section"
+        },
+        {
+            "location": "/media-partner/",
+            "text": "Media partners plugin must be active a list of media partners is available",
+            "title": "Media partner republish link"
+        },
+        {
+            "location": "/update-home/",
+            "text": "To access the home edition you must click on \"Pages\" and then on '' All pages \"\nThen you need to find a homepage\n\n\n\n\nWhen locating the homepage you can click on the page title or when hovering over the name, click on edit\n\n\n\n\nIn the home edition you can choose:\n\n\n\n\nShow or not the highlighted image\n\n\nShow or not the summary\n\n\nShow or not the date\n\n\nShow or not the category\n\n\nShow or not the author\n\n\n\n\n\n\nHere, in the button \"See more\" you can change the text, the link, define whether the link will be opened in the same or in other screens",
+            "title": "Update home"
+        },
+        {
+            "location": "/darkmode/",
+            "text": "Dark mode",
+            "title": "Dark Mode"
+        },
+        {
+            "location": "/darkmode/#dark-mode",
+            "text": "",
+            "title": "Dark mode"
+        },
+        {
+            "location": "/type-size/",
+            "text": "",
+            "title": "Type Size options"
+        },
+        {
+            "location": "/general-configuration-panel/",
+            "text": "The general settings of the theme can be found in the Wordpress sidebar",
+            "title": "General"
+        },
+        {
+            "location": "/site-identity/",
+            "text": "To access the customization of the website's identity click here\n\n\n\n\nOn this page you can manage the elements that make your website\u2019s identity\n\n\n\n\nOn this page you can manage the elements that make your website\u2019s identity\n\n\nWebsite logo\n\n\nHere you can upload an image to be the logo of your website, as well as remove it, or change it.\n\n\nYou can also, through the logo size field, define the size that the logo will have on the home\n\n\n\n\nFooter logo\n\n\nHere you can upload an image to be the footer logo, as well as remove it, or change it.\n\n\n\n\nSite title and tagline\n\n\nHere you define what will be the title and tagline texts and whether or not they will be displayed\n\n\n\n\nLook:\n\n\n\nExample of how looks on the page / post\n\n\n\n\nThe sticky header is when you go down the page and the header becomes a smaller banner with the logo centered\n\n\n\n\nIn this case you can add a special logo to be shown at that moment\n\n\n\n\nDecoration special titles\n\n\nIn this field you can define the style of decoration that will accompany some main titles\n\n\n\n\nSquare\n\n\n\nTop rectangle\n\n\n\nLeft bar\n\n\n\nCustom\n\n\n\nIn Custom style you can upload an image to decorate the titles\n\n\nPagination\n\n\nIn this field you can customize the format of the pagination.\n\n\nThe pagination is in the search or also in the posts page of the categories\n\n\n\n\nSquare\n\n\n\nCircle\n\n\n\nIn this field you can enter your website's favicon, which will be displayed in the navigation bar\n\n\n\n\n\n\n\n\nPublish\n\n\nNever forget to publish your changes, if you leave customize without publishing your changes, they will be lost.",
+            "title": "Site identity"
+        },
+        {
+            "location": "/site-identity/#website-logo",
+            "text": "Here you can upload an image to be the logo of your website, as well as remove it, or change it.  You can also, through the logo size field, define the size that the logo will have on the home",
+            "title": "Website logo"
+        },
+        {
+            "location": "/site-identity/#footer-logo",
+            "text": "Here you can upload an image to be the footer logo, as well as remove it, or change it.",
+            "title": "Footer logo"
+        },
+        {
+            "location": "/site-identity/#site-title-and-tagline",
+            "text": "Here you define what will be the title and tagline texts and whether or not they will be displayed   Look:  Example of how looks on the page / post   The sticky header is when you go down the page and the header becomes a smaller banner with the logo centered   In this case you can add a special logo to be shown at that moment",
+            "title": "Site title and tagline"
+        },
+        {
+            "location": "/site-identity/#decoration-special-titles",
+            "text": "In this field you can define the style of decoration that will accompany some main titles   Square  Top rectangle  Left bar  Custom  In Custom style you can upload an image to decorate the titles",
+            "title": "Decoration special titles"
+        },
+        {
+            "location": "/site-identity/#pagination",
+            "text": "In this field you can customize the format of the pagination.  The pagination is in the search or also in the posts page of the categories   Square  Circle  In this field you can enter your website's favicon, which will be displayed in the navigation bar",
+            "title": "Pagination"
+        },
+        {
+            "location": "/site-identity/#publish",
+            "text": "Never forget to publish your changes, if you leave customize without publishing your changes, they will be lost.",
+            "title": "Publish"
+        },
+        {
+            "location": "/colors/",
+            "text": "To access the customization of the website's colors click here\n\n\n\nYou can define a primary or secondary color for your website\n\n\n\nIn this video you can see an example of how colors change",
+            "title": "Colors"
+        },
+        {
+            "location": "/typography/",
+            "text": "To access the customization of the website's typography click here\n\n\n\n\nExample: \n or https://fonts.googleapis.com/css?family=Open+Sans\n\n\n\n\nExample of Configuration of typography\n\n\nHeader Font (Example: Open Sans)\nHeader Font Fallback Stack\n\n\nBody Font (Example: Open Sans)\nBody Font Fallback Stack\n\n\nFeatured Font (Example: Libre Baskerville)\nSpecial heading font (Example: Opens Sans Condensed)\nAccent font (Example: Dosis)",
+            "title": "Typography"
+        },
+        {
+            "location": "/typography/#example-of-configuration-of-typography",
+            "text": "Header Font (Example: Open Sans)\nHeader Font Fallback Stack  Body Font (Example: Open Sans)\nBody Font Fallback Stack  Featured Font (Example: Libre Baskerville)\nSpecial heading font (Example: Opens Sans Condensed)\nAccent font (Example: Dosis)",
+            "title": "Example of Configuration of typography"
+        },
+        {
+            "location": "/menus/",
+            "text": "To access the customization of the website's menus click here\n\n\n\n\nHere are all the menus created on the website\n\n\nFor each Menu you have the option \"Menu Locations\". Here, you define where the menu will appear. The available options are\n- Primary Menu\n- Secondary Menu\n- Tertiary Menu \n(we are not using it in the theme)\n- Topic Highlight Menu \n(we are not using it in the theme)\n- Social Links Menu\n- More",
+            "title": "Menus"
+        },
+        {
+            "location": "/widgets/",
+            "text": "To access the customization of the website's widgets click here\n\n\n\n\nThese are the widgets areas, they are placeholders for widgets that correspond to a predefined place.\n\n\n\n\nIn these areas you can view, add, remove or edit information of your widgets\n\n\nVIDEO",
+            "title": "Widgets"
+        },
+        {
+            "location": "/homepage-settings/",
+            "text": "To access the homepage settings click here\n\n\n\n\n\n\n\nHere you define whether your website's \nhomepage will be a static page or a page of your latest posts \n\n\nIf you choose a page from your latest posts, the edition will stop there. You just need to say if you want to hide your page title.\n\n\nIf you choose a static page, you need to insert which page\n\n\nYou can also select a page to be your posts page",
+            "title": "Homepage Settings"
+        },
+        {
+            "location": "/header-settings/",
+            "text": "To access the header settings click here\n\n\n\n\nIn this video you can see the main header settings\n\n\n\n\nOther settings in appearance\n\n\nHere you can change the background color of the search icon",
+            "title": "Header Settings"
+        },
+        {
+            "location": "/header-settings/#other-settings-in-appearance",
+            "text": "Here you can change the background color of the search icon",
+            "title": "Other settings in appearance"
+        },
+        {
+            "location": "/author-bio-settings/",
+            "text": "To access the widgets settings click here\n\n\n\n\n\n\nDisplay Author Bio: Display Author Bio under individual posts.\n\n\nDisplay author email: Display Author email with bio on individual posts and author archives.\n\n\nTruncate Author bio: Set a specific length for author bios displayed on single posts.\n\n\nAuthor bio length (in characters): Truncates the author bio on single posts to this approximate character length, but without breaking a word.\n\n\nCheck para \"Display author social  media links\": Display social media links with the author bio on individual posts and author archives (this option requires the Yoast plugin).",
+            "title": "Autor Bio Settings"
+        },
+        {
+            "location": "/template-settings/",
+            "text": "To access the template settings click here\n\n\n\n\n\n\nHere you can define the featured image default position\n\n\n(Options: Large, Behind article title, and Hidden)\n\n\nAnd you can define the default post template\n\n\n(Options: Default template, One column, One column wide)",
+            "title": "Template Settings"
+        },
+        {
+            "location": "/fotter-settings/",
+            "text": "To access the footer settings click here\n\n\n\n\n\n\nCopyright Information\n\n\nAdd custom text to be displayed next to a copyright symbol and current year in the footer. \nBy default, it will display your site title.",
+            "title": "Footer Settings"
+        },
+        {
+            "location": "/post-sharing/",
+            "text": "To access the Post sharing settings click here\n\n\n\n\nHere you can choose and which platforms the post will be shared",
+            "title": "Post Sharing"
+        },
+        {
+            "location": "/font-size/",
+            "text": "To access the font size settings click here\n\n\n\n\n\n\nSelect the font size unit: rem, px, em. If you select \u201cpx\u201d, the option to increase / decrease the font (A + / A + buttons) will not be available.\n\n\nCheck to enable / disable the use of \u201c! Important\u201d\n\n\nIt is possible to configure the headings (h1, h2, h3, h4, h5, h6) and the paragraph (p)",
+            "title": "Font size"
+        },
+        {
+            "location": "/additional.css/",
+            "text": "This is a space for additional CSS codes, you can use the CSS editor to customize the appearance of the site.",
+            "title": "Additional CSS"
+        }
+    ]
+}

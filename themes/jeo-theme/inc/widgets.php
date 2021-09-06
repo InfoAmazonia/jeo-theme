@@ -61,7 +61,7 @@ class newsletter_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'newsletter_widget',
-			__('Newsletter', 'newsletter_widget_domain'),
+			__('Newsletter', 'jeo'),
 			array('description' => __('Newsletter widget', 'jeo'),)
 		);
 	}
@@ -161,7 +161,7 @@ class bullet_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'bullet_widget',
-			__('Bullet', 'bullet_widget_domain'),
+			__('Bullet', 'jeo'),
 			array('description' => __('Bullet widget', 'jeo'),)
 		);
 	}
@@ -195,14 +195,13 @@ class most_read_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'most_read_widget',
-			__('Most Read', 'most_read_widget_domain'),
+			__('Most Read', 'jeo'),
 			array('description' => __('Most Read Widget', 'jeo'),)
 		);
 	}
 
 	public function widget($args, $instance) {
-		$authors = get_coauthors();
-		$authors_ids = [];
+		$author_id = false;
 		$category = '';
 		$tag = '';
 		$author = '';
@@ -222,24 +221,32 @@ class most_read_widget extends WP_Widget {
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 			$posts_query_args['tag__in'] = [$tag->term_id];
 		} else if(is_author()) {
-			foreach($authors as $author) {
-				array_push($authors_ids, $author->ID);
-			}
-
+			$author = get_queried_object();
+    		$author_name = $author->user_nicename;
+			$author_id = $author->ID;
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
-			$posts_query_args['author__in'] = $authors_ids;
+			$posts_query_args['author_name'] = $author_name;
 			$posts_query_args['meta_query'] = [[
 				'relation' => 'OR',
 				['key' => 'author-bio-display', 'value' => 1],
 				['key' => 'authors-listing', 'value' => 1],
 			]];
+
+			$posts_query_args['ignore_sticky_posts'] = true;
 		} else {
 			$most_read = \PageViews::get_top_viewed(-1, ['post_type' => 'post', 'from' => '01-01-2001']);
 		}
 
 		$ids = array();
+
 		foreach ($most_read as $post => $value) {
-			array_push($ids, $value->post_id);
+			if(!is_author()) {
+				array_push($ids, $value->post_id);
+			} else {
+				if(is_coauthor_for_post($author_id, $value->post_id)) {
+					array_push($ids, $value->post_id);
+				}
+			}
 		}
 
 		$posts_query_args['post__in'] = $ids;

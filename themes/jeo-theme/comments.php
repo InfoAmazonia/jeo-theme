@@ -66,12 +66,12 @@ $discussion = newspack_get_discussion_data();
 						if (have_comments()) {
 							echo esc_html(apply_filters('newspack_comment_section_title_nocomments', $discussion->responses == 1 ? '1 comment' : $discussion->responses . ' comments'));
 						} else {
-							echo esc_html(apply_filters('newspack_comment_section_title', __('Leave a comment', 'newspack', 'jeo')));
+							echo esc_html(apply_filters('newspack_comment_section_title', __('Leave a comment', 'jeo', 'jeo')));
 						}
 					} else {
 						if ('1' == $discussion->responses) {
 							/* translators: %s: post title */
-							printf(_x('One reply on &ldquo;%s&rdquo;', 'comments title', 'newspack'), get_the_title());
+							printf(_x('One reply on &ldquo;%s&rdquo;', 'comments title', 'jeo'), get_the_title());
 						} else {
 							printf(
 								/* translators: 1: number of comments, 2: post title */
@@ -108,11 +108,11 @@ $discussion = newspack_get_discussion_data();
 				if (have_comments()) :
 					$prev_icon     = newspack_get_icon_svg('chevron_left', 22);
 					$next_icon     = newspack_get_icon_svg('chevron_right', 22);
-					$comments_text = apply_filters('newspack_comments_name_plural', __('Comments', 'newspack'));
+					$comments_text = apply_filters('newspack_comments_name_plural', __('Comments', 'jeo'));
 					the_comments_navigation(
 						array(
-							'prev_text' => sprintf('%s <span class="nav-prev-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span>', $prev_icon, __('Previous', 'newspack'), $comments_text),
-							'next_text' => sprintf('<span class="nav-next-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span> %s', __('Next', 'newspack'), $comments_text, $next_icon),
+							'prev_text' => sprintf('%s <span class="nav-prev-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span>', $prev_icon, __('Previous', 'jeo'), $comments_text),
+							'next_text' => sprintf('<span class="nav-next-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span> %s', __('Next', 'jeo'), $comments_text, $next_icon),
 						)
 					);
 				endif;
@@ -121,7 +121,7 @@ $discussion = newspack_get_discussion_data();
 				<?php
 				// Show comment form at bottom if showing newest comments at the bottom.
 				if (comments_open() && 'asc' === strtolower(get_option('comment_order', 'asc'))) :
-					$leave_comment_text = apply_filters('newspack_comments_leave_comment', __('Leave a comment', 'newspack'));
+					$leave_comment_text = apply_filters('newspack_comments_leave_comment', __('Leave a comment', 'jeo'));
 				?>
 					<div class="comment-form-flex">
 						<span class="screen-reader-text"><?php echo esc_html($leave_comment_text); ?></span>
@@ -137,7 +137,7 @@ $discussion = newspack_get_discussion_data();
 				?>
 					<p class="no-comments">
 						<?php
-						echo esc_html(apply_filters('newspack_comments_closed', __('Comments are closed.', 'newspack')));
+						echo esc_html(apply_filters('newspack_comments_closed', __('Comments are closed.', 'jeo')));
 						?>
 					</p>
 			<?php

@@ -315,7 +315,7 @@ function meta_save($post_id) {
 	$is_valid_nonce = (isset($_POST['jeo_nonce']) && wp_verify_nonce($_POST['jeo_nonce'], basename(__FILE__))) ? 'true' : 'false';
 
 	// Exits script depending on save status
-	if ($is_autosave || $is_revision || !$is_valid_nonce) {
+	if ($is_autosave || $is_revision || !$is_valid_nonce || defined( 'DOING_CRON' )) {
 		return;
 	}
 
