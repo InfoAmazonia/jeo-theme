@@ -21,18 +21,21 @@ function newspack_posted_on()
 
 	if (is_single()) { ?>
 		<div class="post-date">
-			<?php the_date('j F Y \a\\t G:i') ?>
+			<?php the_date(__('j F Y \a\\t G:i', 'jeo')) ?>
 			<?php if (get_the_date() != get_the_modified_date() || get_the_time() != get_the_modified_time()) : ?>
-				<?php 
+				<?php
 				$posted = new DateTime(get_the_date('c'));
-				$then = new DateTime(get_the_modified_date('c')); 
-				$diff = $posted->diff($then);
-				$minutes = ($diff->format('%a') * 1440) + 
-						($diff->format('%h') * 60) +   
-							$diff->format('%i');       
-				if ($minutes >= 30) { ?>
-					<span class="hide-tablet-down"> (<?php echo __( 'Updated on', 'jeo' ); ?> <?= the_modified_date("j F Y \a\\t G:i") ?>)</span>
-				<?php 
+				$modified = new DateTime(get_the_modified_date('c'));
+				$diff = $posted->diff($modified);
+
+				// If modified_date >= created_date
+				if (!$diff->invert) {
+					$minutes = ($diff->format('%a') * 1440) + ($diff->format('%h') * 60) + $diff->format('%i');
+
+					if ($minutes >= 30) { ?>
+						<span class="hide-tablet-down"> (<?php echo __( 'Updated on', 'jeo' ); ?> <?= the_modified_date(__('j F Y \a\\t G:i', 'jeo')) ?>)</span>
+					<?php
+					}
 				}
 
 				if(get_post_meta(get_the_ID(), 'enable-post-erratum', true)): ?>
@@ -44,10 +47,7 @@ function newspack_posted_on()
 					</a>
 				<?php endif ?>
 			<?php endif ?>
-
-
 		</div>
-
 
 	<?php
 	} else {
@@ -280,7 +280,7 @@ function newspack_categories()
 			}
 		}
 		$post_child_category;
-		
+
 		if($post_child_category) {
 			$categories_list .= '<a href="' . esc_url(get_category_link($post_child_category->term_id)) . '" rel="category tag">' . $post_child_category->name . '</a>';
 			if (!$uncategorized) {
@@ -289,7 +289,7 @@ function newspack_categories()
 		} else {
 			$categories_list .= '<a href="' . esc_url(get_category_link($category_id)) . '" rel="category tag">' . get_cat_name($category_id) . '</a>';
 		}
-		
+
 		if($post_child_category) {
 			if ($category_id && !$uncategorized) {
 				$category = get_term($category_id);
@@ -299,12 +299,12 @@ function newspack_categories()
 			}
 		}
 	}
-	
+
 	if (!$categories_list) {
 		/* translators: used between list items; followed by a space. */
 		$categories_list = get_the_category_list('<span class="sep">' . esc_html__(',', 'newspack') . '&nbsp;</span>');
 	}
-	
+
 	if ($categories_list) {
 		printf(
 			/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
