@@ -47,10 +47,7 @@ function newspack_posted_on()
 					</a>
 				<?php endif ?>
 			<?php endif ?>
-
-
 		</div>
-
 
 	<?php
 	} else {
