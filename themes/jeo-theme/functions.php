@@ -376,8 +376,14 @@ add_filter( 'the_author', 'f_the_author', 99 );
 
 add_filter( 'wpseo_schema_graph_pieces', 'remove_author_from_schema', 11, 2 );
 
+add_filter( 'wpseo_schema_article', 'remove_author_from_article', 11, 1 );
+
+add_filter( 'wpseo_schema_webpage', 'remove_author_from_article', 11, 1 );
+
+
+
 /**
- * Removes the breadcrumb graph pieces from the schema collector.
+ * Removes the author graph pieces from the schema collector.
  *
  * @param array  $pieces  The current graph pieces.
  * @param string $context The current context.
@@ -396,4 +402,26 @@ function remove_author_from_schema( $pieces, $context ) {
 			return true;
 		}
     } );
+}
+
+/**
+ * Removes the author property from the article piece.
+ *
+ * @param array $data The article's properties.
+ *
+ * @return array The modified article properties.
+ */
+
+function remove_author_from_article( $data ) {
+	
+	if (get_post_type(get_the_ID()) == 'post' || get_post_type(get_the_ID()) == 'project'){
+		if (array_key_exists('author', $data)) {
+			$author_bio_display = get_post_meta(get_the_ID(), 'author-bio-display', true);
+			$authors_listing = get_post_meta(get_the_ID(), 'authors-listing', true);
+			if(!($author_bio_display == '1' || $authors_listing == '1')) {
+				unset($data['author']);
+			}
+		}
+	}
+    return $data;
 }
