@@ -55,3 +55,5 @@ docker-compose up
 ```
 
 <br>
+
+[**Log de mudanças**](https://github.com/EarthJournalismNetwork/jeo-theme/blob/master/CHANGELOG.md)
