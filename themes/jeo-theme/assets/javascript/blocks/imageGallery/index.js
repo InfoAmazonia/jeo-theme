@@ -184,17 +184,23 @@ wp.blocks.registerBlockType('jeo-theme/custom-image-gallery-block', {
 
                     return (
                         <div className="gallery-item-container">
-                            <img
-                                className='gallery-item'
-                                key={images.id}
-                                src={image.url}
-                                alt={image.alt}
-                            />
+                            <div className="gallery-item-wrap">
+                                <img
+                                    className='gallery-item'
+                                    key={images.id}
+                                    src={image.url}
+                                    alt={image.alt}
+                                />
+                            </div>
 
                             <div class="image-meta">
-                                <div class="image-description"> <RichText.Content tagName="span" value={imagesDescriptions[index]} /></div>
-                                <i class="fas fa-camera"></i>
-                                <div class="image-credit"> <RichText.Content tagName="span" value={imagesCredits[index]} /></div>
+                                <div class="image-description">
+                                    <RichText.Content tagName="span" value={imagesDescriptions[index]} />
+                                </div>
+                                <div class="image-credit">
+                                    <i class="fas fa-camera"></i>
+                                    <RichText.Content tagName="span" value={imagesCredits[index]} />\
+                                </div>
                             </div>
 
                         </div>
