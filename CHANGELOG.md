@@ -1,4 +1,9 @@
 # JEO Theme - CHANGELOG
+
+# v1.5.1
+
+- fix: image gallery overlaps the following paragraph on mobile
+- fix: apply customized secondary colors
 ## v1.5.0
 
 CHANGES:
@@ -40,11 +45,11 @@ Major features
 - Internationalization for *.js
 
 Minor fixes
-- Fix in "External source link" field when URS has special characters 
+- Fix in "External source link" field when URS has special characters
 
 ## v1.2.1
 **Minor features**
-- [ Media Partner / External Link] External Link use'Media Partner' instead of 'original publisher name' 
+- [ Media Partner / External Link] External Link use'Media Partner' instead of 'original publisher name'
 - [ Breadscrumbs ] Keep breadscrumbs active (for structured data) but hide them in all front-end pages
 
 **Fixes**
@@ -56,21 +61,21 @@ Minor fixes
 
 *New features*
 - [ Author Page ] If author's name doesn't appear on the top of the post, the post shouldn't be listed in author's page
-- [ Video URL to share ] New format 
+- [ Video URL to share ] New format
 - [Image Gallery] Drag and Drop photos in Editor. Add degrade in mobile
  - [ Post Configuration ] Add checkbox to hide/show excerpt in post
 - [ See more posts ] The "Load more posts" home resource should follow the same style created for the "See more <something>"
 - [ Featured image ] Large and Small featured image must include description/credit as credit image block
 - [ Cookies banner ] New cookie banner location
 - [ Copyright ] Add hacklab and jeo theme's logo below main footer
-- [ Special Project ] Add authors list as any post (using Multiple author plugin) 
-- [ Team block ] Make the team block in Post Editor more similar to team block in Front End 
+- [ Special Project ] Add authors list as any post (using Multiple author plugin)
+- [ Team block ] Make the team block in Post Editor more similar to team block in Front End
 
 *Minor fixes*
 - Fixes[ Validations ] categories in Related posts
-- [ Author Page ] Layout is not showing social networks and image is too large 
+- [ Author Page ] Layout is not showing social networks and image is too large
 - [ Most Read Widget ] Fix and Remove author (by <author>) and add post's date in Most Read widget
-- [ MediaPartner and Author in Post ] 
+- [ MediaPartner and Author in Post ]
 - [ Archive Page ] Show icons according to type category (audio, video, map)
 - [ Customize Panel ] The main description of special projects page must be translatable
 - [ Auto fill ] Support to AutoFill in email field for newsletter and comments
@@ -100,7 +105,7 @@ Minor fixes
 
 **Minor fixes**
 - Image Gallery - fixes in responsive mode
-- Related posts - audio/video/opinion's hardcode ids were removed 
+- Related posts - audio/video/opinion's hardcode ids were removed
 - Safari compatibiliy fixes
 - Pasifika'css for newsletter was removed
 - Sorry section: after clicking on alert icon, the sorry section appears in the screen correctly
@@ -129,7 +134,7 @@ Minor fixes
 - New field for typography to titles in Home, Post, Category, Tags, Author and Search Page.
 - Custom color for decorative bar (Ex. element next to category name)
 - Republish modal configuration: title, main introductory text, introductory text for bullets
-- Project List: introductory text 
+- Project List: introductory text
 - Content box: title
 
 **Widgets**
@@ -193,7 +198,7 @@ Features
 - Alert after deleting categories in Dashboard
 - Update Opinion Post
 - Font-size for heading mobile
-- Improvements in Post's comment form 
+- Improvements in Post's comment form
 - Share by Twitter (author's twitter are added in tweet)
 - Share by Twitter (Video Post with player card)
 - RSS tested with Flipboard and Feedly
@@ -230,12 +235,12 @@ Other plugins:
 - Post  with credited featured image behind the title
 - Post Special: Image Gallery, Audio
 - Post Special: Video,
-- Post Special: Opinion 
-- Category / Tag Page 
+- Post Special: Opinion
+- Category / Tag Page
 - About Us Page
 - Search Page
-- Author Page 
-- 1st version of mobile pages. 
+- Author Page
+- 1st version of mobile pages.
 
 **How admin must create categories/topics/regions**
 Create this category's structure with these exact slugs
