@@ -2055,7 +2055,7 @@ body.h-db.h-dh .site-header .nav3 .menu-highlight a:hover {
 }
 
 #page {
-  overflow-x: clip;
+  overflow: hidden;
   width: 100%;
 }
 
