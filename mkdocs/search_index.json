@@ -2,41 +2,66 @@
     "docs": [
         {
             "location": "/",
-            "text": "Jeo Theme\n\n\nGutenberg\n\n\n\n\nUse of gutenberg (default)\n\n\n\n\nNew Gutenberg blocks - JEO Theme\n\n\n\n\n\u201cTooltip\u201d style in the \u201cParagraph\u201d block\n\n\n\u201cCredited Image\u201d block\n\n\n\u201cImage gallery\u201d block\n\n\n\u201cVideo gallery\u201d block\n\n\n\u201cNewsletter\u201d block\n\n\nNew style for the \u201cPullquote\u201d block\n\n\n\u201cContent Box\u201d block\n\n\n\n\nTaxonomies, Categories and Manage options in Posts / Pages\n\n\n\n\nFeatured image\n\n\nTemplate: default, one column, one column wide\n \n\n\nPrimary category\n \n\n\nCategories\n  \n\n\nTags\n \n\n\nAuthor\n  \n\n\nRepublish link\n \n\n\nExternal link\n \n\n\nNew Yoast section location\n \n\n\nSorry section\n \n\n\nMedia partner republish link\n \n\n\n\n\nHow to update home using JEO-Theme?\n\n\n\n\nUpdate home\n\n\n\n\nOther JEO theme options\n\n\n\n\nDark Mode\n\n\nType Size options\n\n\n\n\nConfiguration panel\n\n\n\n\nGeneral\n\n\nSite identity\n\n\nColors\n\n\nTypography\n\n\nMenus\n\n\nWidgets\n\n\nHomepage Settings\n\n\nHeader Settings\n\n\nAutor Bio Settings\n\n\nTemplate Settings\n\n\nFooter Settings\n\n\nPost Sharing\n\n\nFont size\n\n\nAdditional CSS",
+            "text": "The JEO WordPress geojournalism platform allows news organizations, bloggers and NGOs to publish news stories as layers of information on digital maps. With JEO, creating the interaction between data layers and contextual information is intuitive and interactive.\n\n\nJEO WordPress Theme\n\n\nRead the documentation\n\n\nJEO WordPress plugin\n\n\nFeatures:\n\n\n\n\nMapBox\n maps\n\n\nReactMapBoxGL\n library\n\n\nCustom tile layers\n\n\nLayer filtering options, allowing you to mix tile layer.\n\n\nGeocoding WordPress posts using OpenStreetMaps (Nominatim), suporting the post type \nPost\n.\n\n\nCustomizable marker icons that can be associated to categories, custom taxonomies or posts directly.\n\n\nMap markers query integrated to posts query.\n\n\nSupport \nWPML\n and \nPolylang\n multilanguages plugins\n\n\n\n\nProjects using JEO:\n\n\n\n\nPlenamata\n\n\nInfoAmazonia\n\n\nPasifika EnviroNews\n\n\nEkuatorial\n\n\nMekongEye\n\n\nCaci\n\n\n\n\nRead documentation\n or \nSee in Wordpress store",
             "title": "Home"
         },
         {
-            "location": "/#jeo-theme",
+            "location": "/#jeo-wordpress-theme",
+            "text": "",
+            "title": "JEO WordPress Theme"
+        },
+        {
+            "location": "/#read-the-documentation",
+            "text": "",
+            "title": "Read the documentation"
+        },
+        {
+            "location": "/#jeo-wordpress-plugin",
+            "text": "Features:   MapBox  maps  ReactMapBoxGL  library  Custom tile layers  Layer filtering options, allowing you to mix tile layer.  Geocoding WordPress posts using OpenStreetMaps (Nominatim), suporting the post type  Post .  Customizable marker icons that can be associated to categories, custom taxonomies or posts directly.  Map markers query integrated to posts query.  Support  WPML  and  Polylang  multilanguages plugins   Projects using JEO:   Plenamata  InfoAmazonia  Pasifika EnviroNews  Ekuatorial  MekongEye  Caci",
+            "title": "JEO WordPress plugin"
+        },
+        {
+            "location": "/#read-documentation-or-see-in-wordpress-store",
+            "text": "",
+            "title": "Read documentation or See in Wordpress store"
+        },
+        {
+            "location": "/index-theme/",
+            "text": "Jeo Theme\n\n\nGutenberg\n\n\n\n\nUse of gutenberg (default)\n\n\n\n\nNew Gutenberg blocks - JEO Theme\n\n\n\n\n\u201cTooltip\u201d style in the \u201cParagraph\u201d block\n\n\n\u201cCredited Image\u201d block\n\n\n\u201cImage gallery\u201d block\n\n\n\u201cVideo gallery\u201d block\n\n\n\u201cNewsletter\u201d block\n\n\nNew style for the \u201cPullquote\u201d block\n\n\n\u201cContent Box\u201d block\n\n\n\n\nTaxonomies, Categories and Manage options in Posts / Pages\n\n\n\n\nFeatured image\n\n\nTemplate: default, one column, one column wide\n \n\n\nPrimary category\n \n\n\nCategories\n  \n\n\nTags\n \n\n\nAuthor\n  \n\n\nRepublish link\n \n\n\nExternal link\n \n\n\nNew Yoast section location\n \n\n\nSorry section\n \n\n\nMedia partner republish link\n \n\n\n\n\nHow to update home using JEO-Theme?\n\n\n\n\nUpdate home\n\n\n\n\nOther JEO theme options\n\n\n\n\nDark Mode\n\n\nType Size options\n\n\n\n\nConfiguration panel\n\n\n\n\nGeneral\n\n\nSite identity\n\n\nColors\n\n\nTypography\n\n\nMenus\n\n\nWidgets\n\n\nHomepage Settings\n\n\nHeader Settings\n\n\nAutor Bio Settings\n\n\nTemplate Settings\n\n\nFooter Settings\n\n\nPost Sharing\n\n\nFont size\n\n\nAdditional CSS",
+            "title": "Home theme"
+        },
+        {
+            "location": "/index-theme/#jeo-theme",
             "text": "",
             "title": "Jeo Theme"
         },
         {
-            "location": "/#gutenberg",
+            "location": "/index-theme/#gutenberg",
             "text": "Use of gutenberg (default)",
             "title": "Gutenberg"
         },
         {
-            "location": "/#new-gutenberg-blocks-jeo-theme",
+            "location": "/index-theme/#new-gutenberg-blocks-jeo-theme",
             "text": "\u201cTooltip\u201d style in the \u201cParagraph\u201d block  \u201cCredited Image\u201d block  \u201cImage gallery\u201d block  \u201cVideo gallery\u201d block  \u201cNewsletter\u201d block  New style for the \u201cPullquote\u201d block  \u201cContent Box\u201d block",
             "title": "New Gutenberg blocks - JEO Theme"
         },
         {
-            "location": "/#taxonomies-categories-and-manage-options-in-posts-pages",
+            "location": "/index-theme/#taxonomies-categories-and-manage-options-in-posts-pages",
             "text": "Featured image  Template: default, one column, one column wide    Primary category    Categories     Tags    Author     Republish link    External link    New Yoast section location    Sorry section    Media partner republish link",
             "title": "Taxonomies, Categories and Manage options in Posts / Pages"
         },
         {
-            "location": "/#how-to-update-home-using-jeo-theme",
+            "location": "/index-theme/#how-to-update-home-using-jeo-theme",
             "text": "Update home",
             "title": "How to update home using JEO-Theme?"
         },
         {
-            "location": "/#other-jeo-theme-options",
+            "location": "/index-theme/#other-jeo-theme-options",
             "text": "Dark Mode  Type Size options",
             "title": "Other JEO theme options"
         },
         {
-            "location": "/#configuration-panel",
+            "location": "/index-theme/#configuration-panel",
             "text": "General  Site identity  Colors  Typography  Menus  Widgets  Homepage Settings  Header Settings  Autor Bio Settings  Template Settings  Footer Settings  Post Sharing  Font size  Additional CSS",
             "title": "Configuration panel"
         },
