@@ -1,4 +1,5 @@
-# JEO
+![JEO](img/logo.png)
+
 The JEO WordPress geojournalism platform allows news organizations, bloggers and NGOs to publish news stories as layers of information on digital maps. With JEO, creating the interaction between data layers and contextual information is intuitive and interactive.
 
 
