@@ -2,7 +2,6 @@ site_name: JEO Platform
 
 pages:
   - 'Home': index.md
-  - 'Home theme': index-theme.md
   - 'Gutenberg': gutenberg.md
   - 'Tooltip style in the "Paragraph" block': tooltip.md
   - 'Credited Image block': credit-image.md
