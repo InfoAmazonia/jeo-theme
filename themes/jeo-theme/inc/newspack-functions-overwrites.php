@@ -106,7 +106,7 @@ add_action('wp_head', 'newspack_scott_typography_css_wrap');
 function newspack_scott_scripts() {
 	// Enqueue Google fonts.
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', [], '2.1.4', true);
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js', [], '3.7.1', true);
 
 	wp_enqueue_style('newspack-scott-fonts', newspack_scott_fonts_url(), [], null);
 	
