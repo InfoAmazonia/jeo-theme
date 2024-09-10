@@ -32,11 +32,6 @@ get_header();
 			while ( have_posts() ) :
 				the_post(); ?>
 
-				<?php 
-					$hide_post = get_post_meta(get_the_ID(), 'hide_in_discovery', true) == '1'? true : false;
-					if($hide_post) continue;
-				?>
-				
 				<article class="project-card">
 					<a href="<?php the_permalink() ?>" class="project-card--wrapper">
 						<?php the_post_thumbnail() ?>
@@ -48,13 +43,13 @@ get_header();
 					</a>
 				</article>
 
-				<?php 
+				<?php
 				// End the loop.
 			endwhile; ?>
 
 			</div>
-			
-			<?php 
+
+			<?php
 			// Previous/next page navigation.
 			echo (get_theme_mod('pagination_style', 'rectangle') == 'circle'? '<div class="circle">' : '<div class="rectangle">');
 			newspack_the_posts_navigation();
@@ -67,7 +62,7 @@ get_header();
 		endif;
 		?>
 		</main><!-- #main -->
-		
+
 	</section><!-- #primary -->
 <?php
 get_footer();
