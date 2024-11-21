@@ -19,18 +19,18 @@
     "@wordpress/blocks": "^6.19.0",
     "@wordpress/components": "^9.9.0",
     "@wordpress/i18n": "^3.18.0",
-    "@wordpress/scripts": "^12.0.0",
+    "@wordpress/scripts": "^25.0.0",
     "array-move": "^3.0.1",
-    "laravel-mix": "^4.1.4",
+    "laravel-mix": "^6.0.49",
     "react-sortable-hoc": "^1.11.0",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.1",
-    "resolve-url-loader": "^2.3.1",
+    "resolve-url-loader": "^5.0.0",
     "sass": "^1.23.7",
-    "sass-loader": "^7.3.1",
+    "sass-loader": "^13.2.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
