@@ -426,3 +426,26 @@ function remove_author_from_article( $data ) {
 	}
     return $data;
 }
+
+/**
+ * Allow special HTML tags (<script> and <link>) in posts.
+ *
+ * From: https://github.com/celere-dev/infoamazonia/issues/41
+ */
+function allow_custom_tags_for_all_users($tags, $context) {
+	if ($context === 'post') {
+		$tags['script'] = [
+			'src' => true,
+			'type' => true,
+			'async' => true,
+			'defer' => true
+		];
+		$tags['link'] = [
+			'href' => true,
+			'rel' => true,
+			'type' => true
+		];
+	}
+	return $tags;
+}
+add_filter('wp_kses_allowed_html', 'allow_custom_tags_for_all_users', 10, 2);
